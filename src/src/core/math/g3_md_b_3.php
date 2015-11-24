@@ -4,22 +4,33 @@ insert into item_types(id,progression,core_standards_id,description) values ('3.
 */
 var i_3_md_b_3__1 = new Class(
 {
-Extends: TextItem,
+Extends: FourButtonItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,575,50,320,75,720,50,380,150);
-
+        this.parent(sheet);
         this.mType = '3.md.b.3_1';
-
+    	this.mRaphael = Raphael(10,50,550,150);
+ 	this.mChopWhiteSpace = false;
+        this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
+  
+	this.setAnswer('a',0);
+	this.setQuestion('What?');
+    
+	this.mButtonB.setAnswer('a');
+	this.mButtonB.setAnswer('b');
+        this.mButtonC.setAnswer('c');
+        this.mButtonD.setAnswer('d');
+        this.shuffle(10);
+},
 
-        var a = Math.floor((Math.random()*4)+6);
-        var b = Math.floor((Math.random()*4)+6);
-	var c = parseInt(a*b);
-
-        this.setQuestion('Which number makes the equation true? ' + a + ' &times __ = ' + c);
-        this.setAnswer('' + b,0);
+createQuestionShapes: function()
+{
+	//rectangles
+        this.r1 = new Rectangle(160,25,10,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r1);
 }
+
 });
 
