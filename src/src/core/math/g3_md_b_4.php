@@ -12,9 +12,6 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '3.md.b.4_1';
 
-        this.x1 = Math.floor(Math.random()*200)+100;
-        this.x2 = Math.floor(Math.random()*200)+100;
-        this.x3 = Math.floor(Math.random()*200)+100;
 	this.mXArray = new Array();
 	this.mXArray.push(50);
 	this.mXArray.push(100);
@@ -24,7 +21,19 @@ initialize: function(sheet)
 	this.mXArray.push(300);
 	this.mXArray.push(350);
 
-        this.setQuestion('' + this.ns.mNameOne + ' wants to find the distance from the first circle on from the left to the second circle from the left? The rectangle is movable and can be used to measure. The length of the rectangle represents 1 inch and the scale of the map is 1/4 inch = 1 mile. Help ' + this.ns.mNameOne + ' measure the distance.');
+	this.mTextArray = new Array();	
+	this.mTextArray.push(' the first circle from the left to the second circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the third circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the fourth circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the fifth circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the sixth circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the seventh circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the eighth circle from the left.'); 
+	this.mTextArray.push(' the first circle from the left to the ninth circle from the left.'); 
+
+	this.r = Math.floor(Math.random()*this.mTextArray.length);
+
+        this.setQuestion('' + this.ns.mNameOne + ' wants to find the distance from ' + this.mTextArray[this.r] + ' The rectangles are movable and can be used to measure. The length of each rectangle represents 1 inch and the scale of the map is 1/4 inch = 1 mile. Help ' + this.ns.mNameOne + ' measure the distance.');
 
         //move buttons
         this.mContinueIncorrectButton.setPosition(690,400);
@@ -34,7 +43,13 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
         //rectangles
-        this.r1 = new Rectangle(150,25,this.x1,25,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.r1 = new Rectangle(150,25,10,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r1);
+        
+	this.r2 = new Rectangle(150,25,170,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.addQuestionShape(this.r1);
+	
+	this.r3 = new Rectangle(150,25,330,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
         this.addQuestionShape(this.r1);
 
 	this.circleA = new Circle(6,50,187,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
