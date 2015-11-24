@@ -23,20 +23,39 @@ initialize: function(sheet)
 	this.mTextArray.push(' the first circle from the left to the ninth circle from the left.'); 
 	this.mTextArray.push(' the first circle from the left to the tenth circle from the left.'); 
 
-	this.a = 'a';
-	this.b = 'b';
-	this.c = 'c';
-	this.d = 'd';
- 
-	this.mButtonA.setAnswer('' + this.a);
-	this.mButtonB.setAnswer('' + this.b);
-        this.mButtonC.setAnswer('' + this.c);
-        this.mButtonD.setAnswer('' + this.d);
+	this.answerArray = new Array();
+	this.answerArray.push('0.25 miles');
+	this.answerArray.push('0.5 miles');
+	this.answerArray.push('0.75 miles');
+	this.answerArray.push('1.0 miles');
+	this.answerArray.push('1.25 miles');
+	this.answerArray.push('1.5 miles');
+	this.answerArray.push('1.75 miles');
+	this.answerArray.push('2.0 miles');
+	this.answerArray.push('2.25 miles');
+	
+	var r = Math.floor(Math.random()*this.answerArray.length);
+
+	var a = r;	
+	var b = 1;	
+	var c = 1;	
+	var d = 1;	
+
+	while (a == b || a == c || a == d || b == c || b == d || c == d)
+	{
+		b = Math.floor(Math.random()*this.answerArray.length);
+		c = Math.floor(Math.random()*this.answerArray.length);
+		d = Math.floor(Math.random()*this.answerArray.length);
+	}
+
+	this.setAnswer('' + this.answerArray[a],0);
+	this.mButtonA.setAnswer('' + this.answerArray[a]);
+	this.mButtonB.setAnswer('' + this.answerArray[b]);
+        this.mButtonC.setAnswer('' + this.answerArray[c]);
+        this.mButtonD.setAnswer('' + this.answerArray[d]);
         this.shuffle(10);
 
-	this.r = Math.floor(Math.random()*this.mTextArray.length);
-
-        this.setQuestion('' + this.ns.mNameOne + ' wants to find the distance from ' + this.mTextArray[this.r] + ' The rectangles are movable and can be used to measure. The length of each rectangle represents 1 inch and the scale of the map is 1/4 inch = 1 mile. Help ' + this.ns.mNameOne + ' measure the distance.');
+        this.setQuestion('' + this.ns.mNameOne + ' wants to find the distance from ' + this.mTextArray[r] + ' The rectangles are movable and can be used to measure. The length of each rectangle represents 1 inch and the scale of the map is 1/4 inch = 1 mile. Help ' + this.ns.mNameOne + ' measure the distance.');
 
         //move buttons
         this.mContinueIncorrectButton.setPosition(690,400);
@@ -50,10 +69,10 @@ createQuestionShapes: function()
         this.addQuestionShape(this.r1);
         
 	this.r2 = new Rectangle(160,25,170,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.r1);
+        this.addQuestionShape(this.r2);
 	
 	this.r3 = new Rectangle(160,25,330,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.r1);
+        this.addQuestionShape(this.r3);
 
 	this.circleA = new Circle(6,50,100,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
         this.addQuestionShape(this.circleA);
