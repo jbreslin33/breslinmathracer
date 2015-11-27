@@ -14,9 +14,19 @@ initialize: function(sheet)
  	this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
-  
+
+	this.rArray = new Array();
+
+ 	this.totalR = Math.floor(Math.random()*18)+2;  
+ 	this.totalS = Math.floor(Math.random()*18)+2;  
+ 	this.totalC = Math.floor(Math.random()*18)+2;  
+ 	this.totalT = Math.floor(Math.random()*18)+2;  
+
+	this.box1Total = parseInt(this.totalR + this.totalS);
+	this.box2Total = parseInt(this.totalC + this.totalT);
+
 	this.setAnswer('a',0);
-	this.setQuestion('What?');
+	this.setQuestion('There are 2 different boxes for shapes. Box 1 has enough space for ' + this.box1Total + ' shapes. Box 2 has enough space for ' + this.box2Total + ' shapes.'  );
     
 	this.mButtonB.setAnswer('a');
 	this.mButtonB.setAnswer('b');
@@ -28,8 +38,16 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 	//rectangles
-        this.r1 = new Rectangle(160,25,10,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
-        this.addQuestionShape(this.r1);
+	this.x = 10;
+	for (i = 0; i < this.totalR; i++) 
+	{
+        	this.rArray.push(new Rectangle(40,20,this.x,45,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+		this.x = this.x + 50;
+	}
+	for (i = 0; i < this.totalR; i++) 
+	{
+        	this.addQuestionShape(this.rArray[i]);
+	}
 }
 
 });
