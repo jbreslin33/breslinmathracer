@@ -24,15 +24,15 @@ initialize: function(sheet)
 	this.mTextArray.push(' the first circle from the left to the tenth circle from the left.'); 
 
 	this.answerArray = new Array();
-	this.answerArray.push('0.25 miles');
-	this.answerArray.push('0.5 miles');
-	this.answerArray.push('0.75 miles');
 	this.answerArray.push('1.0 miles');
-	this.answerArray.push('1.25 miles');
-	this.answerArray.push('1.5 miles');
-	this.answerArray.push('1.75 miles');
 	this.answerArray.push('2.0 miles');
-	this.answerArray.push('2.25 miles');
+	this.answerArray.push('3.0 miles');
+	this.answerArray.push('4.0 miles');
+	this.answerArray.push('5.0 miles');
+	this.answerArray.push('6.0 miles');
+	this.answerArray.push('7.0 miles');
+	this.answerArray.push('8.0 miles');
+	this.answerArray.push('9.0 miles');
 	
 	var r = Math.floor(Math.random()*this.answerArray.length);
 
