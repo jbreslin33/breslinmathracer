@@ -10,10 +10,15 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '3.md.b.3_1';
-    	this.mRaphael = Raphael(10,50,550,160);
+    	this.mRaphael = Raphael(10,50,550,200);
  	this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
+
+	this.mButtonA.setPosition(85,300);	
+	this.mButtonB.setPosition(285,300);	
+	this.mButtonC.setPosition(485,300);	
+	this.mButtonD.setPosition(685,300);	
 
 	this.arrayA = new Array();
 	this.arrayB = new Array();
@@ -29,7 +34,7 @@ initialize: function(sheet)
 	this.area2Total = parseInt(this.totalC + this.totalD);
 
 	this.setAnswer('a',0);
-	this.setQuestion('There are 2 different areas at the zoo for bears. Area 1 has enough space for ' + this.area1Total + ' bears. Area 2 has enough space for ' + this.area2Total + ' bears.'  );
+	this.setQuestion('There are 2 different areas at the zoo for bears. Area 1 has enough space for ' + this.area1Total + ' bears. Area 2 has enough space for ' + this.area2Total + ' bears. Which of the following show a way the bears can fit in each area?'  );
     
 	this.mButtonB.setAnswer('a');
 	this.mButtonB.setAnswer('b');
@@ -41,19 +46,19 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 
-	labelOne = new Shape(100,50,80,105,this.mSheet.mGame,"","","");	
+	labelOne = new Shape(100,50,80,130,this.mSheet.mGame,"","","");	
 	labelOne.setText('Black');
        	this.addQuestionShape(labelOne);
 	
-	labelTwo = new Shape(100,50,80,130,this.mSheet.mGame,"","","");	
+	labelTwo = new Shape(100,50,80,160,this.mSheet.mGame,"","","");	
 	labelTwo.setText('Brown');
        	this.addQuestionShape(labelTwo);
 
-	labelThree = new Shape(100,50,80,160,this.mSheet.mGame,"","","");	
+	labelThree = new Shape(100,50,80,190,this.mSheet.mGame,"","","");	
 	labelThree.setText('Polar');
        	this.addQuestionShape(labelThree);
 	
-	labelFour = new Shape(100,50,80,190,this.mSheet.mGame,"","","");	
+	labelFour = new Shape(100,50,80,230,this.mSheet.mGame,"","","");	
 	labelFour.setText('Grizzly');
        	this.addQuestionShape(labelFour);
 
@@ -66,14 +71,14 @@ createQuestionShapes: function()
 
 	while(i < this.halfA) 
 	{
-        	this.arrayA.push(new Rectangle(40,20,this.x,45,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayA.push(new Rectangle(40,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayA[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderA == 1)
 	{
-        	this.arrayA.push(new Rectangle(20,20,this.x,45,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayA.push(new Rectangle(20,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayA[i]);
 	}
 
@@ -85,14 +90,14 @@ createQuestionShapes: function()
 	i = 0;
 	while (i < this.halfB) 
 	{
-        	this.arrayB.push(new Rectangle(40,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayB.push(new Rectangle(40,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayB[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderB == 1)
 	{
-        	this.arrayB.push(new Rectangle(20,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayB.push(new Rectangle(20,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayB[i]);
 	}
 	
@@ -104,14 +109,14 @@ createQuestionShapes: function()
 	i = 0;
 	while (i < this.halfC) 
 	{
-        	this.arrayC.push(new Rectangle(40,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayC.push(new Rectangle(40,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayC[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderC == 1)
 	{
-        	this.arrayC.push(new Rectangle(20,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayC.push(new Rectangle(20,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayC[i]);
 	}
 
@@ -123,14 +128,14 @@ createQuestionShapes: function()
 	i = 0;
 	while (i < this.halfD) 
 	{
-        	this.arrayD.push(new Rectangle(40,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayD.push(new Rectangle(40,20,this.x,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayD[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderD == 1)
 	{
-        	this.arrayD.push(new Rectangle(20,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayD.push(new Rectangle(20,20,this.x,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayD[i]);
 	}
 }
