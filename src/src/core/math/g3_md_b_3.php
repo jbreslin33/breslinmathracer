@@ -44,16 +44,24 @@ initialize: function(sheet)
 	this.arrayC = new Array();
 	this.arrayD = new Array();
 
- 	this.totalA = Math.floor(Math.random()*18)+2;  
- 	this.totalB = Math.floor(Math.random()*18)+2;  
- 	this.totalC = Math.floor(Math.random()*18)+2;  
- 	this.totalD = Math.floor(Math.random()*18)+2;  
+	this.totalA = 0;
+	this.totalB = 0;
+	this.totalC = 0;
+	this.totalD = 0;
+	
+	while (this.totalA == this.totalB || this.totalA == this.totalC || this.totalA == this.totalD || this.totalB == this.totalC || this.totalC == this.totalD)
+	{
+		this.totalA = Math.floor(Math.random()*18)+2;  
+ 		this.totalB = Math.floor(Math.random()*18)+2;  
+ 		this.totalC = Math.floor(Math.random()*18)+2;  
+ 		this.totalD = Math.floor(Math.random()*18)+2;  
+	}
 
 	this.area1Total = parseInt(this.totalA + this.totalB);
 	this.area2Total = parseInt(this.totalC + this.totalD);
 
 	var a = this.bearArray[this.rA] + ' and ' + this.bearArray[this.rB] + ' Bears in Area 1 and ' + this.bearArray[this.rC] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.';
-
+	
 	this.setAnswer('' + a,0);
 	this.setQuestion('There are 2 different areas at the zoo for bears. Area 1 has enough space for ' + this.area1Total + ' bears. Area 2 has enough space for ' + this.area2Total + ' bears. Which of the following show a way the bears can fit in each area?'  );
 
@@ -72,19 +80,20 @@ createQuestionShapes: function()
 {
 
 	labelOne = new Shape(100,50,80,130,this.mSheet.mGame,"","","");	
-	labelOne.setText('Black');
+	labelOne.setText('' + this.bearArray[this.rA]);
        	this.addQuestionShape(labelOne);
 	
 	labelTwo = new Shape(100,50,80,160,this.mSheet.mGame,"","","");	
-	labelTwo.setText('Brown');
+	labelTwo.setText('' + this.bearArray[this.rB]);
        	this.addQuestionShape(labelTwo);
 
 	labelThree = new Shape(100,50,80,190,this.mSheet.mGame,"","","");	
-	labelThree.setText('Polar');
+	labelThree.setText('' + this.bearArray[this.rC]);
+       	this.addQuestionShape(labelTwo);
        	this.addQuestionShape(labelThree);
 	
 	labelFour = new Shape(100,50,80,230,this.mSheet.mGame,"","","");	
-	labelFour.setText('Grizzly');
+	labelFour.setText('' + this.bearArray[this.rD]);
        	this.addQuestionShape(labelFour);
 
 	//A
