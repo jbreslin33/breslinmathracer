@@ -19,6 +19,25 @@ initialize: function(sheet)
 	this.mButtonB.setPosition(285,300);	
 	this.mButtonC.setPosition(485,300);	
 	this.mButtonD.setPosition(685,300);	
+	
+	this.bearArray = new Array();
+	this.bearArray.push('Black');
+	this.bearArray.push('Brown');
+	this.bearArray.push('Polar');
+	this.bearArray.push('Grizzly');
+
+	this.rA = 0;
+	this.rB = 0;
+	this.rC = 0;
+	this.rD = 0;
+
+	while (this.rA == this.rB || this.rA == this.rC || this.rA == this.rD || this.rB == this.rC || this.rC == this.rD)
+	{ 
+ 		this.rA = Math.floor(Math.random()*4);  
+ 		this.rB = Math.floor(Math.random()*4);  
+ 		this.rC = Math.floor(Math.random()*4);  
+ 		this.rD = Math.floor(Math.random()*4);  
+	}
 
 	this.arrayA = new Array();
 	this.arrayB = new Array();
@@ -33,13 +52,17 @@ initialize: function(sheet)
 	this.area1Total = parseInt(this.totalA + this.totalB);
 	this.area2Total = parseInt(this.totalC + this.totalD);
 
-	this.setAnswer('a',0);
+	var a = '' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rB] + ' Bears in Area 1 and ' + this.bearArray[this.rC] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.';
+
+	this.setAnswer('' + a,0);
 	this.setQuestion('There are 2 different areas at the zoo for bears. Area 1 has enough space for ' + this.area1Total + ' bears. Area 2 has enough space for ' + this.area2Total + ' bears. Which of the following show a way the bears can fit in each area?'  );
     
-	this.mButtonB.setAnswer('a');
-	this.mButtonB.setAnswer('b');
-        this.mButtonC.setAnswer('c');
-        this.mButtonD.setAnswer('d');
+	this.mButtonB.setAnswer('' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 1 and ' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.');
+	
+	this.mButtonC.setAnswer('' + '' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 1 and ' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 2.');
+	
+	this.mButtonC.setAnswer('' + '' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 1 and ' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.');
+
         this.shuffle(10);
 },
 
