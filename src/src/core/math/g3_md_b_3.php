@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '3.md.b.3_1';
-    	this.mRaphael = Raphael(10,50,550,150);
+    	this.mRaphael = Raphael(10,50,550,160);
  	this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
@@ -94,6 +94,44 @@ createQuestionShapes: function()
 	{
         	this.arrayB.push(new Rectangle(20,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayB[i]);
+	}
+	
+	//C	
+	this.remainderC = this.totalC % 2;
+	this.halfC = parseInt(this.totalC / 2);
+	this.x = 100;
+
+	i = 0;
+	while (i < this.halfC) 
+	{
+        	this.arrayC.push(new Rectangle(40,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.addQuestionShape(this.arrayC[i]);
+		this.x = this.x + 50;
+		i++;
+	}
+	if (this.remainderC == 1)
+	{
+        	this.arrayC.push(new Rectangle(20,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.addQuestionShape(this.arrayC[i]);
+	}
+
+	//D	
+	this.remainderD = this.totalD % 2;
+	this.halfD = parseInt(this.totalD / 2);
+	this.x = 100;
+
+	i = 0;
+	while (i < this.halfD) 
+	{
+        	this.arrayD.push(new Rectangle(40,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.addQuestionShape(this.arrayD[i]);
+		this.x = this.x + 50;
+		i++;
+	}
+	if (this.remainderD == 1)
+	{
+        	this.arrayD.push(new Rectangle(20,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.addQuestionShape(this.arrayD[i]);
 	}
 }
 
