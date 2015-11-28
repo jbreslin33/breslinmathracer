@@ -52,16 +52,18 @@ initialize: function(sheet)
 	this.area1Total = parseInt(this.totalA + this.totalB);
 	this.area2Total = parseInt(this.totalC + this.totalD);
 
-	var a = '' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rB] + ' Bears in Area 1 and ' + this.bearArray[this.rC] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.';
+	var a = this.bearArray[this.rA] + ' and ' + this.bearArray[this.rB] + ' Bears in Area 1 and ' + this.bearArray[this.rC] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.';
 
 	this.setAnswer('' + a,0);
 	this.setQuestion('There are 2 different areas at the zoo for bears. Area 1 has enough space for ' + this.area1Total + ' bears. Area 2 has enough space for ' + this.area2Total + ' bears. Which of the following show a way the bears can fit in each area?'  );
+
+	this.mButtonA.setAnswer('' + a); 
     
 	this.mButtonB.setAnswer('' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 1 and ' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.');
 	
 	this.mButtonC.setAnswer('' + '' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 1 and ' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 2.');
 	
-	this.mButtonC.setAnswer('' + '' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 1 and ' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.');
+	this.mButtonD.setAnswer('' + '' + this.bearArray[this.rB] + ' and ' + this.bearArray[this.rC] + ' Bears in Area 1 and ' + this.bearArray[this.rA] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.');
 
         this.shuffle(10);
 },
