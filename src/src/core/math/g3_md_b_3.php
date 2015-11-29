@@ -79,19 +79,46 @@ initialize: function(sheet)
 createQuestionShapes: function()
 {
 
-	labelOne = new Shape(100,50,80,130,this.mSheet.mGame,"","","");	
+	//need to randomize y pos of these
+	var yPosArray = new Array();
+	yPosArray.push(130);
+	yPosArray.push(160);
+	yPosArray.push(190);
+	yPosArray.push(220);
+
+	var yArray = new Array();	
+	yArray.push(75);
+	yArray.push(105);
+	yArray.push(135);
+	yArray.push(165);
+
+	var eA = 0;
+	var eB = 0;
+	var eC = 0;
+	var eD = 0;
+
+	while (eA == eB || eA == eC || eA == eD || eB == eC || eB == eD || eC == eD)
+	{
+		eA = Math.floor(Math.random()*4);  
+		eB = Math.floor(Math.random()*4);  
+		eC = Math.floor(Math.random()*4);  
+		eD = Math.floor(Math.random()*4);  
+	}
+
+
+	labelOne = new Shape(100,50,80,yPosArray[eA],this.mSheet.mGame,"","","");	
 	labelOne.setText('' + this.bearArray[this.rA]);
        	this.addQuestionShape(labelOne);
 	
-	labelTwo = new Shape(100,50,80,160,this.mSheet.mGame,"","","");	
+	labelTwo = new Shape(100,50,80,yPosArray[eB],this.mSheet.mGame,"","","");	
 	labelTwo.setText('' + this.bearArray[this.rB]);
        	this.addQuestionShape(labelTwo);
 
-	labelThree = new Shape(100,50,80,190,this.mSheet.mGame,"","","");	
+	labelThree = new Shape(100,50,80,yPosArray[eC],this.mSheet.mGame,"","","");	
 	labelThree.setText('' + this.bearArray[this.rC]);
        	this.addQuestionShape(labelThree);
 	
-	labelFour = new Shape(100,50,80,230,this.mSheet.mGame,"","","");	
+	labelFour = new Shape(100,50,80,yPosArray[eD],this.mSheet.mGame,"","","");	
 	labelFour.setText('' + this.bearArray[this.rD]);
        	this.addQuestionShape(labelFour);
 
@@ -104,14 +131,14 @@ createQuestionShapes: function()
 
 	while(i < this.halfA) 
 	{
-        	this.arrayA.push(new Rectangle(40,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayA.push(new Rectangle(40,20,this.x,yArray[eA],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayA[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderA == 1)
 	{
-        	this.arrayA.push(new Rectangle(20,20,this.x,75,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayA.push(new Rectangle(20,20,this.x,yArray[eA],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayA[i]);
 	}
 
@@ -123,14 +150,14 @@ createQuestionShapes: function()
 	i = 0;
 	while (i < this.halfB) 
 	{
-        	this.arrayB.push(new Rectangle(40,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayB.push(new Rectangle(40,20,this.x,yArray[eB],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayB[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderB == 1)
 	{
-        	this.arrayB.push(new Rectangle(20,20,this.x,105,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayB.push(new Rectangle(20,20,this.x,yArray[eB],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayB[i]);
 	}
 	
@@ -142,14 +169,14 @@ createQuestionShapes: function()
 	i = 0;
 	while (i < this.halfC) 
 	{
-        	this.arrayC.push(new Rectangle(40,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayC.push(new Rectangle(40,20,this.x,yArray[eC],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayC[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderC == 1)
 	{
-        	this.arrayC.push(new Rectangle(20,20,this.x,135,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayC.push(new Rectangle(20,20,this.x,yArray[eC],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayC[i]);
 	}
 
@@ -161,14 +188,14 @@ createQuestionShapes: function()
 	i = 0;
 	while (i < this.halfD) 
 	{
-        	this.arrayD.push(new Rectangle(40,20,this.x,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayD.push(new Rectangle(40,20,this.x,yArray[eD],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayD[i]);
 		this.x = this.x + 50;
 		i++;
 	}
 	if (this.remainderD == 1)
 	{
-        	this.arrayD.push(new Rectangle(20,20,this.x,175,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
+        	this.arrayD.push(new Rectangle(20,20,this.x,yArray[eD],this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true));
         	this.addQuestionShape(this.arrayD[i]);
 	}
 }
