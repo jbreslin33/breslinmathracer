@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '3.md.b.3_1';
-    	this.mRaphael = Raphael(10,50,550,200);
+    	this.mRaphael = Raphael(10,50,600,220);
  	this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
@@ -105,7 +105,19 @@ createQuestionShapes: function()
 		eD = Math.floor(Math.random()*4);  
 	}
 
+	//KEYS	
+	var keyOne = new Shape(100,50,180,250,this.mSheet.mGame,"","","");	
+	keyOne.setText('' + 'Key:');
+       	this.addQuestionShape(keyOne);
+        	
+	keyTwo = new Rectangle(40,20,170,190,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+	this.addQuestionShape(keyTwo);
+	
+	var keyThree = new Shape(100,50,280,250,this.mSheet.mGame,"","","");	
+	keyThree.setText('' + '= 2 bears');
+       	this.addQuestionShape(keyThree);
 
+	//labels
 	labelOne = new Shape(100,50,80,yPosArray[eA],this.mSheet.mGame,"","","");	
 	labelOne.setText('' + this.bearArray[this.rA]);
        	this.addQuestionShape(labelOne);
