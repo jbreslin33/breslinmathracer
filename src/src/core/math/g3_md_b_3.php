@@ -89,7 +89,6 @@ createQuestionShapes: function()
 
 	labelThree = new Shape(100,50,80,190,this.mSheet.mGame,"","","");	
 	labelThree.setText('' + this.bearArray[this.rC]);
-       	this.addQuestionShape(labelTwo);
        	this.addQuestionShape(labelThree);
 	
 	labelFour = new Shape(100,50,80,230,this.mSheet.mGame,"","","");	
