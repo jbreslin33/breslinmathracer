@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.md.b.3_1',3.2201,'3.md.b.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('3.md.b.3_1',3.2201,'3.md.b.3','Terra Nova 15');
 */
 var i_3_md_b_3__1 = new Class(
 {
