@@ -13,6 +13,7 @@ initialize: function(sheet)
         this.mType = '3.g.a.1_1';
 
 	//var r = Math.floor(Math.random()*this.answerArray.length);
+	this.labelArray = new Array();
 
 	this.setAnswer('' + 'a',0);
 	this.mButtonA.setAnswer('' + 'a');
@@ -21,7 +22,7 @@ initialize: function(sheet)
 	this.mButtonD.setAnswer('' + 'd');
         this.shuffle(10);
 
-        this.setQuestion('' + this.ns.mNameOne + ' holla');
+        this.setQuestion('' + 'Which 2 shapes are congruent?');
 
         //move buttons
         //this.mContinueIncorrectButton.setPosition(690,400);
@@ -30,8 +31,29 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
+ 
+	//labelA
+	var x = 100;	
+	for (var i = 0; i < 6; i++)
+	{
+        	this.labelArray.push(new Shape(100,50,x,170,this.mSheet.mGame,"","",""));
+		x = x + 100;
+	}
+	for (var j = 0; j < 6; j++)
+	{
+        	this.addQuestionShape(this.labelArray[j]);
+	}
+	
+        this.labelArray[0].setText('' + 'A');
+        this.labelArray[1].setText('' + 'B');
+        this.labelArray[2].setText('' + 'C');
+        this.labelArray[3].setText('' + 'D');
+        this.labelArray[4].setText('' + 'E');
+        this.labelArray[5].setText('' + 'F');
+	
+	
         //rectangles
-        this.r1 = new Rectangle(160,25,10,85,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,true);
+        this.r1 = new Rectangle(50,25,10,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         this.addQuestionShape(this.r1);
         
 	this.circleA = new Circle(6,50,100,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
