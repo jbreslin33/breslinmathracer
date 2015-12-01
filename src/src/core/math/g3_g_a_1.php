@@ -7,20 +7,16 @@ Extends: FourButtonItem,
 initialize: function(sheet)
 {
         this.parent(sheet);
-        this.mRaphael = Raphael(10,50,550,150);
+        this.mRaphael = Raphael(10,50,650,150);
         this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
         this.mType = '3.g.a.1_1';
 
-	//var r = Math.floor(Math.random()*this.answerArray.length);
+	this.r = Math.floor(Math.random()*2);
+	this.r = 0
+
 	this.labelArray = new Array();
 
-	this.setAnswer('' + 'a',0);
-	this.mButtonA.setAnswer('' + 'a');
-	this.mButtonB.setAnswer('' + 'b');
-	this.mButtonC.setAnswer('' + 'c');
-	this.mButtonD.setAnswer('' + 'd');
-        this.shuffle(10);
 
         this.setQuestion('' + 'Which 2 shapes are congruent?');
 
@@ -31,12 +27,11 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
- 
 	//labelA
 	var x = 100;	
 	for (var i = 0; i < 6; i++)
 	{
-        	this.labelArray.push(new Shape(100,50,x,170,this.mSheet.mGame,"","",""));
+        	this.labelArray.push(new Shape(100,50,x,180,this.mSheet.mGame,"","",""));
 		x = x + 100;
 	}
 	for (var j = 0; j < 6; j++)
@@ -50,14 +45,37 @@ createQuestionShapes: function()
         this.labelArray[3].setText('' + 'D');
         this.labelArray[4].setText('' + 'E');
         this.labelArray[5].setText('' + 'F');
-	
-	
-        //rectangles
-        this.r1 = new Rectangle(50,25,10,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
-        this.addQuestionShape(this.r1);
+
+	if (this.r == 0)
+	{
+		var a = 'B and F';	
+		this.setAnswer('' + a,0);
+		this.mButtonA.setAnswer('' + a);
+		this.mButtonB.setAnswer('' + 'A and C')
+		this.mButtonC.setAnswer('' + 'D and F');
+		this.mButtonD.setAnswer('' + 'D and E');
+        	this.shuffle(10);
+
+        	//rectangles
+		this.a = new Circle(6,45,80,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        	this.addQuestionShape(this.a);
+
+        	this.b = new Rectangle(25,75,135,45,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.b);
+		
+		this.c = new Circle(18,245,80,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+        	this.addQuestionShape(this.c);
+        	
+		this.d = new Rectangle(50,50,320,55,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.d);
+		
+		this.e = new Rectangle(25,25,435,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.e);
+		
+		this.f = new Rectangle(75,25,510,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.f);
         
-	this.circleA = new Circle(6,50,100,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
-        this.addQuestionShape(this.circleA);
+	}
 	
 }
 });
