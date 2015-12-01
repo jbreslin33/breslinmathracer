@@ -21,6 +21,8 @@ initialize: function(game)
  	this.mIDArray.push('' + '3.md.b.4_1'); //13
         this.mIDArray.push('' + '4.g.a.2_29'); //14
  	this.mIDArray.push('' + '3.md.b.3_1'); //15
+ 	this.mIDArray.push('' + '3.g.a.1_1'); //16
+
 
 	this.mCurrentElement = 0;
 },
