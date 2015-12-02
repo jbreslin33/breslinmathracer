@@ -17,7 +17,7 @@ initialize: function(sheet)
         var b = Math.floor(Math.random()*8+2);
         var fractionB = new Fraction(b,1,true);
 
-        var fractionC = fractionA.divide(fractionB);
+        var fractionC = fractionB.divide(fractionA);
 
         this.setQuestion('' + 'A centiliter is equal to ' + fractionA.getString() + ' of a deciliter. How many centiliters are in ' + fractionB.getString() + ' deciliters?');
 
