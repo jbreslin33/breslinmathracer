@@ -57,13 +57,13 @@ createQuestionShapes: function()
         	this.shuffle(10);
 
         	//rectangles
-		this.a = new Circle(6,45,80,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+		this.a = new Triangle(10,100,50,50,90,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
         	this.addQuestionShape(this.a);
 
         	this.b = new Rectangle(25,75,135,45,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         	this.addQuestionShape(this.b);
 		
-		this.c = new Circle(18,245,80,this.mSheet.mGame,this.mRaphael,0,1,1,"none",.5,false);
+		this.c = new Triangle(210,100,250,75,290,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
         	this.addQuestionShape(this.c);
         	
 		this.d = new Rectangle(50,50,320,55,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
@@ -74,8 +74,6 @@ createQuestionShapes: function()
 		
 		this.f = new Rectangle(75,25,510,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         	this.addQuestionShape(this.f);
-        
 	}
-	
 }
 });
