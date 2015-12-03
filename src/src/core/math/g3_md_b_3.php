@@ -31,7 +31,7 @@ initialize: function(sheet)
 	this.rC = 0;
 	this.rD = 0;
 
-	while (this.rA == this.rB || this.rA == this.rC || this.rA == this.rD || this.rB == this.rC || this.rC == this.rD)
+	while (this.rA == this.rB || this.rA == this.rC || this.rA == this.rD || this.rB == this.rC || this.rB == this.rD || this.rC == this.rD)
 	{ 
  		this.rA = Math.floor(Math.random()*4);  
  		this.rB = Math.floor(Math.random()*4);  
