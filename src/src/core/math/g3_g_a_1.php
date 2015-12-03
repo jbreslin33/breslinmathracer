@@ -13,16 +13,11 @@ initialize: function(sheet)
         this.mType = '3.g.a.1_1';
 
 	this.r = Math.floor(Math.random()*2);
-	this.r = 0
+	this.r = 1; 
 
 	this.labelArray = new Array();
 
-
         this.setQuestion('' + 'Which 2 shapes are congruent?');
-
-        //move buttons
-        //this.mContinueIncorrectButton.setPosition(690,400);
-        //this.mContinueCorrectButton.setPosition(690,400);
 },
 
 createQuestionShapes: function()
@@ -46,6 +41,7 @@ createQuestionShapes: function()
         this.labelArray[4].setText('' + 'E');
         this.labelArray[5].setText('' + 'F');
 
+        //rectangles
 	if (this.r == 0)
 	{
 		var a = 'B and F';	
@@ -56,7 +52,6 @@ createQuestionShapes: function()
 		this.mButtonD.setAnswer('' + 'D and E');
         	this.shuffle(10);
 
-        	//rectangles
 		this.a = new Triangle(10,100,50,50,90,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
         	this.addQuestionShape(this.a);
 
@@ -73,6 +68,37 @@ createQuestionShapes: function()
         	this.addQuestionShape(this.e);
 		
 		this.f = new Rectangle(75,25,510,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.f);
+	}
+
+	//squares
+	if (this.r == 1)
+	{
+		var a = 'A and C';	
+		this.setAnswer('' + a,0);
+		this.mButtonA.setAnswer('' + a);
+		this.mButtonB.setAnswer('' + 'B and F')
+		this.mButtonC.setAnswer('' + 'D and F');
+		this.mButtonD.setAnswer('' + 'D and E');
+        	this.shuffle(10);
+
+        	//rectangles
+		this.a = new Triangle(10,100,50,50,90,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        	this.addQuestionShape(this.a);
+
+        	this.b = new Rectangle(25,75,135,45,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.b);
+		
+		this.c = new Triangle(210,100,250,50,290,100,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        	this.addQuestionShape(this.c);
+        	
+		this.d = new Rectangle(50,50,320,55,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.d);
+		
+		this.e = new Rectangle(25,25,435,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
+        	this.addQuestionShape(this.e);
+		
+		this.f = new Rectangle(150,25,473,65,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.3,false);
         	this.addQuestionShape(this.f);
 	}
 }
