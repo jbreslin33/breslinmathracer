@@ -631,7 +631,7 @@ initialize: function(sheet)
                 
                 x = parseInt( (a1 - a2) / c1 + c2 * (b1 + b2) * d1 - d2 );
 
-                this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2 + ')');
+                this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2);
                 this.setAnswer('' + x,0);
         }
 }
