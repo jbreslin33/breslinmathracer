@@ -568,6 +568,7 @@ initialize: function(sheet)
 
         var x = 0;
         var r = 1;
+	var t = 0;
 
         while (x < 1 || r != 0)
         {
@@ -585,8 +586,10 @@ initialize: function(sheet)
 		var a12b12d1 = parseInt( (a1 - a2) * (b1 + b2) * d1 );  
 
                 r = c1 % a12b12d1;
+                t = c1 / a12b12d1;
                 
-                x = parseInt(  ( c1 /  (a1 - a2) * (b1 + b2) * d1 ) - d2 );
+                //x = parseInt(  ( c1 /  (a1 - a2) * (b1 + b2) * d1 ) - d2 );
+		x = t - d2;
 
                 this.setQuestion('Evaluate: ' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2);
                 this.setAnswer('' + x,0);
