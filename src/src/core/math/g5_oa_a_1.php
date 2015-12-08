@@ -524,29 +524,43 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_11';
 
         var x = 0;
-        var r = 1;
+	var t1 = 0;
+	var t2 = 0;
+	var t3 = 0;
 
-        while (x < 1 || r != 0)
+        while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*100)+50;
-                var a2 = Math.floor(Math.random()*48)+2;
+                var a1 = Math.floor(Math.random()*10)+2;
+		var a2 = 0;
+		var a3 = 1;
+		while (a2 < a3)
+		{
+                	a2 = Math.floor(Math.random()*20)+10;
+                	a3 = Math.floor(Math.random()*8)+2;
+		}
 
-                var b1 = Math.floor((Math.random()*5)+1);
-                var b2 = Math.floor((Math.random()*5)+1);
+		t1 = parseInt(a1 * (a2 -a3));
+		t2 = Math.floor((Math.random()*5)+10);
 
-                var c1 = Math.floor((Math.random()*900)+100);
+		var c1 = 0;
+		var c2 = 0;
+		var c3 = 0;
+		var c4 = 1;
+		var c5 = 1;
+	
+		while (c4 != 0 || c3 < c5)
+		{ 	
+                	c1 = Math.floor((Math.random()*50)+1);
+                	c2 = Math.floor((Math.random()*50)+1);
+                	c5 = Math.floor((Math.random()*8)+2);
+			c3 = parseInt(c1 + c2);
+			c4 = c3 % c5
+		}
+		t3 = parseInt(c3 / c5);
                 
-		var d1 = Math.floor((Math.random()*5)+10);
-		
-		var e1 = Math.floor((Math.random()*5)+10);
+                x = parseInt( t1 + t2 + t3);
 
-		var a12b12c1d1 = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) );  
-
-                r = a12b12c1d1 % e1;
-                
-                x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
-
-                this.setQuestion('Evaluate: ' + c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
+                this.setQuestion('Evaluate: ' + a1 + ' (' + a2 + ' - ' + a3 + ') + ' + t2 + ' + (' + c1 + ' + ' + c2 + ') / ' + c5 );
                 this.setAnswer('' + x,0);
         }
 }
