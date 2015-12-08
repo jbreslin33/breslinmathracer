@@ -414,21 +414,24 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_14';
 
         var x = 0;
+	var t1 = 0;
+	var t2 = 0;
+	var t3 = 0;
         
 	while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
+                t1 = Math.floor(Math.random()*100)+100;
 
-                var b1 = Math.floor((Math.random()*8)+2);
+                b1 = Math.floor(Math.random()*5)+1;
+                b2 = Math.floor((Math.random()*8)+2);
+                b3 = Math.floor((Math.random()*8)+2);
+		
+		t2 = parseInt( (b1 + b2) * b3);
+		t3 = Math.floor((Math.random()*8)+2);
 
-                var c1 = Math.floor((Math.random()*100)+900);
-                
-		var d1 = Math.floor((Math.random()*8)+2);
+                x = parseInt( t1 - t2 - t3);
 
-                x = parseInt(   c1 - ( (a1 + a2) * b1) - d1     );
-
-                this.setQuestion('Evaluate: ' + c1 + ' - ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] - ' + d1 );
+                this.setQuestion('Evaluate: ' + t1 + ' - ' + '[(' + b1 + ' + ' + b2 + ') ' + b3 + '] - ' + t3 );
                 this.setAnswer('' + x,0);
         }
 }
