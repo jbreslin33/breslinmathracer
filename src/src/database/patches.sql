@@ -13,3 +13,4 @@ update item_types set active_code = 1 where id = '5.oa.a.1_16';
 update item_types set active_code = 1 where id = '5.oa.a.1_17';
 update item_types set active_code = 1 where id = '5.oa.a.1_18';
 update item_types set active_code = 1 where id = '5.oa.a.1_19';
+update item_types set active_code = 1 where id = '5.oa.a.1_20';
