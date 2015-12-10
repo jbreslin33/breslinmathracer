@@ -33,7 +33,6 @@ initialize: function(game)
 	while (potentialPoints < needed)
 	{
 		var type = '';
-		//prog between 838 and 1338
         	var p = Math.floor(Math.random()*middle)+middle;
 		var i = 0;
 		while (i < APPLICATION.mItemAttemptsTypeArrayOne.length && type == '') //this should break out
