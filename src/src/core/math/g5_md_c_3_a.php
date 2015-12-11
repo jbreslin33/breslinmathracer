@@ -134,7 +134,6 @@ this.mCorrectAnswerLabel.setPosition(625,250);
         
 });
 
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.c.3.a_8',5.2608,'5.md.c.3.a','');
 */
@@ -150,13 +149,17 @@ initialize: function(sheet)
 
 var a = Math.floor(Math.random()*200+200);
 var b = Math.floor(Math.random()*200+200);
-var answer = a+b;
+
+var decimalA = new Decimal(a);
+var decimalB = new Decimal(b);
+var decimalC = new Decimal('0.1');
+var decimalD = decimalC.multiply(decimalB);
+var decimalE = decimalD.add(decimalA);
+
+var answer = decimalE.getString();
 
 this.setQuestion('' + this.ns.mNameOne + ' has 2 jars. One jar has a volume of ' + a + ' cubic centimeters. The other bucket has a volume of ' + b + ' cubic milliliters. What is the total volume of both jars in cubic centimeters?');
-
-        this.setAnswer('' + answer,0);
-
-
+this.setAnswer('' + answer,0);
 
 this.mUserAnswerLabel.setPosition(625,150);
 this.mCorrectAnswerLabel.setPosition(625,250);
