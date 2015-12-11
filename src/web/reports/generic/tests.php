@@ -137,19 +137,34 @@ echo "<option selected=\"selected\" value=\"0\"> \"Select Test\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
-        $row = pg_fetch_array($result, $i);
-	$full = "TestID:"; 
-	$full .= $row[0];	
-	$full .= " Date:"; 
-	$full .= $row[1];
-        if ($row[0] == $test_id)
-        {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
-        }      
-        else
-        {
-                echo "<option value=\"$row[0]\"> $full </option>";
-        }
+	//get evaluations_attempts row
+	$row = pg_fetch_array($result, $i);
+
+	//get item_attempts related to evaluations_attempts_id
+	$query2 = "select id from item_attempts where evaluations_attempts_id = ";
+	$query2 .= $row[0];
+	$query2 .= ";";
+	$result2 = pg_query($conn,$query2);
+	$numrows2 = pg_numrows($result2);
+	
+	error_log("jello");	
+	error_log($numrows2);	
+
+	if ($numrows2 > 4)
+	{
+		$full = "TestID:"; 
+		$full .= $row[0];	
+		$full .= " Date:"; 
+		$full .= $row[1];
+        	if ($row[0] == $test_id)
+        	{
+                	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
+        	}      
+        	else
+        	{
+                	echo "<option value=\"$row[0]\"> $full </option>";
+        	}
+	}
 }
 ?>
 </select>
