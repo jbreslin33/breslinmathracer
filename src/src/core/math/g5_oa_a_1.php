@@ -451,29 +451,35 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_13';
 
-        var x = 0;
-        var r = 1;
-        
-	while (x < 1 || r != 0)
+        var x = -1;
+	var t1 = 0;
+	var t2 = 0;
+		
+	var a1 = 0;
+	var a2 = 0;
+	var a3 = 0;
+	var a4 = 1;
+
+	while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
+		while (a1 < a4)
+		{
+			a1 = Math.floor(Math.random()*5)+10;
+                	a2 = Math.floor(Math.random()*5)+1;
+                	a3 = Math.floor(Math.random()*5)+1;
+                	a4 = parseInt(a2 + a3);
+		}
+		t1 = parseInt(a1 - a4); 
 
-                var b1 = Math.floor((Math.random()*8)+2);
+		var b1 = Math.floor((Math.random()*8)+2);
+		var b2 = Math.floor((Math.random()*8)+2);
+		var b3 = parseInt(b1 * b2);
+		t2 = b1;	
+        	x = parseInt( t1 + t2);
+	}
 
-                var c1 = Math.floor((Math.random()*100)+900);
-                
-		var d1 = Math.floor((Math.random()*8)+2);
-
-		var c1a12b1 = parseInt( (c1 - (a1 + a2) + b1) );  
-
-		r = c1a12b1 % d1;
-                
-                x = parseInt( (c1 - (a1 + a2) + b1) / d1 );
-
-                this.setQuestion('Evaluate: ' + '(' + c1 + ' - ' + '(' + a1 + ' + ' + a2 + ') + ' + b1 + ' / ' + d1 + ')'  );
-                this.setAnswer('' + x,0);
-        }
+        this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + '(' + a2 + ' + ' + a3 + ') + ' + b3 + ' / ' + b2 + ')'  );
+        this.setAnswer('' + x,0);
 }
 });
 
