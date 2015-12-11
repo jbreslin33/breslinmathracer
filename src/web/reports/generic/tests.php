@@ -147,9 +147,6 @@ for($i = 0; $i < $numrows; $i++)
 	$result2 = pg_query($conn,$query2);
 	$numrows2 = pg_numrows($result2);
 	
-	error_log("jello");	
-	error_log($numrows2);	
-
 	if ($numrows2 > 4)
 	{
 		$full = "TestID:"; 
