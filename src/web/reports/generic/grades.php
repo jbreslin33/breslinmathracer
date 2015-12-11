@@ -136,6 +136,8 @@ if ($room_id == 99999)
 }
 else
 {
+	$startTimeArray = array();
+	$testIDArray = array();
 	$gradeArray = array();
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
@@ -147,33 +149,47 @@ else
 	//this loop is to calc a test for a grade that is all
 	for($i = 0; $i < $numrowsOne; $i++)
 	{
+		//skip out here...
+  		//get evaluations_attempts row
+        	//$row = pg_fetch_array($result, $i);
 		$rowOne = pg_fetch_array($resultOne, $i);
 
-       	 	$query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
-		$query .= $rowOne[0];
-		$query .= " order by start_time desc;";
-        	$result = pg_query($conn,$query);
-        	$numrows = pg_numrows($result);
+        	//get item_attempts related to evaluations_attempts_id
+        	$query2 = "select id from item_attempts where evaluations_attempts_id = ";
+        	$query2 .= $rowOne[0];
+        	$query2 .= ";";
+        	$result2 = pg_query($conn,$query2);
+        	$numrows2 = pg_numrows($result2);
 
-		$progressionTotal = 0;
-		$correctTotal = 0;
-        	for($x = 0; $x < $numrows; $x++)
+        	if ($numrows2 > 4)
         	{
-                	$row = pg_fetch_array($result, $x);
-                
-			$progression = $row[7];
-			$progressionTotal = floatVal($progressionTotal + $progression);
-		
-			$transactionCode = $row[3];
-			if ($transactionCode == 1)
-			{
-				$correctTotal = floatVal($correctTotal + $progression);
-			}
-		}
+       	 		$query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
+			$query .= $rowOne[0];
+			$query .= " order by start_time desc;";
+        		$result = pg_query($conn,$query);
+        		$numrows = pg_numrows($result);
 
-		$gradeDecimal = floatVal($correctTotal / $progressionTotal);
-		$gradePercent = (int)($gradeDecimal * 100);
-		$gradeArray[] = $gradePercent;
+			$progressionTotal = 0;
+			$correctTotal = 0;
+        		for($x = 0; $x < $numrows; $x++)
+        		{
+                		$row = pg_fetch_array($result, $x);
+                
+				$progression = $row[7];
+				$progressionTotal = floatVal($progressionTotal + $progression);
+		
+				$transactionCode = $row[3];
+				if ($transactionCode == 1)
+				{
+					$correctTotal = floatVal($correctTotal + $progression);
+				}
+			}
+			$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+			$gradePercent = (int)($gradeDecimal * 100);
+			$startTimeArray[] = $row[0];
+			$testIDArray[] = $rowOne[0];
+			$gradeArray[] = $gradePercent;
+		}
         }
 	
 	$totalTests = intval(count($gradeArray));
@@ -214,10 +230,10 @@ else
 
                 echo '<tr>';
                 echo '<td>';
-                echo $startTime;
+                echo $startTimeArray[$z];
                 echo '</td>';
                 echo '<td>';
-                echo $testID;
+                echo $testIDArray[$z];
                 echo '</td>';
                 echo '<td>';
                 echo $gradeArray[$z];
