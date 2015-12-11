@@ -221,7 +221,7 @@ else
         echo '<td> Grade';
         echo '</td>';
         echo '</tr>';
-	for($z = 0; $z < $numrowsOne; $z++)
+	for($z = 0; $z < count($gradeArray); $z++)
 	{
 		$rowOne = pg_fetch_array($resultOne, $z);
 
