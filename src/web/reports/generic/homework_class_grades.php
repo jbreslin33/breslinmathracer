@@ -47,9 +47,9 @@ else if (isset($_GET['room_id']))
 echo "<br>";
 ?>
 
-<p><b> Class Grades </p></b>
+<p><b> Homework Class Grades </p></b>
 
-<p><b> Select Room and Student: </p></b>
+<p><b> Select Room: </p></b>
 <form method="post" action="/web/reports/generic/homework_class_grades.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
