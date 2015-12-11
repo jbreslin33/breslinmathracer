@@ -97,7 +97,7 @@ else
 {
 
 //number of students...
-$queryStudents = "select id from users where room_id = ";
+$queryStudents = "select id, first_name, last_name from users where room_id = ";
 $queryStudents .= $room_id;
 $queryStudents .= " order by last_name asc;";
 $resultStudents = pg_query($conn,$queryStudents);
@@ -113,7 +113,8 @@ for($s = 0; $s < $numrowsStudents; $s++)
 
 	$queryOne = "select id from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
-	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) order by start_time desc;";
+	$queryOne .= " AND evaluations_id = 17 order by start_time desc;";
+	//$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
@@ -123,6 +124,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	for($i = 0; $i < $numrowsOne; $i++)
 	{
 		$rowOne = pg_fetch_array($resultOne, $i);
+		error_log($rowOne[0]);
 
        	 	$query = "select progression, transaction_code from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
 		$query .= $rowOne[0];
@@ -150,6 +152,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 		$gradePercent = (int)($gradeDecimal * 100);
 		$gradeArray[] = $gradePercent;
         }
+	error_log("begin");
 	
 	$totalTests = intval(count($gradeArray));
 	$totalOfTests = 0;
@@ -167,6 +170,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 		$averageGrade = 0;
 	}
 	$gradesArray[] = $averageGrade;	
+	error_log("end");
 }
 
 echo '<table border=\"1\">';
@@ -181,9 +185,9 @@ for($y = 0; $y < $numrowsStudents; $y++)
 {
 	$rowStudents = pg_fetch_array($resultStudents, $y);
 
-        $fullname = $rowStudents[3];
+        $fullname = $rowStudents[1];
 	$fullname .= " ";
-        $fullname .= $rowStudents[7];
+        $fullname .= $rowStudents[2];
 
         echo '<tr>';
         echo '<td>';
