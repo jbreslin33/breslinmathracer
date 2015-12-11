@@ -97,7 +97,7 @@ else
 {
 
 //number of students...
-$queryStudents = "select * from users where room_id = ";
+$queryStudents = "select id from users where room_id = ";
 $queryStudents .= $room_id;
 $queryStudents .= " order by last_name asc;";
 $resultStudents = pg_query($conn,$queryStudents);
@@ -111,18 +111,20 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$gradeArray = array();
 	$rowStudents = pg_fetch_array($resultStudents, $s);
 
-	$queryOne = "select * from evaluations_attempts where user_id = ";
+	$queryOne = "select id from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
 	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
+
+	error_log($rowStudents[0]);
 
 	//this loop is to calc a test for a grade that is all
 	for($i = 0; $i < $numrowsOne; $i++)
 	{
 		$rowOne = pg_fetch_array($resultOne, $i);
 
-       	 	$query = "select item_attempts.start_time, item_attempts.end_time, item_types.id, transaction_code, question, answers, user_answer, progression from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
+       	 	$query = "select progression, transaction_code from item_attempts JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
 		$query .= $rowOne[0];
 		$query .= " order by start_time desc;";
         	$result = pg_query($conn,$query);
@@ -134,10 +136,10 @@ for($s = 0; $s < $numrowsStudents; $s++)
         	{
                 	$row = pg_fetch_array($result, $x);
                 
-			$progression = $row[7];
+			$progression = $row[0];
 			$progressionTotal = floatVal($progressionTotal + $progression);
 		
-			$transactionCode = $row[3];
+			$transactionCode = $row[1];
 			if ($transactionCode == 1)
 			{
 				$correctTotal = floatVal($correctTotal + $progression);
