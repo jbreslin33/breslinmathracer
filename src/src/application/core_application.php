@@ -120,7 +120,9 @@ Extends: Application,
 		//algorithms
 		this.mFirst = '';
 		this.mLeastAsked = '';
+		this.mLeastAskedHalf = '';
 		this.mLeastCorrect = '';
+		this.mLeastCorrectHalf = '';
  
 		//personal info
 		this.mUsername = '';
@@ -880,6 +882,7 @@ highestAchieved: function()
 
 	getFirst: function()
 	{
+		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
 		var first = '';
 		var i = 0;
 
@@ -916,8 +919,9 @@ highestAchieved: function()
 		this.mFirst = first;
 	},
 	
-     	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)
+	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)
         {
+		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
                 var id = '';
 		var idCount = 1000;
                 var i = 0;
@@ -944,9 +948,41 @@ highestAchieved: function()
                 }
                 this.mLeastAsked = id;
         },
-
-     	getLeastCorrect: function(typesArray,attemptArray,transactionCodeArray)
+     	
+	getLeastAskedHalf: function(typesArray,attemptArray,transactionCodeArray)
         {
+		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
+                var id = '';
+		var idCount = 1000;
+                var i = parseInt(APPLICATION.mGame.mScore / 2);
+		APPLICATION.log('i:' + i);
+
+                while (i < typesArray.length)
+                {
+                        var tempArray = new Array();
+                        var tempArray = [];
+                        var j = 0;
+                        while (j < attemptArray.length)
+                        {
+                                if (typesArray[i] == attemptArray[j])
+                                {
+                                        tempArray.push(transactionCodeArray[j]);
+                                }
+                                j++;
+                        }
+                        if (tempArray.length > 0 && tempArray.length < idCount) //we have a new least id
+                        {
+                                id = typesArray[i];
+				idCount = tempArray.length;
+                        }
+                        i++;
+                }
+                this.mLeastAskedHalf = id;
+        },
+     	
+	getLeastCorrect: function(typesArray,attemptArray,transactionCodeArray)
+        {
+		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
                 var id = '';
                 var idCount = 1000;
                 var i = 0;
@@ -975,6 +1011,39 @@ highestAchieved: function()
                         i++;
                 }
                 this.mLeastCorrect = id;
+        },
+     	
+	getLeastCorrectHalf: function(typesArray,attemptArray,transactionCodeArray)
+        {
+		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
+                var id = '';
+                var idCount = 1000;
+                var i = parseInt(APPLICATION.mGame.mScore / 2);
+
+                while (i < typesArray.length)
+                {
+                        var tempArray = new Array();
+                        var tempArray = [];
+                        var j = 0;
+                        while (j < attemptArray.length)
+                        {
+                                if (typesArray[i] == attemptArray[j])
+                                {
+					if (parseInt(transactionCodeArray[j]) == 1)
+					{
+                                        	tempArray.push(transactionCodeArray[j]);
+					}
+                                }
+                                j++;
+                        }
+                        if (tempArray.length > 1 && tempArray.length < idCount) //we have a new least Correct id
+                        {
+                                id = typesArray[i];
+                                idCount = tempArray.length;
+                        }
+                        i++;
+                }
+                this.mLeastCorrectHalf = id;
         },
 
         update: function()

@@ -31,22 +31,46 @@ pickItem: function()
 	{
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         	{
-        		var r = Math.floor(Math.random()*3);
+        		//var r = Math.floor(Math.random()*4);
+        		var r = Math.floor(Math.random()*2);
+			if (r == 1)
+			{
+				r = 2;
+			}
+			if (r == 0)
+			{
+				r = 4;
+			}
 
                 	if (r == 0)
                 	{
                         	APPLICATION.getFirst();
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
+				APPLICATION.log('first:' + APPLICATION.mQuestionTypeCurrent);
                 	}
                 	if (r == 1)
                 	{
                         	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+				APPLICATION.log('least asked:' + APPLICATION.mQuestionTypeCurrent);
                 	}
                 	if (r == 2)
                 	{
+                        	APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+				APPLICATION.log('least asked half:' + APPLICATION.mQuestionTypeCurrent);
+                	}
+                	if (r == 3)
+                	{
                         	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+				APPLICATION.log('least correct:' + APPLICATION.mQuestionTypeCurrent);
+                	}
+                	if (r == 4)
+                	{
+                        	APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
+				APPLICATION.log('least correct half:' + APPLICATION.mQuestionTypeCurrent);
                 	}
 		}
 	}
