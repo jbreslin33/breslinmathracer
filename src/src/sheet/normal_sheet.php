@@ -10,73 +10,56 @@ initialize: function(game)
 pickItem: function()
 {
 	//would love to loop till we got no dup
+	var s = APPLICATION.mItemAttemptsTypeArrayOne.length; 
 
-	if (parseInt(APPLICATION.mGame.mScore) == 0)
+	if (parseInt(APPLICATION.mGame.mScore) == 0 && s < 10)
 	{
 		APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
 	}
-	if (parseInt(APPLICATION.mGame.mScore) == 1)
+	if (parseInt(APPLICATION.mGame.mScore) == 1 && s < 10)
 	{
                 APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_2';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) == 2)
+	else if (parseInt(APPLICATION.mGame.mScore) == 2 && s < 10)
 	{
                 APPLICATION.mQuestionTypeCurrent = 'k.cc.a.2_1';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) == 3)
+	else if (parseInt(APPLICATION.mGame.mScore) == 3 && s < 10)
 	{
                 APPLICATION.mQuestionTypeCurrent = 'k.cc.a.2_2';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) > 3)
+	else 
 	{
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         	{
-        		//var r = Math.floor(Math.random()*4);
-        		var r = Math.floor(Math.random()*2);
-			if (r == 1)
-			{
-				r = 2;
-			}
-			if (r == 0)
-			{
-				r = 4;
-			}
-
-                	if (r == 0)
+        		var r = Math.floor(Math.random()*100);
+                	
+			if (r < 30)
                 	{
                         	APPLICATION.getFirst();
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-				APPLICATION.log('first:' + APPLICATION.mQuestionTypeCurrent);
                 	}
-                	if (r == 1)
+                	if (r >= 30 && r < 35)
                 	{
                         	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-				APPLICATION.log('least asked:' + APPLICATION.mQuestionTypeCurrent);
                 	}
-                	if (r == 2)
+                	if (r >= 35 && r < 65)
                 	{
                         	APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-				APPLICATION.log('least asked half:' + APPLICATION.mQuestionTypeCurrent);
                 	}
-                	if (r == 3)
+                	if (r >= 65 && r < 70)
                 	{
                         	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-				APPLICATION.log('least correct:' + APPLICATION.mQuestionTypeCurrent);
                 	}
-                	if (r == 4)
+                	if (r >= 70)
                 	{
                         	APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-				APPLICATION.log('least correct half:' + APPLICATION.mQuestionTypeCurrent);
                 	}
 		}
-	}
-	else
-	{
-                APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
 	}
 },
 

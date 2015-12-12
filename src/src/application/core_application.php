@@ -882,7 +882,6 @@ highestAchieved: function()
 
 	getFirst: function()
 	{
-		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
 		var first = '';
 		var i = 0;
 
@@ -921,7 +920,6 @@ highestAchieved: function()
 	
 	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)
         {
-		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
                 var id = '';
 		var idCount = 1000;
                 var i = 0;
@@ -951,11 +949,9 @@ highestAchieved: function()
      	
 	getLeastAskedHalf: function(typesArray,attemptArray,transactionCodeArray)
         {
-		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
                 var id = '';
 		var idCount = 1000;
                 var i = parseInt(APPLICATION.mGame.mScore / 2);
-		APPLICATION.log('i:' + i);
 
                 while (i < typesArray.length)
                 {
@@ -982,7 +978,6 @@ highestAchieved: function()
      	
 	getLeastCorrect: function(typesArray,attemptArray,transactionCodeArray)
         {
-		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
                 var id = '';
                 var idCount = 1000;
                 var i = 0;
@@ -1015,7 +1010,6 @@ highestAchieved: function()
      	
 	getLeastCorrectHalf: function(typesArray,attemptArray,transactionCodeArray)
         {
-		APPLICATION.log('score:' + APPLICATION.mGame.mScore);
                 var id = '';
                 var idCount = 1000;
                 var i = parseInt(APPLICATION.mGame.mScore / 2);
