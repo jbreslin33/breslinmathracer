@@ -30,37 +30,36 @@ pickItem: function()
 	}
 	else 
 	{
+		//lets get first and if its not a dup dont even go in
+                APPLICATION.getFirst();
+                APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         	{
         		var r = Math.floor(Math.random()*100);
                 	
-			if (r < 30)
-                	{
-                        	APPLICATION.getFirst();
-                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-                	}
-                	if (r >= 30 && r < 35)
+                	if (r < 45)
                 	{
                         	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
                 	}
-                	if (r >= 35 && r < 65)
+                	if (r >= 45 && r < 50)
                 	{
                         	APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
                 	}
-                	if (r >= 65 && r < 70)
+                	if (r >= 50 && r < 95)
                 	{
                         	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 	}
-                	if (r >= 70)
+                	if (r >= 95)
                 	{
                         	APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
                 	}
 		}
 	}
+	APPLICATION.log('c:' + APPLICATION.mQuestionTypeCurrent);
 },
 
 createItem: function()
