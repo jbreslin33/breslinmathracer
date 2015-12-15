@@ -117,60 +117,6 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
 	{
  		this.mPolygon.drag(this.move, this.start, this.up);
 	}
-
-	// table coords
-	var tableWidth = 150;
-	var tableHeight = 200;
-	var tableX = 330;
-	var tableY = 50;
-	var cols = 3;
-	var rows = 5;
-	var colWidth = tableWidth/cols;
-	var rowHeight = tableHeight/rows; 
-
-	// table perimeter
-	var box = new Rectangle(tableWidth,tableHeight,tableX,tableY,this.mGame,raphael,.5,.5,.5,"#000",.3,false);
-
-	box.mPolygon.attr({fill: "#000", "fill-opacity": 0, stroke: "#000", "stroke-width": 2});
-
-	item.addQuestionShape(box);
-
-	// Draw horizontal table lines
-	for (var i = 0; i < rows; i++)
-	{
-    		var y = tableY + (i+1)*tableHeight/rows;
-    		var line = new LineOne (tableX,y,tableX+tableWidth,y,this.mGame,this.mRaphael,"#000000",.5,false);
-    		item.addQuestionShape(line);
-	}
-
-	// Draw vertical table lines
-	for (var i = 0; i < 3; i++) 
-	{
-    		var x = tableX + (i+1)*tableWidth/cols;
-    		var line = new LineOne (x,tableY,x,tableY+tableHeight,this.mGame,this.mRaphael,"#000000",.5,false);
-    		item.addQuestionShape(line);
-	}
-
-	// Fill in table
-	var startX = tableX + colWidth/2;
-	var startY = tableY + rowHeight/2;
-	var tweakX = 4;
-	var tweakY = -10;
-
-	var table = [["Point","X","Y"],["A", ''+pointsX[0], ''+pointsY[0]],["B",pointsX[1], pointsY[1]],["C",pointsX[2], pointsY[2]],["D","",""]];
-
-	var y = tableY+rY1+(rowHeight/2)+tweakY;
-	var x = tableX+rX1+(colWidth/2)+tweakX;
-
-	for (var i = 0; i < 5; i++) 
-	{
-  		for (var j = 0; j < 3; j++) 
-		{
-     			colHead1 = new Shape(50,25,x+(j*50),y+(i*40),this.mGame,"","","");
-     			colHead1.setText(table[i][j]);
-     			item.addQuestionShape(colHead1);
-  		}
-	}
 },
 
 setVisibility: function(b)
