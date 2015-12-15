@@ -8,6 +8,8 @@ Extends: FourButtonItem,
 initialize: function(sheet)
 {
 	this.parent(sheet);
+ 	this.mChopWhiteSpace = false;
+	this.mStripCommas = false;
         this.mType = '5.oa.b.3_8';
 
 	// graph coords
@@ -74,19 +76,25 @@ initialize: function(sheet)
 	{
 		ydir = 'south';	
 	}
-	var x = parseInt(pointsX[l] - dx);  
-	var y = parseInt(pointsY[l] - dy);  
-
-	x = Math.abs(x);
-	y = Math.abs(y);
-	
-	APPLICATION.log('dx:' + dx + ' dy:' + dy); 
-	APPLICATION.log('x:' + x + ' y:' + y); 
+	var x = Math.abs(parseInt(pointsX[l] - dx));  
+	var y = Math.abs(parseInt(pointsY[l] - dy));  
 
 	this.setQuestion('Letter D will be located ' + x + ' units ' + xdir + ' and ' + y + ' units ' + ydir + ' of letter ' + lArray[l] + '. Which of these will be the correct location of D?');
+	
+	this.a = '' + '(' + dx + ',' + dy + ')';
+	this.b = '';
+	this.c = '';
+	this.d = '';
 
-	this.answer = '' + '(' + dx + ',' + dy + ')';
-	this.setAnswer('' + this.answer,0);
+	while (this.a == this.b || this.a == this.c || this.a == this.d || this.b == this.c || this.b == this.d || this.c == this.d)
+	{
+		this.b = '' + '(' + Math.floor(Math.random()*10) + ',' + Math.floor(Math.random()*10) + ')';
+		this.c = '' + '(' + Math.floor(Math.random()*10) + ',' + Math.floor(Math.random()*10) + ')';
+		this.d = '' + '(' + Math.floor(Math.random()*10) + ',' + Math.floor(Math.random()*10) + ')';
+	}
+
+	//this.setAnswer('' + '(' + dx + ',' + dy + ')',0);
+	this.setAnswer('' + this.a,0);
 
 	var graph = new CoordinatePlaneQuadrantI (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
 	this.addQuestionShape(graph);
@@ -99,10 +107,10 @@ initialize: function(sheet)
 	this.mButtonC.setPosition(670,220);
 	this.mButtonD.setPosition(670,280);
 
-	this.mButtonA.setAnswer('' + this.answer);
-	this.mButtonB.setAnswer('' + 'B');
-	this.mButtonC.setAnswer('' + 'C');
-	this.mButtonD.setAnswer('' + 'D');
+	this.mButtonA.setAnswer('' + this.a);
+	this.mButtonB.setAnswer('' + this.b);
+	this.mButtonC.setAnswer('' + this.c);
+	this.mButtonD.setAnswer('' + this.d);
         this.shuffle(10);
 }
 });
