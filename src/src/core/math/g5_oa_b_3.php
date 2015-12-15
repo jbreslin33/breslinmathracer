@@ -41,8 +41,49 @@ initialize: function(sheet)
 	
 	pointsX[2] = Math.floor(Math.random()*10);
 	pointsY[2] = Math.floor(Math.random()*10);
+	
+	dx = Math.floor(Math.random()*10);
+	dy = Math.floor(Math.random()*10);
+	
+	var dx = Math.floor(Math.random()*10);
+	var dy = Math.floor(Math.random()*10);
+	
+	var l = Math.floor(Math.random()*3);
+	
+	var lArray = new Array();
+	lArray.push('A');
+	lArray.push('B');
+	lArray.push('C');
 
-	this.setQuestion('Question');
+	xdir = '';
+	if (dy >= pointsX[l])
+	{
+		xdir = 'east';	
+	}
+	else
+	{
+		xdir = 'west';	
+	}
+
+	ydir = '';
+	if (dy >= pointsY[l])
+	{
+		ydir = 'north';	
+	}
+	else
+	{
+		ydir = 'south';	
+	}
+	var x = parseInt(pointsX[l] - dx);  
+	var y = parseInt(pointsY[l] - dy);  
+
+	x = Math.abs(x);
+	y = Math.abs(y);
+	
+	APPLICATION.log('dx:' + dx + ' dy:' + dy); 
+	APPLICATION.log('x:' + x + ' y:' + y); 
+
+	this.setQuestion('Letter D will be located ' + x + ' units ' + xdir + ' and ' + y + ' units ' + ydir + ' of letter ' + lArray[l] + '. Which of these will be the correct location of D?');
 
 	this.answer = '' + 'A';
 	this.setAnswer('' + this.answer,0);
@@ -51,7 +92,7 @@ initialize: function(sheet)
 	this.addQuestionShape(graph);
 
 	this.mQuestionLabel.setSize(220,50);
-	this.mQuestionLabel.setPosition(625,180);
+	this.mQuestionLabel.setPosition(450,180);
 
 	this.mButtonA.setPosition(670,100);
 	this.mButtonB.setPosition(670,160);
