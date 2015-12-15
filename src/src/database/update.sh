@@ -80,6 +80,7 @@ cat src/polygon/ray.php >> min.js
 cat src/polygon/analog_clock.php >> min.js
 cat src/polygon/angle.php >> min.js
 cat src/polygon/line_chart.php >> min.js
+cat src/polygon/coordinate_plane_quadrant_I.php >> min.js
 cat src/polygon/table.php >> min.js
 cat src/polygon/ruler_centimeter.php >> min.js
 cat src/polygon/ruler_inch.php >> min.js

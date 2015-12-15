@@ -1,3 +1,4 @@
+
 var LineChart = new Class(
 {
 Extends: RaphaelPolygon,

@@ -45,6 +45,7 @@
 <script type="text/javascript" src="/src/polygon/analog_clock.php"></script>
 <script type="text/javascript" src="/src/polygon/angle.php"></script>
 <script type="text/javascript" src="/src/polygon/line_chart.php"></script>
+<script type="text/javascript" src="/src/polygon/coordinate_plane_quadrant_I.php"></script>
 <script type="text/javascript" src="/src/polygon/table.php"></script>
 <script type="text/javascript" src="/src/polygon/ruler_centimeter.php"></script>
 <script type="text/javascript" src="/src/polygon/ruler_inch.php"></script>
