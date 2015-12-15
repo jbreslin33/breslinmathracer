@@ -1,3 +1,64 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_12',4.1212,'4.nf.a.1','Terra Nova 18');
+*/
+
+var i_4_nf_a_1__12 = new Class(
+{
+Extends: FourButtonItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mChopWhiteSpace = false;
+        this.mType = '4.nf.a.1_12';
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+        this.mReasonableArray    = new Array();
+        this.mNotReasonableArray = new Array();
+
+        this.mReasonableArray.push('Counting number of students in a school yard');
+        this.mReasonableArray.push('Counting number of people in an auditorium');
+        this.mReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' in a crate');
+        this.mReasonableArray.push('Counting number of ' + this.ns.mVegetableOne + ' in a garden');
+        this.mReasonableArray.push('Counting number of pennies in a jar');
+        this.mReasonableArray.push('Counting number of diapers in a box at Angry Baby house');
+        this.mReasonableArray.push('Counting number of onesies in a drawer at Angry Baby house');
+
+        this.mNotReasonableArray.push('Counting number of binkies to put in Angry Babys mouth');
+        this.mNotReasonableArray.push('Counting number of shoes to put on Angry Babys feet');
+        this.mNotReasonableArray.push('Counting number of scoops of formula to put in Angry Babys bottle');
+        this.mNotReasonableArray.push('Counting number diapers to put on Angry Baby');
+        this.mNotReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' for a pie recipe');
+        this.mNotReasonableArray.push('Counting number of spoonfuls of medicine to take');
+        this.mNotReasonableArray.push('Counting number of ties ' + this.mNameMachine.getName('boy') + ' should wear today');
+
+        this.n = Math.floor(Math.random()*this.mNotReasonableArray.length);
+
+        this.a = '' + this.mNotReasonableArray[this.n];
+        this.setAnswer('' + this.a,0);
+        this.mButtonA.setAnswer('' + this.a);
+
+        this.b = '';
+        this.c = '';
+        this.d = '';
+
+        while (this.b == this.c || this.b == this.d || this.c == this.d)
+        {
+                this.b = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
+                this.c = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
+                this.d = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
+        }
+
+        this.mButtonB.setAnswer('' + this.b);
+        this.mButtonC.setAnswer('' + this.c);
+        this.mButtonD.setAnswer('' + this.d);
+        this.shuffle(10);
+      
+	this.setQuestion('Which of these would estimatating be problematic or not make much sense?');
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.a.1_11',4.1211,'4.nf.a.1','');
