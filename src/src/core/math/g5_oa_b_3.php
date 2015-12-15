@@ -100,7 +100,7 @@ initialize: function(sheet)
 	this.addQuestionShape(graph);
 
 	this.mQuestionLabel.setSize(220,50);
-	this.mQuestionLabel.setPosition(450,180);
+	this.mQuestionLabel.setPosition(460,200);
 
 	this.mButtonA.setPosition(670,100);
 	this.mButtonB.setPosition(670,160);
@@ -112,7 +112,13 @@ initialize: function(sheet)
 	this.mButtonC.setAnswer('' + this.c);
 	this.mButtonD.setAnswer('' + this.d);
         this.shuffle(10);
-}
+},
+ 
+createQuestionShapes: function()
+{
+	this.addQuestionShape(new Shape(100,100,450,100,this.mSheet.mGame,"/images/symbols/directions.png","",""));
+} 
+
 });
 
 /*
