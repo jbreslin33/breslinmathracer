@@ -56,7 +56,7 @@ initialize: function(sheet)
 	lArray.push('C');
 
 	xdir = '';
-	if (dy >= pointsX[l])
+	if (dx >= pointsX[l])
 	{
 		xdir = 'east';	
 	}
@@ -85,7 +85,7 @@ initialize: function(sheet)
 
 	this.setQuestion('Letter D will be located ' + x + ' units ' + xdir + ' and ' + y + ' units ' + ydir + ' of letter ' + lArray[l] + '. Which of these will be the correct location of D?');
 
-	this.answer = '' + 'A';
+	this.answer = '' + '(' + dx + ',' + dy + ')';
 	this.setAnswer('' + this.answer,0);
 
 	var graph = new CoordinatePlaneQuadrantI (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
