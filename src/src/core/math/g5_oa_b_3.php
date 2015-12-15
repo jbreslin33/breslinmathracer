@@ -43,13 +43,26 @@ initialize: function(sheet)
 	pointsY[2] = Math.floor(Math.random()*10);
 
 	this.setQuestion('Question');
-	this.setAnswer('' + 'answer',0);
+
+	this.answer = '' + 'A';
+	this.setAnswer('' + this.answer,0);
 
 	var graph = new CoordinatePlaneQuadrantI (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
 	this.addQuestionShape(graph);
 
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(625,180);
+
+	this.mButtonA.setPosition(670,100);
+	this.mButtonB.setPosition(670,160);
+	this.mButtonC.setPosition(670,220);
+	this.mButtonD.setPosition(670,280);
+
+	this.mButtonA.setAnswer('' + this.answer);
+	this.mButtonB.setAnswer('' + 'B');
+	this.mButtonC.setAnswer('' + 'C');
+	this.mButtonD.setAnswer('' + 'D');
+        this.shuffle(10);
 }
 });
 
