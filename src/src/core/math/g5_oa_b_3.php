@@ -4,10 +4,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_oa_b_3__8 = new Class(
 {
-Extends: TextItem2,
+Extends: FourButtonItem,
 initialize: function(sheet)
 {
-	this.parent(sheet,200,50,225,95,100,50,425,100);
+	this.parent(sheet);
         this.mType = '5.oa.b.3_8';
 
 	// graph coords
@@ -50,16 +50,6 @@ initialize: function(sheet)
 
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(625,180);
-},
-showCorrectAnswer: function()
-{
-	if (this.mCorrectAnswerLabel)
-	{
-        	this.mCorrectAnswerLabel.setSize(200, 75);
-        	this.mCorrectAnswerLabel.setPosition(630,300);
-		this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + this.mHeadingAnswerLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo()); 
-		this.mCorrectAnswerLabel.setVisibility(true);
-	}
 }
 });
 
