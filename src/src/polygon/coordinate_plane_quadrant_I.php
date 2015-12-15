@@ -32,7 +32,7 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
       	range      // blue line y-values - invisible, used to create y-range of graph
     	],
     	{
-       		nostroke: false,   // lines between points are drawn
+       		nostroke: true,   // lines between points are drawn
        		axis: "0 0 1 1",   // draw axes on the left and bottom
        		axisxstep: 10,
        		axisystep: 10,

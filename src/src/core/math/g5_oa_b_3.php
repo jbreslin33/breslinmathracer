@@ -33,28 +33,20 @@ initialize: function(sheet)
 	var pointsX = [];
 	var pointsY = [];
 
-	pointsX[0] = Math.floor(Math.random()*2);
-	pointsY[0] = Math.floor(Math.random()*2);
-
-	var slopeX = Math.floor(Math.random()*3)+1;
-	var slopeY = Math.floor(Math.random()*3)+1;
-
-	pointsX[1] = pointsX[0] + slopeX;
-	pointsY[1] = pointsY[0] + slopeY;
-
-	pointsX[2] = pointsX[1] + slopeX;
-	pointsY[2] = pointsY[1] + slopeY;
-
-	var x = pointsX[2] + slopeX;
-	var y = pointsY[2] + slopeY;
+	pointsX[0] = Math.floor(Math.random()*10);
+	pointsY[0] = Math.floor(Math.random()*10);
+	
+	pointsX[1] = Math.floor(Math.random()*10);
+	pointsY[1] = Math.floor(Math.random()*10);
+	
+	pointsX[2] = Math.floor(Math.random()*10);
+	pointsY[2] = Math.floor(Math.random()*10);
 
 	this.setQuestion('Question');
-	this.setAnswer('' + x,0);
-	this.setAnswer('' + y,1);  
+	this.setAnswer('' + 'answer',0);
 
-	var chart = new CoordinatePlaneQuadrantI (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
-
-	this.addQuestionShape(chart);
+	var graph = new CoordinatePlaneQuadrantI (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+	this.addQuestionShape(graph);
 
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(625,180);
