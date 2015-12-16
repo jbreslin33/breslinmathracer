@@ -14,23 +14,26 @@ initialize: function(sheet)
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
 
-
-	this.a = 'answer';
-        this.setAnswer('' + this.a,0);
-        this.mButtonA.setAnswer('' + this.a);
-
 	this.x = Math.floor(Math.random()*10)+30;
-	this.fd = Math.floor(Math.random()*4)+1;
-	this.fn = Math.floor(Math.random()*4)+parseInt(this.fd+2);
+	this.fd = 2;
+	this.fn = 2;
+	while (this.fn % this.fd == 0) 
+	{
+		this.fd = Math.floor(Math.random()*4)+1;
+		this.fn = Math.floor(Math.random()*4)+parseInt(this.fd+2);
+	}
 
 	this.f = new Fraction(this.fn,this.fd,true);
 	this.y = Math.floor(Math.random()*5)+2;
 	this.z = Math.floor(Math.random()*10)+30;
 
-        this.b = 'b';
-        this.c = 'c';
-        this.d = 'd';
+	this.a = '' + this.ns.mNameOne + ' already put ' + this.y + ' ' + this.ns.mThingOne + ' on the table'; 
+        this.b = '' + this.ns.mNameOne + ' has ' + this.x + ' ' + this.ns.mThingOne;
+        this.c = '' + 'The ' + this.ns.mThingOne + ' are ' + this.f.getMixedNumber() + this.ns.mDistanceIncrementSmall + ' wide';
+        this.d = '' + 'The table is ' + this.z + ' ' + this.ns.mDistanceIncrementSmall + ' long';
         
+        this.setAnswer('' + this.a,0);
+        this.mButtonA.setAnswer('' + this.a);
 	this.mButtonB.setAnswer('' + this.b);
         this.mButtonC.setAnswer('' + this.c);
         this.mButtonD.setAnswer('' + this.d);
