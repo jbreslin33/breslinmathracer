@@ -20,29 +20,23 @@ initialize: function(sheet)
         this.mButtonA.setAnswer('' + this.a);
 
 	this.x = Math.floor(Math.random()*10)+30;
-	this.fw = Math.floor(Math.random()*4)+1;
-	this.fn = Math.floor(Math.random()*4)+1;
 	this.fd = Math.floor(Math.random()*4)+1;
+	this.fn = Math.floor(Math.random()*4)+parseInt(this.fd+2);
+
+	this.f = new Fraction(this.fn,this.fd,true);
 	this.y = Math.floor(Math.random()*5)+2;
 	this.z = Math.floor(Math.random()*10)+30;
 
         this.b = 'b';
         this.c = 'c';
         this.d = 'd';
-/*
-        while (this.b == this.c || this.b == this.d || this.c == this.d)
-        {
-                this.b = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
-                this.c = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
-                this.d = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
-        }
-*/
-        this.mButtonB.setAnswer('' + this.b);
+        
+	this.mButtonB.setAnswer('' + this.b);
         this.mButtonC.setAnswer('' + this.c);
         this.mButtonD.setAnswer('' + this.d);
         this.shuffle(10);
-      
-	this.setQuestion('' + this.ns.mNameOne + ' has ' + this.x + ' ' + this.ns.mThingOne + ' that ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' wants to put end to end on a table. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' already put ' + this.y + ' ' + this.ns.mThingOne + ' on the table that is ' + this.z + ' ' + this.ns.mDistanceSmall   );
+
+	this.setQuestion('' + this.ns.mNameOne + ' has ' + this.x + ' ' + this.ns.mThingOne + ' and each is ' + this.f.getMixedNumber() + ' ' + this.ns.mDistanceIncrementSmall + ' wide. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' wants to put them end to end on a table. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' already put ' + this.y + ' ' + this.ns.mThingOne + ' on the table that is ' + this.z + ' ' + this.ns.mDistanceIncrementSmall + ' long. Which of the following pieces of information is NOT needed to solve the problem?');
 }
 });
 
