@@ -66,9 +66,9 @@
 <script type="text/javascript" src="/src/item/text_item2.php"></script>
 <script type="text/javascript" src="/src/item/text_item3.php"></script>
 <script type="text/javascript" src="/src/item/text_item4.php"></script>
-<script type="text/javascript" src="/src/item/graph_item.php"></script>
 <script type="text/javascript" src="/src/item/three_button_item.php"></script>
 <script type="text/javascript" src="/src/item/four_button_item.php"></script>
+<script type="text/javascript" src="/src/item/graph_item.php"></script>
 <script type="text/javascript" src="/src/item/item_button.php"></script>
 <script type="text/javascript" src="/src/item/continue_correct_button.php"></script>
 <script type="text/javascript" src="/src/item/continue_incorrect_button.php"></script>
