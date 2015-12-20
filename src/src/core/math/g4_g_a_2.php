@@ -1,3 +1,59 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_29',4.3329,'4.g.a.2','Terra Nova 14');
+*/
+
+var i_4_g_a_2__29 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.g.a.2_29';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+                this.ranOne = Math.floor(Math.random()*4);
+		this.ranOne = 0;
+                if (this.ranOne == 0)
+                {
+                        this.setQuestion('' + this.ns.mNameOne + ' draws an equilateral triangle while Angry Baby watches. Which statement is true about ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' drawing?');
+                }
+
+                this.ran = Math.floor(Math.random()*4);
+                if (this.ran == 0) //make answer lowest
+                {
+                        this.mButtonA.setAnswer('' + 'No angles have same measure');
+                        this.mButtonB.setAnswer('' + 'One or more angles are right angles');
+                        this.mButtonC.setAnswer('' + '2 angles are obtuse and one is right angle');
+			this.setAnswer('' + 'All 3 angles are the same measure',0);
+                }
+                else if (this.ran == 1)
+                {
+                        this.mButtonA.setAnswer('' + '2 angles have equal measure one does not');
+                        this.mButtonB.setAnswer('' + 'Angry baby get so mad at triangle for having not same angles');
+                        this.mButtonC.setAnswer('' + '2 angles are acute and 1 is right angle');
+			this.setAnswer('' + '3 angles have the same exact measurement',0);
+                }
+                else if (this.ran == 2)
+                {
+                        this.mButtonA.setAnswer('' + '2 angles have equal measure');
+                        this.mButtonB.setAnswer('' + 'Angry baby get so mad at triangle for having right angle');
+                        this.mButtonC.setAnswer('' + '2 angles are right angles');
+			this.setAnswer('' + 'If Angry Baby measures all 3 angles they will be the same measurement',0);
+                }
+                else if (this.ran == 3)
+                {
+                        this.mButtonA.setAnswer('' + '2 angles have equal measure and one angle is obtuse');
+                        this.mButtonB.setAnswer('' + 'Angry baby get so mad at triangle for having obtuse angle');
+                        this.mButtonC.setAnswer('' + '2 angles are obtuse angles');
+			this.setAnswer('' + 'Angles will all have same measurement',0);
+                }
+                this.mButtonD.setAnswer('' + this.getAnswer());
+
+                this.shuffle(10);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.g.a.2_28',4.3328,'4.g.a.2',''); update item_types SET progression = 4.3328 where id = '4.g.a.2_28';

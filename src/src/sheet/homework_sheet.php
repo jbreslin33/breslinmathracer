@@ -26,11 +26,14 @@ initialize: function(game)
                 }
 	}
 	var needed = parseInt(score * 10);	
+
+	var middle = parseInt(score / 2);
+	middle = parseInt(middle - 2)
 	
 	while (potentialPoints < needed)
 	{
 		var type = '';
-        	var p = Math.floor(Math.random()*t);
+        	var p = Math.floor(Math.random()*middle)+middle;
 		var i = 0;
 		while (i < APPLICATION.mItemAttemptsTypeArrayOne.length && type == '') //this should break out
 		{

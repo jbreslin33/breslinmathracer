@@ -239,7 +239,7 @@ Extends: i_4_oa_a_1__word_equation,
 
                 this.mType = '4.oa.a.1_6';
 
-                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. Write a multiplication equation to represent how many ' + this.mThing + ' they have altogether.');
+                this.setQuestion(this.mNameOne + ' has ' + this.a + ' ' + this.mThing + '. ' + this.mNameMachine.getPronoun(this.mNameOne,1,1) + ' friend has ' + this.b + ' times as many ' + this.mThing + ' than ' + this.mNameOne + '. Write a multiplication equation to represent how many ' + this.mThing + ' ' + this.mNameMachine.getPronoun(this.mNameOne,0,1) + ' friend has.');
         }
 });
 

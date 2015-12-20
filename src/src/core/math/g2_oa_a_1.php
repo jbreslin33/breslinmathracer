@@ -1,6 +1,65 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_22',2.0122,'2.oa.a.1','TerraNova');
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_23',2.0123,'2.oa.a.1','Terra Nova 11');
+*/
+
+var i_2_oa_a_1__23 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '2.oa.a.1_23';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+		this.mOne = Math.floor(Math.random()*7)+4; 
+		this.mTwo = parseInt(this.mOne + 3);
+		this.mDays = Math.floor(Math.random()*11)+15; 
+		this.a = parseInt(this.mOne + 1) * this.mDays;
+
+		this.ranOne = Math.floor(Math.random()*2); 
+		this.ranOne = 0;
+		if (this.ranOne == 0)
+		{
+                	this.setQuestion('' + '' + this.ns.mNameOne + ' spends ' + this.mOne + ' to ' + this.mTwo + ' minutes every school day cleaning ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' classroom for ' + this.ns.mAdultOne + '. What is the best estimate of the time in minutes ' + this.ns.mNameOne + ' spends cleaning in ' + this.mDays + ' school days?');
+		}
+                this.setAnswer('' + this.a,0);
+                this.mButtonD.setAnswer('' + this.a);
+
+		this.ran = Math.floor(Math.random()*4); 
+		if (this.ran == 0) //make answer lowest
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mOne - 3)));
+		}
+		else if (this.ran == 1)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mOne - 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+		}
+		else if (this.ran == 2)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mOne - 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+		}
+		else if (this.ran == 3)
+		{
+                	this.mButtonA.setAnswer('' + parseInt(this.mDays * (this.mTwo + 1)));
+                	this.mButtonB.setAnswer('' + parseInt(this.mDays * (this.mTwo + 2)));
+                	this.mButtonC.setAnswer('' + parseInt(this.mDays * (this.mTwo + 3)));
+		}
+
+                this.shuffle(10);
+        }
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_22',2.0122,'2.oa.a.1','Terra Nova 9');
 */
 
 var i_2_oa_a_1__22 = new Class(
@@ -55,19 +114,19 @@ Extends: FourButtonItem,
 			this.mButtonB.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
                 	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + this.offset));
 		}
-		if (this.ran == 1)
+		else if (this.ran == 1)
 		{
                 	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset));
                 	this.mButtonB.setAnswer('' + parseInt(this.a + this.offset));
 			this.mButtonC.setAnswer('' + parseInt(this.a + this.offset + parseInt(this.offset / 2)));
 		}
-		if (this.ran == 2)
+		else if (this.ran == 2)
 		{
                 	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)));
                 	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset));
                 	this.mButtonC.setAnswer('' + parseInt(this.a + this.offset));
 		}
-		if (this.ran == 3)
+		else if (this.ran == 3)
 		{
                 	this.mButtonA.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 2)) );
                 	this.mButtonB.setAnswer('' + parseInt(this.a - this.offset - parseInt(this.offset / 3)) );
@@ -79,7 +138,7 @@ Extends: FourButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_21',2.0121,'2.oa.a.1','TerraNova');
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_21',2.0121,'2.oa.a.1','Terra Nova 1');
 */
 
 var i_2_oa_a_1__21 = new Class(
@@ -267,10 +326,20 @@ Extends: TextItem,
 		this.mLeft = left;
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+25;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = Math.floor(Math.random()*28)+12;
-                this.d = parseInt(this.a - this.b + this.c);
+		this.a = -1;
+		this.b = -1;
+		this.c = -1;
+		this.d = -1;
+		this.v = -1;
+
+		while (this.d < 0 || this.v < 0) 
+		{
+                	this.a = Math.floor(Math.random()*50)+25;
+                	this.b = Math.floor(Math.random()*28)+12;
+                	this.c = Math.floor(Math.random()*28)+12;
+                	this.d = parseInt(this.a - this.b + this.c);
+			this.v = parseInt(this.a - this.b);
+		}
 	
                 random = Math.floor(Math.random()*5)+1;
 		random = 3;

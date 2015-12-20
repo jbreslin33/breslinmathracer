@@ -1,6 +1,66 @@
+/*
+insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_24',5.0124,'5.oa.a.1','Terra Nova 12',2);
+*/
+
+var i_5_oa_a_1__24 = new Class(
+{
+Extends: FourButtonItem,
+
+initialize: function(sheet)
+{
+	this.parent(sheet);
+ 	this.mChopWhiteSpace = false;
+        this.mType = '5.oa.a.1_24';
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+	
+	this.mReasonableArray    = new Array();
+	this.mNotReasonableArray = new Array();
+
+	this.mReasonableArray.push('Counting number of students in a school yard');
+	this.mReasonableArray.push('Counting number of people in an auditorium');
+	this.mReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' in a crate');
+	this.mReasonableArray.push('Counting number of ' + this.ns.mVegetableOne + ' in a garden');
+	this.mReasonableArray.push('Counting number of pennies in a jar');
+	this.mReasonableArray.push('Counting number of diapers in a box at Angry Baby house');
+	this.mReasonableArray.push('Counting number of onesies in a drawer at Angry Baby house');
+	
+	this.mNotReasonableArray.push('Counting number of binkies to put in Angry Babys mouth');
+	this.mNotReasonableArray.push('Counting number of shoes to put on Angry Babys feet');
+	this.mNotReasonableArray.push('Counting number of scoops of formula to put in Angry Babys bottle');
+	this.mNotReasonableArray.push('Counting number diapers to put on Angry Baby');
+	this.mNotReasonableArray.push('Counting number of ' + this.ns.mFruitOne + ' for a pie recipe');
+	this.mNotReasonableArray.push('Counting number of spoonfuls of medicine to take');
+	this.mNotReasonableArray.push('Counting number of ties ' + this.mNameMachine.getName('boy') + ' should wear today');
+        
+	this.n = Math.floor(Math.random()*this.mNotReasonableArray.length);
+
+	this.a = '' + this.mNotReasonableArray[this.n];
+	this.setAnswer('' + this.a,0);
+        this.mButtonA.setAnswer('' + this.a);
+	
+	this.b = '';
+	this.c = '';
+	this.d = '';
+
+	while (this.b == this.c || this.b == this.d || this.c == this.d)
+	{
+		this.b = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
+		this.c = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
+		this.d = this.mReasonableArray[Math.floor(Math.random()*this.mReasonableArray.length)];
+	}
+        
+	this.mButtonB.setAnswer('' + this.b);
+	this.mButtonC.setAnswer('' + this.c);
+	this.mButtonD.setAnswer('' + this.d);
+        this.shuffle(10);
+
+        this.setQuestion('Which of these would estimatating be problematic or not make much sense?');
+}
+});
 
 /*
-insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_23',5.0123,'5.oa.a.1','Terra Nova',2);
+insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_23',5.0123,'5.oa.a.1','Terra Nova 6',2);
 */
 
 var i_5_oa_a_1__23 = new Class(
@@ -353,21 +413,24 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_14';
 
         var x = 0;
+	var t1 = 0;
+	var t2 = 0;
+	var t3 = 0;
         
 	while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
+                t1 = Math.floor(Math.random()*100)+100;
 
-                var b1 = Math.floor((Math.random()*8)+2);
+                b1 = Math.floor(Math.random()*5)+1;
+                b2 = Math.floor((Math.random()*8)+2);
+                b3 = Math.floor((Math.random()*8)+2);
+		
+		t2 = parseInt( (b1 + b2) * b3);
+		t3 = Math.floor((Math.random()*8)+2);
 
-                var c1 = Math.floor((Math.random()*100)+900);
-                
-		var d1 = Math.floor((Math.random()*8)+2);
+                x = parseInt( t1 - t2 - t3);
 
-                x = parseInt(   c1 - ( (a1 + a2) * b1) - d1     );
-
-                this.setQuestion('Evaluate: ' + c1 + ' - ' + '[(' + a1 + ' + ' + a2 + ') ' + b1 + '] - ' + d1 );
+                this.setQuestion('Evaluate: ' + t1 + ' - ' + '[(' + b1 + ' + ' + b2 + ') ' + b3 + '] - ' + t3 );
                 this.setAnswer('' + x,0);
         }
 }
@@ -387,29 +450,35 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_13';
 
-        var x = 0;
-        var r = 1;
-        
-	while (x < 1 || r != 0)
+        var x = -1;
+	var t1 = 0;
+	var t2 = 0;
+		
+	var a1 = 0;
+	var a2 = 0;
+	var a3 = 0;
+	var a4 = 1;
+
+	while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*5)+1;
-                var a2 = Math.floor(Math.random()*5)+1;
+		while (a1 < a4)
+		{
+			a1 = Math.floor(Math.random()*5)+10;
+                	a2 = Math.floor(Math.random()*5)+1;
+                	a3 = Math.floor(Math.random()*5)+1;
+                	a4 = parseInt(a2 + a3);
+		}
+		t1 = parseInt(a1 - a4); 
 
-                var b1 = Math.floor((Math.random()*8)+2);
+		var b1 = Math.floor((Math.random()*8)+2);
+		var b2 = Math.floor((Math.random()*8)+2);
+		var b3 = parseInt(b1 * b2);
+		t2 = b1;	
+        	x = parseInt( t1 + t2);
+	}
 
-                var c1 = Math.floor((Math.random()*100)+900);
-                
-		var d1 = Math.floor((Math.random()*8)+2);
-
-		var c1a12b1 = parseInt( (c1 - (a1 + a2) + b1) );  
-
-		r = c1a12b1 % d1;
-                
-                x = parseInt( (c1 - (a1 + a2) + b1) / d1 );
-
-                this.setQuestion('Evaluate: ' + '(' + c1 + ' - ' + '(' + a1 + ' + ' + a2 + ') + ' + b1 + ' / ' + d1 + ')'  );
-                this.setAnswer('' + x,0);
-        }
+        this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + '(' + a2 + ' + ' + a3 + ') + ' + b3 + ' / ' + b2 + ')'  );
+        this.setAnswer('' + x,0);
 }
 });
 
@@ -463,29 +532,43 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_11';
 
         var x = 0;
-        var r = 1;
+	var t1 = 0;
+	var t2 = 0;
+	var t3 = 0;
 
-        while (x < 1 || r != 0)
+        while (x < 1)
         {
-                var a1 = Math.floor(Math.random()*100)+50;
-                var a2 = Math.floor(Math.random()*48)+2;
+                var a1 = Math.floor(Math.random()*10)+2;
+		var a2 = 0;
+		var a3 = 1;
+		while (a2 < a3)
+		{
+                	a2 = Math.floor(Math.random()*20)+10;
+                	a3 = Math.floor(Math.random()*8)+2;
+		}
 
-                var b1 = Math.floor((Math.random()*5)+1);
-                var b2 = Math.floor((Math.random()*5)+1);
+		t1 = parseInt(a1 * (a2 -a3));
+		t2 = Math.floor((Math.random()*5)+10);
 
-                var c1 = Math.floor((Math.random()*900)+100);
+		var c1 = 0;
+		var c2 = 0;
+		var c3 = 0;
+		var c4 = 1;
+		var c5 = 1;
+	
+		while (c4 != 0 || c3 < c5)
+		{ 	
+                	c1 = Math.floor((Math.random()*50)+1);
+                	c2 = Math.floor((Math.random()*50)+1);
+                	c5 = Math.floor((Math.random()*8)+2);
+			c3 = parseInt(c1 + c2);
+			c4 = c3 % c5
+		}
+		t3 = parseInt(c3 / c5);
                 
-		var d1 = Math.floor((Math.random()*5)+10);
-		
-		var e1 = Math.floor((Math.random()*5)+10);
+                x = parseInt( t1 + t2 + t3);
 
-		var a12b12c1d1 = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) );  
-
-                r = a12b12c1d1 % e1;
-                
-                x = parseInt( c1 * (a1 - a2) * d1 * (b1 + b2) / e1 );
-
-                this.setQuestion('Evaluate: ' + c1 + ' (' + a1 + ' - ' + a2 + ') ' + d1 + ' (' + b1 + ' + ' + b2 + ') / ' + e1 );
+                this.setQuestion('Evaluate: ' + a1 + ' (' + a2 + ' - ' + a3 + ') + ' + t2 + ' + (' + c1 + ' + ' + c2 + ') / ' + c5 );
                 this.setAnswer('' + x,0);
         }
 }
@@ -507,6 +590,7 @@ initialize: function(sheet)
 
         var x = 0;
         var r = 1;
+	var t = 0;
 
         while (x < 1 || r != 0)
         {
@@ -524,10 +608,12 @@ initialize: function(sheet)
 		var a12b12d1 = parseInt( (a1 - a2) * (b1 + b2) * d1 );  
 
                 r = c1 % a12b12d1;
+                t = c1 / a12b12d1;
                 
-                x = parseInt( c1 / ((a1 - a2) * (b1 + b2) * d1) - d2 );
+                //x = parseInt(  ( c1 /  (a1 - a2) * (b1 + b2) * d1 ) - d2 );
+		x = t - d2;
 
-                this.setQuestion('Evaluate: ' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2 );
+                this.setQuestion('Evaluate: ' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2);
                 this.setAnswer('' + x,0);
         }
 }
@@ -570,7 +656,7 @@ initialize: function(sheet)
                 
                 x = parseInt( (a1 - a2) / c1 + c2 * (b1 + b2) * d1 - d2 );
 
-                this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2 + ')');
+                this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') /' + c1 + ' + ' + c2 + '(' + b1 + ' + ' + b2 + ')' + d1 + ' - ' + d2);
                 this.setAnswer('' + x,0);
         }
 }
@@ -647,7 +733,7 @@ initialize: function(sheet)
 
                 r = c1 % c2;
 
-                x = parseInt( (a1 - a2) * (b1 + b2) + c1 / c2 );
+                x = parseInt( ((a1 - a2) * (b1 + b2)) + (c1 / c2) );
 
                 this.setQuestion('Evaluate:' + '(' + a1 + ' - ' + a2 + ')  (' + b1 + ' + ' + b2 + ') + ' + c1 + ' / ' + c2  );
                 this.setAnswer('' + x,0);
@@ -687,8 +773,8 @@ initialize: function(sheet)
                 var b12c2 = parseInt(  c2 * (b1 + b2) );
                 r = a12c1 % b12c2;
 
-                //x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
-                x = parseInt((a1 - a2) * c1/c2 * (b1 + b2));
+                x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
+                //x = parseInt((a1 - a2) * c1/c2 * (b1 + b2));
                 
                 this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
                 this.setAnswer('' + x,0);
@@ -860,7 +946,7 @@ initialize: function(sheet)
 	var answer = new Fraction(n,ad);	
 	
 	this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate. Do not Simplify.');
+        this.setQuestion('' +  b1 + '(' + a1d.getString() + ' + ' + a2d.getString() + ') Evaluate.');
 }
 });
 

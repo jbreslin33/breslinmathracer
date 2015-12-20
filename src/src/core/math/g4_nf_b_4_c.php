@@ -279,7 +279,7 @@ initialize: function(sheet)
         var answer = ab.multiply(cd);
 
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('' + this.ns.mNameOne + ' uses ' + ab.getString() + ' of a cup of vinegar in ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' salad dressing recipe. How many cups of vinegar would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use to make ' + c + ' cups?');
+        this.setQuestion('' + this.ns.mNameOne + ' uses ' + ab.getString() + ' of a cup of vinegar to make one serving of ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' salad dressing recipe. How many cups of vinegar would ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use to make ' + c + ' servings of ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) +  ' recipe?');
 }
 
 });

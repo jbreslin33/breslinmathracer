@@ -10,50 +10,56 @@ initialize: function(game)
 pickItem: function()
 {
 	//would love to loop till we got no dup
+	var s = APPLICATION.mItemAttemptsTypeArrayOne.length; 
 
-	if (parseInt(APPLICATION.mGame.mScore) == 0)
+	if (parseInt(APPLICATION.mGame.mScore) == 0 && s < 10)
 	{
 		APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
 	}
-	if (parseInt(APPLICATION.mGame.mScore) == 1)
+	if (parseInt(APPLICATION.mGame.mScore) == 1 && s < 10)
 	{
                 APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_2';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) == 2)
+	else if (parseInt(APPLICATION.mGame.mScore) == 2 && s < 10)
 	{
                 APPLICATION.mQuestionTypeCurrent = 'k.cc.a.2_1';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) == 3)
+	else if (parseInt(APPLICATION.mGame.mScore) == 3 && s < 10)
 	{
                 APPLICATION.mQuestionTypeCurrent = 'k.cc.a.2_2';
 	}
-	else if (parseInt(APPLICATION.mGame.mScore) > 3)
+	else 
 	{
+		//lets get first and if its not a dup dont even go in
+                APPLICATION.getFirst();
+                APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         	{
-        		var r = Math.floor(Math.random()*3);
-
-                	if (r == 0)
-                	{
-                        	APPLICATION.getFirst();
-                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-                	}
-                	if (r == 1)
+        		var r = Math.floor(Math.random()*100);
+                	
+                	if (r < 45)
                 	{
                         	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
                 	}
-                	if (r == 2)
+                	if (r >= 45 && r < 50)
+                	{
+                        	APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+                	}
+                	if (r >= 50 && r < 95)
                 	{
                         	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 	}
+                	if (r >= 95)
+                	{
+                        	APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
+                	}
 		}
 	}
-	else
-	{
-                APPLICATION.mQuestionTypeCurrent = 'k.cc.a.1_1';
-	}
+	APPLICATION.log('c:' + APPLICATION.mQuestionTypeCurrent);
 },
 
 createItem: function()
