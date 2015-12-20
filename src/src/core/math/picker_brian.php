@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-        return '6.ns.c.8_1';
+        return '6.ns.c.8_3';
        //return '5.oa.b.3_1';
 },
 
@@ -826,6 +826,14 @@ if (id == '6.rp.a.3.a_3')
   if (id == '6.ns.c.8_1')
         {
                 return new i_6_ns_c_8__1(this.mSheet);
+        }
+  if (id == '6.ns.c.8_2')
+        {
+                return new i_6_ns_c_8__2(this.mSheet);
+        }
+  if (id == '6.ns.c.8_3')
+        {
+                return new i_6_ns_c_8__3(this.mSheet);
         }
 
 	return 0;	

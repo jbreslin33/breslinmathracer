@@ -2766,6 +2766,8 @@ var n = j+this.xoff;
 var m = i+this.yoff;
     b.data("x", j+this.xoff);
     b.data("y", i+this.yoff);
+    b.data("xPos", x);
+    b.data("yPos", y);
 //console.log(n);
 //console.log(m);
     item.circles[n][m] = b;
