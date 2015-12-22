@@ -51,6 +51,7 @@
 <script type="text/javascript" src="/src/polygon/ruler_inch.php"></script>
 <script type="text/javascript" src="/src/polygon/ruler_quarterinch.php"></script>
 <script type="text/javascript" src="/src/polygon/volume_liter.php"></script>
+
 <script type="text/javascript" src="/src/shape/shape_ai.php"></script>
 <script type="text/javascript" src="/src/shape/shape_victory.php"></script>
 
@@ -107,7 +108,6 @@
 <script type="text/javascript" src="/src/widgets/clock.php"></script>
 <script type="text/javascript" src="/src/item/clock_item.php"></script>
 <script type="text/javascript" src="/src/widgets/circles.php"></script>
-
 <script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
 
 <script type="text/javascript" src="/src/core/math/core_game.php"></script>

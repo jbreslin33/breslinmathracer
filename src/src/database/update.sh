@@ -58,7 +58,6 @@ cat src/animation/animation.php >> min.js
 cat src/animation/animation_advanced.php >> min.js
 
 cat src/polygon/polygon.php >> min.js
-
 cat src/polygon/raphael_polygon.php >> min.js
 
 cat src/shape/shape.php >> min.js
@@ -102,9 +101,9 @@ cat src/item/text_item_mixed_number.php >> min.js
 cat src/item/text_item2.php >> min.js
 cat src/item/text_item3.php >> min.js
 cat src/item/text_item4.php >> min.js
-cat src/item/graph_item.php >> min.js
 cat src/item/three_button_item.php >> min.js
 cat src/item/four_button_item.php >> min.js
+cat src/item/graph_item.php >> min.js
 cat src/item/item_button.php >> min.js
 cat src/item/continue_correct_button.php >> min.js
 cat src/item/continue_incorrect_button.php >> min.js
