@@ -19,23 +19,30 @@ var Hud = new Class(
         this.mHome = new Shape(90, ySize,  0,  yCoord,"","SELECT","#F8CDF8","boundary");
 	this.mHome.mMesh.onchange = this.homeSelected;
 
-        this.mOrange    = new Shape (75, ySize,90,  yCoord,"","","orange","boundary");
+        //this.mOrange    = new Shape (75, ySize,90,  yCoord,"","","orange","boundary");
+        this.mOrange    = new Shape (75, ySize,90,  yCoord,"","","red","boundary");
        
-	this.mPink = new Shape (75, ySize,165,  yCoord,"","","pink","boundary");
+	//this.mPink = new Shape (75, ySize,165,  yCoord,"","","pink","boundary");
+	this.mPink = new Shape (75, ySize,165,  yCoord,"","","green","boundary");
 	
-	this.mYellow = new Shape(75, ySize,240,  yCoord,"","","yellow","boundary");
+	//this.mYellow = new Shape(75, ySize,240,  yCoord,"","","yellow","boundary");
+	this.mYellow = new Shape(75, ySize,240,  yCoord,"","","red","boundary");
 
-        this.mGreen = new Shape    (75, ySize,315,  yCoord,"","","LawnGreen","boundary");
+        //this.mGreen = new Shape    (75, ySize,315,  yCoord,"","","LawnGreen","boundary");
+        this.mGreen = new Shape    (75, ySize,315,  yCoord,"","","green","boundary");
 
-        this.mCyan = new Shape    (75, ySize, 390,  yCoord,"","","cyan","boundary");
+        //this.mCyan = new Shape    (75, ySize, 390,  yCoord,"","","cyan","boundary");
+        this.mCyan = new Shape    (75, ySize, 390,  yCoord,"","","red","boundary");
         
-	this.mViolet = new Shape    (75, ySize, 465,  yCoord,"","","violet","boundary");
+	//this.mViolet = new Shape    (75, ySize, 465,  yCoord,"","","violet","boundary");
+	this.mViolet = new Shape    (75, ySize, 465,  yCoord,"","","green","boundary");
         
 	this.mTan = new Shape(75, ySize,  540,  yCoord,"","SELECT","tan","boundary");
 	this.mTan.mMesh.onchange = this.tanSelected;
 
-	this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","#F8CDF8","boundary");
-        
+	//this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","#F8CDF8","boundary");
+	this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","green","boundary");
+       /* 
 	eastBounds  = new Shape         ( 10, 50,760, 35,"","","#F8CDF8","boundary");
         eastBounds  = new Shape         ( 10, 50,760, 85,"","","#F6C0F6","boundary");
         eastBounds  = new Shape         ( 10, 50,760,135,"","","#F5B4F5","boundary");
@@ -44,9 +51,19 @@ var Hud = new Class(
         eastBounds  = new Shape         ( 10, 50,760,285,"","","#F3A8F3","boundary");
         eastBounds  = new Shape         ( 10, 50,760,335,"","","#F19BF1","boundary");
         eastBounds  = new Shape         ( 10, 20,760,385,"","","#F08EF0","boundary");
+*/
+	eastBounds  = new Shape         ( 10, 50,760, 35,"","","red","boundary");
+        eastBounds  = new Shape         ( 10, 50,760, 85,"","","green","boundary");
+        eastBounds  = new Shape         ( 10, 50,760,135,"","","red","boundary");
+        eastBounds  = new Shape         ( 10, 50,760,185,"","","green","boundary");
+        eastBounds  = new Shape         ( 10, 50,760,235,"","","red","boundary");
+        eastBounds  = new Shape         ( 10, 50,760,285,"","","green","boundary");
+        eastBounds  = new Shape         ( 10, 50,760,335,"","","red","boundary");
+        eastBounds  = new Shape         ( 10, 20,760,385,"","","green","boundary");
 
-        this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boundary");
-
+        //this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boundary");
+        this.mScroll = new Shape (770, ySize,  0,405,"","","red","boundary");
+/*
         westBounds  = new Shape         ( 10, 50,  0, 35,"","","#F8CDF8","boundary");
         westBounds  = new Shape         ( 10, 50,  0, 85,"","","#F6C0F6","boundary");
         westBounds  = new Shape         ( 10, 50,  0,135,"","","#F5B4F5","boundary");
@@ -55,6 +72,15 @@ var Hud = new Class(
         westBounds  = new Shape         ( 10, 50,  0,285,"","","#F3A8F3","boundary");
         westBounds  = new Shape         ( 10, 50,  0,335,"","","#F19BF1","boundary");
         westBounds  = new Shape         ( 10, 20,  0,385,"","","#F08EF0","boundary");
+*/
+        westBounds  = new Shape         ( 10, 50,  0, 35,"","","red","boundary");
+        westBounds  = new Shape         ( 10, 50,  0, 85,"","","green","boundary");
+        westBounds  = new Shape         ( 10, 50,  0,135,"","","red","boundary");
+        westBounds  = new Shape         ( 10, 50,  0,185,"","","green","boundary");
+        westBounds  = new Shape         ( 10, 50,  0,235,"","","red","boundary");
+        westBounds  = new Shape         ( 10, 50,  0,285,"","","green","boundary");
+        westBounds  = new Shape         ( 10, 50,  0,335,"","","red","boundary");
+        westBounds  = new Shape         ( 10, 20,  0,385,"","","green","boundary");
 
 	this.fillHomeSelect();
         
