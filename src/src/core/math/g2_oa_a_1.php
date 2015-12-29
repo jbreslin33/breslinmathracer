@@ -85,7 +85,7 @@ initialize: function(sheet)
         var answer = '' + e;
 
         // create ratioTable[rows][cols] to pass in to Table
-        var ratioTable = [['teams','players'],['rooms','students'],['trays','cupcakes']];
+        var ratioTable = [['type of things','number of things'],['type of vegetable','number of vegetables'],['type of fruit','number of fruit']];
 
         var head1 = ratioTable[r][0];
         var head2 = ratioTable[r][1];
@@ -116,6 +116,10 @@ initialize: function(sheet)
         this.mButtonD.setAnswer('' + h);
         
 	this.shuffle(10);
+  
+	this.mQuestionLabel.setPosition(560,155);
+	this.mQuestionLabel.setSize(350,200);
+//Size( = new Shape(730,50,400,55,this.mSheet.mGame,"","","");
 
         this.mButtonA.setPosition(450,250);
         this.mButtonB.setPosition(650,250);
