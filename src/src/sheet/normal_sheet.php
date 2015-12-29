@@ -59,7 +59,6 @@ pickItem: function()
                 	}
 		}
 	}
-	APPLICATION.log('c:' + APPLICATION.mQuestionTypeCurrent);
 },
 
 createItem: function()
