@@ -39,8 +39,11 @@ if ($APPLICATION->mCode == 217)
 {
 	$APPLICATION->mLoginStudent->mUsername = $_GET["username"]; 
 	$APPLICATION->mLoginStudent->mPassword = $_GET["password"]; 
-	$APPLICATION->mLoginStudent->mFirstname = $_GET["first_name"]; 
+	$APPLICATION->mLoginStudent->mFirstName = $_GET["first_name"]; 
 	$APPLICATION->mLoginStudent->mLastName = $_GET["last_name"]; 
+	
+	error_log($APPLICATION->mLoginStudent->mFirstName);
+	error_log($APPLICATION->mLoginStudent->mLastName);
 }
 
 if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18)

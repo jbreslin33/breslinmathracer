@@ -286,6 +286,7 @@ Extends: Game,
                 	{
                         	APPLICATION.mSent = true;
 				APPLICATION.signupStudent(username,passwordOne,first_name,last_name);
+				
                 	}
                 	else
                 	{

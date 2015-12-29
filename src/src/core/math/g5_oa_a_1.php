@@ -1176,8 +1176,9 @@ initialize: function(sheet)
 	
 	this.mChopWhiteSpace = false;
 
-	this.setQuestion('What is the name for a mathematical phrase containing only numbers and one or more operation symbols?'); 
-        this.setAnswer('numerical expression',0);
+	this.setQuestion('Is 7+3 an equation or an expression?'); 
+        this.setAnswer('expression',0);
+        this.setAnswer('an expression',1);
 }
 });
 
@@ -1195,8 +1196,9 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_0_39';
 	
-	this.setQuestion('What is the name for a mathematical phrase containing numbers, letters and one or more operation symbols?'); 
+	this.setQuestion('Is 7+x an equation or an expression?'); 
         this.setAnswer('expression',0);
+        this.setAnswer('an expression',1);
 }
 });
 
@@ -1214,7 +1216,8 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_0_38';
 	
-	this.setQuestion('A written statement indicating the equality of two expressions. It consists of a sequence of symbols that is split into left and right sides joined by an equal sign.'); 
+	this.setQuestion('Is 7+x=10 an equation or an expression?'); 
         this.setAnswer('equation',0);
+        this.setAnswer('an equation',1);
 }
 });
