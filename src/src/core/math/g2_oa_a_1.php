@@ -1,4 +1,134 @@
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_25',2.0225,'2.oa.a.1','Terra Nova 20' );
+*/
+
+var i_2_oa_a_1__25 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '2.oa.a.1_25';
+
+        // graph coords
+        var startX = 10;
+        var endX = 300;
+        var startY = 10;
+        var endY = 280;
+        var width = endX - startX;
+        var height = endY - startY;
+        var range = [0,10];
+
+        var rX1 = 10;
+        var rY1 = 50;
+        var rX2 = 350;
+        var rY2 = 300;
+
+        this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+        this.raphaelSizeX = rX2;
+        this.raphaelSizeY = rY2;
+
+        this.nm = new NameMachine();
+        this.ns = new NameSampler();
+
+        var r = Math.floor(Math.random()*3);
+        var l = Math.floor(Math.random()*3)+1;
+        var a = Math.floor(Math.random()*30)+11;
+        var b = Math.floor(Math.random()*30)+11;
+        var c = Math.floor(Math.random()*30)+11;
+        var d = Math.floor(Math.random()*30)+11;
+	var e = parseInt(a + b + c + d);
+
+	var f = 0;
+	var g = 0;
+	var h = 0;
+
+	while (e == f || e == g || e == h || f == g || f == h || g == h)
+	{
+        	var fr = Math.floor(Math.random()*2);
+        	var fn = Math.floor(Math.random()*10)+1;
+		if (fr == 0)
+		{
+			f = parseInt(e - fn);
+		}
+		else
+		{
+			f = parseInt(e + fn);
+		}
+
+        	var gr = Math.floor(Math.random()*2);
+        	var gn = Math.floor(Math.random()*10)+1;
+		if (gr == 0)
+		{
+			g = parseInt(e - gn);
+		}
+		else
+		{
+			g = parseInt(e + gn);
+		}
+        	
+		var hr = Math.floor(Math.random()*2);
+        	var hn = Math.floor(Math.random()*10)+1;
+		if (hr == 0)
+		{
+			h = parseInt(e - hn);
+		}
+		else
+		{
+			h = parseInt(e + hn);
+		}
+	}
+        var answer = '' + e;
+
+        // create ratioTable[rows][cols] to pass in to Table
+        var ratioTable = [['type of things','number of things'],['type of vegetable','number of vegetables'],['type of fruit','number of fruit']];
+
+        var head1 = ratioTable[r][0];
+        var head2 = ratioTable[r][1];
+
+        var tableData   = [[head1,head2],[1,''+a],[2,''+b],[3,''+c],[4,''+d]];
+
+        // create Table object
+        var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
+
+        if (r == 0)
+        {
+                this.setQuestion('' + 'The chart represents the amount of things that ' + this.ns.mNameOne + ' has. What are the total number of things that ' + this.ns.mNameOne + ' has?');
+        }
+        if (r == 1)
+        {
+                this.setQuestion('' + 'The chart represents the amount of different vegetables that ' + this.ns.mNameOne + ' plants each year. What are the total number of vegetables that ' + this.ns.mNameOne + ' has?');
+        }
+        if (r == 2)
+        {
+                this.setQuestion('' + 'The chart represents the amount of different fruits that ' + this.ns.mNameOne + ' plants each year. What are the total number of fruits that ' + this.ns.mNameOne + ' has?');
+        }
+
+        this.setAnswer('' + answer,0);
+        this.mButtonA.setAnswer('' + answer);
+
+        this.mButtonB.setAnswer('' + f);
+        this.mButtonC.setAnswer('' + g);
+        this.mButtonD.setAnswer('' + h);
+        
+	this.shuffle(10);
+  
+	this.mQuestionLabel.setPosition(560,155);
+	this.mQuestionLabel.setSize(350,200);
+//Size( = new Shape(730,50,400,55,this.mSheet.mGame,"","","");
+
+        this.mButtonA.setPosition(450,250);
+        this.mButtonB.setPosition(650,250);
+        this.mButtonC.setPosition(450,325);
+        this.mButtonD.setPosition(650,325);
+
+}
+});
+
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_24',2.0224,'2.oa.a.1','Terra Nova 19' );
