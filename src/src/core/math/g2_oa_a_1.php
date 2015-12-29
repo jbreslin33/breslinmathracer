@@ -41,8 +41,8 @@ initialize: function(sheet)
         var b = Math.floor(Math.random()*30)+11;
         var c = Math.floor(Math.random()*30)+11;
         var d = Math.floor(Math.random()*30)+11;
-
 	var e = parseInt(a + b + c + d);
+
 	var f = 0;
 	var g = 0;
 	var h = 0;
@@ -111,26 +111,11 @@ initialize: function(sheet)
         this.setAnswer('' + answer,0);
         this.mButtonA.setAnswer('' + answer);
 
-        if (l == 1)
-        {
-                this.mButtonB.setAnswer('' + tableData[2][1]);
-                this.mButtonC.setAnswer('' + tableData[3][1]);
-                this.mButtonD.setAnswer('' + d);
-        }
-        if (l == 2)
-        {
-                this.mButtonB.setAnswer('' + tableData[1][1]);
-                this.mButtonC.setAnswer('' + tableData[3][1]);
-                this.mButtonD.setAnswer('' + d);
-        }
-        if (l == 3)
-        {
-                this.mButtonB.setAnswer('' + tableData[1][1]);
-                this.mButtonC.setAnswer('' + tableData[2][1]);
-                this.mButtonD.setAnswer('' + d);
-        }
-        this.shuffle(10);
-
+        this.mButtonB.setAnswer('' + f);
+        this.mButtonC.setAnswer('' + g);
+        this.mButtonD.setAnswer('' + h);
+        
+	this.shuffle(10);
 
         this.mButtonA.setPosition(450,250);
         this.mButtonB.setPosition(650,250);
