@@ -39,9 +39,50 @@ initialize: function(sheet)
         var l = Math.floor(Math.random()*3)+1;
         var a = Math.floor(Math.random()*30)+11;
         var b = Math.floor(Math.random()*30)+11;
-        var c = parseInt(100 - (a+b));
-        var d = Math.floor(Math.random()*10)+1;
-        var answer = '';
+        var c = Math.floor(Math.random()*30)+11;
+        var d = Math.floor(Math.random()*30)+11;
+
+	var e = parseInt(a + b + c + d);
+	var f = 0;
+	var g = 0;
+	var h = 0;
+
+	while (e == f || e == g || e == h || f == g || f == h || g == h)
+	{
+        	var fr = Math.floor(Math.random()*2);
+        	var fn = Math.floor(Math.random()*10)+1;
+		if (fr == 0)
+		{
+			f = parseInt(e - fn);
+		}
+		else
+		{
+			f = parseInt(e + fn);
+		}
+
+        	var gr = Math.floor(Math.random()*2);
+        	var gn = Math.floor(Math.random()*10)+1;
+		if (gr == 0)
+		{
+			g = parseInt(e - gn);
+		}
+		else
+		{
+			g = parseInt(e + gn);
+		}
+        	
+		var hr = Math.floor(Math.random()*2);
+        	var hn = Math.floor(Math.random()*10)+1;
+		if (hr == 0)
+		{
+			h = parseInt(e - hn);
+		}
+		else
+		{
+			h = parseInt(e + hn);
+		}
+	}
+        var answer = '' + e;
 
         // create ratioTable[rows][cols] to pass in to Table
         var ratioTable = [['teams','players'],['rooms','students'],['trays','cupcakes']];
@@ -49,26 +90,24 @@ initialize: function(sheet)
         var head1 = ratioTable[r][0];
         var head2 = ratioTable[r][1];
 
-        var tableData   = [[head1,head2],[1,''+a],[2,''+b],[3,''+c]];
+        var tableData   = [[head1,head2],[1,''+a],[2,''+b],[3,''+c],[4,''+d]];
 
         // create Table object
         var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
 
         if (r == 0)
         {
-                this.setQuestion('' + 'There are 3 teams in the ' + this.ns.mPlayedActivityOne + ' league. What percent of the total number of players are on team ' + l + '?');
+                this.setQuestion('' + 'The chart represents the amount of things that ' + this.ns.mNameOne + ' has. What are the total number of things that ' + this.ns.mNameOne + ' has?');
         }
         if (r == 1)
         {
-                var grade = this.nm.getGrade();
-                this.setQuestion('' + 'There are 3 Classrooms in the ' + grade + ' grade at ' + this.ns.mSchoolOne + '. What percent of the total number of students in the ' + grade + ' grade are in room ' + l + '?');
+                this.setQuestion('' + 'The chart represents the amount of different vegetables that ' + this.ns.mNameOne + ' plants each year. What are the total number of vegetables that ' + this.ns.mNameOne + ' has?');
         }
         if (r == 2)
         {
-                this.setQuestion('' + this.ns.mNameOne + ' is having a birthday. There are 3 trays with cupcakes for ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' party. What percent of the total number of cupcakes are on tray ' + l + '?');
+                this.setQuestion('' + 'The chart represents the amount of different fruits that ' + this.ns.mNameOne + ' plants each year. What are the total number of fruits that ' + this.ns.mNameOne + ' has?');
         }
 
-        answer = tableData[l][1];
         this.setAnswer('' + answer,0);
         this.mButtonA.setAnswer('' + answer);
 
