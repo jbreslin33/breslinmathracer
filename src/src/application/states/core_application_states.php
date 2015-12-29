@@ -808,8 +808,11 @@ execute: function(application)
 			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen = itemAttemptsTransactionCodesSeventeen.split(":");
 			
 			//Eightteen	
-			var itemAttemptsTypeEighteen = APPLICATION.mResponseArray[38];
-			APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
+			if (APPLICATION.mResponseArray[38])
+			{
+				var itemAttemptsTypeEighteen = APPLICATION.mResponseArray[38];
+				APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
+			}
 	
 			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
 			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
