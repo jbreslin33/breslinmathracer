@@ -1941,11 +1941,13 @@ var NameSampler = new Class(
                 this.mThingOne      = this.mNameMachine.getThing();
                 this.mThingTwo      = this.mNameMachine.getThing();
                 this.mThingThree      = this.mNameMachine.getThing();
+                this.mThingFour      = this.mNameMachine.getThing();
 		
 		this.mThingArray = new Array(); 
 		this.mThingArray.push(this.mThingOne);
 		this.mThingArray.push(this.mThingTwo);
 		this.mThingArray.push(this.mThingThree);
+		this.mThingArray.push(this.mThingFour);
 
                 //rope
                 this.mRope      = this.mNameMachine.getRope();

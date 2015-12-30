@@ -16,7 +16,7 @@ getDev: function()
 	//return '3.g.a.1_1';
 	//return '3.md.b.3_1';
 	//return '3.md.b.3_1';
-	return '2.oa.a.1_25';
+	return '2.oa.a.1_24';
 },
 
 getItem: function(id)
