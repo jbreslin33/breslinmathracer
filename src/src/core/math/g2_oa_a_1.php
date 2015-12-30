@@ -35,7 +35,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var r = Math.floor(Math.random()*3);
-	r = 0;
+	r = 2;
         var l = Math.floor(Math.random()*3)+1;
         var a = Math.floor(Math.random()*30)+11;
         var b = Math.floor(Math.random()*30)+11;
@@ -97,6 +97,20 @@ initialize: function(sheet)
 		tableData[2][0] = '' + this.ns.mThingTwo;
 		tableData[3][0] = '' + this.ns.mThingThree;
 		tableData[4][0] = '' + this.ns.mThingFour;
+	}
+	if (r == 1)
+	{
+		tableData[1][0] = '' + this.ns.mVegetableOne;
+		tableData[2][0] = '' + this.ns.mVegetableTwo;
+		tableData[3][0] = '' + this.ns.mVegetableThree;
+		tableData[4][0] = '' + this.ns.mVegetableFour;
+	}
+	if (r == 2)
+	{
+		tableData[1][0] = '' + this.ns.mFruitOne;
+		tableData[2][0] = '' + this.ns.mFruitTwo;
+		tableData[3][0] = '' + this.ns.mFruitThree;
+		tableData[4][0] = '' + this.ns.mFruitFour;
 	}
 
         // create Table object

@@ -248,6 +248,10 @@ var NameMachine = new Class(
 		this.mVegetableArray.push("onions");
 		this.mVegetableArray.push("mushrooms");
 		this.mVegetableArray.push("potatoes");
+		this.mVegetableArray.push("carrots");
+		this.mVegetableArray.push("peppers");
+		this.mVegetableArray.push("peas");
+		this.mVegetableArray.push("string beans");
 		
 		//color
 		this.mColorArray = new Array();
@@ -1983,20 +1987,24 @@ var NameSampler = new Class(
                 this.mVegetableOne = this.mNameMachine.getVegetable();
                 this.mVegetableTwo = this.mNameMachine.getVegetable();
                 this.mVegetableThree = this.mNameMachine.getVegetable();
+                this.mVegetableFour = this.mNameMachine.getVegetable();
 		
 		this.mVegetableArray = new Array(); 
 		this.mVegetableArray.push(this.mVegetableOne);
 		this.mVegetableArray.push(this.mVegetableTwo);
 		this.mVegetableArray.push(this.mVegetableThree);
+		this.mVegetableArray.push(this.mVegetableFour);
 
                 this.mFruitOne = this.mNameMachine.getFruit();
                 this.mFruitTwo = this.mNameMachine.getFruit();
                 this.mFruitThree = this.mNameMachine.getFruit();
+                this.mFruitFour = this.mNameMachine.getFruit();
 
 		this.mFruitArray = new Array(); 
 		this.mFruitArray.push(this.mFruitOne);
 		this.mFruitArray.push(this.mFruitTwo);
 		this.mFruitArray.push(this.mFruitThree);
+		this.mFruitArray.push(this.mFruitFour);
 
                 this.mSubjectOne = this.mNameMachine.getSubject();
                 this.mSubjectTwo = this.mNameMachine.getSubject();
