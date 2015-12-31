@@ -36,51 +36,72 @@ initialize: function(sheet)
 
         var r = Math.floor(Math.random()*3);
         var l = Math.floor(Math.random()*3)+1;
-        var a = Math.floor(Math.random()*30)+11;
-        var b = Math.floor(Math.random()*30)+11;
-        var c = Math.floor(Math.random()*30)+11;
-        var d = Math.floor(Math.random()*30)+11;
-	var e = parseInt(a + b + c + d);
+	r = 0;
 
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
 	var f = 0;
 	var g = 0;
 	var h = 0;
 
-	while (e == f || e == g || e == h || f == g || f == h || g == h)
+	var rx = 0;
+	var ry = 0;
+	var x = 0;
+	var y = 0;
+	
+	while (e < 30 || e == f || e == g || e == h || f == g || f == h || g == h)
 	{
-        	var fr = Math.floor(Math.random()*2);
-        	var fn = Math.floor(Math.random()*10)+1;
-		if (fr == 0)
+       		a = Math.floor(Math.random()*130)+20;
+       		b = Math.floor(Math.random()*130)+20;
+       		c = Math.floor(Math.random()*130)+20;
+       		d = Math.floor(Math.random()*130)+20;
+	
+        	rx = Math.floor(Math.random()*4);
+        	ry = Math.floor(Math.random()*4);
+
+		if (rx == 0)
 		{
-			f = parseInt(e - fn);
+			x = a;				
 		}
-		else
+		if (rx == 1)
 		{
-			f = parseInt(e + fn);
+			x = b;				
+		}
+		if (rx == 2)
+		{
+			x = c;				
+		}
+		if (rx == 3)
+		{
+			x = d;				
+		}
+	
+		if (ry == 0)
+		{
+			y = a;				
+		}
+		if (ry == 1)
+		{
+			y = b;				
+		}
+		if (ry == 2)
+		{
+			y = c;				
+		}
+		if (ry == 3)
+		{
+			y = d;				
 		}
 
-        	var gr = Math.floor(Math.random()*2);
-        	var gn = Math.floor(Math.random()*10)+1;
-		if (gr == 0)
-		{
-			g = parseInt(e - gn);
-		}
-		else
-		{
-			g = parseInt(e + gn);
-		}
-        	
-		var hr = Math.floor(Math.random()*2);
-        	var hn = Math.floor(Math.random()*10)+1;
-		if (hr == 0)
-		{
-			h = parseInt(e - hn);
-		}
-		else
-		{
-			h = parseInt(e + hn);
-		}
+		e = parseInt(x - y);
+       		f = Math.floor(Math.random()*30)+10;
+       		g = Math.floor(Math.random()*40)+20;
+       		h = Math.floor(Math.random()*50)+30;
 	}
+
         var answer = '' + e;
 
         // create ratioTable[rows][cols] to pass in to Table
@@ -117,7 +138,7 @@ initialize: function(sheet)
 
         if (r == 0)
         {
-                this.setQuestion('' + 'The chart represents the amount of things that ' + this.ns.mNameOne + ' has. What are the total number of things that ' + this.ns.mNameOne + ' has?');
+                this.setQuestion('' + 'The chart represents the amount of things that ' + this.ns.mNameOne + ' has. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' have than ' + tableData[parseInt(ry+1)][0] + '?');
         }
         if (r == 1)
         {
