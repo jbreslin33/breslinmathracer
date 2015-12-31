@@ -15,7 +15,7 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_25';
 
         var r = Math.floor(Math.random()*4);
-	r = 3;
+	r = 2;
 	
 	var a = 0;
 	var b = 0;
@@ -28,6 +28,20 @@ initialize: function(sheet)
 	var z = 0;
 
 	//9x3+24=51
+  	if (r == 2)
+        {
+                w = Math.floor(Math.random()*8)+2;
+                x = Math.floor(Math.random()*8)+2;
+                y = Math.floor(Math.random()*8)+2;
+                var t = Math.floor(Math.random()*8)+2;
+		w = parseInt(x * y + t); 
+                z = parseInt(w - x * y);
+                b = '' + '+ and +';
+                c = '' + '/ and +';
+                a = '' + '- and X';
+                d = '' + 'X and +';
+        }
+
 	if (r == 3)
 	{
         	w = Math.floor(Math.random()*8)+2;
