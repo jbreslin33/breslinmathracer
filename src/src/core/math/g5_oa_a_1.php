@@ -14,21 +14,41 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_25';
 
-        this.a = Math.floor(Math.random()*8)+2;
-        this.b = Math.floor(Math.random()*8)+2;
-        this.c = Math.floor(Math.random()*8)+2;
-        this.d = parseInt(this.a * this.b);
+        var r = Math.floor(Math.random()*4);
+	r = 3;
 	
-        this.answer = '' + parseInt(this.a * this.b) + ' x ' + this.c;
-	this.setAnswer('' + this.answer,0);
-        this.mButtonA.setAnswer('' + this.answer);
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
 
-        this.mButtonB.setAnswer('' + parseInt(this.a + this.b) + ' x ' + this.c);
-        this.mButtonC.setAnswer('' + parseInt(this.a + this.b) + ' x ' + parseInt(this.a + this.c));
-        this.mButtonD.setAnswer('' + parseInt(this.a * this.b) + ' x ' + parseInt(this.a * this.c));
+	var w = 0;
+	var x = 0;
+	var y = 0;
+	var z = 0;
+
+	//9x3+24=51
+	if (r == 3)
+	{
+        	w = Math.floor(Math.random()*8)+2;
+        	x = Math.floor(Math.random()*8)+2;
+        	y = Math.floor(Math.random()*89)+10;
+		z = parseInt(w * x + y);
+		b = '' + '+ and +'; 
+		c = '' + '/ and +'; 
+		d = '' + '- and X'; 
+		a = '' + 'X and +'; 
+	}
+
+	this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
+
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
+        this.mButtonD.setAnswer('' + d);
         this.shuffle(10);
 
-        this.setQuestion('Which of these is the same as: ' + this.a + ' &times (' + this.b + ' &times ' + this.c + ')');
+        this.setQuestion('Which of these combination of operations will make following equation true? ' + w + ' _ ' + x + ' _ ' + y + ' = ' + z  );
 }
 });
 
