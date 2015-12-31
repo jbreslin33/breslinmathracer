@@ -1,3 +1,38 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_25',5.0125,'5.oa.a.1','Terra Nova 21',2);
+*/
+
+var i_5_oa_a_1__25 = new Class(
+{
+Extends: FourButtonItem,
+
+initialize: function(sheet)
+{
+	this.parent(sheet);
+ 	this.mChopWhiteSpace = false;
+
+        this.mType = '5.oa.a.1_25';
+
+        this.a = Math.floor(Math.random()*8)+2;
+        this.b = Math.floor(Math.random()*8)+2;
+        this.c = Math.floor(Math.random()*8)+2;
+        this.d = parseInt(this.a * this.b);
+	
+        this.answer = '' + parseInt(this.a * this.b) + ' x ' + this.c;
+	this.setAnswer('' + this.answer,0);
+        this.mButtonA.setAnswer('' + this.answer);
+
+        this.mButtonB.setAnswer('' + parseInt(this.a + this.b) + ' x ' + this.c);
+        this.mButtonC.setAnswer('' + parseInt(this.a + this.b) + ' x ' + parseInt(this.a + this.c));
+        this.mButtonD.setAnswer('' + parseInt(this.a * this.b) + ' x ' + parseInt(this.a * this.c));
+        this.shuffle(10);
+
+        this.setQuestion('Which of these is the same as: ' + this.a + ' &times (' + this.b + ' &times ' + this.c + ')');
+}
+});
+
+
 /*
 insert into item_types(id,progression,core_standards_id,description,active_code) values ('5.oa.a.1_24',5.0124,'5.oa.a.1','Terra Nova 12',2);
 */
