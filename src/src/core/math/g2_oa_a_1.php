@@ -36,7 +36,6 @@ initialize: function(sheet)
 
         var r = Math.floor(Math.random()*3);
         var l = Math.floor(Math.random()*3)+1;
-	r = 0;
 
 	var a = 0;
 	var b = 0;
@@ -142,11 +141,11 @@ initialize: function(sheet)
         }
         if (r == 1)
         {
-                this.setQuestion('' + 'The chart represents the amount of different vegetables that ' + this.ns.mNameOne + ' plants each year. What are the total number of vegetables that ' + this.ns.mNameOne + ' has?');
+                this.setQuestion('' + 'The chart represents the amount of different vegetables that ' + this.ns.mNameOne + ' plants each year. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' plant than ' + tableData[parseInt(ry+1)][0] + '?');
         }
         if (r == 2)
         {
-                this.setQuestion('' + 'The chart represents the amount of different fruits that ' + this.ns.mNameOne + ' plants each year. What are the total number of fruits that ' + this.ns.mNameOne + ' has?');
+                this.setQuestion('' + 'The chart represents the amount of different fruits that ' + this.ns.mNameOne + ' plants each year. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' plant than ' + tableData[parseInt(ry+1)][0] + '?');
         }
 
         this.setAnswer('' + answer,0);
