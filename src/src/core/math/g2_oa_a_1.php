@@ -31,7 +31,7 @@ initialize: function(sheet)
 
 	while (a == b || a == c || a == d || b == c || b == d || c == d || a < 1 || b < 1 || c < 1 || d < 1)
 	{ 
-        	a = '' + n;
+        	a = n;
 
        		var rb = Math.floor(Math.random()*2);
        		var nb = Math.floor(Math.random()*9)+1;
@@ -65,7 +65,6 @@ initialize: function(sheet)
 		{
 			d = parseInt(a - nd);
 		}
-
 	}
 
         if (r == 0)
