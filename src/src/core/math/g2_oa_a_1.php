@@ -35,7 +35,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var r = Math.floor(Math.random()*3);
-	r = 0;
+	r = 2;
         var l = Math.floor(Math.random()*3)+1;
 
        	var a = Math.floor(Math.random()*1000)+100000;
@@ -84,11 +84,11 @@ initialize: function(sheet)
         }
         if (r == 1)
         {
-                this.setQuestion('' + 'The chart represents the amount of different vegetables that ' + this.ns.mNameOne + ' plants each year. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' plant than ' + tableData[parseInt(ry+1)][0] + '?');
+                this.setQuestion('' + 'The chart represents the amount of these three vegetables that ' + this.ns.mNameOne + ' has planted. ' + this.ns.mNameOne + ' has planted more ' + this.ns.mVegetableFour + ' than any other vegetable. What number could be the amount of ' + this.ns.mVegetableFour + ' ' + this.ns.mNameOne + ' has planted?');
         }
         if (r == 2)
         {
-                this.setQuestion('' + 'The chart represents the amount of different fruits that ' + this.ns.mNameOne + ' plants each year. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' plant than ' + tableData[parseInt(ry+1)][0] + '?');
+                this.setQuestion('' + 'The chart represents the amount of these three fruits that ' + this.ns.mNameOne + ' has planted. ' + this.ns.mNameOne + ' has planted more ' + this.ns.mFruitFour + ' than any other fruit. What number could be the amount of ' + this.ns.mFruitFour + ' ' + this.ns.mNameOne + ' has planted?');
         }
 
         this.setAnswer('' + answer,0);
