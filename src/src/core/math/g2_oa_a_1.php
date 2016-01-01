@@ -16,37 +16,73 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var r = Math.floor(Math.random()*3);
+       	
+	var m = Math.floor(Math.random()*30)+20;
+	m = m * 2;
 
-       	var a = Math.floor(Math.random()*1000)+100000;
-       	var b = Math.floor(Math.random()*1000)+a;
-       	var c = Math.floor(Math.random()*1000)+b;
-       	var d = Math.floor(Math.random()*1000)+c;
-       	var e = Math.floor(Math.random()*1000)+d;
-       	var f = Math.floor(Math.random()*1000)+e;
-       	var g = Math.floor(Math.random()*1000)+f;
-	g = g + 10;
+       	var n = Math.floor(Math.random()*13)+7;
+	var x = parseInt(m + n);   
+	var y = parseInt(m - n);   
+        
+	var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
 
-        var answer = '' + g;
+	while (a == b || a == c || a == d || b == c || b == d || c == d || a < 1 || b < 1 || c < 1 || d < 1)
+	{ 
+        	a = '' + n;
+
+       		var rb = Math.floor(Math.random()*2);
+       		var nb = Math.floor(Math.random()*9)+1;
+		if (rb == 0)
+		{
+			b = parseInt(a + nb);
+		}
+		else
+		{
+			b = parseInt(a - nb);
+		}
+       		
+		var rc = Math.floor(Math.random()*2);
+       		var nc = Math.floor(Math.random()*9)+1;
+		if (rc == 0)
+		{
+			c = parseInt(a + nc);
+		}
+		else
+		{
+			c = parseInt(a - nc);
+		}
+		
+		var rd = Math.floor(Math.random()*2);
+       		var nd = Math.floor(Math.random()*9)+1;
+		if (rd == 0)
+		{
+			d = parseInt(a + nd);
+		}
+		else
+		{
+			d = parseInt(a - nd);
+		}
+
+	}
 
         if (r == 0)
         {
-                this.setQuestion('' + 'The chart represents the amount of these three things that ' + this.ns.mNameOne + ' has. ' + this.ns.mNameOne + ' has more ' + this.ns.mThingFour + ' than any other thing. What number could be the amount of ' + this.ns.mThingFour + ' ' + this.ns.mNameOne + ' has?');
+                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mVegetableOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mVegetableOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mVegetableOne + ' in each basket?');
         }
         if (r == 1)
         {
-                this.setQuestion('' + 'The chart represents the amount of these three vegetables that ' + this.ns.mNameOne + ' has planted. ' + this.ns.mNameOne + ' has planted more ' + this.ns.mVegetableFour + ' than any other vegetable. What number could be the amount of ' + this.ns.mVegetableFour + ' ' + this.ns.mNameOne + ' has planted?');
-        }
-        if (r == 2)
-        {
-                this.setQuestion('' + 'The chart represents the amount of these three fruits that ' + this.ns.mNameOne + ' has planted. ' + this.ns.mNameOne + ' has planted more ' + this.ns.mFruitFour + ' than any other fruit. What number could be the amount of ' + this.ns.mFruitFour + ' ' + this.ns.mNameOne + ' has planted?');
+                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
         }
 
-        this.setAnswer('' + answer,0);
-        this.mButtonA.setAnswer('' + answer);
+        this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
 
-        this.mButtonB.setAnswer('' + d);
-        this.mButtonC.setAnswer('' + e);
-        this.mButtonD.setAnswer('' + f);
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
+        this.mButtonD.setAnswer('' + d);
         
 	this.shuffle(10);
 }
