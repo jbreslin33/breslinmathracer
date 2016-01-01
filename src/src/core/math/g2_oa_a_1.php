@@ -38,13 +38,14 @@ initialize: function(sheet)
 	r = 0;
         var l = Math.floor(Math.random()*3)+1;
 
-       	var a = Math.floor(Math.random()*130)+20;
-       	var b = Math.floor(Math.random()*130)+20;
-       	var c = Math.floor(Math.random()*130)+20;
-       	var d = Math.floor(Math.random()*130)+20;
-       	var e = Math.floor(Math.random()*130)+20;
-       	var f = Math.floor(Math.random()*30)+10;
-       	var g = Math.floor(Math.random()*40)+20;
+       	var a = Math.floor(Math.random()*1000)+100000;
+       	var b = Math.floor(Math.random()*1000)+a;
+       	var c = Math.floor(Math.random()*1000)+b;
+       	var d = Math.floor(Math.random()*1000)+c;
+       	var e = Math.floor(Math.random()*1000)+d;
+       	var f = Math.floor(Math.random()*1000)+e;
+       	var g = Math.floor(Math.random()*1000)+f;
+	g = g + 10;
 
         var answer = '' + g;
 
