@@ -15,7 +15,6 @@ initialize: function(sheet)
         this.mType = '5.oa.a.1_25';
 
         var r = Math.floor(Math.random()*4);
-	r = 1;
 	
 	var a = 0;
 	var b = 0;
@@ -26,6 +25,18 @@ initialize: function(sheet)
 	var x = 0;
 	var y = 0;
 	var z = 0;
+  	
+	if (r == 0)
+        {
+                w = Math.floor(Math.random()*38)+2;
+                x = Math.floor(Math.random()*8)+2;
+                y = Math.floor(Math.random()*8)+2;
+                z = parseInt(w + x + y);
+                a = '' + '+ and +';
+                c = '' + '/ and +';
+                b = '' + '- and X';
+                d = '' + 'X and +';
+        }
  
 	if (r == 1)
         {
