@@ -1,5 +1,116 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_26',2.0226,'2.oa.a.1','Terra Nova 22' );
+*/
+
+var i_2_oa_a_1__26 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '2.oa.a.1_26';
+
+        // graph coords
+        var startX = 10;
+        var endX = 300;
+        var startY = 10;
+        var endY = 280;
+        var width = endX - startX;
+        var height = endY - startY;
+        var range = [0,10];
+
+        var rX1 = 10;
+        var rY1 = 50;
+        var rX2 = 350;
+        var rY2 = 300;
+
+        this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+        this.raphaelSizeX = rX2;
+        this.raphaelSizeY = rY2;
+
+        this.nm = new NameMachine();
+        this.ns = new NameSampler();
+
+        var r = Math.floor(Math.random()*3);
+	r = 0;
+        var l = Math.floor(Math.random()*3)+1;
+
+       	var a = Math.floor(Math.random()*130)+20;
+       	var b = Math.floor(Math.random()*130)+20;
+       	var c = Math.floor(Math.random()*130)+20;
+       	var d = Math.floor(Math.random()*130)+20;
+       	var e = Math.floor(Math.random()*130)+20;
+       	var f = Math.floor(Math.random()*30)+10;
+       	var g = Math.floor(Math.random()*40)+20;
+
+        var answer = '' + g;
+
+        // create ratioTable[rows][cols] to pass in to Table
+        var ratioTable = [['type of things','number of things'],['type of vegetable','number of vegetables'],['type of fruit','number of fruit']];
+
+        var head1 = ratioTable[r][0];
+        var head2 = ratioTable[r][1];
+
+        var tableData   = [[head1,head2],[1,''+a],[2,''+b],[3,''+c]];
+	if (r == 0)
+	{
+		tableData[1][0] = '' + this.ns.mThingOne;
+		tableData[2][0] = '' + this.ns.mThingTwo;
+		tableData[3][0] = '' + this.ns.mThingThree;
+	}
+	if (r == 1)
+	{
+		tableData[1][0] = '' + this.ns.mVegetableOne;
+		tableData[2][0] = '' + this.ns.mVegetableTwo;
+		tableData[3][0] = '' + this.ns.mVegetableThree;
+	}
+	if (r == 2)
+	{
+		tableData[1][0] = '' + this.ns.mFruitOne;
+		tableData[2][0] = '' + this.ns.mFruitTwo;
+		tableData[3][0] = '' + this.ns.mFruitThree;
+	}
+
+        // create Table object
+        var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
+
+        if (r == 0)
+        {
+                this.setQuestion('' + 'The chart represents the amount of these three things that ' + this.ns.mNameOne + ' has. ' + this.ns.mNameOne + ' has more ' + this.ns.mThingFour + ' than any other thing. What number could be the amount of ' + this.ns.mThingFour + ' ' + this.ns.mNameOne + ' has?');
+        }
+        if (r == 1)
+        {
+                this.setQuestion('' + 'The chart represents the amount of different vegetables that ' + this.ns.mNameOne + ' plants each year. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' plant than ' + tableData[parseInt(ry+1)][0] + '?');
+        }
+        if (r == 2)
+        {
+                this.setQuestion('' + 'The chart represents the amount of different fruits that ' + this.ns.mNameOne + ' plants each year. How many more ' + tableData[parseInt(rx+1)][0] + ' does ' + this.ns.mNameOne + ' plant than ' + tableData[parseInt(ry+1)][0] + '?');
+        }
+
+        this.setAnswer('' + answer,0);
+        this.mButtonA.setAnswer('' + answer);
+
+        this.mButtonB.setAnswer('' + d);
+        this.mButtonC.setAnswer('' + e);
+        this.mButtonD.setAnswer('' + f);
+        
+	this.shuffle(10);
+  
+	this.mQuestionLabel.setPosition(560,155);
+	this.mQuestionLabel.setSize(350,200);
+
+        this.mButtonA.setPosition(450,250);
+        this.mButtonB.setPosition(650,250);
+        this.mButtonC.setPosition(450,325);
+        this.mButtonD.setPosition(650,325);
+
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_25',2.0225,'2.oa.a.1','Terra Nova 20' );
 */
 
