@@ -1,4 +1,93 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_7',3.0307,'3.oa.a.3','Terra Nova 24' );
+*/
+
+var i_3_oa_a_3__7 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '3.oa.a.3_7';
+
+        this.nm = new NameMachine();
+        this.ns = new NameSampler();
+
+        var r = Math.floor(Math.random()*3);
+
+        var m = Math.floor(Math.random()*30)+20;
+        m = m * 2;
+
+        var n = Math.floor(Math.random()*13)+7;
+        var x = parseInt(m + n);
+        var y = parseInt(m - n);
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
+
+        while (a == b || a == c || a == d || b == c || b == d || c == d || a < 1 || b < 1 || c < 1 || d < 1)
+        {
+                a = n;
+
+                var rb = Math.floor(Math.random()*2);
+                var nb = Math.floor(Math.random()*9)+1;
+                if (rb == 0)
+                {
+                        b = parseInt(a + nb);
+                }
+                else
+                {
+                        b = parseInt(a - nb);
+                }
+
+                var rc = Math.floor(Math.random()*2);
+                var nc = Math.floor(Math.random()*9)+1;
+                if (rc == 0)
+                {
+                        c = parseInt(a + nc);
+                }
+                else
+                {
+                        c = parseInt(a - nc);
+                }
+
+                var rd = Math.floor(Math.random()*2);
+                var nd = Math.floor(Math.random()*9)+1;
+                if (rd == 0)
+                {
+                        d = parseInt(a + nd);
+                }
+                else
+                {
+                        d = parseInt(a - nd);
+                }
+        }
+
+        if (r == 0)
+        {
+                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mVegetableOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mVegetableOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mVegetableOne + ' in each basket?');
+        }
+        if (r == 1)
+        {
+                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
+        }
+
+        this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
+
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
+        this.mButtonD.setAnswer('' + d);
+
+        this.shuffle(10);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.oa.a.3_6',3.0306,'3.oa.a.3','Terra Nova 2');
 */
 
