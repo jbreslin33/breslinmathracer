@@ -30,6 +30,7 @@ initialize: function(game)
 	this.mIDArray.push('' + '2.oa.a.1_26'); //22
         //skip pyramid 23 for now
         this.mIDArray.push('' + '3.oa.a.3_7'); //24
+        this.mIDArray.push('' + '3.oa.a.3_8'); //25
 },
 
 pickItem: function()
