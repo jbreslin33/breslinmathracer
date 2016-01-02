@@ -34,10 +34,13 @@ initialize: function(sheet)
         var c = 'c';
         var d = 'd';
 
+	a = '' + 'n &times ' + y + ' = ' + x;  
+
+
 
         if (r == 0)
         {
-                this.setQuestion('' + this.ns.mNameOne + ' has ' + x + ' ' + this.ns.mVegetableOne + ' to make gift baskets. Each basket can hold ' + y + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' used the equation ' + x + ' &divide ' + y + ' = ' + z + ' to find the number of baskets he will need to fill with ' + this.ns.mVegetableOne + '?');
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + x + ' ' + this.ns.mVegetableOne + ' to make gift baskets. Each basket can hold ' + y + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' used the equation ' + x + ' &divide ' + y + ' = n to find the number of baskets ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will need to fill with ' + this.ns.mVegetableOne + '. Which equation can ' + this.ns.mNameOne + ' use to check ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' answer?');
         }
         if (r == 1)
         {
