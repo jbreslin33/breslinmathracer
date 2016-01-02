@@ -14,6 +14,7 @@ initialize: function(sheet)
 
         this.nm = new NameMachine();
         this.ns = new NameSampler();
+ 	this.mChopWhiteSpace = false;
 
         var r = Math.floor(Math.random()*3);
 	r = 0;
@@ -34,9 +35,11 @@ initialize: function(sheet)
         var c = 'c';
         var d = 'd';
 
-	a = '' + 'n &times ' + y + ' = ' + x;  
-
-
+	//a = '' + 'n &times ' + y + ' = ' + x;  
+	a = '' + 'n X ' + y + ' = ' + x;  
+	b = '' + y + ' + n = ' + x;  
+	c = '' + x + ' - n = ' + y;  
+	d = '' + 'n &divide ' + y + ' = ' + x;  
 
         if (r == 0)
         {
