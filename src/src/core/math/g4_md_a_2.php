@@ -22,24 +22,38 @@ initialize: function(sheet)
         var x = 0;
         var y = 0;
         var z = 0;
+        
+	var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
 
-        while (y == z)
+        while (a == b || a == c || a == d || b == c || b == d || c == d)
         {
-                y = Math.floor(Math.random()*11)+2;
-                z = Math.floor(Math.random()*11)+2;
-                x = parseInt(y * z);
+                x = Math.floor(Math.random()*3)+1;
+                z = Math.floor(Math.random()*8)+2;
+	
+                var ry = Math.floor(Math.random()*3);
+		if (ry == 0)
+		{
+			y = 2;
+		}
+		if (ry == 1)
+		{
+			y = 4;
+		}
+		if (ry == 2)
+		{
+			y = 8;
+		}
+
+		a = parseInt(16 / y);
+		a = parseInt(a * x);
+		a = parseInt(a * z);
+		b = parseInt(x * y);
+		c = parseInt(x * z);
+		d = parseInt(z * y);
         }
-
-        var a = 'a';
-        var b = 'b';
-        var c = 'c';
-        var d = 'd';
-
-        //a = '' + 'n &times ' + y + ' = ' + x;
-        a = '' + 'n X ' + y + ' = ' + x;
-        b = '' + y + ' + n = ' + x;
-        c = '' + x + ' - n = ' + y;
-        d = '' + 'n &divide ' + y + ' = ' + x;
 
         if (r == 0)
         {
