@@ -17,7 +17,6 @@ initialize: function(sheet)
  	this.mChopWhiteSpace = false;
 
         var r = Math.floor(Math.random()*3);
-	r = 0;
 
 	var x = 0; 
         var y = 0;

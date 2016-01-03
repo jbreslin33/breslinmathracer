@@ -10,14 +10,14 @@ initialize: function(sheet)
 {
         this.parent(sheet);
 
-        this.mType = '4.md.a.3_26';
+        this.mType = '4.md.a.2_26';
 
         this.nm = new NameMachine();
         this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
 
         var r = Math.floor(Math.random()*3);
-        r = 0;
+	r = 0;
 
         var x = 0;
         var y = 0;
@@ -43,7 +43,7 @@ initialize: function(sheet)
 
         if (r == 0)
         {
-                this.setQuestion('' + this.ns.mNameOne + ' has ' + x + ' ' + this.ns.mVegetableOne + ' to make gift baskets. Each basket can hold ' + y + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' used the equation ' + x + ' &divide ' + y + ' = n to find the number of baskets ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will need to fill with ' + this.ns.mVegetableOne + '. Which equation can ' + this.ns.mNameOne + ' use to check ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' answer?');
+		this.setQuestion('' + this.ns.mNameOne + ' is making vegetable smoothies for the ' + this.ns.mPlayedActivityOne + ' team. The smoothie recipe calls for ' + x + ' pounds of ' + this.ns.mVegetableOne + ' per batch. The ' + this.ns.mVegetableOne + ' that ' + this.ns.mNameOne + ' will use come in ' + y + '-ounce jars. How many jars of ' + this.ns.mVegetableOne + ' does ' + this.ns.mNameOne + ' need to make ' + z + ' batches of vegetable smoothies? Remember 16 ounces = 1 pound.');       
         }
         if (r == 1)
         {
