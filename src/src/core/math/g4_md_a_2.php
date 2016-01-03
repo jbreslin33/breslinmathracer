@@ -17,7 +17,7 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
 
         var r = Math.floor(Math.random()*3);
-	r = 0;
+	r = 1;
 
         var x = 0;
         var y = 0;
@@ -61,7 +61,7 @@ initialize: function(sheet)
         }
         if (r == 1)
         {
-                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
+		this.setQuestion('' + this.ns.mNameOne + ' is making fruit smoothies for the ' + this.ns.mPlayedActivityOne + ' team. The smoothie recipe calls for ' + x + ' pounds of ' + this.ns.mFruitOne + ' per batch. The ' + this.ns.mFruitOne + ' that ' + this.ns.mNameOne + ' will use come in ' + y + '-ounce jars. How many jars of ' + this.ns.mFruitOne + ' does ' + this.ns.mNameOne + ' need to make ' + z + ' batches of fruit smoothies? Remember 16 ounces = 1 pound.');       
         }
 
         this.setAnswer('' + a,0);
