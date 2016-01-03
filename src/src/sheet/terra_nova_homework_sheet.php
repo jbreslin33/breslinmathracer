@@ -31,6 +31,7 @@ initialize: function(game)
 	//skip pyramid 23 for now
         this.mIDArray.push('' + '3.oa.a.3_7'); //24
         this.mIDArray.push('' + '3.oa.a.3_8'); //25
+        this.mIDArray.push('' + '4.md.a.2_26'); //26
          
 	this.mCurrentElement = 0;
 },

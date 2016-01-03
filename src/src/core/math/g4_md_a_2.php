@@ -1,5 +1,68 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_26',4.2526,'4.md.a.2','Terra Nova 26' );
+*/
+
+var i_4_md_a_2__26 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '4.md.a.3_26';
+
+        this.nm = new NameMachine();
+        this.ns = new NameSampler();
+        this.mChopWhiteSpace = false;
+
+        var r = Math.floor(Math.random()*3);
+        r = 0;
+
+        var x = 0;
+        var y = 0;
+        var z = 0;
+
+        while (y == z)
+        {
+                y = Math.floor(Math.random()*11)+2;
+                z = Math.floor(Math.random()*11)+2;
+                x = parseInt(y * z);
+        }
+
+        var a = 'a';
+        var b = 'b';
+        var c = 'c';
+        var d = 'd';
+
+        //a = '' + 'n &times ' + y + ' = ' + x;
+        a = '' + 'n X ' + y + ' = ' + x;
+        b = '' + y + ' + n = ' + x;
+        c = '' + x + ' - n = ' + y;
+        d = '' + 'n &divide ' + y + ' = ' + x;
+
+        if (r == 0)
+        {
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + x + ' ' + this.ns.mVegetableOne + ' to make gift baskets. Each basket can hold ' + y + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' used the equation ' + x + ' &divide ' + y + ' = n to find the number of baskets ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will need to fill with ' + this.ns.mVegetableOne + '. Which equation can ' + this.ns.mNameOne + ' use to check ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' answer?');
+        }
+        if (r == 1)
+        {
+                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
+        }
+
+        this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
+
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
+        this.mButtonD.setAnswer('' + d);
+
+        this.shuffle(10);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_25',4.2525,'4.md.a.2','');
 */
 var i_4_md_a_2__25 = new Class(

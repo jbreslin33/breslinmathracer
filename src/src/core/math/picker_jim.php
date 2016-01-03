@@ -16,7 +16,7 @@ getDev: function()
 	//return '3.g.a.1_1';
 	//return '3.md.b.3_1';
 	//return '3.md.b.3_1';
-	return '3.oa.a.3_8';
+	return '4.md.a.2_26';
 },
 
 getItem: function(id)
@@ -4609,6 +4609,10 @@ getItem: function(id)
         if (id == '4.md.a.2_25')
         {
                 return new i_4_md_a_2__25(this.mSheet);
+        }
+        if (id == '4.md.a.2_26')
+        {
+                return new i_4_md_a_2__26(this.mSheet);
         }
        
 	//4.md.b.4 
