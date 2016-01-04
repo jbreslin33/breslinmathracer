@@ -16,8 +16,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
 
-        var r = Math.floor(Math.random()*3);
-	r = 1;
+        var r = Math.floor(Math.random()*2);
 
         var x = 0;
         var y = 0;
