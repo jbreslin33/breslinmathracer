@@ -132,9 +132,9 @@ var pick = 0;
 
 	if (APPLICATION.mGame.mUnmastered > 10)
 	{
-		document.body.style.backgroundColor = "white";
+		document.body.style.backgroundColor = "red";
 	}
-	document.body.style.backgroundColor = "white";
+	document.body.style.backgroundColor = "grey";
 
         //set this as last for next run
  	APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;
