@@ -32,6 +32,8 @@ initialize: function(game)
         this.mIDArray.push('' + '3.oa.a.3_7'); //24
         this.mIDArray.push('' + '3.oa.a.3_8'); //25
         this.mIDArray.push('' + '4.md.a.2_26'); //26
+	//skip 27 for now
+        this.mIDArray.push('' + '4.oa.c.5_16'); //28
          
 	this.mCurrentElement = 0;
 },
