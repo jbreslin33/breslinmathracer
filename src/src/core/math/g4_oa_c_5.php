@@ -13,19 +13,46 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.a = Math.floor(Math.random()*2)+4;
-                this.a = 4;
-                this.d = Math.floor(Math.random()*99)+1;
-                var decimalA = new Decimal('' + this.a + '.' + this.d);
+		var a = 'a';
+		var b = 'a';
+		var c = 'a';
+		var d = 'a';
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets for $' + decimalA.getMoney() + ' each. Which of these shows how to find the total cost of the ' + this.a + ' tickets?');
-                var answer = '' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney();
-                this.setAnswer('' + answer,0);
+                var r = Math.floor(Math.random()*2); //add or subtract
+                var x = Math.floor(Math.random()*7)+3; //add or subtract how much??
+		var s = 0;
 
-                this.mButtonA.setAnswer('' + this.a + ' + $' + decimalA.getMoney());
-                this.mButtonB.setAnswer('' + '$' + decimalA.getMoney() + ' &divide ' + this.a);
-                this.mButtonC.setAnswer('' + '$' + decimalA.getMoney() + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a);
-                this.mButtonD.setAnswer('' + answer);
+		if (r == 0)
+		{
+                	s = Math.floor(Math.random()*20)+60; 
+		}
+		else
+		{
+                	s = Math.floor(Math.random()*20)+30; 
+		}
+
+                var pa = new Array(); 
+		for (var i = 0; i < 5; i++)
+		{
+			if (r == 0)
+			{
+				s = parseInt(s - x); 
+				pa.push(s);
+			}
+			else
+			{
+				s = parseInt(s + x); 
+				pa.push(s);
+			}
+		}
+
+                this.setQuestion('' + 'What is the rule for the following number pattern: ' + pa[0] + ',' + pa[1] + ',' + pa[2] + ',' + pa[3] + ',' + pa[4] + ',...');
+
+                this.setAnswer('' + a,0);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
+                this.mButtonD.setAnswer('' + d);
                 this.shuffle(10);
         }
 });
