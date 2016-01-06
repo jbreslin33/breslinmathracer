@@ -12,8 +12,7 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '3.g.a.1_1';
 
-	this.r = Math.floor(Math.random()*2);
-	this.r = 2; 
+	this.r = Math.floor(Math.random()*3);
 
 	this.labelArray = new Array();
 
