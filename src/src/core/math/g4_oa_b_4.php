@@ -10,6 +10,7 @@ Extends: FourButtonItem,
                 this.parent(sheet);
                 this.mType = '4.oa.b.4_23';
                 this.mChopWhiteSpace = false;
+                this.mStripCommas = false;
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
@@ -49,6 +50,7 @@ Extends: FourButtonItem,
 		n.push(27);
 		n.push(28);
 
+		//a
 		var aa = 0; 	
 		var ab = 0; 	
 		var ac = 0; 	
@@ -62,6 +64,21 @@ Extends: FourButtonItem,
 			ad = p[Math.floor(Math.random()*10)];
 		} 
 		a = '' + aa + ',' + ab + ',' + ac + ',' + ad;
+
+		//b
+              	var ba = 0;
+                var bb = 0;
+                var bc = 0;
+                var bd = 0;
+
+                while (ba == bb || ba == bc || ba == bd)
+                {
+                        ba = n[Math.floor(Math.random()*10)];
+                        bb = p[Math.floor(Math.random()*10)];
+                        bc = p[Math.floor(Math.random()*10)];
+                        bd = p[Math.floor(Math.random()*10)];
+                }
+                b = '' + ba + ',' + bb + ',' + bc + ',' + bd;
 
                 this.setQuestion('' + 'Which only shows prime numbers?');
                 this.setAnswer('' + a,0);
