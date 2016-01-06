@@ -34,6 +34,7 @@ initialize: function(game)
        	this.mIDArray.push('' + '4.md.a.2_26'); //26
         //skip 27 for now
         this.mIDArray.push('' + '4.oa.c.5_16'); //28
+        this.mIDArray.push('' + '4.oa.c.4_23'); //29
 
 	this.mCurrentElement = 0;
 },
