@@ -13,13 +13,39 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-		var a = 'a';
-		var b = 'a';
-		var c = 'a';
-		var d = 'a';
+		var a = '';
+		var b = '';
+		var c = '';
+		var d = '';
 
                 var r = Math.floor(Math.random()*2); //add or subtract
-                var x = Math.floor(Math.random()*7)+3; //add or subtract how much??
+
+                var an = Math.floor(Math.random()*7)+3; //add or subtract how much??
+		var bn = 0;
+		var cn = 0;
+		var dn = 0;
+
+		while (an == bn || an == bn || an == cn || an == dn || bn == cn || bn == dn || cn == dn)
+		{
+                	bn = Math.floor(Math.random()*9)+1; 
+                	cn = Math.floor(Math.random()*9)+1; 
+                	dn = Math.floor(Math.random()*9)+1; 
+			if (r == 0)
+			{
+				a = '' + 'subtract ' + an;
+				b = '' + 'subtract ' + bn;
+				c = '' + 'add ' + cn;
+				d = '' + 'add ' + dn;
+			}
+			else
+			{
+				a = '' + 'add ' + an;
+				b = '' + 'add ' + bn;
+				c = '' + 'subtract ' + cn;
+				d = '' + 'subtract ' + dn;
+			}
+		} 
+
 		var s = 0;
 
 		if (r == 0)
@@ -36,12 +62,12 @@ Extends: FourButtonItem,
 		{
 			if (r == 0)
 			{
-				s = parseInt(s - x); 
+				s = parseInt(s - an); 
 				pa.push(s);
 			}
 			else
 			{
-				s = parseInt(s + x); 
+				s = parseInt(s + an); 
 				pa.push(s);
 			}
 		}
