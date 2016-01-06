@@ -56,7 +56,7 @@ Extends: FourButtonItem,
 		var ac = 0; 	
 		var ad = 0; 	
 
-		while (aa == ab || aa == ac || aa == ad)
+		while (aa == ab || aa == ac || aa == ad || ab == ac || ac == ad)
 		{
 			aa = p[Math.floor(Math.random()*10)];
 			ab = p[Math.floor(Math.random()*10)];
@@ -71,7 +71,7 @@ Extends: FourButtonItem,
                 var bc = 0;
                 var bd = 0;
 
-                while (ba == bb || ba == bc || ba == bd)
+                while (ba == bb || ba == bc || ba == bd || bb == bc || bc == bd)
                 {
                         ba = n[Math.floor(Math.random()*10)];
                         bb = p[Math.floor(Math.random()*10)];
@@ -79,6 +79,36 @@ Extends: FourButtonItem,
                         bd = p[Math.floor(Math.random()*10)];
                 }
                 b = '' + ba + ',' + bb + ',' + bc + ',' + bd;
+
+                //c
+                var ca = 0;
+                var cb = 0;
+                var cc = 0;
+                var cd = 0;
+
+                while (ca == cb || ca == cc || ca == cd || cb == cc || cc == cd)
+                {
+                        ca = n[Math.floor(Math.random()*10)];
+                        cb = n[Math.floor(Math.random()*10)];
+                        cc = p[Math.floor(Math.random()*10)];
+                        cd = p[Math.floor(Math.random()*10)];
+                }
+                c = '' + ca + ',' + cb + ',' + cc + ',' + cd;
+
+               	//d
+                var da = 0;
+                var db = 0;
+                var dc = 0;
+                var dd = 0;
+
+                while (da == db || da == dc || da == dd || db == dc || dc == dd)
+                {
+                        da = n[Math.floor(Math.random()*10)];
+                        db = n[Math.floor(Math.random()*10)];
+                        dc = n[Math.floor(Math.random()*10)];
+                        dd = p[Math.floor(Math.random()*10)];
+                }
+                d = '' + da + ',' + db + ',' + dc + ',' + dd;
 
                 this.setQuestion('' + 'Which only shows prime numbers?');
                 this.setAnswer('' + a,0);
