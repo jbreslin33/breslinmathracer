@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_16',4.0516,'4.oa.c.4','Terra Nova 28');
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_16',4.0516,'4.oa.c.5','Terra Nova 28');
 */
 
 var i_4_oa_c_5__16 = new Class(
