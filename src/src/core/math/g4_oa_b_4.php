@@ -13,19 +13,63 @@ Extends: FourButtonItem,
                 this.mNameMachine = new NameMachine();
                 this.ns = new NameSampler();
 
-                this.a = Math.floor(Math.random()*2)+4;
-                this.a = 4;
-                this.d = Math.floor(Math.random()*99)+1;
-                var decimalA = new Decimal('' + this.a + '.' + this.d);
+                var a = 'a';
+                var b = 'b';
+                var c = 'c';
+                var d = 'd';
+		var p = new Array();
+		p.push(2);
+		p.push(3);
+		p.push(5);
+		p.push(7);
+		p.push(11);
+		p.push(13);
+		p.push(17);
+		p.push(19);
+		p.push(23);
+		p.push(29);
 
-                this.setQuestion('' + this.ns.mNameOne + ' bought ' + this.a + ' ' + this.ns.mPlayedActivityOne + ' tickets for $' + decimalA.getMoney() + ' each. Which of these shows how to find the total cost of the ' + this.a + ' tickets?');
-                var answer = '' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney() + ' + ' + '$' + decimalA.getMoney();
-                this.setAnswer('' + answer,0);
+		var n = new Array();
+		n.push(4);
+		n.push(6);
+		n.push(8);
+		n.push(9);
+		n.push(10);
+		n.push(12);
+		n.push(14);
+		n.push(15);
+		n.push(16);
+		n.push(18);
+		n.push(20);
+		n.push(21);
+		n.push(22);
+		n.push(24);
+		n.push(25);
+		n.push(26);
+		n.push(27);
+		n.push(28);
 
-                this.mButtonA.setAnswer('' + this.a + ' + $' + decimalA.getMoney());
-                this.mButtonB.setAnswer('' + '$' + decimalA.getMoney() + ' &divide ' + this.a);
-                this.mButtonC.setAnswer('' + '$' + decimalA.getMoney() + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a + ' - ' + this.a);
-                this.mButtonD.setAnswer('' + answer);
+		var aa = 0; 	
+		var ab = 0; 	
+		var ac = 0; 	
+		var ad = 0; 	
+
+		while (aa == ab || aa == ac || aa == ad)
+		{
+			aa = p[Math.floor(Math.random()*10)];
+			ab = p[Math.floor(Math.random()*10)];
+			ac = p[Math.floor(Math.random()*10)];
+			ad = p[Math.floor(Math.random()*10)];
+		} 
+		a = '' + aa + ',' + ab + ',' + ac + ',' + ad;
+
+                this.setQuestion('' + 'Which only shows prime numbers?');
+                this.setAnswer('' + a,0);
+
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
+                this.mButtonD.setAnswer('' + d);
                 this.shuffle(10);
         }
 });
