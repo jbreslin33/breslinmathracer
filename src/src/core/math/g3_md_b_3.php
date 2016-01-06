@@ -48,17 +48,20 @@ initialize: function(sheet)
 	this.totalB = 0;
 	this.totalC = 0;
 	this.totalD = 0;
+
+	this.area1Total = 0;
+	this.area2Total = 0;
 	
-	while (this.totalA == this.totalB || this.totalA == this.totalC || this.totalA == this.totalD || this.totalB == this.totalC || this.totalC == this.totalD)
+	while (this.totalA == this.totalB || this.totalA == this.totalC || this.totalA == this.totalD || this.totalB == this.totalC || this.totalB == this.totalD || this.totalC == this.totalD || this.area1Total == this.area2Total)
 	{
 		this.totalA = Math.floor(Math.random()*18)+2;  
  		this.totalB = Math.floor(Math.random()*18)+2;  
  		this.totalC = Math.floor(Math.random()*18)+2;  
  		this.totalD = Math.floor(Math.random()*18)+2;  
+	
+		this.area1Total = parseInt(this.totalA + this.totalB);
+		this.area2Total = parseInt(this.totalC + this.totalD);
 	}
-
-	this.area1Total = parseInt(this.totalA + this.totalB);
-	this.area2Total = parseInt(this.totalC + this.totalD);
 
 	var a = this.bearArray[this.rA] + ' and ' + this.bearArray[this.rB] + ' Bears in Area 1 and ' + this.bearArray[this.rC] + ' and ' + this.bearArray[this.rD] + ' Bears in Area 2.';
 	
