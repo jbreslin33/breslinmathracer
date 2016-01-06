@@ -53,6 +53,12 @@ createItem: function()
 {
 	this.pickItem();
 
+        if (APPLICATION.mEvaluationsID == 1)
+        {
+                return;
+        }
+
+
         var pick = 0;
 
         if (pick == 0)
