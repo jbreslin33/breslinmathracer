@@ -41,7 +41,7 @@ initialize: function(sheet)
 		
 	this.setQuestion('' + this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' from ' + startTime.getString() + ' until ' + endTime.getString() + ' Then ' + this.nm.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for another ' + extra + ' minutes. How much time did ' +  this.nm.getPronoun(this.ns.mNameOne,0,0) + ' play altogether?');
 
-        a = '' + totalTime.mHour + ':' + totalTime.mMinute;
+        a = '' + totalTime.mHour + ' hours ' + totalTime.mMinute + ' minutes';
         this.setAnswer('' + a,0);
         this.mButtonA.setAnswer('' + a);
 
