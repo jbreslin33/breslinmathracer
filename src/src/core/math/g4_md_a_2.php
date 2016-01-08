@@ -22,7 +22,21 @@ initialize: function(sheet)
 	var c = 'c';
 	var d = 'd';
 
-	this.setQuestion('' + this.ns.mNameOne + '?');
+
+	//start        
+	var hs = Math.floor(Math.random()*12);
+	var ms = Math.floor(Math.random()*60);
+	var startTime = new Time(hs,ms); 
+
+	//end
+	var he = Math.floor(Math.random()*12)+12;
+	var me = Math.floor(Math.random()*60);
+	var endTime = new Time(he,me); 
+
+	//extra	
+	var extra = Math.floor(Math.random()*59)+1;
+		
+	this.setQuestion('' + this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' from ' + startTime.getString() + ' until ' + endTime.getString() + ' Then ' + this.nm.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for another ' + extra + ' minutes. How much time did ' +  this.nm.getPronoun(this.ns.mNameOne,0,0) + ' play altogether?');
 
         this.setAnswer('' + a,0);
         this.mButtonA.setAnswer('' + a);
