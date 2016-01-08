@@ -62,8 +62,15 @@ initialize: function(sheet)
 		cMinute = Math.floor(Math.random()*59)+1;
 	}
         this.mButtonC.setAnswer('' + cHour + ' hours ' + cMinute + ' minutes');
-
-        this.mButtonD.setAnswer('' + d);
+	
+	var dHour = totalTime.mHour;
+	var dMinute = totalTime.mMinute;
+	while (dHour == totalTime.mHour || dMinute == totalTime.mMinute) 
+	{
+		dHour = Math.floor(Math.random()*12);
+		dMinute = Math.floor(Math.random()*59)+1;
+	}
+        this.mButtonD.setAnswer('' + dHour + ' hours ' + dMinute + ' minutes');
 
         this.shuffle(10);
 }
