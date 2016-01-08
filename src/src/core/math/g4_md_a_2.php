@@ -45,6 +45,14 @@ initialize: function(sheet)
         this.setAnswer('' + a,0);
         this.mButtonA.setAnswer('' + a);
 
+	var bHour = 0;
+	var bMinute = 0;
+	while (bMinute != totalTime.mMinute) 
+	{
+		bHour = Math.floor(Math.random()*12);
+		bMinute = Math.floor(Math.random()*59)+1;
+	}
+
         this.mButtonB.setAnswer('' + b);
         this.mButtonC.setAnswer('' + c);
         this.mButtonD.setAnswer('' + d);
