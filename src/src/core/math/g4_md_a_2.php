@@ -34,15 +34,16 @@ initialize: function(sheet)
 
 	//extra	
 	var extra = Math.floor(Math.random()*59)+1;
+	var extraTime = new Time(0,extra);
 
-	a = endTime.subtract(startTime);
-	
-	
+	var p = endTime.subtract(startTime);
+	var totalTime = p.add(extraTime);
 		
 	this.setQuestion('' + this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' from ' + startTime.getString() + ' until ' + endTime.getString() + ' Then ' + this.nm.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for another ' + extra + ' minutes. How much time did ' +  this.nm.getPronoun(this.ns.mNameOne,0,0) + ' play altogether?');
 
-        this.setAnswer('' + a.getString(),0);
-        this.mButtonA.setAnswer('' + a.getString());
+        a = '' + totalTime.mHour + ':' + totalTime.mMinute;
+        this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
 
         this.mButtonB.setAnswer('' + b);
         this.mButtonC.setAnswer('' + c);
