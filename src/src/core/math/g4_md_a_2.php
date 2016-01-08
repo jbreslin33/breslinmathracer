@@ -46,15 +46,23 @@ initialize: function(sheet)
         this.mButtonA.setAnswer('' + a);
 
 	var bHour = 0;
-	var bMinute = 0;
-	while (bMinute != totalTime.mMinute) 
+	var bMinute = totalTime.mMinute;
+	while (bMinute == totalTime.mMinute) 
 	{
 		bHour = Math.floor(Math.random()*12);
 		bMinute = Math.floor(Math.random()*59)+1;
 	}
+        this.mButtonB.setAnswer('' + bHour + ' hours ' + bMinute + ' minutes');
+	
+	var cHour = totalTime.mHour;
+	var cMinute = 0;
+	while (cHour == totalTime.mHour) 
+	{
+		cHour = Math.floor(Math.random()*12);
+		cMinute = Math.floor(Math.random()*59)+1;
+	}
+        this.mButtonC.setAnswer('' + cHour + ' hours ' + cMinute + ' minutes');
 
-        this.mButtonB.setAnswer('' + b);
-        this.mButtonC.setAnswer('' + c);
         this.mButtonD.setAnswer('' + d);
 
         this.shuffle(10);
