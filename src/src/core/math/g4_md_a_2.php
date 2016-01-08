@@ -1,5 +1,80 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_27',4.2527,'4.md.a.2','Terra Nova 30' );
+*/
+
+var i_4_md_a_2__27 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '4.md.a.2_27';
+
+        this.nm = new NameMachine();
+        this.ns = new NameSampler();
+        this.mChopWhiteSpace = false;
+
+        var r = Math.floor(Math.random()*2);
+
+        var x = 0;
+        var y = 0;
+        var z = 0;
+        
+	var a = 0;
+        var b = 0;
+        var c = 0;
+        var d = 0;
+
+        while (a == b || a == c || a == d || b == c || b == d || c == d)
+        {
+                x = Math.floor(Math.random()*3)+1;
+                z = Math.floor(Math.random()*8)+2;
+	
+                var ry = Math.floor(Math.random()*3);
+		if (ry == 0)
+		{
+			y = 2;
+		}
+		if (ry == 1)
+		{
+			y = 4;
+		}
+		if (ry == 2)
+		{
+			y = 8;
+		}
+
+		a = parseInt(16 / y);
+		a = parseInt(a * x);
+		a = parseInt(a * z);
+		b = parseInt(x * y);
+		c = parseInt(x * z);
+		d = parseInt(z * y);
+        }
+
+        if (r == 0)
+        {
+		this.setQuestion('' + this.ns.mNameOne + ' is making vegetable smoothies for the ' + this.ns.mPlayedActivityOne + ' team. The smoothie recipe calls for ' + x + ' pounds of ' + this.ns.mVegetableOne + ' per batch. The ' + this.ns.mVegetableOne + ' that ' + this.ns.mNameOne + ' will use come in ' + y + '-ounce jars. How many jars of ' + this.ns.mVegetableOne + ' does ' + this.ns.mNameOne + ' need to make ' + z + ' batches of vegetable smoothies? Remember 16 ounces = 1 pound.');       
+        }
+        if (r == 1)
+        {
+		this.setQuestion('' + this.ns.mNameOne + ' is making fruit smoothies for the ' + this.ns.mPlayedActivityOne + ' team. The smoothie recipe calls for ' + x + ' pounds of ' + this.ns.mFruitOne + ' per batch. The ' + this.ns.mFruitOne + ' that ' + this.ns.mNameOne + ' will use come in ' + y + '-ounce jars. How many jars of ' + this.ns.mFruitOne + ' does ' + this.ns.mNameOne + ' need to make ' + z + ' batches of fruit smoothies? Remember 16 ounces = 1 pound.');       
+        }
+
+        this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
+
+        this.mButtonB.setAnswer('' + b);
+        this.mButtonC.setAnswer('' + c);
+        this.mButtonD.setAnswer('' + d);
+
+        this.shuffle(10);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_26',4.2526,'4.md.a.2','Terra Nova 26' );
 */
 
