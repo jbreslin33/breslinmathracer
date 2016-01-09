@@ -6,28 +6,35 @@ insert into item_types(id,progression,core_standards_id,description) values ('4.
 var i_4_oa_b_4__24 = new Class(
 {
 Extends: FourButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mType = '4.oa.b.4_24';
-                this.mChopWhiteSpace = false;
-                this.mStripCommas = false;
-                this.mNameMachine = new NameMachine();
-                this.ns = new NameSampler();
+initialize: function(sheet)
+{
+	this.parent(sheet);
+        this.mType = '4.oa.b.4_24';
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+	this.mUtility = new Utility();
+ 
+	var a = Math.floor(Math.random()*9+2);
+        var b = Math.floor(Math.random()*9+2);
+        var multiples  = '';
 
-		var a = 'a';
-		var b = 'b';
-		var c = 'c';
-		var d = 'd';
+        var c = this.mUtility.lcm(a,b);
+        var d = parseInt(c / a);
+        var e = parseInt(c / b);
 
-                this.setQuestion('' + 'What?');
-                this.setAnswer('' + a,0);
+	this.a = 'a';
+	this.b = 'b';
+	this.c = 'c';
+	this.d = 'd';
 
-                this.mButtonA.setAnswer('' + a);
-                this.mButtonB.setAnswer('' + b);
-                this.mButtonC.setAnswer('' + c);
-                this.mButtonD.setAnswer('' + d);
-                this.shuffle(10);
+        this.setQuestion('' + 'A pack of ' + this.ns.mFruitOne + ' comes with ' + a + ' ' + this.ns.mFruitOne + '. A pack of ' + this.ns.mVegetableOne + ' has ' + b + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' wants to buy the same number of ' + this.ns.mFruitOne + ' as ' + this.ns.mVegetableOne + '. Which combination should ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' purchase to accomplish that?'    );
+        this.setAnswer('' + this.a,0);
+
+        this.mButtonA.setAnswer('' + this.a);
+        this.mButtonB.setAnswer('' + this.b);
+        this.mButtonC.setAnswer('' + this.c);
+        this.mButtonD.setAnswer('' + this.d);
+        this.shuffle(10);
         }
 });
 /*
