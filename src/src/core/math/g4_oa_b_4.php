@@ -20,11 +20,24 @@ initialize: function(sheet)
         var multiples  = '';
 
         var c = this.mUtility.lcm(a,b);
-        var d = parseInt(c / a);
-        var e = parseInt(c / b);
+        var a1 = parseInt(c / a);
+        var a2 = parseInt(c / b);
 
-	this.a = '' + d + ' packs of ' + this.ns.mFruitOne + ' and ' + e + ' packs of ' + this.ns.mVegetableOne;
-	this.b = 'b';
+	var b1 = a1;
+	var b2 = a2;
+	var c1 = a1;
+	var c2 = a2;
+	var d1 = a1;
+	var d2 = a2;
+
+	while (a1 == b1 && a2 == b2)   
+	{
+		b1 = Math.floor(Math.random()*9+2);
+		b2 = Math.floor(Math.random()*9+2);
+	}
+
+	this.a = '' + a1 + ' packs of ' + this.ns.mFruitOne + ' and ' + a2 + ' packs of ' + this.ns.mVegetableOne;
+	this.b = '' + b1 + ' packs of ' + this.ns.mFruitOne + ' and ' + b2 + ' packs of ' + this.ns.mVegetableOne;
 	this.c = 'c';
 	this.d = 'd';
 
