@@ -10,6 +10,7 @@ initialize: function(sheet)
 {
 	this.parent(sheet);
         this.mType = '4.oa.b.4_24';
+        this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
 	this.mUtility = new Utility();
@@ -22,7 +23,7 @@ initialize: function(sheet)
         var d = parseInt(c / a);
         var e = parseInt(c / b);
 
-	this.a = 'a';
+	this.a = '' + d + ' packs of ' + this.ns.mFruitOne + ' and ' + e + ' packs of ' + this.ns.mVegetableOne;
 	this.b = 'b';
 	this.c = 'c';
 	this.d = 'd';
