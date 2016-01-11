@@ -61,6 +61,7 @@ initialize: function(sheet)
         this.shuffle(10);
         }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.b.4_23',4.0423,'4.oa.b.4','Terra Nova 29');
 */

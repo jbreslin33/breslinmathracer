@@ -1,3 +1,65 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_9',5.0309,'5.oa.b.3','Terra Nova 33');
+*/
+
+var i_5_oa_b_3__9 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '5.oa.b.3_9';
+        this.mChopWhiteSpace = false;
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+        this.mUtility = new Utility();
+
+        var a = Math.floor(Math.random()*9+2);
+        var b = Math.floor(Math.random()*9+2);
+        var multiples  = '';
+
+        var c = this.mUtility.lcm(a,b);
+        var a1 = parseInt(c / a);
+        var a2 = parseInt(c / b);
+
+        var b1 = a1;
+        var b2 = a2;
+        var c1 = a1;
+        var c2 = a2;
+        var d1 = a1;
+        var d2 = a2;
+
+        while (a1 == b1 && a2 == b2)
+        {
+                b1 = Math.floor(Math.random()*9+2);
+                b2 = Math.floor(Math.random()*9+2);
+        }
+        while (a1 == c1 && a2 == c2)
+        {
+                c1 = Math.floor(Math.random()*9+2);
+                c2 = Math.floor(Math.random()*9+2);
+        }
+        while (a1 == d1 && a2 == d2)
+        {
+                d1 = Math.floor(Math.random()*9+2);
+                d2 = Math.floor(Math.random()*9+2);
+        }
+
+        this.a = '' + a1 + ' packs of ' + this.ns.mFruitOne + ' and ' + a2 + ' packs of ' + this.ns.mVegetableOne;
+        this.b = '' + b1 + ' packs of ' + this.ns.mFruitOne + ' and ' + b2 + ' packs of ' + this.ns.mVegetableOne;
+        this.c = '' + c1 + ' packs of ' + this.ns.mFruitOne + ' and ' + c2 + ' packs of ' + this.ns.mVegetableOne;
+        this.d = '' + d1 + ' packs of ' + this.ns.mFruitOne + ' and ' + d2 + ' packs of ' + this.ns.mVegetableOne;
+
+        this.setQuestion('' + 'A pack of ' + this.ns.mFruitOne + ' comes with ' + a + ' ' + this.ns.mFruitOne + '. A pack of ' + this.ns.mVegetableOne + ' has ' + b + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' wants to buy the same number of ' + this.ns.mFruitOne + ' as ' + this.ns.mVegetableOne + '. Which combination should ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' purchase to accomplish that?'    );
+        this.setAnswer('' + this.a,0);
+
+        this.mButtonA.setAnswer('' + this.a);
+        this.mButtonB.setAnswer('' + this.b);
+        this.mButtonC.setAnswer('' + this.c);
+        this.mButtonD.setAnswer('' + this.d);
+        this.shuffle(10);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_8',5.0308,'5.oa.b.3','Terra Nova 17');

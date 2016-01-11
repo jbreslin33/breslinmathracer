@@ -37,6 +37,7 @@ initialize: function(game)
         this.mIDArray.push('' + '4.oa.c.4_23'); //29
         this.mIDArray.push('' + '4.md.a.2_27'); //30
         this.mIDArray.push('' + '4.oa.b.4_24'); //31
+        this.mIDArray.push('' + '5.oa.b.3_9'); //33
 
 	this.mCurrentElement = 0;
 },

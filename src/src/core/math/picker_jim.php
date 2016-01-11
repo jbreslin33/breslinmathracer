@@ -5557,6 +5557,10 @@ getItem: function(id)
         {
                 return new i_5_oa_b_3__8(this.mSheet);
         }
+	if (id == '5.oa.b.3_9')
+        {
+                return new i_5_oa_b_3__9(this.mSheet);
+        }
 	
 	//5.nbt.a.1 
 	if (id == '5.nbt.a.1_1')
