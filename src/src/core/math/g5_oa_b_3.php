@@ -30,7 +30,7 @@ initialize: function(sheet)
         this.mButtonC.setAnswer('' + this.c);
         this.mButtonD.setAnswer('' + this.d);
         this.shuffle(10);
-        }
+}
 });
 
 /*
