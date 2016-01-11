@@ -14,43 +14,15 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mUtility = new Utility();
 
-        var a = Math.floor(Math.random()*9+2);
-        var b = Math.floor(Math.random()*9+2);
-        var multiples  = '';
+        var x = Math.floor(Math.random()*9+2);
+        var y = Math.floor(Math.random()*9+2);
 
-        var c = this.mUtility.lcm(a,b);
-        var a1 = parseInt(c / a);
-        var a2 = parseInt(c / b);
+        this.a = '' + 'a';
+        this.b = '' + 'b';
+        this.c = '' + 'c';
+        this.d = '' + 'd';
 
-        var b1 = a1;
-        var b2 = a2;
-        var c1 = a1;
-        var c2 = a2;
-        var d1 = a1;
-        var d2 = a2;
-
-        while (a1 == b1 && a2 == b2)
-        {
-                b1 = Math.floor(Math.random()*9+2);
-                b2 = Math.floor(Math.random()*9+2);
-        }
-        while (a1 == c1 && a2 == c2)
-        {
-                c1 = Math.floor(Math.random()*9+2);
-                c2 = Math.floor(Math.random()*9+2);
-        }
-        while (a1 == d1 && a2 == d2)
-        {
-                d1 = Math.floor(Math.random()*9+2);
-                d2 = Math.floor(Math.random()*9+2);
-        }
-
-        this.a = '' + a1 + ' packs of ' + this.ns.mFruitOne + ' and ' + a2 + ' packs of ' + this.ns.mVegetableOne;
-        this.b = '' + b1 + ' packs of ' + this.ns.mFruitOne + ' and ' + b2 + ' packs of ' + this.ns.mVegetableOne;
-        this.c = '' + c1 + ' packs of ' + this.ns.mFruitOne + ' and ' + c2 + ' packs of ' + this.ns.mVegetableOne;
-        this.d = '' + d1 + ' packs of ' + this.ns.mFruitOne + ' and ' + d2 + ' packs of ' + this.ns.mVegetableOne;
-
-        this.setQuestion('' + 'A pack of ' + this.ns.mFruitOne + ' comes with ' + a + ' ' + this.ns.mFruitOne + '. A pack of ' + this.ns.mVegetableOne + ' has ' + b + ' ' + this.ns.mVegetableOne + '. ' + this.ns.mNameOne + ' wants to buy the same number of ' + this.ns.mFruitOne + ' as ' + this.ns.mVegetableOne + '. Which combination should ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' purchase to accomplish that?'    );
+        this.setQuestion('' + 'Located at ' + x + ',' + y + '.');
         this.setAnswer('' + this.a,0);
 
         this.mButtonA.setAnswer('' + this.a);
