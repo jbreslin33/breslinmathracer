@@ -28,16 +28,18 @@ initialize: function(game)
 	this.mIDArray.push('' + '2.oa.a.1_25'); //20
 	this.mIDArray.push('' + '5.oa.a.1_25'); //21
 	this.mIDArray.push('' + '2.oa.a.1_26'); //22
+
         //skip pyramid 23 for now
         this.mIDArray.push('' + '3.oa.a.3_7'); //24
         this.mIDArray.push('' + '3.oa.a.3_8'); //25
-       	this.mIDArray.push('' + '4.md.a.2_26'); //26
+        this.mIDArray.push('' + '4.md.a.2_26'); //26
         //skip 27 for now
         this.mIDArray.push('' + '4.oa.c.5_16'); //28
-        this.mIDArray.push('' + '4.oa.c.4_23'); //29
+        this.mIDArray.push('' + '4.oa.b.4_23'); //29
         this.mIDArray.push('' + '4.md.a.2_27'); //30
         this.mIDArray.push('' + '4.oa.b.4_24'); //31
         this.mIDArray.push('' + '5.oa.b.3_9'); //33
+
 
 },
 
