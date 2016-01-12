@@ -18,16 +18,16 @@ initialize: function(sheet)
         var x = Math.floor(Math.random()*9+2);
         var y = Math.floor(Math.random()*9+2);
         
-	this.setQuestion('' + this.ns.mNameOne + ' buried  a treasure. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' made a treasure map so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' can find the treasure. The map says that the treasure is located at (' + x + ',' + y + '). ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' search at the origin.');
+	this.setQuestion('' + this.ns.mNameOne + ' buried  a treasure. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' made a treasure map so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' can find the treasure. The map says that the treasure is located at (' + x + ',' + y + '). ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search at the origin.');
  
 	//heading
-        this.mHeadingAnswerLabel.setPosition(620,50);
+        this.mHeadingAnswerLabel.setPosition(600,50);
         this.mHeadingAnswerLabel2.setPosition(650,140);
-        this.mHeadingAnswerLabel3.setPosition(610,300);
+        this.mHeadingAnswerLabel3.setPosition(500,300);
 
         this.mHeadingAnswerLabel.setSize(325,50);
         this.mHeadingAnswerLabel2.setSize(25,25);
-        this.mHeadingAnswerLabel3.setSize(25,25);
+        this.mHeadingAnswerLabel3.setSize(325,50);
 
 	//text
         this.mHeadingAnswerLabel2.setText(',');
@@ -35,7 +35,7 @@ initialize: function(sheet)
         //text box
         this.mAnswerTextBox.setPosition(600,140);
         this.mAnswerTextBox2.setPosition(680,140);
-        this.mAnswerTextBox3.setPosition(730,310);
+        this.mAnswerTextBox3.setPosition(700,300);
 
         this.mAnswerTextBox.setSize(50,50);
         this.mAnswerTextBox2.setSize(50,50);
@@ -47,7 +47,7 @@ initialize: function(sheet)
 
 	if (r == 0)
 	{
-        	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' search?');
+        	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?');
         	this.setAnswer('' + '0' ,0);
         	this.setAnswer('' + '0' ,1);
         	this.mHeadingAnswerLabel3.setText('What is the y coordinate of buried treasure?');
