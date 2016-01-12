@@ -4,10 +4,11 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_oa_b_3__9 = new Class(
 {
-Extends: FourButtonItem,
+Extends: TextItem3,
 initialize: function(sheet)
 {
-        this.parent(sheet);
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+
         this.mType = '5.oa.b.3_9';
         this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
@@ -16,20 +17,33 @@ initialize: function(sheet)
 
         var x = Math.floor(Math.random()*9+2);
         var y = Math.floor(Math.random()*9+2);
+ 
+	//heading
+        this.mHeadingAnswerLabel.setPosition(620,50);
+        this.mHeadingAnswerLabel2.setPosition(650,150);
+        this.mHeadingAnswerLabel3.setPosition(610,300);
 
-        this.a = '' + 'a';
-        this.b = '' + 'b';
-        this.c = '' + 'c';
-        this.d = '' + 'd';
+        this.mHeadingAnswerLabel.setSize(225,50);
+        this.mHeadingAnswerLabel2.setSize(25,25);
+        this.mHeadingAnswerLabel3.setSize(25,25);
 
-        this.setQuestion('' + 'Located at ' + x + ',' + y + '.');
+	//text
+        this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
+        this.mHeadingAnswerLabel2.setText(',');
+        this.mHeadingAnswerLabel3.setText('Label3');
+
+        //text box
+        this.mAnswerTextBox.setPosition(600,150);
+        this.mAnswerTextBox2.setPosition(680,150);
+        this.mAnswerTextBox3.setPosition(730,310);
+
+        this.mAnswerTextBox.setSize(50,50);
+        this.mAnswerTextBox2.setSize(50,50);
+        this.mAnswerTextBox3.setSize(50,50);
+
+        this.setQuestion('' + this.ns.mNameOne + ' buried  a treasure. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' made a treasure map so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' can find the treasure. The map says that the treasure is located at (' + x + ',' + y + '). ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' search at the origin.');
         this.setAnswer('' + this.a,0);
 
-        this.mButtonA.setAnswer('' + this.a);
-        this.mButtonB.setAnswer('' + this.b);
-        this.mButtonC.setAnswer('' + this.c);
-        this.mButtonD.setAnswer('' + this.d);
-        this.shuffle(10);
 }
 });
 
