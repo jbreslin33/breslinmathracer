@@ -32,20 +32,10 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-$evaluation_id = 0;
 $room_id = 0;
 $start_time = 0;
 $end_time = 0;
 $id = 0;
-
-if (isset($_POST["evaluation_id"]))
-{
-	$evaluation_id = $_POST["evaluation_id"];
-}
-else if (isset($_GET['evaluation_id']))
-{
-	$evaluation_id = $_GET['evaluation_id'];
-}
 
 if (isset($_POST["room_id"]))
 {
@@ -77,35 +67,7 @@ else if (isset($_GET['end_time']))
 echo "<br>";
 ?>
 
-<p><b> Evaluations </p></b>
-
-<p><b> Select Evaluation Type: </p></b>
-<form method="post" action="/web/reports/generic/any_homework_check.php">
-
-<select id="evaluation_id" name="evaluation_id" onchange="loadAgain()">
-<?php
-$query = "select id, description from evaluations order by description asc;";
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-echo "<option selected=\"selected\" value=\"0\"> \"Select Evaluation\" </option>";
-
-for($i = 0; $i < $numrows; $i++)
-{
-        $row = pg_fetch_array($result, $i);
-	if ($row[0] == $evaluation_id)
-	{
-        	echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
-	}	
-	else
-	{
-        	echo "<option value=\"$row[0]\"> $row[1] </option>";
-	}
-}
-?>
-</select>
-
-<p><b> Evaluations </p></b>
+<p><b> Class Grades </p></b>
 
 <p><b> Select Room: </p></b>
 <form method="post" action="/web/reports/generic/any_homework_check.php">
@@ -185,11 +147,10 @@ else
 <script>
 function loadAgain()
 {
-    	var w = document.getElementById("evaluation_id").value;
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("start_time").value;
     	var z = document.getElementById("end_time").value;
-	document.location.href = '/web/reports/generic/any_homework_check.php?evaluation_id=' + w + 'room_id=' + x + '&start_time=' + y + '&end_time=' + z; 
+	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x + '&start_time=' + y + '&end_time=' + z; 
 }
 </script>
 
