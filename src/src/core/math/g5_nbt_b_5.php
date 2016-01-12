@@ -45,7 +45,7 @@ initialize: function(sheet)
         this.x = Math.floor((Math.random()*900)+100);
         this.y = Math.floor((Math.random()*90)+10);
 
-        this.setQuestion('One lap on a track is ' + this.x + ' ' + this.ns.mDistanceIncrementMedium + '. If ' + this.ns.mNameOne + ' runs ' + this.y + ' times around the track how far in meters will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ran?');
+        this.setQuestion('One lap on a track is ' + this.x + ' ' + this.ns.mDistanceIncrementMedium + '. If ' + this.ns.mNameOne + ' runs ' + this.y + ' times around the track how far in ' + this.ns.mDistanceIncrementMedium + ' will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have ran?');
         this.answer = parseInt(this.x * this.y);
 
         this.setAnswer('' + this.answer,0);
