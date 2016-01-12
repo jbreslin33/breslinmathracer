@@ -843,7 +843,7 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
 
-        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below what all the numbers in the pattern are a multiple of.');
+        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below what all the numbers in the pattern are a multiple of. Use only numbers for your answers. Do not use words.');
 
 	if (this.mOperation == 'add')	
 	{
