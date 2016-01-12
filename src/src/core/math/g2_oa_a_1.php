@@ -834,10 +834,14 @@ Extends: TextItem,
 		this.mLeft = left;
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = Math.floor(Math.random()*28)+12;
-                this.d = parseInt(this.a - this.b - this.c);
+		this.d = -1;
+		while ( this.d < 0) 
+		{
+                	this.a = Math.floor(Math.random()*50)+50;
+                	this.b = Math.floor(Math.random()*28)+12;
+                	this.c = Math.floor(Math.random()*28)+12;
+                	this.d = parseInt(this.a - this.b - this.c);
+		}
 	
                 random = Math.floor(Math.random()*5)+1;
 		
