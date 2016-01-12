@@ -17,6 +17,8 @@ initialize: function(sheet)
 
         var x = Math.floor(Math.random()*9+2);
         var y = Math.floor(Math.random()*9+2);
+        
+	this.setQuestion('' + this.ns.mNameOne + ' buried  a treasure. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' made a treasure map so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' can find the treasure. The map says that the treasure is located at (' + x + ',' + y + '). ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' search at the origin.');
  
 	//heading
         this.mHeadingAnswerLabel.setPosition(620,50);
@@ -28,9 +30,7 @@ initialize: function(sheet)
         this.mHeadingAnswerLabel3.setSize(25,25);
 
 	//text
-        this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
         this.mHeadingAnswerLabel2.setText(',');
-        this.mHeadingAnswerLabel3.setText('Label3');
 
         //text box
         this.mAnswerTextBox.setPosition(600,140);
@@ -41,10 +41,26 @@ initialize: function(sheet)
         this.mAnswerTextBox2.setSize(50,50);
         this.mAnswerTextBox3.setSize(50,50);
 
-        this.setQuestion('' + this.ns.mNameOne + ' buried  a treasure. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' made a treasure map so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' can find the treasure. The map says that the treasure is located at (' + x + ',' + y + '). ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' search at the origin.');
-        this.setAnswer('' + '0' ,0);
-        this.setAnswer('' + '0' ,1);
-        this.setAnswer('' + y ,2);
+	//random
+        var r = Math.floor(Math.random()*2);
+	r = 0;
+
+	if (r == 0)
+	{
+        	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' search?');
+        	this.setAnswer('' + '0' ,0);
+        	this.setAnswer('' + '0' ,1);
+        	this.mHeadingAnswerLabel3.setText('What is the y coordinate of buried treasure?');
+        	this.setAnswer('' + y ,2);
+	}
+	if (r == 1)
+	{
+        	this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
+        	this.setAnswer('' + x,0);
+        	this.setAnswer('' + y,1);
+        	this.mHeadingAnswerLabel3.setText('What is the x coordinate of buried treasure?');
+        	this.setAnswer('' + y ,2);
+	}
 
 }
 });
