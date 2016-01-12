@@ -211,6 +211,7 @@ initialize: function(sheet)
         this.setQuestion('The unit of measure for angles.');
         this.setAnswer('' + 'degree',0);
        	this.setAnswer('' + 'a degree',1);
+        this.setAnswer('' + 'degrees',2);
 }
 });
 
