@@ -42,15 +42,14 @@ initialize: function(sheet)
         this.mAnswerTextBox3.setSize(50,50);
 
 	//random
-        var r = Math.floor(Math.random()*2);
-	r = 0;
+        var r = Math.floor(Math.random()*3);
 
 	if (r == 0)
 	{
         	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?');
         	this.setAnswer('' + '0' ,0);
         	this.setAnswer('' + '0' ,1);
-        	this.mHeadingAnswerLabel3.setText('What is the y coordinate of buried treasure?');
+        	this.mHeadingAnswerLabel3.setText('What is the y coordinate of the buried treasure?');
         	this.setAnswer('' + y ,2);
 	}
 	if (r == 1)
@@ -58,9 +57,26 @@ initialize: function(sheet)
         	this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
         	this.setAnswer('' + x,0);
         	this.setAnswer('' + y,1);
-        	this.mHeadingAnswerLabel3.setText('What is the x coordinate of buried treasure?');
-        	this.setAnswer('' + y ,2);
+        	this.mHeadingAnswerLabel3.setText('What is the x coordinate of the buried treasure?');
+        	this.setAnswer('' + x ,2);
 	}
+	if (r == 2)
+	{
+        	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?');
+        	this.setAnswer('' + '0' ,0);
+        	this.setAnswer('' + '0' ,1);
+        	this.mHeadingAnswerLabel3.setText('What is the y coordinate of the spot where ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?'    );
+        	this.setAnswer('' + '0',2);
+	}
+ 	if (r == 3)
+        {
+        	this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
+                this.setAnswer('' + x,0);
+                this.setAnswer('' + y,1);
+                this.mHeadingAnswerLabel3.setText('What is the x coordinate of the spot where ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?'    );
+                this.setAnswer('' + '0',2);
+        }
+
 
 }
 });
