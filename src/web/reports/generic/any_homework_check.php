@@ -176,8 +176,6 @@ else
 
 </form>
 
-
-
 <script>
 function loadAgain()
 {
@@ -259,16 +257,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 			$transactionCode = $row[1];
 		
 			$evaluations_id = $row[2]; 
-/*
-			if ($evaluations_id == 17)
-			{
-				$homeworkQuestionArray[] = $transactionCode;
-			}
-*/
-			//if ($evaluations_id == 18)
-			//{
-				$terraNovaQuestionArray[] = $transactionCode;
-			//}
+			$terraNovaQuestionArray[] = $transactionCode;
 			if ($transactionCode == 1)
 			{
 				$correctTotal = floatVal($correctTotal + $progression);
@@ -288,16 +277,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 		$gradePercent = (int)($gradeDecimal * 100);
 
 		$evaluation_id = $row[2]; 
-/*
-		if ($evaluation_id == 17)
-		{
-			$homeworkGradeArray[] = $gradePercent;
-		}
-*/
-//		if ($evaluation_id == 18)
-//		{
-			$terraNovaGradeArray[] = $gradePercent;
-//		}
+		$terraNovaGradeArray[] = $gradePercent;
         }
 
 	$totalTests = intval(count($homeworkGradeArray));
