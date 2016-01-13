@@ -344,9 +344,9 @@ echo '<table border=\"1\">';
 echo '<tr>';
 echo '<td> Student';
 echo '</td>';
-echo '<td> TerrNova Homework Grade';
+echo '<td> Grade';
 echo '</td>';
-echo '<td> Total TerraNova Homework Questions';
+echo '<td> Questions';
 echo '</td>';
 echo '</tr>';
 
