@@ -43,8 +43,8 @@ initialize: function(sheet)
         this.answer = parseInt(this.y);
 
         this.setAnswer('' + this.answer,0);
-        this.setAnswer('' + this.answer + ' pots',1);
-        this.setAnswer('' + this.answer + ' garden pots',2);
+        this.setAnswer('' + this.x + 'x' + this.y,1);
+        this.setAnswer('' + this.y + 'x' + this.z,2);
 },
 
 checkUserAnswer: function()
