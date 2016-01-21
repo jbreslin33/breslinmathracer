@@ -14,17 +14,14 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        this.mAnswerTextBox.setPosition(425,160);
-        this.mAnswerTextBox2.setPosition(595,160);
+        this.mAnswerTextBox.setPosition(225,180);
+        this.mAnswerTextBox2.setPosition(550,140);
         this.mAnswerTextBox.setSize(75,25);
         this.mAnswerTextBox2.setSize(75,25);
 
-        //this.mHeadingAnswerLabel.setText('Tens<br>In Tens<br>Place');
-        //this.mHeadingAnswerLabel2.setText('Ones<br>In Ones<br>Place');
-        this.mHeadingAnswerLabel.setPosition(425,70);
-        this.mHeadingAnswerLabel2.setPosition(595,70);
-        this.mHeadingAnswerLabel.setSize(50,50);
-        this.mHeadingAnswerLabel2.setSize(50,50);
+        this.mHeadingAnswerLabel.setText('Write an expression you can use to check answer.');
+        this.mHeadingAnswerLabel.setPosition(525,70);
+        this.mHeadingAnswerLabel.setSize(200,50);
 
         this.mQuestionLabel.setSize(220,250);
         this.mQuestionLabel.setPosition(225,180);
