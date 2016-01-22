@@ -50,10 +50,13 @@ checkUserAnswer: function()
 {
         correctAnswerFound = false;
 
-        if (this.mUserAnswer == this.mAnswerArray[0] && this.mUserAnswer2 == this.mAnswerArray[1])
-        {
-                correctAnswerFound = true;
-        }
+        if (this.mUserAnswer == this.mAnswerArray[0])
+	{
+		if (this.mUserAnswer2 == this.mAnswerArray[1] || this.mUserAnswer2 == this.mAnswerArray[2] || this.mUserAnswer2 == this.mAnswerArray[3] || this.mUserAnswer2 == this.mAnswerArray[4])  
+        	{
+                	correctAnswerFound = true;
+        	}
+	}
 
         if (correctAnswerFound == false)
         {
@@ -67,7 +70,7 @@ showCorrectAnswer: function()
         if (this.mCorrectAnswerLabel)
         {
                 this.mCorrectAnswerLabel.setSize(500, 100);
-                this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()  + ' Expression:' + this.mAnswerArray[1] + ' OR ' + this.mAnswerArray[2]); 
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()  + ' Expression:' + this.mAnswerArray[1] + ' OR ' + this.mAnswerArray[2] + ' OR ' + this.mAnswerArray[3] + ' OR ' + this.mAnswerArray[4]); 
                 this.mCorrectAnswerLabel.setVisibility(true);
          }
 }
