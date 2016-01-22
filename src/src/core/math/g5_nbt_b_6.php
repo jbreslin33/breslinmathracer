@@ -41,7 +41,9 @@ initialize: function(sheet)
 
         this.setAnswer('' + this.answer,0);
         this.setAnswer('' + this.x + 'x' + this.y,1);
-        this.setAnswer('' + this.y + 'x' + this.z,2);
+        this.setAnswer('' + this.y + 'x' + this.x,2);
+        this.setAnswer('' + this.x + '*' + this.y,3);
+        this.setAnswer('' + this.y + '*' + this.x,4);
 },
 
 checkUserAnswer: function()
@@ -58,7 +60,18 @@ checkUserAnswer: function()
                 this.mSheet.setTypeWrong(this.mType);
         }
         return correctAnswerFound;
+},
+
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setSize(500, 100);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()  + ' Expression:' + this.mAnswerArray[1] + ' OR ' + this.mAnswerArray[2]); 
+                this.mCorrectAnswerLabel.setVisibility(true);
+         }
 }
+
 
 });
 
