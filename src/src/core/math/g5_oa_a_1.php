@@ -707,10 +707,10 @@ initialize: function(sheet)
                 r = c1 % a12b12d1;
                 t = c1 / a12b12d1;
                 
-                //x = parseInt(  ( c1 /  (a1 - a2) * (b1 + b2) * d1 ) - d2 );
-		x = t - d2;
+                x = parseInt(   c1 + (a1 - a2) * (b1 + b2) * d1 - d2 );
+		//x = t - d2;
 
-                this.setQuestion('Evaluate: ' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2);
+                this.setQuestion('Evaluate: ' + c1 + ' + (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2);
                 this.setAnswer('' + x,0);
         }
 }
