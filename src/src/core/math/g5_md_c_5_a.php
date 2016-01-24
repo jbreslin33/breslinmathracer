@@ -4,16 +4,30 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 */
 var i_5_md_c_5_a__4 = new Class(
 {
-Extends: TextItem,
+Extends: TextItem2,
 initialize: function(sheet)
 {
-        this.parent(sheet,450,200,255,145,100,50,580,100);
+ 	this.parent(sheet,575,50,320,75,720,50,380,150);
 
         this.mType = '5.md.c.5.a_4';
         this.ns = new NameSampler();
         var rx = 10;
         var ry = 120;
         this.mRaphael = Raphael(rx,ry,500,600);
+
+	//TextItem2
+ 	this.mAnswerTextBox.setPosition(225,180);
+        this.mAnswerTextBox2.setPosition(550,140);
+        this.mAnswerTextBox.setSize(75,25);
+        this.mAnswerTextBox2.setSize(75,25);
+
+        this.mHeadingAnswerLabel.setText('Write an expression you can use to check answer.');
+        this.mHeadingAnswerLabel.setPosition(525,70);
+        this.mHeadingAnswerLabel.setSize(200,50);
+
+        this.mQuestionLabel.setSize(220,250);
+        this.mQuestionLabel.setPosition(225,180);
+
 
 	//----------Prism 1
 	// position of rubix cube
@@ -39,7 +53,7 @@ initialize: function(sheet)
 
 	//----------Prism 2 
 	// position of rubix cube
-	var x_b = 250;
+	var x_b = 300;
 	var y_b = 90;
 
 	// dimensions of a single cube
@@ -57,8 +71,8 @@ initialize: function(sheet)
 	this.addQuestionShape(cube);
 
 
-this.mUserAnswerLabel.setPosition(625,150);
-this.mCorrectAnswerLabel.setPosition(625,250);
+	this.mUserAnswerLabel.setPosition(625,150);
+	this.mCorrectAnswerLabel.setPosition(625,250);
 
 }
 
