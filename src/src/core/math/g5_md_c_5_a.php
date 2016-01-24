@@ -13,7 +13,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         var rx = 10;
         var ry = 120;
-        this.mRaphael = Raphael(rx,ry,400,600);
+        this.mRaphael = Raphael(rx,ry,500,600);
 
 	//----------Prism 1
 	// position of rubix cube
@@ -38,9 +38,8 @@ initialize: function(sheet)
         this.setAnswer('' + answer,0);
 
 	//----------Prism 2 
-
 	// position of rubix cube
-	var x_b = 35;
+	var x_b = 250;
 	var y_b = 90;
 
 	// dimensions of a single cube
