@@ -13,6 +13,8 @@ initialize: function(sheet)
 getDev: function()
 {
 	return '5.md.c.5.a_4';
+	//return '5.md.c.5.c_1';
+	//return '5.md.c.3.a_11';
 },
 
 getItem: function(id)
