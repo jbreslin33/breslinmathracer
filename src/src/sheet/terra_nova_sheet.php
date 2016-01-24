@@ -40,6 +40,7 @@ initialize: function(game)
         this.mIDArray.push('' + '4.oa.b.4_24'); //31
         this.mIDArray.push('' + '5.oa.b.3_9'); //33
         this.mIDArray.push('' + '5.nbt.b.6_9'); //34
+        this.mIDArray.push('' + '5.md.c.5.a_4'); //35
 
 },
 
