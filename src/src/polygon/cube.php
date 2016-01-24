@@ -16,9 +16,6 @@ this.mPolygon = this.mRaphael.rect(x+xOff,y-yOff,w,h).attr({fill: "hsb(" + r + "
 
                 this.mPolygon.mPolygon = this;
 
-
-//var boxTwoD = new Rectangle(w,h,x+xOff,y-yOff,game,raphael,.5,.5,.5,"#000",1,false);
-//this.mItem.addQuestionShape(boxTwoD);
 var boxTwoC = new Rectangle(w,h,x,y,game,raphael,.5,.5,.5,"#000",1,false);
 this.mItem.addQuestionShape(boxTwoC);
 

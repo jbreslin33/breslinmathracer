@@ -15,26 +15,48 @@ initialize: function(sheet)
         var ry = 120;
         this.mRaphael = Raphael(rx,ry,400,600);
 
-// position of rubix cube
-var x = 35;
-var y = 220;
+	//----------Prism 1
+	// position of rubix cube
+	var x = 35;
+	var y = 220;
 
-// dimensions of a single cube
-var w1 = 40;
-var h1 = 40;
-var d1 = 40;
+	// dimensions of a single cube
+	var w1 = 40;
+	var h1 = 40;
+	var d1 = 40;
 
-// dimensions of rubix cube
-var w2 = Math.floor(Math.random()*3+2);
-var h2 = Math.floor(Math.random()*3+2);
-var d2 = Math.floor(Math.random()*3+2);
+	// dimensions of rubix cube
+	var w2 = Math.floor(Math.random()*3+2);
+	var h2 = Math.floor(Math.random()*3+2);
+	var d2 = Math.floor(Math.random()*3+2);
 
-var rCube = new RubixCube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,w2,h2,d2,.5,.5,.5,"#000",1,false);
+	var rCube = new RubixCube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,w2,h2,d2,.5,.5,.5,"#000",1,false);
 
         answer = w2*h2*d2;
 
         this.setQuestion('The right rectangular prism is made of centimeter cubes. What is the volume of the prism in cubic centimeters?');
         this.setAnswer('' + answer,0);
+
+	//----------Prism 2 
+
+	// position of rubix cube
+	var x_b = 35;
+	var y_b = 90;
+
+	// dimensions of a single cube
+	var w1_b = Math.floor(Math.random()*4)+1;
+	var h1_b = Math.floor(Math.random()*4)+1;
+	var d1_b = Math.floor(Math.random()*4)+1;
+
+	var volume = w1_b*h1_b*d1_b; //Math.floor(Math.random()*3+1);
+
+	w1_b = w1_b*40;
+	h1_b = h1_b*40;
+	d1_b = d1_b*40;
+
+	var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x_b,y_b,w1_b,h1_b,d1_b,.5,.5,.5,"#000",1,false,'feet');
+	this.addQuestionShape(cube);
+
 
 this.mUserAnswerLabel.setPosition(625,150);
 this.mCorrectAnswerLabel.setPosition(625,250);
