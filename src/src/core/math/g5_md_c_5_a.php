@@ -13,15 +13,16 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         var rx = 10;
         var ry = 120;
-        this.mRaphael = Raphael(rx,ry,500,600);
+        this.mRaphael = Raphael(rx,ry,550,600);
 
 	//TextItem2
- 	this.mAnswerTextBox.setPosition(225,180);
-        this.mAnswerTextBox2.setPosition(550,140);
+ 	this.mAnswerTextBox.setPosition(700,140);
+        this.mAnswerTextBox2.setPosition(700,320);
         this.mAnswerTextBox.setSize(75,25);
         this.mAnswerTextBox2.setSize(75,25);
 
-        this.mHeadingAnswerLabel.setText('Write an expression you can use to check answer.');
+        this.setQuestion('Left');
+        this.mHeadingAnswerLabel.setText('Right');
         this.mHeadingAnswerLabel.setPosition(525,70);
         this.mHeadingAnswerLabel.setSize(200,50);
 
@@ -48,7 +49,6 @@ initialize: function(sheet)
 
         answer = w2*h2*d2;
 
-        this.setQuestion('The right rectangular prism is made of centimeter cubes. What is the volume of the prism in cubic centimeters?');
         this.setAnswer('' + answer,0);
 
 	//----------Prism 2 
