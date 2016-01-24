@@ -15,22 +15,17 @@ initialize: function(sheet)
         var ry = 120;
         this.mRaphael = Raphael(rx,ry,550,600);
 
-	//TextItem2
- 	this.mAnswerTextBox.setPosition(700,140);
-        this.mAnswerTextBox2.setPosition(700,320);
-        this.mAnswerTextBox.setSize(75,25);
-        this.mAnswerTextBox2.setSize(75,25);
-
-        this.setQuestion('Left');
-        this.mHeadingAnswerLabel.setText('Right');
-        this.mHeadingAnswerLabel.setPosition(525,70);
-        this.mHeadingAnswerLabel.setSize(200,50);
-
-        this.mQuestionLabel.setSize(220,250);
-        this.mQuestionLabel.setPosition(225,180);
-
-
 	//----------Prism 1
+
+	//question
+        this.setQuestion('What is the volume of the right rectangular prism on the left in unit blocks?');
+        this.mQuestionLabel.setPosition(625,100);
+        this.mQuestionLabel.setSize(200,120);
+
+	//answer
+ 	this.mAnswerTextBox.setPosition(700,160);
+        this.mAnswerTextBox.setSize(75,25);
+
 	// position of rubix cube
 	var x = 35;
 	var y = 220;
@@ -52,6 +47,16 @@ initialize: function(sheet)
         this.setAnswer('' + answer,0);
 
 	//----------Prism 2 
+	
+	//question
+        this.mHeadingAnswerLabel.setText('What is the volume in feet of the right rectangular prism on the right?');
+        this.mHeadingAnswerLabel.setPosition(675,240);
+        this.mHeadingAnswerLabel.setSize(180,140);
+	
+	//answer
+        this.mAnswerTextBox2.setPosition(700,320);
+        this.mAnswerTextBox2.setSize(75,25);
+
 	// position of rubix cube
 	var x_b = 300;
 	var y_b = 90;
