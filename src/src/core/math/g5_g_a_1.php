@@ -10,7 +10,51 @@ initialize: function(sheet)
 {
 	this.parent(sheet,200,50,225,95,100,50,425,100);
         this.mType = '5.g.a.1_6';
+	
+	//-----table
+        // graph coords
+        var startX = 10;
+        var endX = 300;
+        var startY = 10;
+        var endY = 280;
+        var width = endX - startX;
+        var height = endY - startY;
+        var range = [0,10];
 
+        var rX1 = 10;
+        var rY1 = 50;
+        var rX2 = 420;
+        var rY2 = 350;
+
+	//this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+        this.raphaelSizeX = rX2;
+        this.raphaelSizeY = rY2;
+
+       	// create ratioTable[rows][cols] to pass in to Table
+        var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
+
+        var r = Math.floor(Math.random()*3);
+
+        var head1 = ratioTable[r][0];
+        var head2 = ratioTable[r][1];
+        var ratio = ratioTable[r][2] + Math.floor(Math.random()*3);
+
+        var start = Math.floor(Math.random()*3) + 1;
+
+        var step = Math.floor(Math.random()*2) + 1;
+
+        var answer = (start+(step*2))*ratio;
+
+        this.setAnswer('' + answer,0);
+
+        var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
+
+        // create Table object
+        var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
+
+
+	//---graph
 	clickflag = true;
 
 	var x = Math.floor(Math.random()*10);

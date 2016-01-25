@@ -127,85 +127,79 @@ initialize: function(sheet)
 
        	this.mType = '6.rp.a.3.a_1';
                 
-// graph coords
-var startX = 10;
-var endX = 300;
-var startY = 10;
-var endY = 280;
-var width = endX - startX;
-var height = endY - startY;
-var range = [0,10];
+	// graph coords
+	var startX = 10;
+	var endX = 300;
+	var startY = 10;
+	var endY = 280;
+	var width = endX - startX;
+	var height = endY - startY;
+	var range = [0,10];
 
-//var r = Raphael('graph');
-var rX1 = 10;
-var rY1 = 50;
-var rX2 = 420;
-var rY2 = 350;
+	var rX1 = 10;
+	var rY1 = 50;
+	var rX2 = 420;
+	var rY2 = 350;
 
-this.raphael = Raphael(rX1, rY1, rX2, rY2);
+	this.raphael = Raphael(rX1, rY1, rX2, rY2);
 
-this.raphaelSizeX = rX2;
-this.raphaelSizeY = rY2;
+	this.raphaelSizeX = rX2;
+	this.raphaelSizeY = rY2;
 
-    this.mNameMachine = new NameMachine();
-    this.mNameOne     = this.mNameMachine.getName();
-    this.mNameTwo     = this.mNameMachine.getName();
-    this.mTeacherName     = this.mNameMachine.getAdult();
-    this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
+    	this.mNameMachine = new NameMachine();
+    	this.mNameOne     = this.mNameMachine.getName();
+    	this.mNameTwo     = this.mNameMachine.getName();
+    	this.mTeacherName     = this.mNameMachine.getAdult();
+    	this.mPlayedActivity       = this.mNameMachine.getPlayedActivity();
                 
-		this.mSchool     = this.mNameMachine.getSchool();
-		this.mVegetableOne     = this.mNameMachine.getVegetable();
-		this.mVegetableTwo     = this.mNameMachine.getVegetable();
-		this.mFruit     = this.mNameMachine.getFruit();
-		this.mThings     = this.mNameMachine.getThing();
-    this.mSupply     = this.mNameMachine.getSupply();
+	this.mSchool     = this.mNameMachine.getSchool();
+	this.mVegetableOne     = this.mNameMachine.getVegetable();
+	this.mVegetableTwo     = this.mNameMachine.getVegetable();
+	this.mFruit     = this.mNameMachine.getFruit();
+	this.mThings     = this.mNameMachine.getThing();
+    	this.mSupply     = this.mNameMachine.getSupply();
 
-		this.mRoomOne = Math.floor(Math.random()*10)+40; 
-		this.mRoomTwo = Math.floor(Math.random()*10)+20; 
-                
-		this.mAdult     = this.mNameMachine.getAdult();
+	this.mRoomOne = Math.floor(Math.random()*10)+40; 
+	this.mRoomTwo = Math.floor(Math.random()*10)+20; 
+               
+	this.mAdult     = this.mNameMachine.getAdult();
 
-this.setQuestion('What number completes the ratio table?');    
+	this.setQuestion('What number completes the ratio table?');    
 
-// create ratioTable[rows][cols] to pass in to Table
-var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
+	// create ratioTable[rows][cols] to pass in to Table
+	var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
 
-var r = Math.floor(Math.random()*3);
+	var r = Math.floor(Math.random()*3);
 
-var head1 = ratioTable[r][0];
-var head2 = ratioTable[r][1];
-var ratio = ratioTable[r][2] + Math.floor(Math.random()*3);
+	var head1 = ratioTable[r][0];
+	var head2 = ratioTable[r][1];
+	var ratio = ratioTable[r][2] + Math.floor(Math.random()*3);
 
-var start = Math.floor(Math.random()*3) + 1;
+	var start = Math.floor(Math.random()*3) + 1;
 
-var step = Math.floor(Math.random()*2) + 1;
+	var step = Math.floor(Math.random()*2) + 1;
 
-var answer = (start+(step*2))*ratio;
+	var answer = (start+(step*2))*ratio;
 
-this.setAnswer('' + answer,0);
+	this.setAnswer('' + answer,0);
 
-var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
+	var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
 
-// create Table object
-var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
+	// create Table object
+	var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
 
-this.addQuestionShape(table);
+	this.addQuestionShape(table);
 
-this.mQuestionLabel.setSize(220,50);
-this.mQuestionLabel.setPosition(450,80);
+	this.mQuestionLabel.setSize(220,50);
+	this.mQuestionLabel.setPosition(450,80);
 
-this.mCorrectAnswerLabel.setSize(200, 75);
-this.mCorrectAnswerLabel.setPosition(500,300);
+	this.mCorrectAnswerLabel.setSize(200, 75);
+	this.mCorrectAnswerLabel.setPosition(500,300);
 
-this.mUserAnswerLabel.setSize(200, 75);
-this.mUserAnswerLabel.setPosition(500,200);
+	this.mUserAnswerLabel.setSize(200, 75);
+	this.mUserAnswerLabel.setPosition(500,200);
 
-this.mAnswerTextBox.setPosition(600,110);
-this.mAnswerTextBox.setSize(50,50);
-
-},
-
-
-
+	this.mAnswerTextBox.setPosition(600,110);
+	this.mAnswerTextBox.setSize(50,50);
+}
 });
-
