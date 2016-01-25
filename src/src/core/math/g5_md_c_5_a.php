@@ -18,7 +18,7 @@ initialize: function(sheet)
 	//----------Prism 1
 
 	//question
-        this.setQuestion('What is the volume of the right rectangular prism on the left in unit blocks?');
+        this.setQuestion('What is the volume of the right rectangular prism on the left in cubic unit blocks?');
         this.mQuestionLabel.setPosition(650,80);
         this.mQuestionLabel.setSize(200,120);
 
@@ -49,7 +49,7 @@ initialize: function(sheet)
 	//----------Prism 2 
 	
 	//question
-        this.mHeadingAnswerLabel2.setText('What is the volume in feet of the right rectangular prism on the right?');
+        this.mHeadingAnswerLabel2.setText('What is the volume in cubic feet of the right rectangular prism on the right?');
         this.mHeadingAnswerLabel2.setPosition(675,270);
         this.mHeadingAnswerLabel2.setSize(180,140);
 	
