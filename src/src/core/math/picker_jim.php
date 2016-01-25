@@ -16,8 +16,9 @@ getDev: function()
 	//return '5.md.c.5.c_1';
 	//return '5.md.c.3.a_11';
 	//return '5.oa.b.3_7';
-	return '5.g.a.1_5';
+	return '5.g.a.1_6';
 	//return '6.ns.c.6.a_1';
+	//return '6.rp.a.3.a_1';
 },
 
 getItem: function(id)
@@ -6940,6 +6941,12 @@ getItem: function(id)
 	if (id == '5.md.c.5.a_4')
         {
                 return new i_5_md_c_5_a__4(this.mSheet);
+        }
+
+	//5.g.a.1
+	if (id == '5.g.a.1_6')
+        {
+                return new i_5_g_a_1__6(this.mSheet);
         }
 	
 	/*** GRADE 6 ***/
