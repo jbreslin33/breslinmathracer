@@ -1,3 +1,4 @@
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.g.a.1_5',5.3105,'5.g.a.1','graphs');
 */
@@ -7,55 +8,49 @@ Extends: GraphItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,200,50,225,95,100,50,425,100);
-
+	this.parent(sheet,200,50,225,95,100,50,425,100);
         this.mType = '5.g.a.1_5';
 
-clickflag = true;
+	clickflag = true;
 
-var x = Math.floor(Math.random()*10);
-var y = Math.floor(Math.random()*10);
-
-var answer = '' + x + ' ' + y;
- 
-this.setAnswer(answer,0);
-
-var answer2 = '('+x+','+y+')';
+	var x = Math.floor(Math.random()*10);
+	var y = Math.floor(Math.random()*10);
+	var answer = '' + x + ' ' + y;
+	this.setAnswer(answer,0);
+	var answer2 = '('+x+','+y+')';
    
-this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
+	this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
 
-this.mQuestionLabel.setSize(220,50);
-this.mQuestionLabel.setPosition(625,80);
-
+	this.mQuestionLabel.setSize(220,50);
+	this.mQuestionLabel.setPosition(625,80);
 },
 
+showCorrectAnswer: function()
+{
+	//this.parent();
+	if (this.mCorrectAnswerLabel)
+	{
+        	this.mCorrectAnswerLabel.setSize(200, 75);
+        	this.mCorrectAnswerLabel.setPosition(630,300);
 
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
+	  	this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
+		this.mCorrectAnswerLabel.setVisibility(true);
 
-			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-        var x = this.getAnswer().charAt(0);
-        var y = this.getAnswer().charAt(2);
+        	var x = this.getAnswer().charAt(0);
+        	var y = this.getAnswer().charAt(2);
         
-        if (this.chart.circles[x][y].data("click") == '0')
-        {
-          this.chart.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-          this.chart.circles[x][y].data("click", 1);
-        }
-        clickflag = false;
-        this.mButton.setVisibility(false);
-		  }
-    }
-
+        	if (this.chart.circles[x][y].data("click") == '0')
+        	{
+          		this.chart.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+          		this.chart.circles[x][y].data("click", 1);
+        	}
+        	clickflag = false;
+       		this.mButton.setVisibility(false);
+	}		 	 
+ 	this.hideAnswerInputs();
+        this.showUserAnswer();
+}
 });
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.g.a.1_4',5.3104,'5.g.a.1','graphs');
