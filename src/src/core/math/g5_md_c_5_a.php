@@ -77,10 +77,8 @@ initialize: function(sheet)
 	var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x_b,y_b,w1_b,h1_b,d1_b,.5,.5,.5,"#000",1,false,'feet');
 	this.addQuestionShape(cube);
 
-
 	this.mUserAnswerLabel.setPosition(625,150);
 	this.mCorrectAnswerLabel.setPosition(625,250);
-
 },
 
 showCorrectAnswer: function()
