@@ -19,7 +19,7 @@ initialize: function(sheet)
 
 	//question
         this.setQuestion('What is the volume of the right rectangular prism on the left in unit blocks?');
-        this.mQuestionLabel.setPosition(625,100);
+        this.mQuestionLabel.setPosition(650,80);
         this.mQuestionLabel.setSize(200,120);
 
 	//answer
@@ -49,9 +49,9 @@ initialize: function(sheet)
 	//----------Prism 2 
 	
 	//question
-        this.mHeadingAnswerLabel.setText('What is the volume in feet of the right rectangular prism on the right?');
-        this.mHeadingAnswerLabel.setPosition(675,240);
-        this.mHeadingAnswerLabel.setSize(180,140);
+        this.mHeadingAnswerLabel2.setText('What is the volume in feet of the right rectangular prism on the right?');
+        this.mHeadingAnswerLabel2.setPosition(675,270);
+        this.mHeadingAnswerLabel2.setSize(180,140);
 	
 	//answer
         this.mAnswerTextBox2.setPosition(700,320);
@@ -66,11 +66,13 @@ initialize: function(sheet)
 	var h1_b = Math.floor(Math.random()*4)+1;
 	var d1_b = Math.floor(Math.random()*4)+1;
 
-	var volume = w1_b*h1_b*d1_b; //Math.floor(Math.random()*3+1);
+	var volume = parseInt(w1_b*h1_b*d1_b); //Math.floor(Math.random()*3+1);
 
 	w1_b = w1_b*40;
 	h1_b = h1_b*40;
 	d1_b = d1_b*40;
+	
+        this.setAnswer('' + volume,1);
 
 	var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x_b,y_b,w1_b,h1_b,d1_b,.5,.5,.5,"#000",1,false,'feet');
 	this.addQuestionShape(cube);
@@ -79,12 +81,20 @@ initialize: function(sheet)
 	this.mUserAnswerLabel.setPosition(625,150);
 	this.mCorrectAnswerLabel.setPosition(625,250);
 
+},
+
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+ 		this.mCorrectAnswerLabel.setPosition(250,100);
+ 		this.mCorrectAnswerLabel.setSize(440,150);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWERS: ' + this.mQuestionLabel.getText() + ' = ' +  this.getAnswer()  + ' ' + this.mHeadingAnswerLabel2.getText() + ' = ' +  this.getAnswerTwo());
+                this.mCorrectAnswerLabel.setVisibility(true);
+         }
 }
 
-
 });
-
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.c.5.a_3',5.2803,'5.md.c.5','');
