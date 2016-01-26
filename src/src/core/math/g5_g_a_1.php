@@ -43,7 +43,6 @@ initialize: function(sheet)
 	this.WriteTableRow(375,90,60,20,this.mRaphael,"(8,9)");
 
 	//---graph
-	//this.raphael = Raphael(200, 50, 420,350);
 	clickflag = true;
 
 	var x = Math.floor(Math.random()*10);
@@ -106,6 +105,34 @@ WriteTableRow: function(x,y,width,height,r,TD)
 	var t = new RaphaelText(x+width/2,y+height/2,this,0,0,1,"#000000",.5,false,"" + TD,12);
 	this.addShape(t);
         x = x + width;
+},
+
+checkUserAnswer: function()
+{
+	correctAnswerFound = false;
+        for (i = 0; i <  this.mAnswerArray.length; i++)
+        {
+        	//ignorecase
+                if (this.mIgnoreCase == true)
+               	{ 
+                	if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
+                        {
+                                correctAnswerFound = true;
+                        }
+                }
+                else
+                {
+               	        if (this.mUserAnswer == this.mAnswerArray[i])
+                        {
+                                correctAnswerFound = true;
+                        }
+                }
+        }
+        if (correctAnswerFound == false)
+        {
+                this.mSheet.setTypeWrong(this.mType);
+        }
+        return correctAnswerFound;
 },
 
 showCorrectAnswer: function()
