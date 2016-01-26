@@ -98,6 +98,37 @@ initialize: function(sheet)
 
 },
 
+createChart: function()
+{
+        // graph coords
+        var startX = 10;
+        var endX = 310;
+        var startY = 10;
+        var endY = 310;
+        var width = endX - startX;
+        var height = endY - startY;
+        var range = [0,10];
+
+        //var r = Raphael('graph');
+        var rX1 = 10;
+        var rY1 = 50;
+        var rX2 = 520;
+        var rY2 = 350;
+
+        this.raphaelSizeX = rX2;
+        this.raphaelSizeY = rY2;
+
+        var pointsX;
+        var pointsY;
+
+        pointsX = [];
+        pointsY = [];
+
+        this.chart = new LineChartTestMultiple (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+        this.addQuestionShape(this.chart);
+},
+
+
 WriteTableRow: function(x,y,width,height,r,TD)
 {
 	var rect = new Rectangle(width,height,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.6,false);
