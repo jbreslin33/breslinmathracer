@@ -78,8 +78,15 @@ initialize: function(sheet)
 		this.mAnswerTextBoxArray.push(tb);
         	this.addShape(tb);
 	}
+	//col1
 	this.mAnswerTextBoxArray[0].setPosition(440,130);
 	this.mAnswerTextBoxArray[1].setPosition(440,150);
+	this.mAnswerTextBoxArray[2].setPosition(440,170);
+	
+	//col2
+	this.mAnswerTextBoxArray[3].setPosition(610,130);
+	this.mAnswerTextBoxArray[4].setPosition(610,150);
+	this.mAnswerTextBoxArray[5].setPosition(610,170);
 
 },
 
