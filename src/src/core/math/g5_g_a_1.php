@@ -13,25 +13,28 @@ initialize: function(sheet)
 	
 	//----TABLE
 	
-	this.raphael_table = Raphael(320, 10, 400,150);
+	this.mRaphael = Raphael(320, 10, 440,170);
 
 	this.ns = new NameSampler();
 	this.a = 'Height in mm of ' + this.ns.mVegetableOne 
 	this.b = 'Height in mm of ' + this.ns.mVegetableTwo 
 	
 	//col 1
-	this.WriteTableRow(10,50,25,20,this.raphael_table,"Year");
-	this.WriteTableRow(10,70,25,20,this.raphael_table,"1");
-	this.WriteTableRow(10,90,25,20,this.raphael_table,"2");
-	this.WriteTableRow(10,110,25,20,this.raphael_table,"3");
-	this.WriteTableRow(10,130,25,20,this.raphael_table,"4");
-	this.WriteTableRow(10,130,25,20,this.raphael_table,"5");
+	this.WriteTableRow(10,50,25,20,this.mRaphael,"Year");
+	this.WriteTableRow(10,70,25,20,this.mRaphael,"1");
+	this.WriteTableRow(10,90,25,20,this.mRaphael,"2");
+	this.WriteTableRow(10,110,25,20,this.mRaphael,"3");
+	this.WriteTableRow(10,130,25,20,this.mRaphael,"4");
+	this.WriteTableRow(10,150,25,20,this.mRaphael,"5");
 
 	//col 2	
-	this.WriteTableRow(35,50,150,20,this.raphael_table,this.a);
+	this.WriteTableRow(35,50,170,20,this.mRaphael,this.a);
 
 	//col 3	
-	this.WriteTableRow(185,50,150,20,this.raphael_table,this.a);
+	this.WriteTableRow(205,50,170,20,this.mRaphael,this.a);
+	
+	//col 4	
+	this.WriteTableRow(375,50,60,20,this.mRaphael,"Ordered Pair");
 
 	//---graph
 	//this.raphael = Raphael(200, 50, 420,350);
@@ -46,8 +49,8 @@ initialize: function(sheet)
 	this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
 
 	this.mQuestionLabel.setSize(220,300);
-	this.mQuestionLabel.setPosition(670,300);
-	this.mButton.setPosition(600,400);
+	this.mQuestionLabel.setPosition(670,325);
+	this.mButton.setPosition(600,300);
 },
 
 WriteTableRow: function(x,y,width,height,r,TDdata)
@@ -55,8 +58,11 @@ WriteTableRow: function(x,y,width,height,r,TDdata)
 	var TD = TDdata.split(",");
     	for (j=0;j<TD.length;j++)
     	{
-        	var rect = r.rect(x,y,width,height).attr({"fill":"white","stroke":"red"});
-        	r.text(x+width/2, y+height/2, TD[j]);
+		var rect = new Rectangle(width,height,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.6,false);
+		this.addShape(rect);
+		var t = new RaphaelText(x+width/2,y+height/2,this,0,0,1,"#000000",.5,false,"" + TD[j],12);
+		this.addShape(t);
+		//r.text(x+width/2, y+height/2, TD[j]); 
         	x = x + width;
     	}
 },
