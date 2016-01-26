@@ -2941,6 +2941,16 @@ setVisibility: function(b)
 	}
 });
 
+var LineChartTestMultiple = new Class(
+{
+Extends: LineChartTest,
+initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY1,s,d)
+{
+	this.parent(game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY1,s,d);
+} 
+
+});
+
 
 
 

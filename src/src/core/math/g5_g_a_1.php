@@ -495,7 +495,7 @@ if(r == 3)
 
 this.setQuestion('If you connect the points on the graph in alphabetical order, what letter is formed?');
 
-var chart = new LineChartTest (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+var chart = new LineChartTestMultiple (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
 
 this.addQuestionShape(chart);
 
