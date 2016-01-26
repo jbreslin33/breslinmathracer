@@ -214,6 +214,14 @@ initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
 		this.mQuestionLabel.setPosition(qx,qy);
 	}
 
+	this.raphael = Raphael(10, 50, 520, 350);
+	
+	this.chart = 0;
+	this.createChart();
+},
+
+createChart: function()
+{
 	// graph coords
 	var startX = 10;
 	var endX = 310;
@@ -228,12 +236,10 @@ initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
 	var rY1 = 50;
 	var rX2 = 520;
 	var rY2 = 350;
-
-	this.raphael = Raphael(rX1, rY1, rX2, rY2);
-
+	
 	this.raphaelSizeX = rX2;
 	this.raphaelSizeY = rY2;
-
+	
 	var pointsX;
 	var pointsY;
 
@@ -241,7 +247,6 @@ initialize: function(sheet,qw,qh,qx,qy,tw,th,tx,ty)
 	pointsY = [];
 
     	this.chart = new LineChartTest (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
-
 	this.addQuestionShape(this.chart);
 },
 

@@ -2941,10 +2941,6 @@ setVisibility: function(b)
 	}
 });
 
-
-
-
-
 var LineChartTestMultiple = new Class(
 {
 Extends: RaphaelPolygon,
@@ -3055,8 +3051,6 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
       		}
     	}
 
-	var b;
-	var current = '';
 	var flag = this.flag;
 
     	// Draw invisible circles at each point
@@ -3067,33 +3061,25 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
   		for (var j = 0; j < this.mPolygon.axis[0].text.items.length; j++) 
 		{
     			var x = this.mPolygon.axis[0].text.items[j].attrs.x;
-    			b = this.mRaphael.circle(x, y, 10).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0});
-    			b.data("click", 0);
-    			b.data("x", j);
-    			b.data("y", i);
-    			this.circles[j][i] = b;
-    			b.mousedown(function() 
+    			this.circles[j][i] = this.mRaphael.circle(x, y, 10).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0});
+    			this.circles[j][i].data("click", 0);
+    			this.circles[j][i].data("x", j);
+    			this.circles[j][i].data("y", i);
+
+    			this.circles[j][i].mousedown(function() 
 			{
-      				if (this.data("click") == '1' && clickflag == true) 
+      				if (this.data("click") == '1')
 				{
         				this.attr({fill: "white", stroke: "none", opacity: 0}).scale(2,2);
         				this.data("click", 0);
         				item.setTempUserAnswer(''); 
-        				current = '';
            
       				}
-      				else if(clickflag == true)
+      				else if (this.data("click") == '0')
 				{
-        				if(current != '')  
-					{
-          					current.attr({fill: "white", stroke: "none", opacity: 0}).scale(2,2);
-          					current.data("click", 0);
-          
-        				}
         				this.attr({fill: "white", stroke: "none", opacity: 1}).scale(.5,.5);
         				this.data("click", 1);
         				item.setTempUserAnswer('' + this.data("x") + ' ' + this.data("y"));
-        				current = this;
       				}
     			});
   		}
