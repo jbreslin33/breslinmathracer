@@ -39,6 +39,8 @@ initialize: function(sheet)
 	
 	//col 4	
 	this.WriteTableRow(375,50,60,20,this.mRaphael,"Ordered Pair");
+	this.WriteTableRow(375,70,60,20,this.mRaphael,"(6,7)");
+	this.WriteTableRow(375,90,60,20,this.mRaphael,"(8,9)");
 
 	//---graph
 	//this.raphael = Raphael(200, 50, 420,350);
@@ -57,17 +59,13 @@ initialize: function(sheet)
 	this.mButton.setPosition(650,400);
 },
 
-WriteTableRow: function(x,y,width,height,r,TDdata)
+WriteTableRow: function(x,y,width,height,r,TD)
 {
-	var TD = TDdata.split(",");
-    	for (j=0;j<TD.length;j++)
-    	{
-		var rect = new Rectangle(width,height,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.6,false);
-		this.addShape(rect);
-		var t = new RaphaelText(x+width/2,y+height/2,this,0,0,1,"#000000",.5,false,"" + TD[j],12);
-		this.addShape(t);
-        	x = x + width;
-    	}
+	var rect = new Rectangle(width,height,x,y,this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.6,false);
+	this.addShape(rect);
+	var t = new RaphaelText(x+width/2,y+height/2,this,0,0,1,"#000000",.5,false,"" + TD,12);
+	this.addShape(t);
+        x = x + width;
 },
 
 showCorrectAnswer: function()
