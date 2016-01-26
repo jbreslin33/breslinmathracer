@@ -57,6 +57,30 @@ initialize: function(sheet)
 	this.mQuestionLabel.setSize(220,100);
 	this.mQuestionLabel.setPosition(670,225);
 	this.mButton.setPosition(650,400);
+
+	this.mAnswerTextBoxArray = new Array();
+
+ 	//answer Input
+	for (var i = 0; i < 9; i++)
+	{
+        	var tb = new Shape(170,20,437,300,this.mSheet.mGame,"INPUT","","");
+        	tb.mMesh.value = '';
+        	tb.mCollidable = false;
+        	tb.mCollisionOn = false;
+        	if (navigator.appName == "Microsoft Internet Explorer")
+        	{
+                	tb.mMesh.attachEvent('onkeypress',this.inputKeyHitEnter);
+        	}
+        	else
+        	{
+                	tb.mMesh.addEvent('keypress',this.inputKeyHit);
+        	}
+		this.mAnswerTextBoxArray.push(tb);
+        	this.addShape(tb);
+	}
+	this.mAnswerTextBoxArray[0].setPosition(440,130);
+	this.mAnswerTextBoxArray[1].setPosition(440,150);
+
 },
 
 WriteTableRow: function(x,y,width,height,r,TD)
