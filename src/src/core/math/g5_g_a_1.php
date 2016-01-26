@@ -13,20 +13,19 @@ initialize: function(sheet)
 	
 	//-----table
         // graph coords
-        var startX = 10;
-        var endX = 300;
+/*
+        var startX = 300;
+        var endX = 590;
         var startY = 10;
         var endY = 280;
         var width = endX - startX;
         var height = endY - startY;
         var range = [0,10];
 
-        var rX1 = 10;
-        var rY1 = 50;
+        var rX1 = 1;
+        var rY1 = 1;
         var rX2 = 420;
         var rY2 = 350;
-
-	//this.raphael = Raphael(rX1, rY1, rX2, rY2);
 
         this.raphaelSizeX = rX2;
         this.raphaelSizeY = rY2;
@@ -53,8 +52,26 @@ initialize: function(sheet)
         // create Table object
         var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
 
+*/
+var x = 100;
+var y = 50;
+var height = 50
+var width = 100;
+
+this.WriteTableRow(x,y,width*2,height,this.raphael,"TOP Title");
+y= y+height;
+this.WriteTableRow(x,y,width,height,this.raphael,"Score,Player");
+y= y+height;
+for (i=1;i<=4;i++)
+{
+    var k;
+    k = Math.floor(Math.random() * (10 + 1 - 5) + 5);
+    this.WriteTableRow(x,y,width,height,this.raphael,i+","+ k + "");
+    y= y+height;
+}
 
 	//---graph
+	//this.raphael = Raphael(200, 50, 420,350);
 	clickflag = true;
 
 	var x = Math.floor(Math.random()*10);
@@ -67,6 +84,17 @@ initialize: function(sheet)
 
 	this.mQuestionLabel.setSize(220,50);
 	this.mQuestionLabel.setPosition(625,80);
+},
+
+WriteTableRow: function(x,y,width,height,r,TDdata)
+{
+    var TD = TDdata.split(",");
+    for (j=0;j<TD.length;j++)
+    {
+        var rect = r.rect(x,y,width,height).attr({"fill":"white","stroke":"red"});
+        r.text(x+width/2, y+height/2, TD[j]);
+        x = x + width;
+    }
 },
 
 showCorrectAnswer: function()
