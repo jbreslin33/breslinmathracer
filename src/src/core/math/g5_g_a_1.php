@@ -11,64 +11,27 @@ initialize: function(sheet)
 	this.parent(sheet,200,50,225,95,100,50,425,100);
         this.mType = '5.g.a.1_6';
 	
-	//-----table
-        // graph coords
-/*
-        var startX = 300;
-        var endX = 590;
-        var startY = 10;
-        var endY = 280;
-        var width = endX - startX;
-        var height = endY - startY;
-        var range = [0,10];
+	//----TABLE
+	
+	this.raphael_table = Raphael(320, 10, 400,150);
 
-        var rX1 = 1;
-        var rY1 = 1;
-        var rX2 = 420;
-        var rY2 = 350;
+	this.ns = new NameSampler();
+	this.a = 'Height in mm of ' + this.ns.mVegetableOne 
+	this.b = 'Height in mm of ' + this.ns.mVegetableTwo 
+	
+	//col 1
+	this.WriteTableRow(10,50,25,20,this.raphael_table,"Year");
+	this.WriteTableRow(10,70,25,20,this.raphael_table,"1");
+	this.WriteTableRow(10,90,25,20,this.raphael_table,"2");
+	this.WriteTableRow(10,110,25,20,this.raphael_table,"3");
+	this.WriteTableRow(10,130,25,20,this.raphael_table,"4");
+	this.WriteTableRow(10,130,25,20,this.raphael_table,"5");
 
-        this.raphaelSizeX = rX2;
-        this.raphaelSizeY = rY2;
+	//col 2	
+	this.WriteTableRow(35,50,150,20,this.raphael_table,this.a);
 
-       	// create ratioTable[rows][cols] to pass in to Table
-        var ratioTable = [['teams','players', 6],['classrooms','desks', 20],['cupcakes','trays', 12]];
-
-        var r = Math.floor(Math.random()*3);
-
-        var head1 = ratioTable[r][0];
-        var head2 = ratioTable[r][1];
-        var ratio = ratioTable[r][2] + Math.floor(Math.random()*3);
-
-        var start = Math.floor(Math.random()*3) + 1;
-
-        var step = Math.floor(Math.random()*2) + 1;
-
-        var answer = (start+(step*2))*ratio;
-
-        this.setAnswer('' + answer,0);
-
-        var tableData = [[head1,head2],[start,''+start*ratio],[start+(step*1),''+(start+(step*1))*ratio],[start+(step*2),'']];
-
-        // create Table object
-        var table = new Table (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,tableData,rX1,rY1,tableData,"#000000",false);
-
-*/
-var x = 100;
-var y = 50;
-var height = 50
-var width = 100;
-
-this.WriteTableRow(x,y,width*2,height,this.raphael,"TOP Title");
-y= y+height;
-this.WriteTableRow(x,y,width,height,this.raphael,"Score,Player");
-y= y+height;
-for (i=1;i<=4;i++)
-{
-    var k;
-    k = Math.floor(Math.random() * (10 + 1 - 5) + 5);
-    this.WriteTableRow(x,y,width,height,this.raphael,i+","+ k + "");
-    y= y+height;
-}
+	//col 3	
+	this.WriteTableRow(185,50,150,20,this.raphael_table,this.a);
 
 	//---graph
 	//this.raphael = Raphael(200, 50, 420,350);
@@ -82,19 +45,20 @@ for (i=1;i<=4;i++)
    
 	this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
 
-	this.mQuestionLabel.setSize(220,50);
-	this.mQuestionLabel.setPosition(625,80);
+	this.mQuestionLabel.setSize(220,300);
+	this.mQuestionLabel.setPosition(670,300);
+	this.mButton.setPosition(600,400);
 },
 
 WriteTableRow: function(x,y,width,height,r,TDdata)
 {
-    var TD = TDdata.split(",");
-    for (j=0;j<TD.length;j++)
-    {
-        var rect = r.rect(x,y,width,height).attr({"fill":"white","stroke":"red"});
-        r.text(x+width/2, y+height/2, TD[j]);
-        x = x + width;
-    }
+	var TD = TDdata.split(",");
+    	for (j=0;j<TD.length;j++)
+    	{
+        	var rect = r.rect(x,y,width,height).attr({"fill":"white","stroke":"red"});
+        	r.text(x+width/2, y+height/2, TD[j]);
+        	x = x + width;
+    	}
 },
 
 showCorrectAnswer: function()
