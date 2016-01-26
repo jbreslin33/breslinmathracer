@@ -48,9 +48,9 @@ initialize: function(sheet)
    
 	this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
 
-	this.mQuestionLabel.setSize(220,300);
-	this.mQuestionLabel.setPosition(670,325);
-	this.mButton.setPosition(600,300);
+	this.mQuestionLabel.setSize(220,100);
+	this.mQuestionLabel.setPosition(670,225);
+	this.mButton.setPosition(650,400);
 },
 
 WriteTableRow: function(x,y,width,height,r,TDdata)
@@ -62,7 +62,6 @@ WriteTableRow: function(x,y,width,height,r,TDdata)
 		this.addShape(rect);
 		var t = new RaphaelText(x+width/2,y+height/2,this,0,0,1,"#000000",.5,false,"" + TD[j],12);
 		this.addShape(t);
-		//r.text(x+width/2, y+height/2, TD[j]); 
         	x = x + width;
     	}
 },
