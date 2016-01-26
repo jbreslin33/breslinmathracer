@@ -29,9 +29,13 @@ initialize: function(sheet)
 
 	//col 2	
 	this.WriteTableRow(35,50,170,20,this.mRaphael,this.a);
+	this.WriteTableRow(35,70,170,20,this.mRaphael,"4");
+	this.WriteTableRow(35,90,170,20,this.mRaphael,"12");
 
 	//col 3	
 	this.WriteTableRow(205,50,170,20,this.mRaphael,this.a);
+	this.WriteTableRow(205,70,170,20,this.mRaphael,"5");
+	this.WriteTableRow(205,90,170,20,this.mRaphael,"6");
 	
 	//col 4	
 	this.WriteTableRow(375,50,60,20,this.mRaphael,"Ordered Pair");
