@@ -107,9 +107,8 @@ createChart: function()
         var endY = 310;
         var width = endX - startX;
         var height = endY - startY;
-        var range = [0,10];
+        var range = [0,30];
 
-        //var r = Raphael('graph');
         var rX1 = 10;
         var rY1 = 50;
         var rX2 = 520;

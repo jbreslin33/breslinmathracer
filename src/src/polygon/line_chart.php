@@ -2961,17 +2961,20 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
     	this.hLines = new Array();
 		
 	this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
+
+	rangeX = [0,10];
+	rangeY = [0,10];
 		
 	this.mPolygon = this.mRaphael.linechart(
     	x1, y1,      // top left anchor
     	x2, y2,    // bottom right anchor
     	[
       		pointsX,        // red line x-values
-      		range    // blue line x-values - invisible, used to create x-range of graph
+      		rangeX    // blue line x-values - invisible, used to create x-range of graph
     	],
     	[
       		pointsY, // red line y-values
-      		range      // blue line y-values - invisible, used to create y-range of graph
+      		rangeY      // blue line y-values - invisible, used to create y-range of graph
     	],
     	{
        		nostroke: true,   // lines between points are drawn
