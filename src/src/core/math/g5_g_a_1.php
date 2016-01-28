@@ -139,6 +139,15 @@ WriteTableRow: function(x,y,width,height,r,TD)
 
 checkUserAnswer: function()
 {
+
+	for (var j = 0; j < this.chart.circles.length; j++)
+	{
+		for (var k = 0; k < this.chart.circles.length; k++)
+		{
+			APPLICATION.log('j:' + j + ' k:' + k);
+		}
+	}
+	
 	correctAnswerFound = false;
         for (i = 0; i <  this.mAnswerArray.length; i++)
         {
