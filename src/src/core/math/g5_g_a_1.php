@@ -144,7 +144,10 @@ checkUserAnswer: function()
 	{
 		for (var k = 0; k < this.chart.circles.length; k++)
 		{
-			APPLICATION.log('j:' + j + ' k:' + k);
+ 			if (this.chart.circles[j][k].data("click") == '1')
+			{
+				APPLICATION.log('j:' + j + ' k:' + k);
+			}
 		}
 	}
 	
