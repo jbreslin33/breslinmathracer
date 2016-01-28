@@ -2963,10 +2963,10 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
 	this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
 
 	rangeX = [0,15];
-	rangeY = [0,15];
+	rangeY = [0,20];
 
-	pointsX = [0,1,2,3,5,6,7,8,9,10,11,12,13,14,15];
-	pointsY = [0,1,2,3,5,6,7,8,9,10,11,12,13,14,15];
+	//pointsX = [0,1,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+	//pointsY = [0,1,2,3,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 		
 	this.mPolygon = this.mRaphael.linechart(
     	x1, y1,      // top left anchor
@@ -2983,7 +2983,7 @@ initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY
        		nostroke: true,   // lines between points are drawn
        		axis: "0 0 1 1",   // draw axes on the left and bottom
        		axisxstep: 15,
-       		axisystep: 15,
+       		axisystep: 20,
        		symbol: 'circle',    // use a filled circle as the point symbol
        		smooth: true,      // curve the lines to smooth turns on the chart
        		dash: "-",          //draw the lines dashed
