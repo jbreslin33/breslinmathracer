@@ -28,15 +28,15 @@ initialize: function(sheet)
 
 	this.xArray.push(parseInt(this.xStart));
 	this.xArray.push(parseInt(this.xStart + this.xStep));
-	this.xArray.push(parseInt(this.xStart + this.xStep));
-	this.xArray.push(parseInt(this.xStart + this.xStep));
-	this.xArray.push(parseInt(this.xStart + this.xStep));
+	this.xArray.push(parseInt(this.xStart + this.xStep + this.xStep ));
+	this.xArray.push(parseInt(this.xStart + this.xStep + this.xStep + this.xStep));
+	this.xArray.push(parseInt(this.xStart + this.xStep + this.xStep + this.xStep + this.xStep));
 	
 	this.yArray.push(parseInt(this.yStart));
 	this.yArray.push(parseInt(this.yStart + this.yStep));
-	this.yArray.push(parseInt(this.yStart + this.yStep));
-	this.yArray.push(parseInt(this.yStart + this.yStep));
-	this.yArray.push(parseInt(this.yStart + this.yStep));
+	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep));
+	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep));
+	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep + this.yStep));
 	
 	//col 1
 	this.WriteTableRow(10,50,25,20,this.mRaphael,"year");
@@ -239,21 +239,27 @@ showCorrectAnswer: function()
 
 	  	this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
 		this.mCorrectAnswerLabel.setVisibility(true);
+			
+		APPLICATION.log(' x:' + this.xArray[0] + ' y:' + this.yArray[0]);
+		APPLICATION.log(' x:' + this.xArray[1] + ' y:' + this.yArray[1]);
+		APPLICATION.log(' x:' + this.xArray[2] + ' y:' + this.yArray[2]);
+		APPLICATION.log(' x:' + this.xArray[3] + ' y:' + this.yArray[3]);
+		APPLICATION.log(' x:' + this.xArray[4] + ' y:' + this.yArray[4]);
 		
-		for (var x = 0; x < 15; x++)
-		{ 
-			for (var y = 0; y < 20; y++)
-			{
-        			//if (this.chart.circles[x][y].data("click") == '0')
-        			//{
-				//	if (this.xArray[x] == x && this.yArray[y] == y)
-				//	{
-          					this.chart.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-				//	}
-					this.chart.circles[x][y].data("click", 1);
-				//}
-			}
-        	}
+          	this.chart.circles[this.xArray[0]][this.yArray[0]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+		this.chart.circles[this.xArray[0]][this.yArray[0]].data("click", 1);
+          	
+		this.chart.circles[this.xArray[1]][this.yArray[1]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+		this.chart.circles[this.xArray[1]][this.yArray[1]].data("click", 1);
+		
+		this.chart.circles[this.xArray[2]][this.yArray[2]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+		this.chart.circles[this.xArray[2]][this.yArray[2]].data("click", 1);
+		
+		this.chart.circles[this.xArray[3]][this.yArray[3]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+		this.chart.circles[this.xArray[3]][this.yArray[3]].data("click", 1);
+		
+		this.chart.circles[this.xArray[4]][this.yArray[4]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+		this.chart.circles[this.xArray[4]][this.yArray[4]].data("click", 1);
 
         	clickflag = false;
        		this.mButton.setVisibility(false);
