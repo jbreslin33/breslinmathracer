@@ -62,8 +62,6 @@ initialize: function(sheet)
 	this.WriteTableRow(375,90,60,20,this.mRaphael,"(8,9)");
 
 	//---graph
-	clickflag = true;
-
 	var x = Math.floor(Math.random()*10);
 	var y = Math.floor(Math.random()*10);
 	var answer = '' + x + ' ' + y;
@@ -261,7 +259,6 @@ showCorrectAnswer: function()
 		this.chart.circles[this.xArray[4]][this.yArray[4]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
 		this.chart.circles[this.xArray[4]][this.yArray[4]].data("click", 1);
 
-        	clickflag = false;
        		this.mButton.setVisibility(false);
 	}		 	 
  	this.hideAnswerInputs();
