@@ -239,15 +239,22 @@ showCorrectAnswer: function()
 
 	  	this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
 		this.mCorrectAnswerLabel.setVisibility(true);
-
-        	var x = this.getAnswer().charAt(0);
-        	var y = this.getAnswer().charAt(2);
-        
-        	if (this.chart.circles[x][y].data("click") == '0')
-        	{
-          		this.chart.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-          		this.chart.circles[x][y].data("click", 1);
+		
+		for (var x = 0; x < 15; x++)
+		{ 
+			for (var y = 0; y < 20; y++)
+			{
+        			//if (this.chart.circles[x][y].data("click") == '0')
+        			//{
+				//	if (this.xArray[x] == x && this.yArray[y] == y)
+				//	{
+          					this.chart.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
+				//	}
+					this.chart.circles[x][y].data("click", 1);
+				//}
+			}
         	}
+
         	clickflag = false;
        		this.mButton.setVisibility(false);
 	}		 	 
