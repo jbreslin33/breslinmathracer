@@ -37,7 +37,16 @@ initialize: function(sheet)
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep));
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep));
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep + this.yStep));
+
+	this.mUserXArray = new Array();
+	this.mUserYArray = new Array();
+
+	this.mUserXArray.push(this.xArray[0]);
+	this.mUserXArray.push(this.xArray[1]);
 	
+	this.mUserYArray.push(this.yArray[0]);
+	this.mUserYArray.push(this.yArray[1]);
+
 	//col 1
 	this.WriteTableRow(10,50,25,20,this.mRaphael,"year");
 	this.WriteTableRow(10,70,25,20,this.mRaphael,"1");
@@ -156,6 +165,17 @@ WriteTableRow: function(x,y,width,height,r,TD)
 
 checkUserAnswer: function()
 {
+	//set userAnswers...
+	this.mUserXArray[2] = this.mAnswerTextBoxArray[0].mMesh.value;
+	this.mUserXArray[3] = this.mAnswerTextBoxArray[1].mMesh.value;
+	this.mUserXArray[4] = this.mAnswerTextBoxArray[2].mMesh.value;
+	
+	this.mUserYArray[2] = this.mAnswerTextBoxArray[3].mMesh.value;
+	this.mUserYArray[3] = this.mAnswerTextBoxArray[4].mMesh.value;
+	this.mUserYArray[4] = this.mAnswerTextBoxArray[5].mMesh.value;
+
+
+
 	var cArray = new Array();
 	cArray.push(2);
 	cArray.push(2);
@@ -163,16 +183,27 @@ checkUserAnswer: function()
 	cArray.push(2);
 	cArray.push(2);
 	
+	APPLICATION.log('this.mUserXArray[0]:' + this.mUserXArray[0]); 
+	APPLICATION.log('this.mUserXArray[1]:' + this.mUserXArray[1]); 
+	APPLICATION.log('this.mUserXArray[2]:' + this.mUserXArray[2]); 
+	APPLICATION.log('this.mUserXArray[3]:' + this.mUserXArray[3]); 
+	APPLICATION.log('this.mUserXArray[4]:' + this.mUserXArray[4]); 
+	
+	APPLICATION.log('this.mUserYArray[0]:' + this.mUserYArray[0]); 
+	APPLICATION.log('this.mUserYArray[1]:' + this.mUserYArray[1]); 
+	APPLICATION.log('this.mUserYArray[2]:' + this.mUserYArray[2]); 
+	APPLICATION.log('this.mUserYArray[3]:' + this.mUserYArray[3]); 
+	APPLICATION.log('this.mUserYArray[4]:' + this.mUserYArray[4]); 
+	
 	for (var j = 0; j < this.chart.circles.length; j++)
 	{
 		for (var k = 0; k < this.chart.circles.length; k++)
 		{
  			if (this.chart.circles[j][k].data("click") == '1')
 			{
-				//APPLICATION.log('j:' + j + ' k:' + k);
 				for (var v = 0; v < this.xArray.length; v++)
 				{
-					if (this.xArray[v] == j && this.yArray[v] == k)
+					if (this.xArray[v] == j && this.yArray[v] == k && this.mUserXArray[v] == j && this.mUserYArray == k)
 					{
 						cArray[v] = 1;
 					}
