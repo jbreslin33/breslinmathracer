@@ -18,9 +18,28 @@ initialize: function(sheet)
 	this.ns = new NameSampler();
 	this.a = 'Height in mm of ' + this.ns.mVegetableOne 
 	this.b = 'Height in mm of ' + this.ns.mVegetableTwo 
+
+	this.xArray = new Array();
+	this.yArray = new Array();
+	this.xStart= Math.floor(Math.random()*2);
+	this.yStart= Math.floor(Math.random()*3);
+	this.xStep = Math.floor(Math.random()*3)+1;
+	this.yStep = Math.floor(Math.random()*4)+1;
+
+	this.xArray.push(parseInt(this.xStart));
+	this.xArray.push(parseInt(this.xStart + this.xStep));
+	this.xArray.push(parseInt(this.xStart + this.xStep));
+	this.xArray.push(parseInt(this.xStart + this.xStep));
+	this.xArray.push(parseInt(this.xStart + this.xStep));
+	
+	this.yArray.push(parseInt(this.yStart));
+	this.yArray.push(parseInt(this.yStart + this.yStep));
+	this.yArray.push(parseInt(this.yStart + this.yStep));
+	this.yArray.push(parseInt(this.yStart + this.yStep));
+	this.yArray.push(parseInt(this.yStart + this.yStep));
 	
 	//col 1
-	this.WriteTableRow(10,50,25,20,this.mRaphael,"Year");
+	this.WriteTableRow(10,50,25,20,this.mRaphael,"year");
 	this.WriteTableRow(10,70,25,20,this.mRaphael,"1");
 	this.WriteTableRow(10,90,25,20,this.mRaphael,"2");
 	this.WriteTableRow(10,110,25,20,this.mRaphael,"3");
@@ -29,13 +48,13 @@ initialize: function(sheet)
 
 	//col 2	
 	this.WriteTableRow(35,50,170,20,this.mRaphael,this.a);
-	this.WriteTableRow(35,70,170,20,this.mRaphael,"4");
-	this.WriteTableRow(35,90,170,20,this.mRaphael,"12");
+	this.WriteTableRow(35,70,170,20,this.mRaphael,this.xArray[0]);
+	this.WriteTableRow(35,90,170,20,this.mRaphael,this.xArray[1]);
 
 	//col 3	
-	this.WriteTableRow(205,50,170,20,this.mRaphael,this.a);
-	this.WriteTableRow(205,70,170,20,this.mRaphael,"5");
-	this.WriteTableRow(205,90,170,20,this.mRaphael,"6");
+	this.WriteTableRow(205,50,170,20,this.mRaphael,this.b);
+	this.WriteTableRow(205,70,170,20,this.mRaphael,this.yArray[0]);
+	this.WriteTableRow(205,90,170,20,this.mRaphael,this.yArray[1]);
 	
 	//col 4	
 	this.WriteTableRow(375,50,60,20,this.mRaphael,"Ordered Pair");
@@ -139,18 +158,50 @@ WriteTableRow: function(x,y,width,height,r,TD)
 
 checkUserAnswer: function()
 {
-
+	var cArray = new Array();
+	cArray.push(2);
+	cArray.push(2);
+	cArray.push(2);
+	cArray.push(2);
+	cArray.push(2);
+	
 	for (var j = 0; j < this.chart.circles.length; j++)
 	{
 		for (var k = 0; k < this.chart.circles.length; k++)
 		{
  			if (this.chart.circles[j][k].data("click") == '1')
 			{
-				APPLICATION.log('j:' + j + ' k:' + k);
+				//APPLICATION.log('j:' + j + ' k:' + k);
+				for (var v = 0; v < this.xArray.length; v++)
+				{
+					if (this.xArray[v] == j && this.yArray[v] == k)
+					{
+						cArray[v] = 1;
+					}
+				}
 			}
 		}
 	}
-	
+
+	var c = 1;
+	for (var e = 0; e < cArray.length; e++)
+	{
+		if (cArray[e] == 2)
+		{
+			c = 2;
+		}
+	}
+
+	if (c == 1)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+/*
 	correctAnswerFound = false;
         for (i = 0; i <  this.mAnswerArray.length; i++)
         {
@@ -174,6 +225,7 @@ checkUserAnswer: function()
         {
                 this.mSheet.setTypeWrong(this.mType);
         }
+*/
         return correctAnswerFound;
 },
 
