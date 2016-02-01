@@ -19,7 +19,9 @@ session_start();
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
+<li><a href="/web/reports/generic/any_homework_check.php">Check Anything</a></li>
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
+
 
 </ul>
 
