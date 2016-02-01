@@ -174,27 +174,12 @@ checkUserAnswer: function()
 	this.mUserYArray[3] = this.mAnswerTextBoxArray[4].mMesh.value;
 	this.mUserYArray[4] = this.mAnswerTextBoxArray[5].mMesh.value;
 
-
-
 	var cArray = new Array();
 	cArray.push(2);
 	cArray.push(2);
 	cArray.push(2);
 	cArray.push(2);
 	cArray.push(2);
-/*	
-	APPLICATION.log('this.mUserXArray[0]:' + this.mUserXArray[0]); 
-	APPLICATION.log('this.mUserXArray[1]:' + this.mUserXArray[1]); 
-	APPLICATION.log('this.mUserXArray[2]:' + this.mUserXArray[2]); 
-	APPLICATION.log('this.mUserXArray[3]:' + this.mUserXArray[3]); 
-	APPLICATION.log('this.mUserXArray[4]:' + this.mUserXArray[4]); 
-	
-	APPLICATION.log('this.mUserYArray[0]:' + this.mUserYArray[0]); 
-	APPLICATION.log('this.mUserYArray[1]:' + this.mUserYArray[1]); 
-	APPLICATION.log('this.mUserYArray[2]:' + this.mUserYArray[2]); 
-	APPLICATION.log('this.mUserYArray[3]:' + this.mUserYArray[3]); 
-	APPLICATION.log('this.mUserYArray[4]:' + this.mUserYArray[4]); 
-*/
 	
 	for (var j = 0; j < this.chart.circles.length; j++)
 	{
@@ -202,7 +187,6 @@ checkUserAnswer: function()
 		{
 			for (var v = 0; v < this.xArray.length; v++)
 			{
-				APPLICATION.log('' + this.xArray[v] + '=' + j + ':' + this.yArray[v] + '=' + k + ':' + this.mUserXArray[v] + '=' + j + ':' + this.mUserYArray[v] + '=' + k); 
 				if (this.xArray[v] == j && this.yArray[v] == k && this.mUserXArray[v] == j && this.mUserYArray[v] == k)
 				{
 					cArray[v] = 1;
@@ -267,13 +251,6 @@ showCorrectAnswer: function()
 
 	  	this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
 		this.mCorrectAnswerLabel.setVisibility(true);
-		/*	
-		APPLICATION.log(' x:' + this.xArray[0] + ' y:' + this.yArray[0]);
-		APPLICATION.log(' x:' + this.xArray[1] + ' y:' + this.yArray[1]);
-		APPLICATION.log(' x:' + this.xArray[2] + ' y:' + this.yArray[2]);
-		APPLICATION.log(' x:' + this.xArray[3] + ' y:' + this.yArray[3]);
-		APPLICATION.log(' x:' + this.xArray[4] + ' y:' + this.yArray[4]);
-*/
 		
           	this.chart.circles[this.xArray[0]][this.yArray[0]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
 		this.chart.circles[this.xArray[0]][this.yArray[0]].data("click", 1);
