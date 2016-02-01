@@ -242,10 +242,15 @@ showCorrectAnswer: function()
        		this.mButton.setVisibility(false);
 
 		//textboxes	
-		//this.mUserXArray[2] = this.mAnswerTextBoxArray[0].mMesh.value;
+		//col 1
 		this.mAnswerTextBoxArray[0].mMesh.value = this.xArray[2];
 		this.mAnswerTextBoxArray[1].mMesh.value = this.xArray[3];
 		this.mAnswerTextBoxArray[2].mMesh.value = this.xArray[4];
+	
+		//col2	
+		this.mAnswerTextBoxArray[3].mMesh.value = this.yArray[2];
+		this.mAnswerTextBoxArray[4].mMesh.value = this.yArray[3];
+		this.mAnswerTextBoxArray[5].mMesh.value = this.yArray[4];
 	}		 	 
  	this.hideAnswerInputs();
         this.showUserAnswer();
