@@ -212,44 +212,16 @@ checkUserAnswer: function()
 	{
 		return false;
 	}
-
-/*
-	correctAnswerFound = false;
-        for (i = 0; i <  this.mAnswerArray.length; i++)
-        {
-        	//ignorecase
-                if (this.mIgnoreCase == true)
-               	{ 
-                	if (this.mUserAnswer == this.mAnswerArray[i].toLowerCase())
-                        {
-                                correctAnswerFound = true;
-                        }
-                }
-                else
-                {
-               	        if (this.mUserAnswer == this.mAnswerArray[i])
-                        {
-                                correctAnswerFound = true;
-                        }
-                }
-        }
-        if (correctAnswerFound == false)
-        {
-                this.mSheet.setTypeWrong(this.mType);
-        }
-*/
-        return correctAnswerFound;
 },
 
 showCorrectAnswer: function()
 {
-	//this.parent();
 	if (this.mCorrectAnswerLabel)
 	{
         	this.mCorrectAnswerLabel.setSize(200, 75);
         	this.mCorrectAnswerLabel.setPosition(630,300);
 
-	  	this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
+	  	this.mCorrectAnswerLabel.setText('Dots in red on x y graph show correct and we have filled text boxes with correct answers for you.'); 
 		this.mCorrectAnswerLabel.setVisibility(true);
 		
           	this.chart.circles[this.xArray[0]][this.yArray[0]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
@@ -268,6 +240,12 @@ showCorrectAnswer: function()
 		this.chart.circles[this.xArray[4]][this.yArray[4]].data("click", 1);
 
        		this.mButton.setVisibility(false);
+
+		//textboxes	
+		//this.mUserXArray[2] = this.mAnswerTextBoxArray[0].mMesh.value;
+		this.mAnswerTextBoxArray[0].mMesh.value = this.xArray[2];
+		this.mAnswerTextBoxArray[1].mMesh.value = this.xArray[3];
+		this.mAnswerTextBoxArray[2].mMesh.value = this.xArray[4];
 	}		 	 
  	this.hideAnswerInputs();
         this.showUserAnswer();
