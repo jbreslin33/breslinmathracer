@@ -14,6 +14,7 @@ initialize: function(sheet)
 	//----TABLE
 	
 	this.mRaphael = Raphael(320, 10, 440,170);
+	this.mStripCommas = false;
 
 	this.ns = new NameSampler();
 	this.a = 'Height in mm of ' + this.ns.mVegetableOne 
@@ -21,6 +22,7 @@ initialize: function(sheet)
 
 	this.xArray = new Array();
 	this.yArray = new Array();
+	this.pArray = new Array();
 	this.xStart= Math.floor(Math.random()*2);
 	this.yStart= Math.floor(Math.random()*3);
 	this.xStep = Math.floor(Math.random()*3)+1;
@@ -37,6 +39,17 @@ initialize: function(sheet)
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep));
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep));
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep + this.yStep));
+
+	var p1 = '' + '(' + this.xArray[0] + ',' + this.yArray[0] + ')';
+	this.pArray.push(p1); 
+	var p2 = '' + '(' + this.xArray[1] + ',' + this.yArray[1] + ')';
+	this.pArray.push(p2); 
+	var p3 = '' + '(' + this.xArray[2] + ',' + this.yArray[2] + ')';
+	this.pArray.push(p3); 
+	var p4 = '' + '(' + this.xArray[3] + ',' + this.yArray[3] + ')';
+	this.pArray.push(p4); 
+	var p5 = '' + '(' + this.xArray[4] + ',' + this.yArray[4] + ')';
+	this.pArray.push(p5); 
 
 	this.mUserXArray = new Array();
 	this.mUserYArray = new Array();
@@ -67,8 +80,8 @@ initialize: function(sheet)
 	
 	//col 4	
 	this.WriteTableRow(375,50,60,20,this.mRaphael,"Ordered Pair");
-	this.WriteTableRow(375,70,60,20,this.mRaphael,"(6,7)");
-	this.WriteTableRow(375,90,60,20,this.mRaphael,"(8,9)");
+	this.WriteTableRow(375,70,60,20,this.mRaphael,this.pArray[0]);
+	this.WriteTableRow(375,90,60,20,this.mRaphael,this.pArray[1]);
 
 	//---graph
 	var x = Math.floor(Math.random()*10);
@@ -77,7 +90,7 @@ initialize: function(sheet)
 	this.setAnswer(answer,0);
 	var answer2 = '('+x+','+y+')';
    
-	this.setQuestion('Graph the point ' + answer2 + ' by clicking the correct coordinate.');
+	this.setQuestion('Finish chart on right and then click graph points on the left by clicking the coordinate.');
 
 	this.mQuestionLabel.setSize(220,100);
 	this.mQuestionLabel.setPosition(670,225);
@@ -251,6 +264,11 @@ showCorrectAnswer: function()
 		this.mAnswerTextBoxArray[3].mMesh.value = this.yArray[2];
 		this.mAnswerTextBoxArray[4].mMesh.value = this.yArray[3];
 		this.mAnswerTextBoxArray[5].mMesh.value = this.yArray[4];
+
+		//col3
+		this.mAnswerTextBoxArray[6].mMesh.value = this.pArray[2];
+		this.mAnswerTextBoxArray[7].mMesh.value = this.pArray[3];
+		this.mAnswerTextBoxArray[8].mMesh.value = this.pArray[4];
 	}		 	 
  	this.hideAnswerInputs();
         this.showUserAnswer();
