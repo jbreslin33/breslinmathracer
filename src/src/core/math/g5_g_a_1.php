@@ -27,6 +27,9 @@ initialize: function(sheet)
 	this.yStart= Math.floor(Math.random()*3);
 	this.xStep = Math.floor(Math.random()*3)+1;
 	this.yStep = Math.floor(Math.random()*4)+1;
+	
+	this.dayA = Math.floor(Math.random()*4)+1;
+	this.dayB = Math.floor(Math.random()*4)+1;
 
 	this.xArray.push(parseInt(this.xStart));
 	this.xArray.push(parseInt(this.xStart + this.xStep));
@@ -92,8 +95,8 @@ initialize: function(sheet)
    
 	this.setQuestion('' + this.ns.mNameOne + ' has a vegetable garden. The chart above represents the growth of ' + this.ns.mVegetableOne + ' and ' + this.ns.mVegetableTwo + ' per day. The ' + this.ns.mVegetableOne + ' grow ' + this.xStep + ' mm per day and the ' + this.ns.mVegetableTwo + ' grow ' + this.yStep + ' mm per day. Finish the chart above and then plot the 5 ordered pairs on the graph to the left by clicking on them.');
 
-	this.mQuestionLabel.setSize(360,100);
-	this.mQuestionLabel.setPosition(515,225);
+	this.mQuestionLabel.setSize(420,100);
+	this.mQuestionLabel.setPosition(540,225);
 	this.mButton.setPosition(650,400);
 
 	this.mAnswerTextBoxArray = new Array();
@@ -134,7 +137,6 @@ initialize: function(sheet)
 	this.mAnswerTextBoxArray[6].setSize(60,20);
 	this.mAnswerTextBoxArray[7].setSize(60,20);
 	this.mAnswerTextBoxArray[8].setSize(60,20);
-
 },
 
 createChart: function()
