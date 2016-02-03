@@ -61,7 +61,7 @@ initialize: function(sheet)
 	this.mUserYArray.push(this.yArray[1]);
 
 	//col 1
-	this.WriteTableRow(10,50,25,20,this.mRaphael,"year");
+	this.WriteTableRow(10,50,25,20,this.mRaphael,"day");
 	this.WriteTableRow(10,70,25,20,this.mRaphael,"1");
 	this.WriteTableRow(10,90,25,20,this.mRaphael,"2");
 	this.WriteTableRow(10,110,25,20,this.mRaphael,"3");
@@ -90,10 +90,10 @@ initialize: function(sheet)
 	this.setAnswer(answer,0);
 	var answer2 = '('+x+','+y+')';
    
-	this.setQuestion('Finish chart on right and then click graph points on the left by clicking the coordinate.');
+	this.setQuestion('' + this.ns.mNameOne + ' has a vegetable garden. The chart above represents the growth of ' + this.ns.mVegetableOne + ' and ' + this.ns.mVegetableTwo + ' per day. The ' + this.ns.mVegetableOne + ' grow ' + this.xStep + ' mm per day and the ' + this.ns.mVegetableTwo + ' grow ' + this.yStep + ' mm per day. Finish the chart above and then plot the 5 ordered pairs on the graph to the left by clicking on them.');
 
-	this.mQuestionLabel.setSize(220,100);
-	this.mQuestionLabel.setPosition(670,225);
+	this.mQuestionLabel.setSize(360,100);
+	this.mQuestionLabel.setPosition(515,225);
 	this.mButton.setPosition(650,400);
 
 	this.mAnswerTextBoxArray = new Array();
