@@ -1352,7 +1352,7 @@ highestAchieved: function()
                 xmlhttp.send();
         },
 
-        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id,score)
+        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id,score,unmastered)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -1380,7 +1380,7 @@ highestAchieved: function()
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow + "&score=" + score,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow + "&score=" + score + "&unmastered=" + unmastered,true);
                 xmlhttp.send();
         },
       

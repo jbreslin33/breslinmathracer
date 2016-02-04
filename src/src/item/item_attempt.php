@@ -235,7 +235,7 @@ var ItemAttempt = new Class(
 				APPLICATION.mItemAttemptsTransactionCodeArrayEighteen.unshift(0);
 			}
 		}
-        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore());
+        	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore(),APPLICATION.mGame.mUnmastered);
 	},	
 
 	sendUpdate: function()

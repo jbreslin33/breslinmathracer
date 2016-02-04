@@ -54,6 +54,7 @@ if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode 
         $APPLICATION->mDataArray[] = $_GET["answers"];
         $APPLICATION->mDataArray[] = $_GET["datenow"];
         $APPLICATION->mDataArray[] = $_GET["score"];
+        $APPLICATION->mDataArray[] = $_GET["unmastered"];
 }
 if ($APPLICATION->mCode == 2)
 {
