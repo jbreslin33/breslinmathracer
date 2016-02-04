@@ -845,6 +845,8 @@ highestAchieved: function()
                         var i = 0;
 			var correct = 0;
 			var incorrect = 0;
+			var grade = 0; 
+
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
@@ -857,7 +859,8 @@ highestAchieved: function()
                                 }
 				i++;
                         }
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length + ' c:' + correct + ' i:' + incorrect);
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length + ' g:' + grade + '%');
                 }
 
 		this.mGame.setStreak(currentStreak);
