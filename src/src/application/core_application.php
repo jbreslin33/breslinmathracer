@@ -860,10 +860,11 @@ highestAchieved: function()
 				i++;
                         }
 			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length + ' grade:' + grade + '%');
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 
-		this.mGame.setStreak(currentStreak);
+		//this.mGame.setStreak(currentStreak);
 		this.mGame.setScore(score); 
 	},
 
