@@ -90,6 +90,26 @@ var ItemAttempt = new Class(
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen[0] = code;
 		}
+		if (parseInt(this.mEvaluationsID) == 15)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 16)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArraySixteen[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 17)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 18)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen[0] = code;
+		}
+
+
+
+
 
 	},
 	setEvaluationsID: function(evaluationsID)
@@ -193,6 +213,26 @@ var ItemAttempt = new Class(
 			{
 				APPLICATION.mItemAttemptsTypeArrayFourteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayFourteen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 15)
+			{
+				APPLICATION.mItemAttemptsTypeArrayFifteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayFifteen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 16)
+			{
+				APPLICATION.mItemAttemptsTypeArraySixteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArraySixteen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 17)
+			{
+				APPLICATION.mItemAttemptsTypeArraySeventeen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArraySeventeen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 18)
+			{
+				APPLICATION.mItemAttemptsTypeArrayEighteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayEighteen.unshift(0);
 			}
 		}
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore());

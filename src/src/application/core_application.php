@@ -842,38 +842,22 @@ highestAchieved: function()
 		
 		if (parseInt(this.mEvaluationsID) == 18)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArrayEighteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArrayEighteen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length + ' c:' + correct + ' i:' + incorrect);
                 }
 
 		this.mGame.setStreak(currentStreak);
