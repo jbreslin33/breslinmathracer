@@ -1,3 +1,64 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_22',5.1122,'5.nbt.b.7','Terra Nova 37');
+*/
+
+var i_5_nbt_b_7__22 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '5.nbt.b.7_22';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+
+                this.a = 1;
+                this.b = 2;
+                this.aa = 2;
+                this.bb = 1;
+		this.answer = '';
+
+                while (this.a <= this.b || this.aa >= this.bb)
+                {
+                	this.a = Math.floor(Math.random()*8)+2;
+                	this.b = Math.floor(Math.random()*8)+2;
+                	this.aa = Math.floor(Math.random()*89)+10;
+                	this.bb = Math.floor(Math.random()*89)+10;
+		}
+		this.x = new Decimal(this.a + '.' + this.aa); 
+		this.y = new Decimal(this.b + '.' + this.bb); 
+
+                this.setQuestion('' + '$' + this.x.getMoney() + ' - ' + this.y.getMoney() );
+		this.z = this.x.subtract(this.y);
+		this.one = new Decimal(1);
+		this.answerB = this.z.subtract(this.one);
+		this.answerC = this.z.add(this.one);
+                	
+		this.r = Math.floor(Math.random()*4);
+
+		if (parseInt(this.r) == 0)
+		{
+                	this.answer = '' + 'None of these';
+                	this.setAnswer('' + this.answer,0);
+                	this.mButtonA.setAnswer('' + this.answer);
+			this.mButtonD.setAnswer('' + parseInt(this.a - this.b) + '.' + parseInt(this.bb - this.aa));  
+		}
+		else
+		{	
+                	this.answer = '' + '$' + this.z.getMoney();
+                	this.setAnswer('' + this.answer,0);
+                	this.mButtonA.setAnswer('' + this.answer);
+                	this.mButtonD.setAnswer('' + 'None of these');
+		}
+
+                this.mButtonB.setAnswer('' + '$' + this.answerB.getMoney());
+                this.mButtonC.setAnswer('' + '$' + this.answerC.getMoney());
+                this.shuffle(10);
+        }
+});
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_21',5.1121,'5.nbt.b.7','Terra Nova 8');
 */

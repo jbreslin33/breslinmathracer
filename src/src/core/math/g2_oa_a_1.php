@@ -300,6 +300,7 @@ initialize: function(sheet)
 
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_24',2.0224,'2.oa.a.1','Terra Nova 19' );
 */
