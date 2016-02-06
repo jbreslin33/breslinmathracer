@@ -6,13 +6,13 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 var i_5_nbt_b_7__22 = new Class(
 {
 Extends: FourButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mType = '5.nbt.b.7_22';
-                this.mChopWhiteSpace = false;
-                this.mNameMachine = new NameMachine();
-                this.ns = new NameSampler();
+initialize: function(sheet)
+{
+	this.parent(sheet);
+        this.mType = '5.nbt.b.7_22';
+       	this.mChopWhiteSpace = false;
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
 
 
                 this.a = 1;
@@ -57,8 +57,61 @@ Extends: FourButtonItem,
                 this.mButtonB.setAnswer('' + '$' + this.answerB.getMoney());
                 this.mButtonC.setAnswer('' + '$' + this.answerC.getMoney());
                 this.shuffle(10);
+
+		this.mTable = new Shape(200,50,400,130,this,"TABLE","","");
+ 		this.mShapeArray.push(this.mTable);
+   
+		//row 1 
+		this.mTR1 = document.createElement("TR");
+                this.mTable.mMesh.appendChild(this.mTR1);
+	
+		//col1 of row1	
+                this.mTD1A = document.createElement("TD");
+                this.mTextNode1A = document.createTextNode("Apple");
+                this.mTD1A.appendChild(this.mTextNode1A);
+                this.mTR1.appendChild(this.mTD1A);
+		
+		//col2 of row2	
+                this.mTD1B = document.createElement("TD");
+                this.mTextNode1B = document.createTextNode("Bear");
+                this.mTD1B.appendChild(this.mTextNode1B);
+                this.mTR1.appendChild(this.mTD1B);
+    
+		this.mTable.mMesh.style.width = '100%';
+    		this.mTable.mMesh.setAttribute('border', '1');
+
+
+		//this.tableCreate();
+        },
+/*
+tableCreate: function() 
+{
+    var body = document.getElementsByTagName('body')[0];
+    var tbl = document.createElement('table');
+    tbl.style.width = '100%';
+    tbl.setAttribute('border', '1');
+    var tbdy = document.createElement('tbody');
+    for (var i = 0; i < 3; i++) {
+        var tr = document.createElement('tr');
+        for (var j = 0; j < 2; j++) {
+            if (i == 2 && j == 1) {
+                break
+            } else {
+                var td = document.createElement('td');
+                td.appendChild(document.createTextNode('\u0020'))
+                i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
+                tr.appendChild(td)
+            }
         }
+        tbdy.appendChild(tr);
+    }
+    tbl.appendChild(tbdy);
+    body.appendChild(tbl)
+}
+*/
+
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_21',5.1121,'5.nbt.b.7','Terra Nova 8');
 */
