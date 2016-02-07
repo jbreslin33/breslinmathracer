@@ -25,7 +25,7 @@ initialize: function(sheet)
 	var x = 0;
 	var y = 0;
 	var z = 0;
-  	
+
 	if (r == 0)
         {
                 w = Math.floor(Math.random()*38)+2;
@@ -58,12 +58,12 @@ initialize: function(sheet)
 
   	if (r == 2)
         {
-                w = Math.floor(Math.random()*8)+2;
-                x = Math.floor(Math.random()*8)+2;
+                w = Math.floor(Math.random()*8)+12;
+                x = Math.floor(Math.random()*6)+2;
                 y = Math.floor(Math.random()*8)+2;
-                var t = Math.floor(Math.random()*8)+2;
-		w = parseInt(x * y + t); 
-                z = parseInt(w - x * y);
+                var t = parseInt(w - x); 
+		z = parseInt(t * y); 
+
                 b = '' + '+ and +';
                 c = '' + '/ and +';
                 a = '' + '- and X';
