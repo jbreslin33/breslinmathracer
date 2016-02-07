@@ -14,32 +14,34 @@ initialize: function(sheet)
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
 
-	this.mQuestionLabel.setSize(100,50);
-        this.mQuestionLabel.setPosition(425,100);
+	this.mQuestionLabel.setSize(200,200);
+        this.mQuestionLabel.setPosition(500,150);
 
 	this.mAnswerTextBox.setSize(100,50);
         this.mAnswerTextBox.setPosition(425,300);
 
-        this.a = 1;
-        this.b = 2;
-        this.aa = 2;
-        this.bb = 1;
+	this.mUserAnswerLabel.setPosition(150,300);
+
 	this.answer = '';
 
-        while (this.a <= this.b || this.aa >= this.bb)
-        {
-             	this.a = Math.floor(Math.random()*8)+2;
-               	this.b = Math.floor(Math.random()*8)+2;
-               	this.aa = Math.floor(Math.random()*89)+10;
-               	this.bb = Math.floor(Math.random()*89)+10;
-	}
+       	this.a = Math.floor(Math.random()*8)+2;
+       	this.b = Math.floor(Math.random()*8)+2;
+       	this.c = Math.floor(Math.random()*8)+2;
+       	this.aa = Math.floor(Math.random()*89)+10;
+       	this.bb = Math.floor(Math.random()*89)+10;
+       	this.cc = Math.floor(Math.random()*89)+10;
+	
 	this.x = new Decimal(this.a + '.' + this.aa); 
 	this.y = new Decimal(this.b + '.' + this.bb); 
+	this.z = new Decimal(this.c + '.' + this.cc); 
+	
+	var d = this.x.add(this.y);
+	this.answer = d.add(this.z);
 
-        this.setQuestion('' + '$' + this.x.getMoney() + ' - ' + this.y.getMoney() );
-	this.answer = this.x.subtract(this.y);
+        this.setQuestion('' + this.ns.mNameOne + ' spent $'  + this.x.getMoney() + ' on fruit. $' + this.y.getMoney() + ' on vegetables and $' + this.z.getMoney() + ' on other stuff. How much did ' + this.ns.mNameOne + ' spend ' + this.mNameMachine.getSum() + '?');
 
-        this.setAnswer('' + this.answer.getMoney(),0);
+        this.setAnswer('$' + this.answer.getMoney(),0);
+        this.setAnswer('' + this.answer.getMoney(),1);
 	
 	this.mHeading = new Shape(200,50,30,50,this,"","","");
  	this.mShapeArray.push(this.mHeading);
