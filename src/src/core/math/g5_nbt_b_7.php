@@ -5,124 +5,54 @@ insert into item_types(id,progression,core_standards_id,description) values ('5.
 
 var i_5_nbt_b_7__22 = new Class(
 {
-Extends: FourButtonItem,
+Extends: TextItem,
 initialize: function(sheet)
 {
-	this.parent(sheet);
+        this.parent(sheet,575,50,320,75,720,50,380,150);
         this.mType = '5.nbt.b.7_22';
        	this.mChopWhiteSpace = false;
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
 
+        this.a = 1;
+        this.b = 2;
+        this.aa = 2;
+        this.bb = 1;
+	this.answer = '';
 
-                this.a = 1;
-                this.b = 2;
-                this.aa = 2;
-                this.bb = 1;
-		this.answer = '';
+        while (this.a <= this.b || this.aa >= this.bb)
+        {
+             	this.a = Math.floor(Math.random()*8)+2;
+               	this.b = Math.floor(Math.random()*8)+2;
+               	this.aa = Math.floor(Math.random()*89)+10;
+               	this.bb = Math.floor(Math.random()*89)+10;
+	}
+	this.x = new Decimal(this.a + '.' + this.aa); 
+	this.y = new Decimal(this.b + '.' + this.bb); 
 
-                while (this.a <= this.b || this.aa >= this.bb)
-                {
-                	this.a = Math.floor(Math.random()*8)+2;
-                	this.b = Math.floor(Math.random()*8)+2;
-                	this.aa = Math.floor(Math.random()*89)+10;
-                	this.bb = Math.floor(Math.random()*89)+10;
-		}
-		this.x = new Decimal(this.a + '.' + this.aa); 
-		this.y = new Decimal(this.b + '.' + this.bb); 
+        this.setQuestion('' + '$' + this.x.getMoney() + ' - ' + this.y.getMoney() );
+	this.answer = this.x.subtract(this.y);
 
-                this.setQuestion('' + '$' + this.x.getMoney() + ' - ' + this.y.getMoney() );
-		this.z = this.x.subtract(this.y);
-		this.one = new Decimal(1);
-		this.answerB = this.z.subtract(this.one);
-		this.answerC = this.z.add(this.one);
-                	
-		this.r = Math.floor(Math.random()*4);
+        this.setAnswer('' + this.answer.getMoney(),0);
 
-		if (parseInt(this.r) == 0)
-		{
-                	this.answer = '' + 'None of these';
-                	this.setAnswer('' + this.answer,0);
-                	this.mButtonA.setAnswer('' + this.answer);
-			this.mButtonD.setAnswer('' + parseInt(this.a - this.b) + '.' + parseInt(this.bb - this.aa));  
-		}
-		else
-		{	
-                	this.answer = '' + '$' + this.z.getMoney();
-                	this.setAnswer('' + this.answer,0);
-                	this.mButtonA.setAnswer('' + this.answer);
-                	this.mButtonD.setAnswer('' + 'None of these');
-		}
 
-                this.mButtonB.setAnswer('' + '$' + this.answerB.getMoney());
-                this.mButtonC.setAnswer('' + '$' + this.answerC.getMoney());
-                this.shuffle(10);
+	this.mTable = new Shape(200,50,400,130,this,"TABLE","","");
+ 	this.mShapeArray.push(this.mTable);
 
-		this.mTable = new Shape(200,50,400,130,this,"TABLE","","");
- 		this.mShapeArray.push(this.mTable);
+	//row 0
+	var r0 = this.mTable.mMesh.insertRow(0);
 
-		var row = this.mTable.mMesh.insertRow(0);
+	var c0 = r0.insertCell(0);
+	var c1 = r0.insertCell(1);
 
-		var cell1 = row.insertCell(0);
-		var cell2 = row.insertCell(1);
+	c0.innerHTML = 'new 1';
+	c1.innerHTML = 'new 2';
 
-		cell1.innerHTML = 'new 1';
-		cell2.innerHTML = 'new 2';
+	//row 1
 		
-		this.mTable.mMesh.style.width = '100%';
-    		this.mTable.mMesh.setAttribute('border', '1');
-   
-		//row 1 
-/*
-		this.mRowAArray = new array();
-		this.mTR1 = document.createElement("TR");
-                this.mTable.mMesh.appendChild(this.mTR1);
-	
-		//col1 of row1	
-                this.mTD1A = document.createElement("TD");
-                this.mTextNode1A = document.createTextNode("Apple");
-                this.mTD1A.appendChild(this.mTextNode1A);
-                this.mTR1.appendChild(this.mTD1A);
-		
-		//col2 of row2	
-                this.mTD1B = document.createElement("TD");
-                this.mTextNode1B = document.createTextNode("Bear");
-                this.mTD1B.appendChild(this.mTextNode1B);
-                this.mTR1.appendChild(this.mTD1B);
-    
-		this.mTable.mMesh.style.width = '100%';
-    		this.mTable.mMesh.setAttribute('border', '1');
-*/
-
-
-		//this.tableCreate();
-        },
-/*
-tableCreate: function() 
-{
-    var body = document.getElementsByTagName('body')[0];
-    var tbl = document.createElement('table');
-    tbl.style.width = '100%';
-    tbl.setAttribute('border', '1');
-    var tbdy = document.createElement('tbody');
-    for (var i = 0; i < 3; i++) {
-        var tr = document.createElement('tr');
-        for (var j = 0; j < 2; j++) {
-            if (i == 2 && j == 1) {
-                break
-            } else {
-                var td = document.createElement('td');
-                td.appendChild(document.createTextNode('\u0020'))
-                i == 1 && j == 1 ? td.setAttribute('rowSpan', '2') : null;
-                tr.appendChild(td)
-            }
-        }
-        tbdy.appendChild(tr);
-    }
-    tbl.appendChild(tbdy);
-    body.appendChild(tbl)
+	this.mTable.mMesh.style.width = '100%';
+    	this.mTable.mMesh.setAttribute('border', '1');
 }
-*/
 
 });
 
