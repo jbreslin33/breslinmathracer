@@ -14,6 +14,12 @@ initialize: function(sheet)
         this.mNameMachine = new NameMachine();
         this.ns = new NameSampler();
 
+	this.mQuestionLabel.setSize(100,50);
+        this.mQuestionLabel.setPosition(425,100);
+
+	this.mAnswerTextBox.setSize(100,50);
+        this.mAnswerTextBox.setPosition(425,300);
+
         this.a = 1;
         this.b = 2;
         this.aa = 2;
@@ -34,9 +40,12 @@ initialize: function(sheet)
 	this.answer = this.x.subtract(this.y);
 
         this.setAnswer('' + this.answer.getMoney(),0);
+	
+	this.mHeading = new Shape(200,50,30,50,this,"","","");
+ 	this.mShapeArray.push(this.mHeading);
+	this.mHeading.setText('Shopping List');
 
-
-	this.mTable = new Shape(200,50,400,130,this,"TABLE","","");
+	this.mTable = new Shape(200,50,30,100,this,"TABLE","","");
  	this.mShapeArray.push(this.mTable);
 
 	//row 0
@@ -45,11 +54,11 @@ initialize: function(sheet)
 	var c0 = r0.insertCell(0);
 	var c1 = r0.insertCell(1);
 
-	c0.innerHTML = 'new 1';
-	c1.innerHTML = 'new 2';
+	c0.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c1.innerHTML = '' + this.ns.mVegetableOne;
+
 
 	//row 1
-		
 	this.mTable.mMesh.style.width = '100%';
     	this.mTable.mMesh.setAttribute('border', '1');
 }
