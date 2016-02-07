@@ -51,14 +51,31 @@ initialize: function(sheet)
 	//row 0
 	var r0 = this.mTable.mMesh.insertRow(0);
 
-	var c0 = r0.insertCell(0);
-	var c1 = r0.insertCell(1);
+	var c0a = r0.insertCell(0);
+	var c0b = r0.insertCell(1);
 
-	c0.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
-	c1.innerHTML = '' + this.ns.mVegetableOne;
+	c0a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c0b.innerHTML = '' + this.ns.mVegetableOne;
 
+	//row1 
+	var r1 = this.mTable.mMesh.insertRow(1);
 
-	//row 1
+	var c1a = r1.insertCell(0);
+	var c1b = r1.insertCell(1);
+
+	c1a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c1b.innerHTML = '' + this.ns.mVegetableTwo;
+	
+	//row2
+	var r2 = this.mTable.mMesh.insertRow(2);
+
+	var c2a = r2.insertCell(0);
+	var c2b = r2.insertCell(1);
+
+	c2a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c2b.innerHTML = '' + this.ns.mVegetableThree;
+
+	//table specs
 	this.mTable.mMesh.style.width = '100%';
     	this.mTable.mMesh.setAttribute('border', '1');
 }
