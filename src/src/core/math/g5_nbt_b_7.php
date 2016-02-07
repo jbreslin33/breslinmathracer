@@ -74,7 +74,34 @@ initialize: function(sheet)
 
 	c2a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
 	c2b.innerHTML = '' + this.ns.mVegetableThree;
+	
+	//row3
+	var r3 = this.mTable.mMesh.insertRow(3);
 
+	var c3a = r3.insertCell(0);
+	var c3b = r3.insertCell(1);
+
+	c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c3b.innerHTML = '' + this.ns.mFruitOne;
+	
+	//row4
+	var r4 = this.mTable.mMesh.insertRow(4);
+
+	var c4a = r4.insertCell(0);
+	var c4b = r4.insertCell(1);
+
+	c4a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c4b.innerHTML = '' + this.ns.mFruitTwo;
+	
+	//row5
+	var r5 = this.mTable.mMesh.insertRow(5);
+
+	var c5a = r5.insertCell(0);
+	var c5b = r5.insertCell(1);
+
+	c5a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c5b.innerHTML = '' + this.ns.mPurchaseOne;
+	
 	//table specs
 	this.mTable.mMesh.style.width = '100%';
     	this.mTable.mMesh.setAttribute('border', '1');
