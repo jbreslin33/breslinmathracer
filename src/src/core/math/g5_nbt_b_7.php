@@ -60,8 +60,21 @@ initialize: function(sheet)
 
 		this.mTable = new Shape(200,50,400,130,this,"TABLE","","");
  		this.mShapeArray.push(this.mTable);
+
+		var row = this.mTable.mMesh.insertRow(0);
+
+		var cell1 = row.insertCell(0);
+		var cell2 = row.insertCell(1);
+
+		cell1.innerHTML = 'new 1';
+		cell2.innerHTML = 'new 2';
+		
+		this.mTable.mMesh.style.width = '100%';
+    		this.mTable.mMesh.setAttribute('border', '1');
    
 		//row 1 
+/*
+		this.mRowAArray = new array();
 		this.mTR1 = document.createElement("TR");
                 this.mTable.mMesh.appendChild(this.mTR1);
 	
@@ -79,6 +92,7 @@ initialize: function(sheet)
     
 		this.mTable.mMesh.style.width = '100%';
     		this.mTable.mMesh.setAttribute('border', '1');
+*/
 
 
 		//this.tableCreate();

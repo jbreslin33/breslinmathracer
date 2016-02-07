@@ -20,7 +20,7 @@ Extends: Polygon,
 		this.mDiv = new Div(this);
 
                 this.mMesh;
-        
+
                 if (this.mSrc == "INPUT")
                 {
                         //textbox to attach to our div "vessel"
@@ -241,4 +241,5 @@ Extends: Polygon,
 		mody = this.mPositionRender.mY+'px';	
 		this.mDiv.mDiv.style.top = mody;
 	}
+
  }); 
