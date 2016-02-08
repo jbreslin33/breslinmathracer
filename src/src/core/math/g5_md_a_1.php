@@ -1,3 +1,29 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_2',5.2402,'5.md.a.1','Terra Nova 38');
+*/
+var i_5_md_a_1__2 = new Class(
+{
+
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,300,50,175,95,100,50,425,100);
+
+                this.mType = '5.md.a.1_2';
+
+    this.ns = new NameSampler();
+
+		var a = Math.floor((Math.random()*8)+2); 
+		var answer = parseInt(a * 1000);
+
+                this.setQuestion('' + this.ns.mNameOne + ' ran ' + a + ' kilometers around a track. How many meters did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run?');
+
+                this.setAnswer('' + answer,0);
+        }
+
+
+});
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_1',5.2401,'5.md.a.1','');
 */
