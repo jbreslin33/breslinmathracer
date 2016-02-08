@@ -221,12 +221,10 @@ checkUserAnswer: function()
 
 	if (c == 1)
 	{
-		APPLICATION.log('return true');	
 		return true;
 	}
 	else
 	{
-		APPLICATION.log('return false');	
 		return false;
 	}
 },
