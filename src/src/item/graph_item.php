@@ -289,40 +289,6 @@ buttonHit: function()
         APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mTempUserAnswer);
 },
 
-inputKeyHit: function(e)
-{
-	if (e.key == 'enter')
-        {
-		if (APPLICATION.mGame)
-		{
-			if (APPLICATION.mGame.mSheet)
-			{
-				if (APPLICATION.mGame.mSheet.getItem())
-				{
-					APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mTempUserAnswer); 
-				}
-			}
-		}
-	}
-},
- 
-inputKeyHitEnter: function(e)
-{
-	if (e.keyCode == 13)
-        {
-		if (APPLICATION.mGame)
-		{
-			if (APPLICATION.mGame.mSheet)
-			{
-				if (APPLICATION.mGame.mSheet.getItem())
-				{
-					APPLICATION.mGame.mSheet.getItem().setUserAnswer(APPLICATION.mGame.mSheet.getItem().mTempUserAnswer); 
-				}
-			}
-		}
-       }
-},
-
 showQuestion: function()
 {
 	this.parent();
@@ -405,22 +371,12 @@ hideCorrectAnswer: function()
 	}
 },
 
-
 setTempUserAnswer: function(answer)
 {
 	this.mTempUserAnswer = answer;
-},
+}
 
-setUserAnswer: function(answer)
-{
-	this.mUserAnswer = answer;
-},
 });
-
-
-
-
-
 
 
 /*

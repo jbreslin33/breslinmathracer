@@ -100,7 +100,7 @@ initialize: function(sheet)
 	this.mButton.setPosition(650,400);
 
 	this.mAnswerTextBoxArray = new Array();
-
+		
  	//answer Input
 	for (var i = 0; i < 9; i++)
 	{
@@ -221,10 +221,12 @@ checkUserAnswer: function()
 
 	if (c == 1)
 	{
+		APPLICATION.log('return true');	
 		return true;
 	}
 	else
 	{
+		APPLICATION.log('return false');	
 		return false;
 	}
 },
@@ -288,6 +290,8 @@ initialize: function(sheet)
 {
 	this.parent(sheet,200,50,225,95,100,50,425,100);
         this.mType = '5.g.a.1_5';
+
+	this.mChopWhiteSpace = false;
 
 	clickflag = true;
 

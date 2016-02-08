@@ -19,7 +19,8 @@ getDev: function()
 	//return '5.g.a.1_6';
 	//return '6.ns.c.6.a_1';
 	//return '6.rp.a.3.a_1';
-	return '5.oa.a.1_25';
+	//return '5.oa.a.1_25';
+	return '5.g.a.1_6';
 },
 
 getItem: function(id)
