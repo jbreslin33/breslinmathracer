@@ -1,29 +1,32 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_2',5.2402,'5.md.a.1','Terra Nova 38');
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_16',5.2402,'5.md.a.1','Terra Nova 38');
 */
-var i_5_md_a_1__2 = new Class(
+var i_5_md_a_1__16 = new Class(
 {
 
 Extends: TextItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet,300,50,175,95,100,50,425,100);
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+	this.mType = '5.md.a.1_16';
+	this.ns = new NameSampler();
 
-                this.mType = '5.md.a.1_2';
+	var a = Math.floor((Math.random()*8)+2); //cut size 1
+	var b = Math.floor((Math.random()*8)+2); //cut size 2  
+	var c = Math.floor((Math.random()*8)+2); //number of cut size 1  
+	var d = Math.floor((Math.random()*8)+2); //number of cut size 2  
+	var e = parseInt(c + d);
+	var f = Math.floor((Math.random()*8)+2);  //size of board in feet
 
-    this.ns = new NameSampler();
+	var answer = parseInt(a * 1000);
 
-		var a = Math.floor((Math.random()*8)+2); 
-		var answer = parseInt(a * 1000);
+        this.setQuestion('' + this.ns.mNameOne + ' cut ' + e + ' pieces from ' + f + '-foot ' + this.ns.mRopeOne + '. ' + c + ' of the pieces are ' + a + ' inches long and ' + d + ' of the pieces are ' + b + ' inches long. How many inches are left in the ' + this.ns.mRopeOne + '?');
 
-                this.setQuestion('' + this.ns.mNameOne + ' ran ' + a + ' kilometers around a track. How many meters did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' run?');
-
-                this.setAnswer('' + answer,0);
-        }
-
-
+        this.setAnswer('' + answer,0);
+}
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_1',5.2401,'5.md.a.1','');
 */
