@@ -6,8 +6,8 @@ initialize: function(game)
 {
 	this.parent(game);
 
-        this.mIDArray.push('' + '5.g.a.1_5'); 
         this.mIDArray.push('' + '5.g.a.1_6'); //36
+
 
         this.mIDArray.push('' + '2.oa.a.1_21'); //1
         this.mIDArray.push('' + '3.oa.a.3_6'); //2
