@@ -202,7 +202,7 @@ this.mCorrectAnswerLabel.setSize(100, 25);
 
 this.mUserAnswerLabel.setPosition(430,210);
 this.mUserAnswerLabel.setSize(100, 25);
-},
+}
 
 });
 

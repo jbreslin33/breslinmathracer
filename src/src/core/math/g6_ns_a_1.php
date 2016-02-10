@@ -344,7 +344,7 @@ initialize: function(sheet)
                 }
                 this.hideAnswerInputs();
                 this.showUserAnswer();
-        },
+        }
 
 
 });
@@ -411,7 +411,7 @@ initialize: function(sheet)
                 }
                 this.hideAnswerInputs();
                 this.showUserAnswer();
-        },
+        }
 
 
 });

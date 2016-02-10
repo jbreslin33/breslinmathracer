@@ -265,7 +265,7 @@ Extends: TextItem,
 
                 this.setAnswer('' + b,0);              
 
-        },
+        }
 
 
 });

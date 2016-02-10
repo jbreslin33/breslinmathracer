@@ -491,20 +491,5 @@ this.mQuestionLabel.setPosition(625,180);
 
 this.mCorrectAnswerLabel.setPosition(630,300);
 
-},
-
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + ' = ' +  this.getAnswer()); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-		  }
-    }
-*/
+}
 });

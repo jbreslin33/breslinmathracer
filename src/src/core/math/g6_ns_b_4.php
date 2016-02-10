@@ -236,7 +236,7 @@ initialize: function(sheet)
 
   this.setQuestion('What is the least common multiple of ' + n + ' and ' + d);
 
-},
+}
 
 });
 
@@ -277,7 +277,7 @@ initialize: function(sheet)
 
   this.setQuestion('What is the greatest common factor of ' + n + ' and ' + d);
 
-},
+}
 
 });
 
