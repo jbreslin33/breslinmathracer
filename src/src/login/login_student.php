@@ -36,7 +36,14 @@ Extends: Game,
 
                 this.mPasswordTextBox = new Shape(200,50,400,165,this,"INPUT","","");
                 this.mPasswordTextBox.mMesh.value = '';
-		this.mPasswordTextBox.mMesh.setAttribute("type", "password");
+                if (navigator.appName == "Microsoft Internet Explorer")
+		{
+
+		}
+		else
+		{
+			this.mPasswordTextBox.mMesh.setAttribute("type", "password");
+		}
                 this.mShapeArray.push(this.mPasswordTextBox);
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
