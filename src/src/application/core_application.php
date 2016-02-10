@@ -738,109 +738,73 @@ highestAchieved: function()
                	
 		if (parseInt(this.mEvaluationsID) == 15)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArrayFifteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArrayFifteen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
-
+		
 		if (parseInt(this.mEvaluationsID) == 16)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArraySixteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArraySixteen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 		
 		if (parseInt(this.mEvaluationsID) == 17)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArraySeventeen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArraySeventeen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 		
@@ -867,8 +831,6 @@ highestAchieved: function()
 			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
-
-		//this.mGame.setStreak(currentStreak);
 		this.mGame.setScore(score); 
 	},
 
