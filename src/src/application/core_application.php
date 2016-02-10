@@ -307,11 +307,13 @@ highestAchieved: function()
 					j++;
 				}
 				//lets check array
+/*
 				if (attemptArray.length == 0) //never asked break out
 				{
-					unmastered++;
-					APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
-					breakOut = true;
+					//do nothing
+					//unmastered++;
+					//APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
+					//breakOut = true;
 				}
 				else if (attemptArray.length == 1) //not enuf
 				{
@@ -319,6 +321,8 @@ highestAchieved: function()
 					unmastered++;
 				}
 				else //you must have 2 
+*/
+				if (attemptArray.length > 1) //asked twice or more...
 				{
 					if (attemptArray[0] != 1 || attemptArray[1] != 1)
 					{
