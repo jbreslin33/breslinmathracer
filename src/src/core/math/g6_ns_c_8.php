@@ -112,33 +112,8 @@ this.mQuestionLabel.setPosition(625,120);
 //this.mCorrectAnswerLabel.setSize(200, 75);
 //this.mCorrectAnswerLabel.setPosition(630,200);
 
-},
+}
 
-/*
- showCorrectAnswer: function()
-    {
-
-      this.parent();
-
-     // this.mHeadingAnswerLabel2.setVisibility(false);
-
-      //this.mUserAnswerLabel.setVisibility(false);
-
-
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-		  }
-
-
-    }
-
-*/
 });
 
 
@@ -549,33 +524,8 @@ this.mQuestionLabel.setPosition(625,120);
 this.mCorrectAnswerLabel.setSize(200, 75);
 this.mCorrectAnswerLabel.setPosition(630,200);
 
-},
+}
 
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-        var res = this.getAnswer().split(" ");
-        var x = res[0];
-        var y = res[1];
-
-        if (this.circles[x][y].data("click") == '0')
-        {
-          this.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-          this.circles[x][y].data("click", 1);
-        }
-        clickflag = false;
-        this.mButton.setVisibility(false);
-		  }
-    }
-*/
 
 });
 

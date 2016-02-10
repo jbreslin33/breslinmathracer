@@ -74,7 +74,7 @@ this.addQuestionShape(table)
                 this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
                 this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
               }
-        },
+        }
 
 
 });

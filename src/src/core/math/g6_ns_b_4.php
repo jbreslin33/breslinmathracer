@@ -67,7 +67,7 @@ initialize: function(sheet)
 
   this.setQuestion('A teacher bought packages of ' + n + ' pens in each package. Another teacher bought packages of ' + d + ' pens in each package. If the teachers ended up buying the same number of pens, what is the least number of pens they could have?' );
 
-},
+}
 
 });
 
@@ -110,7 +110,7 @@ initialize: function(sheet)
 
   this.setQuestion(this.ns.mNameOne + ' arranged ' + n + ' tiles into a rectangular array. ' + this.ns.mNameOne + ' arranged ' + d + ' tiles into a rectangular array. Their arrays had the same number of rows. What is the greatest number of rows their arrays could have?');
 
-},
+}
 
 });
 
@@ -155,7 +155,7 @@ initialize: function(sheet)
 
   this.setAnswer('' + fractionA.getString(),0);
 
-},
+}
 
 });
 

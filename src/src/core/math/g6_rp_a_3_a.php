@@ -51,7 +51,7 @@ this.mUserAnswerLabel.setPosition(500,250);
 this.mAnswerTextBox.setPosition(600,110);
 this.mAnswerTextBox.setSize(50,50);
 
-},
+}
 
 
 
@@ -101,7 +101,7 @@ this.mUserAnswerLabel.setPosition(500,200);
 this.mAnswerTextBox.setPosition(600,110);
 this.mAnswerTextBox.setSize(50,50);
 
-},
+}
 
 
 

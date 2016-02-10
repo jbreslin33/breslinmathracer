@@ -52,33 +52,7 @@ this.mQuestionLabel.setPosition(625,280);
  this.circles[x][y].attr({fill: "white", stroke: "none", opacity: 1}).scale(.5,.5);
           this.circles[x][y].data("click", 1);
 
-},
-
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-        var res = this.getAnswer().split(" ");
-        var x = res[0];
-        var y = res[1];
-
-        if (this.circles[x][y].data("click") == '0')
-        {
-          this.circles[x][y].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-          this.circles[x][y].data("click", 1);
-        }
-        clickflag = false;
-        this.mButton.setVisibility(false);
-		  }
-    }
-*/
+}
 
 });
 
@@ -278,34 +252,8 @@ this.setQuestion('What point is located at ' + answer + '?');
 this.mQuestionLabel.setSize(220,50);
 this.mQuestionLabel.setPosition(125,80);
 
-},
+}
 
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-        var x = this.getAnswer().charAt(0);
-        var y = this.getAnswer().charAt(2);
-    
-        if (this.chart.circles[x].data("click") == '0')
-        {
-          this.chart.circles[x].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-          this.chart.circles[x].data("click", 1);
-        }
-        clickflag = false;
-        this.mButton.setVisibility(false);
-
-        
-		  }
-    }
-*/
 });
 
 
@@ -432,33 +380,7 @@ this.setQuestion('What number is represented by point ' + letter + '?');
 this.mQuestionLabel.setSize(220,50);
 this.mQuestionLabel.setPosition(125,80);
 
-},
+}
 
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('correct answer = red dot'); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-        var x = this.getAnswer().charAt(0);
-        var y = this.getAnswer().charAt(2);
-    
-        if (this.chart.circles[x].data("click") == '0')
-        {
-          this.chart.circles[x].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-          this.chart.circles[x].data("click", 1);
-        }
-        clickflag = false;
-        this.mButton.setVisibility(false);
-
-        
-		  }
-    }
-*/
 });
 
