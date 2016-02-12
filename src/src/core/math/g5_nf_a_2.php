@@ -81,7 +81,8 @@ initialize: function(sheet)
         var c3a = r3.insertCell(0);
         var c3b = r3.insertCell(1);
 
-        c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
+        //c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
+        c3a.innerHTML = fractionA.getString() + ' pounds';
         c3b.innerHTML = '' + this.ns.mFruitOne;
 
         //row4
@@ -90,7 +91,7 @@ initialize: function(sheet)
         var c4a = r4.insertCell(0);
         var c4b = r4.insertCell(1);
 
-        c4a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
+        c4a.innerHTML = fractionB.getString() + ' pounds';
         c4b.innerHTML = '' + this.ns.mFruitTwo;
 
         //row5
