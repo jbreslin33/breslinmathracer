@@ -1,3 +1,41 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.2_9',5.1309,'5.nf.a.2','Terra Nova 39');
+*/
+var i_5_nf_a_2__9 = new Class(
+{
+Extends: TextItemFraction,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+
+        this.mType = '5.nf.a.2_9';
+	this.ns = new NameSampler();
+
+        var an = 1;
+        var ad = 1;
+        var bn = 1;
+        var bd = 1;
+        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0 || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd)
+        {
+                an = Math.floor((Math.random()*9)+10);
+                ad = Math.floor((Math.random()*9)+1);
+                bn = Math.floor((Math.random()*9)+10);
+                bd = Math.floor((Math.random()*9)+1);
+        }
+
+        var fractionA = new Fraction(an,ad,false);
+        var fractionB = new Fraction(bn,bd,false);
+
+        var answer = fractionA.subtract(fractionB);
+	answer.reduce();
+
+        this.setAnswer('' + answer.getString(),0);
+        this.setQuestion('In a race ' + this.ns.mNameOne + ' has run ' + fractionA.getMixedNumber() + ' laps. ' + this.ns.mNameTwo + ' has run ' + fractionB.getMixedNumber() + ' laps. How much further ahead is ' + this.ns.mNameOne + '?');
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.2_8',5.1308,'5.nf.a.2','subtract mixed number and mixed number');
 */
