@@ -8,12 +8,18 @@ Extends: TextItemFraction,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
-
+ 	this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
         this.mType = '5.nf.a.2_9';
-	this.ns = new NameSampler();
+        this.mChopWhiteSpace = false;
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
 
-        var an = 1;
+        this.mQuestionLabel.setSize(200,200);
+        this.mQuestionLabel.setPosition(500,150);
+
+        this.mUserAnswerLabel.setPosition(150,300);
+
+     	var an = 1;
         var ad = 1;
         var bn = 1;
         var bd = 1;
@@ -28,11 +34,76 @@ initialize: function(sheet)
         var fractionA = new Fraction(an,ad,false);
         var fractionB = new Fraction(bn,bd,false);
 
-        var answer = fractionA.subtract(fractionB);
-	answer.reduce();
+        var answer = fractionA.add(fractionB);
+        answer.reduce();
 
+        this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() );
         this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('In a race ' + this.ns.mNameOne + ' has run ' + fractionA.getMixedNumber() + ' laps. ' + this.ns.mNameTwo + ' has run ' + fractionB.getMixedNumber() + ' laps. How much further ahead is ' + this.ns.mNameOne + '?');
+
+        this.mHeading = new Shape(200,50,30,50,this,"","","");
+        this.mShapeArray.push(this.mHeading);
+        this.mHeading.setText('Shopping List');
+
+        this.mTable = new Shape(200,50,30,100,this,"TABLE","","");
+        this.mShapeArray.push(this.mTable);
+
+        //row 0
+        var r0 = this.mTable.mMesh.insertRow(0);
+
+        var c0a = r0.insertCell(0);
+        var c0b = r0.insertCell(1);
+
+        c0a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c0b.innerHTML = '' + this.ns.mVegetableOne;
+
+        //row1
+        var r1 = this.mTable.mMesh.insertRow(1);
+
+        var c1a = r1.insertCell(0);
+        var c1b = r1.insertCell(1);
+
+        c1a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c1b.innerHTML = '' + this.ns.mVegetableTwo;
+
+        //row2
+        var r2 = this.mTable.mMesh.insertRow(2);
+
+        var c2a = r2.insertCell(0);
+        var c2b = r2.insertCell(1);
+
+        c2a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c2b.innerHTML = '' + this.ns.mVegetableThree;
+
+        //row3
+        var r3 = this.mTable.mMesh.insertRow(3);
+
+        var c3a = r3.insertCell(0);
+        var c3b = r3.insertCell(1);
+
+        c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c3b.innerHTML = '' + this.ns.mFruitOne;
+
+        //row4
+        var r4 = this.mTable.mMesh.insertRow(4);
+
+        var c4a = r4.insertCell(0);
+        var c4b = r4.insertCell(1);
+
+        c4a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c4b.innerHTML = '' + this.ns.mFruitTwo;
+
+        //row5
+        var r5 = this.mTable.mMesh.insertRow(5);
+
+        var c5a = r5.insertCell(0);
+        var c5b = r5.insertCell(1);
+
+        c5a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c5b.innerHTML = '' + this.ns.mPurchaseOne;
+
+        //table specs
+        this.mTable.mMesh.style.width = '100%';
+        this.mTable.mMesh.setAttribute('border', '1');
 }
 });
 
