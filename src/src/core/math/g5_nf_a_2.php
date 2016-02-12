@@ -15,7 +15,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         this.mQuestionLabel.setSize(200,200);
-        this.mQuestionLabel.setPosition(500,150);
+        this.mQuestionLabel.setPosition(650,150);
 
         this.mUserAnswerLabel.setPosition(150,300);
 
@@ -23,12 +23,12 @@ initialize: function(sheet)
         var ad = 1;
         var bn = 1;
         var bd = 1;
-        while (an < ad || an % ad == 0 || bn < bd || bn % bd == 0 || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd)
+        while (ad == bd)
         {
-                an = Math.floor((Math.random()*9)+10);
-                ad = Math.floor((Math.random()*9)+1);
-                bn = Math.floor((Math.random()*9)+10);
-                bd = Math.floor((Math.random()*9)+1);
+                an = Math.floor((Math.random()*9)+1);
+                ad = Math.floor((Math.random()*8)+2);
+                bn = Math.floor((Math.random()*9)+1);
+                bd = Math.floor((Math.random()*8)+2);
         }
 
         var fractionA = new Fraction(an,ad,false);
@@ -37,7 +37,8 @@ initialize: function(sheet)
         var answer = fractionA.add(fractionB);
         answer.reduce();
 
-        this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() );
+        //this.setQuestion('' + fractionA.getString() + ' + ' + fractionB.getString() );
+        this.setQuestion('' + 'What is the weight in pounds of the 2 fruit items?');
         this.setAnswer('' + answer.getString(),0);
 
         this.mHeading = new Shape(200,50,30,50,this,"","","");
@@ -53,7 +54,7 @@ initialize: function(sheet)
         var c0a = r0.insertCell(0);
         var c0b = r0.insertCell(1);
 
-        c0a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c0a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
         c0b.innerHTML = '' + this.ns.mVegetableOne;
 
         //row1
@@ -62,7 +63,7 @@ initialize: function(sheet)
         var c1a = r1.insertCell(0);
         var c1b = r1.insertCell(1);
 
-        c1a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c1a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
         c1b.innerHTML = '' + this.ns.mVegetableTwo;
 
         //row2
@@ -71,7 +72,7 @@ initialize: function(sheet)
         var c2a = r2.insertCell(0);
         var c2b = r2.insertCell(1);
 
-        c2a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c2a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
         c2b.innerHTML = '' + this.ns.mVegetableThree;
 
         //row3
@@ -80,7 +81,7 @@ initialize: function(sheet)
         var c3a = r3.insertCell(0);
         var c3b = r3.insertCell(1);
 
-        c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
         c3b.innerHTML = '' + this.ns.mFruitOne;
 
         //row4
@@ -89,7 +90,7 @@ initialize: function(sheet)
         var c4a = r4.insertCell(0);
         var c4b = r4.insertCell(1);
 
-        c4a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c4a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
         c4b.innerHTML = '' + this.ns.mFruitTwo;
 
         //row5
@@ -98,7 +99,7 @@ initialize: function(sheet)
         var c5a = r5.insertCell(0);
         var c5b = r5.insertCell(1);
 
-        c5a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+        c5a.innerHTML = parseInt(Math.floor(Math.random()*10)+1) + ' pounds';
         c5b.innerHTML = '' + this.ns.mPurchaseOne;
 
         //table specs
