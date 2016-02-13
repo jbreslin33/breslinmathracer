@@ -1,3 +1,33 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.c.5.b_8',5.2908,'5.md.c.5','Terra Nova 40');
+*/
+var i_5_md_c_5_b__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,450,200,255,145,100,50,580,100);
+        this.mType = '5.md.c.5.b_8';
+
+        this.ns = new NameSampler();
+
+	// dimensions of a single cube
+	var w1 = Math.floor(Math.random()*2)+6;
+	var h1 = Math.floor(Math.random()*2)+10;
+	var l1 = Math.floor(Math.random()*2)+4;
+
+	var vol = w1*h1*l1;
+
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' are collaborating in a game called minetest to build a building in the shape of a right rectangular prism. The length of the building will be ' + h1 + ' blocks tall. The width will be ' + w1 + ' blocks and the height will be ' + l1 + ' blocks. What is the volume of the building in cubic blocks?');
+        this.setAnswer('' + vol,0);
+        this.setAnswer('' + vol + ' cubic blocks',1);
+
+	this.mUserAnswerLabel.setPosition(625,150);
+	this.mCorrectAnswerLabel.setPosition(625,250);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.c.5.b_7',5.2907,'5.md.c.5','');
 */
