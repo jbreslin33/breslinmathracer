@@ -9,22 +9,23 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
+        this.ns = new NameSampler();
 
         this.mType = '5.nbt.b.7_23';
-
-        var a = Math.floor(Math.random()*99+1);
+ 
+	var a = Math.floor(Math.random()*899+100);
         a = parseFloat(a / 100);
-        var decimalA = new Decimal(a);
+       	var decimalA = new Decimal(a);
 
-        var b = Math.floor(Math.random()*9+1);
-        b = parseFloat(b / 10);
+        var b = Math.floor(Math.random()*8+2);
         var decimalB = new Decimal(b);
 
         var answer = decimalA.multiply(decimalB);
 
-        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' chip in to buy ' + b + ' pounds of ' + this.ns.mFruitOne + ' for their ' + this.ns.mPlayedActivityOne + ' team. The ' + this.ns.mFruitOne + ' cost $' + decimalA.getMoney() + ' a pound. How much do they spend on ' + this.ns.mFruitOne + ' ' + this.ns.mSum + '?');
 
-        this.setAnswer('' + answer.getString(),0);
+        this.setAnswer('' + '$' + answer.getMoney(),0);
+        this.setAnswer('' + answer.getMoney(),1);
 }
 });
 
