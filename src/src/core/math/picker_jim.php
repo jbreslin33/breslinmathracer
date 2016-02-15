@@ -23,7 +23,8 @@ getDev: function()
 	//return '5.md.a.1_16';
 	//return '5.nf.a.2_9';
 	//return '5.md.c.5.b_8';
-	return '5.nbt.b.7_23';
+	//return '5.nbt.b.7_23';
+	return '4.nf.b.4.c_10';
 },
 
 getItem: function(id)
@@ -4258,6 +4259,10 @@ getItem: function(id)
 	if (id == '4.nf.b.4.c_9')
         {
                 return new i_4_nf_b_4_c__9(this.mSheet);
+        }
+	if (id == '4.nf.b.4.c_10')
+        {
+                return new i_4_nf_b_4_c__10(this.mSheet);
         }
 
 	//4.nf.c.5	
