@@ -1,5 +1,35 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_23',5.1123,'5.nbt.b.7','Terra Nova 41');
+*/
+var i_5_nbt_b_7__23 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.7_23';
+
+        var a = Math.floor(Math.random()*99+1);
+        a = parseFloat(a / 100);
+        var decimalA = new Decimal(a);
+
+        var b = Math.floor(Math.random()*9+1);
+        b = parseFloat(b / 10);
+        var decimalB = new Decimal(b);
+
+        var answer = decimalA.multiply(decimalB);
+
+        this.setQuestion('Find the product: ' + decimalA.getString() + ' &times ' + decimalB.getString());
+
+        this.setAnswer('' + answer.getString(),0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_22',5.1122,'5.nbt.b.7','Terra Nova 37');
 */
 
