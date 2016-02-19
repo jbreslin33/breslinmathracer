@@ -347,18 +347,29 @@ highestAchieved: function()
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 APPLICATION.log('t:' + this.mItemAttemptsTransactionCodeArrayThree[i]);
-                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
-                                {
-                                        correct++;
-                                }
-                                else
-                                {
-                                        incorrect++;
-                                }
+				//if (i == 0)
+				//{
+
+				//}
+				//else
+				//{
+                                	if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 0)
+                                	{
+                                        	incorrect++;
+                                	}
+                                	if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
+                                	{
+                                        	correct++;
+                                	}
+                                	if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 2)
+                                	{
+                                        	incorrect++;
+                                	}
+                        	//}
                                 i++;
-                        }
+			}
                         APPLICATION.log('end');
-                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        grade = Math.floor((correct / parseInt(this.mGame.mSheet.mCurrentElement - 1)) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
                         APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
