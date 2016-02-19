@@ -338,39 +338,31 @@ highestAchieved: function()
 
 		if (parseInt(this.mEvaluationsID) == 3)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayThree.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
-			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayThree.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
-		
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        APPLICATION.log('begin');
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                APPLICATION.log('t:' + this.mItemAttemptsTransactionCodeArrayThree[i]);
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+                                i++;
+                        }
+                        APPLICATION.log('end');
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+	
 		if (parseInt(this.mEvaluationsID) == 4)
 		{
 			//all time
