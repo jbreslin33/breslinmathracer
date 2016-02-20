@@ -27,6 +27,7 @@ initialize: function(game)
 	this.mIDArray.push('3.oa.c.7_80');
 
 	this.mCurrentElement = 0;
+	this.shuffle(50);
 },
 
 pickItem: function()
