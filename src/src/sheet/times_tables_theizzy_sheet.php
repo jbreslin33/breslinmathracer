@@ -1,51 +1,56 @@
-var TimesTablesTheIzzySheet = new Class(
+var TimesTablesTwoSheet = new Class(
 {
 Extends: Sheet,
 
 initialize: function(game)
 {
 	this.parent(game);
- 	for (i = 1; i < 100; i++)
-        {
-                var a = '3.oa.c.7_';
-                var b = '' + i;
-                var c = '' + a + b;
-                this.mIDArray.push('' + c);
-        }
+	this.mIDArray.push('3.oa.c.7_82');
+	this.mIDArray.push('3.oa.c.7_1');
+	this.mIDArray.push('3.oa.c.7_2');
+	this.mIDArray.push('3.oa.c.7_4');
+	this.mIDArray.push('3.oa.c.7_6');
+	this.mIDArray.push('3.oa.c.7_8');
+	this.mIDArray.push('3.oa.c.7_10');
+	this.mIDArray.push('3.oa.c.7_12');
+	this.mIDArray.push('3.oa.c.7_14');
+	this.mIDArray.push('3.oa.c.7_16');
+	this.mIDArray.push('3.oa.c.7_92');
+	this.mIDArray.push('3.oa.c.7_1');
+	this.mIDArray.push('3.oa.c.7_3');
+	this.mIDArray.push('3.oa.c.7_5');
+	this.mIDArray.push('3.oa.c.7_7');
+	this.mIDArray.push('3.oa.c.7_9');
+	this.mIDArray.push('3.oa.c.7_11');
+	this.mIDArray.push('3.oa.c.7_13');
+	this.mIDArray.push('3.oa.c.7_15');
+	this.mIDArray.push('3.oa.c.7_17');
+
+	this.mCurrentElement = 0;
+	this.shuffle(50);
 },
 
 pickItem: function()
 {
-	//would love to loop till we got no dup
-        while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+        if (this.mCurrentElement < this.mIDArray.length)
         {
-        	var r = Math.floor(Math.random()*3);
-
-                if (r == 0)
-                {
-                        APPLICATION.getLeastAsked(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayTwelve,APPLICATION.mItemAttemptsTransactionCodeArrayTwelve);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                }
-                if (r == 1)
-                {
-                        APPLICATION.getLeastCorrect(this.mIDArray,APPLICATION.mItemAttemptsTypeArrayTwelve,APPLICATION.mItemAttemptsTransactionCodeArrayTwelve);
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-                }
-                if (r == 2) // random
-		{
-        		var t = Math.floor(Math.random()*99)+1;
-                        APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                	var a = '3.oa.c.7_';
-                	var b = '' + t;
-                	APPLICATION.mQuestionTypeCurrent = '' + a + b;
-		}
-	}
-
+                APPLICATION.mQuestionTypeCurrent = this.mIDArray[this.mCurrentElement];
+                this.mCurrentElement++;
+        }
+        else
+        {
+                APPLICATION.mEvaluationsID = 1;
+        }
 },
 
 createItem: function()
 {
-	this.pickItem();
+        this.pickItem();
+
+        if (APPLICATION.mEvaluationsID == 1)
+        {
+                return;
+        }
 
         var pick = 0;
 
@@ -69,8 +74,8 @@ createItem: function()
                 var itemAttempt = new ItemAttempt();
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
-              	itemAttempt.mType = pick.mType;
-               	itemAttempt.setEvaluationsID(12);
+                itemAttempt.mType = pick.mType;
+                itemAttempt.setEvaluationsID(3);
         }
         else
         {
@@ -78,6 +83,7 @@ createItem: function()
         }
 
         //set this as last for next run
- 	APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;
+        APPLICATION.mQuestionTypeLast = APPLICATION.mQuestionTypeCurrent;
 }
+
 });

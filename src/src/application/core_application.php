@@ -561,37 +561,30 @@ highestAchieved: function()
 	
 		if (parseInt(this.mEvaluationsID) == 12)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayTwelve.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayTwelve.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
 		}
 		
 		if (parseInt(this.mEvaluationsID) == 13)
