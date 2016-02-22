@@ -40,12 +40,12 @@ initialize: function(game)
         this.mIDArray.push('' + '5.oa.b.3_9'); //33
         this.mIDArray.push('' + '5.nbt.b.6_9'); //34
         this.mIDArray.push('' + '5.md.c.5.a_4'); //35
-        this.mIDArray.push('' + '5.g.a.1_6'); //36
         this.mIDArray.push('' + '5.nbt.b.7_22'); //37 part a
         this.mIDArray.push('' + '5.md.a.1_16'); //38 part b
         this.mIDArray.push('' + '5.nf.a.2_9'); //39 part c
         this.mIDArray.push('' + '5.md.c.5.b_8'); //40 part d 
         this.mIDArray.push('' + '5.nbt.b.7_23'); //41 part e 
+        this.mIDArray.push('' + '5.g.a.1_6'); //36
          
 	this.mCurrentElement = 0;
 },
