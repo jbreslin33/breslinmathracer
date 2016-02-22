@@ -15,11 +15,12 @@ session_start();
 ?>
 
 <ul>
-<li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
+<li><a href="/web/navigation/school/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/update/school/update_room.php">Room</a></li>
 <li><a href="/web/update/school/update_first_name.php">First Name</a></li>
 <li><a href="/web/update/school/update_last_name.php">Last Name</a></li>
+<li><a href="/web/update/school/update_password.php">Password</a></li>
 </ul>
 
 </body>
