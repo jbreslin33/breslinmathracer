@@ -18,6 +18,7 @@ session_start();
 <li><a href="/web/navigation/main_menu_school.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/update/school/update_room.php">Room</a></li>
+<li><a href="/web/update/school/update_first_name.php">First Name</a></li>
 </ul>
 
 </body>
