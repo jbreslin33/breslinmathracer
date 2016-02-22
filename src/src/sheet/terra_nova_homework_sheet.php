@@ -5,8 +5,9 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-
-        this.mIDArray.push('' + '5.g.a.1_6'); //36 r:1
+ 
+	this.mIDArray.push('' + '5.g.a.1_6'); //36 r:1
+        this.mIDArray.push('' + '3.md.b.4_1'); //13
         this.mIDArray.push('' + '5.nbt.b.6_9'); //34 r:2
         this.mIDArray.push('' + '3.oa.a.3_7'); //24
         this.mIDArray.push('' + '4.md.a.2_26'); //26
@@ -30,7 +31,6 @@ initialize: function(game)
         this.mIDArray.push('' + '5.nbt.b.7_21'); //8
         this.mIDArray.push('' + '4.oa.a.2_26'); //10
         this.mIDArray.push('' + '5.oa.a.1_24'); //12
-        this.mIDArray.push('' + '3.md.b.4_1'); //13
         this.mIDArray.push('' + '4.g.a.2_29'); //14
         this.mIDArray.push('' + '3.md.b.3_1'); //15
         this.mIDArray.push('' + '3.g.a.1_1'); //16
@@ -52,6 +52,7 @@ initialize: function(game)
         this.mIDArray.push('' + '3.oa.a.3_6'); //2
         this.mIDArray.push('' + '3.oa.a.3_8'); //25
         this.mIDArray.push('' + '2.oa.a.1_21'); //1
+
          
 	this.mCurrentElement = 0;
 },
