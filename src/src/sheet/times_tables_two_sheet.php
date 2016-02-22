@@ -1,11 +1,10 @@
-var TimesTablesTheIzzySheet = new Class(
+var TimesTablesTwoSheet = new Class(
 {
 Extends: Sheet,
 
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray.push('3.oa.c.7_82');
 	this.mIDArray.push('3.oa.c.7_1');
 	this.mIDArray.push('3.oa.c.7_2');
 	this.mIDArray.push('3.oa.c.7_4');
@@ -14,8 +13,6 @@ initialize: function(game)
 	this.mIDArray.push('3.oa.c.7_10');
 	this.mIDArray.push('3.oa.c.7_12');
 	this.mIDArray.push('3.oa.c.7_14');
-	this.mIDArray.push('3.oa.c.7_16');
-	this.mIDArray.push('3.oa.c.7_92');
 	this.mIDArray.push('3.oa.c.7_1');
 	this.mIDArray.push('3.oa.c.7_3');
 	this.mIDArray.push('3.oa.c.7_5');
@@ -24,7 +21,6 @@ initialize: function(game)
 	this.mIDArray.push('3.oa.c.7_11');
 	this.mIDArray.push('3.oa.c.7_13');
 	this.mIDArray.push('3.oa.c.7_15');
-	this.mIDArray.push('3.oa.c.7_17');
 
 	this.mCurrentElement = 0;
 	this.shuffle(50);
@@ -75,7 +71,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(12);
+                itemAttempt.setEvaluationsID(3);
         }
         else
         {
