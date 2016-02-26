@@ -27,21 +27,20 @@ initialize: function(sheet)
 	this.yStart= Math.floor(Math.random()*3);
 	this.xStep = Math.floor(Math.random()*3)+1;
 	this.yStep = Math.floor(Math.random()*4)+1;
+	this.xStart = 1;
+	this.yStart = 2;
+	this.xStep = 3;
+	this.yStep = 4;
 	
-	this.dayA = Math.floor(Math.random()*4)+1;
-	this.dayB = Math.floor(Math.random()*4)+1;
-
 	this.xArray.push(parseInt(this.xStart));
 	this.xArray.push(parseInt(this.xStart + this.xStep));
 	this.xArray.push(parseInt(this.xStart + this.xStep + this.xStep ));
 	this.xArray.push(parseInt(this.xStart + this.xStep + this.xStep + this.xStep));
-	this.xArray.push(parseInt(this.xStart + this.xStep + this.xStep + this.xStep + this.xStep));
 	
 	this.yArray.push(parseInt(this.yStart));
 	this.yArray.push(parseInt(this.yStart + this.yStep));
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep));
 	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep));
-	this.yArray.push(parseInt(this.yStart + this.yStep + this.yStep + this.yStep + this.yStep));
 
 	var p1 = '' + '(' + this.xArray[0] + ',' + this.yArray[0] + ')';
 	this.pArray.push(p1); 
@@ -51,8 +50,6 @@ initialize: function(sheet)
 	this.pArray.push(p3); 
 	var p4 = '' + '(' + this.xArray[3] + ',' + this.yArray[3] + ')';
 	this.pArray.push(p4); 
-	var p5 = '' + '(' + this.xArray[4] + ',' + this.yArray[4] + ')';
-	this.pArray.push(p5); 
 
 	this.mUserXArray = new Array();
 	this.mUserYArray = new Array();
@@ -69,7 +66,6 @@ initialize: function(sheet)
 	this.WriteTableRow(10,90,25,20,this.mRaphael,"2");
 	this.WriteTableRow(10,110,25,20,this.mRaphael,"3");
 	this.WriteTableRow(10,130,25,20,this.mRaphael,"4");
-	this.WriteTableRow(10,150,25,20,this.mRaphael,"5");
 
 	//col 2	
 	this.WriteTableRow(35,50,170,20,this.mRaphael,this.a);
@@ -102,7 +98,7 @@ initialize: function(sheet)
 	this.mAnswerTextBoxArray = new Array();
 		
  	//answer Input
-	for (var i = 0; i < 9; i++)
+	for (var i = 0; i < 6; i++)
 	{
         	var tb = new Shape(170,20,437,300,this.mSheet.mGame,"INPUT","","");
         	tb.mMesh.value = '';
@@ -122,21 +118,14 @@ initialize: function(sheet)
 	//col1
 	this.mAnswerTextBoxArray[0].setPosition(440,130);
 	this.mAnswerTextBoxArray[1].setPosition(440,150);
-	this.mAnswerTextBoxArray[2].setPosition(440,170);
 	
 	//col2
-	this.mAnswerTextBoxArray[3].setPosition(610,130);
-	this.mAnswerTextBoxArray[4].setPosition(610,150);
-	this.mAnswerTextBoxArray[5].setPosition(610,170);
+	this.mAnswerTextBoxArray[2].setPosition(610,130);
+	this.mAnswerTextBoxArray[3].setPosition(610,150);
 	
 	//col3
-	this.mAnswerTextBoxArray[6].setPosition(725,130);
-	this.mAnswerTextBoxArray[7].setPosition(725,150);
-	this.mAnswerTextBoxArray[8].setPosition(725,170);
-	
-	this.mAnswerTextBoxArray[6].setSize(60,20);
-	this.mAnswerTextBoxArray[7].setSize(60,20);
-	this.mAnswerTextBoxArray[8].setSize(60,20);
+	this.mAnswerTextBoxArray[4].setPosition(725,130);
+	this.mAnswerTextBoxArray[5].setPosition(725,150);
 },
 
 createChart: function()
@@ -183,14 +172,11 @@ checkUserAnswer: function()
 	//set userAnswers...
 	this.mUserXArray[2] = this.mAnswerTextBoxArray[0].mMesh.value;
 	this.mUserXArray[3] = this.mAnswerTextBoxArray[1].mMesh.value;
-	this.mUserXArray[4] = this.mAnswerTextBoxArray[2].mMesh.value;
 	
-	this.mUserYArray[2] = this.mAnswerTextBoxArray[3].mMesh.value;
-	this.mUserYArray[3] = this.mAnswerTextBoxArray[4].mMesh.value;
-	this.mUserYArray[4] = this.mAnswerTextBoxArray[5].mMesh.value;
+	this.mUserYArray[2] = this.mAnswerTextBoxArray[2].mMesh.value;
+	this.mUserYArray[3] = this.mAnswerTextBoxArray[3].mMesh.value;
 
 	var cArray = new Array();
-	cArray.push(2);
 	cArray.push(2);
 	cArray.push(2);
 	cArray.push(2);
@@ -251,26 +237,20 @@ showCorrectAnswer: function()
 		this.chart.circles[this.xArray[3]][this.yArray[3]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
 		this.chart.circles[this.xArray[3]][this.yArray[3]].data("click", 1);
 		
-		this.chart.circles[this.xArray[4]][this.yArray[4]].attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 1}).scale(.5,.5);
-		this.chart.circles[this.xArray[4]][this.yArray[4]].data("click", 1);
-
        		this.mButton.setVisibility(false);
 
 		//textboxes	
 		//col 1
 		this.mAnswerTextBoxArray[0].mMesh.value = this.xArray[2];
 		this.mAnswerTextBoxArray[1].mMesh.value = this.xArray[3];
-		this.mAnswerTextBoxArray[2].mMesh.value = this.xArray[4];
 	
 		//col2	
-		this.mAnswerTextBoxArray[3].mMesh.value = this.yArray[2];
-		this.mAnswerTextBoxArray[4].mMesh.value = this.yArray[3];
-		this.mAnswerTextBoxArray[5].mMesh.value = this.yArray[4];
+		this.mAnswerTextBoxArray[2].mMesh.value = this.yArray[2];
+		this.mAnswerTextBoxArray[3].mMesh.value = this.yArray[3];
 
 		//col3
-		this.mAnswerTextBoxArray[6].mMesh.value = this.pArray[2];
-		this.mAnswerTextBoxArray[7].mMesh.value = this.pArray[3];
-		this.mAnswerTextBoxArray[8].mMesh.value = this.pArray[4];
+		this.mAnswerTextBoxArray[4].mMesh.value = this.pArray[2];
+		this.mAnswerTextBoxArray[5].mMesh.value = this.pArray[3];
 	}		 	 
  	this.hideAnswerInputs();
         this.showUserAnswer();
