@@ -916,9 +916,10 @@ initialize: function(sheet)
 	var n =  Math.floor((Math.random()*90)+10);
 	var d = 100;
 	
- 	var fraction = new Fraction(n,d);
+ 	var fraction = new Fraction(n,d,false);
+	var d = new Decimal('0.' + n);
 
-        this.setQuestion('Write in decimal form. Do not simplify: ' + fraction.getString());
-        this.setAnswer('0.' + n,0);
+        this.setQuestion('Write in decimal form: ' + fraction.getString());
+        this.setAnswer('' + d.getString(),0);
 }
 });
