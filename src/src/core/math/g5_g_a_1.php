@@ -27,10 +27,6 @@ initialize: function(sheet)
 	this.yStart= Math.floor(Math.random()*3);
 	this.xStep = Math.floor(Math.random()*3)+1;
 	this.yStep = Math.floor(Math.random()*4)+1;
-	this.xStart = 1;
-	this.yStart = 2;
-	this.xStep = 3;
-	this.yStep = 4;
 	
 	this.xArray.push(parseInt(this.xStart));
 	this.xArray.push(parseInt(this.xStart + this.xStep));
@@ -126,6 +122,9 @@ initialize: function(sheet)
 	//col3
 	this.mAnswerTextBoxArray[4].setPosition(725,130);
 	this.mAnswerTextBoxArray[5].setPosition(725,150);
+	
+	this.mAnswerTextBoxArray[4].setSize(60,20);
+	this.mAnswerTextBoxArray[5].setSize(60,20);
 },
 
 createChart: function()
