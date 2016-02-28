@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>TESTS</title>
+        <title>EVALUATIONS</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -66,9 +66,9 @@ else if (isset($_GET['test_id']))
 echo "<br>";
 ?>
 
-<p><b> Tests </p></b>
+<p><b> Evaluations </p></b>
 
-<p><b> Select Room, Student and Test: </p></b>
+<p><b> Select Room, Student and Evaluation: </p></b>
 
 <form method="post" action="/web/reports/generic/tests.php">
 
@@ -129,7 +129,7 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 $query = "select * from evaluations_attempts where user_id = ";
 $query .= $user_id;
-$query .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
+$query .= " order by start_time desc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -141,14 +141,14 @@ for($i = 0; $i < $numrows; $i++)
 	$row = pg_fetch_array($result, $i);
 
 	//get item_attempts related to evaluations_attempts_id
-	$query2 = "select id from item_attempts where evaluations_attempts_id = ";
-	$query2 .= $row[0];
-	$query2 .= ";";
-	$result2 = pg_query($conn,$query2);
-	$numrows2 = pg_numrows($result2);
+	//$query2 = "select id from item_attempts where evaluations_attempts_id = ";
+	//$query2 .= $row[0];
+	//$query2 .= ";";
+	//$result2 = pg_query($conn,$query2);
+	//$numrows2 = pg_numrows($result2);
 	
-	if ($numrows2 > 4)
-	{
+	//if ($numrows2 > 4)
+	//{
 		$full = "TestID:"; 
 		$full .= $row[0];	
 		$full .= " Date:"; 
@@ -161,7 +161,7 @@ for($i = 0; $i < $numrows; $i++)
         	{
                 	echo "<option value=\"$row[0]\"> $full </option>";
         	}
-	}
+	//}
 }
 ?>
 </select>
