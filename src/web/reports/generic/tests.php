@@ -127,7 +127,7 @@ for($i = 0; $i < $numrows; $i++)
 
 <select id="test_id" name="test_id" onchange="loadAgain()">
 <?php
-$query = "select * from evaluations_attempts where user_id = ";
+$query = "select evaluations.description, evaluations_attempts.id, evaluations_attempts.start_time from evaluations_attempts join evaluations on evaluations_attempts.evaluations_id=evaluations.id where user_id = ";
 $query .= $user_id;
 $query .= " order by start_time desc;";
 $result = pg_query($conn,$query);
@@ -149,10 +149,12 @@ for($i = 0; $i < $numrows; $i++)
 	
 	//if ($numrows2 > 4)
 	//{
-		$full = "TestID:"; 
+		$full = "Evaluation:"; 
 		$full .= $row[0];	
-		$full .= " Date:"; 
-		$full .= $row[1];
+		$full .= " ID:"; 
+		$full .= $row[1];	
+		$full .= " Time:"; 
+		$full .= $row[2];
         	if ($row[0] == $test_id)
         	{
                 	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
