@@ -149,8 +149,10 @@ for($i = 0; $i < $numrows; $i++)
 	
 	//if ($numrows2 > 4)
 	//{
+		$t = mb_strimwidth($row[1], 0, 19, "");
 		$full = "Time: "; 
-		$full .= $row[1];
+		//$full .= $row[1];
+		$full .= $t;
 		$full .= " "; 
 		$full .= $row[2];	
         	if ($row[0] == $test_id)
