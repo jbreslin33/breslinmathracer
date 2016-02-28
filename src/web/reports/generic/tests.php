@@ -149,12 +149,10 @@ for($i = 0; $i < $numrows; $i++)
 	
 	//if ($numrows2 > 4)
 	//{
-		$full = ""; 
-		$full .= $row[2];	
-		$full .= " Time:"; 
+		$full = "Time: "; 
 		$full .= $row[1];
-		$full .= " ID:"; 
-		$full .= $row[0];	
+		$full .= " "; 
+		$full .= $row[2];	
         	if ($row[0] == $test_id)
         	{
                 	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
