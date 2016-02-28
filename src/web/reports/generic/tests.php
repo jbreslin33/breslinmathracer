@@ -190,22 +190,27 @@ else
         $numrows = pg_numrows($result);
 
 	$progressionTotal = 0;
+	$questionTotal = 0;
 	$correctTotal = 0;
+	$cTotal = 0;
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
                 
 		$progression = $row[7];
 		$progressionTotal = floatVal($progressionTotal + $progression);
+		$questionTotal++;
 		
 		$transactionCode = $row[3];
 		if ($transactionCode == 1)
 		{
 			$correctTotal = floatVal($correctTotal + $progression);
+			$cTotal++;
 		}
 	}
 
 	$gradeDecimal = 0; 	
+	$gDecimal = 0; 	
 	if ($progressionTotal == 0)
 	{
 		$gradeDecimal = 0;
@@ -213,12 +218,23 @@ else
 	else
 	{
 		$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+		$gDecimal = floatVal($cTotal / $questionTotal);
 	}
 	$gradePercent = (int)($gradeDecimal * 100);
 	$gradeText = "Grade: ";
 	$gradeText .= $gradePercent;
 	$gradeText .= "%";
-	echo $gradeText; 
+	
+	$gPercent = (int)($gDecimal * 100);
+	$gText = "Percent Correct: ";
+	$gText .= $gPercent;
+	$gText .= "%";
+
+	$t = $gradeText;
+	$t .= " ";
+	$t .= $gText;
+
+	echo $t; 
 
 echo '<table border=\"1\">';
         echo '<tr>';
