@@ -140,30 +140,19 @@ for($i = 0; $i < $numrows; $i++)
 	//get evaluations_attempts row
 	$row = pg_fetch_array($result, $i);
 
-	//get item_attempts related to evaluations_attempts_id
-	//$query2 = "select id from item_attempts where evaluations_attempts_id = ";
-	//$query2 .= $row[0];
-	//$query2 .= ";";
-	//$result2 = pg_query($conn,$query2);
-	//$numrows2 = pg_numrows($result2);
-	
-	//if ($numrows2 > 4)
-	//{
-		$t = mb_strimwidth($row[1], 0, 19, "");
-		//$e = str_pad($row[2],21);
-		$full = ""; 
-		$full .= $t;
-		$full .= " "; 
-		$full .= $row[2];	
-        	if ($row[0] == $test_id)
-        	{
-                	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
-        	}      
-        	else
-        	{
-                	echo "<option value=\"$row[0]\"> $full </option>";
-        	}
-	//}
+	$t = mb_strimwidth($row[1], 0, 19, "");
+	$full = ""; 
+	$full .= $t;
+	$full .= " "; 
+	$full .= $row[2];	
+        if ($row[0] == $test_id)
+        {
+               	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
+        }      
+        else
+        {
+               	echo "<option value=\"$row[0]\"> $full </option>";
+        }
 }
 ?>
 </select>
