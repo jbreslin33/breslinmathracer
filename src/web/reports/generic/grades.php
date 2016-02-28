@@ -230,7 +230,9 @@ else
 
                 echo '<tr>';
                 echo '<td>';
-                echo $startTimeArray[$z];
+ 		$t = mb_strimwidth($startTimeArray[$z], 0, 19, "");
+
+                echo $t;
                 echo '</td>';
                 echo '<td>';
                 echo $testIDArray[$z];
