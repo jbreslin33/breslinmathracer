@@ -16,21 +16,18 @@ initialize: function(sheet)
                 this.mButtonB.setPosition(530,280);
                 this.mButtonC.setPosition(530,340);
 
-                this.mButtonA.setSize(400,50);
-                this.mButtonB.setSize(400,50);
-                this.mButtonC.setSize(400,50);
+                this.mButtonA.setSize(200,50);
+                this.mButtonB.setSize(200,50);
+                this.mButtonC.setSize(200,50);
+             
+                this.setAnswer('|4|+|-8|',0);
 
-                var a = 'Marianna Trench';
-                var d = 'Death Valley';
-                var c = 'Mt. McKinley';
-                var b = 'Mt. Everest';
+                this.mButtonA.setAnswer('|4|+|-8|');
+                this.mButtonB.setAnswer('|2|+|-6|');
+                this.mButtonC.setAnswer('|-6|+|-4|');
 
-                this.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a,0);
-
-                this.mButtonA.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
-                this.mButtonB.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);
-                this.mButtonC.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
-
+//var a = '|4| + |-8|';
+//console.log(a);
 
 clickflag = true;
 
@@ -67,13 +64,13 @@ for (j=0;j<4;j++) {
   if(yPos[j*2] == yPos[j*2+1])
   {
     var q = this.raphael.path(['M', xPos[j*2], yPos[j*2], 'H', xPos[j*2+1]]).attr({
-        stroke : 'yellow'
+        stroke : 'green',"stroke-width":3
     }).toBack();
   }
   else
   {
     var q = this.raphael.path(['M', xPos[j*2], yPos[j*2], 'V', yPos[j*2+1]]).attr({
-        stroke : 'yellow'
+        stroke : 'green',"stroke-width":2
     }).toBack();
 
   }
@@ -104,7 +101,7 @@ this.pointsY = [8,3,6,3,8];
   // this.setAnswer('W',0);
   // this.setAnswer('w',1);
    
-this.setQuestion('The combined lengths of AB, CD, EF and GH are equal to what value?');
+this.setQuestion('To find the length of segment CD, you use which calculation?');
 
 this.mQuestionLabel.setSize(220,50);
 this.mQuestionLabel.setPosition(625,120);
