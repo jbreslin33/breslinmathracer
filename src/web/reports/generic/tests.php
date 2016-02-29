@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>TESTS</title>
+        <title>EVALUATIONS</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -66,9 +66,9 @@ else if (isset($_GET['test_id']))
 echo "<br>";
 ?>
 
-<p><b> Tests </p></b>
+<p><b> Evaluations </p></b>
 
-<p><b> Select Room, Student and Test: </p></b>
+<p><b> Select Room, Student and Evaluation: </p></b>
 
 <form method="post" action="/web/reports/generic/tests.php">
 
@@ -127,9 +127,9 @@ for($i = 0; $i < $numrows; $i++)
 
 <select id="test_id" name="test_id" onchange="loadAgain()">
 <?php
-$query = "select * from evaluations_attempts where user_id = ";
+$query = "select evaluations_attempts.id, evaluations_attempts.start_time, evaluations.description from evaluations_attempts join evaluations on evaluations_attempts.evaluations_id=evaluations.id where user_id = ";
 $query .= $user_id;
-$query .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
+$query .= " order by start_time desc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
@@ -140,28 +140,19 @@ for($i = 0; $i < $numrows; $i++)
 	//get evaluations_attempts row
 	$row = pg_fetch_array($result, $i);
 
-	//get item_attempts related to evaluations_attempts_id
-	$query2 = "select id from item_attempts where evaluations_attempts_id = ";
-	$query2 .= $row[0];
-	$query2 .= ";";
-	$result2 = pg_query($conn,$query2);
-	$numrows2 = pg_numrows($result2);
-	
-	if ($numrows2 > 4)
-	{
-		$full = "TestID:"; 
-		$full .= $row[0];	
-		$full .= " Date:"; 
-		$full .= $row[1];
-        	if ($row[0] == $test_id)
-        	{
-                	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
-        	}      
-        	else
-        	{
-                	echo "<option value=\"$row[0]\"> $full </option>";
-        	}
-	}
+	$t = mb_strimwidth($row[1], 0, 19, "");
+	$full = ""; 
+	$full .= $t;
+	$full .= " "; 
+	$full .= $row[2];	
+        if ($row[0] == $test_id)
+        {
+               	echo "<option selected=\"selected\" value=\"$row[0]\"> $full </option>";
+        }      
+        else
+        {
+               	echo "<option value=\"$row[0]\"> $full </option>";
+        }
 }
 ?>
 </select>
@@ -199,22 +190,27 @@ else
         $numrows = pg_numrows($result);
 
 	$progressionTotal = 0;
+	$questionTotal = 0;
 	$correctTotal = 0;
+	$cTotal = 0;
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
                 
 		$progression = $row[7];
 		$progressionTotal = floatVal($progressionTotal + $progression);
+		$questionTotal++;
 		
 		$transactionCode = $row[3];
 		if ($transactionCode == 1)
 		{
 			$correctTotal = floatVal($correctTotal + $progression);
+			$cTotal++;
 		}
 	}
 
 	$gradeDecimal = 0; 	
+	$gDecimal = 0; 	
 	if ($progressionTotal == 0)
 	{
 		$gradeDecimal = 0;
@@ -222,12 +218,23 @@ else
 	else
 	{
 		$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+		$gDecimal = floatVal($cTotal / $questionTotal);
 	}
 	$gradePercent = (int)($gradeDecimal * 100);
 	$gradeText = "Grade: ";
 	$gradeText .= $gradePercent;
 	$gradeText .= "%";
-	echo $gradeText; 
+	
+	$gPercent = (int)($gDecimal * 100);
+	$gText = "Percent Correct: ";
+	$gText .= $gPercent;
+	$gText .= "%";
+
+	$t = $gradeText;
+	$t .= " ";
+	$t .= $gText;
+
+	echo $t; 
 
 echo '<table border=\"1\">';
         echo '<tr>';

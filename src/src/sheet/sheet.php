@@ -364,5 +364,35 @@ var Sheet = new Class(
 		this.addVictoryShape(new ShapeVictory(50,50,300,100,this.mGame,"/images/easter/easter_egg_blue.png","",""));
 
                 this.hideVictoryShapes();
+        },
+//this.mIDArray.push
+	shuffle: function(degree)
+        {
+                for (i=0; i < degree; i++)
+                {
+                        indexFROM = Math.floor(Math.random()*parseInt(this.mIDArray.length));
+                        indexTO = Math.floor(Math.random()*parseInt(this.mIDArray.length));
+
+                        answerFROM = this.mIDArray[indexFROM];
+                        answerTO = this.mIDArray[indexTO];
+                        this.mIDArray[indexFROM] = answerTO;
+                        this.mIDArray[indexTO] = answerFROM;
+                }
         }
+/*
+	shuffle: function(degree)
+        {
+                for (i=0; i < degree; i++)
+                {
+                        indexFROM = Math.floor(Math.random()*3);
+                        indexTO = Math.floor(Math.random()*3);
+
+                        answerFROM = this.mButtonArray[indexFROM].getAnswer();
+                        answerTO = this.mButtonArray[indexTO].getAnswer();
+                        this.mButtonArray[indexFROM].setAnswer(answerTO);
+                        this.mButtonArray[indexTO].setAnswer(answerFROM);
+                }
+        }
+*/
+
 });

@@ -37,13 +37,34 @@ initialize: function(sheet)
         var r = Math.floor(Math.random()*3);
         var l = Math.floor(Math.random()*3)+1;
 
+
        	var a = Math.floor(Math.random()*1000)+100000;
        	var b = Math.floor(Math.random()*1000)+a;
        	var c = Math.floor(Math.random()*1000)+b;
-       	var d = Math.floor(Math.random()*1000)+c;
-       	var e = Math.floor(Math.random()*1000)+d;
-       	var f = Math.floor(Math.random()*1000)+e;
-       	var g = Math.floor(Math.random()*1000)+f;
+
+	var d = 200000;
+	while (d > a && d > b && d > c)
+	{
+       		d = Math.floor(Math.random()*1000)+a; 
+	}
+	
+	var e = 200000;
+	while (e > a && e > b && e > c)
+	{
+       		e = Math.floor(Math.random()*1000)+b; 
+	}
+	
+	var f = 200000;
+	while (f > a && f > b && f > c)
+	{
+       		f = Math.floor(Math.random()*1000)+c; 
+	}
+
+	var g = 0;
+	while (g < f)  
+	{
+       		g = Math.floor(Math.random()*1000)+f; //answer
+	}
 	g = g + 10;
 
         var answer = '' + g;
@@ -279,6 +300,7 @@ initialize: function(sheet)
 
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.a.1_24',2.0224,'2.oa.a.1','Terra Nova 19' );
 */
@@ -813,10 +835,14 @@ Extends: TextItem,
 		this.mLeft = left;
 
                	//variables
-                this.a = Math.floor(Math.random()*50)+50;
-                this.b = Math.floor(Math.random()*28)+12;
-                this.c = Math.floor(Math.random()*28)+12;
-                this.d = parseInt(this.a - this.b - this.c);
+		this.d = -1;
+		while ( this.d < 0) 
+		{
+                	this.a = Math.floor(Math.random()*50)+50;
+                	this.b = Math.floor(Math.random()*28)+12;
+                	this.c = Math.floor(Math.random()*28)+12;
+                	this.d = parseInt(this.a - this.b - this.c);
+		}
 	
                 random = Math.floor(Math.random()*5)+1;
 		

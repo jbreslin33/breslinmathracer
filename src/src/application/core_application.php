@@ -306,19 +306,8 @@ highestAchieved: function()
 					}
 					j++;
 				}
-				//lets check array
-				if (attemptArray.length == 0) //never asked break out
-				{
-					unmastered++;
-					APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
-					breakOut = true;
-				}
-				else if (attemptArray.length == 1) //not enuf
-				{
-					APPLICATION.mHud.fillTanSelect(this.mItemTypesArray[i]);
-					unmastered++;
-				}
-				else //you must have 2 
+				
+				if (attemptArray.length > 1) //asked twice or more...
 				{
 					if (attemptArray[0] != 1 || attemptArray[1] != 1)
 					{
@@ -349,317 +338,253 @@ highestAchieved: function()
 
 		if (parseInt(this.mEvaluationsID) == 3)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayThree.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayThree.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayThree[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
-		
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		if (parseInt(this.mEvaluationsID) == 4)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayFour.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayFour.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayFour[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		
 		if (parseInt(this.mEvaluationsID) == 5)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayFive.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayFive.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayFive[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		
 		if (parseInt(this.mEvaluationsID) == 6)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArraySix.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArraySix.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArraySix[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		
 		if (parseInt(this.mEvaluationsID) == 7)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArraySeven.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArraySeven.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArraySeven[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		
 		if (parseInt(this.mEvaluationsID) == 8)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayEight.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayEight.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayEight[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		
 		if (parseInt(this.mEvaluationsID) == 9)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayNine.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayNine.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayNine[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 		
 		if (parseInt(this.mEvaluationsID) == 10)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayTen.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayTen.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayTen[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
-		}
-		
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+	
 		if (parseInt(this.mEvaluationsID) == 12)
 		{
-			//all time
-			for (var i = 0; i < this.mItemAttemptsTypeArrayTwelve.length; i++)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
-				{
-					hiStreak++;	
-					if (parseInt(hiStreak) >= parseInt(score))
-					{
-						score = hiStreak;
-					}
-				}
-				else
-				{
-					hiStreak = 0;
-				}
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
+                                {
+                                       	correct++;
+                                }
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 2)
+                                {
+                                       	incorrect++;
+                                }
+                                i++;
 			}
-			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayTwelve.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayTwelve[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
 		}
 		
 		if (parseInt(this.mEvaluationsID) == 13)
@@ -734,149 +659,99 @@ highestAchieved: function()
                	
 		if (parseInt(this.mEvaluationsID) == 15)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArrayFifteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArrayFifteen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
-
+		
 		if (parseInt(this.mEvaluationsID) == 16)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArraySixteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArraySixteen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 		
 		if (parseInt(this.mEvaluationsID) == 17)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArraySeventeen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArraySeventeen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 		
 		if (parseInt(this.mEvaluationsID) == 18)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArrayEighteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
-
-                        //latest streak
                         var i = 0;
-                        while (i < this.mItemAttemptsTypeArrayEighteen.length && foundWrong == false)
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                        correct++;
                                 }
                                 else
                                 {
-                                        foundWrong = true;
+                                        incorrect++;
                                 }
+				i++;
                         }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
 			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
-
-		this.mGame.setStreak(currentStreak);
 		this.mGame.setScore(score); 
 	},
 
@@ -1364,7 +1239,7 @@ highestAchieved: function()
                 xmlhttp.send();
         },
 
-        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id,score)
+        sendItemAttemptInsert: function(itemtypesid,question,answers,datenow,evaluations_id,score,unmastered)
         {
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -1392,7 +1267,7 @@ highestAchieved: function()
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow + "&score=" + score,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow + "&score=" + score + "&unmastered=" + unmastered,true);
                 xmlhttp.send();
         },
       

@@ -25,7 +25,7 @@ initialize: function(sheet)
 	var x = 0;
 	var y = 0;
 	var z = 0;
-  	
+
 	if (r == 0)
         {
                 w = Math.floor(Math.random()*38)+2;
@@ -58,12 +58,12 @@ initialize: function(sheet)
 
   	if (r == 2)
         {
-                w = Math.floor(Math.random()*8)+2;
-                x = Math.floor(Math.random()*8)+2;
+                w = Math.floor(Math.random()*8)+12;
+                x = Math.floor(Math.random()*6)+2;
                 y = Math.floor(Math.random()*8)+2;
-                var t = Math.floor(Math.random()*8)+2;
-		w = parseInt(x * y + t); 
-                z = parseInt(w - x * y);
+                var t = parseInt(w - x); 
+		z = parseInt(t * y); 
+
                 b = '' + '+ and +';
                 c = '' + '/ and +';
                 a = '' + '- and X';
@@ -707,10 +707,10 @@ initialize: function(sheet)
                 r = c1 % a12b12d1;
                 t = c1 / a12b12d1;
                 
-                //x = parseInt(  ( c1 /  (a1 - a2) * (b1 + b2) * d1 ) - d2 );
-		x = t - d2;
+                x = parseInt(   c1 + (a1 - a2) * (b1 + b2) * d1 - d2 );
+		//x = t - d2;
 
-                this.setQuestion('Evaluate: ' + c1 + ' / (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2);
+                this.setQuestion('Evaluate: ' + c1 + ' + (' + a1 + ' - ' + a2 + ') (' + b1 + ' + ' + b2 + ') ' + d1 + ' - ' + d2);
                 this.setAnswer('' + x,0);
         }
 }
@@ -870,8 +870,8 @@ initialize: function(sheet)
                 var b12c2 = parseInt(  c2 * (b1 + b2) );
                 r = a12c1 % b12c2;
 
-                x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
-                //x = parseInt((a1 - a2) * c1/c2 * (b1 + b2));
+                //x = parseInt( ((a1 - a2) * c1) / (c2 * (  b1 + b2 ))  );
+                x = parseInt((a1 - a2) * c1/c2 * (b1 + b2));
                 
                 this.setQuestion('Evaluate: ' + '(' + a1 + ' - ' + a2 + ') ' + c1 + ' / ' + c2 + ' (' + b1 + ' + ' + b2 + ')' );
                 this.setAnswer('' + x,0);

@@ -490,6 +490,7 @@ Extends: TextItem,
 
                 this.setQuestion('' + this.ns.mNameOne + ' has $' + a + '. ' + this.ns.mNameTwo + ' has ' + b + ' times as much money as ' + this.ns.mNameOne + '. How many dollars does ' + this.ns.mNameTwo + ' have?');
                 this.setAnswer('' + c,0);
+                this.setAnswer('$' + c,1);
         }
 });
 

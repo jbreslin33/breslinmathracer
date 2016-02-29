@@ -1,5 +1,82 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_27',4.2527,'4.md.a.2','Terra Nova 30' );
+*/
+
+var i_4_md_a_2__27 = new Class(
+{
+Extends: FourButtonItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+
+        this.mType = '4.md.a.2_27';
+
+        this.nm = new NameMachine();
+        this.ns = new NameSampler();
+        this.mChopWhiteSpace = false;
+
+        var r = Math.floor(Math.random()*2);
+	var a = 'a';
+	var b = 'b';
+	var c = 'c';
+	var d = 'd';
+
+	//start        
+	var hs = Math.floor(Math.random()*12);
+	var ms = Math.floor(Math.random()*60);
+	var startTime = new Time(hs,ms); 
+
+	//end
+	var he = Math.floor(Math.random()*12)+12;
+	var me = Math.floor(Math.random()*60);
+	var endTime = new Time(he,me); 
+
+	//extra	
+	var extra = Math.floor(Math.random()*59)+1;
+	var extraTime = new Time(0,extra);
+
+	var p = endTime.subtract(startTime);
+	var totalTime = p.add(extraTime);
+		
+	this.setQuestion('' + this.ns.mNameOne + ' played ' + this.ns.mPlayedActivityOne + ' from ' + startTime.getString() + ' until ' + endTime.getString() + ' Then ' + this.nm.getPronoun(this.ns.mNameOne,0,0) + ' played ' + this.ns.mPlayedActivityTwo + ' for another ' + extra + ' minutes. How much time did ' +  this.nm.getPronoun(this.ns.mNameOne,0,0) + ' play altogether?');
+
+        a = '' + totalTime.mHour + ' hours ' + totalTime.mMinute + ' minutes';
+        this.setAnswer('' + a,0);
+        this.mButtonA.setAnswer('' + a);
+
+	var bHour = 0;
+	var bMinute = totalTime.mMinute;
+	while (bMinute == totalTime.mMinute) 
+	{
+		bHour = Math.floor(Math.random()*12);
+		bMinute = Math.floor(Math.random()*59)+1;
+	}
+        this.mButtonB.setAnswer('' + bHour + ' hours ' + bMinute + ' minutes');
+	
+	var cHour = totalTime.mHour;
+	var cMinute = 0;
+	while (cHour == totalTime.mHour) 
+	{
+		cHour = Math.floor(Math.random()*12);
+		cMinute = Math.floor(Math.random()*59)+1;
+	}
+        this.mButtonC.setAnswer('' + cHour + ' hours ' + cMinute + ' minutes');
+	
+	var dHour = totalTime.mHour;
+	var dMinute = totalTime.mMinute;
+	while (dHour == totalTime.mHour || dMinute == totalTime.mMinute) 
+	{
+		dHour = Math.floor(Math.random()*12);
+		dMinute = Math.floor(Math.random()*59)+1;
+	}
+        this.mButtonD.setAnswer('' + dHour + ' hours ' + dMinute + ' minutes');
+
+        this.shuffle(10);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.md.a.2_26',4.2526,'4.md.a.2','Terra Nova 26' );
 */
 
@@ -16,8 +93,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
         this.mChopWhiteSpace = false;
 
-        var r = Math.floor(Math.random()*3);
-	r = 1;
+        var r = Math.floor(Math.random()*2);
 
         var x = 0;
         var y = 0;

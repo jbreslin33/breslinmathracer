@@ -16,7 +16,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
  	this.mChopWhiteSpace = false;
 
-        var r = Math.floor(Math.random()*3);
+        var r = Math.floor(Math.random()*2);
 
 	var x = 0; 
         var y = 0;
@@ -46,7 +46,7 @@ initialize: function(sheet)
         }
         if (r == 1)
         {
-                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + x + ' ' + this.ns.mFruitOne + ' to make gift baskets. Each basket can hold ' + y + ' ' + this.ns.mFruitOne + '. ' + this.ns.mNameOne + ' used the equation ' + x + ' &divide ' + y + ' = n to find the number of baskets ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' will need to fill with ' + this.ns.mFruitOne + '. Which equation can ' + this.ns.mNameOne + ' use to check ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' answer?');
         }
 
         this.setAnswer('' + a,0);
@@ -76,7 +76,7 @@ initialize: function(sheet)
         this.nm = new NameMachine();
         this.ns = new NameSampler();
 
-        var r = Math.floor(Math.random()*3);
+        var r = Math.floor(Math.random()*2);
 
         var m = Math.floor(Math.random()*30)+20;
         m = m * 2;
@@ -134,7 +134,7 @@ initialize: function(sheet)
         }
         if (r == 1)
         {
-                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mVegetableOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
+                this.setQuestion('' + this.ns.mNameOne + ' puts ' + x + ' ' + this.ns.mFruitOne + ' in a basket. ' + this.ns.mNameTwo + ' put ' + y + ' ' + this.ns.mFruitOne + ' in another basket. How many ' + this.ns.mFruitOne + ' would have to be moved from one basket to another so there would be the same amount of ' + this.ns.mFruitOne + ' in each basket?');
         }
 
         this.setAnswer('' + a,0);

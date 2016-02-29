@@ -1,3 +1,87 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_16',4.0516,'4.oa.c.5','Terra Nova 28');
+*/
+
+var i_4_oa_c_5__16 = new Class(
+{
+Extends: FourButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '4.oa.c.5_16';
+                this.mChopWhiteSpace = false;
+                this.mNameMachine = new NameMachine();
+                this.ns = new NameSampler();
+
+		var a = '';
+		var b = '';
+		var c = '';
+		var d = '';
+
+                var r = Math.floor(Math.random()*2); //add or subtract
+
+                var an = Math.floor(Math.random()*7)+3; //add or subtract how much??
+		var bn = 0;
+		var cn = 0;
+		var dn = 0;
+
+		while (an == bn || an == bn || an == cn || an == dn || bn == cn || bn == dn || cn == dn)
+		{
+                	bn = Math.floor(Math.random()*9)+1; 
+                	cn = Math.floor(Math.random()*9)+1; 
+                	dn = Math.floor(Math.random()*9)+1; 
+			if (r == 0)
+			{
+				a = '' + 'subtract ' + an;
+				b = '' + 'subtract ' + bn;
+				c = '' + 'add ' + cn;
+				d = '' + 'add ' + dn;
+			}
+			else
+			{
+				a = '' + 'add ' + an;
+				b = '' + 'add ' + bn;
+				c = '' + 'subtract ' + cn;
+				d = '' + 'subtract ' + dn;
+			}
+		} 
+
+		var s = 0;
+
+		if (r == 0)
+		{
+                	s = Math.floor(Math.random()*20)+60; 
+		}
+		else
+		{
+                	s = Math.floor(Math.random()*20)+30; 
+		}
+
+                var pa = new Array(); 
+		for (var i = 0; i < 5; i++)
+		{
+			if (r == 0)
+			{
+				s = parseInt(s - an); 
+				pa.push(s);
+			}
+			else
+			{
+				s = parseInt(s + an); 
+				pa.push(s);
+			}
+		}
+
+                this.setQuestion('' + 'What is the rule for the following number pattern: ' + pa[0] + ',' + pa[1] + ',' + pa[2] + ',' + pa[3] + ',' + pa[4] + ',...');
+
+                this.setAnswer('' + a,0);
+                this.mButtonA.setAnswer('' + a);
+                this.mButtonB.setAnswer('' + b);
+                this.mButtonC.setAnswer('' + c);
+                this.mButtonD.setAnswer('' + d);
+                this.shuffle(10);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.oa.c.5_15',4.0515,'4.oa.c.5','');
@@ -759,7 +843,7 @@ initialize: function(sheet)
 	this.mAnswerTextBox3.setSize(50,50);
 	this.mAnswerTextBox4.setSize(100,50);
 
-        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below what all the numbers in the pattern are a multiple of.');
+        this.setQuestion('' + 'Use the rule ' + this.mOperation + ' ' + a + ' to fill in the missing parts of the number pattern. Then write below what all the numbers in the pattern are a multiple of. Use only numbers for your answers. Do not use words.');
 
 	if (this.mOperation == 'add')	
 	{

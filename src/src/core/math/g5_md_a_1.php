@@ -1,3 +1,38 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_16',5.2416,'5.md.a.1','Terra Nova 38');
+*/
+var i_5_md_a_1__16 = new Class(
+{
+
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,300,50,175,95,100,50,425,100);
+	this.mType = '5.md.a.1_16';
+	this.ns = new NameSampler();
+
+	var a = Math.floor((Math.random()*8)+2); //cut size 1
+	var b = Math.floor((Math.random()*8)+2); //cut size 2  
+	var c = Math.floor((Math.random()*8)+2); //number of cut size 1  
+	var d = Math.floor((Math.random()*8)+2); //number of cut size 2  
+	var e = parseInt(c + d);
+	var f = Math.floor((Math.random()*8)+10);  //size of board in feet
+
+	var g = parseInt(f * 12); //total inches
+	var h = parseInt(b * d); //total inches of 1s
+	var i = parseInt(a * c); //total inches of 2s
+	var j = parseInt(h + i);   //total cut 
+	var answer = parseInt(g - j); //left
+
+        this.setQuestion('' + this.ns.mNameOne + ' cut ' + e + ' pieces from ' + f + '-foot of ' + this.ns.mRopeOne + '. ' + c + ' of the pieces are ' + a + ' inches long and ' + d + ' of the pieces are ' + b + ' inches long. How many inches are left in the ' + this.ns.mRopeOne + '?');
+
+        this.setAnswer('' + answer,0);
+        this.setAnswer('' + answer + 'in',1);
+        this.setAnswer('' + answer + 'inches',2);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.md.a.1_1',5.2401,'5.md.a.1','');
 */

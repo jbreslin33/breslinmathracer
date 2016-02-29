@@ -32,6 +32,7 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
+$eval_id = 0;
 $room_id = 0;
 $start_time = 0;
 $end_time = 0;
@@ -44,6 +45,15 @@ if (isset($_POST["room_id"]))
 else if (isset($_GET['room_id']))
 {
 	$room_id = $_GET['room_id'];
+}
+
+if (isset($_POST["eval_id"]))
+{
+	$eval_id = $_POST["eval_id"];
+}
+else if (isset($_GET['eval_id']))
+{
+	$eval_id = $_GET['eval_id'];
 }
 
 if (isset($_POST["start_time"]))
@@ -66,8 +76,6 @@ else if (isset($_GET['end_time']))
 
 echo "<br>";
 ?>
-
-<p><b> Class Grades </p></b>
 
 <p><b> Select Room: </p></b>
 <form method="post" action="/web/reports/generic/any_homework_check.php">
@@ -93,6 +101,32 @@ for($i = 0; $i < $numrows; $i++)
 	{
         	echo "<option value=\"$row[0]\"> $row[1] </option>";
 	}
+}
+?>
+</select>
+
+<p><b> Select Evaluation: </p></b>
+<form method="post" action="/web/reports/generic/any_homework_check.php">
+
+<select id="eval_id" name="eval_id" onchange="loadAgain()">
+<?php
+$query = "select id, description from evaluations order by id asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"Select Evaluation\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $eval_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
 }
 ?>
 </select>
@@ -142,15 +176,14 @@ else
 
 </form>
 
-
-
 <script>
 function loadAgain()
 {
     	var x = document.getElementById("room_id").value;
+    	var e = document.getElementById("eval_id").value;
     	var y = document.getElementById("start_time").value;
     	var z = document.getElementById("end_time").value;
-	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x + '&start_time=' + y + '&end_time=' + z; 
+	document.location.href = '/web/reports/generic/any_homework_check.php?room_id=' + x + '&eval_id=' + e + '&start_time=' + y + '&end_time=' + z; 
 }
 </script>
 
@@ -179,8 +212,6 @@ $terraNovaGradesArray = array();
 $homeworkQuestionsArray = array(); //0,1,2
 $terraNovaQuestionsArray = array(); //0,1,2
 
- 	//$queryOne .= "AND ( extract(hour from evaluations_attempts.start_time) < 9 OR extract(hour from evaluations_attempts.start_time) > 14)";
-
 for($s = 0; $s < $numrowsStudents; $s++)
 {
 	$homeworkGradeArray = array();
@@ -190,16 +221,16 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$terraNovaQuestionArray = array(); //0,1,2
 
 	$rowStudents = pg_fetch_array($resultStudents, $s);
-  	//$start_time = '2015-10-23 14:50:00';
-        //$end_time = '2015-10-26 08:40:00';
 
 	$queryOne = "select * from evaluations_attempts where user_id = ";
 	$queryOne .= $rowStudents[0];
-	$queryOne .= " AND (evaluations_id = 17 OR evaluations_id = 18) AND evaluations_attempts.start_time > '";
+	$queryOne .= " AND evaluations_attempts.start_time > '";
 	$queryOne .= $start_time;
 	$queryOne .= "' AND evaluations_attempts.start_time < '";
 	$queryOne .= $end_time;
-	$queryOne .= "' order by start_time desc;";
+	$queryOne .= "' AND evaluations_id = "; 
+	$queryOne .= $eval_id;
+	$queryOne .= " order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
@@ -226,14 +257,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 			$transactionCode = $row[1];
 		
 			$evaluations_id = $row[2]; 
-			if ($evaluations_id == 17)
-			{
-				$homeworkQuestionArray[] = $transactionCode;
-			}
-			if ($evaluations_id == 18)
-			{
-				$terraNovaQuestionArray[] = $transactionCode;
-			}
+			$terraNovaQuestionArray[] = $transactionCode;
 			if ($transactionCode == 1)
 			{
 				$correctTotal = floatVal($correctTotal + $progression);
@@ -253,14 +277,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 		$gradePercent = (int)($gradeDecimal * 100);
 
 		$evaluation_id = $row[2]; 
-		if ($evaluation_id == 17)
-		{
-			$homeworkGradeArray[] = $gradePercent;
-		}
-		if ($evaluation_id == 18)
-		{
-			$terraNovaGradeArray[] = $gradePercent;
-		}
+		$terraNovaGradeArray[] = $gradePercent;
         }
 
 	$totalTests = intval(count($homeworkGradeArray));
@@ -307,13 +324,9 @@ echo '<table border=\"1\">';
 echo '<tr>';
 echo '<td> Student';
 echo '</td>';
-echo '<td> Homework Grade';
+echo '<td> Grade';
 echo '</td>';
-echo '<td> Total Homework Questions';
-echo '</td>';
-echo '<td> TerrNova Homework Grade';
-echo '</td>';
-echo '<td> Total TerraNova Homework Questions';
+echo '<td> Questions';
 echo '</td>';
 echo '</tr>';
 
@@ -337,64 +350,11 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo $fullname;
         echo '</td>';
 
- 	$bcolor = 'Green';
-        if ($homeworkGradesArray[$y] == 0)
-        {
-                $bcolor = 'White';
-        }
-        if ($homeworkGradesArray[$y] > 69)
-        {
-                $bcolor = 'Green';
-        }
-        if ($homeworkGradesArray[$y] < 70)
-        {
-                $bcolor = 'Red';
-        }
-
-        echo '<td bgcolor="';
-        echo $bcolor;
-        echo '">';
-        echo $homeworkGradesArray[$y];
-        echo '</td>';
-
-        if ($homeworkQuestionsArray[$y] == 0)
-        {
-                $bcolor = 'White';
-        }
-        if ($homeworkQuestionsArray[$y] > 10)
-        {
-                $bcolor = 'Green';
-        }
-        if ($homeworkQuestionsArray[$y] < 10)
-        {
-                $bcolor = 'Red';
-        }
-
-        echo '<td bgcolor="';
-        echo $bcolor;
-        echo '">';
-        echo $homeworkQuestionsArray[$y];
-        echo '</td>';
-
-        if ($terraNovaGradesArray[$y] == 0)
-        {
-                $bcolor = 'White';
-        }
-        if ($terraNovaGradesArray[$y] > 69)
-        {
-                $bcolor = 'Green';
-        }
-        if ($terraNovaGradesArray[$y] < 70)
-        {
-                $bcolor = 'Red';
-        }
-
         echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
         echo $terraNovaGradesArray[$y];
         echo '</td>';
-
 
         if ($terraNovaQuestionsArray[$y] == 0)
         {

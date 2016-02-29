@@ -28,10 +28,28 @@ initialize: function(game)
 	this.mIDArray.push('' + '2.oa.a.1_25'); //20
 	this.mIDArray.push('' + '5.oa.a.1_25'); //21
 	this.mIDArray.push('' + '2.oa.a.1_26'); //22
+
         //skip pyramid 23 for now
         this.mIDArray.push('' + '3.oa.a.3_7'); //24
         this.mIDArray.push('' + '3.oa.a.3_8'); //25
-       	this.mIDArray.push('' + '4.md.a.2_26'); //26
+        this.mIDArray.push('' + '4.md.a.2_26'); //26
+        //skip 27 for now
+        this.mIDArray.push('' + '4.oa.c.5_16'); //28
+        this.mIDArray.push('' + '4.oa.b.4_23'); //29
+        this.mIDArray.push('' + '4.md.a.2_27'); //30
+        this.mIDArray.push('' + '4.oa.b.4_24'); //31
+        this.mIDArray.push('' + '5.oa.b.3_9'); //33
+        this.mIDArray.push('' + '5.nbt.b.6_9'); //34
+        this.mIDArray.push('' + '5.md.c.5.a_4'); //35
+        this.mIDArray.push('' + '5.nbt.b.7_22'); //37 part a
+	this.mIDArray.push('' + '5.md.a.1_16'); //38 part b
+	this.mIDArray.push('' + '5.nf.a.2_9'); //39 part c
+        this.mIDArray.push('' + '5.md.c.5.b_8'); //40 part d
+        this.mIDArray.push('' + '5.nbt.b.7_23'); //41 part e
+        this.mIDArray.push('' + '5.nbt.b.7_23'); //41 part e
+ 	this.mIDArray.push('' + '5.g.a.1_6'); //36
+
+
 },
 
 pickItem: function()

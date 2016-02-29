@@ -1,3 +1,83 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_9',5.1009,'5.nbt.b.6','Terra Nova 34');
+*/
+var i_5_nbt_b_6__9 = new Class(
+{
+Extends: TextItem2,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.6_9';
+
+        this.ns = new NameSampler();
+
+        this.mAnswerTextBox.setPosition(225,180);
+        this.mAnswerTextBox2.setPosition(550,140);
+        this.mAnswerTextBox.setSize(75,25);
+        this.mAnswerTextBox2.setSize(75,25);
+
+        this.mHeadingAnswerLabel.setText('Write an expression you can use to check answer.');
+        this.mHeadingAnswerLabel.setPosition(525,70);
+        this.mHeadingAnswerLabel.setSize(200,50);
+
+        this.mQuestionLabel.setSize(220,250);
+        this.mQuestionLabel.setPosition(225,180);
+
+        this.x = 0;
+        this.y = 0;
+        this.z = parseInt(11111);
+        while(this.z > 9999 || this.z < 1000 )
+        {
+                this.x        = Math.floor((Math.random()*90)+10);
+                this.y        = Math.floor((Math.random()*900)+100);
+                this.z        = parseInt(this.x * this.y);
+        }
+
+        this.setQuestion('' + this.ns.mNameOne + ' had ' + this.z + ' flower seeds. ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' put ' + this.x + ' each into garden pots. How many garden pots did ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' use?');
+        this.answer = parseInt(this.y);
+
+        this.setAnswer('' + this.answer,0);
+        this.setAnswer('' + this.x + 'x' + this.y,1);
+        this.setAnswer('' + this.y + 'x' + this.x,2);
+        this.setAnswer('' + this.x + '*' + this.y,3);
+        this.setAnswer('' + this.y + '*' + this.x,4);
+},
+
+checkUserAnswer: function()
+{
+        correctAnswerFound = false;
+
+        if (this.mUserAnswer == this.mAnswerArray[0])
+	{
+		if (this.mUserAnswer2 == this.mAnswerArray[1] || this.mUserAnswer2 == this.mAnswerArray[2] || this.mUserAnswer2 == this.mAnswerArray[3] || this.mUserAnswer2 == this.mAnswerArray[4])  
+        	{
+                	correctAnswerFound = true;
+        	}
+	}
+
+        if (correctAnswerFound == false)
+        {
+                this.mSheet.setTypeWrong(this.mType);
+        }
+        return correctAnswerFound;
+},
+
+showCorrectAnswer: function()
+{
+        if (this.mCorrectAnswerLabel)
+        {
+                this.mCorrectAnswerLabel.setSize(500, 100);
+                this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getAnswer()  + ' Expression:' + this.mAnswerArray[1] + ' OR ' + this.mAnswerArray[2] + ' OR ' + this.mAnswerArray[3] + ' OR ' + this.mAnswerArray[4]); 
+                this.mCorrectAnswerLabel.setVisibility(true);
+         }
+}
+
+
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.6_8',5.1008,'5.nbt.b.6','4 d 2 remainder word problem');
 */

@@ -74,7 +74,7 @@ this.addQuestionShape(table)
                 this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
                 this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
               }
-        },
+        }
 
 
 });
@@ -140,7 +140,7 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
                 this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
               }
-        },
+        }
 
 
 });
@@ -205,7 +205,7 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
                 this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
               }
-        },
+        }
 
 
 });
@@ -265,7 +265,7 @@ Extends: TextItem,
 
                 this.setAnswer('' + b,0);              
 
-        },
+        }
 
 
 });

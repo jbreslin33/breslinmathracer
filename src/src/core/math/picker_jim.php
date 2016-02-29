@@ -12,11 +12,19 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	//t16
-	//return '3.g.a.1_1';
-	//return '3.md.b.3_1';
-	//return '3.md.b.3_1';
-	return '4.md.a.2_26';
+	//return '5.md.c.5.a_4';
+	//return '5.md.c.5.c_1';
+	//return '5.md.c.3.a_11';
+	//return '5.oa.b.3_7';
+	//return '5.g.a.1_6';
+	//return '6.ns.c.6.a_1';
+	//return '6.rp.a.3.a_1';
+	//return '5.oa.a.1_25';
+	//return '5.md.a.1_16';
+	//return '5.nf.a.2_9';
+	//return '5.md.c.5.b_8';
+	//return '5.nbt.b.7_23';
+	return '5.g.a.1_6';
 },
 
 getItem: function(id)
@@ -3343,6 +3351,14 @@ getItem: function(id)
         {
                 return new i_4_oa_b_4__22(this.mSheet);
         }
+	if (id == '4.oa.b.4_23')
+        {
+                return new i_4_oa_b_4__23(this.mSheet);
+        }
+	if (id == '4.oa.b.4_24')
+        {
+                return new i_4_oa_b_4__24(this.mSheet);
+        }
 
 	//4.oa.c.5	
 	if (id == '4.oa.c.5_1')
@@ -4244,6 +4260,10 @@ getItem: function(id)
         {
                 return new i_4_nf_b_4_c__9(this.mSheet);
         }
+	if (id == '4.nf.b.4.c_10')
+        {
+                return new i_4_nf_b_4_c__10(this.mSheet);
+        }
 
 	//4.nf.c.5	
 	if (id == '4.nf.c.5_1')
@@ -4613,6 +4633,10 @@ getItem: function(id)
         if (id == '4.md.a.2_26')
         {
                 return new i_4_md_a_2__26(this.mSheet);
+        }
+        if (id == '4.md.a.2_27')
+        {
+                return new i_4_md_a_2__27(this.mSheet);
         }
        
 	//4.md.b.4 
@@ -5548,6 +5572,10 @@ getItem: function(id)
 	if (id == '5.oa.b.3_8')
         {
                 return new i_5_oa_b_3__8(this.mSheet);
+        }
+	if (id == '5.oa.b.3_9')
+        {
+                return new i_5_oa_b_3__9(this.mSheet);
         }
 	
 	//5.nbt.a.1 
@@ -6919,6 +6947,30 @@ getItem: function(id)
                 return new i_5_nf_b_7_c__18(this.mSheet);
         }
 
+  	//5.md.a.1
+        if (id == '5.md.a.1_16')
+        {
+                return new i_5_md_a_1__16(this.mSheet);
+        }
+
+
+	//5.md.c.5.a	
+	if (id == '5.md.c.5.a_4')
+        {
+                return new i_5_md_c_5_a__4(this.mSheet);
+        }
+	
+	//5.md.c.5.b	
+	if (id == '5.md.c.5.b_8')
+        {
+                return new i_5_md_c_5_b__8(this.mSheet);
+        }
+
+	//5.g.a.1
+	if (id == '5.g.a.1_6')
+        {
+                return new i_5_g_a_1__6(this.mSheet);
+        }
 	
 	/*** GRADE 6 ***/
 	//6.rp.a.1

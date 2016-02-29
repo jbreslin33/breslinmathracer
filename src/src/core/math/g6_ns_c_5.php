@@ -45,7 +45,7 @@ initialize: function(sheet)
           this.setAnswer('' + -1,0);
         }
 
-},
+}
 
 });
 

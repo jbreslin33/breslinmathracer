@@ -1,3 +1,85 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_9',5.0309,'5.oa.b.3','Terra Nova 33');
+*/
+
+var i_5_oa_b_3__9 = new Class(
+{
+Extends: TextItem3,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+
+        this.mType = '5.oa.b.3_9';
+        this.mChopWhiteSpace = false;
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+        this.mUtility = new Utility();
+
+        var x = Math.floor(Math.random()*9+2);
+        var y = Math.floor(Math.random()*9+2);
+        
+	this.setQuestion('' + this.ns.mNameOne + ' buried  a treasure. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' made a treasure map so ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' friend ' + this.ns.mNameTwo + ' can find the treasure. The map says that the treasure is located at (' + x + ',' + y + '). ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search at the origin.');
+ 
+	//heading
+        this.mHeadingAnswerLabel.setPosition(600,50);
+        this.mHeadingAnswerLabel2.setPosition(650,140);
+        this.mHeadingAnswerLabel3.setPosition(500,300);
+
+        this.mHeadingAnswerLabel.setSize(325,50);
+        this.mHeadingAnswerLabel2.setSize(25,25);
+        this.mHeadingAnswerLabel3.setSize(325,50);
+
+	//text
+        this.mHeadingAnswerLabel2.setText(',');
+
+        //text box
+        this.mAnswerTextBox.setPosition(600,140);
+        this.mAnswerTextBox2.setPosition(680,140);
+        this.mAnswerTextBox3.setPosition(700,300);
+
+        this.mAnswerTextBox.setSize(50,50);
+        this.mAnswerTextBox2.setSize(50,50);
+        this.mAnswerTextBox3.setSize(50,50);
+
+	//random
+        var r = Math.floor(Math.random()*3);
+
+	if (r == 0)
+	{
+        	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?');
+        	this.setAnswer('' + '0' ,0);
+        	this.setAnswer('' + '0' ,1);
+        	this.mHeadingAnswerLabel3.setText('What is the y coordinate of the buried treasure?');
+        	this.setAnswer('' + y ,2);
+	}
+	if (r == 1)
+	{
+        	this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
+        	this.setAnswer('' + x,0);
+        	this.setAnswer('' + y,1);
+        	this.mHeadingAnswerLabel3.setText('What is the x coordinate of the buried treasure?');
+        	this.setAnswer('' + x ,2);
+	}
+	if (r == 2)
+	{
+        	this.mHeadingAnswerLabel.setText('What are the coordinates that ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?');
+        	this.setAnswer('' + '0' ,0);
+        	this.setAnswer('' + '0' ,1);
+        	this.mHeadingAnswerLabel3.setText('What is the y coordinate of the spot where ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?'    );
+        	this.setAnswer('' + '0',2);
+	}
+ 	if (r == 3)
+        {
+        	this.mHeadingAnswerLabel.setText('What are the coordinates of the treasure that ' + this.ns.mNameOne + ' buried?');
+                this.setAnswer('' + x,0);
+                this.setAnswer('' + y,1);
+                this.mHeadingAnswerLabel3.setText('What is the x coordinate of the spot where ' + this.ns.mNameTwo + ' starts ' + this.mNameMachine.getPronoun(this.ns.mNameTwo,0,1) + ' search?'    );
+                this.setAnswer('' + '0',2);
+        }
+
+
+}
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.oa.b.3_8',5.0308,'5.oa.b.3','Terra Nova 17');

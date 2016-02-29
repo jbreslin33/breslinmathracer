@@ -1,3 +1,147 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_23',5.1123,'5.nbt.b.7','Terra Nova 41');
+*/
+var i_5_nbt_b_7__23 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+        this.ns = new NameSampler();
+
+        this.mType = '5.nbt.b.7_23';
+ 
+	var a = Math.floor(Math.random()*899+100);
+        a = parseFloat(a / 100);
+       	var decimalA = new Decimal(a);
+
+        var b = Math.floor(Math.random()*8+2);
+        var decimalB = new Decimal(b);
+
+        var answer = decimalA.multiply(decimalB);
+
+        this.setQuestion('' + this.ns.mNameOne + ' and ' + this.ns.mNameTwo + ' chip in to buy ' + b + ' pounds of ' + this.ns.mFruitOne + ' for their ' + this.ns.mPlayedActivityOne + ' team. The ' + this.ns.mFruitOne + ' cost $' + decimalA.getMoney() + ' a pound. How much do they spend on ' + this.ns.mFruitOne + ' ' + this.ns.mSum + '?');
+
+        this.setAnswer('' + '$' + answer.getMoney(),0);
+        this.setAnswer('' + answer.getMoney(),1);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_22',5.1122,'5.nbt.b.7','Terra Nova 37');
+*/
+
+var i_5_nbt_b_7__22 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+        this.mType = '5.nbt.b.7_22';
+       	this.mChopWhiteSpace = false;
+        this.mNameMachine = new NameMachine();
+        this.ns = new NameSampler();
+
+	this.mQuestionLabel.setSize(200,200);
+        this.mQuestionLabel.setPosition(500,150);
+
+	this.mAnswerTextBox.setSize(100,50);
+        this.mAnswerTextBox.setPosition(425,300);
+
+	this.mUserAnswerLabel.setPosition(150,300);
+
+	this.answer = '';
+
+       	this.a = Math.floor(Math.random()*8)+2;
+       	this.b = Math.floor(Math.random()*8)+2;
+       	this.c = Math.floor(Math.random()*8)+2;
+       	this.aa = Math.floor(Math.random()*89)+10;
+       	this.bb = Math.floor(Math.random()*89)+10;
+       	this.cc = Math.floor(Math.random()*89)+10;
+	
+	this.x = new Decimal(this.a + '.' + this.aa); 
+	this.y = new Decimal(this.b + '.' + this.bb); 
+	this.z = new Decimal(this.c + '.' + this.cc); 
+	
+	var d = this.x.add(this.y);
+	this.answer = d.add(this.z);
+
+        this.setQuestion('' + this.ns.mNameOne + ' spent $'  + this.x.getMoney() + ' on fruit. $' + this.y.getMoney() + ' on vegetables and $' + this.z.getMoney() + ' on other stuff. How much did ' + this.ns.mNameOne + ' spend ' + this.mNameMachine.getSum() + '?');
+
+        this.setAnswer('$' + this.answer.getMoney(),0);
+        this.setAnswer('' + this.answer.getMoney(),1);
+	
+	this.mHeading = new Shape(200,50,30,50,this,"","","");
+ 	this.mShapeArray.push(this.mHeading);
+	this.mHeading.setText('Shopping List');
+
+	this.mTable = new Shape(200,50,30,100,this,"TABLE","","");
+ 	this.mShapeArray.push(this.mTable);
+
+	//row 0
+	var r0 = this.mTable.mMesh.insertRow(0);
+
+	var c0a = r0.insertCell(0);
+	var c0b = r0.insertCell(1);
+
+	c0a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c0b.innerHTML = '' + this.ns.mVegetableOne;
+
+	//row1 
+	var r1 = this.mTable.mMesh.insertRow(1);
+
+	var c1a = r1.insertCell(0);
+	var c1b = r1.insertCell(1);
+
+	c1a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c1b.innerHTML = '' + this.ns.mVegetableTwo;
+	
+	//row2
+	var r2 = this.mTable.mMesh.insertRow(2);
+
+	var c2a = r2.insertCell(0);
+	var c2b = r2.insertCell(1);
+
+	c2a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c2b.innerHTML = '' + this.ns.mVegetableThree;
+	
+	//row3
+	var r3 = this.mTable.mMesh.insertRow(3);
+
+	var c3a = r3.insertCell(0);
+	var c3b = r3.insertCell(1);
+
+	c3a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c3b.innerHTML = '' + this.ns.mFruitOne;
+	
+	//row4
+	var r4 = this.mTable.mMesh.insertRow(4);
+
+	var c4a = r4.insertCell(0);
+	var c4b = r4.insertCell(1);
+
+	c4a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c4b.innerHTML = '' + this.ns.mFruitTwo;
+	
+	//row5
+	var r5 = this.mTable.mMesh.insertRow(5);
+
+	var c5a = r5.insertCell(0);
+	var c5b = r5.insertCell(1);
+
+	c5a.innerHTML = parseInt(Math.floor(Math.random()*10)+1);
+	c5b.innerHTML = '' + this.ns.mPurchaseOne;
+	
+	//table specs
+	this.mTable.mMesh.style.width = '100%';
+    	this.mTable.mMesh.setAttribute('border', '1');
+}
+
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_21',5.1121,'5.nbt.b.7','Terra Nova 8');
 */

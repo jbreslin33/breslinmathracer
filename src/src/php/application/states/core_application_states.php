@@ -340,6 +340,7 @@ public function execute($bapplication)
 			$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 			$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
         		$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
+        		$bapplication->mNormal->updateScores($bapplication->mDataArray[6],'unmastered');
 		}
 
 		//so we could insert a match and have players associated etc but..

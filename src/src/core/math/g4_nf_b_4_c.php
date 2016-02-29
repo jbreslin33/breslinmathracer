@@ -1,5 +1,39 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_10',4.2010,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2010 where id = '4.nf.b.4.c_10'; 
+*/
+var i_4_nf_b_4_c__10 = new Class(
+{
+Extends: TextItemFraction,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.mType = '4.nf.b.4.c_10';
+        this.ns = new NameSampler();
+
+        var a = 1;
+        var b = 0;
+        var c = 0;
+        var d = 1;
+
+        while (b == c || a >= b)
+        {
+                //var a = Math.floor((Math.random()*8)+2);
+                var b = Math.floor((Math.random()*8)+2);
+                var c = Math.floor((Math.random()*8)+2);
+        }
+
+        var ab = new Fraction(a,b,false);
+        var cd = new Fraction(c,d,false);
+
+        var answer = ab.multiply(cd);
+	this.setAnswer('' + answer.getString(),0);
+
+        this.setQuestion('' + this.ns.mNameOne + ' eats ' + ab.getString() + ' pound of ' + this.ns.mVegetableOne + ' per day for ' + c + ' days. How many pounds will ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' have eaten in ' + this.ns.mSum + '?');
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.4.c_9',4.2009,'4.nf.b.4.c','fraction'); update item_types SET progression = 4.2009 where id = '4.nf.b.4.c_9'; 
 */
 var i_4_nf_b_4_c__9 = new Class(

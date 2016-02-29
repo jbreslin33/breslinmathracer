@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('3.g.a.1_1',3.3701,'3.g.a.1,'Terra Nova 16');
+insert into item_types(id,progression,core_standards_id,description) values ('3.g.a.1_1',3.3701,'3.g.a.1','Terra Nova 16');
 */
 var i_3_g_a_1__1 = new Class(
 {
@@ -12,8 +12,7 @@ initialize: function(sheet)
         this.mChopWhiteSpace = false;
         this.mType = '3.g.a.1_1';
 
-	this.r = Math.floor(Math.random()*2);
-	this.r = 2; 
+	this.r = Math.floor(Math.random()*3);
 
 	this.labelArray = new Array();
 

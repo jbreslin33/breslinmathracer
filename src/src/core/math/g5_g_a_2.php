@@ -68,7 +68,7 @@ this.mCorrectAnswerLabel.setSize(100, 25);
 
 this.mUserAnswerLabel.setPosition(430,210);
 this.mUserAnswerLabel.setSize(100, 25);
-},
+}
 
 });
 
@@ -150,7 +150,7 @@ this.mCorrectAnswerLabel.setSize(100, 25);
 
 this.mUserAnswerLabel.setPosition(430,210);
 this.mUserAnswerLabel.setSize(100, 25);
-},
+}
 
 });
 
@@ -271,22 +271,8 @@ this.mQuestionLabel.setPosition(525,200);
 this.mCorrectAnswerLabel.setPosition(330,230);
 this.mCorrectAnswerLabel.setSize(25, 25);
 
-},
+}
 
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + ' = ' +  this.getAnswer()); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-		  }
-    }
-*/
 });
 
 
@@ -396,22 +382,8 @@ this.addQuestionShape(chart);
 
 this.mCorrectAnswerLabel.setPosition(600,300);
 
-},
+}
 
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + ' = ' +  this.getAnswer()); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-		  }
-    }
-*/
 });
 
 
@@ -519,20 +491,5 @@ this.mQuestionLabel.setPosition(625,180);
 
 this.mCorrectAnswerLabel.setPosition(630,300);
 
-},
-
-/*
- showCorrectAnswer: function()
-    {
-		  if (this.mCorrectAnswerLabel)
-		  {
-         this.mCorrectAnswerLabel.setSize(200, 75);
-        this.mCorrectAnswerLabel.setPosition(630,300);
-
-			  this.mCorrectAnswerLabel.setText('CORRECT ANSWER:</br> ' + ' = ' +  this.getAnswer()); 
-			  this.mCorrectAnswerLabel.setVisibility(true);
-
-		  }
-    }
-*/
+}
 });

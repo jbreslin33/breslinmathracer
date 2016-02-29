@@ -42,7 +42,7 @@ initialize: function(sheet)
 
   this.setQuestion('A ' + things[r] + ' is in the shape of a rectangle. The length of the ' + things[r] + ' is ' + decimalA.getString() + ' feet. The width of the ' + things[r] + ' is ' + decimalB.getString() + ' feet. What is the area of the ' + things[r] + ' in square feet?');
 
-},
+}
 
 });
 
@@ -98,7 +98,7 @@ initialize: function(sheet)
 
   this.setQuestion(this.mNameOne + ' has a roll of ribbon containing ' + answer.getString() + ' yards of ribbon. How many pieces of ribbon ' + decimalB.getString() + ' yards long can ' + this.mNameMachine.getPronoun(this.mNameOne,0,0) + ' cut from the roll?');
 
-},
+}
 
 });
 

@@ -50,7 +50,7 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
                 this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
               }
-        },
+        }
 
 
 });
@@ -113,7 +113,7 @@ Extends: ThreeButtonItem,
                 this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
                 this.mButtonC.setAnswer('' + a + ', ' + b + ', ' + c + ', ' + d);
               }
-        },
+        }
 
 
 });
