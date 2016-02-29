@@ -1074,6 +1074,9 @@ this.addQuestionShape(this.chart4);
 });
 
 
+<<<<<<< HEAD
+=======
+
 
 
 
@@ -1185,6 +1188,7 @@ this.addQuestionShape(this.chart4);
 
 	}
 
+>>>>>>> c990736ff2aecf5e11d1fc80cc2940381eccecdb
 });
 
 
