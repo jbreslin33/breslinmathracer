@@ -956,7 +956,7 @@ Extends: TextItem2,
     this.parent(sheet,200,50,225,95,100,50,425,100);
 
 		//this.parent(sheet);
-/*
+
     this.mUserAnswer = '';
     this.mTempUserAnswer = '';
 
@@ -1074,8 +1074,6 @@ this.addQuestionShape(this.chart4);
 });
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -1188,7 +1186,6 @@ this.addQuestionShape(this.chart4);
 
 	}
 
->>>>>>> c990736ff2aecf5e11d1fc80cc2940381eccecdb
 });
 
 
