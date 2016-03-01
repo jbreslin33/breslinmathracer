@@ -139,6 +139,7 @@ else
 	$startTimeArray = array();
 	$testIDArray = array();
 	$gradeArray = array();
+	$gArray = array();
 
 	$queryOne = "select evaluations_attempts.id, evaluations_attempts.start_time, evaluations.description from evaluations_attempts join evaluations on evaluations.id=evaluations_attempts.evaluations_id where user_id = ";
 	$queryOne .= $user_id;
@@ -170,18 +171,22 @@ else
         		$numrows = pg_numrows($result);
 
 			$progressionTotal = 0;
+			$questionTotal = 0;
 			$correctTotal = 0;
+			$cTotal = 0;
         		for($x = 0; $x < $numrows; $x++)
         		{
                 		$row = pg_fetch_array($result, $x);
                 
 				$progression = $row[7];
 				$progressionTotal = floatVal($progressionTotal + $progression);
+				$questionTotal++;
 		
 				$transactionCode = $row[3];
 				if ($transactionCode == 1)
 				{
 					$correctTotal = floatVal($correctTotal + $progression);
+					$cTotal++;
 				}
 			}
 			$gradeDecimal = floatVal($correctTotal / $progressionTotal);
@@ -189,6 +194,12 @@ else
 			$startTimeArray[] = $row[0];
 			$testIDArray[] = $rowOne[0];
 			$gradeArray[] = $gradePercent;
+			
+			$gDecimal = floatVal($cTotal / $questionTotal);
+			$gPercent = (int)($gDecimal * 100);
+			//$startTimeArray[] = $row[0];
+			//$testIDArray[] = $rowOne[0];
+			$gArray[] = $gPercent;
 		}
         }
 	
@@ -220,6 +231,8 @@ else
         echo '</td>';
         echo '<td> Grade';
         echo '</td>';
+        echo '<td> Percent Correct';
+        echo '</td>';
         echo '</tr>';
 	for($z = 0; $z < count($gradeArray); $z++)
 	{
@@ -239,6 +252,9 @@ else
                 echo '</td>';
                 echo '<td>';
                 echo $gradeArray[$z];
+                echo '</td>';
+                echo '<td>';
+                echo $gArray[$z];
                 echo '</td>';
                 echo '</tr>';
 	}
