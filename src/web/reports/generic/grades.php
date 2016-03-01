@@ -145,7 +145,8 @@ else
 
 	$queryOne = "select evaluations_attempts.id, evaluations_attempts.start_time, evaluations.description from evaluations_attempts join evaluations on evaluations.id=evaluations_attempts.evaluations_id where user_id = ";
 	$queryOne .= $user_id;
-	$queryOne .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
+	//$queryOne .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
+	//$queryOne .= " order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
