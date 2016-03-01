@@ -136,6 +136,7 @@ if ($room_id == 99999)
 }
 else
 {
+	$descriptionArray = array();
 	$startTimeArray = array();
 	$testIDArray = array();
 	$gradeArray = array();
@@ -193,12 +194,11 @@ else
 			$gradePercent = (int)($gradeDecimal * 100);
 			$startTimeArray[] = $row[0];
 			$testIDArray[] = $rowOne[0];
+			$descriptionArray[] = $rowOne[2];
 			$gradeArray[] = $gradePercent;
 			
 			$gDecimal = floatVal($cTotal / $questionTotal);
 			$gPercent = (int)($gDecimal * 100);
-			//$startTimeArray[] = $row[0];
-			//$testIDArray[] = $rowOne[0];
 			$gArray[] = $gPercent;
 		}
         }
@@ -225,6 +225,8 @@ else
 
 	echo '<table border=\"1\">';
         echo '<tr>';
+        echo '<td> Evaluation';
+        echo '</td>';
         echo '<td> Start Time';
         echo '</td>';
         echo '<td> Test ID';
@@ -242,6 +244,9 @@ else
                 $testID = $rowOne[0];
 
                 echo '<tr>';
+                echo '<td>';
+                echo $descriptionArray[$z];
+                echo '</td>';
                 echo '<td>';
  		$t = mb_strimwidth($startTimeArray[$z], 0, 19, "");
 
