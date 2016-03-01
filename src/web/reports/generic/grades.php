@@ -159,7 +159,7 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-<input type="text" name="date_id">
+<input id="date_id" type="text" name="date_id" onchange="loadDateAgain()">
 
 
 
@@ -174,21 +174,32 @@ function loadRoomAgain()
     	//var y = document.getElementById("user_id").value;
     	var y = 0;
     	var z = document.getElementById("evaluation_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z; 
+    	var d = document.getElementById("date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d; 
 }
 function loadUserAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
     	var z = document.getElementById("evaluation_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z; 
+    	var d = document.getElementById("date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d;; 
 }
 function loadEvaluationAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
     	var z = document.getElementById("evaluation_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z; 
+    	var d = document.getElementById("date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d;; 
+}
+function loadDateAgain()
+{
+    	var x = document.getElementById("room_id").value;
+    	var y = document.getElementById("user_id").value;
+    	var z = document.getElementById("evaluation_id").value;
+    	var d = document.getElementById("date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d;; 
 }
 </script>
 
