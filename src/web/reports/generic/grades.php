@@ -137,6 +137,7 @@ if ($room_id == 99999)
 else
 {
 	$descriptionArray = array();
+	$numberOfQuestionsArray = array();
 	$startTimeArray = array();
 	$testIDArray = array();
 	$gradeArray = array();
@@ -195,6 +196,7 @@ else
 			$startTimeArray[] = $row[0];
 			$testIDArray[] = $rowOne[0];
 			$descriptionArray[] = $rowOne[2];
+			$numberOfQuestionsArray[] = $numrows;
 			$gradeArray[] = $gradePercent;
 			
 			$gDecimal = floatVal($cTotal / $questionTotal);
@@ -227,6 +229,8 @@ else
         echo '<tr>';
         echo '<td> Evaluation';
         echo '</td>';
+        echo '<td> Questions';
+        echo '</td>';
         echo '<td> Start Time';
         echo '</td>';
         echo '<td> Test ID';
@@ -246,6 +250,9 @@ else
                 echo '<tr>';
                 echo '<td>';
                 echo $descriptionArray[$z];
+                echo '</td>';
+                echo '<td>';
+                echo $numberOfQuestionsArray[$z];
                 echo '</td>';
                 echo '<td>';
  		$t = mb_strimwidth($startTimeArray[$z], 0, 19, "");
