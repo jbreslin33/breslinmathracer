@@ -34,6 +34,7 @@ $conn = dbConnect();
 
 $room_id = 0;
 $user_id = 0;
+$evaluation_id = 0;
 $id = 0;
 
 if (isset($_POST["room_id"]))
@@ -54,6 +55,15 @@ else if (isset($_GET['user_id']))
         $user_id = $_GET['user_id'];
 }
 
+if (isset($_POST["evaluation_id"]))
+{
+        $evaluation_id = $_POST["evaluation_id"];
+}
+else if (isset($_GET['evaluation_id']))
+{
+        $evaluation_id = $_GET['evaluation_id'];
+}
+
 echo "<br>";
 ?>
 
@@ -62,7 +72,7 @@ echo "<br>";
 <p><b> Select Room and Student: </p></b>
 <form method="post" action="/web/reports/generic/grades.php">
 
-<select id="room_id" name="room_id" onchange="loadAgain()">
+<select id="room_id" name="room_id" onchange="loadRoomAgain()">
 <?php
 $query = "select id, name from rooms where school_id = ";
 $query .= $_SESSION["school_id"];
@@ -87,7 +97,7 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-<select id="user_id" name="user_id" onchange="loadAgain()">
+<select id="user_id" name="user_id" onchange="loadUserAgain()">
 <?php
 $query = "select * from users where room_id = ";
 $query .= $room_id;
@@ -115,15 +125,57 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
+<select id="evaluation_id" name="evaluation_id" onchange="loadEvaluationAgain()">
+<?php
+$query = "select * from evaluations order by description asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"Select Evaluation\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        $description = $row[1];
+        if ($row[0] == $evaluation_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $description </option>";
+        }     
+        else
+        {
+                echo "<option value=\"$row[0]\"> $description </option>";
+        }
+}
+?>
+</select>
+
+
+
 </form>
 
 
 <script>
-function loadAgain()
+function loadRoomAgain()
+{
+    	var x = document.getElementById("room_id").value;
+    	//var y = document.getElementById("user_id").value;
+    	var y = 0;
+    	var z = document.getElementById("evaluation_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z; 
+}
+function loadUserAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y; 
+    	var z = document.getElementById("evaluation_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z; 
+}
+function loadEvaluationAgain()
+{
+    	var x = document.getElementById("room_id").value;
+    	var y = document.getElementById("user_id").value;
+    	var z = document.getElementById("evaluation_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z; 
 }
 </script>
 
@@ -146,7 +198,9 @@ else
 	$queryOne = "select evaluations_attempts.id, evaluations_attempts.start_time, evaluations.description from evaluations_attempts join evaluations on evaluations.id=evaluations_attempts.evaluations_id where user_id = ";
 	$queryOne .= $user_id;
 	//$queryOne .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
-	//$queryOne .= " order by start_time desc;";
+	$queryOne .= " AND evaluations_id = "; 
+	$queryOne .= $evaluation_id;
+	$queryOne .= " order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
