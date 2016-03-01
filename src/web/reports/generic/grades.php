@@ -35,6 +35,7 @@ $conn = dbConnect();
 $room_id = 0;
 $user_id = 0;
 $evaluation_id = 0;
+$date_id = 0;
 $id = 0;
 
 if (isset($_POST["room_id"]))
@@ -62,6 +63,15 @@ if (isset($_POST["evaluation_id"]))
 else if (isset($_GET['evaluation_id']))
 {
         $evaluation_id = $_GET['evaluation_id'];
+}
+
+if (isset($_POST["date_id"]))
+{
+        $date_id = $_POST["date_id"];
+}
+else if (isset($_GET['date_id']))
+{
+        $date_id = $_GET['date_id'];
 }
 
 echo "<br>";
@@ -148,6 +158,9 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
+
+<input type="text" name="date_id">
+
 
 
 

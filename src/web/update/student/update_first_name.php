@@ -38,7 +38,6 @@ echo "<br>";
 
 <input type="text" name="first_name">
 
-</select>
 	<p><input type="submit" value="UPDATE" /></p>
 
 	</form>
