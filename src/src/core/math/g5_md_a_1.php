@@ -11,19 +11,35 @@ initialize: function(sheet)
 	this.parent(sheet,300,50,175,95,100,50,425,100);
 	this.mType = '5.md.a.1_16';
 	this.ns = new NameSampler();
+	
+	var a = 0; 
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var g = 0;
+	var h = 0;
+	var i = 0;
+	var j = 0;
 
-	var a = Math.floor((Math.random()*8)+2); //cut size 1
-	var b = Math.floor((Math.random()*8)+2); //cut size 2  
-	var c = Math.floor((Math.random()*8)+2); //number of cut size 1  
-	var d = Math.floor((Math.random()*8)+2); //number of cut size 2  
-	var e = parseInt(c + d);
-	var f = Math.floor((Math.random()*8)+10);  //size of board in feet
+	var answer = 0;
 
-	var g = parseInt(f * 12); //total inches
-	var h = parseInt(b * d); //total inches of 1s
-	var i = parseInt(a * c); //total inches of 2s
-	var j = parseInt(h + i);   //total cut 
-	var answer = parseInt(g - j); //left
+	while (answer < 1)
+	{
+		a = Math.floor((Math.random()*8)+2); //cut size 1
+		b = Math.floor((Math.random()*8)+2); //cut size 2  
+		c = Math.floor((Math.random()*8)+2); //number of cut size 1  
+		d = Math.floor((Math.random()*8)+2); //number of cut size 2  
+		e = parseInt(c + d);
+		f = Math.floor((Math.random()*8)+10);  //size of board in feet
+
+		g = parseInt(f * 12); //total inches
+		h = parseInt(b * d); //total inches of 1s
+		i = parseInt(a * c); //total inches of 2s
+		j = parseInt(h + i);   //total cut 
+		answer = parseInt(g - j); //left
+	}
 
         this.setQuestion('' + this.ns.mNameOne + ' cut ' + e + ' pieces from ' + f + '-foot of ' + this.ns.mRopeOne + '. ' + c + ' of the pieces are ' + a + ' inches long and ' + d + ' of the pieces are ' + b + ' inches long. How many inches are left in the ' + this.ns.mRopeOne + '?');
 
