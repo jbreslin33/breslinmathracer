@@ -48,8 +48,12 @@ echo '<table border=\"1\">';
 
         echo '<td> Question';
         echo '</td>';
-        //echo '<td> Answers';
-        //echo '</td>';
+ 
+	if ($_SESSION["role"] == 3)
+	{
+        	echo '<td> Answers';
+        	echo '</td>';
+	}
         echo '<td> User Answers';
         echo '</td>';
 
@@ -119,12 +123,15 @@ echo '<table border=\"1\">';
 		echo '"><p>';
         	echo $question;
         	echo '</p></td>';
-
-        	//echo '<td bgcolor="';
-		//echo $bcolor;
-		//echo '">';
-        	//echo $answers;
-        	//echo '</td>';
+		
+		if ($_SESSION["role"] == 3)
+		{
+        		echo '<td bgcolor="';
+			echo $bcolor;
+			echo '">';
+        		echo $answers;
+        		echo '</td>';
+		}
 
         	echo '<td bgcolor="';
 		echo $bcolor;
