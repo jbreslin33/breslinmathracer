@@ -37,7 +37,8 @@ ini_set("date.timezone", "America/New_York");
 $room_id = 0;
 $user_id = 0;
 $evaluation_id = 0;
-$date_id = date("Y-m-d H:i:s"); 
+$from_date_id = date("Y-m-d H:i:s"); 
+$to_date_id = date("Y-m-d H:i:s"); 
 $id = 0;
 
 if (isset($_POST["room_id"]))
@@ -67,13 +68,22 @@ else if (isset($_GET['evaluation_id']))
         $evaluation_id = $_GET['evaluation_id'];
 }
 
-if (isset($_POST["date_id"]))
+if (isset($_POST["from_date_id"]))
 {
-        $date_id = $_POST["date_id"];
+        $from_date_id = $_POST["from_date_id"];
 }
-else if (isset($_GET['date_id']))
+else if (isset($_GET['from_date_id']))
 {
-        $date_id = $_GET['date_id'];
+        $from_date_id = $_GET['from_date_id'];
+}
+
+if (isset($_POST["to_date_id"]))
+{
+        $to_date_id = $_POST["to_date_id"];
+}
+else if (isset($_GET['to_date_id']))
+{
+        $to_date_id = $_GET['to_date_id'];
 }
 
 echo "<br>";
@@ -162,7 +172,8 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-<input id="date_id" type="text" name="date_id" value="<?php echo htmlentities($date_id); ?>"  onchange="loadDateAgain()">
+<input id="from_date_id" type="text" name="from_date_id" value="<?php echo htmlentities($from_date_id); ?>"  onchange="loadFromDateAgain()">
+<input id="to_date_id" type="text" name="to_date_id" value="<?php echo htmlentities($to_date_id); ?>"  onchange="loadToDateAgain()">
 
 
 </form>
@@ -172,35 +183,47 @@ for($i = 0; $i < $numrows; $i++)
 function loadRoomAgain()
 {
     	var x = document.getElementById("room_id").value;
-    	//var y = document.getElementById("user_id").value;
     	var y = 0;
     	var z = document.getElementById("evaluation_id").value;
-    	var d = document.getElementById("date_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d; 
+    	var f = document.getElementById("from_date_id").value;
+    	var t = document.getElementById("to_date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&from_date_id=' + f + '&to_date_id=' + t; 
 }
 function loadUserAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
     	var z = document.getElementById("evaluation_id").value;
-    	var d = document.getElementById("date_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d;; 
+    	var f = document.getElementById("from_date_id").value;
+    	var t = document.getElementById("to_date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&from_date_id=' + f + '&to_date_id=' + t; 
 }
 function loadEvaluationAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
     	var z = document.getElementById("evaluation_id").value;
-    	var d = document.getElementById("date_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d;; 
+    	var f = document.getElementById("from_date_id").value;
+    	var t = document.getElementById("to_date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&from_date_id=' + f + '&to_date_id=' + t; 
 }
-function loadDateAgain()
+function loadFromDateAgain()
 {
     	var x = document.getElementById("room_id").value;
     	var y = document.getElementById("user_id").value;
     	var z = document.getElementById("evaluation_id").value;
-    	var d = document.getElementById("date_id").value;
-	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&date_id=' + d;; 
+    	var f = document.getElementById("from_date_id").value;
+    	var t = document.getElementById("to_date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&from_date_id=' + f + '&to_date_id=' + t; 
+}
+function loadToDateAgain()
+{
+    	var x = document.getElementById("room_id").value;
+    	var y = document.getElementById("user_id").value;
+    	var z = document.getElementById("evaluation_id").value;
+    	var f = document.getElementById("from_date_id").value;
+    	var t = document.getElementById("to_date_id").value;
+	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&from_date_id=' + f + '&to_date_id=' + t; 
 }
 </script>
 
@@ -226,7 +249,9 @@ else
 	$queryOne .= " AND evaluations_id = "; 
 	$queryOne .= $evaluation_id;
 	$queryOne .= " AND start_time > '"; 
-	$queryOne .= $date_id;
+	$queryOne .= $from_date_id;
+	$queryOne .= "' AND start_time < '"; 
+	$queryOne .= $to_date_id;
 	$queryOne .= "' order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
