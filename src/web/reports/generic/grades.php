@@ -225,7 +225,9 @@ else
 	//$queryOne .= " AND (evaluations_id = 15 OR evaluations_id = 16) order by start_time desc;";
 	$queryOne .= " AND evaluations_id = "; 
 	$queryOne .= $evaluation_id;
-	$queryOne .= " order by start_time desc;";
+	$queryOne .= " AND start_time > '"; 
+	$queryOne .= $date_id;
+	$queryOne .= "' order by start_time desc;";
 	$resultOne = pg_query($conn,$queryOne);
 	$numrowsOne = pg_numrows($resultOne);
 
