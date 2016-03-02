@@ -170,10 +170,8 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
-<br>
 <b>FROM:</b>
 <input id="from_date_id" type="text" name="from_date_id" value="<?php echo htmlentities($from_date_id); ?>"  onchange="loadFromDateAgain()">
-<br>
 <b>TO:</b>
 <input id="to_date_id" type="text" name="to_date_id" value="<?php echo htmlentities($to_date_id); ?>"  onchange="loadToDateAgain()">
 
