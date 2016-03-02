@@ -32,10 +32,12 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
+ini_set("date.timezone", "America/New_York");
+
 $room_id = 0;
 $user_id = 0;
 $evaluation_id = 0;
-$date_id = 0;
+$date_id = date("Y-m-d H:i:s"); 
 $id = 0;
 
 if (isset($_POST["room_id"]))
@@ -75,6 +77,7 @@ else if (isset($_GET['date_id']))
 }
 
 echo "<br>";
+	
 ?>
 
 <p><b> Grades </p></b>
@@ -159,9 +162,7 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-<input id="date_id" type="text" name="date_id" onchange="loadDateAgain()">
-
-
+<input id="date_id" type="text" name="date_id" value="<?php echo htmlentities($date_id); ?>"  onchange="loadDateAgain()">
 
 
 </form>
