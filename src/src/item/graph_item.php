@@ -1103,7 +1103,7 @@ Extends: ThreeButtonItem,
 //var r = Raphael('graph');
 var rX1 = 10;
 var rY1 = 50;
-var rX2 = 520;
+var rX2 = 420;
 var rY2 = 350;
 
 this.raphael = Raphael(rX1, rY1, rX2, rY2);
