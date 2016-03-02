@@ -248,8 +248,12 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Question';
         echo '</td>';
-        echo '<td> Answers';
-        echo '</td>';
+
+        if ($_SESSION["role"] == 3)
+	{
+        	echo '<td> Answers';
+        	echo '</td>';
+	}
         echo '<td> User Answer';
         echo '</td>';
         echo '</tr>';
@@ -280,9 +284,13 @@ echo '<table border=\"1\">';
                 echo '<td>';
                 echo $question;
                 echo '</td>';
-                echo '<td>';
-                echo $answers;
-                echo '</td>';
+        	
+		if ($_SESSION["role"] == 3)
+		{
+                	echo '<td>';
+                	echo $answers;
+                	echo '</td>';
+		}
                 echo '<td>';
                 echo $user_answer;
                 echo '</td>';
