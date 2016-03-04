@@ -701,10 +701,43 @@ if (id == '6.rp.a.3.a_3')
         {
                 return new i_6_ns_b_2__2(this.mSheet);
         }
-//6.ns.b.3
-  if (id == '6.ns.b.3_1')
-        {
-                return new i_6_ns_b_3__1(this.mSheet);
+
+	//6.ns.b.3
+	if (id == '6.ns.b.3_1')
+	{
+		return new i_6_ns_b_3__1(this.mSheet);
+        }
+	if (id == '6.ns.b.3_2')
+	{
+		return new i_6_ns_b_3__2(this.mSheet);
+        }
+	if (id == '6.ns.b.3_3')
+	{
+		return new i_6_ns_b_3__3(this.mSheet);
+        }
+	if (id == '6.ns.b.3_4')
+	{
+		return new i_6_ns_b_3__4(this.mSheet);
+        }
+	if (id == '6.ns.b.3_5')
+	{
+		return new i_6_ns_b_3__5(this.mSheet);
+        }
+	if (id == '6.ns.b.3_6')
+	{
+		return new i_6_ns_b_3__6(this.mSheet);
+        }
+	if (id == '6.ns.b.3_7')
+	{
+		return new i_6_ns_b_3__7(this.mSheet);
+        }
+	if (id == '6.ns.b.3_8')
+	{
+		return new i_6_ns_b_3__8(this.mSheet);
+        }
+	if (id == '6.ns.b.3_9')
+	{
+		return new i_6_ns_b_3__9(this.mSheet);
         }
 
 
