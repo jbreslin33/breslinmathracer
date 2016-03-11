@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_6',6.0106,'6.ns.a.1','word problem. divide mixed number by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_6',6.0806,'6.ns.a.1','word problem. divide mixed number by a mixed number');
 */
 var i_6_ns_a_1__6 = new Class(
 {
@@ -64,7 +64,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_5',6.705,'6.ns.a.1','divide fraction by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_5',6.0805,'6.ns.a.1','divide fraction by a mixed number');
 */
 var i_6_ns_a_1__5 = new Class(
 {
@@ -126,7 +126,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_4',6.704,'6.ns.a.1','divide mixed number by a fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_4',6.0804,'6.ns.a.1','divide mixed number by a fraction');
 */
 var i_6_ns_a_1__4 = new Class(
 {
@@ -186,7 +186,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_3',6.703,'6.ns.a.1','divide mixed number by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_3',6.0803,'6.ns.a.1','divide mixed number by a mixed number');
 */
 var i_6_ns_a_1__3 = new Class(
 {
@@ -248,7 +248,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_2',6.702,'6.ns.a.1','divide fraction by a fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_2',6.0802,'6.ns.a.1','divide fraction by a fraction');
 */
 var i_6_ns_a_1__2 = new Class(
 {
@@ -310,7 +310,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_1',6.701,'6.ns.a.1','word problem. divide mixed number by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_1',6.0801,'6.ns.a.1','word problem. divide mixed number by a mixed number');
 */
 var i_6_ns_a_1__1 = new Class(
 {
