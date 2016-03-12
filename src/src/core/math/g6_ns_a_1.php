@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_6',6.0806,'6.ns.a.1','word problem. divide mixed number by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_6',6.0806,'6.ns.a.1','word problem. divide mixed number by a mixed number'); update item_types set progression = 6.0806 where id = '6.ns.a.1_6';
 */
 var i_6_ns_a_1__6 = new Class(
 {
@@ -64,7 +64,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_5',6.0805,'6.ns.a.1','divide fraction by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_5',6.0805,'6.ns.a.1','divide fraction by a mixed number'); update item_types set progression = 6.0805 where id = '6.ns.a.1_5';
 */
 var i_6_ns_a_1__5 = new Class(
 {
@@ -126,7 +126,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_4',6.0804,'6.ns.a.1','divide mixed number by a fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_4',6.0804,'6.ns.a.1','divide mixed number by a fraction'); update item_types set progression = 6.0804 where id = '6.ns.a.1_4';
 */
 var i_6_ns_a_1__4 = new Class(
 {
@@ -186,7 +186,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_3',6.0803,'6.ns.a.1','divide mixed number by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_3',6.0803,'6.ns.a.1','divide mixed number by a mixed number');update item_types set progression = 6.0803 where id = '6.ns.a.1_3';
 */
 var i_6_ns_a_1__3 = new Class(
 {
@@ -248,7 +248,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_2',6.0802,'6.ns.a.1','divide fraction by a fraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_2',6.0802,'6.ns.a.1','divide fraction by a fraction'); update item_types set progression = 6.0802 where id = '6.ns.a.1_2';
 */
 var i_6_ns_a_1__2 = new Class(
 {
