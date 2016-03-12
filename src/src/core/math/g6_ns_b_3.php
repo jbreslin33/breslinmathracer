@@ -1,60 +1,6 @@
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_1',6.901,'6.ns.b.3','word problem. multiply decimal by a decimal');
-*/
-var i_6_ns_b_3__1 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
-
-        this.mType = '6.ns.b.3_1';
-        var decimalA = new Decimal(1);
-        var decimalB = new Decimal(2);
-    
-        var a = 0;
-        var n = 0;
-        var m = 0;
-
-        while (parseFloat(decimalA.mDecimal) <= parseFloat(decimalB.mDecimal))
-        {
-                a = Math.floor(Math.random()*89+10);
-                n = Math.floor(Math.random()*2)+1;
-                m = Math.pow(10, 1);
-                a = parseFloat(a / m);
-                decimalA = new Decimal(a);
-
-                var b = Math.floor(Math.random()*88+11);
-                n = Math.floor(Math.random()*2)+1;
-                m = Math.pow(10, 1);
-                b = parseFloat(b / m);
-                decimalB = new Decimal(b);
-        }
-
-
-        var things = ['painting','poster', 'television'];
-
-        var r = Math.floor(Math.random()*3);
-
-        var answer = decimalA.multiply(decimalB);
-        this.setAnswer('' + answer.getString(),0);
-
-  this.setQuestion('A ' + things[r] + ' is in the shape of a rectangle. The length of the ' + things[r] + ' is ' + decimalA.getString() + ' feet. The width of the ' + things[r] + ' is ' + decimalB.getString() + ' feet. What is the area of the ' + things[r] + ' in square feet?');
-
-}
-
-});
-
-
-
-
-
-
-
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_9',6.909,'6.ns.b.3','word problem. divide decimal by a decimal');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_9',6.1009,'6.ns.b.3','word problem. divide decimal by a decimal');
 */
 var i_6_ns_b_3__9 = new Class(
 {
@@ -102,17 +48,8 @@ initialize: function(sheet)
 
 });
 
-
-
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_8',6.908,'6.ns.b.3','decimal division');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_8',6.1008,'6.ns.b.3','decimal division');
 */
 var i_6_ns_b_3__8 = new Class(
 {
@@ -153,15 +90,8 @@ initialize: function(sheet)
 }
 });
 
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_7',6.907,'6.ns.b.3','decimal multiplication');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_7',6.1007,'6.ns.b.3','decimal multiplication');
 */
 var i_6_ns_b_3__7 = new Class(
 {
@@ -202,17 +132,8 @@ initialize: function(sheet)
 }
 });
 
-
-
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_6',6.906,'6.ns.b.3','word problem. decimal subtraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_6',6.1006,'6.ns.b.3','word problem. decimal subtraction');
 */
 var i_6_ns_b_3__6 = new Class(
 {
@@ -279,14 +200,8 @@ showCorrectAnswer: function()
 
 });
 
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_5',6.905,'6.ns.b.3','word problem. decimal subtraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_5',6.1005,'6.ns.b.3','word problem. decimal subtraction');
 */
 var i_6_ns_b_3__5 = new Class(
 {
@@ -354,14 +269,8 @@ showCorrectAnswer: function()
 
 });
 
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_4',6.904,'6.ns.b.3','word problem. decimal addition');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_4',6.1004,'6.ns.b.3','word problem. decimal addition');
 */
 var i_6_ns_b_3__4 = new Class(
 {
@@ -405,14 +314,8 @@ initialize: function(sheet)
 }
 });
 
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_3',6.903,'6.ns.b.3','decimal addition');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_3',6.1003,'6.ns.b.3','decimal addition');
 */
 var i_6_ns_b_3__3 = new Class(
 {
@@ -453,12 +356,8 @@ initialize: function(sheet)
 }
 });
 
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_2',6.902,'6.ns.b.3','decimal subtraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_2',6.1002,'6.ns.b.3','decimal subtraction');
 */
 var i_6_ns_b_3__2 = new Class(
 {
@@ -498,3 +397,59 @@ initialize: function(sheet)
         this.setAnswer('' + answer.getString(),0);
 }
 });
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_1',6.1001,'6.ns.b.3','word problem. multiply decimal by a decimal');
+*/
+var i_6_ns_b_3__1 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+        this.mType = '6.ns.b.3_1';
+        var decimalA = new Decimal(1);
+        var decimalB = new Decimal(2);
+    
+        var a = 0;
+        var n = 0;
+        var m = 0;
+
+        while (parseFloat(decimalA.mDecimal) <= parseFloat(decimalB.mDecimal))
+        {
+                a = Math.floor(Math.random()*89+10);
+                n = Math.floor(Math.random()*2)+1;
+                m = Math.pow(10, 1);
+                a = parseFloat(a / m);
+                decimalA = new Decimal(a);
+
+                var b = Math.floor(Math.random()*88+11);
+                n = Math.floor(Math.random()*2)+1;
+                m = Math.pow(10, 1);
+                b = parseFloat(b / m);
+                decimalB = new Decimal(b);
+        }
+
+
+        var things = ['painting','poster', 'television'];
+
+        var r = Math.floor(Math.random()*3);
+
+        var answer = decimalA.multiply(decimalB);
+        this.setAnswer('' + answer.getString(),0);
+
+  this.setQuestion('A ' + things[r] + ' is in the shape of a rectangle. The length of the ' + things[r] + ' is ' + decimalA.getString() + ' feet. The width of the ' + things[r] + ' is ' + decimalB.getString() + ' feet. What is the area of the ' + things[r] + ' in square feet?');
+
+}
+
+});
+
+
+
+
+
+
+
+
