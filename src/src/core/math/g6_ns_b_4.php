@@ -1,84 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_1',6.1001,'6.ns.b.4','least common multiple - word problem');
-*/
-var i_6_ns_b_4__1 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        //this.parent(sheet,320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
-        this.parent(sheet,575,50,320,75,100,50,380,180);
-
-        this.mType = '6.ns.b.4_1';
-        
-        var n = 0;
-        var d = 0;
-
-        n = Math.floor(Math.random()*11)+2;
-        d = n;
-
-        while (n == d)
-        {
-          d = Math.floor(Math.random()*11)+2;        
-        }
-
-        var multA = new Array();
-        var x = 0;
-        var i = 1;
-
-        while (x < (n*d))
-        {
-          x = n * i;
-          i++;
-          multA.push(x);
-         // console.log(x);
-        }
-
-        var multB = new Array();
-        x = 0;
-        i = 1;
-
-        while (x < (n*d))
-        {
-          x = d * i;
-          i++;
-          multB.push(x);
-         // console.log(x);
-        }
-
-        var answer = 0;
-
-        for (j = 0; j < multA.length; j++) 
-        {
-          for (k = 0; k < multB.length; k++)
-          {
-            if (multA[j] == multB[k])
-            { 
-              answer = multA[j];
-              break; 
-            }
-          }
-          if (multA[j] == multB[k]) {break;}
-        }
-
-
-        this.setAnswer('' + answer,0);
-
-  this.setQuestion('A teacher bought packages of ' + n + ' pens in each package. Another teacher bought packages of ' + d + ' pens in each package. If the teachers ended up buying the same number of pens, what is the least number of pens they could have?' );
-
-}
-
-});
-
-
-
-
-
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_5',6.1005,'6.ns.b.4','greatest common factor - word problem');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_5',6.1105,'6.ns.b.4','greatest common factor - word problem');
 */
 var i_6_ns_b_4__5 = new Class(
 {
@@ -114,15 +35,8 @@ initialize: function(sheet)
 
 });
 
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_4',6.1004,'6.ns.b.4','greatest common factor - 2 numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_4',6.1104,'6.ns.b.4','greatest common factor - 2 numbers');
 */
 var i_6_ns_b_4__4 = new Class(
 {
@@ -159,16 +73,8 @@ initialize: function(sheet)
 
 });
 
-
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_3',6.1003,'6.ns.b.4','least common multiple - 2 numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_3',6.1103,'6.ns.b.4','least common multiple - 2 numbers');
 */
 var i_6_ns_b_4__3 = new Class(
 {
@@ -240,14 +146,8 @@ initialize: function(sheet)
 
 });
 
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_2',6.1002,'6.ns.b.4','greatest common factor - 2 numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_2',6.1102,'6.ns.b.4','greatest common factor - 2 numbers');
 */
 var i_6_ns_b_4__2 = new Class(
 {
@@ -281,4 +181,75 @@ initialize: function(sheet)
 
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_1',6.1101,'6.ns.b.4','least common multiple - word problem');
+*/
+var i_6_ns_b_4__1 = new Class(
+{
+Extends: TextItem,
 
+initialize: function(sheet)
+{
+        //this.parent(sheet,320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+        this.parent(sheet,575,50,320,75,100,50,380,180);
+
+        this.mType = '6.ns.b.4_1';
+        
+        var n = 0;
+        var d = 0;
+
+        n = Math.floor(Math.random()*11)+2;
+        d = n;
+
+        while (n == d)
+        {
+          d = Math.floor(Math.random()*11)+2;        
+        }
+
+        var multA = new Array();
+        var x = 0;
+        var i = 1;
+
+        while (x < (n*d))
+        {
+          x = n * i;
+          i++;
+          multA.push(x);
+         // console.log(x);
+        }
+
+        var multB = new Array();
+        x = 0;
+        i = 1;
+
+        while (x < (n*d))
+        {
+          x = d * i;
+          i++;
+          multB.push(x);
+         // console.log(x);
+        }
+
+        var answer = 0;
+
+        for (j = 0; j < multA.length; j++) 
+        {
+          for (k = 0; k < multB.length; k++)
+          {
+            if (multA[j] == multB[k])
+            { 
+              answer = multA[j];
+              break; 
+            }
+          }
+          if (multA[j] == multB[k]) {break;}
+        }
+
+
+        this.setAnswer('' + answer,0);
+
+  this.setQuestion('A teacher bought packages of ' + n + ' pens in each package. Another teacher bought packages of ' + d + ' pens in each package. If the teachers ended up buying the same number of pens, what is the least number of pens they could have?' );
+
+}
+
+});
