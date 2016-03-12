@@ -1,4 +1,4 @@
-//22
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_3',6.2203,'6.ns.c.8','Locate points with rational coordinates');
 */
