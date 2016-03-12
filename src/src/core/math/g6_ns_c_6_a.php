@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_3',6.1403,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_3',6.1403,'6.ns.c.6.a','Understanding positive and negative numbers and opposites'); update item_types set progression = 6.1403 where id = '6.ns.c.6.a_3';
 */
 var i_6_ns_c_6_a__3 = new Class(
 {
@@ -33,7 +33,7 @@ this.mQuestionLabel.setPosition(180,150);
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_2',6.1402,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_2',6.1402,'6.ns.c.6.a','Understanding positive and negative numbers and opposites'); update item_types set progression = 6.1402 where id = '6.ns.c.6.a_2';
 */
 var i_6_ns_c_6_a__2 = new Class(
 {
@@ -106,7 +106,7 @@ this.mQuestionLabel.setPosition(180,80);
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_1',6.1401,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_1',6.1401,'6.ns.c.6.a','Understanding positive and negative numbers and opposites'); update item_types set progression = 6.1401 where id = '6.ns.c.6.a_1';
 */
 var i_6_ns_c_6_a__1 = new Class(
 {

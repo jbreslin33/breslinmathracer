@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_5',6.1105,'6.ns.b.4','greatest common factor - word problem');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_5',6.1105,'6.ns.b.4','greatest common factor - word problem'); update item_types set progression = 6.1105 where id = '6.ns.b.4_5';
 */
 var i_6_ns_b_4__5 = new Class(
 {
@@ -36,7 +36,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_4',6.1104,'6.ns.b.4','greatest common factor - 2 numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_4',6.1104,'6.ns.b.4','greatest common factor - 2 numbers'); update item_types set progression = 6.1104 where id = '6.ns.b.4_4';
 */
 var i_6_ns_b_4__4 = new Class(
 {
@@ -74,7 +74,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_3',6.1103,'6.ns.b.4','least common multiple - 2 numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_3',6.1103,'6.ns.b.4','least common multiple - 2 numbers'); update item_types set progression = 6.1103 where id = '6.ns.b.4_3';
 */
 var i_6_ns_b_4__3 = new Class(
 {
@@ -147,7 +147,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_2',6.1102,'6.ns.b.4','greatest common factor - 2 numbers');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_2',6.1102,'6.ns.b.4','greatest common factor - 2 numbers'); update item_types set progression = 6.1102 where id = '6.ns.b.4_2';
 */
 var i_6_ns_b_4__2 = new Class(
 {
@@ -182,7 +182,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_1',6.1101,'6.ns.b.4','least common multiple - word problem');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.4_1',6.1101,'6.ns.b.4','least common multiple - word problem'); update item_types set progression = 6.1101 where id = '6.ns.b.4_1';
 */
 var i_6_ns_b_4__1 = new Class(
 {

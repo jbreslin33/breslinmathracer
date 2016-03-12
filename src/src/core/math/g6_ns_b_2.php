@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.2_2',6.0902,'6.ns.b.2','long division');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.2_2',6.0902,'6.ns.b.2','long division'); update item_types set progression = 6.0902 where id = '6.ns.b.2_2';
 */
 var i_6_ns_b_2__2 = new Class(
 {
@@ -32,7 +32,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.2_1',6.0901,'6.ns.b.2','word problem. long division');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.2_1',6.0901,'6.ns.b.2','word problem. long division'); update item_types set progression = 6.0901 where id = '6.ns.b.2_1';
 */
 var i_6_ns_b_2__1 = new Class(
 {

@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_9',6.1009,'6.ns.b.3','word problem. divide decimal by a decimal');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_9',6.1009,'6.ns.b.3','word problem. divide decimal by a decimal'); update item_types set progression = 6.1009 where id = '6.ns.b.3_9';
 */
 var i_6_ns_b_3__9 = new Class(
 {
@@ -49,7 +49,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_8',6.1008,'6.ns.b.3','decimal division');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_8',6.1008,'6.ns.b.3','decimal division'); update item_types set progression = 6.1008 where id = '6.ns.b.3_8';
 */
 var i_6_ns_b_3__8 = new Class(
 {
@@ -91,7 +91,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_7',6.1007,'6.ns.b.3','decimal multiplication');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_7',6.1007,'6.ns.b.3','decimal multiplication');  update item_types set progression = 6.1007 where id = '6.ns.b.3_7';
 */
 var i_6_ns_b_3__7 = new Class(
 {
@@ -133,7 +133,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_6',6.1006,'6.ns.b.3','word problem. decimal subtraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_6',6.1006,'6.ns.b.3','word problem. decimal subtraction');  update item_types set progression = 6.1006 where id = '6.ns.b.3_6';
 */
 var i_6_ns_b_3__6 = new Class(
 {
@@ -201,7 +201,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_5',6.1005,'6.ns.b.3','word problem. decimal subtraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_5',6.1005,'6.ns.b.3','word problem. decimal subtraction');  update item_types set progression = 6.1005 where id = '6.ns.b.3_5';
 */
 var i_6_ns_b_3__5 = new Class(
 {
@@ -270,7 +270,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_4',6.1004,'6.ns.b.3','word problem. decimal addition');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_4',6.1004,'6.ns.b.3','word problem. decimal addition');  update item_types set progression = 6.1004 where id = '6.ns.b.3_4';
 */
 var i_6_ns_b_3__4 = new Class(
 {
@@ -315,7 +315,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_3',6.1003,'6.ns.b.3','decimal addition');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_3',6.1003,'6.ns.b.3','decimal addition');  update item_types set progression = 6.1003 where id = '6.ns.b.3_3';
 */
 var i_6_ns_b_3__3 = new Class(
 {
@@ -357,7 +357,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_2',6.1002,'6.ns.b.3','decimal subtraction');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_2',6.1002,'6.ns.b.3','decimal subtraction');  update item_types set progression = 6.1002 where id = '6.ns.b.3_2';
 */
 var i_6_ns_b_3__2 = new Class(
 {
@@ -399,7 +399,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_1',6.1001,'6.ns.b.3','word problem. multiply decimal by a decimal');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.b.3_1',6.1001,'6.ns.b.3','word problem. multiply decimal by a decimal');  update item_types set progression = 6.1001 where id = '6.ns.b.3_1';
 */
 var i_6_ns_b_3__1 = new Class(
 {
