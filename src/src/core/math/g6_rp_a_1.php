@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_17',6.0117,'6.rp.a.1','' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.1_17',6.0117,'6.rp.a.1','' ); 
 */
 
 var i_6_rp_a_1__17 = new Class(

@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_6',6.0506,'6.rp.a.3.b','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_6',6.0506,'6.rp.a.3.b','Table. Ratio. ' ); update item_types set progression = 6.0506 where id = '6.rp.a.3.b_6';
 */
 
 var i_6_rp_a_3_b__6 = new Class(
@@ -77,7 +77,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_5',6.0505,'6.rp.a.3.b','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_5',6.0505,'6.rp.a.3.b','Table. Ratio. ' ); update item_types set progression = 6.0505 where id = '6.rp.a.3.b_5';
 */
 
 var i_6_rp_a_3_b__5 = new Class(
@@ -147,7 +147,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_4',6.0504,'6.rp.a.3.b','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_4',6.0504,'6.rp.a.3.b','Table. Ratio. ' ); update item_types set progression = 6.0504 where id = '6.rp.a.3.b_4';
 */
 
 var i_6_rp_a_3_b__4 = new Class(
@@ -232,7 +232,7 @@ showCorrectAnswer: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_3',6.0503,'6.rp.a.3.b','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_3',6.0503,'6.rp.a.3.b','Table. Ratio. ' ); update item_types set progression = 6.0503 where id = '6.rp.a.3.b_3';
 */
 
 var i_6_rp_a_3_b__3 = new Class(
@@ -322,7 +322,7 @@ showCorrectAnswer: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_2',6.0502,'6.rp.a.3.b','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_2',6.0502,'6.rp.a.3.b','Table. Ratio. ' ); update item_types set progression = 6.0502 where id = '6.rp.a.3.b_2';
 */
 
 var i_6_rp_a_3_b__2 = new Class(
@@ -415,7 +415,7 @@ showCorrectAnswer: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_1',6.0501,'6.rp.a.3.b','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.b_1',6.0501,'6.rp.a.3.b','Table. Ratio. ' ); update item_types set progression = 6.0501 where id = '6.rp.a.3.b_1';
 */
 
 var i_6_rp_a_3_b__1 = new Class(

@@ -310,7 +310,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_1',6.0801,'6.ns.a.1','word problem. divide mixed number by a mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.a.1_1',6.0801,'6.ns.a.1','word problem. divide mixed number by a mixed number'); update item_types set progression = 6.0801 where id = '6.ns.a.1_1';
 */
 var i_6_ns_a_1__1 = new Class(
 {

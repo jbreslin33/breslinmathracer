@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_4',6.0604,'6.rp.a.3.c','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_4',6.0604,'6.rp.a.3.c','Table. Ratio. ' ); update item_types set progression = 6.0604 where id = '6.rp.a.3.c_4';
 */
 
 var i_6_rp_a_3_c__4 = new Class(
@@ -80,7 +80,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_3',6.0603,'6.rp.a.3.c','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_3',6.0603,'6.rp.a.3.c','Table. Ratio. ' );update item_types set progression = 6.0603 where id = '6.rp.a.3.c_3';
 */
 
 var i_6_rp_a_3_c__3 = new Class(
@@ -156,7 +156,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_2',6.0602,'6.rp.a.3.c','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_2',6.0602,'6.rp.a.3.c','Table. Ratio. ' ); update item_types set progression = 6.0602 where id = '6.rp.a.3.c_2';
 */
 
 var i_6_rp_a_3_c__2 = new Class(
@@ -228,7 +228,7 @@ showCorrectAnswer: function()
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_1',6.0601,'6.rp.a.3.c','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.c_1',6.0601,'6.rp.a.3.c','Table. Ratio. ' ); update item_types set progression = 6.0601 where id = '6.rp.a.3.c_1';
 */
 
 var i_6_rp_a_3_c__1 = new Class(

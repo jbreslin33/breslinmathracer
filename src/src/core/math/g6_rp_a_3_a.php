@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.a_3',6.0403,'6.rp.a.3.a','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.a_3',6.0403,'6.rp.a.3.a','Table. Ratio. ' ); update item_types set progression = 6.0403 where id = '6.rp.a.3.a_3';
 */
 
 var i_6_rp_a_3_a__3 = new Class(
@@ -62,7 +62,7 @@ this.mAnswerTextBox.setSize(50,50);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.a_2',6.0402,'6.rp.a.3.a','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.a_2',6.0402,'6.rp.a.3.a','Table. Ratio. ' ); update item_types set progression = 6.0402 where id = '6.rp.a.3.a_2';
 */
 
 var i_6_rp_a_3_a__2 = new Class(
@@ -102,20 +102,10 @@ this.mAnswerTextBox.setPosition(600,110);
 this.mAnswerTextBox.setSize(50,50);
 
 }
-
-
-
 });
 
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.a_1',6.0401,'6.rp.a.3.a','Table. Ratio. ' );
+insert into item_types(id,progression,core_standards_id,description) values ('6.rp.a.3.a_1',6.0401,'6.rp.a.3.a','Table. Ratio. ' ); update item_types set progression = 6.0401 where id = '6.rp.a.3.a_1';
 */
 
 var i_6_rp_a_3_a__1 = new Class(
