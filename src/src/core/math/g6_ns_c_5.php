@@ -1,5 +1,6 @@
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.5_1',6.1101,'6.ns.c.5','Understanding positive and negative numbers and opposites');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.5_1',6.1201,'6.ns.c.5','Understanding positive and negative numbers and opposites');
 */
 var i_6_ns_c_5__1 = new Class(
 {

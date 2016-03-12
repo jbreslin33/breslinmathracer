@@ -1,5 +1,112 @@
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_1',6.1201,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_3',6.1403,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
+*/
+var i_6_ns_c_6_a__3 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        //this.parent(sheet,320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+        //this.parent(sheet,575,50,320,75,100,50,380,180);
+
+        this.mType = '6.ns.c.6.a_3';
+
+      //  this.parent(sheet,200,50,225,95,100,50,425,100);
+
+    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
+
+var a = Math.floor(Math.random()*14 - 7);
+
+var answer = a * -1;
+
+  this.setAnswer('' + answer,0);
+
+ this.setQuestion('What is the opposite of ' + a + '?');
+
+this.mQuestionLabel.setSize(300,100);
+this.mQuestionLabel.setPosition(180,150);
+
+}
+
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_2',6.1402,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
+*/
+var i_6_ns_c_6_a__2 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.mType = '6.ns.c.6.a_2';    
+
+    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
+
+      this.ns = new NameSampler();
+
+// graph coords
+var startX = 10;
+var endX = 310;
+var startY = 10;
+var endY = 310;
+var width = endX - startX;
+var height = endY - startY;
+var range = [0,10];
+
+var rX1 = 10;
+var rY1 = 50;
+var rX2 = 330;
+var rY2 = 350;
+
+this.raphael = Raphael(rX1, rY1, rX2, rY2);
+
+this.raphaelSizeX = rX2;
+this.raphaelSizeY = rY2;
+
+var answer;
+
+var pointsX = [];
+
+// pick starting number for line plot
+var start = Math.floor(Math.random()*3 - 7);
+
+// pick missing number for line plot
+var missing = Math.floor(Math.random()*11);
+
+for (var i = 0; i < 11; i++)
+{
+  pointsX[i] = start + i;
+  
+  if(i == missing)
+  {
+    pointsX[i] = '';
+    answer = start + i;
+  }
+}
+
+var pointsY = [];
+
+  this.setAnswer('' + answer,0);
+
+ this.setQuestion('What is the number that is missing from the number line?');
+
+//create line plot
+var chart = new LineChartPlot (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
+
+this.addQuestionShape(chart);
+
+this.mQuestionLabel.setSize(300,100);
+this.mQuestionLabel.setPosition(180,80);
+
+}
+
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_1',6.1401,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
 */
 var i_6_ns_c_6_a__1 = new Class(
 {
@@ -116,114 +223,4 @@ this.mQuestionLabel.setPosition(125,80);
 
 
 
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_3',6.1203,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
-*/
-var i_6_ns_c_6_a__3 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        //this.parent(sheet,320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
-        //this.parent(sheet,575,50,320,75,100,50,380,180);
-
-        this.mType = '6.ns.c.6.a_3';
-
-      //  this.parent(sheet,200,50,225,95,100,50,425,100);
-
-    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
-
-var a = Math.floor(Math.random()*14 - 7);
-
-var answer = a * -1;
-
-  this.setAnswer('' + answer,0);
-
- this.setQuestion('What is the opposite of ' + a + '?');
-
-this.mQuestionLabel.setSize(300,100);
-this.mQuestionLabel.setPosition(180,150);
-
-}
-
-});
-
-
-
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.a_2',6.1202,'6.ns.c.6.a','Understanding positive and negative numbers and opposites');
-*/
-var i_6_ns_c_6_a__2 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.mType = '6.ns.c.6.a_2';    
-
-    this.parent(sheet,320,100,200,95,100,50,510,137,100,50,625,100, 100,50,625,175,true);
-
-      this.ns = new NameSampler();
-
-// graph coords
-var startX = 10;
-var endX = 310;
-var startY = 10;
-var endY = 310;
-var width = endX - startX;
-var height = endY - startY;
-var range = [0,10];
-
-var rX1 = 10;
-var rY1 = 50;
-var rX2 = 330;
-var rY2 = 350;
-
-this.raphael = Raphael(rX1, rY1, rX2, rY2);
-
-this.raphaelSizeX = rX2;
-this.raphaelSizeY = rY2;
-
-var answer;
-
-var pointsX = [];
-
-// pick starting number for line plot
-var start = Math.floor(Math.random()*3 - 7);
-
-// pick missing number for line plot
-var missing = Math.floor(Math.random()*11);
-
-for (var i = 0; i < 11; i++)
-{
-  pointsX[i] = start + i;
-  
-  if(i == missing)
-  {
-    pointsX[i] = '';
-    answer = start + i;
-  }
-}
-
-var pointsY = [];
-
-  this.setAnswer('' + answer,0);
-
- this.setQuestion('What is the number that is missing from the number line?');
-
-//create line plot
-var chart = new LineChartPlot (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,"#000000",false);
-
-this.addQuestionShape(chart);
-
-this.mQuestionLabel.setSize(300,100);
-this.mQuestionLabel.setPosition(180,80);
-
-}
-
-});
 
