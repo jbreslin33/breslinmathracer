@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_4',6.1704,'6.ns.c.7.c','compare and order rational numbers. real world example');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_4',6.2004,'6.ns.c.7.c','compare and order rational numbers. real world example');
 */
 var i_6_ns_c_7_c__4 = new Class(
 {
@@ -79,16 +79,64 @@ this.addQuestionShape(table)
 
 });
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_3',6.2003,'6.ns.c.7.c','absolute value');
+*/
+var i_6_ns_c_7_c__3 = new Class(
+{
+Extends: ThreeButtonItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet);
+                this.mType = '6.ns.c.7.c_3';
 
+                //BUTTON A
+                this.mButtonA.setPosition(380,120);
+                this.mButtonB.setPosition(380,200);
+                this.mButtonC.setPosition(380,280);
 
+                var b = Math.floor(Math.random()*2 + 5);
+                var d = Math.floor(Math.random()*2 + 1);
+                var c = Math.floor(Math.random()*2 + 3);
+                var a = Math.floor(Math.random()*2 + 7);
 
+                var n = a.toString(); 
 
+                a = '-0.' + a;
+                b = '-0.' + b;
+                c = '0.' + c;
+                d = '0.' + d;
 
+                this.setQuestion('Choose the set of numbers that is ordered from nearest to zero to farthest from zero.');
 
+                this.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a,0);
+
+                var r = Math.floor(Math.random()*3);
+
+              if(r == 0)
+              {
+                this.mButtonA.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
+                this.mButtonB.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);
+                this.mButtonC.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
+              }
+              if(r == 1)
+              {
+                this.mButtonA.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
+                this.mButtonB.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
+                this.mButtonC.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);   
+              }
+              if(r == 2)
+              {
+                this.mButtonA.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);
+                this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
+                this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
+              }
+        }
+});
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_2',6.1702,'6.ns.c.7.c','absolute value');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_2',6.2002,'6.ns.c.7.c','absolute value');
 */
 var i_6_ns_c_7_c__2 = new Class(
 {
@@ -141,87 +189,10 @@ Extends: ThreeButtonItem,
                 this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
               }
         }
-
-
 });
 
-
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_3',6.1703,'6.ns.c.7.c','absolute value');
-*/
-var i_6_ns_c_7_c__3 = new Class(
-{
-Extends: ThreeButtonItem,
-        initialize: function(sheet)
-        {
-                this.parent(sheet);
-                this.mType = '6.ns.c.7.c_3';
-
-                //BUTTON A
-                this.mButtonA.setPosition(380,120);
-                this.mButtonB.setPosition(380,200);
-                this.mButtonC.setPosition(380,280);
-
-                var b = Math.floor(Math.random()*2 + 5);
-                var d = Math.floor(Math.random()*2 + 1);
-                var c = Math.floor(Math.random()*2 + 3);
-                var a = Math.floor(Math.random()*2 + 7);
-
-                var n = a.toString(); 
-
-                a = '-0.' + a;
-                b = '-0.' + b;
-                c = '0.' + c;
-                d = '0.' + d;
-
-                this.setQuestion('Choose the set of numbers that is ordered from nearest to zero to farthest from zero.');
-
-                this.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a,0);
-
-                var r = Math.floor(Math.random()*3);
-
-              if(r == 0)
-              {
-                this.mButtonA.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
-                this.mButtonB.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);
-                this.mButtonC.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
-              }
-              if(r == 1)
-              {
-                this.mButtonA.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
-                this.mButtonB.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
-                this.mButtonC.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);   
-              }
-              if(r == 2)
-              {
-                this.mButtonA.setAnswer('' + d + ', ' + b + ', ' + c + ', ' + a);
-                this.mButtonB.setAnswer('' + a + ', ' + c + ', ' + b + ', ' + d);
-                this.mButtonC.setAnswer('' + d + ', ' + c + ', ' + b + ', ' + a);
-              }
-        }
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_1',6.1701,'6.ns.c.7.c','absolute value');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_1',6.2001,'6.ns.c.7.c','absolute value');
 */
 var i_6_ns_c_7_c__1 = new Class(
 {
@@ -266,8 +237,4 @@ Extends: TextItem,
                 this.setAnswer('' + b,0);              
 
         }
-
-
 });
-
-
