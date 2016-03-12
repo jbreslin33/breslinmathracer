@@ -1,5 +1,6 @@
+//22
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_3',6.1803,'6.ns.c.8','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_3',6.2203,'6.ns.c.8','Locate points with rational coordinates');
 */
 var i_6_ns_c_8__3 = new Class(
 {
@@ -113,15 +114,8 @@ this.mQuestionLabel.setPosition(625,120);
 
 });
 
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_2',6.1802,'6.ns.c.8','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_2',6.2202,'6.ns.c.8','Locate points with rational coordinates');
 */
 var i_6_ns_c_8__2 = new Class(
 {
@@ -259,14 +253,8 @@ this.mCorrectAnswerLabel.setPosition(630,200);
 
 });
 
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_2',6.1802,'6.ns.c.8','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_2',6.2202,'6.ns.c.8','Locate points with rational coordinates');
 */
 var i_6_ns_c_8__2 = new Class(
 {
@@ -404,15 +392,8 @@ this.mCorrectAnswerLabel.setPosition(630,200);
 
 });
 
-
-
-
-
-
-
-
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_1',6.1801,'6.ns.c.8','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.8_1',6.2201,'6.ns.c.8','Locate points with rational coordinates');
 */
 var i_6_ns_c_8__1 = new Class(
 {
