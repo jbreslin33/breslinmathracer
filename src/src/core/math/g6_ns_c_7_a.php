@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_4',6.1804,'6.ns.c.7.a','compare and order rational numbers. <');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_4',6.1804,'6.ns.c.7.a','compare and order rational numbers. <'); update item_types set progression = 6.1804 where id = '6.ns.c.7.a_4';
 */
 var i_6_ns_c_7_a__4 = new Class(
 {
@@ -55,7 +55,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_3',6.1803,'6.ns.c.7.a','compare and order rational numbers. <');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_3',6.1803,'6.ns.c.7.a','compare and order rational numbers. <'); update item_types set progression = 6.1803 where id = '6.ns.c.7.a_3';
 */
 var i_6_ns_c_7_a__3 = new Class(
 {
@@ -107,7 +107,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_2',6.1802,'6.ns.c.7.a','compare and order rational numbers. <');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_2',6.1802,'6.ns.c.7.a','compare and order rational numbers. <'); update item_types set progression = 6.1802 where id = '6.ns.c.7.a_2';
 */
 var i_6_ns_c_7_a__2 = new Class(
 {
@@ -212,7 +212,7 @@ this.mButtonC.setVisibility(false);
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_1',6.1801,'6.ns.c.7.a','compare and order rational numbers. <');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.a_1',6.1801,'6.ns.c.7.a','compare and order rational numbers. <'); update item_types set progression = 6.1801 where id = '6.ns.c.7.a_1';
 */
 var i_6_ns_c_7_a__1 = new Class(
 {

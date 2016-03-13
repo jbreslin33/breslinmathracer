@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_4',6.2004,'6.ns.c.7.c','compare and order rational numbers. real world example');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_4',6.2004,'6.ns.c.7.c','compare and order rational numbers. real world example'); update item_types set progression = 6.2004 where id = '6.ns.c.7.c_4';
 */
 var i_6_ns_c_7_c__4 = new Class(
 {
@@ -80,7 +80,7 @@ this.addQuestionShape(table)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_3',6.2003,'6.ns.c.7.c','absolute value');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_3',6.2003,'6.ns.c.7.c','absolute value'); update item_types set progression = 6.2003 where id = '6.ns.c.7.c_3';
 */
 var i_6_ns_c_7_c__3 = new Class(
 {
@@ -136,7 +136,7 @@ Extends: ThreeButtonItem,
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_2',6.2002,'6.ns.c.7.c','absolute value');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_2',6.2002,'6.ns.c.7.c','absolute value'); update item_types set progression = 6.2002 where id = '6.ns.c.7.c_2';
 */
 var i_6_ns_c_7_c__2 = new Class(
 {
@@ -192,7 +192,7 @@ Extends: ThreeButtonItem,
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_1',6.2001,'6.ns.c.7.c','absolute value');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.c_1',6.2001,'6.ns.c.7.c','absolute value'); update item_types set progression = 6.2001 where id = '6.ns.c.7.c_1';
 */
 var i_6_ns_c_7_c__1 = new Class(
 {

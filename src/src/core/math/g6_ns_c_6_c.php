@@ -1,6 +1,6 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_4',6.1604,'6.ns.c.6.c','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_4',6.1604,'6.ns.c.6.c','Locate points with rational coordinates'); update item_types set progression = 6.1604 where id = '6.ns.c.6.c_4';
 */
 var i_6_ns_c_6_c__4 = new Class(
 {
@@ -125,7 +125,7 @@ this.mQuestionLabel.setPosition(125,80);
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_3',6.1603,'6.ns.c.6.c','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_3',6.1603,'6.ns.c.6.c','Locate points with rational coordinates'); update item_types set progression = 6.1603 where id = '6.ns.c.6.c_3';
 */
 var i_6_ns_c_6_c__3 = new Class(
 {
@@ -253,7 +253,7 @@ this.mQuestionLabel.setPosition(125,80);
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_2',6.1602,'6.ns.c.6.c','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_2',6.1602,'6.ns.c.6.c','Locate points with rational coordinates'); update item_types set progression = 6.1602 where id = '6.ns.c.6.c_2';
 */
 var i_6_ns_c_6_c__2 = new Class(
 {
@@ -320,7 +320,7 @@ this.mQuestionLabel.setPosition(625,280);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_1',6.1601,'6.ns.c.6.c','Locate points with rational coordinates');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.6.c_1',6.1601,'6.ns.c.6.c','Locate points with rational coordinates'); update item_types set progression = 6.1601 where id = '6.ns.c.6.c_1';
 */
 var i_6_ns_c_6_c__1 = new Class(
 {

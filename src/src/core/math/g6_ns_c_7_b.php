@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.b_1',6.1901,'6.ns.c.7.b','compare and order rational numbers. real world example');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ns.c.7.b_1',6.1901,'6.ns.c.7.b','compare and order rational numbers. real world example'); update item_types set progression = 6.1904 where id = '6.ns.c.7.b_1';
 */
 var i_6_ns_c_7_b__1 = new Class(
 {
