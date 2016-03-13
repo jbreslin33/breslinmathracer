@@ -9,12 +9,18 @@ initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.1_3';
+	this.nm = new NameMachine();
 
-        var x = Math.floor(Math.random()*9)+1;
-        var y = Math.floor(Math.random()*8)+2;
+        var x = 0;
+        var y = 0;
+	while (x == y)
+	{
+        	var x = Math.floor(Math.random()*26);
+        	var y = Math.floor(Math.random()*26);
+	}
 
-        this.setQuestion('' + 'In the expression ' + x + '<sup>' + y + '</sup>' + ' what is the exponent?');
-        this.setAnswer('' + y,0);
+        this.setQuestion('' + 'In the expression ' + this.nm.mLowerLetterArray[x] + '<sup>' + this.nm.mLowerLetterArray[y] + '</sup>' + ' what is the exponent?');
+        this.setAnswer('' + this.nm.mLowerLetterArray[y],0);
 }
 });
 
