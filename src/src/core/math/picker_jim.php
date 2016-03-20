@@ -24,7 +24,7 @@ getDev: function()
 	//return '5.nf.a.2_9';
 	//return '5.md.c.5.b_8';
 	//return '5.nbt.b.7_23';
-	return '6.ee.a.1_5';
+	return '6.ee.a.1_6';
 },
 
 getItem: function(id)
