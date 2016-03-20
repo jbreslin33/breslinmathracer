@@ -1,5 +1,26 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.1_9',6.2309,'6.ee.a.1','');
+*/
+var i_6_ee_a_1__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.1_9';
+	this.nm = new NameMachine();
+
+        var x = Math.floor(Math.random()*8)+2;
+	var a = '' + this.nm.mLowerLetterArray[x] + '^2';
+
+        this.setQuestion('' + 'Write ' + this.nm.mLowerLetterArray[x] + ' squared. Use ^ before exponent. Example c squared is written: c^2'  );
+
+        this.setAnswer('' + a,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.1_8',6.2308,'6.ee.a.1','');
 */
 var i_6_ee_a_1__8 = new Class(
