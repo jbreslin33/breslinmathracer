@@ -1,5 +1,33 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.1_5',6.2305,'6.ee.a.1','');
+*/
+var i_6_ee_a_1__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.1_5';
+	this.nm = new NameMachine();
+
+        var x = Math.floor(Math.random()*8)+2;
+        var y = Math.floor(Math.random()*8)+2;
+
+        this.setQuestion('' + 'What is a multiplication expression equivalent to ' + x + '<sup>' + y + '</sup>' + '?' );
+
+	var a = '' + x;	
+
+	for (i = 1; i < y; i++)
+	{
+		a = a + '*' + x;   	
+	}
+
+        this.setAnswer('' + a,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.1_4',6.2304,'6.ee.a.1','');
 */
 var i_6_ee_a_1__4 = new Class(
