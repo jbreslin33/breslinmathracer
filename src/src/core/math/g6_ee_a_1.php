@@ -17,13 +17,20 @@ initialize: function(sheet)
         this.setQuestion('' + 'What is a multiplication expression equivalent to ' + x + '<sup>' + y + '</sup>' + '?' );
 
 	var a = '' + x;	
+	var b = '' + x;	
+	var c = '' + x;	
 
 	for (i = 1; i < y; i++)
 	{
 		a = a + '*' + x;   	
 	}
+	for (i = 1; i < y; i++)
+	{
+		b = b + 'x' + x;   	
+	}	
 
         this.setAnswer('' + a,0);
+        this.setAnswer('' + b,1);
 }
 });
 
