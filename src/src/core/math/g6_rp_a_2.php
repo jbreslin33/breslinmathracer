@@ -80,12 +80,12 @@ initialize: function(sheet)
         this.setQuestion(this.ns.mNameOne + ' played ' + this.ns.mPointActivityOne + ' for ' + this.c + ' minutes. ' + this.mNameMachine.getPronoun(this.ns.mNameOne,1,0) + ' scored ' + this.b + ' points total.  What is the unit rate of minutes to points?');
 
         this.mFraction = new Fraction(this.c,this.b,1);
-        this.setAnswer(this.mFraction.getString(),0);
-        this.setAnswer(this.mFraction.getString() + ' points per minute ',1);
-        this.setAnswer(this.mFraction.getString() + ' points per minute of ' + this.ns.mPointActivityOne,2);
-        this.setAnswer(this.mFraction.getString() + ':1',3);
-        this.setAnswer(this.mFraction.getString() + ' points : 1 minute',4);
-        this.setAnswer(this.mFraction.getString() + ' points : 1 minute of ' + this.ns.mPointActivityOne,5);
+        this.setAnswer('' + this.mFraction.getString(),0);
+        this.setAnswer('' + this.mFraction.getString() + ' points per minute ',1);
+        this.setAnswer('' + this.mFraction.getString() + ' points per minute of ' + this.ns.mPointActivityOne,2);
+        this.setAnswer('' + this.mFraction.getString() + ':1',3);
+        this.setAnswer('' + this.mFraction.getString() + ' points : 1 minute',4);
+        this.setAnswer('' + this.mFraction.getString() + ' points : 1 minute of ' + this.ns.mPointActivityOne,5);
         this.setAnswer(this.mFraction.getString() + ' points : minute',6);
 }
 });
@@ -111,12 +111,11 @@ initialize: function(sheet)
 
 	this.setQuestion(this.ns.mNameOne + ' traveled ' + this.c + ' ' + this.ns.mDistanceIncrementLarge + ' in ' + this.b + ' ' + this.ns.mTimeIncrementSmall + '. What is '  + this.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' average speed per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall) + '?'); 	
 
-	this.mFraction = new Fraction(this.c,this.b,1);
-	this.setAnswer(this.mFraction.getString(),0);
-	this.setAnswer(this.mFraction.getString() + ' per',1);
-	this.setAnswer(this.mFraction.getString() + ' per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall),2);
-	this.setAnswer(this.mFraction.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' per',3);
-	this.setAnswer(this.mFraction.getString() + ' ' + this.ns.mDistanceIncrementLarge + ' per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall),4);
+	this.setAnswer('' + this.a,0);
+	this.setAnswer('' + this.a + ' per',1);
+	this.setAnswer('' + this.a + ' per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall),2);
+	this.setAnswer('' + this.a + ' ' + this.ns.mDistanceIncrementLarge + ' per',3);
+	this.setAnswer('' + this.a + ' ' + this.ns.mDistanceIncrementLarge + ' per ' + this.mNameMachine.getSingular(this.ns.mTimeIncrementSmall),4);
 }
 });
 

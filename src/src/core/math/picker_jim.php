@@ -12,19 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	//return '5.md.c.5.a_4';
-	//return '5.md.c.5.c_1';
-	//return '5.md.c.3.a_11';
-	//return '5.oa.b.3_7';
-	//return '5.g.a.1_6';
-	//return '6.ns.c.6.a_1';
-	//return '6.rp.a.3.a_1';
-	//return '5.oa.a.1_25';
-	//return '5.md.a.1_16';
-	//return '5.nf.a.2_9';
-	//return '5.md.c.5.b_8';
-	//return '5.nbt.b.7_23';
-	return '6.ee.a.1_9';
+	return '6.rp.a.2_3';
 },
 
 getItem: function(id)
