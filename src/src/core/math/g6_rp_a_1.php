@@ -33,7 +33,7 @@ Extends: TextItem,
         {
                 this.parent(sheet,300,50,175,95, 200,50,475,100);
 
-                this.mType = '6.rp.a.1_14';
+                this.mType = '6.rp.a.1_16';
                 this.ns = new NameSampler();
 
                 var a = Math.floor((Math.random()*2)+2);

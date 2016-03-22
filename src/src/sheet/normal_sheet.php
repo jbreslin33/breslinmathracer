@@ -9,6 +9,7 @@ initialize: function(game)
 
 pickItem: function()
 {
+	APPLICATION.log('pickItem');
 	//would love to loop till we got no dup
 	var s = APPLICATION.mItemAttemptsTypeArrayOne.length; 
 
@@ -32,8 +33,8 @@ pickItem: function()
 	{
 		//lets get first and if its not a dup dont even go in
                 APPLICATION.getFirst();
+		APPLICATION.log('getFirst');
                 APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-		//APPLICATION.log('getFirst');
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         	{
         		var r = Math.floor(Math.random()*100);
@@ -42,25 +43,25 @@ pickItem: function()
                 	{
                         	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-				//APPLICATION.log('leastAsked');
+				APPLICATION.log('leastAsked');
                 	}
                 	if (r >= 45 && r < 50)
                 	{
                         	APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-				//APPLICATION.log('leastAskedHalf');
+				APPLICATION.log('leastAskedHalf');
                 	}
                 	if (r >= 50 && r < 95)
                 	{
                         	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-				//APPLICATION.log('leastCorrect');
+				APPLICATION.log('leastCorrect');
                 	}
                 	if (r >= 95)
                 	{
                         	APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-				//APPLICATION.log('leastCorrectHalf');
+				APPLICATION.log('leastCorrectHalf');
                 	}
 		}
 	}

@@ -802,7 +802,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_11',5.020011,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_11',5.020011,'5.oa.a.2',''); update item_types set active_code = 2 where id = '5.oa.a.2_0_11';
 */
 
 var i_5_oa_a_2__0_11 = new Class(
@@ -821,9 +821,8 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_10',5.020010,'5.oa.a.2','');
+insert into item_types(id,progression,core_standards_id,description) values ('5.oa.a.2_0_10',5.020010,'5.oa.a.2',''); update item_types set active_code = 2 where id = '5.oa.a.2_0_10';
 */
-
 var i_5_oa_a_2__0_10 = new Class(
 {
 Extends: TextItem,

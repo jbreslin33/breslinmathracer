@@ -192,12 +192,7 @@ Extends: TextItem,
     var answer = a - b;
     var n = answer.toFixed(1);
 
-
-
-
-
-
-                this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' L of water and only needs ' + b + ' L. How many mL of water should ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' pour out in order to have only ' + b + ' L left?');
+                this.setQuestion('' + this.ns.mNameOne + ' has ' + a + ' L of water and only needs ' + b + ' L. How many L of water should ' + this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' pour out in order to have only ' + b + ' L left?');
 
                 this.setAnswer(n,0);
         },
