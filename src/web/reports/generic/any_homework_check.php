@@ -205,20 +205,14 @@ $resultStudents = pg_query($conn,$queryStudents);
 $numrowsStudents = pg_numrows($resultStudents);
 
 $userArray = array();
-
-$homeworkGradesArray = array();
-$terraNovaGradesArray = array();
-
-$homeworkQuestionsArray = array(); //0,1,2
-$terraNovaQuestionsArray = array(); //0,1,2
+$gradesArray = array();
+$questionsArray = array(); //0,1,2
 
 for($s = 0; $s < $numrowsStudents; $s++)
 {
-	$homeworkGradeArray = array();
-	$terraNovaGradeArray = array();
+	$gradeArray = array();
 
-	$homeworkQuestionArray = array(); //0,1,2
-	$terraNovaQuestionArray = array(); //0,1,2
+	$questionArray = array(); //0,1,2
 
 	$rowStudents = pg_fetch_array($resultStudents, $s);
 
@@ -257,7 +251,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 			$transactionCode = $row[1];
 		
 			$evaluations_id = $row[2]; 
-			$terraNovaQuestionArray[] = $transactionCode;
+			$questionArray[] = $transactionCode;
 			if ($transactionCode == 1)
 			{
 				$correctTotal = floatVal($correctTotal + $progression);
@@ -277,14 +271,14 @@ for($s = 0; $s < $numrowsStudents; $s++)
 		$gradePercent = (int)($gradeDecimal * 100);
 
 		$evaluation_id = $row[2]; 
-		$terraNovaGradeArray[] = $gradePercent;
+		$gradeArray[] = $gradePercent;
         }
 
-	$totalTests = intval(count($homeworkGradeArray));
+	$totalTests = intval(count($gradeArray));
 	$totalOfTests = 0;
 	for($t = 0; $t < $totalTests; $t++)
 	{
-		$totalOfTests += $homeworkGradeArray[$t];
+		$totalOfTests += $gradeArray[$t];
 	}
 	$averageGrade = 0;
 	if ($totalTests != 0)
@@ -295,28 +289,11 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	{
 		$averageGrade = 0;
 	}
-	$homeworkGradesArray[] = $averageGrade;	
 
-	$totalTests = intval(count($terraNovaGradeArray));
-	$totalOfTests = 0;
-	for($t = 0; $t < $totalTests; $t++)
-	{
-		$totalOfTests += $terraNovaGradeArray[$t];
-	}
-	$averageGrade = 0;
-	if ($totalTests != 0)
-	{
-		$averageGrade = floatVal($totalOfTests / $totalTests);
-	}
-	else
-	{
-		$averageGrade = 0;
-	}
-	$terraNovaGradesArray[] = $averageGrade;	
+	$gradesArray[] = $averageGrade;	
 
 	//questions total
-	$homeworkQuestionsArray[] = count($homeworkQuestionArray);
-	$terraNovaQuestionsArray[] = count($terraNovaQuestionArray);
+	$questionsArray[] = count($questionArray);
 	
 }
 
@@ -339,7 +316,7 @@ for($y = 0; $y < $numrowsStudents; $y++)
         $fullname .= $rowStudents[7];
         
         $bcolor = 'Green';
-	if ($homeworkQuestionsArray[$y] < 10 || $terraNovaQuestionsArray[$y] < 9)
+	if ($questionsArray[$y] < 9)
         {
                 $bcolor = 'Red';
         }
@@ -353,18 +330,18 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
-        echo $terraNovaGradesArray[$y];
+        echo $gradesArray[$y];
         echo '</td>';
 
-        if ($terraNovaQuestionsArray[$y] == 0)
+        if ($questionsArray[$y] == 0)
         {
                 $bcolor = 'White';
         }
-        if ($terraNovaQuestionsArray[$y] > 8)
+        if ($questionsArray[$y] > 8)
         {
                 $bcolor = 'Green';
         }
-        if ($terraNovaQuestionsArray[$y] < 9)
+        if ($questionsArray[$y] < 9)
         {
                 $bcolor = 'Red';
         }
@@ -372,7 +349,7 @@ for($y = 0; $y < $numrowsStudents; $y++)
 	echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
-        echo $terraNovaQuestionsArray[$y];
+        echo $questionsArray[$y];
         echo '</td>';
         echo '</tr>';
 }
