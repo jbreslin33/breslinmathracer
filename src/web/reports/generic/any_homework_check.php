@@ -206,13 +206,14 @@ $numrowsStudents = pg_numrows($resultStudents);
 
 $userArray = array();
 $gradesArray = array();
-$questionsArray = array(); //0,1,2
+$percentsArray = array();
+$questionsArray = array(); 
 
 for($s = 0; $s < $numrowsStudents; $s++)
 {
 	$gradeArray = array();
-
-	$questionArray = array(); //0,1,2
+	$percentArray = array();
+	$questionArray = array(); 
 
 	$rowStudents = pg_fetch_array($resultStudents, $s);
 
@@ -241,6 +242,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 
 		$progressionTotal = 0;
 		$correctTotal = 0;
+		$percentCorrectTotal = 0;
         	for($x = 0; $x < $numrows; $x++)
         	{
                 	$row = pg_fetch_array($result, $x);
@@ -255,9 +257,11 @@ for($s = 0; $s < $numrowsStudents; $s++)
 			if ($transactionCode == 1)
 			{
 				$correctTotal = floatVal($correctTotal + $progression);
+				$percentCorrectTotal = $correctTotal + 1;
 			}
 		}
-
+		
+		//grade
 		$gradeDecimal = 0;
 		if ($progressionTotal ==  0)	
 		{
@@ -272,7 +276,24 @@ for($s = 0; $s < $numrowsStudents; $s++)
 
 		$evaluation_id = $row[2]; 
 		$gradeArray[] = $gradePercent;
-        }
+
+		//percent
+		$gradeDecimal = 0;
+		if ($progressionTotal ==  0)	
+		{
+			$gradeDecimal = 0;
+		}
+		else
+		{
+			$gradeDecimal = floatVal($correctTotal / $progressionTotal);
+		}
+		
+		$gradePercent = (int)($gradeDecimal * 100);
+
+		$evaluation_id = $row[2]; 
+		$gradeArray[] = $gradePercent;
+  
+	}
 
 	$totalTests = intval(count($gradeArray));
 	$totalOfTests = 0;
