@@ -1,5 +1,25 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.1_10',6.2309,'6.ee.a.1','');
+*/
+var i_6_ee_a_1__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.1_10';
+	this.nm = new NameMachine();
+
+        var x = Math.floor(Math.random()*8)+2;
+
+        this.setQuestion('' + 'Write an expression using an exponent that can be used to solve the area of a square with side lenghts of ' + x + '. Use ^ before exponent. Example c squared is written: c^2'  );
+
+        this.setAnswer('' + x + '^2',0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.1_9',6.2309,'6.ee.a.1','');
 */
 var i_6_ee_a_1__9 = new Class(
