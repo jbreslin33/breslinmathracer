@@ -222,7 +222,7 @@ for($s = 0; $s < $numrowsStudents; $s++)
 	$query .= "' AND evaluations_attempts.evaluations_id = "; 
 	$query .= $eval_id;
 	$query .= " order by item_attempts.start_time desc;";
-	error_log($query);
+	//error_log($query);
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 		
@@ -310,13 +310,16 @@ for($y = 0; $y < $numrowsStudents; $y++)
 	echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
-        echo $percentsArray[$y];
+ 	$percent = (int)($percentsArray[$y] * 100);
+        echo $percent;
         echo '</td>';
 
         echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
-        echo $gradesArray[$y];
+ 	$grades = (int)($gradesArray[$y] * 100);
+
+        echo $grades;
         echo '</td>';
 
         if ($questionsArray[$y] == 0)
