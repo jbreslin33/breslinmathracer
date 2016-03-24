@@ -211,116 +211,75 @@ $questionsArray = array();
 
 for($s = 0; $s < $numrowsStudents; $s++)
 {
-	$gradeArray = array();
-	$percentArray = array();
-	$questionArray = array(); 
-
 	$rowStudents = pg_fetch_array($resultStudents, $s);
 
-	$queryOne = "select * from evaluations_attempts where user_id = ";
-	$queryOne .= $rowStudents[0];
-	$queryOne .= " AND evaluations_attempts.start_time > '";
-	$queryOne .= $start_time;
-	$queryOne .= "' AND evaluations_attempts.start_time < '";
-	$queryOne .= $end_time;
-	$queryOne .= "' AND evaluations_id = "; 
-	$queryOne .= $eval_id;
-	$queryOne .= " order by start_time desc;";
-	$resultOne = pg_query($conn,$queryOne);
-	$numrowsOne = pg_numrows($resultOne);
+	$query = "select progression, transaction_code from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_types.id=item_attempts.item_types_id where user_id = ";
+	$query .= $rowStudents[0];
+	$query .= " AND item_attempts.start_time > '";
+	$query .= $start_time;
+	$query .= "' AND item_attempts.start_time < '";
+	$query .= $end_time;
+	$query .= "' AND evaluations_attempts.evaluations_id = "; 
+	$query .= $eval_id;
+	$query .= " order by item_attempts.start_time desc;";
+	error_log($query);
+	$result = pg_query($conn,$query);
+	$numrows = pg_numrows($result);
+		
+	$progressionTotal = 0;
+	$correctTotal = 0;
+	$percentCorrectTotal = 0;
 
 	//this loop is to calc a test for a grade that is all
-	for($i = 0; $i < $numrowsOne; $i++)
+	for($i = 0; $i < $numrows; $i++)
 	{
-		$rowOne = pg_fetch_array($resultOne, $i);
-
-       	 	$query = "select progression, transaction_code, evaluations_attempts.evaluations_id from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN item_types ON item_attempts.item_types_id=item_types.id where evaluations_attempts_id = ";
-		$query .= $rowOne[0];
-		$query .= " order by item_attempts.start_time desc;";
-        	$result = pg_query($conn,$query);
-        	$numrows = pg_numrows($result);
-
-		$progressionTotal = 0;
-		$correctTotal = 0;
-		$percentCorrectTotal = 0;
-        	for($x = 0; $x < $numrows; $x++)
-        	{
-                	$row = pg_fetch_array($result, $x);
+		$row = pg_fetch_array($result, $i);
                 
-			$progression = $row[0];
-			$progressionTotal = floatVal($progressionTotal + $progression);
+		$progression = $row[0];
+		$progressionTotal = floatVal($progressionTotal + $progression);
 		
-			$transactionCode = $row[1];
+		$transactionCode = $row[1];
 		
-			$evaluations_id = $row[2]; 
-			$questionArray[] = $transactionCode;
-			if ($transactionCode == 1)
-			{
-				$correctTotal = floatVal($correctTotal + $progression);
-				$percentCorrectTotal = $correctTotal + 1;
-			}
-		}
-		
-		//grade
-		$gradeDecimal = 0;
-		if ($progressionTotal ==  0)	
+		if ($transactionCode == 1)
 		{
-			$gradeDecimal = 0;
+			$correctTotal = floatVal($correctTotal + $progression);
+			$percentCorrectTotal = $percentCorrectTotal + 1;
 		}
-		else
-		{
-			$gradeDecimal = floatVal($correctTotal / $progressionTotal);
-		}
-		
-		$gradePercent = (int)($gradeDecimal * 100);
-
-		$evaluation_id = $row[2]; 
-		$gradeArray[] = $gradePercent;
-
-		//percent
-		$gradeDecimal = 0;
-		if ($progressionTotal ==  0)	
-		{
-			$gradeDecimal = 0;
-		}
-		else
-		{
-			$gradeDecimal = floatVal($correctTotal / $progressionTotal);
-		}
-		
-		$gradePercent = (int)($gradeDecimal * 100);
-
-		$evaluation_id = $row[2]; 
-		$gradeArray[] = $gradePercent;
-  
 	}
+	
 
-	$totalTests = intval(count($gradeArray));
-	$totalOfTests = 0;
-	for($t = 0; $t < $totalTests; $t++)
+
+	//percents
+        if ($numrows != 0)
+        {
+                $percentsArray[] = floatVal($percentCorrectTotal / $numrows);
+        }
+        else
+        {
+                $percentsArray[] = 0;
+        }
+
+	
+	//grade
+	$grade = 0;
+	if ($progressionTotal != 0)
 	{
-		$totalOfTests += $gradeArray[$t];
-	}
-	$averageGrade = 0;
-	if ($totalTests != 0)
-	{
-		$averageGrade = floatVal($totalOfTests / $totalTests);
+		$gradesArray[] = floatVal($correctTotal / $progressionTotal);
 	}
 	else
 	{
-		$averageGrade = 0;
+		$gradesArray[] = 0;
 	}
-
-	$gradesArray[] = $averageGrade;	
-
-	//questions total
-	$questionsArray[] = count($questionArray);
 	
+	//questions total
+	$questionsArray[] = $numrows;
 }
 
 echo '<table border=\"1\">';
 echo '<tr>';
 echo '<td> Student';
+echo '</td>';
+echo '<td> Percent';
 echo '</td>';
 echo '<td> Grade';
 echo '</td>';
@@ -346,6 +305,12 @@ for($y = 0; $y < $numrowsStudents; $y++)
         echo $bcolor;
         echo '">';
         echo $fullname;
+        echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $bcolor;
+        echo '">';
+        echo $percentsArray[$y];
         echo '</td>';
 
         echo '<td bgcolor="';
