@@ -290,36 +290,73 @@ echo '</tr>';
 for($y = 0; $y < $numrowsStudents; $y++)
 {
 	$rowStudents = pg_fetch_array($resultStudents, $y);
+ 	
+	$percent = (int)($percentsArray[$y] * 100);
+ 	$grade = (int)($gradesArray[$y] * 100);
+	$questions = $questionsArray[$y]; 
 
         $fullname = $rowStudents[3];
 	$fullname .= " ";
         $fullname .= $rowStudents[7];
-        
+
         $bcolor = 'Green';
-	if ($questionsArray[$y] < 9)
+/*
+	if ($percent < 60)
         {
                 $bcolor = 'Red';
         }
-        
+	if ($grade < 60)
+        {
+                $bcolor = 'Red';
+        }
+*/
+	if ($questions < 10)
+        {
+                $bcolor = 'Red';
+        }
+	if ($percent > 89 && $questions > 9)
+        {
+                $bcolor = 'Blue';
+        }
+	if ($grade > 89 && $questions > 9)
+        {
+                $bcolor = 'Blue';
+        }
+
 	echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
         echo $fullname;
         echo '</td>';
         
+        $bcolor = 'Green';
+	if ($percent < 60)
+        {
+                $bcolor = 'Red';
+        }
+	if ($percent > 89)
+        {
+                $bcolor = 'Blue';
+        }
 	echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
- 	$percent = (int)($percentsArray[$y] * 100);
         echo $percent;
         echo '</td>';
-
+        
+	$bcolor = 'Green';
+	if ($grade < 60)
+        {
+                $bcolor = 'Red';
+        }
+	if ($grade > 89)
+        {
+                $bcolor = 'Blue';
+        }
         echo '<td bgcolor="';
         echo $bcolor;
         echo '">';
- 	$grades = (int)($gradesArray[$y] * 100);
-
-        echo $grades;
+        echo $grade;
         echo '</td>';
 
         if ($questionsArray[$y] == 0)
