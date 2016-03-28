@@ -30,13 +30,14 @@ initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2_1';
-        this.nm = new NameMachine();
+        this.ns = new NameSampler();
 
         var x = Math.floor(Math.random()*8)+2;
+	var n = this.ns.mLowerLetterOne;
 
-        this.setQuestion('' + 'Write an expression that represents the quotient of a number and ' + x + '. Let n = number.'  );
+        this.setQuestion('' + 'Write an expression that represents the quotient of a number and ' + x + '. Let ' + n + ' = number.'  );
 
-        this.setAnswer('' + 'n/' + x ,0);
+        this.setAnswer('' + n + '/' + x ,0);
 }
 });
 
