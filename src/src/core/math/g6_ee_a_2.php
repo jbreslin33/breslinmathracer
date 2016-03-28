@@ -16,7 +16,7 @@ initialize: function(sheet)
 
         this.setQuestion('' + 'Write an expression that represents the product of a number and ' + x + '. Let ' + n + ' = number.'  );
 
-        this.setAnswer('' + n + '*' + x ,0);
+        this.setAnswer('' + x + '' + n ,0);
 }
 });
 
