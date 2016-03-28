@@ -13,7 +13,7 @@ initialize: function(sheet)
 
         var x = Math.floor(Math.random()*8)+2;
 
-        this.setQuestion('' + 'Write an expression using an exponent that can be used to solve the area of a square with side lenghts of ' + x + '. Use ^ before exponent. Example c squared is written: c^2'  );
+        this.setQuestion('' + 'Write an expression using an exponent that can be used to solve the area of a square with side lengths of ' + x + '. Use ^ before exponent. Example c squared is written: c^2'  );
 
         this.setAnswer('' + x + '^2',0);
 }

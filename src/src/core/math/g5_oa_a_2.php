@@ -37,8 +37,6 @@ Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet,475,300,260,195,225,50,640,90);
-		//this.parent(sheet,150,50,125,95,100,50,425,100,100,50,425,175);
- 		//this.parent(sheet,150,50,125,95, 100,50,425,100, 100,50,425,175, 100,50,325,100, 100,50,525,100);
 
                 this.mType = '5.oa.a.2_11';
                 this.mNameMachine = new NameMachine();
