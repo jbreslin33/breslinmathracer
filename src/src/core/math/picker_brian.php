@@ -12,8 +12,8 @@ initialize: function(sheet)
 
 getDev: function()
 {
-        return '6.ns.c.8_3';
-       //return '5.oa.b.3_1';
+        //return '6.ns.c.8_3';
+       return '6.ee.a.2.b_2';
 },
 
 getItem: function(id)
@@ -867,6 +867,16 @@ if (id == '6.rp.a.3.a_3')
   if (id == '6.ns.c.8_3')
         {
                 return new i_6_ns_c_8__3(this.mSheet);
+        }
+
+//6.ee.a.2.b
+  if (id == '6.ee.a.2.b_1')
+        {
+                return new i_6_ee_a_2_b__1(this.mSheet);
+        }
+  if (id == '6.ee.a.2.b_2')
+        {
+                return new i_6_ee_a_2_b__2(this.mSheet);
         }
 
 	return 0;	
