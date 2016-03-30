@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '6.ee.a.2_8';
+	return '6.ee.a.2.a_1';
 },
 
 getItem: function(id)
@@ -7147,66 +7147,38 @@ getItem: function(id)
                 return new i_6_ee_a_1__15(this.mSheet);
         }
 
-	//6.ee.a.2
-	if (id == '6.ee.a.2_1')
+	//6.ee.a.2.a
+	if (id == '6.ee.a.2.a_1')
         {
-                return new i_6_ee_a_2__1(this.mSheet);
+                return new i_6_ee_a_2_a__1(this.mSheet);
         }
-	if (id == '6.ee.a.2_2')
+	if (id == '6.ee.a.2.a_2')
         {
-                return new i_6_ee_a_2__2(this.mSheet);
+                return new i_6_ee_a_2_a__2(this.mSheet);
         }
-	if (id == '6.ee.a.2_3')
+	if (id == '6.ee.a.2.a_3')
         {
-                return new i_6_ee_a_2__3(this.mSheet);
+                return new i_6_ee_a_2_a__3(this.mSheet);
         }
-	if (id == '6.ee.a.2_4')
+	if (id == '6.ee.a.2.a_4')
         {
-                return new i_6_ee_a_2__4(this.mSheet);
+                return new i_6_ee_a_2_a__4(this.mSheet);
         }
-	if (id == '6.ee.a.2_5')
+	if (id == '6.ee.a.2.a_5')
         {
-                return new i_6_ee_a_2__5(this.mSheet);
+                return new i_6_ee_a_2_a__5(this.mSheet);
         }
-	if (id == '6.ee.a.2_6')
+	if (id == '6.ee.a.2.a_6')
         {
-                return new i_6_ee_a_2__6(this.mSheet);
+                return new i_6_ee_a_2_a__6(this.mSheet);
         }
-	if (id == '6.ee.a.2_7')
+	if (id == '6.ee.a.2.a_7')
         {
-                return new i_6_ee_a_2__7(this.mSheet);
+                return new i_6_ee_a_2_a__7(this.mSheet);
         }
-	if (id == '6.ee.a.2_8')
+	if (id == '6.ee.a.2.a_8')
         {
-                return new i_6_ee_a_2__8(this.mSheet);
-        }
-	if (id == '6.ee.a.2_9')
-        {
-                return new i_6_ee_a_2__9(this.mSheet);
-        }
-	if (id == '6.ee.a.2_10')
-        {
-                return new i_6_ee_a_2__10(this.mSheet);
-        }
-	if (id == '6.ee.a.2_11')
-        {
-                return new i_6_ee_a_2__11(this.mSheet);
-        }
-	if (id == '6.ee.a.2_12')
-        {
-                return new i_6_ee_a_2__12(this.mSheet);
-        }
-	if (id == '6.ee.a.2_13')
-        {
-                return new i_6_ee_a_2__13(this.mSheet);
-        }
-	if (id == '6.ee.a.2_14')
-        {
-                return new i_6_ee_a_2__14(this.mSheet);
-        }
-	if (id == '6.ee.a.2_15')
-        {
-                return new i_6_ee_a_2__15(this.mSheet);
+                return new i_6_ee_a_2_a__8(this.mSheet);
         }
 
 	return 0;	
