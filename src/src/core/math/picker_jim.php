@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '6.ee.a.2.c_1';
+	return '6.ee.a.2.c_2';
 },
 
 getItem: function(id)
@@ -7186,6 +7186,30 @@ getItem: function(id)
 	if (id == '6.ee.a.2.c_1')
         {
                 return new i_6_ee_a_2_c__1(this.mSheet);
+        }
+	if (id == '6.ee.a.2.c_2')
+        {
+                return new i_6_ee_a_2_c__2(this.mSheet);
+        }
+	if (id == '6.ee.a.2.c_3')
+        {
+                return new i_6_ee_a_2_c__3(this.mSheet);
+        }
+	if (id == '6.ee.a.2.c_4')
+        {
+                return new i_6_ee_a_2_c__4(this.mSheet);
+        }
+	if (id == '6.ee.a.2.c_5')
+        {
+                return new i_6_ee_a_2_c__5(this.mSheet);
+        }
+	if (id == '6.ee.a.2.c_6')
+        {
+                return new i_6_ee_a_2_c__6(this.mSheet);
+        }
+	if (id == '6.ee.a.2.c_7')
+        {
+                return new i_6_ee_a_2_c__7(this.mSheet);
         }
 
 	return 0;	
