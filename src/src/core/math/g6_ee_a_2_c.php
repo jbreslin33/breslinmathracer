@@ -9,7 +9,7 @@ Extends: TextItemFraction,
 initialize: function(sheet)
 {
 //        this.parent(sheet,300,50,175,75,100,50,425,100);
-// this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+ this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
         this.mType = '6.ee.a.2.c_3';
         this.ns = new NameSampler();
    
@@ -27,7 +27,7 @@ initialize: function(sheet)
 
         this.setQuestion('' + 'Evaluation the expression ' + x + ' + ' + fA.getString() + ' where ' + x + ' = ' + y);
 
-	this.setAnswer('' + fc.getString(),0);
+	this.setAnswer('' + fC.getString(),0);
 }
 });
 
