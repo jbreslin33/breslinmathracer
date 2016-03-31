@@ -9,13 +9,17 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2.c_1';
         this.ns = new NameSampler();
+   
+        var x = this.ns.mLowerLetterOne;
+	var y = Math.floor(Math.random()*8)+2;
+	var z = Math.floor(Math.random()*8)+2;
 
-        var n = this.ns.mLowerLetterOne;
-        var m = this.ns.mLowerLetterTwo;
+        this.setQuestion('' + 'Evaluation the expression ' + x + ' + ' + z + ' where ' + x + ' = ' + y);
 
-        this.setQuestion('' + 'Write an expression that represents ' + n + ' decreased by ' + m + '.');
+	var a = parseInt(y + z);
+	
 
-        this.setAnswer('' + n + '-' + m ,0);
+        this.setAnswer('' + a,0);
 }
 });
 
