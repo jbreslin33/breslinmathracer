@@ -4,6 +4,7 @@ var Fraction = new Class(
         {
 		this.mNumerator   = parseInt(n);
 		this.mDenominator = parseInt(d);
+/*
 		if (this.mNumerator < 0 && this.mDenominator < 0)
 		{
 			this.mNumerator = this.mNumerator * -1;
@@ -14,6 +15,7 @@ var Fraction = new Class(
 			this.mNumerator   = this.mNumerator * -1;
 			this.mDenominator = this.mDenominator * -1;
 		}
+*/
 
 		this.mWholeNumber = 0;
 		this.mMixedNumerator = 0;

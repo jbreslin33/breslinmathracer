@@ -21,9 +21,9 @@ initialize: function(sheet)
  	var fA = new Fraction(n,d,false);
  	var fB = new Fraction(y,1,false);
 
-	var fC = fA.subtract(fB);
+	var fC = fB.subtract(fA);
 
-        this.setQuestion('' + 'Evaluation the expression ' + x + ' - ' + fA.getString() + ' where ' + x + ' = ' + y);
+        this.setQuestion('' + 'Evaluation the expression ' + fB.getString() + ' - ' + x + ' where ' + x + ' = ' + fA.getString());
 
 	this.setAnswer('' + fC.getOneLineString(),0);
 }
