@@ -4,12 +4,10 @@ insert into item_types(id,progression,core_standards_id,description) values ('6.
 */
 var i_6_ee_a_2_c__3 = new Class(
 {
-Extends: TextItemFraction,
-//Extends: TextItem,
+Extends: TextItem,
 initialize: function(sheet)
 {
-//        this.parent(sheet,300,50,175,75,100,50,425,100);
- this.parent(sheet,300,50,175,95,100,50,425,100,100,50,425,175);
+        this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2.c_3';
         this.ns = new NameSampler();
    
@@ -27,7 +25,7 @@ initialize: function(sheet)
 
         this.setQuestion('' + 'Evaluation the expression ' + x + ' + ' + fA.getString() + ' where ' + x + ' = ' + y);
 
-	this.setAnswer('' + fC.getString(),0);
+	this.setAnswer('' + fC.getOneLineString(),0);
 }
 });
 

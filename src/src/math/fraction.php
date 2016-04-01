@@ -49,6 +49,19 @@ var Fraction = new Class(
 			return '<sup>' + this.mNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
 		}
 	},
+	
+	getOneLineString: function()
+	{
+		this.reduce();
+		if (this.mDenominator == 1)
+		{
+			return '' + this.mNumerator;	
+		}	
+		else
+		{
+			return '' + this.mNumerator + '/' + this.mDenominator;	
+		}
+	},
 
         getMixedNumber: function()
         {
