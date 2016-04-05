@@ -7085,6 +7085,25 @@ getItem: function(id)
                 return new i_6_rp_a_2__10(this.mSheet);
         }
 
+	//6.ns.b.4
+	if (id == '6.ns.b.4_2')
+        {
+                return new i_6_ns_b_4__2(this.mSheet);
+        }
+	if (id == '6.ns.b.4_3')
+        {
+                return new i_6_ns_b_4__3(this.mSheet);
+        }
+	if (id == '6.ns.b.4_4')
+        {
+                return new i_6_ns_b_4__4(this.mSheet);
+        }
+	if (id == '6.ns.b.4_5')
+        {
+                return new i_6_ns_b_4__5(this.mSheet);
+        }
+		
+
 	//6.ee.a.1	
 	if (id == '6.ee.a.1_1')
         {
