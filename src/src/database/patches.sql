@@ -4,3 +4,4 @@ update item_types set active_code = 2 where id = '6.rp.a.3.a_3';
 update item_types set active_code = 2 where id = '6.ns.c.6.a_1';
 update item_types set active_code = 2 where id = '6.ns.c.6.a_2';
 update item_types set active_code = 2 where id = '6.ns.c.6.a_3';
+update item_types set active_code = 2 where id = '6.ns.c.7.a_3';
