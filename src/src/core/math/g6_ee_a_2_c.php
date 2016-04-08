@@ -12,8 +12,7 @@ initialize: function(sheet)
         this.ns = new NameSampler();
    
         var x = this.ns.mLowerLetterOne;
-	var y = Math.floor(Math.random()*8)+2;
-	var z = Math.floor(Math.random()*8)+2;
+	var y = Math.floor(Math.random()*8)+2; //numerator
 	
 	var n = Math.floor(Math.random()*8)+2;
 	var d = Math.floor(Math.random()*8)+2;
