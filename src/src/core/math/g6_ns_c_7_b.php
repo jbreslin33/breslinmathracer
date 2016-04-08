@@ -8,6 +8,8 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '6.ns.c.7.b_1';
+                this.mStripCommas = false;
+                this.mChopWhiteSpace = false;
 
 // graph coords
 var startX = 10;
