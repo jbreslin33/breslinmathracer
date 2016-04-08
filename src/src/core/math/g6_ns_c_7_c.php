@@ -8,6 +8,8 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '6.ns.c.7.c_4';
+        	this.mStripCommas = false;
+                this.mChopWhiteSpace = false;
 
 // graph coords
 var startX = 10;
@@ -89,6 +91,8 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '6.ns.c.7.c_3';
+        	this.mStripCommas = false;
+                this.mChopWhiteSpace = false;
 
                 //BUTTON A
                 this.mButtonA.setPosition(380,120);
@@ -145,6 +149,9 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '6.ns.c.7.c_2';
+  		this.mStripCommas = false;
+                this.mChopWhiteSpace = false;
+
 
                 //BUTTON A
                 this.mButtonA.setPosition(380,120);
