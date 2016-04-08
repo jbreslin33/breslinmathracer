@@ -9,6 +9,8 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '6.ns.c.7.a_4';
+	 	this.mStripCommas = false;
+ 		this.mChopWhiteSpace = false;
 
                 //BUTTON A
                 this.mButtonA.setPosition(380,120);
@@ -64,6 +66,9 @@ Extends: ThreeButtonItem,
         {
                 this.parent(sheet);
                 this.mType = '6.ns.c.7.a_3';
+		this.mStripCommas = false;
+ 		this.mChopWhiteSpace = false;
+
 
                 //BUTTON A
                 this.mButtonA.setPosition(380,120);
