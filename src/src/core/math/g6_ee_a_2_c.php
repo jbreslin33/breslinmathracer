@@ -11,19 +11,14 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var x = this.ns.mLowerLetterOne;
-        var y = Math.floor(Math.random()*8)+2; //numerator
-
         var n = Math.floor(Math.random()*8)+2;
         var d = Math.floor(Math.random()*8)+2;
 
-        var fA = new Fraction(n,d,false);
-        var fB = new Fraction(y,1,false);
+        var f = new Fraction(n,d,false);
 
-        var fC = fB.subtract(fA);
+        this.setQuestion('' + 'Evaluation the expression <sup>' + x + '</sup>&frasl;<sub>' + d + ' where ' + x + ' = ' + n);
 
-        this.setQuestion('' + 'Evaluation the expression ' + fB.getString() + ' - ' + x + ' where ' + x + ' = ' + fA.getString());
-
-        this.setAnswer('' + fC.getOneLineString(),0);
+        this.setAnswer('' + f.getOneLineString(),0);
 }
 });
 
