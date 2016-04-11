@@ -1,3 +1,29 @@
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_6',6.2706,'6.ee.a.2.c','');
+*/
+var i_6_ee_a_2_c__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.2.c_6';
+        this.ns = new NameSampler();
+
+        var n = Math.floor(Math.random()*8)+2;
+
+        var x = this.ns.mLowerLetterOne;
+        var d = Math.floor(Math.random()*8)+2;
+
+        var f = new Fraction(n,d,false);
+
+        this.setQuestion('' + 'Evaluation the expression <sup>' + n + '</sup>&frasl;<sub>' + x + ' where ' + x + ' = ' + d);
+
+        this.setAnswer('' + f.getOneLineString(),0);
+}
+});
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_5',6.2705,'6.ee.a.2.c','');
 */
