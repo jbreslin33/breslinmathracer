@@ -7201,7 +7201,12 @@ getItem: function(id)
         {
                 return new i_6_ee_a_2_a__8(this.mSheet);
         }
-	
+ 
+	//6.ee.a.2.b 
+	if (id == '6.ee.a.2.b_9')
+        {
+                return new i_6_ee_a_2_b__9(this.mSheet);
+        }
 
 	//6.ee.a.2.c
 	if (id == '6.ee.a.2.c_1')

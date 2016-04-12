@@ -65,7 +65,7 @@ pickItem: function()
                 	}
 		}
 	}
-	//APPLICATION.log('type:' + APPLICATION.mQuestionTypeCurrent); 
+	APPLICATION.log('type:' + APPLICATION.mQuestionTypeCurrent); 
 },
 
 createItem: function()
