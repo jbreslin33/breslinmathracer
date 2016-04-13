@@ -14,7 +14,7 @@ getDev: function()
 {
 	//return '6.ee.a.2.c_6'; 
 	//return '6.ns.c.6.c_2'; 
-	return '6.ee.a.2.b_1'; 
+	return '6.ee.a.3_1'; 
 },
 
 getItem: function(id)
@@ -7237,6 +7237,13 @@ getItem: function(id)
         {
                 return new i_6_ee_a_2_c__7(this.mSheet);
         }
+
+	//6.ee.a.3 
+	if (id == '6.ee.a.3_1')
+        {
+                return new i_6_ee_a_3__1(this.mSheet);
+        }
+
 
 	return 0;	
 }
