@@ -13,7 +13,7 @@ initialize: function(sheet)
 getDev: function()
 {
         //return '6.ns.c.8_3';
-       return '6.ee.a.5_1';
+       return '6.ee.a.5_4';
 },
 
 getItem: function(id)
@@ -931,6 +931,18 @@ if (id == '6.rp.a.3.a_3')
   if (id == '6.ee.a.5_1')
         {
                 return new i_6_ee_a_5__1(this.mSheet);
+        }
+  if (id == '6.ee.a.5_2')
+        {
+                return new i_6_ee_a_5__2(this.mSheet);
+        }
+  if (id == '6.ee.a.5_3')
+        {
+                return new i_6_ee_a_5__3(this.mSheet);
+        }
+  if (id == '6.ee.a.5_4')
+        {
+                return new i_6_ee_a_5__4(this.mSheet);
         }
 
 	return 0;	
