@@ -11,16 +11,24 @@ initialize: function(sheet)
         this.mType = '6.ee.a.2.c_7';
         this.ns = new NameSampler();
 
-        var n = Math.floor(Math.random()*8)+2;
+	//fa
+        var na = Math.floor(Math.random()*8)+2;
+        var da = Math.floor(Math.random()*8)+2;
+        var fa = new Fraction(na,da,false);
 
+	//fb
         var x = this.ns.mLowerLetterOne;
-        var d = Math.floor(Math.random()*8)+2;
+        var nb = Math.floor(Math.random()*8)+2;
+        var fb = new Fraction(nb,1,false);
 
-        var f = new Fraction(n,d,false);
+	//fc
+        var fc = fa.multiply(fb);
 
-        this.setQuestion('' + 'Evaluation the expression <sup>' + n + '</sup>&frasl;<sub>' + x + ' where ' + x + ' = ' + d);
 
-        this.setAnswer('' + f.getOneLineString(),0);
+        //this.setQuestion('' + 'Evaluation the expression <sup>' + n + '</sup>&frasl;<sub>' + x + ' where ' + x + ' = ' + d);
+        this.setQuestion('' + 'Evaluation the expression ' + fa.getString() + ' ' + x + ' where ' + x + ' = ' + nb);
+
+        this.setAnswer('' + fc.getOneLineString(),0);
 }
 });
 
