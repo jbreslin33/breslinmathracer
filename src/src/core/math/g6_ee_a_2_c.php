@@ -22,7 +22,7 @@ initialize: function(sheet)
 
         this.setQuestion('' + c + '/' + a + '*' + d + '+' + e + '^2' + '-' + f + '*' + g);
 
-	var x = 13; 
+	var x = parseInt(b * d + Math.pow(e,2) - f * g); 
 
         this.setAnswer('' + x,0);
 }
