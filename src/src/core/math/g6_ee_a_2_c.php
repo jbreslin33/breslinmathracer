@@ -13,8 +13,14 @@ initialize: function(sheet)
         var a = Math.floor(Math.random()*8)+2;
         var b = Math.floor(Math.random()*8)+2;
         var c = parseInt(a*b);
+        
+	var d = Math.floor(Math.random()*8)+2;
+	
+	var e = Math.floor(Math.random()*8)+2;
+	var f = Math.floor(Math.random()*8)+2;
+	var g = Math.floor(Math.random()*8)+2;
 
-        this.setQuestion('' + c + '/' + a);
+        this.setQuestion('' + c + '/' + a + '*' + d + '+' + e + '^2' + '-' + f + '*' + g);
 
 	var x = 13; 
 
