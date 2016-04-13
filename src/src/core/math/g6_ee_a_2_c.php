@@ -29,6 +29,35 @@ initialize: function(sheet)
 });
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_8',6.2708,'6.ee.a.2.c','');
+*/
+var i_6_ee_a_2_c__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.2.c_8';
+
+        var a = Math.floor(Math.random()*8)+2;
+        var b = Math.floor(Math.random()*8)+2;
+        var c = parseInt(a*b);
+        
+	var d = Math.floor(Math.random()*8)+2;
+	
+	var e = Math.floor(Math.random()*8)+2;
+	var f = Math.floor(Math.random()*8)+2;
+	var g = Math.floor(Math.random()*8)+2;
+
+        this.setQuestion('' + c + '/' + a + '*' + d + '+' + e + '^2' + '-' + f + '*' + g);
+
+	var x = parseInt(b * d + Math.pow(e,2) - f * g); 
+
+        this.setAnswer('' + x,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_7',6.2707,'6.ee.a.2.c','');
 */
 var i_6_ee_a_2_c__7 = new Class(
