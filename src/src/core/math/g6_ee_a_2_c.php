@@ -24,9 +24,8 @@ initialize: function(sheet)
 	//fc
         var fc = fa.multiply(fb);
 
-
-        //this.setQuestion('' + 'Evaluation the expression <sup>' + n + '</sup>&frasl;<sub>' + x + ' where ' + x + ' = ' + d);
-        this.setQuestion('' + 'Evaluation the expression ' + fa.getString() + ' ' + x + ' where ' + x + ' = ' + nb);
+        this.setQuestion('' + 'Evaluation the expression <sup>' + fa.mNumerator + x + '</sup>&frasl;<sub>' + fa.mDenominator + '</sub> where ' + x + ' = ' + nb);
+        //this.setQuestion('' + 'Evaluation the expression ' + fa.getString() + ' ' + x + ' where ' + x + ' = ' + nb);
 
         this.setAnswer('' + fc.getOneLineString(),0);
 }
