@@ -114,3 +114,125 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 }
 });
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_4',6.3004,'6.ee.a.3','');
+*/
+var i_6_ee_a_5__4 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.5_4';
+
+        var a = Math.floor(Math.random()*11+2);
+        var b = Math.floor(Math.random()*9+2);
+        var c = Math.floor(Math.random()*9+11);
+
+        c = a * b;
+
+        this.setQuestion('Using n as a variable, write an equation that matches this description:</br></br> The sum of 6 and a number equals 22');
+              
+        this.setAnswer('n+6=22',0);
+        this.setAnswer('22=n+6',1);
+        this.setAnswer('6+n=22',2);
+        this.setAnswer('22=6+n',3);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_5',6.3005,'6.ee.a.3','');
+*/
+var i_6_ee_a_5__5 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.5_5';
+
+        var a = Math.floor(Math.random()*11+2);
+        var b = Math.floor(Math.random()*9+2);
+        var c = Math.floor(Math.random()*9+11);
+
+        c = a * b;
+
+        this.setQuestion('Using n as a variable, write an equation that matches this description:</br></br> A number subtracted from 18 equals 4');
+    
+        this.setAnswer('18-n=4',0);
+        this.setAnswer('4=18-n',1);       
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_6',6.3006,'6.ee.a.3','');
+*/
+var i_6_ee_a_5__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.5_6';
+
+        var a = Math.floor(Math.random()*11+2);
+        var b = Math.floor(Math.random()*9+2);
+        var c = Math.floor(Math.random()*9+11);
+
+        c = a * b;
+
+        this.setQuestion('Using n as a variable, write an equation that matches this description:</br></br> The product of 7 and a number equals 21');
+    
+        this.setAnswer('7xn=21',0);
+        this.setAnswer('nx7=21',1);
+        this.setAnswer('7n=21',2);
+
+        this.setAnswer('21=7xn',3);
+        this.setAnswer('21=nx7',4);
+        this.setAnswer('21=7n',5);            
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_7',6.3007,'6.ee.a.3','');
+*/
+var i_6_ee_a_5__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.5_7';
+
+        var a = Math.floor(Math.random()*11+2);
+        var b = Math.floor(Math.random()*9+2);
+        var c = Math.floor(Math.random()*9+11);
+
+        c = a * b;
+
+        this.setQuestion('Using n as a variable, write an equation that matches this description:</br></br> 16 divided by a number equals 4');
+    
+        this.setAnswer('16/n=4',0);
+        this.setAnswer('4=16/n',1);
+       
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
