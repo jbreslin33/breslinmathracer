@@ -1,13 +1,13 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_1',6.3001,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_1',6.3001,'6.ee.b.5','');
 */
-var i_6_ee_a_5__1 = new Class(
+var i_6_ee_b_5__1 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_1';
+        this.mType = '6.ee.b.5_1';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -27,15 +27,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_2',6.3002,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_2',6.3002,'6.ee.b.5','');
 */
-var i_6_ee_a_5__2 = new Class(
+var i_6_ee_b_5__2 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_2';
+        this.mType = '6.ee.b.5_2';
 
         //var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -57,15 +57,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_3',6.3003,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_3',6.3003,'6.ee.b.5','');
 */
-var i_6_ee_a_5__3 = new Class(
+var i_6_ee_b_5__3 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_3';
+        this.mType = '6.ee.b.5_3';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -87,15 +87,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_4',6.3004,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_4',6.3004,'6.ee.b.5','');
 */
-var i_6_ee_a_5__4 = new Class(
+var i_6_ee_b_5__4 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_4';
+        this.mType = '6.ee.b.5_4';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -117,15 +117,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_4',6.3004,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_4',6.3004,'6.ee.b.5','');
 */
-var i_6_ee_a_5__4 = new Class(
+var i_6_ee_b_5__4 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_4';
+        this.mType = '6.ee.b.5_4';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -148,15 +148,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_5',6.3005,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_5',6.3005,'6.ee.b.5','');
 */
-var i_6_ee_a_5__5 = new Class(
+var i_6_ee_b_5__5 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_5';
+        this.mType = '6.ee.b.5_5';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -176,15 +176,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_6',6.3006,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_6',6.3006,'6.ee.b.5','');
 */
-var i_6_ee_a_5__6 = new Class(
+var i_6_ee_b_5__6 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_6';
+        this.mType = '6.ee.b.5_6';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
@@ -210,15 +210,15 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.5_7',6.3007,'6.ee.a.3','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_7',6.3007,'6.ee.b.5','');
 */
-var i_6_ee_a_5__7 = new Class(
+var i_6_ee_b_5__7 = new Class(
 {
 Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.a.5_7';
+        this.mType = '6.ee.b.5_7';
 
         var a = Math.floor(Math.random()*11+2);
         var b = Math.floor(Math.random()*9+2);
