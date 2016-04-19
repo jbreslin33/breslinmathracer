@@ -16,3 +16,9 @@ update item_types set active_code = 2 where id = '6.ee.a.2_b_7';
 update item_types set active_code = 2 where id = '6.ee.a.2_b_8';
 update item_types set active_code = 2 where id = '6.ee.a.2_b_9';
 update item_types set active_code = 2 where id = '6.ee.a.2_b_10';
+
+update item_types set active_code = 2 where id = '6.ee.a.6_1';
+update item_types set active_code = 2 where id = '6.ee.a.6_2';
+
+update item_types set active_code = 2 where id = '6.ee.a.5_7';
+update item_types set active_code = 2 where id = '6.ee.a.5_5';

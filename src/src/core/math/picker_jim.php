@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '6.ee.a.2.c_9'; 
+	return '6.ee.a.2.c_9';
 },
 
 getItem: function(id)
@@ -7270,6 +7270,15 @@ getItem: function(id)
                 return new i_6_ee_a_3__1(this.mSheet);
         }
 
+	//6.ee.b.6	
+	if (id == '6.ee.b.6_1')
+        {
+                return new i_6_ee_b_6__1(this.mSheet);
+        }
+  	if (id == '6.ee.b.6_2')
+        {
+                return new i_6_ee_b_6__2(this.mSheet);
+        }
 
 	return 0;	
 }
