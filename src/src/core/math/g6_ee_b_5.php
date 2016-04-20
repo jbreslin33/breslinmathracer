@@ -116,35 +116,6 @@ this.mUserAnswerLabel.setPosition(230,300);
 });
 
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_4',6.3004,'6.ee.b.5','');
-*/
-var i_6_ee_b_5__4 = new Class(
-{
-Extends: TextItem,
-initialize: function(sheet)
-{
-        this.parent(sheet,300,50,175,75,100,50,425,100);
-        this.mType = '6.ee.b.5_4';
-
-        var a = Math.floor(Math.random()*11+2);
-        var b = Math.floor(Math.random()*9+2);
-        var c = Math.floor(Math.random()*9+11);
-
-        c = a * b;
-
-        this.setQuestion('Using n as a variable, write an equation that matches this description:</br></br> The sum of 6 and a number equals 22');
-              
-        this.setAnswer('n+6=22',0);
-        this.setAnswer('22=n+6',1);
-        this.setAnswer('6+n=22',2);
-        this.setAnswer('22=6+n',3);
-
-this.mCorrectAnswerLabel.setPosition(530,300);
-this.mUserAnswerLabel.setPosition(230,300);
-
-}
-});
 
 
 /*
@@ -231,6 +202,36 @@ initialize: function(sheet)
         this.setAnswer('16/n=4',0);
         this.setAnswer('4=16/n',1);
        
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.5_8',6.3008,'6.ee.b.5','');
+*/
+var i_6_ee_b_5__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.5_8';
+
+        var a = Math.floor(Math.random()*11+2);
+        var b = Math.floor(Math.random()*9+2);
+        var c = Math.floor(Math.random()*9+11);
+
+        c = a * b;
+
+        this.setQuestion('Using n as a variable, write an equation that matches this description:</br></br> The sum of 6 and a number equals 22');
+              
+        this.setAnswer('n+6=22',0);
+        this.setAnswer('22=n+6',1);
+        this.setAnswer('6+n=22',2);
+        this.setAnswer('22=6+n',3);
+
 this.mCorrectAnswerLabel.setPosition(530,300);
 this.mUserAnswerLabel.setPosition(230,300);
 

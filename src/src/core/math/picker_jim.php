@@ -7269,6 +7269,40 @@ getItem: function(id)
         {
                 return new i_6_ee_a_3__1(this.mSheet);
         }
+ 	
+	//6.ee.b.5_1	
+	if (id == '6.ee.b.5_1')
+        {
+                return new i_6_ee_b_5__1(this.mSheet);
+        }
+	if (id == '6.ee.b.5_2')
+        {
+                return new i_6_ee_b_5__2(this.mSheet);
+        }
+	if (id == '6.ee.b.5_3')
+        {
+                return new i_6_ee_b_5__3(this.mSheet);
+        }
+	if (id == '6.ee.b.5_4')
+        {
+                return new i_6_ee_b_5__4(this.mSheet);
+        }
+	if (id == '6.ee.b.5_5')
+        {
+                return new i_6_ee_b_5__5(this.mSheet);
+        }
+	if (id == '6.ee.b.5_6')
+        {
+                return new i_6_ee_b_5__6(this.mSheet);
+        }
+	if (id == '6.ee.b.5_7')
+        {
+                return new i_6_ee_b_5__7(this.mSheet);
+        }
+	if (id == '6.ee.b.5_8')
+        {
+                return new i_6_ee_b_5__8(this.mSheet);
+        }
 
 	//6.ee.b.6	
 	if (id == '6.ee.b.6_1')
@@ -7279,6 +7313,8 @@ getItem: function(id)
         {
                 return new i_6_ee_b_6__2(this.mSheet);
         }
+
+
 
 	return 0;	
 }
