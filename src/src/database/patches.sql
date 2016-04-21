@@ -20,5 +20,12 @@ update item_types set active_code = 2 where id = '6.ee.a.2_b_10';
 update item_types set active_code = 2 where id = '6.ee.a.6_1';
 update item_types set active_code = 2 where id = '6.ee.a.6_2';
 
-update item_types set active_code = 2 where id = '6.ee.a.5_7';
+
+update item_types set active_code = 2 where id = '6.ee.a.5_1';
+update item_types set active_code = 2 where id = '6.ee.a.5_2';
+update item_types set active_code = 2 where id = '6.ee.a.5_3';
+update item_types set active_code = 2 where id = '6.ee.a.5_4';
 update item_types set active_code = 2 where id = '6.ee.a.5_5';
+update item_types set active_code = 2 where id = '6.ee.a.5_6';
+update item_types set active_code = 2 where id = '6.ee.a.5_7';
+update item_types set active_code = 2 where id = '6.ee.a.5_8';
