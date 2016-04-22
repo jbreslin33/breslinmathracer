@@ -1,6 +1,39 @@
 
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_13',6.2713,'6.ee.a.2.c','');
+*/
+var i_6_ee_a_2_c__13 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.2.c_13';
+ 
+	var a = 0;
+	var b = 3;
+        var c = 0;
+        
+	var f = 2;
+	
+        while (b%2 != 0)
+        {
+		a = Math.floor(Math.random()*8)+2;
+		b = Math.floor(Math.random()*8)+2;
+                c = parseInt(a*b);
+        }
+
+
+        this.setQuestion('' + c + '/' + a + '/' + f);
+
+	var x = parseInt(b / f); 
+
+        this.setAnswer('' + x,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_12',6.2712,'6.ee.a.2.c','');
 */
 var i_6_ee_a_2_c__12 = new Class(
