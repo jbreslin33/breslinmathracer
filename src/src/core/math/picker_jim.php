@@ -7313,8 +7313,12 @@ getItem: function(id)
         {
                 return new i_6_ee_b_6__2(this.mSheet);
         }
-
-
+	
+	//6.ee.b.7	
+	if (id == '6.ee.b.7_1')
+        {
+                return new i_6_ee_b_7__1(this.mSheet);
+        }
 
 	return 0;	
 }
