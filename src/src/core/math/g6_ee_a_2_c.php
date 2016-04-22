@@ -11,18 +11,18 @@ initialize: function(sheet)
         this.mType = '6.ee.a.2.c_9';
 
         var a = Math.floor(Math.random()*8)+2;
+
         var b = Math.floor(Math.random()*8)+2;
-        var c = parseInt(a*b);
         
+	var c = Math.floor(Math.random()*8)+2; //answer to division
 	var d = Math.floor(Math.random()*8)+2;
+	var e = parseInt(c*d);
 	
-	var e = Math.floor(Math.random()*8)+2;
 	var f = Math.floor(Math.random()*8)+2;
-	var g = Math.floor(Math.random()*8)+2;
 
-        this.setQuestion('' + c + '/' + a + '*' + d + '+' + e + '^2' + '-' + f + '*' + g);
+        this.setQuestion('' + a + '^2' + '*' + b + '+' + e + '/' + d + '-' + f);
 
-	var x = parseInt(b * d + Math.pow(e,2) - f * g); 
+	var x = parseInt(Math.pow(a,2) * b + c - f); 
 
         this.setAnswer('' + x,0);
 }
