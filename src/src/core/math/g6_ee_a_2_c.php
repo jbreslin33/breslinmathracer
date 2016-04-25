@@ -12,14 +12,20 @@ initialize: function(sheet)
  
 	var a = Math.floor(Math.random()*8)+2;
 	var b = Math.floor(Math.random()*8)+2;
-	var c = parseInt(a*b);
+	var t1 = parseInt(a*b);
+
+	var c = Math.floor(Math.random()*8)+2;
 	var d = Math.floor(Math.random()*8)+2;
-	var e = Math.floor(Math.random()*8)+2;
-	var f = parseInt(d*e);
+	var e = parseInt(c*d);
+	var f = Math.floor(Math.random()*8)+2;
+	var t2 = parseInt(c * f); 
+	
+	var g = Math.floor(Math.random()*8)+2;
+	var t3 = parseInt(Math.pow(g,2));
 
-        this.setQuestion('' + f + '-' + c + '/' + b);
+        this.setQuestion('' + a + '*' + b + '-' + e + '/' + d + '*' + f + '+' + g + '^2');
 
-	var x = parseInt(f - a); 
+	var x = parseInt(t1 - t2 + t3); 
 
         this.setAnswer('' + x,0);
 }
