@@ -80,7 +80,12 @@ var Fraction = new Class(
 			{
 				this.mWholeNumber = parseInt(this.mNumerator / this.mDenominator); 
 				this.mMixedNumerator = parseInt(this.mNumerator % this.mDenominator); 
-                        	return '' + this.mWholeNumber + '<sup>' + this.mMixedNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
+
+        if(this.mWholeNumber == '0')
+                        	return '' + '<sup>' + this.mMixedNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
+       
+        else
+                          return '' + this.mWholeNumber + '<sup>' + this.mMixedNumerator + '</sup>&frasl;<sub>' + this.mDenominator + '</sub>';
 			}
                 }
         },
