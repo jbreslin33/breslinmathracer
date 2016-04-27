@@ -16,19 +16,16 @@ initialize: function(sheet)
 		
 	var c = Math.floor(Math.random()*8)+2;
 	var d = parseInt(Math.pow(c,2));
-	var e = Math.floor(Math.random()*8)+2;
-	var t2 = parseInt(d*e);
+	var t2 = parseInt(d);
 		
 	var f = Math.floor(Math.random()*8)+2;
 	var g = Math.floor(Math.random()*8)+2;
 	var h = parseInt(f*g);
-	var t3 = parseInt(f); 
-	
 	var i = Math.floor(Math.random()*8)+2;
-	var t4 = parseInt(i);
-
-        this.setQuestion('' + t1 + '-' + c + '^2*' + e + '+' + h + '/' + g + '-' + i);
-	var x = parseInt(t1 - t2 + t3 - t4); 
+	var t3 = parseInt(f*i); 
+	
+        this.setQuestion('' + t1 + '-' + c + '^2-' + h + '/' + g + '*' + i);
+	var x = parseInt(t1 - t2 - t3); 
         this.setAnswer('' + x,0);
 }
 });
