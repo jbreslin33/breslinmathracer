@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '6.ee.a.2.c_17';
+	return '6.ee.a.2.c_18';
 },
 
 getItem: function(id)
