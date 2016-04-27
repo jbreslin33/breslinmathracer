@@ -1,5 +1,39 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_17',6.2717,'6.ee.a.2.c','');
+*/
+var i_6_ee_a_2_c__17 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.2.c_17';
+
+	var a = Math.floor(Math.random()*8)+2;
+	var b = Math.floor(Math.random()*8)+2;
+	var t1 = parseInt(a*b);
+		
+	var c = Math.floor(Math.random()*8)+2;
+	var d = parseInt(Math.pow(c,2));
+	var e = Math.floor(Math.random()*8)+2;
+	var t2 = parseInt(d*e);
+		
+	var f = Math.floor(Math.random()*8)+2;
+	var g = Math.floor(Math.random()*8)+2;
+	var h = parseInt(f*g);
+	var t3 = parseInt(f); 
+	
+	var i = Math.floor(Math.random()*8)+2;
+	var t4 = parseInt(i);
+
+        this.setQuestion('' + t1 + '-' + c + '^2*' + e + '+' + h + '/' + g + '-' + i);
+	var x = parseInt(t1 - t2 + t3 - t4); 
+        this.setAnswer('' + x,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_16',6.2716,'6.ee.a.2.c','');
 */
 var i_6_ee_a_2_c__16 = new Class(
@@ -10,31 +44,26 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2.c_16';
 
-	var x = -1;
-
-	while (x < 1)
-	{
-		var a = Math.floor(Math.random()*8)+2;
-		var b = Math.floor(Math.random()*8)+2;
-		var t1 = parseInt(a*b);
-		
-		var c = Math.floor(Math.random()*8)+2;
-		var d = parseInt(Math.pow(c,2));
-		var e = Math.floor(Math.random()*8)+2;
-		var t2 = parseInt(d*e);
-		
-
-		var f = Math.floor(Math.random()*8)+2;
-		var g = Math.floor(Math.random()*8)+2;
-		var h = parseInt(f*g);
-		var t3 = parseInt(f); 
+	var a = Math.floor(Math.random()*8)+2;
+	var b = Math.floor(Math.random()*8)+2;
+	var t1 = parseInt(a*b);
 	
-		var i = Math.floor(Math.random()*8)+2;
-		var t4 = parseInt(i);
+	var c = Math.floor(Math.random()*8)+2;
+	var d = parseInt(Math.pow(c,2));
+	var e = Math.floor(Math.random()*8)+2;
+	var t2 = parseInt(d*e);
+		
 
-        	this.setQuestion('' + t1 + '-' + c + '^2*' + e + '+' + h + '/' + g + '-' + i);
-		x = parseInt(t1 - t2 + t3 - t4); 
-	}
+	var f = Math.floor(Math.random()*8)+2;
+	var g = Math.floor(Math.random()*8)+2;
+	var h = parseInt(f*g);
+	var t3 = parseInt(f); 
+
+	var i = Math.floor(Math.random()*8)+2;
+	var t4 = parseInt(i);
+
+       	this.setQuestion('' + t1 + '-' + c + '^2*' + e + '+' + h + '/' + g + '-' + i);
+	var x = parseInt(t1 - t2 + t3 - t4); 
         this.setAnswer('' + x,0);
 }
 });
@@ -50,25 +79,20 @@ initialize: function(sheet)
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2.c_15';
 
-	var x = -1;
+	var a = Math.floor(Math.random()*8)+2;
+	var b = Math.floor(Math.random()*8)+2;
+	var t1 = parseInt(a*b);
 
-	while (x < 1)
-	{
-		var a = Math.floor(Math.random()*8)+2;
-		var b = Math.floor(Math.random()*8)+2;
-		var t1 = parseInt(a*b);
-
-		var c = Math.floor(Math.random()*8)+2;
-		var d = Math.floor(Math.random()*8)+2;
-		var e = parseInt(c*d);
-		var f = Math.floor(Math.random()*8)+2;
-		var t2 = parseInt(c * f); 
+	var c = Math.floor(Math.random()*8)+2;
+	var d = Math.floor(Math.random()*8)+2;
+	var e = parseInt(c*d);
+	var f = Math.floor(Math.random()*8)+2;
+	var t2 = parseInt(c * f); 
 	
-		var g = Math.floor(Math.random()*8)+2;
-		var t3 = parseInt(Math.pow(g,2));
-        	this.setQuestion('' + a + '*' + b + '-' + e + '/' + d + '*' + f + '+' + g + '^2');
-		x = parseInt(t1 - t2 + t3); 
-	}
+	var g = Math.floor(Math.random()*8)+2;
+	var t3 = parseInt(Math.pow(g,2));
+        this.setQuestion('' + a + '*' + b + '-' + e + '/' + d + '*' + f + '+' + g + '^2');
+	var x = parseInt(t1 - t2 + t3); 
         this.setAnswer('' + x,0);
 }
 });
