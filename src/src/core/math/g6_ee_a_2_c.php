@@ -9,23 +9,41 @@ initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2.c_18';
-
-	var a = Math.floor(Math.random()*8)+2;
-	var b = Math.floor(Math.random()*8)+2;
-	var t1 = parseInt(a*b);
-		
-	var c = Math.floor(Math.random()*8)+2;
-	var d = parseInt(Math.pow(c,2));
-	var t2 = parseInt(d);
-		
-	var f = Math.floor(Math.random()*8)+2;
-	var g = Math.floor(Math.random()*8)+2;
-	var h = parseInt(f*g);
-	var i = Math.floor(Math.random()*8)+2;
-	var t3 = parseInt(f*i); 
 	
-        this.setQuestion('' + t1 + '-' + c + '^2-' + h + '/' + g + '*' + i);
-	var x = parseInt(t1 - t2 - t3); 
+	var a = Math.floor(Math.random()*8)+2;
+	var b = parseInt(Math.pow(a,2));
+	var t1 = parseInt(b);
+
+	var c = 0;
+	var d = 3;
+	var e = 2;
+	var t2 = 1;
+	while (d%e != 0)
+	{	
+		c = Math.floor(Math.random()*8)+2;
+		d = parseInt(Math.pow(c,2));
+		e = Math.floor(Math.random()*8)+2;
+		t2 = parseInt(d/e);
+	}
+
+	var f = 0;
+	var g = 0;
+	var h = 0;
+	var i = 3;
+	var j = 2;
+	var t3 = 0;
+	while (i%j != 0)
+	{
+		f = Math.floor(Math.random()*8)+2;
+		g = Math.floor(Math.random()*8)+2;
+		h = parseInt(Math.pow(g,2)); //h exponents
+		i = parseInt(f*h); //mult
+		j = Math.floor(Math.random()*8)+2;
+		t3 = parseInt(i/j);
+	}
+
+        this.setQuestion('' + a + '^2-' + c + '^2/' + e + '+' + f + '*' + g + '^2/' + j);
+	var x = parseInt(t1 - t2 + t3); 
         this.setAnswer('' + x,0);
 }
 });
