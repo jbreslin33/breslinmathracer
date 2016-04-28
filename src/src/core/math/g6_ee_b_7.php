@@ -335,3 +335,88 @@ showCorrectAnswer: function()
 
 
 
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_7',6.3307,'6.ee.b.7','');
+*/
+var i_6_ee_b_7__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_7';
+
+        var a = Math.floor(Math.random()*11+2);
+        var b = Math.floor(Math.random()*9+2);
+        var c = a * b;
+
+        this.setQuestion('In order to get the variable to be on one side of the equation by itself, you need to divide ___ from both sides. </br></br>' + a + 'b' + ' = ' + c);       
+       
+        this.setAnswer('' + a,0);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_8',6.3308,'6.ee.b.8','');
+*/
+var i_6_ee_b_7__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_8';
+
+        this.mChopWhiteSpace = false;
+
+        var fractionA = new Fraction(1,2,false);
+
+        var a = Math.floor(Math.random()*8+2);
+        var b = Math.floor(Math.random()*8+2);
+        var c = a * 2 + 1;
+
+        this.setQuestion('In order to get the variable to be on one side of the equation by itself, you need to divide ___ from both sides. </br></br>' + a + fractionA.getString() + 'b' + ' = ' + c);       
+       
+        this.setAnswer('' + a + ' 1/2',0);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_9',6.3309,'6.ee.b.9','');
+*/
+var i_6_ee_b_7__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_9';
+
+        this.mChopWhiteSpace = false;
+
+        var a = Math.floor(Math.random()*8+2);
+        var b = Math.floor(Math.random()*8+2);
+        var d = '.5';
+        var c = a * 2 + 1;
+
+        this.setQuestion('In order to get the variable to be on one side of the equation by itself, you need to divide ___ from both sides. </br></br>' + a + d + 'b' + ' = ' + c);       
+       
+        this.setAnswer('' + a + '.5',0);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
