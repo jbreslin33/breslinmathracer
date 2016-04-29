@@ -1,5 +1,34 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_21',6.2721,'6.ee.a.2.c','');
+*/
+var i_6_ee_a_2_c__21 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.a.2.c_21';
+	this.ns = new NameSampler();
+
+	var a = Math.floor(Math.random()*8)+2;
+	var x = this.ns.mLowerLetterOne;
+	var b = Math.floor(Math.random()*8)+2;
+	var c = parseInt(a*b);
+	var d = Math.floor(Math.random()*8)+2;
+	var t1 = parseInt(a * d);
+
+	var y = this.ns.mLowerLetterTwo;
+	var e = Math.floor(Math.random()*8)+2;
+	var t2 = parseInt(e);
+	
+        this.setQuestion('' + c + '/' + x + '*' + d + '-' + y + ' For ' + x + ' = ' + b + ' and ' + y + ' = ' + e);
+	var x = parseInt(t1 - t2); 
+        this.setAnswer('' + x,0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.ee.a.2.c_20',6.2720,'6.ee.a.2.c','');
 */
 var i_6_ee_a_2_c__20 = new Class(
