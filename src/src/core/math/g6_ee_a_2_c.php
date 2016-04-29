@@ -9,20 +9,20 @@ initialize: function(sheet)
 {
         this.parent(sheet,300,50,175,75,100,50,425,100);
         this.mType = '6.ee.a.2.c_20';
-        
 	this.ns = new NameSampler();
-        
-	var x = this.ns.mLowerLetterOne;
+
 	var a = Math.floor(Math.random()*8)+2;
+	var x = this.ns.mLowerLetterOne;
 	var b = Math.floor(Math.random()*8)+2;
-	var t1 = parseInt(a*b);
-	
+	var c = parseInt(a*b);
+	var d = Math.floor(Math.random()*8)+2;
+	var t1 = parseInt(a * d);
+
 	var y = this.ns.mLowerLetterTwo;
-	var c = Math.floor(Math.random()*8)+2;
-	var d = parseInt(Math.pow(c,2));
-	var t2 = parseInt(d);
+	var e = Math.floor(Math.random()*8)+2;
+	var t2 = parseInt(e);
 	
-        this.setQuestion('' + b + '' + x + '-' + y + '^2 Let ' + x + ' = ' + a + ' and ' + y + ' = ' + c);
+        this.setQuestion('' + c + '/' + x + '*' + d + '-' + y + ' For ' + x + ' = ' + b + ' and ' + y + ' = ' + e);
 	var x = parseInt(t1 - t2); 
         this.setAnswer('' + x,0);
 }
