@@ -5,8 +5,32 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray.push('3.oa.c.7_1');
+	//add
 	this.mIDArray.push('k.oa.a.5_12');
+	this.mIDArray.push('k.oa.a.5_13');
+	this.mIDArray.push('k.oa.a.5_14');
+	this.mIDArray.push('k.oa.a.5_15');
+	this.mIDArray.push('k.oa.a.5_16');
+	this.mIDArray.push('k.oa.a.5_17');
+	this.mIDArray.push('k.oa.a.5_18');
+	this.mIDArray.push('k.oa.a.5_19');
+	this.mIDArray.push('k.oa.a.5_20');
+	this.mIDArray.push('k.oa.a.5_21');
+
+	//subtract
+	this.mIDArray.push('k.oa.a.5_29');
+	this.mIDArray.push('k.oa.a.5_30');
+	this.mIDArray.push('k.oa.a.5_31');
+	this.mIDArray.push('k.oa.a.5_32');
+	
+	this.mIDArray.push('k.oa.a.5_34');
+	this.mIDArray.push('k.oa.a.5_35');
+	this.mIDArray.push('k.oa.a.5_36');
+	
+	this.mIDArray.push('k.oa.a.5_38');
+	this.mIDArray.push('k.oa.a.5_39');
+	
+	this.mIDArray.push('k.oa.a.5_41');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
