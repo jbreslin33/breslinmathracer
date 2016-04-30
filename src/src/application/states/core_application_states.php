@@ -300,12 +300,19 @@ execute: function(application)
 			var itemAttemptsTransactionCodesTen = APPLICATION.mResponseArray[25];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTen = itemAttemptsTransactionCodesTen.split(":");
 
-			//Twelve	
+			//Twelve	login 
 			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[26];
 			APPLICATION.mItemAttemptsTypeArrayTwelve = itemAttemptsTypesTwelve.split(":");
 	
 			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[27];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve = itemAttemptsTransactionCodesTwelve.split(":");
+
+			for (z = 0; z < 10; z++)
+			{			
+				//if (itemAttemptsTransactionCodesTwelve != 1 APPLICATION.mResponseArray[27];
+				APPLICATION.log('izzy:' + APPLICATION.mItemAttemptsTypeArrayTwelve[z] + '_' + APPLICATION.mItemAttemptsTransactionCodeArrayTwelve[z]);
+			}
+			
 
 			//Thirteen	
 			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[28];
