@@ -5,77 +5,31 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray.push('3.oa.c.7_1');
-	this.mIDArray.push('3.oa.c.7_2');
-	this.mIDArray.push('3.oa.c.7_3');
-	this.mIDArray.push('3.oa.c.7_4');
-	this.mIDArray.push('3.oa.c.7_5');
-	this.mIDArray.push('3.oa.c.7_6');
-	this.mIDArray.push('3.oa.c.7_7');
-	this.mIDArray.push('3.oa.c.7_8');
-	this.mIDArray.push('3.oa.c.7_9');
-	this.mIDArray.push('3.oa.c.7_10');
-	this.mIDArray.push('3.oa.c.7_11');
-	this.mIDArray.push('3.oa.c.7_12');
-	this.mIDArray.push('3.oa.c.7_13');
-	this.mIDArray.push('3.oa.c.7_14');
-	this.mIDArray.push('3.oa.c.7_15');
-	//18 30
-	this.mIDArray.push('3.oa.c.7_18');
-	this.mIDArray.push('3.oa.c.7_19');
-	this.mIDArray.push('3.oa.c.7_20');
-	this.mIDArray.push('3.oa.c.7_21');
-	this.mIDArray.push('3.oa.c.7_22');
-	this.mIDArray.push('3.oa.c.7_23');
-	this.mIDArray.push('3.oa.c.7_24');
-	this.mIDArray.push('3.oa.c.7_25');
-	this.mIDArray.push('3.oa.c.7_26');
-	this.mIDArray.push('3.oa.c.7_27');
-	this.mIDArray.push('3.oa.c.7_28');
-	this.mIDArray.push('3.oa.c.7_29');
-	this.mIDArray.push('3.oa.c.7_30');
-	//33 43
-	this.mIDArray.push('3.oa.c.7_33');
-	this.mIDArray.push('3.oa.c.7_34');
-	this.mIDArray.push('3.oa.c.7_35');
-	this.mIDArray.push('3.oa.c.7_36');
-	this.mIDArray.push('3.oa.c.7_37');
-	this.mIDArray.push('3.oa.c.7_38');
-	this.mIDArray.push('3.oa.c.7_39');
-	this.mIDArray.push('3.oa.c.7_40');
-	this.mIDArray.push('3.oa.c.7_41');
-	this.mIDArray.push('3.oa.c.7_42');
-	this.mIDArray.push('3.oa.c.7_43');
-	//46 54
-	this.mIDArray.push('3.oa.c.7_46');
-	this.mIDArray.push('3.oa.c.7_47');
-	this.mIDArray.push('3.oa.c.7_48');
-	this.mIDArray.push('3.oa.c.7_49');
-	this.mIDArray.push('3.oa.c.7_50');
-	this.mIDArray.push('3.oa.c.7_51');
-	this.mIDArray.push('3.oa.c.7_52');
-	this.mIDArray.push('3.oa.c.7_53');
-	this.mIDArray.push('3.oa.c.7_54');
-	//57 63
-	this.mIDArray.push('3.oa.c.7_57');
-	this.mIDArray.push('3.oa.c.7_58');
-	this.mIDArray.push('3.oa.c.7_59');
-	this.mIDArray.push('3.oa.c.7_60');
-	this.mIDArray.push('3.oa.c.7_61');
-	this.mIDArray.push('3.oa.c.7_62');
-	this.mIDArray.push('3.oa.c.7_63');
-	//66 70
-	this.mIDArray.push('3.oa.c.7_66');
-	this.mIDArray.push('3.oa.c.7_67');
-	this.mIDArray.push('3.oa.c.7_68');
-	this.mIDArray.push('3.oa.c.7_69');
-	this.mIDArray.push('3.oa.c.7_70');
-	//73 75
-	this.mIDArray.push('3.oa.c.7_73');
-	this.mIDArray.push('3.oa.c.7_74');
-	this.mIDArray.push('3.oa.c.7_75');
-	//78
-	this.mIDArray.push('3.oa.c.7_78');
+	//grab last 10 wrong answers that are not dups
+
+	var c = 0;
+	while (this.mIDArray.length < 9 && c < APPLICATION.mItemAttemptsTypeArrayTwelve.length)
+	{
+		APPLICATION.log('t:' + APPLICATION.mItemAttemptsTypeArrayTwelve[c]); 
+
+		if (APPLICATION.mItemAttemptsTransactionCodeArrayTwelve[c] != 1)
+		{
+			var dup = false;
+			for (j = 0; j < this.mIDArray.length; j++)
+			{
+				if (APPLICATION.mItemAttemptsTypeArrayTwelve[c] == this.mIDArray[j]) 
+				{
+					dup = true;
+				}
+			}
+			if (dup == false)
+			{
+				this.mIDArray.push('' + APPLICATION.mItemAttemptsTypeArrayTwelve[c]);
+			}
+		} 
+		c++;
+	}
+	APPLICATION.log('s:' + APPLICATION.mItemAttemptsTypeArrayTwelve.length); 
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
