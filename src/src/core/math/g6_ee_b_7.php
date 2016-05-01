@@ -420,3 +420,363 @@ this.mUserAnswerLabel.setPosition(230,300);
 }
 });
 
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_10',6.3310,'6.ee.b.7','');
+*/
+var i_6_ee_b_7__10 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_10';
+
+        var a = Math.floor(Math.random()*11+6);
+        var b = Math.floor(Math.random()*24+6);
+        var c = a * b;
+
+        this.setQuestion('What is the solution to this equation? </br></br>' + a + 'b' + ' = ' + c);       
+       
+        this.setAnswer('' + b,0);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_11',6.3311,'6.ee.b.7','');
+*/
+var i_6_ee_b_7__11 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_11';
+
+        var a = Math.random()*11+2;
+        var b = Math.random()*9+2;
+
+        a = a.toFixed(1); 
+        b = b.toFixed(1);
+        
+
+        var c = 1.0*a * 1.0*b;
+        c = c.toFixed(2); 
+
+        this.setQuestion('What is the solution to this equation? </br></br>' + a + 'b' + ' = ' + c);       
+       
+        this.setAnswer('' + b,0);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_12',6.3312,'6.ee.b.7','');
+*/
+var i_6_ee_b_7__12 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_12';
+
+        var a;
+        var b;
+
+        var r = Math.floor(Math.random()*2);
+
+        if(r == 0)
+        {
+          a = 100;
+          b = 0.1;
+        }
+        if(r == 1)
+        {
+          a = 1000;
+          b = 0.5;
+        }
+
+        var answer = a * b;
+
+        this.setQuestion('What is the solution to this equation? </br></br>' + a + 'b' + ' = ' + answer);       
+       
+        this.setAnswer('' + b,0);
+
+this.mCorrectAnswerLabel.setPosition(530,300);
+this.mUserAnswerLabel.setPosition(230,300);
+
+},
+
+
+checkUserAnswer: function()
+	{
+
+			var str = '';
+			var res = '';
+			var whole;
+			var frac;
+			var res2;
+			var decimal;
+      var correctAnswer;
+      var userAnswer;
+
+			//console.log('' + this.mUserAnswer);
+
+			str = '' + this.mUserAnswer;
+			res = str.split(" ");
+
+      // fraction or whole - no mixed number
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+        // fraction - else it's a whole and we just leave it as is
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+        // either way set this to zero so we don't get error
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			userAnswer = (whole + decimal) * 1.0;
+			
+			//console.log(userAnswer);
+
+			//str = this.mQuiz.getQuestion().mAnswerArray[0];
+      str = this.mAnswerArray[0];
+      res = str.split(" ");
+
+      // fraction or whole - no mixed number
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+        // fraction - else it's a whole and we just leave it as is
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+        // either way set this to zero so we don't get error
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			correctAnswer = (whole + decimal) * 1.0;
+
+		correctAnswerFound = false;
+		
+		if (userAnswer == correctAnswer)
+		{
+			correctAnswerFound = true;	
+		} 
+	
+		if (correctAnswerFound == false)
+		{
+			this.mSheet.setTypeWrong(this.mType);
+		}
+		return correctAnswerFound;
+	},
+
+
+
+});
+
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_13',6.3313,'6.ee.b.7','');
+*/
+var i_6_ee_b_7__13 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,300,50,175,75,100,50,425,100);
+        this.mType = '6.ee.b.7_13';
+
+this.mChopWhiteSpace = false;
+
+        var an = 1;
+        var ad = 1;
+        var bn = 1;
+        var bd = 1;
+
+     while (an <= ad || (an % ad) == 0)
+     {
+        an = Math.floor(Math.random()*11)+2;
+        ad = Math.floor(Math.random()*11)+2;
+     }
+
+      while (bn <= bd || (bn % bd) == 0)
+     {
+        bn = Math.floor(Math.random()*11)+13;
+        bd = ad; //Math.floor(Math.random()*11)+2;
+     }
+
+     var fractionA = new Fraction(an,ad,false);
+     var fractionB = new Fraction(bn,bd,false);
+
+     fractionA.reduce();
+     fractionB.reduce();
+
+     var mix = fractionB.divide(fractionA);
+
+     mix.reduce();
+
+     this.setAnswer(mix.mNumerator + '/' + mix.mDenominator,0);
+
+     this.setShowAnswer(mix.getMixedNumber());
+     
+     //console.log(mix.mNumerator + '/' + mix.mDenominator);
+
+this.setQuestion('What is the solution to this equation?</br></br>' + fractionA.getMixedNumber() + 'c' + ' = ' + fractionB.getMixedNumber());
+
+},
+
+
+checkUserAnswer: function()
+	{
+
+			var str = '';
+			var res = '';
+			var whole;
+			var frac;
+			var res2;
+			var decimal;
+      var correctAnswer;
+      var userAnswer;
+
+			//console.log('' + this.mUserAnswer);
+
+			str = '' + this.mUserAnswer;
+			res = str.split(" ");
+
+      // fraction or whole - no mixed number
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+        // fraction - else it's a whole and we just leave it as is
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+        // either way set this to zero so we don't get error
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			userAnswer = (whole + decimal) * 1.0;
+			
+			//console.log(userAnswer);
+
+			//str = this.mQuiz.getQuestion().mAnswerArray[0];
+      str = this.mAnswerArray[0];
+      res = str.split(" ");
+
+      // fraction or whole - no mixed number
+			if (res.length == 1)
+			{
+				str = res[0].split("/");
+
+        // fraction - else it's a whole and we just leave it as is
+				if(str.length == 2)
+				   res[0] = 1.0 * (str[0] * 1.0)/(str[1] * 1.0);
+
+        // either way set this to zero so we don't get error
+				res[1] = '0/1';
+
+				
+			}
+			whole = res[0] * 1.0;
+			frac = res[1];
+			res2 = frac.split("/");
+
+			if (res2.length == 1)
+			{
+				res2[1] = '1';
+			}
+
+			decimal = 1.0 * (res2[0] * 1.0)/(res2[1] * 1.0);
+			correctAnswer = (whole + decimal) * 1.0;
+
+		correctAnswerFound = false;
+		
+		if (userAnswer == correctAnswer)
+		{
+			correctAnswerFound = true;	
+		} 
+	
+		if (correctAnswerFound == false)
+		{
+			this.mSheet.setTypeWrong(this.mType);
+		}
+		return correctAnswerFound;
+	},
+
+
+
+
+
+
+showCorrectAnswer: function()
+        {
+		this.mCorrectAnswerLabel.setSize(150,200);
+                //this.mCorrectAnswerLabel.setPosition(425,250);
+                this.mCorrectAnswerLabel.setPosition(530,400);
+                this.mUserAnswerLabel.setPosition(230,300);
+                if (this.mCorrectAnswerLabel)
+                {
+                        this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.getShowAnswer());
+                        this.mCorrectAnswerLabel.setVisibility(true);
+                }
+                this.hideAnswerInputs();
+                this.showUserAnswer();
+        }
+
+
+
+});
+

@@ -13,7 +13,7 @@ initialize: function(sheet)
 getDev: function()
 {
         //return '6.ns.c.8_3';
-       return '6.ee.b.7_9';
+       return '6.ee.b.7_13';
 },
 
 getItem: function(id)
@@ -1000,6 +1000,24 @@ if (id == '6.rp.a.3.a_3')
         {
                 return new i_6_ee_b_7__9(this.mSheet);
         }
+
+  if (id == '6.ee.b.7_10')
+        {
+                return new i_6_ee_b_7__10(this.mSheet);
+        }
+  if (id == '6.ee.b.7_11')
+        {
+                return new i_6_ee_b_7__11(this.mSheet);
+        }
+  if (id == '6.ee.b.7_12')
+        {
+                return new i_6_ee_b_7__12(this.mSheet);
+        }
+if (id == '6.ee.b.7_13')
+        {
+                return new i_6_ee_b_7__13(this.mSheet);
+        }
+
 
 	return 0;	
 }
