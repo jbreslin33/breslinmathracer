@@ -340,6 +340,19 @@ var Item = new Class(
 		{
                 	this.mTimesTablesInfo.mMesh.appendChild(optionH);
 		}
+		
+		var optionI = document.createElement("option");
+                optionI.value = 19;
+                optionI.text = 'The Super Izzy';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionI);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionI);
+		}
+		//add_game_17	
 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';

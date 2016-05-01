@@ -81,6 +81,11 @@ function __construct($application)
 	
 	$this->mItemAttemptsTypeArrayEighteen    = array();
 	$this->mItemAttemptsTransactionCodeArrayEighteen    = array();
+	
+	$this->mItemAttemptsTypeArrayNineteen    = array();
+	$this->mItemAttemptsTransactionCodeArrayNineteen    = array();
+	
+	//add_game_4
 }
 
 public function process()
@@ -149,7 +154,7 @@ public function fillItemAttemptsArray()
                 for ($i = 0; $i < $num; $i++)
                 {
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID = 18)
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID = 18 || $evalID == 19)
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -229,6 +234,13 @@ public function fillItemAttemptsArray()
                         	$this->mItemAttemptsTypeArrayEighteen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayEighteen[]  = pg_Result($result,$i,'transaction_code');
 			}
+			if ($evalID == 19)
+			{
+                        	$this->mItemAttemptsTypeArrayNineteen[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayNineteen[]  = pg_Result($result,$i,'transaction_code');
+			}
+
+			//add_game_5
                 }
         }
 	else

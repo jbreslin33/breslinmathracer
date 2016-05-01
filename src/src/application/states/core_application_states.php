@@ -84,6 +84,11 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_HOMEWORK_APPLICATION);
 	}
+	if (application.mEvaluationsID == 19 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION);
+	}
+	//add_game_12
 },
 
 exit: function(application)
@@ -300,19 +305,12 @@ execute: function(application)
 			var itemAttemptsTransactionCodesTen = APPLICATION.mResponseArray[25];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTen = itemAttemptsTransactionCodesTen.split(":");
 
-			//Twelve	login 
+			//Twelve	 
 			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[26];
 			APPLICATION.mItemAttemptsTypeArrayTwelve = itemAttemptsTypesTwelve.split(":");
 	
 			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[27];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve = itemAttemptsTransactionCodesTwelve.split(":");
-
-			for (z = 0; z < 10; z++)
-			{			
-				//if (itemAttemptsTransactionCodesTwelve != 1 APPLICATION.mResponseArray[27];
-				APPLICATION.log('izzy:' + APPLICATION.mItemAttemptsTypeArrayTwelve[z] + '_' + APPLICATION.mItemAttemptsTransactionCodeArrayTwelve[z]);
-			}
-			
 
 			//Thirteen	
 			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[28];
@@ -356,7 +354,15 @@ execute: function(application)
 			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
 			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
 			
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[40];
+			//Nineteen	 
+			var itemAttemptsTypesNineteen = APPLICATION.mResponseArray[40];
+			APPLICATION.mItemAttemptsTypeArrayNineteen = itemAttemptsTypesNineteen.split(":");
+	
+			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[41];
+			APPLICATION.mItemAttemptsTransactionCodeArrayNineteen = itemAttemptsTransactionCodesNineteen.split(":");
+			//add_game_13	
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[42];
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 			if (application.mEvaluationsID == 1)
@@ -749,14 +755,12 @@ execute: function(application)
 			var itemAttemptsTransactionCodesSeven = APPLICATION.mResponseArray[19];
 			APPLICATION.mItemAttemptsTransactionCodeArraySeven = itemAttemptsTransactionCodesSeven.split(":");
 
-
 			//Eight	
 			var itemAttemptsTypesEight = APPLICATION.mResponseArray[20];
 			APPLICATION.mItemAttemptsTypeArrayEight = itemAttemptsTypesEight.split(":");
 	
 			var itemAttemptsTransactionCodesEight = APPLICATION.mResponseArray[21];
 			APPLICATION.mItemAttemptsTransactionCodeArrayEight = itemAttemptsTransactionCodesEight.split(":");
-
 
 			//Nine	
 			var itemAttemptsTypesNine = APPLICATION.mResponseArray[22];
@@ -820,11 +824,21 @@ execute: function(application)
 				var itemAttemptsTypeEighteen = APPLICATION.mResponseArray[38];
 				APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
 			}
-	
 			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
 			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
+			
+			//Nineteen	
+			if (APPLICATION.mResponseArray[40])
+			{
+				var itemAttemptsTypesNineteen = APPLICATION.mResponseArray[40];
+				APPLICATION.mItemAttemptsTypeArrayNineteen = itemAttemptsTypesNineteen.split(":");
+			}
+	
+			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[41];
+			APPLICATION.mItemAttemptsTransactionCodeArrayNineteen = itemAttemptsTransactionCodesNineteen.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[40];
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[42];
+			//add_game_14
 
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -1762,3 +1776,43 @@ exit: function(application)
 }
 
 });
+
+var TIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_THE_SUPER_IZZY_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+	//add_game_15 add game file
+        application.mGame = new TimesTablesTheSuperIzzyGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_THE_SUPER_IZZY_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+//add_game_16

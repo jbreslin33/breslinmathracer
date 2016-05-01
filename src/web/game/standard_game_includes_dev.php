@@ -99,6 +99,7 @@
 <script type="text/javascript" src="/src/sheet/homework_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/test_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_addsubtractwithinfive_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/times_tables_thesuperizzy_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
@@ -128,6 +129,7 @@
 <script type="text/javascript" src="/src/core/math/homework_game.php"></script>
 <script type="text/javascript" src="/src/core/math/test_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_addsubtractwithinfive_game.php"></script>
+<script type="text/javascript" src="/src/core/math/times_tables_thesuperizzy_game.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_jim.php"></script>
