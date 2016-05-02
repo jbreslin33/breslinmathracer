@@ -393,7 +393,7 @@ this.mUserAnswerLabel.setPosition(230,300);
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_9',6.3309,'6.ee.b.7','');
+insert into item_types(id,progression,core_standards_id,description) values ('6.ee.b.7_9',6.3309,'6.ee.b.9','');
 */
 var i_6_ee_b_7__9 = new Class(
 {
