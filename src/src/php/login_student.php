@@ -163,8 +163,6 @@ public function sendLoginStudent()
 	$itemTypesRawDataAF = ""; 
 	$itemTypesRawDataAG = ""; 
 	$itemTypesRawDataAH = ""; 
-	$itemTypesRawDataAI = ""; 
-	$itemTypesRawDataAJ = ""; 
 	//add_game_6
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -638,32 +636,6 @@ public function sendLoginStudent()
                         $itemTypesRawDataAH .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayNineteen[$i];
                 }
         }
-	//Twenty	
-	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwenty); $i++)
-        {
-                if ($i == 0)
-                {
-                        $itemTypesRawDataAI .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwenty[$i];
-                }
-                else
-                {
-                        $itemTypesRawDataAI .= ":";
-                        $itemTypesRawDataAI .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwenty[$i];
-                }
-        }
-
-	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwenty); $i++)
-        {
-                if ($i == 0)
-                {
-                        $itemTypesRawDataAJ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwenty[$i];
-                }
-                else
-                {
-                        $itemTypesRawDataAJ .= ":";
-                        $itemTypesRawDataAJ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwenty[$i];
-                }
-        }
 	//add_game_7
 
 	//fill php vars
@@ -749,10 +721,6 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAG;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAH;
-	$returnString .= ",";
-	$returnString .= $itemTypesRawDataAI;
-	$returnString .= ",";
-	$returnString .= $itemTypesRawDataAJ;
 	$returnString .= ",";
 	//add_game_8
 	$returnString .= $this->mApplication->mEvaluationsID;

@@ -85,9 +85,6 @@ function __construct($application)
 	$this->mItemAttemptsTypeArrayNineteen    = array();
 	$this->mItemAttemptsTransactionCodeArrayNineteen    = array();
 	
-	$this->mItemAttemptsTypeArrayTwenty    = array();
-	$this->mItemAttemptsTransactionCodeArrayTwenty    = array();
-	
 	//add_game_4
 }
 
@@ -157,7 +154,7 @@ public function fillItemAttemptsArray()
                 for ($i = 0; $i < $num; $i++)
                 {
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID != 2) //grab it all except practice
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID = 18 || $evalID == 19)
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -205,8 +202,7 @@ public function fillItemAttemptsArray()
 			if ($evalID == 12)
 			{
                         	$this->mItemAttemptsTypeArrayTwelve[] = pg_Result($result,$i,'item_types_id');
-				$type = pg_Result($result,$i,'item_types_id');
-                        	$this->mItemAttemptsTransactionCodeArrayTwelve[] = $type;
+                        	$this->mItemAttemptsTransactionCodeArrayTwelve[]  = pg_Result($result,$i,'transaction_code');
 			}
 			if ($evalID == 13)
 			{
@@ -237,18 +233,13 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayEighteen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayEighteen[]  = pg_Result($result,$i,'transaction_code');
+				error_log('18h');
 			}
 			if ($evalID == 19)
 			{
+				error_log('19h');
                         	$this->mItemAttemptsTypeArrayNineteen[] = pg_Result($result,$i,'item_types_id');
-				$type = pg_Result($result,$i,'item_types_id');
-                        	$this->mItemAttemptsTransactionCodeArrayNineteen[]  = $type;
-			}
-			if ($evalID == 20)
-			{
-                        	$this->mItemAttemptsTypeArrayTwenty[] = pg_Result($result,$i,'item_types_id');
-				$type = pg_Result($result,$i,'item_types_id');
-                        	$this->mItemAttemptsTransactionCodeArrayTwenty[]  = $type;
+                        	$this->mItemAttemptsTransactionCodeArrayNineteen[]  = pg_Result($result,$i,'transaction_code');
 			}
 
 			//add_game_5

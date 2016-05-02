@@ -100,10 +100,6 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION);
 	}
-	if ($bapplication->mCode == 20 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mBASIC_SKILLS_4TH_APPLICATION)
-	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mBASIC_SKILLS_4TH_APPLICATION);
-	}
 	//add_game_2
 
 }
@@ -1407,67 +1403,6 @@ public function bexit($bapplication)
 }
 
 }//end class
-
-class BASIC_SKILLS_4TH_APPLICATION extends State
-{
-
-function __construct()
-{
-
-}
-
-public function enter($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('BASIC_SKILLS_4TH_APPLICATION Enter');
-        }
-
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,20,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
-
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
-
-	$bapplication->update();		
-}
-
-public function execute($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('BASIC_SKILLS_4TH_APPLICATION Execute');
-        }
-	if ($bapplication->mCode == 20)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimebasicskills4th');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
-}
-public function bexit($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('BASIC_SKILLS_4TH_APPLICATION Exit');
-        }
-}
-
-}//end class
-
 
 //add_game_3
 

@@ -93,7 +93,6 @@
 <script type="text/javascript" src="/src/sheet/times_tables_eight_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_nine_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_theizzy_sheet.php"></script>
-<script type="text/javascript" src="/src/sheet/basic_skills_4th_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/terra_nova_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/terra_nova_test_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/terra_nova_homework_sheet.php"></script>
@@ -124,7 +123,6 @@
 <script type="text/javascript" src="/src/core/math/times_tables_eight_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_nine_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_theizzy_game.php"></script>
-<script type="text/javascript" src="/src/core/math/basic_skills_4th_game.php"></script>
 <script type="text/javascript" src="/src/core/math/terra_nova_game.php"></script>
 <script type="text/javascript" src="/src/core/math/terra_nova_test_game.php"></script>
 <script type="text/javascript" src="/src/core/math/terra_nova_homework_game.php"></script>

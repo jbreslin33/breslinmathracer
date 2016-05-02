@@ -352,19 +352,7 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionI);
 		}
-		
-		var optionJ = document.createElement("option");
-                optionJ.value = 20;
-                optionJ.text = 'BASIC SKILLS 4TH';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionJ);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionJ);
-		}
-		//add_game_16	
+		//add_game_17	
 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';

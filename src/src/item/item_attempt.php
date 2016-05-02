@@ -110,11 +110,7 @@ var ItemAttempt = new Class(
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayNineteen[0] = code;
 		}
-		if (parseInt(this.mEvaluationsID) == 20)
-		{
-			APPLICATION.mItemAttemptsTransactionCodeArrayTwenty[0] = code;
-		}
-		//add_game_17
+		//add_game_20
 
 
 
@@ -248,12 +244,7 @@ var ItemAttempt = new Class(
 				APPLICATION.mItemAttemptsTypeArrayNineteen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayNineteen.unshift(0);
 			}
-			if (parseInt(this.mEvaluationsID) == 20)
-			{
-				APPLICATION.mItemAttemptsTypeArrayTwenty.unshift(APPLICATION.mGame.mSheet.mItem.mType);
-				APPLICATION.mItemAttemptsTransactionCodeArrayTwenty.unshift(0);
-			}
-			//add_game_18
+			//add_game_21
 		}
         	APPLICATION.sendItemAttemptInsert(APPLICATION.mGame.mSheet.mItem.mType,this.mQuestionTxt,this.mAnswersTxt,this.mDateNow,this.mEvaluationsID,APPLICATION.mGame.getScore(),APPLICATION.mGame.mUnmastered);
 	},	
