@@ -1873,4 +1873,3 @@ exit: function(application)
 
 });
 
-//add_game_15 dont forget to add game file  and add to web/game/standard_game_includes_dev.php and src/database/update.sh
