@@ -5,8 +5,25 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	this.mIDArray.push('3.oa.c.7_1');
-	this.mIDArray.push('3.oa.c.7_2');
+	//add 
+	this.mIDArray.push('4.nbt.b.4_7');
+	//subtract 
+	this.mIDArray.push('4.nbt.b.4_14');
+
+	//multiply 4x1 
+	this.mIDArray.push('4.nbt.b.5_3');
+
+	//multiply 2x2
+	this.mIDArray.push('4.nbt.b.5_5');
+
+	//divide 4x1 with remainder	
+	this.mIDArray.push('4.nbt.b.6_7');
+
+	//add mixed numbers	
+	this.mIDArray.push('4.nf.b.3.c_3');
+	
+	//subtract mixed numbers	
+	this.mIDArray.push('4.nf.b.3.c_8');
 	
 	this.mCurrentElement = 0;
 	this.shuffle(500);
