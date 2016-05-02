@@ -128,6 +128,7 @@ insert into evaluations (description) values ('timestables');
 insert into evaluations (description) values ('The Izzy'); 
 insert into evaluations (description) values ('The Super Izzy'); 
 insert into evaluations (description) values ('Add Subtract within 5'); 
+insert into evaluations (description) values ('Basic Skills 4th'); 
 insert into evaluations (description) values ('assessment'); --if you get sometihng wrong in assessment should it be asked next day????? 
 --insert into evaluations (description) values ('homework');  could be tables could be last 10 etc  30 probs 
 --insert into evaluations (description) values ('quiz'); -- 10 questions mtwr 40 mondays 
