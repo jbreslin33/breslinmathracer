@@ -85,7 +85,7 @@ var l1 = Math.floor(Math.random()*2)+4;
 
 var vol = w1*h1*l1;
 
-        this.setQuestion('A house has a patio that is  ' + l1 + ' yards long by ' + w1 + ' yards wide. There is also a shed with a volume of  ' + vol +  ' cubic feet and with the entire patio as its base. What is the height of the shed in yards?');
+        this.setQuestion('A house has a patio that is  ' + l1 + ' yards long by ' + w1 + ' yards wide. There is also a shed with a volume of  ' + vol +  ' cubic yards and with the entire patio as its base. What is the height of the shed in yards?');
         this.setAnswer('' + h1,0);
 
 this.mUserAnswerLabel.setPosition(625,150);
