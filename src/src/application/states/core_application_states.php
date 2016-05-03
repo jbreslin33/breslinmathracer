@@ -360,9 +360,9 @@ execute: function(application)
 	
 			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[41];
 			APPLICATION.mItemAttemptsTransactionCodeArrayNineteen = itemAttemptsTransactionCodesNineteen.split(":");
-			//add_game_13	
 
 			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[42];
+			//add_game_13	
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 			if (application.mEvaluationsID == 1)

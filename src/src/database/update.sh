@@ -127,6 +127,7 @@ cat src/sheet/times_tables_seven_sheet.php >> min.js
 cat src/sheet/times_tables_eight_sheet.php >> min.js
 cat src/sheet/times_tables_nine_sheet.php >> min.js
 cat src/sheet/times_tables_theizzy_sheet.php >> min.js
+cat src/sheet/times_tables_thesuperizzy_sheet.php >> min.js
 cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/terra_nova_test_sheet.php >> min.js
 cat src/sheet/terra_nova_homework_sheet.php >> min.js
