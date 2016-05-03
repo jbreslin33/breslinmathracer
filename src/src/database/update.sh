@@ -22,16 +22,6 @@ fi
 grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into item_types' ./ >> src/database/insert_types.sql
 sudo -u postgres psql -d jamesanthonybreslin -f src/database/insert_types.sql
 
-if [ -e src/database/prerequisites.sql ]; 
-then
-rm src/database/prerequisites.sql
-else
-touch src/database/prerequisites.sql
-fi
-> src/database/prerequisites.sql
-grep -rhI --exclude="*\.orig" --exclude-dir=database 'insert into prerequisites' ./ >> src/database/prerequisites.sql
-sudo -u postgres psql -d jamesanthonybreslin -f src/database/prerequisites.sql
-
 cat src/math/point2D.php >> min.js
 cat src/math/fraction.php >> min.js
 cat src/math/decimal.php >> min.js
@@ -128,6 +118,7 @@ cat src/sheet/times_tables_eight_sheet.php >> min.js
 cat src/sheet/times_tables_nine_sheet.php >> min.js
 cat src/sheet/times_tables_theizzy_sheet.php >> min.js
 cat src/sheet/times_tables_thesuperizzy_sheet.php >> min.js
+cat src/sheet/basic_skills_fourth_sheet.php >> min.js
 cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/terra_nova_test_sheet.php >> min.js
 cat src/sheet/terra_nova_homework_sheet.php >> min.js
@@ -148,6 +139,7 @@ cat src/wordproblems/wordproblems.php >> min.js
 cat src/utility/name_machine.php >> min.js
 cat src/utility/time.php >> min.js
 
+cat src/core/*.php >> min.js
 cat src/core/math/*.php >> min.js
 
 gcc jsmin.c -o jsmin

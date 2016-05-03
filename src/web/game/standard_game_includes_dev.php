@@ -100,6 +100,7 @@
 <script type="text/javascript" src="/src/sheet/test_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_addsubtractwithinfive_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_thesuperizzy_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/basic_skills_fourth_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
@@ -111,8 +112,8 @@
 <script type="text/javascript" src="/src/widgets/circles.php"></script>
 <script type="text/javascript" src="/src/wordproblems/wordproblems.php"></script>
 
-<script type="text/javascript" src="/src/core/math/core_game.php"></script>
-<script type="text/javascript" src="/src/core/math/normal_game.php"></script>
+<script type="text/javascript" src="/src/core/core_game.php"></script>
+<script type="text/javascript" src="/src/core/normal_game.php"></script>
 <script type="text/javascript" src="/src/core/math/practice_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_two_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_three_game.php"></script>
@@ -130,6 +131,7 @@
 <script type="text/javascript" src="/src/core/math/test_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_addsubtractwithinfive_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_thesuperizzy_game.php"></script>
+<script type="text/javascript" src="/src/core/math/basic_skills_fourth_game.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_jim.php"></script>

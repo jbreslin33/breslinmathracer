@@ -222,6 +222,7 @@ CREATE TABLE users (
         alltime integer NOT NULL default 0,
         alltimeizzy integer NOT NULL default 0,
         alltimesuperizzy integer NOT NULL default 0,
+	alltimebasicskillsfourth integer NOT NULL default 0,
         alltimekoaa5 integer NOT NULL default 0,
         alltimetwo integer NOT NULL default 0,
         alltimethree integer NOT NULL default 0,
@@ -241,7 +242,7 @@ CREATE TABLE users (
 	FOREIGN KEY (room_id) REFERENCES rooms(id),
 	FOREIGN KEY (team_id) REFERENCES teams(id)
 );
-
+--add_game_H
 
 
 --==================================================================

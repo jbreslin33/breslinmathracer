@@ -85,7 +85,10 @@ function __construct($application)
 	$this->mItemAttemptsTypeArrayNineteen    = array();
 	$this->mItemAttemptsTransactionCodeArrayNineteen    = array();
 	
-	//add_game_4
+	$this->mItemAttemptsTypeArrayTwenty    = array();
+	$this->mItemAttemptsTransactionCodeArrayTwenty    = array();
+	
+	//add_game_P
 }
 
 public function process()
@@ -153,8 +156,9 @@ public function fillItemAttemptsArray()
                 //fill arrays
                 for ($i = 0; $i < $num; $i++)
                 {
+			//add_game_Q
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID = 18 || $evalID == 19)
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20)
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -233,16 +237,17 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayEighteen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayEighteen[]  = pg_Result($result,$i,'transaction_code');
-				error_log('18h');
 			}
 			if ($evalID == 19)
 			{
-				error_log('19h');
                         	$this->mItemAttemptsTypeArrayNineteen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayNineteen[]  = pg_Result($result,$i,'transaction_code');
 			}
-
-			//add_game_5
+			if ($evalID == 20)
+			{
+                        	$this->mItemAttemptsTypeArrayTwenty[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayTwenty[]  = pg_Result($result,$i,'transaction_code');
+			}
                 }
         }
 	else
