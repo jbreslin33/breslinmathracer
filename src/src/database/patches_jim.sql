@@ -5,3 +5,6 @@ alter table users add alltimebasicskillsfourth integer;
 insert into evaluations (id,description) values (21,'Basic Skills Fifth');
 alter table users add alltimebasicskillsfifth integer;
 update evaluations set description = 'Basic Skills 5th' where id = 21;
+insert into evaluations (id,description) values (22,'Basic Skills Third');
+alter table users add alltimebasicskillsthird integer;
+update evaluations set description = 'Basic Skills 3rd' where id = 22;
