@@ -6,11 +6,27 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//add 
-	this.mIDArray.push('4.nbt.b.4_7');
-	//subtract 
-	this.mIDArray.push('4.nbt.b.4_14');
+	//division 2x4
+	this.mIDArray.push('5.nbt.b.6_4');
 
+	//multiplication 3x2
+	this.mIDArray.push('5.nbt.b.5_4');
+
+	//add decimals 	
+	var r = Math.floor(Math.random()*5+1); //1-5
+	this.mIDArray.push('5.nbt.b.7_' + r);
+	
+	//subtract decimals  	
+	r = Math.floor(Math.random()*4+6); //6-9
+	this.mIDArray.push('5.nbt.b.7_' + r);
+
+	//multiply decimals	
+	r = Math.floor(Math.random()*5+10); //10-14
+	this.mIDArray.push('5.nbt.b.7_' + r);
+	
+	//divide decimals	
+	r = Math.floor(Math.random()*5+15); //15-19
+	this.mIDArray.push('5.nbt.b.7_' + r);
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
