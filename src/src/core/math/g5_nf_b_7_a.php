@@ -1,5 +1,32 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.a_5',5.2105,'5.nf.b.7.a','');
+*/
+var i_5_nf_b_7_a__5 = new Class(
+{
+Extends: TextItemFraction,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,340,50,190,95, 100,50,425,100, 100,50,425,175,true);
+
+                this.mType = '5.nf.b.7.a_5';
+                this.ns = new NameSampler();
+
+                var fractionA = new Fraction(1,1,true);
+                fractionA.mDenominator = Math.floor(Math.random()*8+2);
+
+                var fractionB = new Fraction(1,1,false);
+                fractionB.mDenominator = Math.floor(Math.random()*8+2);
+
+                answer = fractionA.multiply(fractionB);
+                answer.reduce();
+
+		this.setQuestion('' + 'Evaluate: ' + fractionB.getString() + ' &divide ' + parseInt(fractionA.mDenominator)  );    
+                this.setAnswer('' + answer.getString(),0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.b.7.a_4',5.2104,'5.nf.b.7.a','');
 */
 var i_5_nf_b_7_a__4 = new Class(
