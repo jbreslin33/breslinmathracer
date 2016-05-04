@@ -5,7 +5,7 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-
+	
 	//division 2x4
 	this.mIDArray.push('5.nbt.b.6_4');
 
@@ -27,6 +27,15 @@ initialize: function(game)
 	//divide decimals	
 	r = Math.floor(Math.random()*5+15); //15-19
 	this.mIDArray.push('5.nbt.b.7_' + r);
+
+	//addition fraction unlike denominators
+	r = Math.floor(Math.random()*4+1); //1-4
+	this.mIDArray.push('5.nf.a.1_' + r);
+	
+	//subtraction fraction unlike denominators
+	r = Math.floor(Math.random()*4+5); //5-8
+	this.mIDArray.push('5.nf.a.1_' + r);
+	
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
