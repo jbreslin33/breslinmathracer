@@ -165,6 +165,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataAH = ""; 
 	$itemTypesRawDataAI = ""; 
 	$itemTypesRawDataAJ = ""; 
+	$itemTypesRawDataAK = ""; 
+	$itemTypesRawDataAL = ""; 
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -666,6 +668,33 @@ public function sendLoginStudent()
                 }
         }
 
+	//TwentyOne	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyOne); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAK .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyOne[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAK .= ":";
+                        $itemTypesRawDataAK .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyOne[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyOne); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAL .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyOne[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAL .= ":";
+                        $itemTypesRawDataAL .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyOne[$i];
+                }
+        }
+
 	//fill php vars
 	$returnString = "117,";
 	$returnString .= "normal";
@@ -753,6 +782,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAI;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAJ;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAK;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAL;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;

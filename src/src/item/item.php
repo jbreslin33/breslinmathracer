@@ -364,6 +364,18 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionJ);
 		}
+		
+		var optionK = document.createElement("option");
+                optionK.value = 21;
+                optionK.text = 'Basic Skills Fifth';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionK);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionK);
+		}
 
 		//add_game_J	
 

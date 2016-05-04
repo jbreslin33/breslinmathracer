@@ -104,6 +104,10 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mBASIC_SKILLS_FOURTH_APPLICATION);
 	}
+	if ($bapplication->mCode == 21 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mBASIC_SKILLS_FIFTH_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mBASIC_SKILLS_FIFTH_APPLICATION);
+	}
 	//add_game_M
 
 }
@@ -1463,6 +1467,66 @@ public function bexit($bapplication)
         if ($bapplication->mLogs == true)
         {
                 error_log('BASIC_SKILLS_FOURTH_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+class BASIC_SKILLS_FIFTH_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('BASIC_SKILLS_FIFTH_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,21,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('BASIC_SKILLS_FIFTH_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 21)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+
+        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimebasicskillsfifth');
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('BASIC_SKILLS_FIFTH_APPLICATION Exit');
         }
 }
 

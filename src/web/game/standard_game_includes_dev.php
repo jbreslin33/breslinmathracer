@@ -101,6 +101,7 @@
 <script type="text/javascript" src="/src/sheet/times_tables_addsubtractwithinfive_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_thesuperizzy_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_fourth_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/basic_skills_fifth_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
@@ -132,6 +133,7 @@
 <script type="text/javascript" src="/src/core/math/times_tables_addsubtractwithinfive_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_thesuperizzy_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_fourth_game.php"></script>
+<script type="text/javascript" src="/src/core/math/basic_skills_fifth_game.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_jim.php"></script>
