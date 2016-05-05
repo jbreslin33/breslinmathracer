@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '5.nf.b.7.a_5';
+	return '2.nbt.b.5_1';
 },
 
 getItem: function(id)
@@ -2387,9 +2387,15 @@ getItem: function(id)
                 return new i_2_nbt_a_2__5(this.mSheet);
         }
 
-
-
-
+	//2.nbt.b.5	
+	if (id == '2.nbt.b.5_1')
+        {
+                return new i_2_nbt_b_5__1(this.mSheet);
+        }
+	if (id == '2.nbt.b.5_2')
+        {
+                return new i_2_nbt_b_5__2(this.mSheet);
+        }
 
 	//2.nbt.b.7	
 	if (id == '2.nbt.b.7_1')
