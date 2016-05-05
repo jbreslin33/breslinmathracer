@@ -400,6 +400,18 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionM);
 		}
+		
+		var optionN = document.createElement("option");
+                optionN.value = 24;
+                optionN.text = 'Basic Skills First';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionN);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
+		}
 
 		//add_game_J	
 

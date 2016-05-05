@@ -11,3 +11,6 @@ update evaluations set description = 'Basic Skills 3rd' where id = 22;
 insert into evaluations (id,description) values (23,'Basic Skills Second');
 alter table users add alltimebasicskillssecond integer;
 update evaluations set description = 'Basic Skills 2nd' where id = 23;
+insert into evaluations (id,description) values (24,'Basic Skills First');
+alter table users add alltimebasicskillsfirst integer;
+update evaluations set description = 'Basic Skills 1st' where id = 24;

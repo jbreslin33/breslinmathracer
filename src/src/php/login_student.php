@@ -171,6 +171,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataAN = ""; 
 	$itemTypesRawDataAO = ""; 
 	$itemTypesRawDataAP = ""; 
+	$itemTypesRawDataAQ = ""; 
+	$itemTypesRawDataAR = ""; 
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -752,6 +754,33 @@ public function sendLoginStudent()
                         $itemTypesRawDataAP .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyThree[$i];
                 }
         }
+	
+	//TwentyFour	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyFour); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAQ .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyFour[$i];
+                }
+                else
+               	{
+                        $itemTypesRawDataAQ .= ":";
+                        $itemTypesRawDataAQ .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyFour[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFour); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAR .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFour[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAR .= ":";
+                        $itemTypesRawDataAR .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFour[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -852,6 +881,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAO;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAP;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAQ;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAR;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;
