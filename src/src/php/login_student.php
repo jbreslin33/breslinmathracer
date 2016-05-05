@@ -169,6 +169,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataAL = ""; 
 	$itemTypesRawDataAM = ""; 
 	$itemTypesRawDataAN = ""; 
+	$itemTypesRawDataAO = ""; 
+	$itemTypesRawDataAP = ""; 
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -723,6 +725,33 @@ public function sendLoginStudent()
                         $itemTypesRawDataAN .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyTwo[$i];
                 }
         }
+	
+	//TwentyThree	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyThree); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAO .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyThree[$i];
+                }
+                else
+               	{ 
+                        $itemTypesRawDataAO .= ":";
+                        $itemTypesRawDataAO .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyThree[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyThree); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAP .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyThree[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAP .= ":";
+                        $itemTypesRawDataAP .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyThree[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -819,6 +848,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAM;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAN;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAO;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAP;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;

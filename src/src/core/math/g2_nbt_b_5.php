@@ -31,7 +31,7 @@ initialize: function(sheet)
 });
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.2_1',2.1101,'2.nbt.b.2',''); update item_types SET progression = 2.1101 where id = '2.nbt.b.5_1';
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.5_1',2.1101,'2.nbt.b.5',''); update item_types SET progression = 2.1101 where id = '2.nbt.b.5_1';
 */
 
 var i_2_nbt_b_5__1 = new Class(

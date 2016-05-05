@@ -100,6 +100,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_THIRD_APPLICATION);
 	}
+	if (application.mEvaluationsID == 23 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_SECOND_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_SECOND_APPLICATION);
+	}
 	//add_game_D
 },
 
@@ -393,8 +397,15 @@ execute: function(application)
 	
 			var itemAttemptsTransactionCodesTwentyTwo = APPLICATION.mResponseArray[47];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyTwo = itemAttemptsTransactionCodesTwentyTwo.split(":");
+			
+			//TwentyThree	 
+			var itemAttemptsTypesTwentyThree = APPLICATION.mResponseArray[48];
+			APPLICATION.mItemAttemptsTypeArrayTwentyThree = itemAttemptsTypesTwentyThree.split(":");
+	
+			var itemAttemptsTransactionCodesTwentyThree = APPLICATION.mResponseArray[49];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyThree = itemAttemptsTransactionCodesTwentyThree.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[48];
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[50];
 			//add_game_E	
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -899,8 +910,18 @@ execute: function(application)
 
                         var itemAttemptsTransactionCodesTwentyTwo = APPLICATION.mResponseArray[47];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyTwo = itemAttemptsTransactionCodesTwentyTwo.split(":");
+			
+			//TwentyThree
+                        if (APPLICATION.mResponseArray[48])
+                        {
+                                var itemAttemptsTypesTwentyThree = APPLICATION.mResponseArray[48];
+                                APPLICATION.mItemAttemptsTypeArrayTwentyThree = itemAttemptsTypesTwentyThree.split(":");
+                        }
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[48];
+                        var itemAttemptsTransactionCodesTwentyThree = APPLICATION.mResponseArray[49];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayTwentyThree = itemAttemptsTransactionCodesTwentyThree.split(":");
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[50];
 			//add_game_F
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -1982,6 +2003,44 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::BASIC_SKILLS_THIRD_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var BASIC_SKILLS_SECOND_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::BASIC_SKILLS_SECOND_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new BasicSkillsSecondGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::BASIC_SKILLS_SECOND_APPLICATION execute');
 	}
 },
 

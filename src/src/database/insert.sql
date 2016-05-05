@@ -132,6 +132,7 @@ insert into evaluations (description) values ('assessment'); --if you get someti
 insert into evaluations (description) values ('Basic Skills Fourth'); 
 insert into evaluations (description) values ('Basic Skills Fifth'); 
 insert into evaluations (description) values ('Basic Skills Third'); 
+insert into evaluations (description) values ('Basic Skills Second'); 
 --add_game_I
 --insert into evaluations (description) values ('homework');  could be tables could be last 10 etc  30 probs 
 --insert into evaluations (description) values ('quiz'); -- 10 questions mtwr 40 mondays 

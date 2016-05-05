@@ -377,16 +377,28 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionK);
 		}
 		
-		var optionK = document.createElement("option");
-                optionK.value = 22;
-                optionK.text = 'Basic Skills Third';
+		var optionL = document.createElement("option");
+                optionL.value = 22;
+                optionL.text = 'Basic Skills Third';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionK);
+       	        	this.mTimesTablesInfo.mMesh.add(optionL);
 		}
 		else
 		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionK);
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionL);
+		}
+		
+		var optionM = document.createElement("option");
+                optionM.value = 23;
+                optionM.text = 'Basic Skills Second';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionM);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionM);
 		}
 
 		//add_game_J	

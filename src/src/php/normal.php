@@ -94,6 +94,9 @@ function __construct($application)
 	$this->mItemAttemptsTypeArrayTwentyTwo    = array();
 	$this->mItemAttemptsTransactionCodeArrayTwentyTwo    = array();
 	
+	$this->mItemAttemptsTypeArrayTwentyThree    = array();
+	$this->mItemAttemptsTransactionCodeArrayTwentyThree    = array();
+	
 	//add_game_P
 }
 
@@ -164,7 +167,7 @@ public function fillItemAttemptsArray()
                 {
 			//add_game_Q
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22)
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23)
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -263,6 +266,11 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayTwentyTwo[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayTwentyTwo[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 23)
+			{
+                        	$this->mItemAttemptsTypeArrayTwentyThree[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayTwentyThree[]  = pg_Result($result,$i,'transaction_code');
 			}
                 }
         }

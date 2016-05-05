@@ -133,6 +133,10 @@ Extends: Application,
 		this.mItemAttemptsTypeArrayTwentyTwo = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTwentyTwo = new Array(); //from db
 		
+		//TwentyThree BasicSkills2nd 
+		this.mItemAttemptsTypeArrayTwentyThree = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayTwentyThree = new Array(); //from db
+		
 		//add_game_A
 
 		//algorithms
@@ -223,6 +227,7 @@ Extends: Application,
                 this.mBASIC_SKILLS_FOURTH_APPLICATION = new BASIC_SKILLS_FOURTH_APPLICATION      (this);
                 this.mBASIC_SKILLS_FIFTH_APPLICATION = new BASIC_SKILLS_FIFTH_APPLICATION      (this);
                 this.mBASIC_SKILLS_THIRD_APPLICATION = new BASIC_SKILLS_THIRD_APPLICATION      (this);
+                this.mBASIC_SKILLS_SECOND_APPLICATION = new BASIC_SKILLS_SECOND_APPLICATION      (this);
 
 		//add_game_B
 	
@@ -852,6 +857,30 @@ highestAchieved: function()
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyTwo[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+				i++;
+                        }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+		
+		if (parseInt(this.mEvaluationsID) == 23)
+                {
+                        var i = 0;
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyThree[i]) == 1)
                                 {
                                         correct++;
                                 }
