@@ -412,6 +412,18 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
 		}
+		
+		var optionO = document.createElement("option");
+                optionO.value = 25;
+                optionO.text = 'Basic Skills Kindergarten';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionO);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionO);
+		}
 
 		//add_game_J	
 

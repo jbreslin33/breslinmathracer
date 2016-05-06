@@ -141,6 +141,10 @@ Extends: Application,
 		this.mItemAttemptsTypeArrayTwentyFour = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTwentyFour = new Array(); //from db
 		
+		//TwentyFive BasicSkillsK 
+		this.mItemAttemptsTypeArrayTwentyFive = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayTwentyFive = new Array(); //from db
+		
 		//add_game_A
 
 		//algorithms
@@ -233,6 +237,7 @@ Extends: Application,
                 this.mBASIC_SKILLS_THIRD_APPLICATION = new BASIC_SKILLS_THIRD_APPLICATION      (this);
                 this.mBASIC_SKILLS_SECOND_APPLICATION = new BASIC_SKILLS_SECOND_APPLICATION      (this);
                 this.mBASIC_SKILLS_FIRST_APPLICATION = new BASIC_SKILLS_FIRST_APPLICATION      (this);
+                this.mBASIC_SKILLS_KINDERGARTEN_APPLICATION = new BASIC_SKILLS_KINDERGARTEN_APPLICATION      (this);
 
 		//add_game_B
 	
@@ -910,6 +915,30 @@ highestAchieved: function()
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyFour[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+				i++;
+                        }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+		
+		if (parseInt(this.mEvaluationsID) == 25)
+                {
+                        var i = 0;
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyFive[i]) == 1)
                                 {
                                         correct++;
                                 }

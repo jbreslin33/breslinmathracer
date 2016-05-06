@@ -173,6 +173,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataAP = ""; 
 	$itemTypesRawDataAQ = ""; 
 	$itemTypesRawDataAR = ""; 
+	$itemTypesRawDataAS = ""; 
+	$itemTypesRawDataAT = ""; 
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -781,6 +783,33 @@ public function sendLoginStudent()
                         $itemTypesRawDataAR .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFour[$i];
                 }
         }
+	
+	//TwentyFive	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyFive); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAS .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyFive[$i];
+                }
+                else
+               	{
+                        $itemTypesRawDataAS .= ":";
+                        $itemTypesRawDataAS .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyFive[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFive); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAT .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFive[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAT .= ":";
+                        $itemTypesRawDataAT .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFive[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -885,6 +914,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAQ;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAR;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAS;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAT;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;

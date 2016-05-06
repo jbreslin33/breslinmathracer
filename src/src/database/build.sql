@@ -227,6 +227,7 @@ CREATE TABLE users (
 	alltimebasicskillsthird integer NOT NULL default 0,
 	alltimebasicskillssecond integer NOT NULL default 0,
 	alltimebasicskillsfirst integer NOT NULL default 0,
+	alltimebasicskillskindergarten integer NOT NULL default 0,
         alltimekoaa5 integer NOT NULL default 0,
         alltimetwo integer NOT NULL default 0,
         alltimethree integer NOT NULL default 0,
