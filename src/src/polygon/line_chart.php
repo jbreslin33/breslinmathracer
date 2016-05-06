@@ -2386,12 +2386,14 @@ var height = y2 - y1;
 
 
 // draw x label
+/*
 var Xaxis = new Shape(5,5,x2+20,y2+25,this.mGame,"","","");
 Xaxis.setText('x');
 item.addQuestionShape(Xaxis);
 Xaxis.setOutOfBoundsCheck(false);
 Xaxis.mMesh.style.fontSize = 14;
 Xaxis.mMesh.style.color = "yellow";
+*/
 
 // draw y label
 /*
@@ -3195,5 +3197,323 @@ dragMove: function(dx,dy)
 });
 
 
+
+// no lines, no tables
+var LineChartTest4 = new Class(
+{
+Extends: RaphaelPolygon,
+        initialize: function (game,item,raphael,x1,y1,x2,y2,pointsX,pointsY,range,rX1,rY1,dots,s,d)
+        {
+		//find center for mPosition...
+		sX = x1 + x2 / 3;
+		sY = y1 + y2 / 3;
+
+    this.dots = dots;
+
+		this.parent(0,0,sX,sY,game,raphael,0,0,0,s,0,d);
+
+    this.pointsX = pointsX;
+
+		this.x1 = x1;
+		this.y1 = y1;
+		this.x2 = x2;
+		this.y2 = y2;
+
+    this.vLines = new Array();
+    this.hLines = new Array();
+		
+		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
+		
+		this.mPolygon = this.mRaphael.linechart(
+    x1, y1,      // top left anchor
+    x2, y2,    // bottom right anchor
+    [
+      pointsX,        // red line x-values
+      range    // blue line x-values - invisible, used to create x-range of graph
+    ],
+    [
+      pointsY, // red line y-values
+      range      // blue line y-values - invisible, used to create y-range of graph
+    ],
+    {
+       nostroke: true,   // lines between points are drawn
+       axis: "0 0 1 0",   // draw axes on the left and bottom
+       axisxstep: 10,
+       axisystep: 10,
+       symbol: 'circle',    // use a filled circle as the point symbol
+       smooth: true,      // curve the lines to smooth turns on the chart
+       dash: "-",          //draw the lines dashed
+       colors: [
+         "#555599",       // the first line is red       
+         "#FFFFFFFF"        // the second line is blue
+       ]
+     });
+
+     this.axisItems1 = this.mPolygon.axis[0].text.items;
+
+
+     for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.axisItems1[i].attr("text", this.pointsX[i]); 
+                        } 
+/*
+     this.axisItems2 = this.mPolygon.axis[1].text.items;
+
+     for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                           this.axisItems2[i].attr("text", i); 
+                        } 
+*/
+
+var width = x2 - x1;
+var height = y2 - y1;
+
+
+
+// draw x label
+/*
+var Xaxis = new Shape(5,5,x2+20,y2+25,this.mGame,"","","");
+Xaxis.setText('x');
+item.addQuestionShape(Xaxis);
+Xaxis.setOutOfBoundsCheck(false);
+Xaxis.mMesh.style.fontSize = 14;
+Xaxis.mMesh.style.color = "yellow";
+*/
+
+// draw y label
+/*
+var Yaxis = new Shape(1,1,x1+15,y1+20,this.mGame,"","#555599","");
+Yaxis.setText('y');
+item.addQuestionShape(Yaxis);
+Yaxis.setOutOfBoundsCheck(false);
+Yaxis.mMesh.style.fontSize = 14;
+Yaxis.mMesh.style.color = "yellow";
+*/
+
+/*
+    // Draw horizontal gridlines
+for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
+    this.hLines[i] = this.mRaphael.path(['M', x1, this.mPolygon.axis[1].text.items[i].attrs.y, 'H', x2]).attr({
+        stroke : '#995555'
+    }).toBack();
+}
+
+
+// Draw vertical gridlines
+for (var i = 0; i < this.mPolygon.axis[0].text.items.length; i++) {
+    this.vLines[i] = this.mRaphael.path(['M', this.mPolygon.axis[0].text.items[i].attrs.x, y2, 'V', y1]).attr({
+        stroke : '#995555'
+    }).toBack();
+}
+*/
+
+var iMax = this.mPolygon.axis[0].text.items.length;
+   // var jMax = this.mPolygon.axis[1].text.items.length;
+    this.circles = new Array();
+
+    for (i=0;i<iMax;i++) {
+        this.circles[i]=0;
+      //this.circles[i]=new Array();
+     // for (j=0;j<jMax;j++) {
+       // this.circles[i][j]=0;
+     // }
+    }
+
+var b;
+var current = '';
+var flag = this.flag;
+
+    // Draw invisible circles at each point
+//for (var i = 0; i < this.mPolygon.axis[1].text.items.length; i++) {
+
+  var y = 310; //this.mPolygon.axis[1].text.items[i].attrs.y;
+
+  for (var j = 0; j < this.mPolygon.axis[0].text.items.length; j++) {
+    var x = this.mPolygon.axis[0].text.items[j].attrs.x;
+    b = this.mRaphael.circle(x, y, 10).attr({fill: "hsb(0, 1, 1)", stroke: "none", opacity: 0}).scale(.25,.25);
+
+if(j == 0)
+{
+  this.startX = x;
+  this.startY = y;
+}
+    b.data("click", 0);
+    b.data("x", j);
+    b.data("y", 0);
+    this.circles[j] = b;
+    //item.addQuestionShape(b);
+
+    b.mousedown(function() {
+      if (this.data("click") == '1' && clickflag == true) {
+        this.attr({fill: "red", stroke: "none", opacity: .1}).scale(2,2);
+        this.data("click", 0);
+        item.setTempUserAnswer(''); 
+        current = '';
+           
+      }
+      else if(clickflag == true){
+        if(current != '')  {
+          current.attr({fill: "red", stroke: "none", opacity: .1}).scale(2,2);
+          current.data("click", 0);
+          
+        }
+        this.attr({fill: "white", stroke: "none", opacity: 1}).scale(.5,.5);
+        this.data("click", 1);
+        item.setTempUserAnswer('' + this.data("x") + ' ' + this.data("y"));
+        current = this;
+//console.log(this.data("x"));
+      }
+    });
+   //"hsb(0, 1, 1)"
+  }
+//}
+
+
+var circleX = [0,0];
+//var circleY;
+
+for (var j = 0; j < this.dots.length; j++) {
+
+  var pointX = this.dots[j] + 5;
+
+/*
+  b = this.mRaphael.circle(this.startX + (pointX*29.08), this.startY, 10).attr({fill: "hsb(0, 1, 1)",  stroke: "none", opacity: 1}).scale(.25,.25);
+*/
+
+ b = this.mRaphael.circle(this.startX + (pointX*29.08), this.startY, 10).scale(.25,.25);
+
+circleX[j] = this.startX + (pointX*29.08);
+//circleY[j] = 
+
+  //this.label = new Shape(100,50,x+rX1+45,y+rY1-20,game,"","","");
+  this.label = new Shape(100,50,this.startX + rX1+45 + (pointX*29.08),y+rY1-20,game,"","","");
+  
+  if(j == 0)
+    this.label.setText("A");
+  if(j == 1)
+    this.label.setText("B");
+  if(j == 2)
+    this.label.setText("C");
+  if(j == 3)
+    this.label.setText("D");
+  if(j == 4)
+    this.label.setText("E");
+  if(j == 5)
+    this.label.setText("F");
+  if(j == 6)
+    this.label.setText("G");
+  
+
+  item.addShape(this.label);
+
+   //item.addShape(b);    
+ 
+
+  //console.log(point);
+}
+
+
+
+
+
+var q = this.mRaphael.path(['M', circleX[0], this.startY, 'H', circleX[1]]).attr({
+        stroke : 'green',"stroke-width":3
+    }).toBack();
+
+/*
+this.arrow = new Shape(100,50,100,300,game,"","","");
+this.arrow.mMesh.setStyle('color', 'blue');
+this.arrow.setText(">");
+*/
+
+this.mPolygon.mPolygon = this;
+
+if (this.mDrag)
+{
+ 		this.mPolygon.drag(this.move, this.start, this.up);
+}
+
+},
+
+
+setVisibility: function(b)
+	{
+             	if (b)
+                {
+                        this.mPolygon.show();                        
+
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.axisItems1[i].attr("text", this.pointsX[i]); 
+                        } 
+
+                       //for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                          // this.axisItems2[i].attr("text", i); 
+                       // } 
+                        /*
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.vLines[i].show();                          
+                        } 
+
+                        for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                           this.hLines[i].show(); 
+                        } 
+                        */
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                          //for( var j = 0; j < this.axisItems2.length; j++ ) {
+                            this.circles[i].show(); 
+                         // }
+                        }
+                    
+                }
+                else
+                {
+                        this.mPolygon.hide();                  
+
+                       for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.axisItems1[i].attr("text", ""); 
+                        } 
+
+                      // for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                          // this.axisItems2[i].attr("text", ""); 
+                       // } 
+                        /*
+                       for( var i = 0; i < this.axisItems1.length; i++ ) {
+                           this.vLines[i].hide();                          
+                        } 
+
+                        for( var i = 0; i < this.axisItems2.length; i++ ) {                         
+                           this.hLines[i].hide(); 
+                        } 
+                        */
+                        for( var i = 0; i < this.axisItems1.length; i++ ) {
+                         // for( var j = 0; j < this.axisItems2.length; j++ ) {
+                            this.circles[i].hide(); 
+                         // }
+                        }
+                }
+	},
+
+
+	dragMove: function(dx,dy)
+	{
+   		var deltaX = dx - this.mLastX;
+                var deltaY = dy - this.mLastY;
+
+		//update mPosition
+		this.mPosition.mX += deltaX; 
+		this.mPosition.mY += deltaY; 
+
+                this.x1 += deltaX;
+                this.y1 += deltaY;
+                this.x2 += deltaX;
+                this.y2 += deltaY;
+                this.x3 += deltaX;
+                this.y3 += deltaY;
+
+                this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2;
+                this.mPolygon.attr({path:"" + this.mPathString});
+
+                this.mLastX = dx;
+                this.mLastY = dy;
+	}
+});
 
 
