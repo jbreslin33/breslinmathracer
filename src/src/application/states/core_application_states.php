@@ -112,6 +112,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_KINDERGARTEN_APPLICATION);
 	}
+	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mMAKE_TEN_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mMAKE_TEN_APPLICATION);
+	}
 	//add_game_D
 },
 
@@ -420,14 +424,23 @@ execute: function(application)
 			var itemAttemptsTransactionCodesTwentyFour = APPLICATION.mResponseArray[51];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFour = itemAttemptsTransactionCodesTwentyFour.split(":");
 			
+
+
 			//TwentyFive	 
 			var itemAttemptsTypesTwentyFive = APPLICATION.mResponseArray[52];
 			APPLICATION.mItemAttemptsTypeArrayTwentyFive = itemAttemptsTypesTwentyFive.split(":");
 	
 			var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[53];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFive = itemAttemptsTransactionCodesTwentyFive.split(":");
+			
+			//TwentySix	 
+			var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[54];
+			APPLICATION.mItemAttemptsTypeArrayTwentySix = itemAttemptsTypesTwentySix.split(":");
+	
+			var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[55];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTwentySix = itemAttemptsTransactionCodesTwentySix.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[54];
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[56];
 			//add_game_E	
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -955,8 +968,6 @@ execute: function(application)
                         var itemAttemptsTransactionCodesTwentyFour = APPLICATION.mResponseArray[51];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFour = itemAttemptsTransactionCodesTwentyFour.split(":");
 			
-			
-			
 			//TwentyFive
                         if (APPLICATION.mResponseArray[52])
                         {
@@ -966,9 +977,18 @@ execute: function(application)
 
                         var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[53];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFive = itemAttemptsTransactionCodesTwentyFive.split(":");
+			
+			//TwentySix
+                        if (APPLICATION.mResponseArray[54])
+                        {
+                                var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[54];
+                                APPLICATION.mItemAttemptsTypeArrayTwentySix = itemAttemptsTypesTwentySix.split(":");
+                        }
 
+                        var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[55];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayTwentySix = itemAttemptsTransactionCodesTwentySix.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[54];
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[56];
 
 			//add_game_F
 	
@@ -2165,6 +2185,44 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::BASIC_SKILLS_KINDERGARTEN_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var MAKE_TEN_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::MAKE_TEN_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new MakeTenGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::MAKE_TEN_APPLICATION execute');
 	}
 },
 

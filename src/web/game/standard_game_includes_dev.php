@@ -106,6 +106,7 @@
 <script type="text/javascript" src="/src/sheet/basic_skills_second_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_first_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_kindergarten_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/make_ten_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/states/states.php"></script>
 
 <script type="text/javascript" src="/src/hud/hud.php"></script>
@@ -142,6 +143,7 @@
 <script type="text/javascript" src="/src/core/math/basic_skills_second_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_first_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_kindergarten_game.php"></script>
+<script type="text/javascript" src="/src/core/math/make_ten_game.php"></script>
 <script type="text/javascript" src="/src/core/math/picker.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_brian.php"></script>
 <script type="text/javascript" src="/src/core/math/picker_jim.php"></script>

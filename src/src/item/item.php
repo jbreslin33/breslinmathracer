@@ -424,6 +424,18 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionO);
 		}
+		
+		var optionP = document.createElement("option");
+                optionP.value = 26;
+                optionP.text = 'Make Ten';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionP);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionP);
+		}
 
 		//add_game_J	
 

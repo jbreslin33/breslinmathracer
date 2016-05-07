@@ -175,6 +175,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataAR = ""; 
 	$itemTypesRawDataAS = ""; 
 	$itemTypesRawDataAT = ""; 
+	$itemTypesRawDataAU = ""; 
+	$itemTypesRawDataAV = ""; 
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -810,6 +812,33 @@ public function sendLoginStudent()
                         $itemTypesRawDataAT .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyFive[$i];
                 }
         }
+	
+	//TwentySix	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwentySix); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAU .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentySix[$i];
+                }
+                else
+               	{
+                        $itemTypesRawDataAU .= ":";
+                        $itemTypesRawDataAU .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentySix[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentySix); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAV .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentySix[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAV .= ":";
+                        $itemTypesRawDataAV .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentySix[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -918,6 +947,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAS;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAT;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAU;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAV;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;
