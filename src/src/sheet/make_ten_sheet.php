@@ -6,10 +6,16 @@ initialize: function(game)
 {
 	this.parent(game);
 	
-	this.mIDArray.push('1.oa.a.1_1');
+	this.mIDArray.push('k.oa.a.4_1');
+	this.mIDArray.push('k.oa.a.4_2');
+	this.mIDArray.push('k.oa.a.4_3');
+	this.mIDArray.push('k.oa.a.4_4');
+	this.mIDArray.push('k.oa.a.4_5');
+	this.mIDArray.push('k.oa.a.4_6');
+	this.mIDArray.push('k.oa.a.4_7');
+	this.mIDArray.push('k.oa.a.4_8');
+	this.mIDArray.push('k.oa.a.4_9');
 	
-	this.mIDArray.push('1.oa.a.1_2');
-
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
