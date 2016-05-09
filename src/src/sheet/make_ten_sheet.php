@@ -16,6 +16,16 @@ initialize: function(game)
 	this.mIDArray.push('k.oa.a.4_8');
 	this.mIDArray.push('k.oa.a.4_9');
 	
+	this.mIDArray.push('k.oa.a.4_21');
+	this.mIDArray.push('k.oa.a.4_22');
+	this.mIDArray.push('k.oa.a.4_23');
+	this.mIDArray.push('k.oa.a.4_24');
+	this.mIDArray.push('k.oa.a.4_25');
+	this.mIDArray.push('k.oa.a.4_26');
+	this.mIDArray.push('k.oa.a.4_27');
+	this.mIDArray.push('k.oa.a.4_28');
+	this.mIDArray.push('k.oa.a.4_29');
+	
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
