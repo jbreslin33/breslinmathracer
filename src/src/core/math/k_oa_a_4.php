@@ -1,5 +1,186 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_29',0.1429,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__29 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_29';
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 1 + _ = 10');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_28',0.1428,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__28 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_28';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 2 + _ = 10');
+        this.setAnswer('' + '8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_27',0.1427,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__27 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_27';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 3 + _ = 10');
+        this.setAnswer('' + '7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_26',0.1426,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__26 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_26';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 4 + _ = 10');
+        this.setAnswer('' + '6',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_25',0.1425,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__25 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_25';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 5 + _ = 10');
+        this.setAnswer('' + '5',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_24',0.1424,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__24 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_24';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 6 + _ = 10');
+        this.setAnswer('' + '4',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_23',0.1423,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__23 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_23';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 7 + _ = 10');
+        this.setAnswer('' + '3',0);
+}
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_22',0.1422,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__22 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_22';
+        this.mThresholdTime = 5000;
+
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 8 + _ = 10');
+        this.setAnswer('' + '2',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_21',0.1421,'k.oa.a.4','');
+*/
+var i_k_oa_a_4__21 = new Class(
+{
+Extends: NumberPadItem,
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = 'k.oa.a.4_21';
+        this.mThresholdTime = 5000;
+    
+	this.mQuestionLabel.setPosition(220,75);
+	this.mQuestionLabel.setSize(200,25);
+
+        this.setQuestion('Make ten. 9 + _ = 10');
+        this.setAnswer('' + '1',0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('k.oa.a.4_11',0.14011,'k.oa.a.4','');
 */
 
