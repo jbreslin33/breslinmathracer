@@ -6,11 +6,9 @@ initialize: function(game)
 {
 	this.parent(game);
 	
-	//addition within 100
-	this.mIDArray.push('2.nbt.b.5_1');
-	
-	//subtraction within 100
-	this.mIDArray.push('2.nbt.b.5_2');
+	//addition subtraction within 1000
+	this.mIDArray.push('2.nbt.b.7_16');
+	this.mIDArray.push('2.nbt.b.7_17');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);

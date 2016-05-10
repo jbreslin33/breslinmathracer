@@ -1,5 +1,52 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_17',2.1317,'2.nbt.b.7','' ); update item_types SET progression = 2.1317 where id = '2.nbt.b.7_17';
+*/
+var i_2_nbt_b_7__17 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.nbt.b.7_17';
+        
+	var a = 0;
+	var b = 0;
+	var c = -1;
+
+	while (c < 0)
+	{
+        	a = Math.floor((Math.random()*899)+100);
+        	b = Math.floor((Math.random()*899)+100);
+		c = parseInt(a - b);
+	}
+        
+	this.setQuestion('' + a + ' - ' + b + ' = ');
+        this.setAnswer('' + c,0);
+}	
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_16',2.1316,'2.nbt.b.7','' ); update item_types SET progression = 2.1316 where id = '2.nbt.b.7_16';
+*/
+var i_2_nbt_b_7__16 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.nbt.b.7_16';
+        
+        var a = Math.floor( (Math.random()*899)+100);
+        var b = Math.floor( (Math.random()*899)+100);
+	var c = parseInt(a + b);
+        
+	this.setQuestion('' + a + ' + ' + b + ' = ');
+        this.setAnswer('' + c,0);
+}	
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_15',2.1315,'2.nbt.b.7','' ); update item_types SET progression = 2.1315 where id = '2.nbt.b.7_15';
 */
 var i_2_nbt_b_7__15 = new Class(
