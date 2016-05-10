@@ -35,6 +35,9 @@ initialize: function(game)
 	//subtraction fraction unlike denominators
 	r = Math.floor(Math.random()*4+5); //5-8
 	this.mIDArray.push('5.nf.a.1_' + r);
+	
+	//subtraction fraction unlike denominators with borrow
+	this.mIDArray.push('5.nf.a.1_9');
 
 	//multiply fractions 
 	r = Math.floor(Math.random()*2+1); //1-2
@@ -42,7 +45,6 @@ initialize: function(game)
 
 	//divide fraction with unit numerator by whole number
 	this.mIDArray.push('5.nf.b.7.a_5');
-			  //5.nf.b.7.a_5
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
