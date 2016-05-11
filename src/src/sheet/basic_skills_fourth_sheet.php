@@ -26,6 +26,8 @@ initialize: function(game)
 	//subtract mixed numbers	
 	this.mIDArray.push('4.nf.b.3.c_8');
 	
+	//subtract mixed numbers with borrowing	
+	this.mIDArray.push('4.nf.b.3.c_11');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);

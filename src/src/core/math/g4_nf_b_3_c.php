@@ -18,18 +18,22 @@ initialize: function(sheet)
         var a = 0;
         var b = 0; 
         var d = 0;
+	var m = 0;
+	var n = 0;
 
-        while (a > d || b > d || a >= b || x <= y) 
+        while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0) 
         {
                 x = Math.floor(Math.random()*9)+1;
                 y = Math.floor(Math.random()*9)+1;
                 a = Math.floor(Math.random()*9)+1;
                 b = Math.floor(Math.random()*9)+1;
                 d = Math.floor(Math.random()*8)+2;
+		m = parseInt( (d*x) + a);
+		n = parseInt( (d*y) + b);
         }
 
-        var fractionA = new Fraction(a,d,false);
-        var fractionB = new Fraction(b,d,false);
+        var fractionA = new Fraction(m,d,false);
+        var fractionB = new Fraction(n,d,false);
         var fractionC = fractionA.subtract(fractionB);
 
 	APPLICATION.log('x:' + x);
