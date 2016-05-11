@@ -13,20 +13,27 @@ initialize: function(sheet)
 
         this.mType = '4.nf.b.3.c_11';
 
+        var x = 0;
+        var y = 1;
         var a = 0;
-        var b = 0;
-        var d = 1;
+        var b = 0; 
+        var d = 0;
 
-        while (b < d || a % d == 0 || b % d == 0 || a <= b)
+        while (a > d || b > d || a >= b || x <= y) 
         {
-                a = Math.floor(Math.random()*10)+10;
-                b = Math.floor(Math.random()*10)+10;
-                d = Math.floor(Math.random()*3)+2;
+                x = Math.floor(Math.random()*9)+1;
+                y = Math.floor(Math.random()*9)+1;
+                a = Math.floor(Math.random()*9)+1;
+                b = Math.floor(Math.random()*9)+1;
+                d = Math.floor(Math.random()*8)+2;
         }
 
         var fractionA = new Fraction(a,d,false);
         var fractionB = new Fraction(b,d,false);
         var fractionC = fractionA.subtract(fractionB);
+
+	APPLICATION.log('x:' + x);
+	APPLICATION.log('y:' + y);
 
         this.setQuestion('' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber() + ' = ');
         this.setAnswer('' + fractionC.getString(),0);
