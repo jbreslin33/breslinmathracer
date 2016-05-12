@@ -1,40 +1,49 @@
 
+
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.1_9',5.1209,'5.nf.a.1','subtract mixed number and mixed number');
+insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.1_9',4.1209,'5.nf.a.1','');
 */
+
 var i_5_nf_a_1__9 = new Class(
 {
-Extends: TextItemFraction,
+Extends: TextItemMixedNumber,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,350,50,200,95, 100,50,425,100, 100,50,425,175,true);
+        this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
         this.mType = '5.nf.a.1_9';
 
-        var an = 1;
-        var ad = 1;
-        var bn = 1;
-        var bd = 1;
-        while (an > ad || an % ad == 0 || bn < bd || bn % bd == 0 || parseInt(an / ad) <= parseInt(bn / bd) || ad == bd)
+        var x = 0;
+        var y = 1;
+        var a = 0;
+        var b = 0;
+        var d = 0;
+        var m = 0;
+        var n = 0;
+
+        while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0)
         {
-                an = Math.floor((Math.random()*9)+10);
-                ad = Math.floor((Math.random()*9)+1);
-                bn = Math.floor((Math.random()*9)+10);
-                bd = Math.floor((Math.random()*9)+1);
+                x = Math.floor(Math.random()*9)+1;
+                y = Math.floor(Math.random()*9)+1;
+                a = Math.floor(Math.random()*9)+1;
+                b = Math.floor(Math.random()*9)+1;
+                d = Math.floor(Math.random()*8)+2;
+                m = parseInt( (d*x) + a);
+                n = parseInt( (d*y) + b);
         }
 
-        var fractionA = new Fraction(an,ad,false);
-        var fractionB = new Fraction(bn,bd,false);
+        var fractionA = new Fraction(m,d,false);
+        var fractionB = new Fraction(n,d,false);
+        var fractionC = fractionA.subtract(fractionB);
 
-        var answer = fractionA.subtract(fractionB);
-        answer.reduce();
+        APPLICATION.log('x:' + x);
+        APPLICATION.log('y:' + y);
 
-        this.setAnswer('' + answer.getString(),0);
-        this.setQuestion('Evaluate: ' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber());
+        this.setQuestion('' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber() + ' = ');
+        this.setAnswer('' + fractionC.getString(),0);
 }
 });
-
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nf.a.1_8',5.1208,'5.nf.a.1','subtract mixed number and mixed number');
