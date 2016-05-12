@@ -13,6 +13,8 @@ initialize: function(sheet)
         this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
 
         this.mType = '5.nf.a.1_9';
+		
+	var u = new Utility();
 
         var x = 0;
         var y = 1;
@@ -23,7 +25,10 @@ initialize: function(sheet)
         var m = 0;
         var n = 0;
 
-        while (da == db || a > da || b > db || a >= b || x <= y || m%da == 0 || n%db == 0)
+	var ja = 0; 
+	var ja = 0; 
+
+        while (ja >= jb || da == db || a > da || b > db || a >= b || x <= y || m%da == 0 || n%db == 0)
         {
                 x = Math.floor(Math.random()*9)+1;
                 y = Math.floor(Math.random()*9)+1;
@@ -33,14 +38,19 @@ initialize: function(sheet)
                 db = Math.floor(Math.random()*8)+2;
                 m = parseInt( (da*x) + a);
                 n = parseInt( (db*y) + b);
+	
+		var lc = u.lcm(da,db);
+
+		var ma = parseInt(lc / da); 
+		var ja = parseInt(a * ma);
+
+		var mb = parseInt(lc / db); 
+		var jb = parseInt(b * mb);
         }
 
         var fractionA = new Fraction(m,da,false);
         var fractionB = new Fraction(n,db,false);
         var fractionC = fractionA.subtract(fractionB);
-
-        APPLICATION.log('x:' + x);
-        APPLICATION.log('y:' + y);
 
         this.setQuestion('' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber() + ' = ');
         this.setAnswer('' + fractionC.getString(),0);
