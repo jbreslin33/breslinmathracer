@@ -3387,19 +3387,19 @@ circleX[j] = this.startX + (pointX*29.08);
   this.label = new Shape(100,50,this.startX + rX1+45 + (pointX*29.08),y+rY1-20,game,"","","");
   
   if(j == 0)
-    this.label.setText("A");
+    this.label.setText("");
   if(j == 1)
-    this.label.setText("B");
+    this.label.setText("");
   if(j == 2)
-    this.label.setText("C");
+    this.label.setText("");
   if(j == 3)
-    this.label.setText("D");
+    this.label.setText("");
   if(j == 4)
-    this.label.setText("E");
+    this.label.setText("");
   if(j == 5)
-    this.label.setText("F");
+    this.label.setText("");
   if(j == 6)
-    this.label.setText("G");
+    this.label.setText("");
   
 
   item.addShape(this.label);

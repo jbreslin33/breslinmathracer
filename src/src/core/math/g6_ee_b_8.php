@@ -4,11 +4,16 @@ insert into item_types(id,progression,core_standards_id,description) values ('6.
 */
 var i_6_ee_b_8__1 = new Class(
 {
-Extends: TextItem,
+Extends: ThreeButtonItem,
 
 initialize: function(sheet)
 {
-        this.parent(sheet,200,50,225,95,100,50,425,100);
+        //this.parent(sheet,200,50,225,95,100,50,425,100);
+
+         this.parent(sheet);
+                this.mType = '6.ns.c.7.c_4';
+        	this.mStripCommas = false;
+                this.mChopWhiteSpace = false;
 
         this.mType = '6.ee.b.8_1';
 
@@ -28,6 +33,11 @@ var rX1 = 10;
 var rY1 = 50;
 var rX2 = 350;
 var rY2 = 350;
+
+//var rX1 = 10;
+//var rY1 = 250;
+//var rX2 = 350;
+//var rY2 = 350;
 
 this.raphael = Raphael(rX1, rY1, rX2, rY2);
 
@@ -85,10 +95,13 @@ if(j == 3)
     m = m + .5;
 //}
 
-  dots[j] = m;
+  //dots[j] = m;
 }
 
-var letters = ['A','B','C','D','E','F','G'];
+dots[0] = Math.floor(Math.random()*5 + -5);
+dots[1] = Math.floor(Math.random()*5 + 1);
+
+var letters = [' ',' ',' ',' ','E','F','G'];
 
   //this.setAnswer('' + answer,0);
 
@@ -103,13 +116,26 @@ var answer = '' + dots[r];
 
 var letter = letters[r];
  
-this.setAnswer(answer,0);
+this.setAnswer('n&gt;' + dots[0] + ', with the constraint n&lt;' + dots[1],0);
+
+this.mButtonA.setAnswer('n>' + dots[0] + ', with the constraint n<' + dots[1]);
+this.mButtonB.setAnswer('n<4, with the constraint n<8');
+this.mButtonC.setAnswer('n>2, with the constraint n<8');
+
+//console.log(this.mButtonArray[0].getAnswer());
+
+//this.mButtonArray[i].getAnswer() == this.mUserAnswer
+
+this.mButtonA.setPosition(530,220);
+this.mButtonB.setPosition(530,280);
+this.mButtonC.setPosition(530,340);
+
 
  this.chart = new LineChartTest4 (this.mSheet.mGame,this,this.raphael,startX, startY, endX, endY,pointsX,pointsY,range,rX1,rY1,dots,"#000000",false);
 
 this.addQuestionShape(this.chart);
    
-this.setQuestion('What number is represented by point ' + letter + '?');
+this.setQuestion('Choose the inequality that matches the graph');
 
 this.mQuestionLabel.setSize(220,50);
 this.mQuestionLabel.setPosition(125,80);
