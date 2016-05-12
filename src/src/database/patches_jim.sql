@@ -20,3 +20,6 @@ update evaluations set description = 'Basic Skills K' where id = 25;
 insert into evaluations (id,description) values (26,'Make Ten');
 alter table users add alltimemaketen integer;
 update evaluations set description = 'Make Ten' where id = 26;
+insert into evaluations (id,description) values (27,'Add Subtract Within 10');
+alter table users add alltimeaddsubtractwithinten integer;
+update evaluations set description = 'Make Ten' where id = 27;

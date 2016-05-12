@@ -125,6 +125,7 @@ cat src/sheet/basic_skills_second_sheet.php >> min.js
 cat src/sheet/basic_skills_first_sheet.php >> min.js
 cat src/sheet/basic_skills_kindergarten_sheet.php >> min.js
 cat src/sheet/make_ten_sheet.php >> min.js
+cat src/sheet/add_subtract_within_ten_sheet.php >> min.js
 cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/terra_nova_test_sheet.php >> min.js
 cat src/sheet/terra_nova_homework_sheet.php >> min.js

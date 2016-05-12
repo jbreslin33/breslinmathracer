@@ -116,6 +116,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mMAKE_TEN_APPLICATION);
 	}
+	if (application.mEvaluationsID == 27 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mADD_SUBTRACT_WITHIN_TEN_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mADD_SUBTRACT_WITHIN_TEN_APPLICATION);
+	}
 	//add_game_D
 },
 
@@ -433,6 +437,8 @@ execute: function(application)
 			var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[53];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFive = itemAttemptsTransactionCodesTwentyFive.split(":");
 			
+
+
 			//TwentySix	 
 			var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[54];
 			APPLICATION.mItemAttemptsTypeArrayTwentySix = itemAttemptsTypesTwentySix.split(":");
@@ -440,7 +446,17 @@ execute: function(application)
 			var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[55];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentySix = itemAttemptsTransactionCodesTwentySix.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[56];
+
+			//TwentySeven	 
+			var itemAttemptsTypesTwentySeven = APPLICATION.mResponseArray[56];
+			APPLICATION.mItemAttemptsTypeArrayTwentySeven = itemAttemptsTypesTwentySeven.split(":");
+	
+			var itemAttemptsTransactionCodesTwentySeven = APPLICATION.mResponseArray[57];
+			APPLICATION.mItemAttemptsTransactionCodeArrayTwentySeven = itemAttemptsTransactionCodesTwentySeven.split(":");
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[58];
+
+
 			//add_game_E	
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
@@ -988,7 +1004,19 @@ execute: function(application)
                         var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[55];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentySix = itemAttemptsTransactionCodesTwentySix.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[56];
+
+			//TwentySeven
+                        if (APPLICATION.mResponseArray[56])
+                        {
+                                var itemAttemptsTypesTwentySeven = APPLICATION.mResponseArray[56];
+                                APPLICATION.mItemAttemptsTypeArrayTwentySeven = itemAttemptsTypesTwentySeven.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesTwentySeven = APPLICATION.mResponseArray[57];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayTwentySeven = itemAttemptsTransactionCodesTwentySeven.split(":");
+
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[58];
 
 			//add_game_F
 	
@@ -2223,6 +2251,44 @@ execute: function(application)
 	if (application.mStateLogsExecute)
 	{
 		application.log('APPLICATION::MAKE_TEN_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var ADD_SUBTRACT_WITHIN_TEN_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::ADD_SUBTRACT_WITHIN_TEN_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new AddSubtractWithinTenGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::ADD_SUBTRACT_WITHIN_TEN_APPLICATION execute');
 	}
 },
 
