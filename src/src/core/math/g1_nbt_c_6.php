@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 	this.mQuestionLabel.setSize(100,50);
   	this.mQuestionLabel.setPosition(250,75);
- 	this.mThresholdTime = 5000;
+ 	this.mThresholdTime = 0;
         this.mType = '1.nbt.c.6_4';
 
 	this.answer = -1;
@@ -44,7 +44,7 @@ initialize: function(sheet)
 
 	this.mQuestionLabel.setSize(100,50);
   	this.mQuestionLabel.setPosition(250,75);
- 	this.mThresholdTime = 5000;
+ 	this.mThresholdTime = 0;
         this.mType = '1.nbt.c.6_3';
 
 	this.answer = -1;
@@ -75,7 +75,7 @@ initialize: function(sheet)
 
 	this.mQuestionLabel.setSize(100,50);
   	this.mQuestionLabel.setPosition(250,75);
- 	this.mThresholdTime = 5000;
+ 	this.mThresholdTime = 0;
         this.mType = '1.nbt.c.6_2';
 
 	this.answer = -1;
@@ -107,7 +107,7 @@ initialize: function(sheet)
 
 	this.mQuestionLabel.setSize(100,50);
   	this.mQuestionLabel.setPosition(250,75);
- 	this.mThresholdTime = 5000;
+ 	this.mThresholdTime = 0;
         this.mType = '1.nbt.c.6_1';
 
 	this.answer = -1;

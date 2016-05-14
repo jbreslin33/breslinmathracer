@@ -5,6 +5,11 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
+	
+	this.mIDArray.push('1.nbt.c.6_1');
+	this.mIDArray.push('1.nbt.c.6_2');
+	this.mIDArray.push('1.nbt.c.6_3');
+	this.mIDArray.push('1.nbt.c.6_4');
 
 	//add up to 100 algorithm	
 	this.mIDArray.push('1.nbt.c.4_1');
