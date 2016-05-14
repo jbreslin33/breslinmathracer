@@ -13,16 +13,12 @@ initialize: function(game)
 	this.mIDArray.push('1.nbt.c.4_4');
 	this.mIDArray.push('1.nbt.c.4_5');
 	this.mIDArray.push('1.nbt.c.4_6');
-	this.mIDArray.push('1.nbt.c.4_7');
-	this.mIDArray.push('1.nbt.c.4_8');
 	this.mIDArray.push('1.nbt.c.4_9');
 	this.mIDArray.push('1.nbt.c.4_10');
-	this.mIDArray.push('1.nbt.c.4_11');
-	this.mIDArray.push('1.nbt.c.4_12');
 
 
 	this.mCurrentElement = 0;
-	this.shuffle(500);
+	//this.shuffle(500);
 },
 
 pickItem: function()

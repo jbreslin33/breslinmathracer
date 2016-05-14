@@ -29,3 +29,7 @@ update evaluations set description = 'Add subtract within 20' where id = 28;
 insert into evaluations (id,description) values (29,'Propterites');
 alter table users add alltimeproperties integer;
 update evaluations set description = 'Properties' where id = 29;
+update item_types set active_code = 0 where id = '1.nbt.c.4_11';
+update item_types set active_code = 0 where id = '1.nbt.c.4_12';
+update item_types set active_code = 0 where id = '1.nbt.c.4_7';
+update item_types set active_code = 0 where id = '1.nbt.c.4_8';
