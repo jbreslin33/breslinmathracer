@@ -449,6 +449,17 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionQ);
 		}
 
+		var optionR = document.createElement("option");
+                optionR.value = 28;
+                optionR.text = 'Add Subtract Within 20';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionR);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionR);
+		}
 
 		//add_game_J	
 

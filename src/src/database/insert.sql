@@ -137,6 +137,7 @@ insert into evaluations (description) values ('Basic Skills First');
 insert into evaluations (description) values ('Basic Skills Kindergarten'); 
 insert into evaluations (description) values ('Make Ten'); 
 insert into evaluations (description) values ('Add Subtract within 10'); 
+insert into evaluations (description) values ('Add Subtract within 20'); 
 --add_game_I
 --insert into evaluations (description) values ('homework');  could be tables could be last 10 etc  30 probs 
 --insert into evaluations (description) values ('quiz'); -- 10 questions mtwr 40 mondays 

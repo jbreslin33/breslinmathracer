@@ -240,6 +240,7 @@ CREATE TABLE users (
         alltimenine integer NOT NULL default 0,
         alltimeten integer NOT NULL default 0,
         alltimeaddsubtractwithinten integer NOT NULL default 0,
+        alltimeaddsubtractwithintwenty integer NOT NULL default 0,
         banned_id integer NOT NULL default 0,
         work_it_id text,
 	PRIMARY KEY (id),	

@@ -179,6 +179,8 @@ public function sendLoginStudent()
 	$itemTypesRawDataAV = ""; 
 	$itemTypesRawDataAW = ""; 
 	$itemTypesRawDataAX = ""; 
+	$itemTypesRawDataAY = ""; 
+	$itemTypesRawDataAZ = ""; 
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -868,6 +870,33 @@ public function sendLoginStudent()
                         $itemTypesRawDataAX .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentySeven[$i];
                 }
         }
+	
+	//TwentyEight	
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyEight); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAY .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyEight[$i];
+                }
+                else
+               	{
+                        $itemTypesRawDataAY .= ":";
+                        $itemTypesRawDataAY .= $this->mApplication->mNormal->mItemAttemptsTypeArrayTwentyEight[$i];
+                }
+        }
+
+	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyEight); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAZ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyEight[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAZ .= ":";
+                        $itemTypesRawDataAZ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTwentyEight[$i];
+                }
+        }
 
 	//fill php vars
 	$returnString = "117,";
@@ -984,6 +1013,10 @@ public function sendLoginStudent()
 	$returnString .= $itemTypesRawDataAW;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAX;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAY;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAZ;
 	$returnString .= ",";
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;

@@ -22,4 +22,7 @@ alter table users add alltimemaketen integer;
 update evaluations set description = 'Make Ten' where id = 26;
 insert into evaluations (id,description) values (27,'Add Subtract Within 10');
 alter table users add alltimeaddsubtractwithinten integer;
-update evaluations set description = 'Make Ten' where id = 27;
+update evaluations set description = 'Add subtract within 10' where id = 27;
+insert into evaluations (id,description) values (28,'Add Subtract Within 20');
+alter table users add alltimeaddsubtractwithintwenty integer;
+update evaluations set description = 'Add subtract within 20' where id = 28;

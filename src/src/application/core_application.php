@@ -149,9 +149,13 @@ Extends: Application,
 		this.mItemAttemptsTypeArrayTwentySix = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTwentySix = new Array(); //from db
 		
-		//TwentySix AddSubtractWithinTen 
+		//TwentySeven AddSubtractWithinTen 
 		this.mItemAttemptsTypeArrayTwentySeven = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTwentySeven = new Array(); //from db
+		
+		//TwentyEight AddSubtractWithinTwenty 
+		this.mItemAttemptsTypeArrayTwentyEight = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayTwentyEight = new Array(); //from db
 		
 		//add_game_A
 
@@ -248,6 +252,7 @@ Extends: Application,
                 this.mBASIC_SKILLS_KINDERGARTEN_APPLICATION = new BASIC_SKILLS_KINDERGARTEN_APPLICATION      (this);
                 this.mMAKE_TEN_APPLICATION = new MAKE_TEN_APPLICATION      (this);
                 this.mADD_SUBTRACT_WITHIN_TEN_APPLICATION = new ADD_SUBTRACT_WITHIN_TEN_APPLICATION      (this);
+                this.mADD_SUBTRACT_WITHIN_TWENTY_APPLICATION = new ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION      (this);
 
 		//add_game_B
 	
@@ -997,6 +1002,30 @@ highestAchieved: function()
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentySeven[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+				i++;
+                        }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+		
+		if (parseInt(this.mEvaluationsID) == 28)
+                {
+                        var i = 0;
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyEight[i]) == 1)
                                 {
                                         correct++;
                                 }
