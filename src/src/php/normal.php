@@ -112,6 +112,9 @@ function __construct($application)
 	$this->mItemAttemptsTypeArrayTwentyEight    = array();
 	$this->mItemAttemptsTransactionCodeArrayTwentyEight    = array();
 	
+	$this->mItemAttemptsTypeArrayTwentyNine    = array();
+	$this->mItemAttemptsTransactionCodeArrayTwentyNine    = array();
+	
 	//add_game_P
 }
 
@@ -182,7 +185,7 @@ public function fillItemAttemptsArray()
                 {
 			//add_game_Q
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23 || $evalID == 24 || $evalID == 25 || $evalID == 26 || $evalID == 27 || $evalID == 28)
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23 || $evalID == 24 || $evalID == 25 || $evalID == 26 || $evalID == 27 || $evalID == 28 || $evalID == 29)
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -311,6 +314,11 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayTwentyEight[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayTwentyEight[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 29)
+			{
+                        	$this->mItemAttemptsTypeArrayTwentyNine[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayTwentyNine[]  = pg_Result($result,$i,'transaction_code');
 			}
                 }
         }

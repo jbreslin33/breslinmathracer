@@ -157,6 +157,10 @@ Extends: Application,
 		this.mItemAttemptsTypeArrayTwentyEight = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayTwentyEight = new Array(); //from db
 		
+		//TwentyNine Properties 
+		this.mItemAttemptsTypeArrayTwentyNine = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayTwentyNine = new Array(); //from db
+		
 		//add_game_A
 
 		//algorithms
@@ -253,6 +257,7 @@ Extends: Application,
                 this.mMAKE_TEN_APPLICATION = new MAKE_TEN_APPLICATION      (this);
                 this.mADD_SUBTRACT_WITHIN_TEN_APPLICATION = new ADD_SUBTRACT_WITHIN_TEN_APPLICATION      (this);
                 this.mADD_SUBTRACT_WITHIN_TWENTY_APPLICATION = new ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION      (this);
+                this.mPROPERTIES_APPLICATION = new PROPERTIES_APPLICATION      (this);
 
 		//add_game_B
 	
@@ -1026,6 +1031,30 @@ highestAchieved: function()
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyEight[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+				i++;
+                        }
+			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+		
+		if (parseInt(this.mEvaluationsID) == 29)
+                {
+                        var i = 0;
+			var correct = 0;
+			var incorrect = 0;
+			var grade = 0; 
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayTwentyNine[i]) == 1)
                                 {
                                         correct++;
                                 }

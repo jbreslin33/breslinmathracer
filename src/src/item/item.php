@@ -460,6 +460,18 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionR);
 		}
+		
+		var optionS = document.createElement("option");
+                optionS.value = 29;
+                optionS.text = 'Properties';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionS);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionS);
+		}
 
 		//add_game_J	
 

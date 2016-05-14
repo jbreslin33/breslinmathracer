@@ -26,3 +26,6 @@ update evaluations set description = 'Add subtract within 10' where id = 27;
 insert into evaluations (id,description) values (28,'Add Subtract Within 20');
 alter table users add alltimeaddsubtractwithintwenty integer;
 update evaluations set description = 'Add subtract within 20' where id = 28;
+insert into evaluations (id,description) values (29,'Propterites');
+alter table users add alltimeproperties integer;
+update evaluations set description = 'Properties' where id = 29;

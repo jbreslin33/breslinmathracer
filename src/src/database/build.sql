@@ -241,6 +241,7 @@ CREATE TABLE users (
         alltimeten integer NOT NULL default 0,
         alltimeaddsubtractwithinten integer NOT NULL default 0,
         alltimeaddsubtractwithintwenty integer NOT NULL default 0,
+        alltimeproperties integer NOT NULL default 0,
         banned_id integer NOT NULL default 0,
         work_it_id text,
 	PRIMARY KEY (id),	
