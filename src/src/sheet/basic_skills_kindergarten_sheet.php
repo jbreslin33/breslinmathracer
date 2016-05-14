@@ -6,9 +6,20 @@ initialize: function(game)
 {
 	this.parent(game);
 	
-	this.mIDArray.push('1.oa.a.1_1');
+	this.mIDArray.push('k.cc.a.1_1');
+	this.mIDArray.push('k.cc.a.1_2');
 	
-	this.mIDArray.push('1.oa.a.1_2');
+	this.mIDArray.push('k.cc.a.2_1');
+	this.mIDArray.push('k.cc.a.2_2');
+	this.mIDArray.push('k.cc.a.2_3');
+	this.mIDArray.push('k.cc.a.2_4');
+	this.mIDArray.push('k.cc.a.2_5');
+	this.mIDArray.push('k.cc.a.2_6');
+	this.mIDArray.push('k.cc.a.2_7');
+	this.mIDArray.push('k.cc.a.2_8');
+	this.mIDArray.push('k.cc.a.2_9');
+	this.mIDArray.push('k.cc.a.2_10');
+	this.mIDArray.push('k.cc.a.2_11');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
