@@ -16,10 +16,23 @@ Extends: RaphaelPolygon,
 		this.x3 = x3;
 		this.y3 = y3;
 
+		
+		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
+		
+		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
+
+		this.mPolygon.mPolygon = this;
+	
+		//right angle	
 		if (this.x1 == this.x2)
 		{
 			APPLICATION.log('right angle x1 x2');
-	
+			var d = parseInt(this.y1 - this.y2);
+			APPLICATION.log('d:' + d);
+			d = Math.abs(d);
+			d = parseFloat(d * .25);
+			this.mSquare = new Rectangle(d,d,this.x1,this.y2,game,raphael,.5,.5,.5,"#000",.3,true)
+  			game.mSheet.mItem.addQuestionShape(this.mSquare);
 		}
 		if (this.x1 == this.x3)
 		{
@@ -29,16 +42,7 @@ Extends: RaphaelPolygon,
 		{
 			APPLICATION.log('right angle x2 x2');
 		}
-		
-		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
-		
-		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
 
-		this.mPolygon.mPolygon = this;
-
-		//right angle square
-		this.mSquare = new Rectangle(25,25,200,200,game,raphael,.5,.5,.5,"#000",.3,true)
-  		game.mSheet.mItem.addQuestionShape(this.mSquare);
 
 		if (this.mDrag)
 		{
