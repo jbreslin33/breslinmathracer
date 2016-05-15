@@ -15,18 +15,36 @@ Extends: RaphaelPolygon,
 		this.y2 = y2;
 		this.x3 = x3;
 		this.y3 = y3;
+
+		if (this.x1 == this.x2)
+		{
+			APPLICATION.log('right angle x1 x2');
+	
+		}
+		if (this.x1 == this.x3)
+		{
+			APPLICATION.log('right angle x1 x2');
+		}
+		if (this.x2 == this.x3)
+		{
+			APPLICATION.log('right angle x2 x2');
+		}
 		
 		this.mPathString = "M" + this.x1 + "," + this.y1 + " L" + this.x2 + "," + this.y2 + " L" + this.x3 + "," + this.y3 + " z";
 		
 		this.mPolygon = this.mRaphael.path("" + this.mPathString).attr({fill: "hsb(" + this.mRed + "," + this.mGreen + "," + this.mBlue + ")", stroke: this.mStroke, opacity: this.mOpacity});
-		//this.mPolygon = this.mRaphael.path("" + this.mPathString);
 
 		this.mPolygon.mPolygon = this;
+
+		//right angle square
+		this.mSquare = new Rectangle(25,25,200,200,game,raphael,.5,.5,.5,"#000",.3,true)
+  		game.mSheet.mItem.addQuestionShape(this.mSquare);
 
 		if (this.mDrag)
 		{
  			this.mPolygon.drag(this.move, this.start, this.up);
 		}
+		
 	},
 
 	dragMove: function(dx,dy)
