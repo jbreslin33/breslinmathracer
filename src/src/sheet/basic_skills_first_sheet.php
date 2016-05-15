@@ -23,7 +23,7 @@ initialize: function(game)
 
 
 	this.mCurrentElement = 0;
-	//this.shuffle(500);
+	this.shuffle(500);
 },
 
 pickItem: function()

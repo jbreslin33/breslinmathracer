@@ -1,5 +1,189 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_21',2.1321,'2.nbt.b.7','' ); update item_types SET progression = 2.1321 where id = '2.nbt.b.7_21';
+*/
+//borrow with  answer big 
+var i_2_nbt_b_7__21 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.nbt.b.7_21';
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        var g = 0;
+        var h = 0;
+
+	var x = -1;
+
+        while (x < 101 || c >= f)
+        {
+                a = Math.floor((Math.random()*9)+1);
+                b = 0;
+                c = Math.floor((Math.random()*9)+1);
+                
+		d = Math.floor((Math.random()*9)+1);
+		e = Math.floor((Math.random()*9)+1);
+                f = Math.floor((Math.random()*9)+1);
+
+		g = parseInt(a * 100 + b * 10 + c);
+		h = parseInt(d * 100 + e * 10 + f);
+
+		x = parseInt(g - h);
+        }
+
+        this.setQuestion('' + g + ' - ' + h + ' = ');
+        this.setAnswer('' + x,0);
+}
+});
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_20',2.1320,'2.nbt.b.7','' ); update item_types SET progression = 2.1320 where id = '2.nbt.b.7_20';
+*/
+//borrow with  0 in tens 
+var i_2_nbt_b_7__20 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.nbt.b.7_20';
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        var g = 0;
+        var h = 0;
+
+	var x = -1;
+
+        while (x < 0 || c >= f)
+        {
+                a = Math.floor((Math.random()*9)+1);
+                b = 0;
+                c = Math.floor((Math.random()*9)+1);
+                
+		d = Math.floor((Math.random()*9)+1);
+		e = Math.floor((Math.random()*9)+1);
+                f = Math.floor((Math.random()*9)+1);
+
+		g = parseInt(a * 100 + b * 10 + c);
+		h = parseInt(d * 100 + e * 10 + f);
+
+		x = parseInt(g - h);
+        }
+
+        this.setQuestion('' + g + ' - ' + h + ' = ');
+        this.setAnswer('' + x,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_19',2.1319,'2.nbt.b.7','' ); update item_types SET progression = 2.1319 where id = '2.nbt.b.7_19';
+*/
+//borrow with  smaller number in tens 
+var i_2_nbt_b_7__19 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.nbt.b.7_19';
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        var g = 0;
+        var h = 0;
+
+	var x = -1;
+
+        while (x < 0 || c >= f || b >= e)
+        {
+                a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
+                c = Math.floor((Math.random()*9)+1);
+                
+		d = Math.floor((Math.random()*9)+1);
+		e = Math.floor((Math.random()*9)+1);
+                f = Math.floor((Math.random()*9)+1);
+
+		g = parseInt(a * 100 + b * 10 + c);
+		h = parseInt(d * 100 + e * 10 + f);
+
+		x = parseInt(g - h);
+        }
+
+        this.setQuestion('' + g + ' - ' + h + ' = ');
+        this.setAnswer('' + x,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_18',2.1318,'2.nbt.b.7','' ); update item_types SET progression = 2.1318 where id = '2.nbt.b.7_18';
+*/
+//borrow with  same number in tens 
+var i_2_nbt_b_7__18 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+        this.parent(sheet,600,50,330,75,100,50,685,80);
+        this.mType = '2.nbt.b.7_18';
+
+        var a = 0;
+        var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+
+        var g = 0;
+        var h = 0;
+
+	var x = -1;
+
+        while (x < 0 || c >= f)
+        {
+                a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
+                c = Math.floor((Math.random()*9)+1);
+                
+		d = Math.floor((Math.random()*9)+1);
+                e = b;
+                f = Math.floor((Math.random()*9)+1);
+
+		g = parseInt(a * 100 + b * 10 + c);
+		h = parseInt(d * 100 + e * 10 + f);
+
+		x = parseInt(g - h);
+        }
+
+        this.setQuestion('' + g + ' - ' + h + ' = ');
+        this.setAnswer('' + x,0);
+}
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.nbt.b.7_17',2.1317,'2.nbt.b.7','' ); update item_types SET progression = 2.1317 where id = '2.nbt.b.7_17';
 */
 var i_2_nbt_b_7__17 = new Class(

@@ -15,13 +15,13 @@ initialize: function(game)
 	this.mIDArray.push('2.nbt.b.6_1');
 	this.mIDArray.push('2.nbt.b.6_2');
 	
-	
 	//addition subtraction within 1000
 	this.mIDArray.push('2.nbt.b.7_16');
 	this.mIDArray.push('2.nbt.b.7_17');
-
-	//need borrowing or carry??? or leave it to chance?:wq
-
+	this.mIDArray.push('2.nbt.b.7_18');
+	this.mIDArray.push('2.nbt.b.7_19');
+	this.mIDArray.push('2.nbt.b.7_20');
+	this.mIDArray.push('2.nbt.b.7_21');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
