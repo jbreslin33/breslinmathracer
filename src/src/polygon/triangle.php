@@ -26,21 +26,24 @@ Extends: RaphaelPolygon,
 		//right angle	
 		if (this.x1 == this.x2)
 		{
-			APPLICATION.log('right angle x1 x2');
 			var d = parseInt(this.y1 - this.y2);
-			APPLICATION.log('d:' + d);
 			d = Math.abs(d);
 			d = parseFloat(d * .25);
-			this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+			if (x1 < x3)
+			{ 
+				this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+			}
+			else
+			{
+				this.mSquare = new Rectangle(d,d,parseInt(this.x1 - d),parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+			}
   			game.mSheet.mItem.addQuestionShape(this.mSquare);
 		}
 		if (this.x1 == this.x3)
 		{
-			APPLICATION.log('right angle x1 x2');
 		}
 		if (this.x2 == this.x3)
 		{
-			APPLICATION.log('right angle x2 x2');
 		}
 
 
