@@ -31,7 +31,7 @@ Extends: RaphaelPolygon,
 			APPLICATION.log('d:' + d);
 			d = Math.abs(d);
 			d = parseFloat(d * .25);
-			this.mSquare = new Rectangle(d,d,this.x1,this.y2,game,raphael,.5,.5,.5,"#000",.3,true)
+			this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
   			game.mSheet.mItem.addQuestionShape(this.mSquare);
 		}
 		if (this.x1 == this.x3)
