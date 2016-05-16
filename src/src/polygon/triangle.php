@@ -39,8 +39,42 @@ Extends: RaphaelPolygon,
 			}
   			game.mSheet.mItem.addQuestionShape(this.mSquare);
 		}
+
 		if (this.x1 == this.x3)
 		{
+			APPLICATION.log('x1 e x3');
+      			var d = parseInt(this.y1 - this.y3);
+                        d = Math.abs(d);
+                        d = parseFloat(d * .25);
+                        if (this.x1 < this.x2)
+                        {
+				if (this.y1 == this.y2) 
+				{
+					APPLICATION.log('y1 e y2');
+                                	this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
+				}
+				else
+				{
+					APPLICATION.log('y1 e y3');
+                                	this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y3 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+				}
+
+                        }
+                        if (this.x1 < this.x3)
+                        {
+                                if (this.y1 == this.y2)
+                                {
+                                        APPLICATION.log('y1 e y2');
+                                        this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
+                                }
+                                else
+                                {
+                                        APPLICATION.log('y1 e y3');
+                                        this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y3 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+                                }
+ 
+			}
+                        game.mSheet.mItem.addQuestionShape(this.mSquare);
 		}
 		if (this.x2 == this.x3)
 		{
