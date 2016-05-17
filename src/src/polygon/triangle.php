@@ -85,12 +85,14 @@ Extends: RaphaelPolygon,
 				{	 
   					//  12
         				//  3
-					APPLICATION.log('c');
 					this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 				else
 				{
-					this.mSquare = new Rectangle(d,d,parseInt(this.x1 - d),parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
+  					// 21
+        				//  3
+					APPLICATION.log('d');
+					this.mSquare = new Rectangle(d,d,parseFloat(this.x1 - d),parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 			}
 		}

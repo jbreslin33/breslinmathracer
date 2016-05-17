@@ -32,6 +32,8 @@ createQuestionShapes: function()
 	//  31
 	//   2
         //var triangle = new Triangle (100,125, 100,150, 50,125, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+
+
 	
 	//   1
 	//   32
@@ -43,7 +45,11 @@ createQuestionShapes: function()
 	
 	//  12
 	//  3
-        var triangle = new Triangle (100,125, 150,125, 100,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        //var triangle = new Triangle (100,125, 150,125, 100,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+	
+	// 21
+	//  3
+        var triangle = new Triangle (100,125, 50,125, 100,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 
 	
         this.addQuestionShape(triangle);
