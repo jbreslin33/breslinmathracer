@@ -32,15 +32,26 @@ Extends: RaphaelPolygon,
 			d = Math.abs(d);
 			d = parseFloat(d * .25);
 
-			if (y3 == y2) 
+			if (this.y3 == this.y2) 
 			{
-				if (x1 < x3)
+				if (this.x1 < this.x3)
 				{	 
 					this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 				else
 				{
 					this.mSquare = new Rectangle(d,d,parseInt(this.x1 - d),parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+				}
+			}
+			if (this.y1 == this.y3) 
+			{
+				if (this.x1 < this.x3)
+				{	 
+					this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
+				}
+				else
+				{
+					this.mSquare = new Rectangle(d,d,parseInt(this.x1 - d),parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 			}
 
