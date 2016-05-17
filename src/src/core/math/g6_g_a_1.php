@@ -16,14 +16,20 @@ initialize: function(sheet)
 
 createQuestionShapes: function()
 {
-	//   x1 e x2    x3
+	//   1
+	//   23
         //var triangle = new Triangle (100,125, 100,150, 150,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        
+	//   1
+	//  32
+	//var triangle = new Triangle (100,125, 100,150, 50,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 	
-	// x3    x1 e x2   
-        var triangle = new Triangle (100,125, 100,150, 50,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 
-	//x1 x3
-        //var triangle = new Triangle (100,100, 25,100, 100,200, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+	//   13
+	//   2
+        var triangle = new Triangle (100,125, 100,150, 150,125, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+
+	
         this.addQuestionShape(triangle);
 }
 });
