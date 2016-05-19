@@ -108,7 +108,6 @@ Extends: RaphaelPolygon,
 				APPLICATION.log('b');
 				if (this.x3 < this.x1)
 				{	 
-					APPLICATION.log('c');
         				//   2 
         				//   31
 					this.mSquare = new Rectangle(d,d,this.x3,parseFloat(this.y3 - d),game,raphael,.5,.5,.5,"#000",.3,true)
@@ -117,13 +116,14 @@ Extends: RaphaelPolygon,
 				{
         				//   2 
         				//  13
-					this.mSquare = new Rectangle(d,d,parseInt(this.x1 - d),parseFloat(this.y2 - d),game,raphael,.5,.5,.5,"#000",.3,true)
+					this.mSquare = new Rectangle(d,d,parseInt(this.x2 - d),parseFloat(this.y3 - d),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 			}
 			if (this.y2 == this.y1) 
 			{
 				if (this.x2 < this.x1)
 				{	 
+					APPLICATION.log('c');
   					//  21
         				//  3 
 					this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
