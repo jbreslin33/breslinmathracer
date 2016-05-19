@@ -123,13 +123,13 @@ Extends: RaphaelPolygon,
 			{
 				if (this.x2 < this.x1)
 				{	 
-					APPLICATION.log('c');
   					//  21
         				//  3 
-					this.mSquare = new Rectangle(d,d,this.x1,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
+					this.mSquare = new Rectangle(d,d,this.x2,parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 				else
 				{
+					APPLICATION.log('c');
   					// 12
         				//  3
 					this.mSquare = new Rectangle(d,d,parseFloat(this.x1 - d),parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
