@@ -132,7 +132,7 @@ Extends: RaphaelPolygon,
 					APPLICATION.log('c');
   					// 12
         				//  3
-					this.mSquare = new Rectangle(d,d,parseFloat(this.x1 - d),parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
+					this.mSquare = new Rectangle(d,d,parseFloat(this.x2 - d),parseFloat(this.y1),game,raphael,.5,.5,.5,"#000",.3,true)
 				}
 			}
 		}

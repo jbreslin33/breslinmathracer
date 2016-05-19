@@ -61,7 +61,11 @@ createQuestionShapes: function()
 
 	//  21
         //  3
-        var triangle = new Triangle (250,100, 150,100, 150,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+        //var triangle = new Triangle (250,100, 150,100, 150,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
+	
+	// 12
+        //  3
+        var triangle = new Triangle (50,100, 150,100, 150,150, this.mSheet.mGame,this.mRaphael,.5,.5,.5,"#000",.5,false);
 
 
 
