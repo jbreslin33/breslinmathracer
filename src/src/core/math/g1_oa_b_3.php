@@ -10,7 +10,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_36';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -38,7 +38,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_35';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -67,7 +67,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_34';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -96,7 +96,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_33';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -125,7 +125,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_32';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -153,7 +153,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_31';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -182,7 +182,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_30';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -211,7 +211,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_29';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -240,7 +240,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_28';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -268,7 +268,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_27';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -297,7 +297,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_26';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -326,7 +326,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_25';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -355,7 +355,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_24';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -383,7 +383,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_23';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -412,7 +412,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_22';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -441,7 +441,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_21';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -470,7 +470,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_20';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -498,7 +498,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_19';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -527,7 +527,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_18';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -556,7 +556,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_17';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -585,7 +585,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_16';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -613,7 +613,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_15';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -642,7 +642,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_14';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -671,7 +671,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_13';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -700,7 +700,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_12';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -728,7 +728,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_11';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -757,7 +757,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_10';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -786,7 +786,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_9';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -815,7 +815,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_8';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -843,7 +843,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_7';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -872,7 +872,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_6';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -901,7 +901,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_5';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -930,7 +930,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_4';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(150,75);
         this.mQuestionLabel.setSize(250,50);
@@ -958,7 +958,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_3';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
  
 	this.mQuestionLabel.setPosition(220,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -986,7 +986,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_2';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
@@ -1015,7 +1015,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = '1.oa.b.3_1';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(220,75);
         this.mQuestionLabel.setSize(100,50);
