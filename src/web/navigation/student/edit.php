@@ -22,6 +22,7 @@ session_start();
 <li><a href="/web/update/student/update_team.php">Team</a></li>
 <li><a href="/web/update/student/update_first_name.php">First Name</a></li>
 <li><a href="/web/update/student/update_last_name.php">Last Name</a></li>
+<li><a href="/web/update/student/update_password.php">Password</a></li>
 </ul>
 
 </body>
