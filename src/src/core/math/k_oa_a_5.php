@@ -11,7 +11,7 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = 'k.oa.a.5_51';
 
-	this.mThresholdTime = 10000;
+	this.mThresholdTime = 5000;
 	
 	this.mQuestionLabel.setPosition(284,75);
 	this.mQuestionLabel.setSize(100,50);
@@ -55,7 +55,7 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = 'k.oa.a.5_52';
 
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.mQuestionLabel.setPosition(284,75);
         this.mQuestionLabel.setSize(100,50);
@@ -98,7 +98,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_42';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5-5=');
         this.setAnswer('' + '0',0);
@@ -117,7 +117,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_41';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5-4=');
         this.setAnswer('' + '1',0);
@@ -137,7 +137,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_40';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4-4=');
         this.setAnswer('' + '0',0);
@@ -157,7 +157,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_39';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5-3=');
         this.setAnswer('' + '2',0);
@@ -176,7 +176,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_38';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4-3=');
         this.setAnswer('' + '1',0);
@@ -195,7 +195,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_37';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3-3=');
         this.setAnswer('' + '0',0);
@@ -214,7 +214,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_36';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5-2=');
         this.setAnswer('' + '3',0);
@@ -233,7 +233,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_35';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4-2=');
         this.setAnswer('' + '2',0);
@@ -252,7 +252,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_34';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3-2=');
         this.setAnswer('' + '1',0);
@@ -271,7 +271,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_33';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2-2=');
         this.setAnswer('' + '0',0);
@@ -289,7 +289,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_32';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5-1=');
         this.setAnswer('' + '4',0);
@@ -309,7 +309,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_31';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4-1=');
         this.setAnswer('' + '3',0);
@@ -327,7 +327,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_30';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3-1=');
         this.setAnswer('' + '2',0);
@@ -346,7 +346,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_29';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2-1=');
         this.setAnswer('' + '1',0);
@@ -365,7 +365,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_28';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1-1=');
         this.setAnswer('' + '0',0);
@@ -384,7 +384,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_27';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5-0=');
         this.setAnswer('' + '5',0);
@@ -402,7 +402,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_26';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4-0=');
         this.setAnswer('' + '4',0);
@@ -420,7 +420,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_25';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3-0=');
         this.setAnswer('' + '3',0);
@@ -438,7 +438,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_24';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2-0=');
         this.setAnswer('' + '2',0);
@@ -458,7 +458,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_23';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1-0=');
         this.setAnswer('' + '1',0);
@@ -477,7 +477,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_22';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('0-0=');
         this.setAnswer('' + '0',0);
@@ -496,7 +496,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_21';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3+2=');
         this.setAnswer('' + '5',0);
@@ -516,7 +516,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_20';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2+3=');
         this.setAnswer('' + '5',0);
@@ -535,7 +535,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_19';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2+2=');
         this.setAnswer('' + '4',0);
@@ -554,7 +554,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_18';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4+1=');
         this.setAnswer('' + '5',0);
@@ -573,7 +573,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_17';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3+1=');
         this.setAnswer('' + '4',0);
@@ -591,7 +591,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_16';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2+1=');
         this.setAnswer('' + '3',0);
@@ -610,7 +610,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_15';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1+4=');
         this.setAnswer('' + '5',0);
@@ -629,7 +629,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_14';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1+3=');
         this.setAnswer('' + '4',0);
@@ -648,7 +648,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_13';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1+2=');
         this.setAnswer('' + '3',0);
@@ -667,7 +667,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_12';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1+1=');
         this.setAnswer('' + '2',0);
@@ -686,7 +686,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_11';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('5+0=');
         this.setAnswer('' + '5',0);
@@ -705,7 +705,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_10';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('4+0=');
         this.setAnswer('' + '4',0);
@@ -724,7 +724,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_9';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('3+0=');
         this.setAnswer('' + '3',0);
@@ -743,7 +743,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_8';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('2+0=');
         this.setAnswer('' + '2',0);
@@ -761,7 +761,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_7';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('1+0=');
         this.setAnswer('' + '1',0);
@@ -780,7 +780,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_6';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('0+5=');
         this.setAnswer('' + '5',0);
@@ -798,7 +798,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_5';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('0+4=');
         this.setAnswer('' + '4',0);
@@ -817,7 +817,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_4';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('0+3=');
         this.setAnswer('' + '3',0);
@@ -835,7 +835,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_3';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('0+2=');
         this.setAnswer('' + '2',0);
@@ -853,7 +853,7 @@ initialize: function(sheet)
 {
         this.parent(sheet);
         this.mType = 'k.oa.a.5_2';
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
 	this.setQuestion('0+1=');
         this.setAnswer('' + '1',0);
@@ -872,7 +872,7 @@ initialize: function(sheet)
         this.parent(sheet);
         this.mType = 'k.oa.a.5_1';
 
-        this.mThresholdTime = 10000;
+        this.mThresholdTime = 5000;
 
         this.setQuestion('0+0=');
         this.setAnswer('' + '0',0);
