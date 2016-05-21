@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>UPDATE LAST NAME</title>
+	<title>UPDATE PASSWORD</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -32,11 +32,11 @@ $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> LAST NAME: </p></b>
+	<p><b> PASSWORD: </p></b>
 	
-	<form method="post" action="/web/update/student/updatelastname.php">
+	<form method="post" action="/web/update/student/updatepassword.php">
 
-<input type="text" name="last_name">
+<input type="text" name="password">
 
 </select>
 	<p><input type="submit" value="UPDATE" /></p>

@@ -13,8 +13,8 @@ $conn = dbConnect();
 
 $response = "";
 
-$update = "update users SET last_name = '";
-$update .= $_POST["last_name"];
+$update = "update users SET password = '";
+$update .= $_POST["password"];
 $update .= "' where id = ";
 $update .= $_SESSION["user_id"];
 $update .= ";";
