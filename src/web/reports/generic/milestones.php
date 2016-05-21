@@ -105,63 +105,60 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
+$userIDArray = array();
+$lastNameArray = array();
+$firstNameArray = array();
+
 //names
 $queryNames = "select id, last_name, first_name from users where room_id = ";
 $queryNames .= $room_id; 
 $queryNames .= ";";
 
 $nameResults = pg_query($conn,$queryNames);
-$n = pg_numrows($nameResults);
-for($i = 0; $i < $n; $i++)
+$numOfNames = pg_numrows($nameResults);
+for($i = 0; $i < $numOfNames; $i++)
 {
 	$row = pg_fetch_array($nameResults, $i);
-        $id = $row[0];
-        $last_name = $row[1];
-        $first_name = $row[2];
-	
-	echo $id;
-	echo $last_name;
-	echo $first_name;
+        $userIDArray[] = $row[0];
+        $lastNameArray[] = $row[1];
+        $firstNameArray[] = $row[2];
 }
 
 //evaluations
+/*
 $query = "select item_attempts.start_time, evaluations.description, evaluations_attempts.id, users.first_name, users.last_name, item_attempts.transaction_code from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
 $query .= $room_id; 
 $query .= " order by evaluations_attempts.start_time desc LIMIT 10;"; 
 
 $r = pg_query($conn,$query);
 $n = pg_numrows($r);
+*/
 
-        for($i = 0; $i < $n; $i++)
-        {
-                $row = pg_fetch_array($r, $i);
-                $match_id = $row[0];
-                $team_name = $row[1];
-                $start_time = $row[2];
-                $end_time = $row[3];
-                $score = $row[4];
+for($i = 0; $i < $numOfNames; $i++)
+{
+	$row = pg_fetch_array($nameResults, $i);
 
-                echo '<tr>';
-                echo '<td>';
-                echo $match_id;
-                echo '</td>';
-                echo '<td>';
-                echo $team_name;
-                echo '</td>';
-                echo '<td>';
-                echo $start_time;
-                echo '</td>';
-                echo '<td>';
-                echo $end_time;
-                echo '</td>';
-                echo '<td>';
-                echo $score;
-                echo '</td>';
+	echo '<tr>';
+        echo '<td>';
+        echo $lastNameArray[$i];
+        echo '</td>';
+        echo '<td>';
+        echo $firstNameArray[$i];
+        echo '</td>';
+        echo '<td>';
+        echo 'pass';
+        echo '</td>';
+        echo '<td>';
+        echo 'pass';
+        echo '</td>';
+        echo '<td>';
+        echo 'pass';
+        echo '</td>';
 
-                echo '</tr>';
-        }
+        echo '</tr>';
+}
 
-        pg_free_result($r);
+        pg_free_result($nameResults);
         echo '</table>';
 ?>
 </body>
