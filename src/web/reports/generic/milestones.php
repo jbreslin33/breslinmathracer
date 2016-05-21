@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>MATCHES</title>
+	<title>MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -12,6 +12,7 @@
 
 <?php
 session_start();
+
 if ($_SESSION["role"] == 1)
 {
         echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
@@ -20,7 +21,9 @@ if ($_SESSION["role"] == 1)
 else
 {
         echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
+        echo "<li><a href=\"/web/navigation/school/reports.php\">Reports</a></li>";
 }
+
 ?>
 <li><a href="/web/php/logout.php">Logout</a></li>
 </ul>
@@ -43,7 +46,49 @@ else if (isset($_GET['room_id']))
 
 echo "<br>";
 ?>
+
+
 	<p><b> MILESTONES: </p></b>
+
+<p><b> Select Room: </p></b>
+<form method="post" action="/web/reports/generic/any_homework_check.php">
+
+<select id="room_id" name="room_id" onchange="loadAgain()">
+<?php
+$query = "select id, name from rooms where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"Select Room\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $room_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+
+<script>
+function loadAgain()
+{
+        var x = document.getElementById("room_id").value;
+        document.location.href = '/web/reports/generic/milestones.php?room_id=' + x;
+}
+</script>
+
+
+
+
 <?php
 echo '<table border=\"1\">';
         echo '<tr>';
@@ -60,12 +105,11 @@ echo '<table border=\"1\">';
         echo '</td>';
 
         echo '</tr>';
+$query = "select item_attempts.start_time, evaluations.description, evaluations_attempts.id, users.first_name, users.last_name, item_attempts.transaction_code from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
+$query .= $room_id; 
+$query .= " order by evaluations_attempts.start_time desc LIMIT 10;"; 
 
-$q = "select matches.id, teams.name, matches.start_time, matches.end_time, teams_matches.score from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id where matches.school_id = ";
-$q .= $_SESSION["school_id"];
-$q .= " order by matches.id desc;";
-
-$r = pg_query($conn,$q);
+$r = pg_query($conn,$query);
 $n = pg_numrows($r);
 
         for($i = 0; $i < $n; $i++)
