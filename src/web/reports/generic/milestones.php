@@ -99,6 +99,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> K';
         echo '</td>';
+        echo '<td> Make 10';
+        echo '</td>';
         echo '<td> The Izzy';
         echo '</td>';
         echo '<td> Basic Skills 4';
@@ -128,6 +130,7 @@ for($i = 0; $i < $numOfNames; $i++)
         $lastNameArray[] = $row[1];
         $firstNameArray[] = $row[2];
 	$kPass[] = 'No';
+	$makeTenPass[] = 'No';
 	$izzyPass[] = 'No';
 	$fourthPass[] = 'No';
 	$fifthPass[] = 'No';
@@ -153,17 +156,34 @@ for($y = 0; $y < $numIzzyRows; $y++)
 	$incorrect = $row[5];
 	$total = $row[6];
 
-	//basic skills k
-	if ($evaluations_id == 25)
+        //basic skills k
+        if ($evaluations_id == 25)
+        {
+                if ($total == 13 && $correct == 13 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $kPass[$u] = substr($start_time,0,19);
+                                        $kPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+
+	//make 10
+	if ($evaluations_id == 26)
 	{
-		if ($total == 13 && $correct == 13 && $incorrect == 0)
+		if ($total == 18 && $correct == 18 && $incorrect == 0)
 		{
 			for($u = 0; $u < $numOfNames; $u++)
 			{		
 				if ($users_id == $userIDArray[$u])
 				{
-					$kPass[$u] = substr($start_time,0,19);
-					$kPass[$u] .= $evaluations_attempts_id;
+					$makeTenPass[$u] = substr($start_time,0,19);
+					$makeTenPass[$u] .= $evaluations_attempts_id;
 				}
 			}
 		}
@@ -270,6 +290,16 @@ for($i = 0; $i < $numOfNames; $i++)
                 $kcolor = 'Green';
         }
 
+       	if ($makeTenPass[$i] == 'No')
+        {
+                $maketencolor = 'Red';
+        }
+        else
+        {
+                $maketencolor = 'Green';
+        }
+
+
  	if ($izzyPass[$i] == 'No')
         {
                 $izzycolor = 'Red';
@@ -310,6 +340,13 @@ for($i = 0; $i < $numOfNames; $i++)
         echo $kcolor;
         echo '">';
         echo $kPass[$i];
+        echo '</td>';
+
+
+        echo '<td bgcolor="';
+        echo $maketencolor;
+        echo '">';
+        echo $makeTenPass[$i];
         echo '</td>';
 
 
