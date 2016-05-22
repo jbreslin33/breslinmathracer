@@ -164,6 +164,56 @@ for($y = 0; $y < $numIzzyRows; $y++)
 			}
 		}
 	}
+	//fourth old 
+	$old_fourth_time = '2016-05-10 15:18:33';
+	if ($evaluations_id == 20)
+	{
+		if ($total == 7 && $correct == 7 && $incorrect == 0)
+		{
+			for($u = 0; $u < $numOfNames; $u++)
+			{		
+				if ($users_id == $userIDArray[$u])
+				{
+			
+					if ( strtotime($start_time) < strtotime($old_fourth_time))
+					{
+						$fourthPass[$u] = substr($start_time,0,19);
+					}
+				}
+			}
+		}
+	}
+
+        //fourth new 
+        if ($evaluations_id == 20)
+        {
+                if ($total == 8 && $correct == 8 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $fourthPass[$u] = substr($start_time,0,19);
+                                }
+                        }
+                }
+        }
+
+
+	//fifth new
+	if ($evaluations_id == 21)
+	{
+		if ($total == 11 && $correct == 11 && $incorrect == 0)
+		{
+			for($u = 0; $u < $numOfNames; $u++)
+			{		
+				if ($users_id == $userIDArray[$u])
+				{
+					$fifthPass[$u] = substr($start_time,0,19);
+				}
+			}
+		}
+	}
 }
 
 for($i = 0; $i < $numOfNames; $i++)
@@ -179,6 +229,25 @@ for($i = 0; $i < $numOfNames; $i++)
                 $izzycolor = 'Green';
         }
 
+ 	if ($fourthPass[$i] == 'No')
+        {
+                $fourthcolor = 'Red';
+        }
+	else
+        {
+                $fourthcolor = 'Green';
+        }
+
+        if ($fifthPass[$i] == 'No')
+        {
+                $fifthcolor = 'Red';
+        }
+        else
+        {
+                $fifthcolor = 'Green';
+        }
+
+
 	echo '<tr>';
         echo '<td>';
         echo $lastNameArray[$i];
@@ -191,10 +260,14 @@ for($i = 0; $i < $numOfNames; $i++)
         echo '">';
         echo $izzyPass[$i];
         echo '</td>';
-        echo '<td>';
+        echo '<td bgcolor="';
+        echo $fourthcolor;
+        echo '">';
         echo $fourthPass[$i];
         echo '</td>';
-        echo '<td>';
+        echo '<td bgcolor="';
+        echo $fifthcolor;
+        echo '">';
         echo $fifthPass[$i];
         echo '</td>';
 

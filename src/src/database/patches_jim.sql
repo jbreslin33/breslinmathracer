@@ -33,3 +33,5 @@ update item_types set active_code = 0 where id = '1.nbt.c.4_11';
 update item_types set active_code = 0 where id = '1.nbt.c.4_12';
 update item_types set active_code = 0 where id = '1.nbt.c.4_7';
 update item_types set active_code = 0 where id = '1.nbt.c.4_8';
+update users set room_id = 12 where score < 400 AND room_id = 18;
+ update users set room_id = 12 where last_name = 'kent';
