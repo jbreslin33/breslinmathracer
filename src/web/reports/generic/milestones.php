@@ -115,7 +115,7 @@ $fifthPass = array();
 //names
 $queryNames = "select id, last_name, first_name from users where room_id = ";
 $queryNames .= $room_id; 
-$queryNames .= ";";
+$queryNames .= " order by score desc;";
 
 $nameResults = pg_query($conn,$queryNames);
 $numOfNames = pg_numrows($nameResults);
