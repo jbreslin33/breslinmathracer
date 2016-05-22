@@ -155,6 +155,7 @@ for ($x = 0; $x < $numOfNames; $x++)
 		if ($total == 64 && $correct == 64 && $incorrect == 0)
 		{
 			$izzyPass[$x] = substr($start_time,0,19);
+			$y = 100000;
 		}
 	}
         //fourth
@@ -179,6 +180,7 @@ for ($x = 0; $x < $numOfNames; $x++)
                 if ($total == 8 && $correct == 8 && $incorrect == 0)
                 {
                         $fourthPass[$x] = substr($start_time,0,19);
+			$y = 100000;
                 }
         }
 
