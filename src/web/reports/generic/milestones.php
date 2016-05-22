@@ -178,6 +178,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 					if ( strtotime($start_time) < strtotime($old_fourth_time))
 					{
 						$fourthPass[$u] = substr($start_time,0,19);
+						$fourthPass[$u] .= " old";
 					}
 				}
 			}
@@ -200,6 +201,21 @@ for($y = 0; $y < $numIzzyRows; $y++)
         }
 
 
+	//fifth old 
+	if ($evaluations_id == 21)
+	{
+		if ($total == 10 && $correct == 10 && $incorrect == 0)
+		{
+			for($u = 0; $u < $numOfNames; $u++)
+			{		
+				if ($users_id == $userIDArray[$u])
+				{
+					$fifthPass[$u] = substr($start_time,0,19);
+					$fifthPass[$u] .= " old";
+				}
+			}
+		}
+	}
 	//fifth new
 	if ($evaluations_id == 21)
 	{
