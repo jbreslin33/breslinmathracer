@@ -134,7 +134,7 @@ for($i = 0; $i < $numOfNames; $i++)
 for ($x = 0; $x < $numOfNames; $x++)
 {
 	//the izzy
-	$queryIzzy = "select users.id as usersid, evaluations.id as evaluationsid, evaluations_attempts.id as evaluationsattemptsid, SUM(CASE WHEN item_attempts.transaction_code = 1 THEN item_attempts.transaction_code ELSE 0 END) correct, SUM(CASE WHEN item_attempts.transaction_code = 2 THEN item_attempts.transaction_code ELSE 0 END) incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 0 THEN item_attempts.transaction_code ELSE 0 END) unanswered from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
+	$queryIzzy = "select evaluations_attempts.start_time as startime, users.id as usersid, evaluations.id as evaluationsid, evaluations_attempts.id as evaluationsattemptsid, SUM(CASE WHEN item_attempts.transaction_code = 1 THEN item_attempts.transaction_code ELSE 0 END) correct, SUM(CASE WHEN item_attempts.transaction_code = 2 THEN item_attempts.transaction_code ELSE 0 END) incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 0 THEN item_attempts.transaction_code ELSE 0 END) unanswered from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
 	$queryIzzy .=  $room_id;
 	$queryIzzy .= " AND users.id = ";
 	$queryIzzy .=  $userIDArray[$x];
@@ -146,13 +146,15 @@ for ($x = 0; $x < $numOfNames; $x++)
 	for($y = 0; $y < $numIzzyRows; $y++)
 	{
 		$row = pg_fetch_array($resultsIzzy, $y);
-		$correct = $row[3];
-		$incorrect = $row[4];
-		$total = $row[5];
+		
+		$start_time = $row[0];
+		$correct = $row[4];
+		$incorrect = $row[5];
+		$total = $row[6];
 
 		if ($total == 64 && $correct == 64 && $incorrect == 0)
 		{
-			$izzyPass[$x] = 'Yes';
+			$izzyPass[$x] = substr($start_time,0,19);
 		}
 	}
 }
