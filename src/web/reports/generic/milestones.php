@@ -125,14 +125,19 @@ for($i = 0; $i < $numOfNames; $i++)
 }
 
 //evaluations
-/*
-$query = "select item_attempts.start_time, evaluations.description, evaluations_attempts.id, users.first_name, users.last_name, item_attempts.transaction_code from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
-$query .= $room_id; 
-$query .= " order by evaluations_attempts.start_time desc LIMIT 10;"; 
+$queryEvals = "select item_attempts.start_time, evaluations.description, evaluations_attempts.id, users.first_name, users.last_name, item_attempts.transaction_code from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
+$queryEvals .= $room_id; 
+$queryEvals .= " order by evaluations_attempts.start_time desc LIMIT 10;"; 
 
-$r = pg_query($conn,$query);
-$n = pg_numrows($r);
-*/
+$resultsEvals = pg_query($conn,$queryEvals);
+$numEvals = pg_numrows($resultsEvals);
+
+for($i = 0; $i < $numEvals; $i++)
+{
+	$row = pg_fetch_array($resultsEvals, $i);
+        echo $row[0];
+
+}
 
 for($i = 0; $i < $numOfNames; $i++)
 {
