@@ -108,6 +108,9 @@ echo '<table border=\"1\">';
 $userIDArray = array();
 $lastNameArray = array();
 $firstNameArray = array();
+$izzyPass = array();
+$fourthPass = array();
+$fifthPass = array();
 
 //names
 $queryNames = "select id, last_name, first_name from users where room_id = ";
@@ -122,21 +125,36 @@ for($i = 0; $i < $numOfNames; $i++)
         $userIDArray[] = $row[0];
         $lastNameArray[] = $row[1];
         $firstNameArray[] = $row[2];
+	$izzyPass[] = 'No';
+	$fourthPass[] = 'No';
+	$fifthPass[] = 'No';
 }
 
 //evaluations
-$queryEvals = "select item_attempts.start_time, evaluations.description, evaluations_attempts.id, users.first_name, users.last_name, item_attempts.transaction_code from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
-$queryEvals .= $room_id; 
-$queryEvals .= " order by evaluations_attempts.start_time desc LIMIT 10;"; 
-
-$resultsEvals = pg_query($conn,$queryEvals);
-$numEvals = pg_numrows($resultsEvals);
-
-for($i = 0; $i < $numEvals; $i++)
+for ($x = 0; $x < $numOfNames; $x++)
 {
-	$row = pg_fetch_array($resultsEvals, $i);
-        echo $row[0];
+	//the izzy
+	$queryIzzy = "select users.id as usersid, evaluations.id as evaluationsid, evaluations_attempts.id as evaluationsattemptsid, SUM(CASE WHEN item_attempts.transaction_code = 1 THEN item_attempts.transaction_code ELSE 0 END) correct, SUM(CASE WHEN item_attempts.transaction_code = 2 THEN item_attempts.transaction_code ELSE 0 END) incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 0 THEN item_attempts.transaction_code ELSE 0 END) unanswered from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
+	$queryIzzy .=  $room_id;
+	$queryIzzy .= " AND users.id = ";
+	$queryIzzy .=  $userIDArray[$x];
+	$queryIzzy .= " AND evaluations.id = 12 group by usersid, evaluationsid, evaluationsattemptsid;";
 
+	$resultsIzzy = pg_query($conn,$queryIzzy);
+	$numIzzyRows = pg_numrows($resultsIzzy);
+
+	for($y = 0; $y < $numIzzyRows; $y++)
+	{
+		$row = pg_fetch_array($resultsIzzy, $y);
+		$correct = $row[3];
+		$incorrect = $row[4];
+		$total = $row[5];
+
+		if ($total == 64 && $correct == 64 && $incorrect == 0)
+		{
+			$izzyPass[$x] = 'Yes';
+		}
+	}
 }
 
 for($i = 0; $i < $numOfNames; $i++)
@@ -151,13 +169,13 @@ for($i = 0; $i < $numOfNames; $i++)
         echo $firstNameArray[$i];
         echo '</td>';
         echo '<td>';
-        echo 'pass';
+        echo $izzyPass[$i];
         echo '</td>';
         echo '<td>';
-        echo 'pass';
+        echo $fourthPass[$i];
         echo '</td>';
         echo '<td>';
-        echo 'pass';
+        echo $fifthPass[$i];
         echo '</td>';
 
         echo '</tr>';
