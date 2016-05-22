@@ -170,6 +170,15 @@ for($i = 0; $i < $numOfNames; $i++)
 {
 	$row = pg_fetch_array($nameResults, $i);
 
+ 	if ($izzyPass[$i] == 'No')
+        {
+                $izzycolor = 'Red';
+        }
+	else
+        {
+                $izzycolor = 'Green';
+        }
+
 	echo '<tr>';
         echo '<td>';
         echo $lastNameArray[$i];
@@ -177,7 +186,9 @@ for($i = 0; $i < $numOfNames; $i++)
         echo '<td>';
         echo $firstNameArray[$i];
         echo '</td>';
-        echo '<td>';
+        echo '<td bgcolor="';
+        echo $izzycolor;
+        echo '">';
         echo $izzyPass[$i];
         echo '</td>';
         echo '<td>';
