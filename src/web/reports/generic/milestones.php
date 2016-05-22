@@ -97,6 +97,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> First Name';
         echo '</td>';
+        echo '<td> K';
+        echo '</td>';
         echo '<td> The Izzy';
         echo '</td>';
         echo '<td> Basic Skills 4';
@@ -125,6 +127,7 @@ for($i = 0; $i < $numOfNames; $i++)
         $userIDArray[] = $row[0];
         $lastNameArray[] = $row[1];
         $firstNameArray[] = $row[2];
+	$kPass[] = 'No';
 	$izzyPass[] = 'No';
 	$fourthPass[] = 'No';
 	$fifthPass[] = 'No';
@@ -150,20 +153,38 @@ for($y = 0; $y < $numIzzyRows; $y++)
 	$incorrect = $row[5];
 	$total = $row[6];
 
-	//the izzy
-	if ($evaluations_id == 12)
+	//basic skills k
+	if ($evaluations_id == 25)
 	{
-		if ($total == 64 && $correct == 64 && $incorrect == 0)
+		if ($total == 13 && $correct == 13 && $incorrect == 0)
 		{
 			for($u = 0; $u < $numOfNames; $u++)
 			{		
 				if ($users_id == $userIDArray[$u])
 				{
-					$izzyPass[$u] = substr($start_time,0,19);
+					$kPass[$u] = substr($start_time,0,19);
+					$kPass[$u] .= $evaluations_attempts_id;
 				}
 			}
 		}
 	}
+
+       //the izzy
+        if ($evaluations_id == 12)
+        {
+                if ($total == 64 && $correct == 64 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $izzyPass[$u] = substr($start_time,0,19);
+                                        $izzyPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
 	//fourth old 
 	$old_fourth_time = '2016-05-10 15:18:33';
 	if ($evaluations_id == 20)
@@ -179,6 +200,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 					{
 						$fourthPass[$u] = substr($start_time,0,19);
 						$fourthPass[$u] .= " old";
+						$fourthPass[$u] .= $evaluations_attempts_id;
 					}
 				}
 			}
@@ -195,6 +217,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
                                 if ($users_id == $userIDArray[$u])
                                 {
                                         $fourthPass[$u] = substr($start_time,0,19);
+					$fourthPass[$u] .= $evaluations_attempts_id;
                                 }
                         }
                 }
@@ -212,6 +235,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 				{
 					$fifthPass[$u] = substr($start_time,0,19);
 					$fifthPass[$u] .= " old";
+					$fifthPass[$u] .= $evaluations_attempts_id;
 				}
 			}
 		}
@@ -226,6 +250,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 				if ($users_id == $userIDArray[$u])
 				{
 					$fifthPass[$u] = substr($start_time,0,19);
+					$fifthPass[$u] .= $evaluations_attempts_id;
 				}
 			}
 		}
@@ -235,6 +260,15 @@ for($y = 0; $y < $numIzzyRows; $y++)
 for($i = 0; $i < $numOfNames; $i++)
 {
 	$row = pg_fetch_array($nameResults, $i);
+ 	
+	if ($kPass[$i] == 'No')
+        {
+                $kcolor = 'Red';
+        }
+	else
+        {
+                $kcolor = 'Green';
+        }
 
  	if ($izzyPass[$i] == 'No')
         {
@@ -271,11 +305,20 @@ for($i = 0; $i < $numOfNames; $i++)
         echo '<td>';
         echo $firstNameArray[$i];
         echo '</td>';
+
+        echo '<td bgcolor="';
+        echo $kcolor;
+        echo '">';
+        echo $kPass[$i];
+        echo '</td>';
+
+
         echo '<td bgcolor="';
         echo $izzycolor;
         echo '">';
         echo $izzyPass[$i];
         echo '</td>';
+
         echo '<td bgcolor="';
         echo $fourthcolor;
         echo '">';
