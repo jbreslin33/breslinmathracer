@@ -101,6 +101,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Make 10';
         echo '</td>';
+        echo '<td> add sub within 5';
+        echo '</td>';
         echo '<td> The Izzy';
         echo '</td>';
         echo '<td> Basic Skills 4';
@@ -112,6 +114,9 @@ echo '<table border=\"1\">';
 $userIDArray = array();
 $lastNameArray = array();
 $firstNameArray = array();
+$kPass = array();
+$makeTenPass = array();
+$addSubWithinFivePass = array();
 $izzyPass = array();
 $fourthPass = array();
 $fifthPass = array();
@@ -189,7 +194,23 @@ for($y = 0; $y < $numIzzyRows; $y++)
 		}
 	}
 
-       //the izzy
+       	//add sub within 5 
+        if ($evaluations_id == 13)
+        {
+                if ($total == 20 && $correct == 20 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $addSubWithinFivePass[$u] = substr($start_time,0,19);
+                                        $addSubWithinFivePass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+       	//the izzy
         if ($evaluations_id == 12)
         {
                 if ($total == 64 && $correct == 64 && $incorrect == 0)
@@ -298,6 +319,15 @@ for($i = 0; $i < $numOfNames; $i++)
         {
                 $maketencolor = 'Green';
         }
+       	
+	if ($addSubWithinFivePass[$i] == 'No')
+        {
+                $addsubwithinfivecolor = 'Red';
+        }
+        else
+        {
+                $addsubwithinfivecolor = 'Green';
+        }
 
 
  	if ($izzyPass[$i] == 'No')
@@ -340,6 +370,12 @@ for($i = 0; $i < $numOfNames; $i++)
         echo $kcolor;
         echo '">';
         echo $kPass[$i];
+        echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $addsubwithinfivecolor;
+        echo '">';
+        echo $addsubwithinfivePass[$i];
         echo '</td>';
 
 
