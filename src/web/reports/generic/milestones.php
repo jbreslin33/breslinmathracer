@@ -136,6 +136,7 @@ for($i = 0; $i < $numOfNames; $i++)
         $firstNameArray[] = $row[2];
 	$kPass[] = 'No';
 	$makeTenPass[] = 'No';
+	$addSubWithinFivePass[] = 'No';
 	$izzyPass[] = 'No';
 	$fourthPass[] = 'No';
 	$fifthPass[] = 'No';
@@ -375,7 +376,7 @@ for($i = 0; $i < $numOfNames; $i++)
 	echo '<td bgcolor="';
         echo $addsubwithinfivecolor;
         echo '">';
-        echo $addsubwithinfivePass[$i];
+        echo $addSubWithinFivePass[$i];
         echo '</td>';
 
 
