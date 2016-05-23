@@ -12,6 +12,7 @@
 
 <?php
 session_start();
+date_default_timezone_set('America/New_York');
 
 if ($_SESSION["role"] == 1)
 {
@@ -86,9 +87,6 @@ function loadAgain()
 }
 </script>
 
-
-
-
 <?php
 echo '<table border=\"1\">';
         echo '<tr>';
@@ -103,7 +101,19 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> add sub within 5';
         echo '</td>';
+        echo '<td> add sub within 10';
+        echo '</td>';
+        echo '<td> properties';
+        echo '</td>';
+        echo '<td> Basic Skills 1';
+        echo '</td>';
+        echo '<td> add sub within 20';
+        echo '</td>';
+        echo '<td> Basic Skills 2';
+        echo '</td>';
         echo '<td> The Izzy';
+        echo '</td>';
+        echo '<td> Basic Skills 3';
         echo '</td>';
         echo '<td> Basic Skills 4';
         echo '</td>';
@@ -117,7 +127,13 @@ $firstNameArray = array();
 $kPass = array();
 $makeTenPass = array();
 $addSubWithinFivePass = array();
+$addSubWithinTenPass = array();
+$propertiesPass = array();
+$firstPass = array();
+$addSubWithinTwentyPass = array();
+$secondPass = array();
 $izzyPass = array();
+$thirdPass = array();
 $fourthPass = array();
 $fifthPass = array();
 
@@ -137,7 +153,13 @@ for($i = 0; $i < $numOfNames; $i++)
 	$kPass[] = 'No';
 	$makeTenPass[] = 'No';
 	$addSubWithinFivePass[] = 'No';
+	$addSubWithinTenPass[] = 'No';
+	$propertiesPass[] = 'No';
+	$firstPass[] = 'No';
+	$addSubWithinTwentyPass[] = 'No';
+	$secondPass[] = 'No';
 	$izzyPass[] = 'No';
+	$thirdPass[] = 'No';
 	$fourthPass[] = 'No';
 	$fifthPass[] = 'No';
 }
@@ -210,6 +232,90 @@ for($y = 0; $y < $numIzzyRows; $y++)
                         }
                 }
         }
+
+        //add sub within 10 
+        if ($evaluations_id == 27)
+        {
+                if ($total == 70 && $correct == 70 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $addSubWithinTenPass[$u] = substr($start_time,0,19);
+                                        $addSubWithinTenPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+        //properties
+        if ($evaluations_id == 29)
+        {
+                if ($total == 36 && $correct == 36 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $propertiesPass[$u] = substr($start_time,0,19);
+                                        $propertiesPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+        //first pass
+        if ($evaluations_id == 24)
+        {
+                if ($total == 12 && $correct == 12 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $firstPass[$u] = substr($start_time,0,19);
+                                        $firstPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+        //second pass
+        if ($evaluations_id == 23)
+        {
+                if ($total == 13 && $correct == 13 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $secondPass[$u] = substr($start_time,0,19);
+                                        $secondPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+        //third pass
+        if ($evaluations_id == 22)
+        {
+
+		//need skills...
+                if ($total == 130000 && $correct == 130000 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        $thirdPass[$u] = substr($start_time,0,19);
+                                        $thirdPass[$u] .= $evaluations_attempts_id;
+                                }
+                        }
+                }
+        }
+
+
 
        	//the izzy
         if ($evaluations_id == 12)
@@ -329,7 +435,51 @@ for($i = 0; $i < $numOfNames; $i++)
         {
                 $addsubwithinfivecolor = 'Green';
         }
-
+	
+	if ($addSubWithinTenPass[$i] == 'No')
+        {
+                $addsubwithintencolor = 'Red';
+        }
+        else
+        {
+                $addsubwithintencolor = 'Green';
+        }
+	
+	if ($propertiesPass[$i] == 'No')
+        {
+                $propertiescolor = 'Red';
+        }
+        else
+        {
+                $propertiescolor = 'Green';
+        }
+ 	
+	if ($firstPass[$i] == 'No')
+        {
+                $firstcolor = 'Red';
+        }
+	else
+        {
+                $firstcolor = 'Green';
+        }
+	
+	if ($addSubWithinTwentyPass[$i] == 'No')
+        {
+                $addsubwithintwentycolor = 'Red';
+        }
+        else
+        {
+                $addsubwithintwentycolor = 'Green';
+        }
+	
+	if ($secondPass[$i] == 'No')
+        {
+                $secondcolor = 'Red';
+        }
+	else
+        {
+                $secondcolor = 'Green';
+        }
 
  	if ($izzyPass[$i] == 'No')
         {
@@ -338,6 +488,15 @@ for($i = 0; $i < $numOfNames; $i++)
 	else
         {
                 $izzycolor = 'Green';
+        }
+ 	
+	if ($thirdPass[$i] == 'No')
+        {
+                $thirdcolor = 'Red';
+        }
+	else
+        {
+                $thirdcolor = 'Green';
         }
 
  	if ($fourthPass[$i] == 'No')
@@ -374,23 +533,57 @@ for($i = 0; $i < $numOfNames; $i++)
         echo '</td>';
         
 	echo '<td bgcolor="';
-        echo $addsubwithinfivecolor;
-        echo '">';
-        echo $addSubWithinFivePass[$i];
-        echo '</td>';
-
-
-        echo '<td bgcolor="';
         echo $maketencolor;
         echo '">';
         echo $makeTenPass[$i];
         echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $addsubwithinfivecolor;
+        echo '">';
+        echo $addSubWithinFivePass[$i];
+        echo '</td>';
+	
+	echo '<td bgcolor="';
+        echo $addsubwithintencolor;
+        echo '">';
+        echo $addSubWithinTenPass[$i];
+        echo '</td>';
 
+	echo '<td bgcolor="';
+        echo $propertiescolor;
+        echo '">';
+        echo $propertiesPass[$i];
+        echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $firstcolor;
+        echo '">';
+        echo $firstPass[$i];
+        echo '</td>';
+	
+	echo '<td bgcolor="';
+        echo $addsubwithintwentycolor;
+        echo '">';
+        echo $addSubWithinTwentyPass[$i];
+        echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $secondcolor;
+        echo '">';
+        echo $secondPass[$i];
+        echo '</td>';
 
         echo '<td bgcolor="';
         echo $izzycolor;
         echo '">';
         echo $izzyPass[$i];
+        echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $thirdcolor;
+        echo '">';
+        echo $thirdPass[$i];
         echo '</td>';
 
         echo '<td bgcolor="';
@@ -398,6 +591,7 @@ for($i = 0; $i < $numOfNames; $i++)
         echo '">';
         echo $fourthPass[$i];
         echo '</td>';
+
         echo '<td bgcolor="';
         echo $fifthcolor;
         echo '">';
