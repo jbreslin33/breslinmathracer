@@ -23,7 +23,7 @@ session_start();
 <li><a href="/web/reports/generic/tests.php">Evaluation Answers and Questions</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
 <li><a href="/web/reports/generic/any_homework_check.php">Quick Homework Check</a></li>
-<li><a href="/web/reports/generic/milestones.php">Milestones</a></li>
+<li><a href="/web/reports/school/milestones.php">Milestones</a></li>
 
 </ul>
 
