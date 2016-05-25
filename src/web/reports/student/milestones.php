@@ -33,59 +33,13 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-$room_id = 0;
-
-if (isset($_POST["room_id"]))
-{
-        $room_id = $_POST["room_id"];
-}
-else if (isset($_GET['room_id']))
-{
-        $room_id = $_GET['room_id'];
-}
-
-
 echo "<br>";
 ?>
 
 
 	<p><b> MILESTONES: </p></b>
 
-<p><b> Select Room: </p></b>
-<form method="post" action="/web/reports/student/milestones.php">
-
-<select id="room_id" name="room_id" onchange="loadAgain()">
-<?php
-$query = "select id, name from rooms where school_id = ";
-$query .= $_SESSION["school_id"];
-$query .= " order by name asc;";
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-echo "<option selected=\"selected\" value=\"0\"> \"Select Room\" </option>";
-
-for($i = 0; $i < $numrows; $i++)
-{
-        $row = pg_fetch_array($result, $i);
-        if ($row[0] == $room_id)
-        {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
-        }
-        else
-        {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
-        }
-}
-?>
 </select>
-
-<script>
-function loadAgain()
-{
-        var x = document.getElementById("room_id").value;
-        document.location.href = '/web/reports/student/milestones.php?room_id=' + x;
-}
-</script>
 
 <?php
 echo '<table border=\"1\">';
@@ -121,52 +75,22 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-$userIDArray = array();
-$lastNameArray = array();
-$firstNameArray = array();
-$kPass = array();
-$makeTenPass = array();
-$addSubWithinFivePass = array();
-$addSubWithinTenPass = array();
-$propertiesPass = array();
-$firstPass = array();
-$addSubWithinTwentyPass = array();
-$secondPass = array();
-$izzyPass = array();
-$thirdPass = array();
-$fourthPass = array();
-$fifthPass = array();
-
-//names
-$queryNames = "select id, last_name, first_name from users where room_id = ";
-$queryNames .= $room_id; 
-$queryNames .= " order by score desc;";
-
-$nameResults = pg_query($conn,$queryNames);
-$numOfNames = pg_numrows($nameResults);
-for($i = 0; $i < $numOfNames; $i++)
-{
-	$row = pg_fetch_array($nameResults, $i);
-        $userIDArray[] = $row[0];
-        $lastNameArray[] = $row[1];
-        $firstNameArray[] = $row[2];
-	$kPass[] = 'No';
-	$makeTenPass[] = 'No';
-	$addSubWithinFivePass[] = 'No';
-	$addSubWithinTenPass[] = 'No';
-	$propertiesPass[] = 'No';
-	$firstPass[] = 'No';
-	$addSubWithinTwentyPass[] = 'No';
-	$secondPass[] = 'No';
-	$izzyPass[] = 'No';
-	$thirdPass[] = 'No';
-	$fourthPass[] = 'No';
-	$fifthPass[] = 'No';
-}
+$kPass = = 'No';
+$makeTenPass = 'No';
+$addSubWithinFivePass = 'No';
+$addSubWithinTenPass = 'No';
+$propertiesPass = 'No';
+$firstPass = 'No';
+$addSubWithinTwentyPass = 'No';
+$secondPass = 'No';
+$izzyPass = 'No';
+$thirdPass = 'No';
+$fourthPass = 'No';
+$fifthPass = 'No';
 
 //the izzy
-$queryIzzy = "select evaluations_attempts.start_time as startime, users.id as usersid, evaluations.id as evaluationsid, evaluations_attempts.id as evaluationsattemptsid, SUM(CASE WHEN item_attempts.transaction_code = 1 THEN item_attempts.transaction_code ELSE 0 END) correct, SUM(CASE WHEN item_attempts.transaction_code = 2 THEN item_attempts.transaction_code ELSE 0 END) incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 0 THEN item_attempts.transaction_code ELSE 0 END) unanswered from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.room_id = ";
-$queryIzzy .=  $room_id;
+$queryIzzy = "select evaluations_attempts.start_time as startime, users.id as usersid, evaluations.id as evaluationsid, evaluations_attempts.id as evaluationsattemptsid, SUM(CASE WHEN item_attempts.transaction_code = 1 THEN item_attempts.transaction_code ELSE 0 END) correct, SUM(CASE WHEN item_attempts.transaction_code = 2 THEN item_attempts.transaction_code ELSE 0 END) incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 0 THEN item_attempts.transaction_code ELSE 0 END) unanswered from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.user_id = ";
+$queryIzzy .=  $_SESSION["user_id"];  
 $queryIzzy .= " group by usersid, evaluationsid, evaluationsattemptsid;";
 
 $resultsIzzy = pg_query($conn,$queryIzzy);
@@ -405,8 +329,6 @@ for($y = 0; $y < $numIzzyRows; $y++)
 	}
 }
 
-for($i = 0; $i < $numOfNames; $i++)
-{
 	$row = pg_fetch_array($nameResults, $i);
  	
 	if ($kPass[$i] == 'No')
