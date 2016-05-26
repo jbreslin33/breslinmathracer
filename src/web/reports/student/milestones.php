@@ -45,33 +45,29 @@ echo "<br>";
 echo '<table border=\"1\">';
         echo '<tr>';
 
-        echo '<td> Last Name';
+        echo '<td> Basic Skills Kindergarten';
         echo '</td>';
-        echo '<td> First Name';
+        echo '<td> Make Ten';
         echo '</td>';
-        echo '<td> K';
+        echo '<td>Add Subtract Within 5';
         echo '</td>';
-        echo '<td> Make 10';
+        echo '<td>Add Subtract Within 10';
         echo '</td>';
-        echo '<td> add sub within 5';
+        echo '<td> Properties';
         echo '</td>';
-        echo '<td> add sub within 10';
+        echo '<td> Basic Skills First';
         echo '</td>';
-        echo '<td> properties';
+        echo '<td>Add Subtract Within 20';
         echo '</td>';
-        echo '<td> Basic Skills 1';
-        echo '</td>';
-        echo '<td> add sub within 20';
-        echo '</td>';
-        echo '<td> Basic Skills 2';
+        echo '<td> Basic Skills Second';
         echo '</td>';
         echo '<td> The Izzy';
         echo '</td>';
-        echo '<td> Basic Skills 3';
+        echo '<td> Basic Skills Third';
         echo '</td>';
-        echo '<td> Basic Skills 4';
+        echo '<td> Basic Skills Fourth';
         echo '</td>';
-        echo '<td> Basic Skills 5';
+        echo '<td> Basic Skills Fifth';
         echo '</td>';
         echo '</tr>';
 
@@ -241,9 +237,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 		}
 	}
 }
-
-	$row = pg_fetch_array($nameResults, $i);
- 	
+	
 	if ($kPass == 'No')
         {
                 $kcolor = 'Red';
@@ -354,12 +348,6 @@ for($y = 0; $y < $numIzzyRows; $y++)
 
 
 	echo '<tr>';
-        echo '<td>';
-        echo $lastNameArray;
-        echo '</td>';
-        echo '<td>';
-        echo $firstNameArray;
-        echo '</td>';
 
         echo '<td bgcolor="';
         echo $kcolor;
@@ -406,7 +394,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 	echo '<td bgcolor="';
         echo $secondcolor;
         echo '">';
-        echo $secondPass[$i];
+        echo $secondPass;
         echo '</td>';
 
         echo '<td bgcolor="';
