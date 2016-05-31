@@ -124,7 +124,7 @@ var Hud = new Class(
 			window.location.href = "/web/php/logout.php";
 		}
 	},
-	
+
 	tanSelected: function()
 	{
 
