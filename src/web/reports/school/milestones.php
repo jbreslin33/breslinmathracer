@@ -333,18 +333,21 @@ for($y = 0; $y < $numIzzyRows; $y++)
                 }
         }
 
-	//fourth old 
-	$old_fourth_time = '2016-05-10 15:18:33';
+	/*
+		basic skills have been revamped so old ones will not show due to date....
+	*/
+	//fourth  
+	$fourth_time = '2016-06-01 01:00:33';
 	if ($evaluations_id == 20)
 	{
-		if ($total == 7 && $correct == 7 && $incorrect == 0)
+		if ($total == 6 && $correct == 6 && $incorrect == 0)
 		{
 			for($u = 0; $u < $numOfNames; $u++)
 			{		
 				if ($users_id == $userIDArray[$u])
 				{
 			
-					if ( strtotime($start_time) < strtotime($old_fourth_time))
+					if ( strtotime($start_time) > strtotime($fourth_time))
 					{
 						$fourthPass[$u] = substr($start_time,0,19);
 						$fourthPass[$u] .= " old";
@@ -354,22 +357,6 @@ for($y = 0; $y < $numIzzyRows; $y++)
 			}
 		}
 	}
-
-        //fourth new 
-        if ($evaluations_id == 20)
-        {
-                if ($total == 8 && $correct == 8 && $incorrect == 0)
-                {
-                        for($u = 0; $u < $numOfNames; $u++)
-                        {
-                                if ($users_id == $userIDArray[$u])
-                                {
-                                        $fourthPass[$u] = substr($start_time,0,19);
-					$fourthPass[$u] .= $evaluations_attempts_id;
-                                }
-                        }
-                }
-        }
 
 
 	//fifth old 

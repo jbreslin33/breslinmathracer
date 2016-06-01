@@ -195,27 +195,19 @@ for($y = 0; $y < $numIzzyRows; $y++)
                 }
         }
 
-	//fourth old 
-	$old_fourth_time = '2016-05-10 15:18:33';
+	//fourth  
+	$fourth_time = '2016-06-01 01:18:33';
 	if ($evaluations_id == 20)
 	{
-		if ( strtotime($start_time) < strtotime($old_fourth_time))
+		if ($total == 6 && $correct == 6 && $incorrect == 0)
 		{
-			$fourthPass = substr($start_time,0,19);
-			$fourthPass .= " old";
-			$fourthPass .= $evaluations_attempts_id;
+			if ( strtotime($start_time) > strtotime($fourth_time))
+			{
+				$fourthPass = substr($start_time,0,19);
+				$fourthPass .= $evaluations_attempts_id;
+			}
 		}
 	}
-
-        //fourth new 
-        if ($evaluations_id == 20)
-        {
-                if ($total == 8 && $correct == 8 && $incorrect == 0)
-                {
-                        $fourthPass = substr($start_time,0,19);
-			$fourthPass .= $evaluations_attempts_id;
-                }
-        }
 
 	//fifth old 
 	if ($evaluations_id == 21)
