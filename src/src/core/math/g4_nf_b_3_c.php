@@ -66,7 +66,7 @@ initialize: function(sheet)
         var m = 0;
         var n = 0;
 
-        while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0)
+        while (a > d || b > d || a <= b || x <= y || m%d == 0 || n%d == 0)
         {
                 x = Math.floor(Math.random()*9)+1;
                 y = Math.floor(Math.random()*9)+1;
