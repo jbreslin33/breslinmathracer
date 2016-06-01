@@ -4301,6 +4301,20 @@ getItem: function(id)
                 return new i_4_nf_b_4_c__10(this.mSheet);
         }
 
+	//4.nbt.b.6	
+	if (id == '4.nbt.b.6_9')
+        {
+                return new i_4_nbt_b_6__9(this.mSheet);
+        }
+	if (id == '4.nbt.b.6_10')
+        {
+                return new i_4_nbt_b_6__10(this.mSheet);
+        }
+	if (id == '4.nbt.b.6_11')
+        {
+                return new i_4_nbt_b_6__11(this.mSheet);
+        }
+
 	//4.nf.c.5	
 	if (id == '4.nf.c.5_1')
         {
