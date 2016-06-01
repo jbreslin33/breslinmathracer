@@ -11,8 +11,8 @@ initialize: function(game)
 	//subtract mixed numbers with borrowing	
 	this.mIDArray.push('4.nf.b.3.c_13');
 	
-	//divide 4x1 with remainder	
-	this.mIDArray.push('4.nbt.b.6_7');
+	//divide 4x1 with remainder zero in first digit	 
+	this.mIDArray.push('4.nbt.b.6_8');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
