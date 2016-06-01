@@ -1,4 +1,4 @@
-var BasicSkillsFourthSheet = new Class(
+var BasicSkillsFifthBossLevelSheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,31 +6,17 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//add 
-	this.mIDArray.push('4.nbt.b.4_7');
+	//ADVANCED...........
 
-	//subtract 
-	this.mIDArray.push('4.nbt.b.4_14');
-
-	//multiply 4x1 
-	this.mIDArray.push('4.nbt.b.5_3');
-
-	//multiply 2x2
-	this.mIDArray.push('4.nbt.b.5_5');
-
-	//add mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_3');
+	//division 2x4
+	this.mIDArray.push('5.nbt.b.6_4');
 	
-	//subtract mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_8');
-
-	//ADVANCED
+	//divide decimals	
+	r = Math.floor(Math.random()*5+15); //15-19
+	this.mIDArray.push('5.nbt.b.7_' + r);
 	
-	//subtract mixed numbers with borrowing	
-	//this.mIDArray.push('4.nf.b.3.c_11');
-	
-	//divide 4x1 with remainder	
-	//this.mIDArray.push('4.nbt.b.6_7');
+	//subtraction fraction unlike denominators with borrow
+	this.mIDArray.push('5.nf.a.1_9');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
@@ -81,7 +67,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(20);
+                itemAttempt.setEvaluationsID(31);
         }
         else
         {

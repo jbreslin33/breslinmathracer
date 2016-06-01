@@ -473,6 +473,32 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionS);
 		}
 
+                var optionT = document.createElement("option");
+                optionT.value = 30;
+                optionT.text = 'Basic Skills Fourth Boss Level';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionT);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionT);
+                }
+
+                var optionU = document.createElement("option");
+                optionU.value = 31;
+                optionU.text = 'Basic Skills Fifth Boss Level';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionU);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionU);
+                }
+
+
+
 		//add_game_J	
 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");

@@ -46,7 +46,7 @@ if ($APPLICATION->mCode == 217)
 	error_log($APPLICATION->mLoginStudent->mLastName);
 }
 //add_game_K
-if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29)
+if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29 || $APPLICATION->mCode == 30 || $APPLICATION->mCode == 31  )
 {
         $APPLICATION->mDataArray[] = $APPLICATION->mCode;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
@@ -127,7 +127,9 @@ function __construct()
         $this->mTERRA_NOVA_HOMEWORK_APPLICATION = new TERRA_NOVA_HOMEWORK_APPLICATION        ($this);
         $this->mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new TIMES_TABLES_THE_SUPER_IZZY_APPLICATION        ($this);
         $this->mBASIC_SKILLS_FOURTH_APPLICATION = new BASIC_SKILLS_FOURTH_APPLICATION        ($this);
+        $this->mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION        ($this);
         $this->mBASIC_SKILLS_FIFTH_APPLICATION = new BASIC_SKILLS_FIFTH_APPLICATION        ($this);
+        $this->mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION        ($this);
         $this->mBASIC_SKILLS_THIRD_APPLICATION = new BASIC_SKILLS_THIRD_APPLICATION        ($this);
         $this->mBASIC_SKILLS_SECOND_APPLICATION = new BASIC_SKILLS_SECOND_APPLICATION        ($this);
         $this->mBASIC_SKILLS_FIRST_APPLICATION = new BASIC_SKILLS_FIRST_APPLICATION        ($this);

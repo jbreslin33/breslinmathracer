@@ -101,7 +101,9 @@
 <script type="text/javascript" src="/src/sheet/times_tables_addsubtractwithinfive_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_thesuperizzy_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_fourth_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/basic_skills_fourth_boss_level_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_fifth_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/basic_skills_fifth_boss_level_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_third_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_second_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_first_sheet.php"></script>
@@ -141,7 +143,9 @@
 <script type="text/javascript" src="/src/core/math/times_tables_addsubtractwithinfive_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_thesuperizzy_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_fourth_game.php"></script>
+<script type="text/javascript" src="/src/core/math/basic_skills_fourth_boss_level_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_fifth_game.php"></script>
+<script type="text/javascript" src="/src/core/math/basic_skills_fifth_boss_level_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_third_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_second_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_first_game.php"></script>

@@ -1,4 +1,4 @@
-var BasicSkillsFourthSheet = new Class(
+var BasicSkillsFourthBossLevelSheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,31 +6,13 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//add 
-	this.mIDArray.push('4.nbt.b.4_7');
-
-	//subtract 
-	this.mIDArray.push('4.nbt.b.4_14');
-
-	//multiply 4x1 
-	this.mIDArray.push('4.nbt.b.5_3');
-
-	//multiply 2x2
-	this.mIDArray.push('4.nbt.b.5_5');
-
-	//add mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_3');
-	
-	//subtract mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_8');
-
 	//ADVANCED
 	
 	//subtract mixed numbers with borrowing	
-	//this.mIDArray.push('4.nf.b.3.c_11');
+	this.mIDArray.push('4.nf.b.3.c_11');
 	
 	//divide 4x1 with remainder	
-	//this.mIDArray.push('4.nbt.b.6_7');
+	this.mIDArray.push('4.nbt.b.6_7');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
@@ -81,7 +63,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(20);
+                itemAttempt.setEvaluationsID(30);
         }
         else
         {

@@ -119,7 +119,9 @@ cat src/sheet/times_tables_nine_sheet.php >> min.js
 cat src/sheet/times_tables_theizzy_sheet.php >> min.js
 cat src/sheet/times_tables_thesuperizzy_sheet.php >> min.js
 cat src/sheet/basic_skills_fourth_sheet.php >> min.js
+cat src/sheet/basic_skills_fourth_boss_level_sheet.php >> min.js
 cat src/sheet/basic_skills_fifth_sheet.php >> min.js
+cat src/sheet/basic_skills_fifth_boss_level_sheet.php >> min.js
 cat src/sheet/basic_skills_third_sheet.php >> min.js
 cat src/sheet/basic_skills_second_sheet.php >> min.js
 cat src/sheet/basic_skills_first_sheet.php >> min.js

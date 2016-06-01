@@ -150,6 +150,14 @@ var ItemAttempt = new Class(
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyNine[0] = code;
 		}
+		if (parseInt(this.mEvaluationsID) == 30)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirty[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 31)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyOne[0] = code;
+		}
 		//add_game_R
 	},
 	setEvaluationsID: function(evaluationsID)
@@ -328,6 +336,16 @@ var ItemAttempt = new Class(
 			{
 				APPLICATION.mItemAttemptsTypeArrayTwentyNine.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayTwentyNine.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 30)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirty.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirty.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 31)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyOne.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyOne.unshift(0);
 			}
 			//add_game_S
 		}

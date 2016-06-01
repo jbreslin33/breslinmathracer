@@ -10,9 +10,11 @@ alter table users add alltimebasicskillsthird integer;
 update evaluations set description = 'Basic Skills 3rd' where id = 22;
 insert into evaluations (id,description) values (23,'Basic Skills Second');
 alter table users add alltimebasicskillssecond integer;
+
 update evaluations set description = 'Basic Skills 2nd' where id = 23;
 insert into evaluations (id,description) values (24,'Basic Skills First');
 alter table users add alltimebasicskillsfirst integer;
+
 update evaluations set description = 'Basic Skills 1st' where id = 24;
 insert into evaluations (id,description) values (25,'Basic Skills Kindergarten');
 alter table users add alltimebasicskillskindergarten integer;
@@ -35,3 +37,12 @@ update item_types set active_code = 0 where id = '1.nbt.c.4_7';
 update item_types set active_code = 0 where id = '1.nbt.c.4_8';
 update users set room_id = 12 where score < 400 AND room_id = 18;
  update users set room_id = 12 where last_name = 'kent';
+
+update evaluations set description = 'Basic Skills Fourth Boss Level' where id = 30;
+insert into evaluations (id,description) values (30,'Basic Skills Fourth Boss Level');
+alter table users add alltimebasicskillsfourthbosslevel integer;
+
+update evaluations set description = 'Basic Skills Fifth Boss Level' where id = 31;
+insert into evaluations (id,description) values (31,'Basic Skills Fifth Boss Level');
+alter table users add alltimebasicskillsfifthbosslevel integer;
+
