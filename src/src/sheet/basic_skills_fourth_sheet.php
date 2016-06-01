@@ -24,13 +24,13 @@ initialize: function(game)
 	//subtract mixed numbers	
 	this.mIDArray.push('4.nf.b.3.c_8');
 
-	//ADVANCED
+	//add mixed numbers.........
+
+	//add with same numerators	
+	this.mIDArray.push('4.nf.b.3.c_11');
 	
-	//subtract mixed numbers with borrowing	
-	//this.mIDArray.push('4.nf.b.3.c_11');
-	
-	//divide 4x1 with remainder	
-	//this.mIDArray.push('4.nbt.b.6_7');
+	//add with numerator bigger than 2nd numerator	
+	this.mIDArray.push('4.nf.b.3.c_12');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
