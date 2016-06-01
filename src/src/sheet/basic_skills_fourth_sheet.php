@@ -19,7 +19,7 @@ initialize: function(game)
 	this.mIDArray.push('4.nbt.b.5_5');
 
 	//add mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_3');
+	this.mIDArray.push('4.nf.b.3.c_3'); //needs to not have borrow
 	
 	//subtract mixed numbers	
 	this.mIDArray.push('4.nf.b.3.c_8');

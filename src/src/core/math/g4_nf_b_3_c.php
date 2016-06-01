@@ -1,6 +1,96 @@
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.c_11',4.1611,'4.nf.b.3.c','');
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.c_13',4.1613,'4.nf.b.3.c','borrow');
+*/
+
+var i_4_nf_b_3_c__13 = new Class(
+{
+Extends: TextItemMixedNumber,
+
+initialize: function(sheet)
+{
+        this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+        this.mType = '4.nf.b.3.c_13';
+
+        var x = 0;
+        var y = 1;
+        var a = 0;
+        var b = 0;
+        var d = 0;
+        var m = 0;
+        var n = 0;
+
+        while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0)
+        {
+                x = Math.floor(Math.random()*9)+1;
+                y = Math.floor(Math.random()*9)+1;
+                a = Math.floor(Math.random()*9)+1;
+                b = Math.floor(Math.random()*9)+1;
+                d = Math.floor(Math.random()*8)+2;
+                m = parseInt( (d*x) + a);
+                n = parseInt( (d*y) + b);
+        }
+
+        var fractionA = new Fraction(m,d,false);
+        var fractionB = new Fraction(n,d,false);
+        var fractionC = fractionA.subtract(fractionB);
+
+        APPLICATION.log('x:' + x);
+        APPLICATION.log('y:' + y);
+
+        this.setQuestion('' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber() + ' = ');
+        this.setAnswer('' + fractionC.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.c_12',4.1612,'4.nf.b.3.c','bigger numerator');
+*/
+
+var i_4_nf_b_3_c__12 = new Class(
+{
+Extends: TextItemMixedNumber,
+
+initialize: function(sheet)
+{
+        this.parent(sheet, 320,100,200,95, 100,50,510,137, 100,50,625,100, 100,50,625,175,true);
+
+        this.mType = '4.nf.b.3.c_12';
+
+        var x = 0;
+        var y = 1;
+        var a = 0;
+        var b = 0;
+        var d = 0;
+        var m = 0;
+        var n = 0;
+
+        while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0)
+        {
+                x = Math.floor(Math.random()*9)+1;
+                y = Math.floor(Math.random()*9)+1;
+                a = Math.floor(Math.random()*9)+1;
+                b = Math.floor(Math.random()*9)+1;
+                d = Math.floor(Math.random()*8)+2;
+                m = parseInt( (d*x) + a);
+                n = parseInt( (d*y) + b);
+        }
+
+        var fractionA = new Fraction(m,d,false);
+        var fractionB = new Fraction(n,d,false);
+        var fractionC = fractionA.subtract(fractionB);
+
+        APPLICATION.log('x:' + x);
+        APPLICATION.log('y:' + y);
+
+        this.setQuestion('' + fractionA.getMixedNumber() + ' - ' + fractionB.getMixedNumber() + ' = ');
+        this.setAnswer('' + fractionC.getString(),0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nf.b.3.c_11',4.1611,'4.nf.b.3.c','same numerators');
 */
 
 var i_4_nf_b_3_c__11 = new Class(
@@ -21,12 +111,14 @@ initialize: function(sheet)
 	var m = 0;
 	var n = 0;
 
-        while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0) 
+        //while (a > d || b > d || a >= b || x <= y || m%d == 0 || n%d == 0) 
+        while (a > d || b > d || x <= y) 
         {
                 x = Math.floor(Math.random()*9)+1;
                 y = Math.floor(Math.random()*9)+1;
                 a = Math.floor(Math.random()*9)+1;
-                b = Math.floor(Math.random()*9)+1;
+                b = a;
+                //b = Math.floor(Math.random()*9)+1;
                 d = Math.floor(Math.random()*8)+2;
 		m = parseInt( (d*x) + a);
 		n = parseInt( (d*y) + b);
