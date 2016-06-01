@@ -15,19 +15,32 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        var a = 0;
-        var b = 0;
-        var q = 0;
-        var r = 0;
-        while( r == 0)
-        {
-                a = Math.floor((Math.random()*7)+3);
-                b = Math.floor((Math.random()*8998)+1001);
-                q = parseInt(b/a);
-                r = b % a;
-        }
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var q = 0;
+	var r = 0;
+	var z = 0;
 
-        this.setQuestion('Find the Quotient: ' + b + ' &divide ' + a + ' If a remainder exists write in the form 57r3');
+        while(r == 0)
+	{
+                a = 0;
+                b = Math.floor((Math.random()*8)+2);
+                c = Math.floor((Math.random()*8)+2);
+                d = Math.floor((Math.random()*8)+2);
+
+		q = parseInt( (b * 100) + (c * 10) + d);
+                r = Math.floor((Math.random()*f));
+		f = Math.floor((Math.random()*8)+2);
+
+                z = parseInt( (q*f) + r);
+
+	}
+
+        this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
         this.setAnswer('' + q + 'r' + r,0);
 }
 });
