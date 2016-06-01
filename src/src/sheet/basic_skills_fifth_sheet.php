@@ -5,15 +5,12 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	
-	//division 2x4
-	this.mIDArray.push('5.nbt.b.6_4');
 
 	//multiplication 3x2
 	this.mIDArray.push('5.nbt.b.5_4');
 
 	//add decimals 	
-	var r = Math.floor(Math.random()*4+1); //1-4
+	var r = Math.floor(Math.random()*3+1); //1-3
 	this.mIDArray.push('5.nbt.b.7_' + r);
 	
 	//subtract decimals  	
@@ -22,10 +19,6 @@ initialize: function(game)
 
 	//multiply decimals	
 	r = Math.floor(Math.random()*5+10); //10-14
-	this.mIDArray.push('5.nbt.b.7_' + r);
-	
-	//divide decimals	
-	r = Math.floor(Math.random()*5+15); //15-19
 	this.mIDArray.push('5.nbt.b.7_' + r);
 
 	//addition fraction unlike denominators
@@ -36,15 +29,24 @@ initialize: function(game)
 	r = Math.floor(Math.random()*4+5); //5-8
 	this.mIDArray.push('5.nf.a.1_' + r);
 	
-	//subtraction fraction unlike denominators with borrow
-	this.mIDArray.push('5.nf.a.1_9');
-
 	//multiply fractions 
 	r = Math.floor(Math.random()*2+1); //1-2
 	this.mIDArray.push('5.nf.b.4_' + r);
-
+	
 	//divide fraction with unit numerator by whole number
 	this.mIDArray.push('5.nf.b.7.a_5');
+
+	//ADVANCED...........
+
+	//division 2x4
+	//this.mIDArray.push('5.nbt.b.6_4');
+	
+	//divide decimals	
+	//r = Math.floor(Math.random()*5+15); //15-19
+	//this.mIDArray.push('5.nbt.b.7_' + r);
+	
+	//subtraction fraction unlike denominators with borrow
+	//this.mIDArray.push('5.nf.a.1_9');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
