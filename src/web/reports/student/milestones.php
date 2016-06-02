@@ -67,7 +67,11 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td> Basic Skills Fourth';
         echo '</td>';
+        echo '<td> Basic Skills Fourth Boss Level';
+        echo '</td>';
         echo '<td> Basic Skills Fifth';
+        echo '</td>';
+        echo '<td> Basic Skills Fifth Boss Level';
         echo '</td>';
         echo '</tr>';
 
@@ -82,7 +86,9 @@ $secondPass = 'No';
 $izzyPass = 'No';
 $thirdPass = 'No';
 $fourthPass = 'No';
+$fourthBossLevelPass = 'No';
 $fifthPass = 'No';
+$fifthBossLevelPass = 'No';
 
 //the izzy
 $queryIzzy = "select evaluations_attempts.start_time as startime, users.id as usersid, evaluations.id as evaluationsid, evaluations_attempts.id as evaluationsattemptsid, SUM(CASE WHEN item_attempts.transaction_code = 1 THEN item_attempts.transaction_code ELSE 0 END) correct, SUM(CASE WHEN item_attempts.transaction_code = 2 THEN item_attempts.transaction_code ELSE 0 END) incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 0 THEN item_attempts.transaction_code ELSE 0 END) unanswered from item_attempts join evaluations_attempts on item_attempts.evaluations_attempts_id=evaluations_attempts.id join users on users.id=evaluations_attempts.user_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id where users.id = ";
@@ -199,7 +205,7 @@ for($y = 0; $y < $numIzzyRows; $y++)
 	$fourth_time = '2016-06-01 01:18:33';
 	if ($evaluations_id == 20)
 	{
-		if ($total == 6 && $correct == 6 && $incorrect == 0)
+		if ($total == 8 && $correct == 8 && $incorrect == 0)
 		{
 			if ( strtotime($start_time) > strtotime($fourth_time))
 			{
@@ -208,6 +214,21 @@ for($y = 0; $y < $numIzzyRows; $y++)
 			}
 		}
 	}
+
+   	//fourth_boss
+        $fourth_boss_time = '2016-06-01 01:18:33';
+        if ($evaluations_id == 30)
+        {
+                if ($total == 13 && $correct == 13 && $incorrect == 0)
+                {
+                        if ( strtotime($start_time) > strtotime($fourth_boss_time))
+                        {
+                                $fourthPass = substr($start_time,0,19);
+                                $fourthPass .= $evaluations_attempts_id;
+                        }
+                }
+        }
+
 
 	//fifth old 
 	if ($evaluations_id == 21)
@@ -328,6 +349,15 @@ for($y = 0; $y < $numIzzyRows; $y++)
         {
                 $fourthcolor = 'Green';
         }
+ 	
+	if ($fourthBossLevelPass == 'No')
+        {
+                $fourthbosslevelcolor = 'Red';
+        }
+	else
+        {
+                $fourthbosslevelcolor = 'Green';
+        }
 
         if ($fifthPass == 'No')
         {
@@ -336,6 +366,15 @@ for($y = 0; $y < $numIzzyRows; $y++)
         else
         {
                 $fifthcolor = 'Green';
+        }
+        
+	if ($fifthBossLevelPass == 'No')
+        {
+                $fifthbosslevelcolor = 'Red';
+        }
+        else
+        {
+                $fifthbosslevelcolor = 'Green';
         }
 
 
@@ -406,11 +445,23 @@ for($y = 0; $y < $numIzzyRows; $y++)
         echo '">';
         echo $fourthPass;
         echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $fourthbosslevelcolor;
+        echo '">';
+        echo $fourthBossLevelPass;
+        echo '</td>';
 
         echo '<td bgcolor="';
         echo $fifthcolor;
         echo '">';
         echo $fifthPass;
+        echo '</td>';
+        
+	echo '<td bgcolor="';
+        echo $fifthbosslevelcolor;
+        echo '">';
+        echo $fifthBossLevelPass;
         echo '</td>';
 
         echo '</tr>';

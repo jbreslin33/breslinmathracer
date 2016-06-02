@@ -32,6 +32,9 @@ initialize: function(game)
 	//add with numerator bigger than 2nd numerator	
 	this.mIDArray.push('4.nf.b.3.c_12');
 
+  	//subtract mixed numbers with borrowing
+        //this.mIDArray.push('4.nf.b.3.c_13');
+
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },

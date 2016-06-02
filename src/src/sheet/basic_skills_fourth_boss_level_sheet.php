@@ -7,9 +7,10 @@ initialize: function(game)
 	this.parent(game);
 
 	//ADVANCED
-	
-	//subtract mixed numbers with borrowing	
-	this.mIDArray.push('4.nf.b.3.c_13');
+
+  	//subtract mixed numbers with borrowing
+        this.mIDArray.push('4.nf.b.3.c_13');
+
 	
 	//divide 4x1 with remainder no zero	 
 	this.mIDArray.push('4.nbt.b.6_7');
