@@ -386,39 +386,48 @@ for($y = 0; $y < $numIzzyRows; $y++)
                 }
         }
 
-
-
-	//fifth old 
+	//fifth  
+	$fifth_time = '2016-06-01 01:00:33';
 	if ($evaluations_id == 21)
 	{
-		if ($total == 10 && $correct == 10 && $incorrect == 0)
+		if ($total == 8 && $correct == 8 && $incorrect == 0)
 		{
 			for($u = 0; $u < $numOfNames; $u++)
 			{		
 				if ($users_id == $userIDArray[$u])
 				{
-					$fifthPass[$u] = substr($start_time,0,19);
-					$fifthPass[$u] .= " old";
-					$fifthPass[$u] .= $evaluations_attempts_id;
+			
+					if ( strtotime($start_time) > strtotime($fifth_time))
+					{
+						$fifthPass[$u] = substr($start_time,0,19);
+						$fifthPass[$u] .= $evaluations_attempts_id;
+					}
 				}
 			}
 		}
 	}
-	//fifth new
-	if ($evaluations_id == 21)
-	{
-		if ($total == 11 && $correct == 11 && $incorrect == 0)
-		{
-			for($u = 0; $u < $numOfNames; $u++)
-			{		
-				if ($users_id == $userIDArray[$u])
-				{
-					$fifthPass[$u] = substr($start_time,0,19);
-					$fifthPass[$u] .= $evaluations_attempts_id;
-				}
-			}
-		}
-	}
+
+  	//fifth_boss
+        $fifth_boss_time = '2016-06-01 01:00:33';
+        if ($evaluations_id == 31)
+        {
+                if ($total == 3 && $correct == 3 && $incorrect == 0)
+                {
+                        for($u = 0; $u < $numOfNames; $u++)
+                        {
+                                if ($users_id == $userIDArray[$u])
+                                {
+                                        if ( strtotime($start_time) > strtotime($fifth_boss_time))
+                                        {
+                                                $fifthBossLevelPass[$u] = substr($start_time,0,19);
+                                                $fifthBossLevelPass[$u] .= $evaluations_attempts_id;
+                                        }
+                                }
+                        }
+                }
+        }
+
+
 }
 
 for($i = 0; $i < $numOfNames; $i++)
