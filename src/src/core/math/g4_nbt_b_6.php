@@ -1,5 +1,49 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_12',4.1112,'4.nbt.b.6','zero at 1st and 3rd');
+*/
+
+var i_4_nbt_b_6__12 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.b.6_12';
+
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var q = 0;
+	var r = 0;
+	var z = 0;
+
+        while(r == 0 || z < 1000 || z > 9999)
+	{
+               	a = 0; 
+                b = Math.floor((Math.random()*8)+2);
+                c = 0;
+                d = Math.floor((Math.random()*8)+2);
+
+                q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
+		f = Math.floor((Math.random()*8)+2);
+                r = Math.floor((Math.random()*f));
+
+                z = parseInt( (q*f) + r);
+	}
+
+        this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
+        this.setAnswer('' + q + 'r' + r,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_11',4.1111,'4.nbt.b.6','zero at 4th');
 */
 
