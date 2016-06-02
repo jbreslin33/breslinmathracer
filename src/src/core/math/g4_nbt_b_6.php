@@ -27,8 +27,8 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
         {
-                a = Math.floor((Math.random()*8)+2);
-                b = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
                 c = 0;
 		d = 0;
 
@@ -71,7 +71,7 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
         {
-                a = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
                 b = 0;
                 c = 0;
 		d = 0;
@@ -115,9 +115,9 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
         {
-                a = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
                 b = 0;
-                c = Math.floor((Math.random()*8)+2);
+                c = Math.floor((Math.random()*9)+1);
 		d = 0;
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
@@ -159,10 +159,10 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
         {
-                a = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
                 b = 0;
                 c = 0;
-                d = Math.floor((Math.random()*8)+2);
+                d = Math.floor((Math.random()*9)+1);
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
                 f = Math.floor((Math.random()*8)+2);
@@ -204,7 +204,7 @@ initialize: function(sheet)
         while(r == 0 || z < 1000 || z > 9999)
         {
                 a = 0;
-                b = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*9)+1);
                 c = 0;
                 d = 0;
 
@@ -250,8 +250,8 @@ initialize: function(sheet)
         while(r == 0 || z < 1000 || z > 9999)
 	{
                	a = 0; 
-                b = Math.floor((Math.random()*8)+2);
-                c = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*9)+1);
+                c = Math.floor((Math.random()*9)+1);
                 d = 0;
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
@@ -295,9 +295,9 @@ initialize: function(sheet)
         while(r == 0 || z < 1000 || z > 9999)
 	{
                	a = 0; 
-                b = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*9)+1);
                 c = 0;
-                d = Math.floor((Math.random()*8)+2);
+                d = Math.floor((Math.random()*9)+1);
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 		f = Math.floor((Math.random()*8)+2);
@@ -338,9 +338,9 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
 	{
-                a = Math.floor((Math.random()*8)+2);
-                b = Math.floor((Math.random()*8)+2);
-                c = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
+                c = Math.floor((Math.random()*9)+1);
                 d = 0;
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
@@ -382,10 +382,10 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
 	{
-                a = Math.floor((Math.random()*8)+2);
-                b = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
                 c = 0;
-                d = Math.floor((Math.random()*8)+2);
+                d = Math.floor((Math.random()*9)+1);
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 		f = Math.floor((Math.random()*8)+2);
@@ -427,10 +427,10 @@ initialize: function(sheet)
 
         while(r == 0 || z < 1000 || z > 9999)
 	{
-                a = Math.floor((Math.random()*8)+2);
+                a = Math.floor((Math.random()*9)+1);
                 b = 0;
-                c = Math.floor((Math.random()*8)+2);
-                d = Math.floor((Math.random()*8)+2);
+                c = Math.floor((Math.random()*9)+1);
+                d = Math.floor((Math.random()*9)+1);
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 		f = Math.floor((Math.random()*8)+2);
@@ -473,9 +473,55 @@ initialize: function(sheet)
         while(r == 0 || z < 1000)
 	{
                 a = 0;
-                b = Math.floor((Math.random()*8)+2);
-                c = Math.floor((Math.random()*8)+2);
-                d = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*9)+1);
+                c = Math.floor((Math.random()*9)+1);
+                d = Math.floor((Math.random()*9)+1);
+
+                q = parseInt( (b * 100) + (c * 10) + d);
+		f = Math.floor((Math.random()*8)+2);
+                r = Math.floor((Math.random()*f));
+
+                z = parseInt( (q*f) + r);
+
+	}
+
+        this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
+        this.setAnswer('' + q + 'r' + r,0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_7',4.1107,'4.nbt.b.6','no zero');
+*/
+
+var i_4_nbt_b_6__7 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.b.6_7';
+
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var q = 0;
+	var r = 0;
+	var z = 0;
+
+        while(r == 0 || z < 1000)
+	{
+                a = Math.floor((Math.random()*9)+1);
+                b = Math.floor((Math.random()*9)+1);
+                c = Math.floor((Math.random()*9)+1);
+                d = Math.floor((Math.random()*9)+1);
 
                 q = parseInt( (b * 100) + (c * 10) + d);
 		f = Math.floor((Math.random()*8)+2);
@@ -491,38 +537,6 @@ initialize: function(sheet)
 });
 
 
-/*
-insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_7',4.1107,'4.nbt.b.6','divide 4 by 1 with remainder');
-*/
-
-var i_4_nbt_b_6__7 = new Class(
-{
-Extends: TextItem,
-
-initialize: function(sheet)
-{
-        this.parent(sheet,575,50,320,75,720,50,380,150);
-
-        this.mType = '4.nbt.b.6_7';
-
-        this.ns = new NameSampler();
-
-        var a = 0;
-        var b = 0;
-        var q = 0;
-        var r = 0;
-        while( r == 0)
-        {
-                a = Math.floor((Math.random()*7)+3);
-                b = Math.floor((Math.random()*8998)+1001);
-                q = parseInt(b/a);
-                r = b % a;
-        }
-
-        this.setQuestion('Find the Quotient: ' + b + ' &divide ' + a + ' If a remainder exists write in the form 57r3');
-        this.setAnswer('' + q + 'r' + r,0);
-}
-});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_6',4.1106,'4.nbt.b.6','divide 4 by 1 without remainder');

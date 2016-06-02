@@ -11,7 +11,10 @@ initialize: function(game)
 	//subtract mixed numbers with borrowing	
 	this.mIDArray.push('4.nf.b.3.c_13');
 	
-	//divide 4x1 with remainder zero in first digit	 
+	//divide 4x1 with remainder no zero	 
+	this.mIDArray.push('4.nbt.b.6_7');
+	
+	//divide 4x1 with remainder zero in 1st digit	 
 	this.mIDArray.push('4.nbt.b.6_8');
 
 	//divide 4x1 with remainder zero in 2nd digit	 
@@ -23,7 +26,8 @@ initialize: function(game)
 	//divide 4x1 with remainder zero in fourth digit	 
 	this.mIDArray.push('4.nbt.b.6_11');
 
-	//1st zero	
+
+	//---------------------1st zero	
 	//divide 4x1 with remainder zero in 1st and 3rd	 
 	this.mIDArray.push('4.nbt.b.6_12');
 	
@@ -33,7 +37,8 @@ initialize: function(game)
 	//divide 4x1 with remainder zero in 1st and 3rd and 4th	 
 	this.mIDArray.push('4.nbt.b.6_14');
 
-	//2nd zero 
+
+	//--------------------2nd zero 
 	//divide 4x1 with remainder zero in 2nd and 3rd	 
 	this.mIDArray.push('4.nbt.b.6_15');
 	
@@ -43,7 +48,7 @@ initialize: function(game)
 	//divide 4x1 with remainder zero in 2nd and 3rd and 4th	 
 	this.mIDArray.push('4.nbt.b.6_17');
 
-	//3rd zero
+	//--------------------3rd zero
 	//divide 4x1 with remainder zero in 3rd and 4th 	 
 	this.mIDArray.push('4.nbt.b.6_18');
 
