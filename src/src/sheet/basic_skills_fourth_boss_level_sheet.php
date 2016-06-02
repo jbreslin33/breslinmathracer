@@ -22,6 +22,12 @@ initialize: function(game)
 
 	//divide 4x1 with remainder zero in fourth digit	 
 	this.mIDArray.push('4.nbt.b.6_11');
+	
+	//divide 4x1 with remainder zero in 1st and 3rd	 
+	this.mIDArray.push('4.nbt.b.6_12');
+	
+	//divide 4x1 with remainder zero in 1st and 4th	 
+	this.mIDArray.push('4.nbt.b.6_13');
 
 	this.mCurrentElement = 0;
 	this.shuffle(500);
