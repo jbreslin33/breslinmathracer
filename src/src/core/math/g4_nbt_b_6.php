@@ -80,8 +80,8 @@ initialize: function(sheet)
                 d = Math.floor((Math.random()*8)+2);
 
                 q = parseInt( (b * 100) + (c * 10) + d);
-                r = Math.floor((Math.random()*f));
 		f = Math.floor((Math.random()*8)+2);
+                r = Math.floor((Math.random()*f));
 
                 z = parseInt( (q*f) + r);
 
