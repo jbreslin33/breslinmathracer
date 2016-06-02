@@ -1,5 +1,49 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_11',4.1111,'4.nbt.b.6','zero at 4th');
+*/
+
+var i_4_nbt_b_6__11 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '4.nbt.b.6_11';
+
+        this.ns = new NameSampler();
+
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var q = 0;
+	var r = 0;
+	var z = 0;
+
+        while(r == 0 || z < 1000 || z > 9999)
+	{
+                a = Math.floor((Math.random()*8)+2);
+                b = Math.floor((Math.random()*8)+2);
+                c = Math.floor((Math.random()*8)+2);
+                d = 0;
+
+                q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
+		f = Math.floor((Math.random()*8)+2);
+                r = Math.floor((Math.random()*f));
+
+                z = parseInt( (q*f) + r);
+	}
+
+        this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
+        this.setAnswer('' + q + 'r' + r,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_10',4.1110,'4.nbt.b.6','zero at 3rd');
 */
 
@@ -43,6 +87,7 @@ initialize: function(sheet)
         this.setAnswer('' + q + 'r' + r,0);
 }
 });
+
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_9',4.1109,'4.nbt.b.6','zero at 2nd');
 */
