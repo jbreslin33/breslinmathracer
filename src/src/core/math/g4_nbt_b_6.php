@@ -15,37 +15,35 @@ initialize: function(sheet)
 
         this.ns = new NameSampler();
 
-        var a = 0;
-        var b = 0;
-        var c = 0;
-        var d = 0;
-        var e = 0;
-        var f = 0;
-        var q = 0;
-        var r = 0;
-        var z = 0;
+	var a = 0;
+	var b = 0;
+	var c = 0;
+	var d = 0;
+	var e = 0;
+	var f = 0;
+	var q = 0;
+	var r = 0;
+	var z = 0;
 
         while(r == 0 || z < 1000)
-        {
-                a = Math.floor((Math.random()*8)+2);
-                b = 0;
+	{
+                a = 0;
+                b = Math.floor((Math.random()*8)+2);
                 c = Math.floor((Math.random()*8)+2);
                 d = Math.floor((Math.random()*8)+2);
 
-                q = parseInt( (a * 1000) + (c * 10) + d);
-                f = Math.floor((Math.random()*8)+2);
+                q = parseInt( (b * 100) + (c * 10) + d);
+		f = Math.floor((Math.random()*8)+2);
                 r = Math.floor((Math.random()*f));
 
                 z = parseInt( (q*f) + r);
 
-        }
+	}
 
         this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
         this.setAnswer('' + q + 'r' + r,0);
 }
 });
-
-
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('4.nbt.b.6_8',4.1108,'4.nbt.b.6','zero at begining');
 */
