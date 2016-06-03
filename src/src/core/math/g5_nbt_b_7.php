@@ -1,4 +1,67 @@
 /*
+.xx .x000   
+.xx x.000 
+x.x x.000   
+x.x .x000   
+xx. .x000  
+xx. x.000  
+----------------------
+.xx x.x00   
+.xx xx.00 
+x.x xx.00   
+x.x x.x00   
+xx. x.x00  
+xx. xx.00  
+
+-------------------
+
+   xxxx  
+xx xx00         
+
+   xxx         
+xx xx00
+  
+   xx
+xx xx00
+  
+   x
+xx xx00
+
+---------------
+
+   xxxx
+xx xxx0 move 1
+
+   xxx
+xx xxx0 move 2
+ 
+   xx
+xx xxx0 move 1
+ 
+   x
+xx xxx0 move 2
+
+--------
+
+   xxxx
+xx xxxx move 2
+
+   xxx
+xx xxxx move 1
+
+   xx
+xx xxxx move 2
+
+   x
+xx xxxx move 1
+
+
+
+
+
+
+*/
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_24',5.1124,'5.nbt.b.7','');
 */
 
@@ -24,18 +87,18 @@ initialize: function(sheet)
         var r = 0;
         var z = 0;
 
-        while(r == 0 || z < 1000 || z > 9999)
+        while(z < 1000 || z > 9999 || z%100 != 0)
         {
                 a = Math.floor((Math.random()*9)+1);
                 b = Math.floor((Math.random()*9)+1);
-                c = 0;
-                d = 0;
+                c = Math.floor((Math.random()*9)+1);
+                d = Math.floor((Math.random()*9)+1);
 
                 q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
                 f = Math.floor((Math.random()*8)+2);
-                r = Math.floor((Math.random()*f));
-
-                z = parseInt( (q*f) + r);
+                z = parseInt( (q*f));
+		APPLICATION.log('z:' + z);
+		APPLICATION.log('m:' + z%10);
         }
 
         this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
