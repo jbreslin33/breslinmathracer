@@ -150,7 +150,7 @@ initialize: function(sheet)
     	this.mSupply     = this.mNameMachine.getSupply();
 
 	this.mRoomOne = Math.floor(Math.random()*10)+40; 
-	this.mRoomTwo = Math.floor(Math.random()*10)+20; 
+	this.mRoomTwo = Math.floor(Math.random()*10)+20;
                
 	this.mAdult     = this.mNameMachine.getAdult();
 
