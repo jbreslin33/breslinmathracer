@@ -12,54 +12,21 @@ x.x xx.00
 x.x x.x00   
 xx. x.x00  
 xx. xx.00  
-
 -------------------
-
-   xxxx  
-xx xx00         
-
-   xxx         
-xx xx00
-  
-   xx
-xx xx00
-  
-   x
-xx xx00
-
----------------
-
-   xxxx
-xx xxx0 move 1
-
-   xxx
-xx xxx0 move 2
- 
-   xx
-xx xxx0 move 1
- 
-   x
-xx xxx0 move 2
-
---------
-
-   xxxx
-xx xxxx move 2
-
-   xxx
-xx xxxx move 1
-
-   xx
-xx xxxx move 2
-
-   x
-xx xxxx move 1
-
-
-
-
-
-
+.xx x.xx0   
+.xx xx.x0 
+x.x xx.x0   
+x.x x.xx0   
+xx. x.xx0  
+xx. xx.x0  
+-------------------
+.xx x.xxx  
+.xx xx.xx 
+x.x xx.xx   
+x.x x.xxx   
+xx. x.xxx  
+xx. xx.xx 
+-------------------
 */
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_24',5.1124,'5.nbt.b.7','');
@@ -72,6 +39,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
+	//.xx .x000   
 
         this.mType = '5.nbt.b.7_24';
 
