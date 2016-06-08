@@ -45,7 +45,6 @@ initialize: function(sheet)
         this.mType = '5.nbt.b.7_24';
 
         this.ns = new NameSampler();
-
         var a = 0;
 
 	var b = 0;
@@ -58,22 +57,14 @@ initialize: function(sheet)
         var y = 0;
         var z = 0;
 
-	var m = 1;
 
         //while(z < 1000 || z > 9999 || z%100 != 0)
         while(y % x != 0)
         {
                 x = Math.floor((Math.random()*90)+10);
                 y = Math.floor((Math.random()*9)+1);
-                z = parseInt( (q*f));
-		if (m > 1000)
-		{
-			m = 1;
-		}
-		else
-		{
-			m = m * 10;
-		}
+		y = y * 1000;
+		z = parseInt(y / x);      
 	}                
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
