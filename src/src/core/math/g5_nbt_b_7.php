@@ -26,6 +26,7 @@ x.x xx.xx
 x.x x.xxx   
 xx. x.xxx  
 xx. xx.xx 
+                //q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 -------------------
 */
 /*
@@ -46,31 +47,37 @@ initialize: function(sheet)
         this.ns = new NameSampler();
 
         var a = 0;
-        var b = 0;
+
+	var b = 0;
         var c = 0;
+
         var d = 0;
         var e = 0;
         var f = 0;
-        var q = 0;
-        var r = 0;
+        var x = 0;
+        var y = 0;
         var z = 0;
 
-        while(z < 1000 || z > 9999 || z%100 != 0)
+	var m = 1;
+
+        //while(z < 1000 || z > 9999 || z%100 != 0)
+        while(y % x != 0)
         {
-                a = Math.floor((Math.random()*9)+1);
-                b = Math.floor((Math.random()*9)+1);
-                c = Math.floor((Math.random()*9)+1);
-                d = Math.floor((Math.random()*9)+1);
-
-                q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
-                f = Math.floor((Math.random()*8)+2);
+                x = Math.floor((Math.random()*90)+10);
+                y = Math.floor((Math.random()*9)+1);
                 z = parseInt( (q*f));
-		APPLICATION.log('z:' + z);
-		APPLICATION.log('m:' + z%10);
-        }
+		if (m > 1000)
+		{
+			m = 1;
+		}
+		else
+		{
+			m = m * 10;
+		}
+	}                
 
-        this.setQuestion('Find the Quotient: ' + z + ' &divide ' + f + ' If a remainder exists write in the form 57r3');
-        this.setAnswer('' + q + 'r' + r,0);
+        this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
+        this.setAnswer('' + z,0);
 }
 });
 
