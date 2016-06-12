@@ -56,15 +56,17 @@ initialize: function(sheet)
         var x = 0;
         var y = 0;
         var z = 0;
+	var r = 1;
 
 
         //while(z < 1000 || z > 9999 || z%100 != 0)
-        while(y % x != 0)
+        while(y % x != 0 || z < 99 || r == 0)
         {
                 x = Math.floor((Math.random()*90)+10);
                 y = Math.floor((Math.random()*9)+1);
 		y = y * 1000;
 		z = parseInt(y / x);      
+		r = parseInt(z%10);	 
 	}                
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
