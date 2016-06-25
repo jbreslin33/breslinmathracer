@@ -14,7 +14,7 @@ getDev: function()
 {
         //return '6.ns.c.7.c_4';
       //return '6.rp.a.3.a_1';
-      return '6.ee.c.9_5';
+      return '6.ee.c.9_8';
 },
 
 getItem: function(id)
@@ -1056,7 +1056,18 @@ if (id == '6.rp.a.3.a_3')
         {
                 return new i_6_ee_c_9__5(this.mSheet);
         }  
-
+  if (id == '6.ee.c.9_6')
+        {
+                return new i_6_ee_c_9__6(this.mSheet);
+        }  
+  if (id == '6.ee.c.9_7')
+        {
+                return new i_6_ee_c_9__7(this.mSheet);
+        }  
+  if (id == '6.ee.c.9_8')
+        {
+                return new i_6_ee_c_9__8(this.mSheet);
+        }  
 	return 0;	
 }
 		
