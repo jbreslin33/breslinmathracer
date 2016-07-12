@@ -70,7 +70,9 @@ initialize: function(sheet)
 	}                
 
 	y = y / 1000;
-	y = y / 100;
+	y = y / 10;
+
+	x = x / 100; 
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
         this.setAnswer('' + z,0);
