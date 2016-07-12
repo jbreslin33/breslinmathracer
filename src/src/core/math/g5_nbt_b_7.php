@@ -1,5 +1,5 @@
 /*
-.xx .x000   
+.xx .x000  add 3 zeroes house 
 .xx x.000 
 x.x x.000   
 x.x .x000   
@@ -40,7 +40,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
-	//.xx .x000   
+	//.xx .x000 add 3 zeroes house   
 
         this.mType = '5.nbt.b.7_24';
 
@@ -68,6 +68,9 @@ initialize: function(sheet)
 		z = parseInt(y / x);      
 		r = parseInt(z%10);	 
 	}                
+
+	y = y / 1000;
+	y = y / 100;
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
         this.setAnswer('' + z,0);
