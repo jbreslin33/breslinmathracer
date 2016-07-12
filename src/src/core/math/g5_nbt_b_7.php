@@ -74,6 +74,8 @@ initialize: function(sheet)
 
 	x = x / 100; 
 
+	z = z / 100;
+
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
         this.setAnswer('' + z,0);
 }
