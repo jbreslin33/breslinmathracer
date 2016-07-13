@@ -30,6 +30,57 @@ xx. xx.xx
 -------------------
 */
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_25',5.1125,'5.nbt.b.7','');
+*/
+
+var i_5_nbt_b_7__25 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+	//.xx x.000 
+	//x     y
+
+        this.mType = '5.nbt.b.7_25';
+
+        this.ns = new NameSampler();
+        var a = 0;
+
+	var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+        var x = 0;
+        var y = 0;
+        var z = 0;
+	var r = 1;
+
+
+        //while(z < 1000 || z > 9999 || z%100 != 0)
+        while(y % x != 0 || z < 99 || r == 0)
+        {
+                x = Math.floor((Math.random()*90)+10);
+                y = Math.floor((Math.random()*9)+1);
+		y = y * 1000;
+		z = parseInt(y / x);      
+		r = parseInt(z%10);	 
+	}                
+
+	y = y / 1000;
+
+	x = x / 100; 
+
+	z = z / 10;
+
+        this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
+        this.setAnswer('' + z,0);
+}
+});
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_24',5.1124,'5.nbt.b.7','');
 */
 
