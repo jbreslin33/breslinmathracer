@@ -120,6 +120,7 @@ Extends: RaphaelPolygon,
 				}
 			}
 
+
   			game.mSheet.mItem.addQuestionShape(this.mSquare);
 
 		}

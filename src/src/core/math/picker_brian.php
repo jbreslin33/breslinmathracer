@@ -12,9 +12,9 @@ initialize: function(sheet)
 
 getDev: function()
 {
-        //return '6.ns.c.7.c_4';
+        return '6.g.a.1_2';
       //return '6.rp.a.3.a_1';
-      return '6.ee.c.9_8';
+      //return '6.ee.c.9_8';
 },
 
 getItem: function(id)
@@ -1068,7 +1068,20 @@ if (id == '6.rp.a.3.a_3')
         {
                 return new i_6_ee_c_9__8(this.mSheet);
         }  
+
+  if (id == '6.g.a.1_1')
+        {
+                return new i_6_g_a_1__1(this.mSheet);
+        }  
+  if (id == '6.g.a.1_2')
+        {
+                return new i_6_g_a_1__2(this.mSheet);
+        }  
+
 	return 0;	
 }
+
+  
+
 		
 });
