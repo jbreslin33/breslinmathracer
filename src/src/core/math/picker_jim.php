@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '5.nbt.b.7_27';
+	return '5.nbt.b.7_28';
 },
 
 getItem: function(id)
@@ -6606,6 +6606,42 @@ getItem: function(id)
 	if (id == '5.nbt.b.7_31')
         {
                 return new i_5_nbt_b_7__31(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_32')
+        {
+                return new i_5_nbt_b_7__32(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_33')
+        {
+                return new i_5_nbt_b_7__33(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_34')
+        {
+                return new i_5_nbt_b_7__34(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_35')
+        {
+                return new i_5_nbt_b_7__35(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_36')
+        {
+                return new i_5_nbt_b_7__36(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_37')
+        {
+                return new i_5_nbt_b_7__37(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_38')
+        {
+                return new i_5_nbt_b_7__38(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_39')
+        {
+                return new i_5_nbt_b_7__39(this.mSheet);
+        }
+	if (id == '5.nbt.b.7_40')
+        {
+                return new i_5_nbt_b_7__40(this.mSheet);
         }
 	
 

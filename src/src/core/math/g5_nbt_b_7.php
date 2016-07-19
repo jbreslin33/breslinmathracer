@@ -3,7 +3,7 @@
 .xx x.000 t25 
 x.x x.000  t26 
 x.x .x000 t27  
-xx. .x000  
+xx. .x000 t28 
 xx. x.000  
 ----------------------
 .xx x.x00   
@@ -29,6 +29,57 @@ xx. xx.xx
                 //q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 -------------------
 */
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_28',5.1128,'5.nbt.b.7','');
+*/
+
+var i_5_nbt_b_7__28 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.7_28';
+
+        this.ns = new NameSampler();
+        var a = 0;
+
+	var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+        var x = 0;
+        var y = 0;
+        var z = 0;
+	var r = 1;
+
+
+	//xx. .x000 t28 
+
+        //while(z < 1000 || z > 9999 || z%100 != 0)
+        while(y % x != 0 || z < 99 || r == 0 || x % 10 == 0)
+        {
+                x = Math.floor((Math.random()*90)+10);
+                y = Math.floor((Math.random()*9)+1);
+		y = y * 1000;
+		z = parseInt(y / x);      
+		r = parseInt(z%10);	 
+	}                
+
+	y = y / 10000;
+
+	x = x / 1; 
+
+	z = z / 10000;
+
+        this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
+        this.setAnswer('' + z,0);
+}
+});
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_27',5.1127,'5.nbt.b.7','');
 */
