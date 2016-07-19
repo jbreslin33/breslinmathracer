@@ -40,8 +40,7 @@ Extends: TextItem,
 initialize: function(sheet)
 {
         this.parent(sheet,575,50,320,75,720,50,380,150);
-	//.xx x.000 
-	//x     y
+	//x.x .x000   
 
         this.mType = '5.nbt.b.7_26';
 
@@ -61,7 +60,7 @@ initialize: function(sheet)
 
 
         //while(z < 1000 || z > 9999 || z%100 != 0)
-        while(y % x != 0 || z < 99 || r == 0)
+        while(y % x != 0 || z < 99 || r == 0 || x % 10 == 0)
         {
                 x = Math.floor((Math.random()*90)+10);
                 y = Math.floor((Math.random()*9)+1);
@@ -70,11 +69,11 @@ initialize: function(sheet)
 		r = parseInt(z%10);	 
 	}                
 
-	y = y / 1000;
+	y = y / 10000;
 
-	x = x / 100; 
+	x = x / 10; 
 
-	z = z / 10;
+	z = z / 1000;
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
         this.setAnswer('' + z,0);
