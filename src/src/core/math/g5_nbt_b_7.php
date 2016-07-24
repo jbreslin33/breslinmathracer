@@ -14,7 +14,7 @@ xx. x.x00 t34
 xx. xx.00 t35 
 -------------------
 .xx x.xx0 t36  
-.xx xx.x0 
+.xx xx.x0  
 x.x xx.x0   
 x.x x.xx0   
 xx. x.xx0  
@@ -29,6 +29,7 @@ xx. xx.xx
                 //q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 -------------------
 */
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_36',5.1136,'5.nbt.b.7','');
@@ -58,8 +59,8 @@ initialize: function(sheet)
         var z = 0;
 	var r = 1;
 
-	//xx. xx.00 t35 
-	//.xx xx.x0 t36 
+	//.xx x.xx0 t36  
+
 
         while(y % x != 0 || z < 99 || r == 0 || x % 10 == 0 || y % 100 == 0)
         {
@@ -70,11 +71,11 @@ initialize: function(sheet)
 		r = parseInt(z%10);	 
 	}                
 
-	y = y / 100;
+	y = y / 1000;
 
 	x = x / 100; 
 
-	z = z / 1;
+	z = z / 10;
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
         this.setAnswer('' + z,0);
