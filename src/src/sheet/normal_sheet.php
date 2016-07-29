@@ -33,39 +33,40 @@ pickItem: function()
 	{
 		//lets get first and if its not a dup dont even go in
                 APPLICATION.getFirst();
-		//APPLICATION.log('getFirst');
                 APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
-        	{
-        		var r = Math.floor(Math.random()*100);
+		if (APPLICATION.mFirstName == 'Luke' && APPLICATION.mLastName == 'Breslin')
+		{
+
+		}
+		else
+		{
+			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+        		{
+        			var r = Math.floor(Math.random()*100);
                 	
-                	if (r < 45)
-                	{
-                        	APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-				//APPLICATION.log('leastAsked');
-                	}
-                	if (r >= 45 && r < 50)
-                	{
-                        	APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-				//APPLICATION.log('leastAskedHalf');
-                	}
-                	if (r >= 50 && r < 95)
-                	{
-                        	APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-				//APPLICATION.log('leastCorrect');
-                	}
-                	if (r >= 95)
-                	{
-                        	APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        	APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-				//APPLICATION.log('leastCorrectHalf');
-                	}
+                		if (r < 45)
+                		{
+                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+                		}
+                		if (r >= 45 && r < 50)
+                		{
+                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+                		}
+                		if (r >= 50 && r < 95)
+                		{
+                        		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+                		}
+                		if (r >= 95)
+                		{
+                        		APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
+                		}
+			}
 		}
 	}
-	APPLICATION.log('type:' + APPLICATION.mQuestionTypeCurrent); 
 },
 
 createItem: function()
