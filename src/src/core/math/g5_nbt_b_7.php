@@ -20,7 +20,7 @@ x.x x.xx0 t39
 xx. x.xx0 t40 
 xx. xx.x0 t41  
 -------------------
-.xx x.xxx  
+.xx x.xxx t42 
 .xx xx.xx 
 x.x xx.xx   
 x.x x.xxx   
@@ -29,6 +29,57 @@ xx. xx.xx
                 //q = parseInt( (a * 1000) + (b * 100) + (c * 10) + d);
 -------------------
 */
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_42',5.1142,'5.nbt.b.7','');
+*/
+
+var i_5_nbt_b_7__42 = new Class(
+{
+Extends: TextItem,
+
+initialize: function(sheet)
+{
+        this.parent(sheet,575,50,320,75,720,50,380,150);
+
+        this.mType = '5.nbt.b.7_42';
+
+        this.ns = new NameSampler();
+        var a = 0;
+
+	var b = 0;
+        var c = 0;
+
+        var d = 0;
+        var e = 0;
+        var f = 0;
+        var x = 0;
+        var y = 0;
+        var z = 0;
+	var r = 1;
+
+	//.xx x.xxx t42 
+
+        while(y % x != 0 || z < 99 || r == 0 || x % 10 == 0 || y % 1000 == 0)
+        {
+                x = Math.floor((Math.random()*90)+10);
+                y = Math.floor((Math.random()*8990)+1000);
+		y = y * 10;
+		z = parseInt(y / x);      
+		r = parseInt(z%10);	 
+	}                
+
+	y = y / 100;
+
+	x = x / 100; 
+
+	z = z / 1;
+
+        this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
+        this.setAnswer('' + z,0);
+}
+});
+
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('5.nbt.b.7_41',5.1141,'5.nbt.b.7','');
