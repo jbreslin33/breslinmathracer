@@ -58,18 +58,21 @@ var dLabelPosY = (ay3+ry+by3+ry)/2;
 
 var dLabelUnits = '' + d/40 + ' ' + label;
 
-var dLabel = new Shape(50,25,dLabelPosX,dLabelPosY,game,"","","");
-this.mItem.addQuestionShape(dLabel);
-dLabel.setText(dLabelUnits);
+this.dLabel = new Shape(50,25,dLabelPosX,dLabelPosY,game,"","","");
+this.mItem.addQuestionShape(this.dLabel);
+this.dLabel.setText(dLabelUnits);
 
 var wLabelPosX = x+rx+(.5*w);
 var wLabelPosY = y+ry+h;
 
 var wLabelUnits = '' + w/40 + ' ' + label;
 
-var wLabel = new Shape(50,25,wLabelPosX,wLabelPosY,game,"","","");
-this.mItem.addQuestionShape(wLabel);
-wLabel.setText(wLabelUnits);
+this.wLabel = new Shape(50,25,wLabelPosX,wLabelPosY,game,"","","");
+this.mItem.addQuestionShape(this.wLabel);
+this.wLabel.setText(wLabelUnits);
+
+this.wLabelPosX = wLabelPosX;
+this.wLabelPosY = wLabelPosY;
 
 
 var hLabelPosX = bx3+rx+30;
@@ -77,9 +80,9 @@ var hLabelPosY = by3+ry-(h/2);
 
 var hLabelUnits = '' + h/40 + ' ' + label;
 
-var hLabel = new Shape(50,25,hLabelPosX,hLabelPosY,game,"","","");
-hLabel.setText(hLabelUnits);
-this.mItem.addQuestionShape(hLabel);
+this.hLabel = new Shape(50,25,hLabelPosX,hLabelPosY,game,"","","");
+this.hLabel.setText(hLabelUnits);
+this.mItem.addQuestionShape(this.hLabel);
 }
 
 	},

@@ -32,14 +32,9 @@ var rCube = new RubixCube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d
 
 var answer1 = w2*h2*d2;
 
-
-
 // position of rubix cube
 var x = 55;
 var y = 220 - h1*h2;
-
-
-
 
 // dimensions of a single cube
 var w1 = 20;
@@ -51,20 +46,17 @@ var w2 = Math.floor(Math.random()*3+2);
 var h2 = Math.floor(Math.random()*3+2);
 var d2 = Math.floor(Math.random()*3+2);
 
-console.log(w2);
-console.log(d2);
-console.log(h2);
+//console.log(w2);
+//console.log(d2);
+//console.log(h2);
 
 var rCube = new RubixCube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,w2,h2,d2,.5,.5,.5,"#000",1,false);
 
 var answer2 = w2*h2*d2;
 
-
 var answer = answer1 + answer2;
 
-
-
-        this.setQuestion('The right rectangular prism is made of centimeter cubes. What is the volume of the prism in cubic centimeters?');
+        this.setQuestion('The figure below is made of centimeter cubes. What is the volume of the figure in cubic centimeters?');
         this.setAnswer('' + answer,0);
 
 this.mUserAnswerLabel.setPosition(625,150);

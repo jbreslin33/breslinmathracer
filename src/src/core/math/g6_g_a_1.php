@@ -1,5 +1,5 @@
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.1_2',6.0102,'6.g.a.1',''); update item_types SET progression = 6.0102 where id = '6.g.a.1_2';
+insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.1_2',6.3602,'6.g.a.1',''); update item_types SET progression = 6.3602 where id = '6.g.a.1_2';
 */
 var i_6_g_a_1__2 = new Class(
 {
@@ -75,7 +75,7 @@ createQuestionShapes: function()
 
 
 /*
-insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.1_1',6.0101,'6.g.a.1',''); update item_types SET progression = 6.0101 where id = '6.g.a.1_1';
+insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.1_1',6.3601,'6.g.a.1',''); update item_types SET progression = 6.3601 where id = '6.g.a.1_1';
 */
 var i_6_g_a_1__1 = new Class(
 {
