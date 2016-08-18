@@ -33,7 +33,8 @@ pickItem: function()
 	{
 		//lets get first and if its not a dup dont even go in
                 APPLICATION.getFirst();
-                APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
+               	APPLICATION.log('mFirst:' + APPLICATION.mFirst); 
+		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		if (APPLICATION.mFirstName == 'Luke' && APPLICATION.mLastName == 'Breslin')
 		{
 
@@ -43,23 +44,37 @@ pickItem: function()
 			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
         		{
         			var r = Math.floor(Math.random()*100);
-                	
-                		if (r < 45)
+
+				//like to add a chance to goto standard of earliest wrong answer and not just wrong answer...
+				//you have a piece of information. Something a student got wrong. 
+				//first use it to clench onto that qeustiontype 
+				//then use it to dig into rest of standard 
+				//then use it to dig into prerequisite standards..and down the rabbit hole we go...
+                        	APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+	
+                		if (r < 50)
+                		{
+                        		//APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		//APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+                		}
+				if (r >= 50 && r < 55)
                 		{
                         		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
                 		}
-                		if (r >= 45 && r < 50)
-                		{
-                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-                		}
-                		if (r >= 50 && r < 95)
+                		if (r >= 55 && r < 60)
                 		{
                         		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
                 		}
-                		if (r >= 95)
+                		if (r >= 60 && r < 80)
+                		{
+                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+                		}
+                		if (r >= 80)
                 		{
                         		APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;

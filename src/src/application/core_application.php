@@ -173,6 +173,7 @@ Extends: Application,
 
 		//algorithms
 		this.mFirst = '';
+		this.mSameStandard = '';
 		this.mLeastAsked = '';
 		this.mLeastAskedHalf = '';
 		this.mLeastCorrect = '';
@@ -1171,6 +1172,50 @@ highestAchieved: function()
 		}
 		this.mFirst = first;
 	},
+
+        getSameStandard: function(typesArray,attemptArray,transactionCodeArray)
+        {
+
+		//get first standard wrong...
+		var s = this.mFirst.split("_");
+		var standard = s[0];  
+                
+		for (i=0; i < typesArray.length; i++)
+		{
+			if (typesArray[i].includes("" + standard))
+			{
+				APPLICATION.log('typesArray:' + typesArray[i]);
+			}
+		}
+	/*	
+		
+                var id = '';
+                var idCount = 1000;
+                var i = 0;
+
+                while (i < typesArray.length)
+                {
+                        var tempArray = new Array();
+                        var tempArray = [];
+                        var j = 0;
+                        while (j < attemptArray.length)
+                        {
+                                if (typesArray[i] == attemptArray[j])
+                                {
+                                        tempArray.push(transactionCodeArray[j]);
+                                }
+                                j++;
+                        }
+                        if (tempArray.length > 0 && tempArray.length < idCount) //we have a new least id
+                        {
+                                id = typesArray[i];
+                                idCount = tempArray.length;
+                        }
+                        i++;
+                }
+                this.mSameStandard = id;
+*/
+        },
 	
 	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)
         {
