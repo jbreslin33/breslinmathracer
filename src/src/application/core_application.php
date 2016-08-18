@@ -1179,42 +1179,34 @@ highestAchieved: function()
 		//get first standard wrong...
 		var s = this.mFirst.split("_");
 		var standard = s[0];  
+
+                var tempTypeArray = new Array();
+		tempTypeArray = [];
                 
 		for (i=0; i < typesArray.length; i++)
 		{
 			if (typesArray[i].includes("" + standard))
 			{
 				APPLICATION.log('typesArray:' + typesArray[i]);
+				tempTypeArray.push(typesArray[i]);
 			}
 		}
-	/*	
-		
-                var id = '';
-                var idCount = 1000;
-                var i = 0;
 
-                while (i < typesArray.length)
-                {
-                        var tempArray = new Array();
-                        var tempArray = [];
-                        var j = 0;
-                        while (j < attemptArray.length)
-                        {
-                                if (typesArray[i] == attemptArray[j])
-                                {
-                                        tempArray.push(transactionCodeArray[j]);
-                                }
-                                j++;
-                        }
-                        if (tempArray.length > 0 && tempArray.length < idCount) //we have a new least id
-                        {
-                                id = typesArray[i];
-                                idCount = tempArray.length;
-                        }
-                        i++;
-                }
+		var id = '';
+
+		while(id == '')
+		{
+			var r = Math.floor(Math.random()*tempTypeArray.length);
+                        for (i=0; i < attemptArray.length; i++)
+			{
+				if (attemptArray[i].includes("" + tempTypeArray[r]))
+				{
+					id = tempTypeArray[r];
+				}
+			}
+		}
+		APPLICATION.log('id:' + id);
                 this.mSameStandard = id;
-*/
         },
 	
 	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)

@@ -51,13 +51,11 @@ pickItem: function()
 				//then use it to dig into rest of standard 
 				//then use it to dig into prerequisite standards..and down the rabbit hole we go...
                         	APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-	
+				r = 33;	
                 		if (r < 50)
                 		{
-                        		//APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		//APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+                        		APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
                 		}
 				if (r >= 50 && r < 55)
                 		{
