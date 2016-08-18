@@ -1187,7 +1187,6 @@ highestAchieved: function()
 		{
 			if (typesArray[i].includes("" + standard))
 			{
-				APPLICATION.log('typesArray:' + typesArray[i]);
 				tempTypeArray.push(typesArray[i]);
 			}
 		}
@@ -1205,7 +1204,6 @@ highestAchieved: function()
 				}
 			}
 		}
-		APPLICATION.log('id:' + id);
                 this.mSameStandard = id;
         },
 	

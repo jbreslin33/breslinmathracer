@@ -33,7 +33,6 @@ pickItem: function()
 	{
 		//lets get first and if its not a dup dont even go in
                 APPLICATION.getFirst();
-               	APPLICATION.log('mFirst:' + APPLICATION.mFirst); 
 		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		if (APPLICATION.mFirstName == 'Luke' && APPLICATION.mLastName == 'Breslin')
 		{
@@ -50,12 +49,11 @@ pickItem: function()
 				//first use it to clench onto that qeustiontype 
 				//then use it to dig into rest of standard 
 				//then use it to dig into prerequisite standards..and down the rabbit hole we go...
-                        	APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-				r = 33;	
                 		if (r < 50)
                 		{
                         		APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         		APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
+					//maybe track total wrong percent or total wrong per session and then have this flip to an pre-req standard?? 
                 		}
 				if (r >= 50 && r < 55)
                 		{
