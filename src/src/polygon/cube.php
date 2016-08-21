@@ -62,6 +62,9 @@ this.dLabel = new Shape(50,25,dLabelPosX,dLabelPosY,game,"","","");
 this.mItem.addQuestionShape(this.dLabel);
 this.dLabel.setText(dLabelUnits);
 
+this.dLabelPosX = dLabelPosX;
+this.dLabelPosY = dLabelPosY;
+
 var wLabelPosX = x+rx+(.5*w);
 var wLabelPosY = y+ry+h;
 
@@ -83,6 +86,10 @@ var hLabelUnits = '' + h/40 + ' ' + label;
 this.hLabel = new Shape(50,25,hLabelPosX,hLabelPosY,game,"","","");
 this.hLabel.setText(hLabelUnits);
 this.mItem.addQuestionShape(this.hLabel);
+
+this.hLabelPosX = hLabelPosX;
+this.hLabelPosY = hLabelPosY;
+
 }
 
 	},

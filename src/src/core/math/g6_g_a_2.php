@@ -1,4 +1,279 @@
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.2_9',6.3709,'6.g.a.2',''); update item_types SET progression = 6.3709 where id = '6.g.a.2_9';
+*/
+var i_6_g_a_2__9 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+        this.mType = '6.g.a.2_9';
+    	this.mStripCommas = true;
+
+  var rx = 10;
+  var ry = 120;
+  this.mRaphael = Raphael(rx,ry,550,600);
+        
+  	// position of rubix cube
+	var x = 35;
+	var y = 220;
+
+	// dimensions of a single cube
+	var w1 = 40;
+	var h1 = 40;
+	var d1 = 40;
+
+	// dimensions of rubix cube
+	var w2 = 3; //Math.floor(Math.random()*3+2);
+	var h2 = 3; //Math.floor(Math.random()*3+2);
+	var d2 = 3; //Math.floor(Math.random()*3+2);
+
+	var rCube = new RubixCube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,w2,h2,d2,.5,.5,.5,"#000",1,false);
+
+  var fractionA = new Fraction(1,3,false);
+
+  var w1 = 40;
+	var h1 = 40;
+	var d1 = 40;
+
+  this.setQuestion('' + 'Small cubes with edges ' + fractionA.getString() + ' yard long are stacked so there are ' + h2 + ' layers of cubes. Each layer is ' + d2 + ' cubes long and ' + w2 + ' cubes wide. What is the volume of the stack in cubic yards?');
+
+  this.setAnswer('1',0);
+  
+},
+
+showCorrectAnswer: function()
+        {
+		this.mCorrectAnswerLabel.setSize(150,200);
+                //this.mCorrectAnswerLabel.setPosition(425,250);
+                this.mCorrectAnswerLabel.setPosition(530,400);
+                this.mUserAnswerLabel.setPosition(230,300);
+                if (this.mCorrectAnswerLabel)
+                {
+                        this.mCorrectAnswerLabel.setText('CORRECT ANSWER: ' + this.answer);
+                        this.mCorrectAnswerLabel.setVisibility(true);
+                }
+                this.hideAnswerInputs();
+                //this.showUserAnswer();
+        },
+
+});
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.2_8',6.3708,'6.g.a.2',''); update item_types SET progression = 6.3708 where id = '6.g.a.2_8';
+*/
+var i_6_g_a_2__8 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+        this.mType = '6.g.a.2_8';
+
+        this.mChopWhiteSpace = false;
+
+        this.mAnswerTextBox.setSize(50,50);
+			  this.mAnswerTextBox.setPosition(170,230);
+
+        this.mQuestionLabel2 = new Shape(100,50,100,250,this.mSheet.mGame,"","","");
+        this.addShape(this.mQuestionLabel2);
+        //this.mQuestionLabel2.mCollidable = false;
+        //this.mQuestionLabel2.mCollisionOn = false;
+		    this.mQuestionLabel2.setText('The volume is ');
+
+        this.mQuestionLabel3 = new Shape(100,50,250,250,this.mSheet.mGame,"","","");
+        this.addShape(this.mQuestionLabel3);
+       // this.mQuestionLabel3.mCollidable = false;
+        //this.mQuestionLabel3.mCollisionOn = false;
+		    this.mQuestionLabel3.setText('times as great ');
+
+
+        this.setQuestion('How does doubling each dimension of a rectangular prism affect the volume?');
+        this.setAnswer('' + '8',0);
+        //this.setAnswer('' + this.answer,1);
+
+	this.mUserAnswerLabel.setPosition(625,150);
+	this.mCorrectAnswerLabel.setPosition(625,250);
+},
+
+});
+
+
+
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.2_7',6.3707,'6.g.a.2',''); update item_types SET progression = 6.3707 where id = '6.g.a.2_7';
+*/
+var i_6_g_a_2__7 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+        this.mType = '6.g.a.2_7';
+
+        this.mChopWhiteSpace = false;
+     
+        this.mNameMachine = new NameMachine();
+        this.mDist1     = this.mNameMachine.getDistanceIncrement();
+        this.mDist2     = this.mNameMachine.getDistanceAbbreviation(this.mDist1);
+
+        var rx = 10;
+        var ry = 120;
+        this.mRaphael = Raphael(rx,ry,400,600);
+
+	// position of rubix cube
+	var x = 35;
+	var y = 90;
+
+	// dimensions of a single cube
+	var w1 = 5; //Math.floor(Math.random()*4)+1;
+	var h1 = 4; //Math.floor(Math.random()*4)+1;
+	var d1 = 2; //Math.floor(Math.random()*4)+1;
+
+ // w1 = w1.toFixed(1); 
+ // h1 = h1.toFixed(1);
+ // d1 = d1.toFixed(1);
+       
+	this.answer = w1*h1*d1; //Math.floor(Math.random()*3+1);
+ 
+  //console.log(answer);
+
+  w1 = w1*40;
+	h1 = h1*40;
+	d1 = d1*40;
+
+	var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,this.mDist2);
+	this.addQuestionShape(cube);
+
+  var hLabelUnits = '' + '2x';
+  cube.hLabel.setText(hLabelUnits);
+
+  var wLabelUnits = '' + '2x + 1';
+  cube.wLabel.setText(wLabelUnits);
+
+  var dLabelUnits = '' + 'x';
+  cube.dLabel.setText(dLabelUnits);
+
+
+        this.setQuestion('If x = 2cm, what is the volume of the right rectangular prism in cubic ' + this.mDist2 + '?');
+        this.setAnswer('' + this.answer,0);
+
+	this.mUserAnswerLabel.setPosition(625,150);
+	this.mCorrectAnswerLabel.setPosition(625,250);
+},
+
+});
+
+
+
+
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.2_6',6.3706,'6.g.a.2',''); update item_types SET progression = 6.3706 where id = '6.g.a.2_6';
+*/
+var i_6_g_a_2__6 = new Class(
+{
+Extends: TextItem,
+initialize: function(sheet)
+{
+	this.parent(sheet,250,200,150,145,100, 50,425,100);
+        this.mType = '6.g.a.2_6';
+  
+        this.mChopWhiteSpace = false;
+     
+        this.mNameMachine = new NameMachine();
+        this.mDist1     = this.mNameMachine.getDistanceIncrement();
+        this.mDist2     = this.mNameMachine.getDistanceAbbreviation(this.mDist1);
+
+        var rx = 10;
+        var ry = 120;
+        this.mRaphael = Raphael(rx,ry,400,600);
+
+ var w1 = 2; //Math.floor(Math.random()*4)+2;
+ var h1 = 2; //Math.floor(Math.random()*2)+1;
+ var d1 = 2; //Math.floor(Math.random()*3)+1;      
+
+	this.answer1 = w1*h1*d1; //Math.floor(Math.random()*3+1);
+
+  w1 = w1*40;
+	h1 = h1*40;
+	d1 = d1*40;
+
+  var offset = h1;
+
+  // position of rubix cube
+	var x = 35;
+	var y = 170;
+
+	var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,this.mDist2);
+	this.addQuestionShape(cube);
+
+  var hLabelUnits = '' + h1/40 + ' ' + this.mDist2;
+  cube.hLabel.setText(hLabelUnits);
+
+  var wLabelUnits = '' + w1/40 + ' ' + this.mDist2;
+  cube.wLabel.setText(wLabelUnits);
+
+  var dLabelUnits = '' + d1/40 + ' ' + this.mDist2;
+  cube.dLabel.setText(dLabelUnits);
+
+  x = 35;
+  y = 210 - offset;
+
+ w1 = 1; //Math.floor(Math.random()*4)+2;
+ h1 = 1; //Math.floor(Math.random()*2)+1;
+ d1 = 1; //Math.floor(Math.random()*3)+1;      
+
+	this.answer2 = w1*h1*d1; //Math.floor(Math.random()*3+1);
+
+  w1 = w1*40;
+	h1 = h1*40;
+	d1 = d1*40;
+
+	var cube2 = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,this.mDist2);
+	this.addQuestionShape(cube2);
+
+  var hLabelUnits = '' + h1/40 + ' ' + this.mDist2;
+  cube2.hLabel.setText(hLabelUnits);
+  //cube2.hLabel.setSize(50,25);
+  cube2.hLabel.setPosition(cube2.hLabelPosX,cube2.hLabelPosY - 20);
+
+
+  var wLabelUnits = '' + w1/40 + ' ' + this.mDist2;
+  cube2.wLabel.setText(wLabelUnits);
+ // cube2.wLabel.setSize(50,25);
+  cube2.wLabel.setPosition(cube2.wLabelPosX+10,cube2.wLabelPosY);
+
+
+  var dLabelUnits = '' + d1/40 + ' ' + this.mDist2;
+  cube2.dLabel.setText(dLabelUnits);
+ // cube2.dLabel.setSize(50,25);
+  cube2.dLabel.setPosition(cube2.dLabelPosX,cube2.dLabelPosY - 20);
+
+  this.answer = this.answer1 + this.answer2;
+
+
+        this.setQuestion('What is the total volume of the figure in cubic ' + this.mDist2 + '?');
+        this.setAnswer('' + this.answer,0);
+
+	this.mUserAnswerLabel.setPosition(625,150);
+	this.mCorrectAnswerLabel.setPosition(625,250);
+},
+             
+});
+
+
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('6.g.a.2_5',6.3705,'6.g.a.2',''); update item_types SET progression = 6.3705 where id = '6.g.a.2_5';
 */
 var i_6_g_a_2__5 = new Class(
@@ -127,23 +402,11 @@ console.log(d1);
 	var cube = new Cube(this,this.mSheet.mGame,this.mRaphael,rx,ry,x,y,w1,h1,d1,.5,.5,.5,"#000",1,false,this.mDist2);
 	this.addQuestionShape(cube);
 
-  //this.fractionA = new Fraction(h1/40,den,false);
-
-  //this.fractionA.reduce();
-
   var hLabelUnits = '' + h1/40 + ' ' + this.mDist2;
   cube.hLabel.setText(hLabelUnits);
 
-  //this.fractionB = new Fraction(w1/40,den,false);
-
- // this.fractionB.reduce();
-
   var wLabelUnits = '' + w1/40 + ' ' + this.mDist2;
   cube.wLabel.setText(wLabelUnits);
-
- // this.fractionC = new Fraction(d1/40,den,false);
-
- // this.fractionC.reduce();
 
   var dLabelUnits = '' + d1/40 + ' ' + this.mDist2;
   cube.dLabel.setText(dLabelUnits);
