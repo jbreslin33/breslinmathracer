@@ -323,11 +323,11 @@ initialize: function(sheet)
 		r = parseInt(z%10);	 
 	}                
 
-	y = y / 10;
+	y = y / 10000;
 
 	x = x / 100; 
 
-	z = z / 1;
+	z = z / 100;
 
         this.setQuestion('Find the Quotient: ' + y + ' &divide ' + x);
         this.setAnswer('' + z,0);
