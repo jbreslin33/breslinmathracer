@@ -40,44 +40,51 @@ pickItem: function()
 		}
 		else
 		{
-			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
-        		{
-        			var r = Math.floor(Math.random()*100);
-
-				//like to add a chance to goto standard of earliest wrong answer and not just wrong answer...
-				//you have a piece of information. Something a student got wrong. 
-				//first use it to clench onto that qeustiontype 
-				//then use it to dig into rest of standard 
-				//then use it to dig into prerequisite standards..and down the rabbit hole we go...
-                		if (r < 50)
-                		{
-                        		APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
-					//maybe track total wrong percent or total wrong per session and then have this flip to an pre-req standard?? 
-                		}
-				if (r >= 50 && r < 55)
-                		{
-                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                		}
-                		if (r >= 55 && r < 60)
-                		{
-                        		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-                		}
-                		if (r >= 60 && r < 80)
-                		{
-                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-                		}
-                		if (r >= 80)
-                		{
-                        		APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-                		}
+			if (APPLICATION.mGame.mUnmastered > 5)
+			{
+	
 			}
-		}
-	}
+			else
+			{	
+				while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+        			{
+        				var r = Math.floor(Math.random()*100);
+
+					//like to add a chance to goto standard of earliest wrong answer and not just wrong answer...
+					//you have a piece of information. Something a student got wrong. 
+					//first use it to clench onto that qeustiontype 
+					//then use it to dig into rest of standard 
+					//then use it to dig into prerequisite standards..and down the rabbit hole we go...
+                			if (r < 50)
+                			{
+                        			APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
+						//maybe track total wrong percent or total wrong per session and then have this flip to a pre-req standard?? 
+                			}
+					if (r >= 50 && r < 55)
+                			{
+                        			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+                			}
+                			if (r >= 55 && r < 60)
+                			{
+                        			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+                			}
+                			if (r >= 60 && r < 80)
+                			{
+                        			APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+                			}
+                			if (r >= 80)
+                			{
+                        			APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
+                			}
+				} //while
+			} //else unmastered less than 5
+		} //else not Luke
+	} //else escape from kinder
 },
 
 createItem: function()
