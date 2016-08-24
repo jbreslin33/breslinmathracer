@@ -6,6 +6,12 @@ class EvaluationsAttempts
 
 function __construct($application,$evaluationsID,$datenow)
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+		error_log("EvaluationsAttempts Constructor");
+        }
+
 	$this->mApplication = $application;
 	$this->mEvaluationsID = $evaluationsID;
 	$this->mID = 0;
