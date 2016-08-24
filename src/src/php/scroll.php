@@ -20,61 +20,9 @@ function __construct()
 		{
 			$this->setScroll('score');
 		}
-                if ($_SESSION["ref_id"] == 'assessment')
-                {
-                        $this->setScroll('score');
-                }
-
-
-		if ($_SESSION["ref_id"] == 'timestables_2')
+		else
 		{
-			$this->setScroll('alltimetwo');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_3')
-		{
-			$this->setScroll('alltimethree');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_4')
-		{
-			$this->setScroll('alltimefour');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_5')
-		{
-			$this->setScroll('alltimefive');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_6')
-		{
-			$this->setScroll('alltimesix');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_7')
-		{
-			$this->setScroll('alltimeseven');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_8')
-		{
-			$this->setScroll('alltimeeight');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_9')
-		{
-			$this->setScroll('alltimenine');
-		}
-		if ($_SESSION["ref_id"] == 'timestables_10')
-		{
-			$this->setScroll('alltimeten');
-		}
-
-		if ($_SESSION["ref_id"] == 'timestables')
-		{
-			$this->setScroll('alltime');
-		}
-
-		if ($_SESSION["ref_id"] == 'The Izzy')
-		{
-			$this->setScroll('alltimeizzy');
-		}
-		if ($_SESSION["ref_id"] == 'Add Subtract within 5')
-		{
-			$this->setScroll('alltimekoaa5');
+			$this->setScroll('score');
 		}
 	}
 }
