@@ -50,15 +50,6 @@ public function insert()
                 //set level_id
                 $this->mID = $evaluations_attempts_id;
         }
-
-	//fill php vars
-/*
-        $returnString = "141,";
-        $returnString .= $this->mDateNow;
-        $returnString .= ",";
-        $returnString .= $this->mID;
-        echo $returnString;
-*/
 }
 
 //might not even use this as it basically closes out the next day. maybe close it on session timeout
