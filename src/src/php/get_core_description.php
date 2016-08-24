@@ -7,6 +7,12 @@ class GetCoreDescription
 
 function __construct()
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log("GetCoreDescription Constructor");
+        }
+
 	$this->mDatabaseConnection = new DatabaseConnection();
         //$_SESSION["core_description"] = "3.oa.a.1:3.oa.c.7:4.oa.a.1:4.nbt.b.5:5.oa.a.1";
         $_SESSION["core_description"] = "k.cc.a.1";
