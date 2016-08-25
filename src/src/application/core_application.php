@@ -23,6 +23,7 @@ Extends: Application,
 		this.BAD_PASSWORD = 104;
 		this.LOGIN_STUDENT = 117;
 		this.SIGNUP_STUDENT = 217;
+		this.SIGNUP_SCHOOL = 218;
 		this.LOGIN_TEACHER = 113;
 		this.LOGIN_SCHOOL = 114;
 
@@ -1549,8 +1550,8 @@ highestAchieved: function()
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=&username=" + username + "&password=" + password,true);
-                //xmlhttp.open("POST","../../src/php/signup_school.php?username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
+                //xmlhttp.open("POST","../../src/php/application/core_application.php?code=218&username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../src/php/signup_school.php?code=218&username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },
 

@@ -1,6 +1,6 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
-
+/*
 $_SESSION["username"] = $_GET["username"];
 $_SESSION["password"] = $_GET["password"];
 $_SESSION["name"] = $_GET["name"];
@@ -9,28 +9,23 @@ $_SESSION["state"] = $_GET["state"];
 $_SESSION["zip"] = $_GET["zip"];
 $_SESSION["email"] = $_GET["email"];
 $_SESSION["student_code"] = $_GET["student_code"];
-
-$signupSchool = new SignupSchool();
+*/
 ?>
 
 <?php
-session_start();
 
 class SignupSchool 
+{
+	private $mDatabaseConnection;
+
+function __construct()
 {
         $this->logs = true;
         if ($this->logs)
         {
-                error_log('SignupSchool::SignUpSchool');
+                error_log('SignupSchool::SignupSchool');
         }
-
-    private $mDatabaseConnection;
-
-function __construct()
-{
 	$this->mDatabaseConnection = new DatabaseConnection();
-
-	$this->process();
 }
 public function sendUsernameTaken()
 {
