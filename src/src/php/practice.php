@@ -9,6 +9,12 @@ class Practice
 
 function __construct($typeid, $startNew, $leavePractice)
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('Practice::Practice');
+        }
+
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 

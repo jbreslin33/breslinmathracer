@@ -9,6 +9,12 @@ class LoginStudent
     private $mDatabaseConnection;
 function __construct($application)
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('LoginStudent::LoginStudent');
+        }
+
 	$this->mApplication = $application;
 	$this->mUsername = 0; 
         $this->mPassword = 0;

@@ -19,7 +19,7 @@ function __construct($application)
 	$this->logs = true; 
 	if ($this->logs)
 	{
-		error_log('normal constructor');
+		error_log('Normal::Normal');
 	}
 	
 	//evaluationsAttempts	

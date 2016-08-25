@@ -6,9 +6,13 @@ class Scroll
 
 function __construct()
 {
-	$this->mDatabaseConnection = new DatabaseConnection();
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('Scroll::Scroll');
+        }
 
-	//$this->setScroll('score');
+	$this->mDatabaseConnection = new DatabaseConnection();
 
 	if (!isset($_SESSION["ref_id"]))
 	{

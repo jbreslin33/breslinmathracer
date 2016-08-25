@@ -9,7 +9,7 @@ function __construct($application,$evaluationsID,$datenow)
         $this->logs = true;
         if ($this->logs)
         {
-		error_log("EvaluationsAttempts Constructor");
+		error_log("EvaluationsAttempts::EvaluationsAttempts");
         }
 
 	$this->mApplication = $application;

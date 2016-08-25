@@ -6,6 +6,12 @@ class DatabaseConnection
 
 function __construct()
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('DatabaseConnection::DatabaseConnection');
+        }
+
 	$connectionString = "host=localhost dbname=jamesanthonybreslin user=postgres password=mibesfat";
         $this->connection = pg_connect($connectionString);
 }

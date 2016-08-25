@@ -18,6 +18,12 @@ session_start();
 
 class SignupSchool 
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('SignupSchool::SignUpSchool');
+        }
+
     private $mDatabaseConnection;
 
 function __construct()

@@ -14,6 +14,12 @@ $loginSchool = new LoginSchool();
 <?php
 class LoginSchool 
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('LoginSchool::LoginSchool');
+        }
+
     private $mDatabaseConnection;
 
 function __construct()

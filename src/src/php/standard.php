@@ -7,6 +7,12 @@ class Standard
 
 function __construct()
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('Standard::Standard');
+        }
+
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->process();
 }

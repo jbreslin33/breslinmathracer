@@ -6,10 +6,16 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 
 class SignupStudent
 {
-    private $mDatabaseConnection;
+   	private $mDatabaseConnection;
 
 function __construct($application)
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('SignupStudent::SignUpStudent');
+        }
+
  	$this->mApplication = $application;
 	$this->mSignedUp = 0;
         $this->mStudentExists = false;

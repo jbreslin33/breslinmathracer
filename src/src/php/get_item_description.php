@@ -10,7 +10,7 @@ function __construct($typeid)
   	$this->logs = true;
         if ($this->logs)
         {
-                error_log('GetItemDescription constructor');
+                error_log('GetItemDescription::GetItemDescription');
         }
 
 	$this->mDatabaseConnection = new DatabaseConnection();

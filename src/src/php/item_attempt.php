@@ -10,7 +10,7 @@ function __construct($application,$itemtypeid,$question,$answers,$datenow)
         $this->logs = true;
         if ($this->logs)
         {
-                error_log('ItemAttempt Constructor');
+                error_log('ItemAttempt::ItemAttempt');
         }
 
 	$this->mApplication = $application;

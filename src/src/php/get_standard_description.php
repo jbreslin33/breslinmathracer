@@ -7,6 +7,12 @@ class GetStandardDescription
 
 function __construct($typeid)
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('GetStandardDescription::GetStandardDescription');
+        }
+
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
