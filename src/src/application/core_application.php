@@ -1814,38 +1814,6 @@ highestAchieved: function()
                 xmlhttp.send();
         },
 	
-	getStudentItemStats: function(typeid)
-        {
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {
-                        xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {
-                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
-                {
-                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
-                        {
-                                if (xmlhttp.responseText)
-                                {
-                                        if (typeof(xmlhttp.responseText)=="unknown")
-                                        {
-                                                return("");
-                                        }
-                                        else
-                                        {
-                                                APPLICATION.parseResponse(xmlhttp.responseText);
-                                        }
-                                }
-                        }
-                }
-                xmlhttp.open("POST","../../web/php/get_student_item_stats.php",true);
-                xmlhttp.send();
-        },
-
 	/**************** GAME DECIDER *******/
 	// are we running the right game??
 	gameDecider: function()
