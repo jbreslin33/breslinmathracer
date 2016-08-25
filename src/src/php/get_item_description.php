@@ -7,6 +7,12 @@ class GetItemDescription
 
 function __construct($typeid)
 {
+  	$this->logs = true;
+        if ($this->logs)
+        {
+                error_log('GetItemDescription constructor');
+        }
+
 	$this->mDatabaseConnection = new DatabaseConnection();
 	$this->mTypeID = $typeid;
 
