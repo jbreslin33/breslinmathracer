@@ -7,6 +7,12 @@ class ItemAttempt
 
 function __construct($application,$itemtypeid,$question,$answers,$datenow)
 {
+        $this->logs = true;
+        if ($this->logs)
+        {
+                error_log('ItemAttempt Constructor');
+        }
+
 	$this->mApplication = $application;
 	$this->mDateNow = $datenow; //key for client and server to be on same page atleast initially until we get an real db id
 	$this->mID = 0;
