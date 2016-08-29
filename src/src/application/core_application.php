@@ -1551,6 +1551,7 @@ highestAchieved: function()
                                 }
                         }
                 }
+		APPLICATION.log('username:' + username);
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=218&username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },

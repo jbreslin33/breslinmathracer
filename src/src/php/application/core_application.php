@@ -5,6 +5,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/application/states/core_applica
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 //temp
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_student.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_school.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_student.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_school.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
@@ -118,7 +119,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = false;
+	$this->mLogs = true;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin
@@ -167,6 +168,7 @@ function __construct()
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent = new LoginStudent($this);	
 	$this->mSignupStudent = new SignupStudent($this);	
+	$this->mLoginSchool = new LoginSchool($this);	
 	$this->mSignupSchool  = new SignupSchool($this);	
 	
 	$this->mEvaluationsAttemptsArray = array();

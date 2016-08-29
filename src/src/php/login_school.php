@@ -1,33 +1,30 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
-include_once(getenv("DOCUMENT_ROOT") . "/src/php/sessions.php");
-
-//start new session
-//session_start();
-
-$_SESSION["username"]   = $_GET["username"];
-$_SESSION["password"]   = $_GET["password"];
-
-$loginSchool = new LoginSchool();
 ?>
 
 <?php
 class LoginSchool 
+{
+    private $mDatabaseConnection;
+function __construct($application)
 {
         $this->logs = true;
         if ($this->logs)
         {
                 error_log('LoginSchool::LoginSchool');
         }
-
-    private $mDatabaseConnection;
-
-function __construct()
-{
 	$this->mDatabaseConnection = new DatabaseConnection();
 	
 	//login helpers
-	$this->mSchoolExists = false;
+        $this->mApplication = $application;
+        $this->mUsername = 0;
+        $this->mPassword = 0;
+        $this->mSchoolExists = false;
+        $this->mLoggedIn = 0;
+        $this->mRole = 1;
+        $this->mFirstName = 0;
+        $this->mLastName = 0;
+        $this->mUserID = 0;
 
 	$this->process();
 }
@@ -90,7 +87,7 @@ public function checkForSchool()
 	$problem = "";
 
         $query = "select username from schools where username = '";
-        $query .= $_SESSION["username"];
+        $query .= $this->mUsername;
         $query .= "';";
         
 	//get db result
@@ -104,7 +101,7 @@ public function checkForSchool()
 		$this->mSchoolExists = true;
 
 		$query2 = "select id from schools where username = '";
-        	$query2 .= $_SESSION["username"];
+        	$query2 .= $this->mUsername;
         	$query2 .= "' AND password = '";
         	$query2 .= $_SESSION["password"];
         	$query2 .= "';";

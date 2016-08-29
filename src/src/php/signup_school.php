@@ -1,15 +1,5 @@
 <?php
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
-/*
-$_SESSION["username"] = $_GET["username"];
-$_SESSION["password"] = $_GET["password"];
-$_SESSION["name"] = $_GET["name"];
-$_SESSION["city"] = $_GET["city"];
-$_SESSION["state"] = $_GET["state"];
-$_SESSION["zip"] = $_GET["zip"];
-$_SESSION["email"] = $_GET["email"];
-$_SESSION["student_code"] = $_GET["student_code"];
-*/
 ?>
 
 <?php
@@ -18,14 +8,18 @@ class SignupSchool
 {
 	private $mDatabaseConnection;
 
-function __construct()
+function __construct($application)
 {
         $this->logs = true;
         if ($this->logs)
         {
                 error_log('SignupSchool::SignupSchool');
         }
-	$this->mDatabaseConnection = new DatabaseConnection();
+
+        $this->mApplication = $application;
+        $this->mSignedUp = 0;
+        $this->mSchoolExists = false;
+        $this->mUserID = 0;
 }
 public function sendUsernameTaken()
 {
@@ -43,7 +37,7 @@ public function sendLoginSchool()
 	$returnString = "114,";
 	$returnString .= $_SESSION["LOGGED_IN"];
 	$returnString .= ",";
-	$returnString .= $_SESSION["username"];
+	$returnString .= $this->mApplication->mLoginStudent->mUsername;
 	$returnString .= ",";
 	$returnString .= $_SESSION["role"];
 	echo $returnString;
@@ -53,30 +47,51 @@ public function sendBadPassword()
         $returnString = "104";
         echo $returnString;
 }
+/*
+public function process()
+{
+        $this->mDatabaseConnection = new DatabaseConnection();
+        if ($this->insertIntoUsers())
+        {
+                $databaseConnection = new DatabaseConnection();
+                $_SESSION["user_id"] = $databaseConnection->selectUserID($this->mApplication->mLoginSchool->mUsername,$this->mApplication->mLoginSchool->mPassword);
+                $this->mSignedUp = 1;
+                $this->mCode = 117; //send to login
+                //$error_log('insert into users');
+        }
+        else
+        {
+                $this->mSignedUp = 0;
+                $this->sendUsernameTaken();
+        }
+}
+*/
+
 
 public function process()
 {
+        $this->mDatabaseConnection = new DatabaseConnection();
         error_log('SignupSchool->process');
 
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
         $query = "insert into schools (username,password,name,city,state,zip,email,student_code) values ('";
-        $query .= $this->mUsername;
+        $query .= $this->mApplication->mLoginSchool->mUsername;
 	$query .= "','";
-        $query .= $this->mPassword;
+        $query .= $this->mApplication->mLoginSchool->mPassword;
 	$query .= "','";
-        $query .= $this->mName;
+        $query .= $this->mApplication->mLoginSchool->mName;
 	$query .= "','";
-        $query .= $this->mCity;
+        $query .= $this->mApplication->mLoginSchool->mCity;
 	$query .= "','";
-        $query .= $this->mState;
+        $query .= $this->mApplication->mLoginSchool->mState;
 	$query .= "','";
-        $query .= $this->mZip;
+        $query .= $this->mApplication->mLoginSchool->mZip;
 	$query .= "','";
-        $query .= $this->mEmail;
+        $query .= $this->mApplication->mLoginSchool->mEmail;
 	$query .= "','";
-        $query .= $this->mStudentCode;
+        $query .= $this->mApplication->mLoginSchool->mStudentCode;
         $query .= "');";
         
 	//get db result
@@ -95,7 +110,7 @@ public function process()
 	//then check login
 
        	$query = "select username from schools where username = '";
-        $query .= $_SESSION["username"];
+        $query .= $this->mApplication->mLoginSchool->mUsername; 
         $query .= "';";
 
         //get db result
@@ -107,9 +122,9 @@ public function process()
         if ($num > 0)
         {
                 $query2 = "select id from schools where username = '";
-                $query2 .= $_SESSION["username"];
+                $query2 .= $this->mApplication->mLoginStudent->mUsername;
                 $query2 .= "' AND password = '";
-                $query2 .= $_SESSION["password"];
+                $query2 .= $this->mApplication->mLoginSchool->mPassword;
                 $query2 .= "';";
 
                 //get db result
