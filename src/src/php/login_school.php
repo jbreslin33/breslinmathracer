@@ -37,7 +37,9 @@ public function sendLoginSchool()
 	$returnString .= $this->mUsername;
 	$returnString .= ",";
 	$returnString .= $this->mRole;
+	error_log($returnString);
 	echo $returnString;
+
 }
 
 public function sendBadUsername()

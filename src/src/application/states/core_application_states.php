@@ -1172,7 +1172,6 @@ initialize: function()
 
 enter: function(application)
 {
-        application.mLoggedIn = false;
         if (application.mStateLogs)
         {
                 application.log('APPLICATION::SIGNUP_SCHOOL_APPLICATION');
@@ -1180,7 +1179,6 @@ enter: function(application)
 
         if (APPLICATION.mCoreStateMachine.mPreviousState == APPLICATION.mSIGNUP_SCHOOL_WAIT_APPLICATION)
         {
-                APPLICATION.log('1');
                 //dont reinstantiate class... just set visible
                 APPLICATION.mGame.mLoginButton.setVisibility(true);
                 APPLICATION.mGame.mUsernameLabel.setVisibility(true);
@@ -1209,7 +1207,6 @@ enter: function(application)
         }
         else
         {
-                APPLICATION.log('2');
                 if (application.mGame)
                 {
                         application.mGame.destructor();
@@ -1279,20 +1276,20 @@ enter: function(application)
         APPLICATION.mGame.mPasswordOneTextBox.setVisibility(false);
         APPLICATION.mGame.mPasswordTwoLabel.setVisibility(false);
         APPLICATION.mGame.mPasswordTwoTextBox.setVisibility(false);
-        APPLICATION.mGame.mNameLabel.setVisibility(true);
-        APPLICATION.mGame.mNameTextBox.setVisibility(true);
-        APPLICATION.mGame.mCityLabel.setVisibility(true);
-        APPLICATION.mGame.mCityTextBox.setVisibility(true);
-        APPLICATION.mGame.mStateLabel.setVisibility(true);
-        APPLICATION.mGame.mStateTextBox.setVisibility(true);
-        APPLICATION.mGame.mZipLabel.setVisibility(true);
-        APPLICATION.mGame.mZipTextBox.setVisibility(true);
-        APPLICATION.mGame.mEmailOneLabel.setVisibility(true);
-        APPLICATION.mGame.mEmailOneTextBox.setVisibility(true);
-        APPLICATION.mGame.mEmailTwoLabel.setVisibility(true);
-        APPLICATION.mGame.mEmailTwoTextBox.setVisibility(true);
-        APPLICATION.mGame.mCodeLabel.setVisibility(true);
-        APPLICATION.mGame.mCodeTextBox.setVisibility(true);
+        APPLICATION.mGame.mNameLabel.setVisibility(false);
+        APPLICATION.mGame.mNameTextBox.setVisibility(false);
+        APPLICATION.mGame.mCityLabel.setVisibility(false);
+        APPLICATION.mGame.mCityTextBox.setVisibility(false);
+        APPLICATION.mGame.mStateLabel.setVisibility(false);
+        APPLICATION.mGame.mStateTextBox.setVisibility(false);
+        APPLICATION.mGame.mZipLabel.setVisibility(false);
+        APPLICATION.mGame.mZipTextBox.setVisibility(false);
+        APPLICATION.mGame.mEmailOneLabel.setVisibility(false);
+        APPLICATION.mGame.mEmailOneTextBox.setVisibility(false);
+        APPLICATION.mGame.mEmailTwoLabel.setVisibility(false);
+        APPLICATION.mGame.mEmailTwoTextBox.setVisibility(false);
+        APPLICATION.mGame.mCodeLabel.setVisibility(false);
+        APPLICATION.mGame.mCodeTextBox.setVisibility(false);
 
         var v = 'PLEASE WAIT LOGGING IN';
         APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
@@ -1309,19 +1306,18 @@ execute: function(application)
 	
 	if (application.mDataToRead == true) //we have some data to read
 	{
+		application.log('READ DATA set loggedin');
 		//lets sniff packet
                 APPLICATION.mLoggedIn = APPLICATION.mResponseArray[1];
 		APPLICATION.mDataToRead = false;
-	}
 	
-	else if (application.mLoggedIn == true)
-	{
-                APPLICATION.mUsername = APPLICATION.mResponseArray[2];
-                APPLICATION.mRole = APPLICATION.mResponseArray[3];
-               	
-		//APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-
-		application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+		if (application.mLoggedIn == true)
+		{
+			application.log('READ DATA set loggedin true next');
+                	APPLICATION.mUsername = APPLICATION.mResponseArray[2];
+                	APPLICATION.mRole = APPLICATION.mResponseArray[3];
+			application.mCoreStateMachine.changeState(application.mREPORT_CORE_APPLICATION);
+		}
 	}
 
 	else if (application.mBadUsername == true)

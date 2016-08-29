@@ -258,11 +258,10 @@ public function execute($bapplication)
 	{
 		$bapplication->mLoginSchool->sendLoginSchool();
     		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
-
 	}	
 	else
 	{
-		//$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
+		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
 	}
 }
 public function bexit($bapplication)
@@ -350,7 +349,6 @@ public function execute($bapplication)
 
 	if ($bapplication->mSignupSchool->mSignedUp == 1)
 	{
-		$bapplication->mLoginSchool->sendLoginSchool();
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
 	}	
 	else

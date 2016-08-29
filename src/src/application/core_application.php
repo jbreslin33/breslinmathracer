@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -22,10 +22,10 @@ Extends: Application,
 		this.BAD_USERNAME = 103;
 		this.BAD_PASSWORD = 104;
 		this.LOGIN_STUDENT = 117;
+		this.LOGIN_SCHOOL = 114;
 		this.SIGNUP_STUDENT = 217;
 		this.SIGNUP_SCHOOL = 218;
 		this.LOGIN_TEACHER = 113;
-		this.LOGIN_SCHOOL = 114;
 
 		//signup
 		this.USERNAME_TAKEN_SCHOOL = 115;
@@ -1354,6 +1354,7 @@ highestAchieved: function()
 			
 			if (codeNumber == APPLICATION.LOGIN_SCHOOL)
                         {
+				APPLICATION.log('reading school');
 				APPLICATION.mDataToRead = true;
                         }
 
