@@ -6,7 +6,7 @@ class Scroll
 
 function __construct()
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
                 error_log('Scroll::Scroll');

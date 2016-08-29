@@ -8,7 +8,7 @@ class LoginSchool
     private $mDatabaseConnection;
 function __construct($application)
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
                 error_log('LoginSchool::LoginSchool');
@@ -37,7 +37,6 @@ public function sendLoginSchool()
 	$returnString .= $this->mUsername;
 	$returnString .= ",";
 	$returnString .= $this->mRole;
-	error_log($returnString);
 	echo $returnString;
 
 }
@@ -86,7 +85,6 @@ public function checkForSchool()
         $query .= "';";
         
 	//get db result
-	error_log($query);
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
         //get numer of rows
@@ -110,7 +108,6 @@ public function checkForSchool()
         
 		if ($num2 > 0)
 		{
-			error_log('logged in num');
         		$this->mLoggedIn = 1;
 
 			//get the id from user table

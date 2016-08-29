@@ -48,17 +48,11 @@ if ($APPLICATION->mCode == 217)
 	$APPLICATION->mLoginStudent->mPassword = $_GET["password"]; 
 	$APPLICATION->mLoginStudent->mFirstName = $_GET["first_name"]; 
 	$APPLICATION->mLoginStudent->mLastName = $_GET["last_name"]; 
-	
-	error_log($APPLICATION->mLoginStudent->mFirstName);
-	error_log($APPLICATION->mLoginStudent->mLastName);
 }
 
 if ($APPLICATION->mCode == 218)
 {
-	error_log("code 218");
-	
         $APPLICATION->mLoginSchool->mUsername = $_GET["username"];
-	error_log($APPLICATION->mLoginSchool->mUsername);
         $APPLICATION->mLoginSchool->mPassword = $_GET["password"];
         $APPLICATION->mLoginSchool->mName = $_GET["name"];
         $APPLICATION->mLoginSchool->mCity = $_GET["city"];
@@ -66,11 +60,7 @@ if ($APPLICATION->mCode == 218)
         $APPLICATION->mLoginSchool->mZip = $_GET["zip"];
         $APPLICATION->mLoginSchool->mEmail = $_GET["email"];
         $APPLICATION->mLoginSchool->mStudentCode = $_GET["student_code"];
-
-        //error_log($APPLICATION->mLoginStudent->mFirstName);
-       	//error_log($APPLICATION->mLoginStudent->mLastName);
 }
-
 
 //add_game_K
 if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29 || $APPLICATION->mCode == 30 || $APPLICATION->mCode == 31  )
@@ -98,8 +88,6 @@ if ($APPLICATION->mCode == 101)
         $APPLICATION->mDataArray[] = $_GET["transactioncode"];
         $APPLICATION->mDataArray[] = $_GET["answer"];
         $APPLICATION->mDataArray[] = $_GET["highest"];
-	//error_log($APPLICATION->mDataArray[4]);
-	
 }
 
 //update
@@ -125,7 +113,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = true;
+	$this->mLogs = false;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin

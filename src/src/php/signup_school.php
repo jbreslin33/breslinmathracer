@@ -10,7 +10,7 @@ class SignupSchool
 
 function __construct($application)
 {
-        $this->logs = true;
+        $this->logs = false; 
         if ($this->logs)
         {
                 error_log('SignupSchool::SignupSchool');

@@ -8,7 +8,7 @@ class LoginStudent
     private $mDatabaseConnection;
 function __construct($application)
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
                 error_log('LoginStudent::LoginStudent');
