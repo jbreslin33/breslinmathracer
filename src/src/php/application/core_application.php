@@ -32,6 +32,11 @@ unset($APPLICATION->mDataArray);
 $APPLICATION->mDataArray = array();
 
 //parseData
+if ($APPLICATION->mCode == 114)
+{
+        $APPLICATION->mLoginSchool->mUsername = $_GET["username"];
+        $APPLICATION->mLoginSchool->mPassword = $_GET["password"];
+}
 if ($APPLICATION->mCode == 117)
 {
 	$APPLICATION->mLoginStudent->mUsername = $_GET["username"]; 
@@ -53,6 +58,7 @@ if ($APPLICATION->mCode == 218)
 	error_log("code 218");
 	
         $APPLICATION->mLoginSchool->mUsername = $_GET["username"];
+	error_log($APPLICATION->mLoginSchool->mUsername);
         $APPLICATION->mLoginSchool->mPassword = $_GET["password"];
         $APPLICATION->mLoginSchool->mName = $_GET["name"];
         $APPLICATION->mLoginSchool->mCity = $_GET["city"];
@@ -127,6 +133,7 @@ function __construct()
         $this->mINIT_CORE_APPLICATION     = new INIT_CORE_APPLICATION          ($this);
         $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
+        $this->mLOGIN_SCHOOL_APPLICATION = new LOGIN_SCHOOL_APPLICATION      ($this);
         $this->mSIGNUP_STUDENT_APPLICATION = new SIGNUP_STUDENT_APPLICATION      ($this);
         $this->mSIGNUP_SCHOOL_APPLICATION = new SIGNUP_SCHOOL_APPLICATION      ($this);
         $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);

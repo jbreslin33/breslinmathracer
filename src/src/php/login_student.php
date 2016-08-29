@@ -34,7 +34,7 @@ public function process()
 	$this->checkForStudent();
 	if ($this->mLoggedIn == 1)
 	{
- 		$_SESSION["role"] = 1; //school
+ 		$_SESSION["role"] = 1;
 		return;
 	}
 	if ($this->mStudentExists)
@@ -116,7 +116,6 @@ public function checkForStudent()
 			$this->mTeamID = $team_id;
 		
 			//send to login data to client
-			//$this->sendLoginStudent();
 		}
 		else
 		{

@@ -230,6 +230,52 @@ public function bexit($bapplication)
 
 }//end class
 
+class LOGIN_SCHOOL_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('LOGIN_SCHOOL_APPLICATION Enter');
+        }
+	$bapplication->mLoginSchool->process();	
+	$bapplication->update();
+}
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('LOGIN_SCHOOL_APPLICATION Execute');
+        }
+
+	if ($bapplication->mLoginSchool->mLoggedIn == 1)
+	{
+		$bapplication->mLoginSchool->sendLoginSchool();
+    		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
+
+	}	
+	else
+	{
+		//$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('LOGIN_SCHOOL_APPLICATION Exit');
+        }
+	$bapplication->mCode = 0;
+}
+
+}//end class
+
 
 class LOGIN_STUDENT_APPLICATION extends State
 {
@@ -304,6 +350,7 @@ public function execute($bapplication)
 
 	if ($bapplication->mSignupSchool->mSignedUp == 1)
 	{
+		$bapplication->mLoginSchool->sendLoginSchool();
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
 	}	
 	else

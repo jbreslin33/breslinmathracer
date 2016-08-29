@@ -37,7 +37,7 @@ public function sendLoginSchool()
 	$returnString = "114,";
 	$returnString .= $_SESSION["LOGGED_IN"];
 	$returnString .= ",";
-	$returnString .= $this->mApplication->mLoginStudent->mUsername;
+	$returnString .= $this->mApplication->mLoginSchool->mUsername;
 	$returnString .= ",";
 	$returnString .= $_SESSION["role"];
 	echo $returnString;
@@ -47,26 +47,6 @@ public function sendBadPassword()
         $returnString = "104";
         echo $returnString;
 }
-/*
-public function process()
-{
-        $this->mDatabaseConnection = new DatabaseConnection();
-        if ($this->insertIntoUsers())
-        {
-                $databaseConnection = new DatabaseConnection();
-                $_SESSION["user_id"] = $databaseConnection->selectUserID($this->mApplication->mLoginSchool->mUsername,$this->mApplication->mLoginSchool->mPassword);
-                $this->mSignedUp = 1;
-                $this->mCode = 117; //send to login
-                //$error_log('insert into users');
-        }
-        else
-        {
-                $this->mSignedUp = 0;
-                $this->sendUsernameTaken();
-        }
-}
-*/
-
 
 public function process()
 {
@@ -122,7 +102,7 @@ public function process()
         if ($num > 0)
         {
                 $query2 = "select id from schools where username = '";
-                $query2 .= $this->mApplication->mLoginStudent->mUsername;
+                $query2 .= $this->mApplication->mLoginSchool->mUsername;
                 $query2 .= "' AND password = '";
                 $query2 .= $this->mApplication->mLoginSchool->mPassword;
                 $query2 .= "';";
@@ -135,6 +115,7 @@ public function process()
 
                 if ($num2 > 0)
                 {
+                	$this->mSignedUp = 1;
                         $_SESSION["LOGGED_IN"] = 1;
                         $this->mBadPassword = 0;
                         $this->mBadUsername = 0;
@@ -143,15 +124,16 @@ public function process()
                         $school_id = pg_Result($result2, 0, 'id');
 
                         //set sessions
-                        $_SESSION["school_name"] = $_SESSION["name"];
+                        $_SESSION["school_name"] = $this->mApplication->mLoginSchool->mName;
                         $_SESSION["school_id"] = $school_id;
                         $_SESSION["LOGGED_IN"] = 1;
                         $_SESSION["role"] = 3;
 
-			$this->sendLoginSchool();
+			//$this->sendLoginSchool();
                 }
                 else
                 {
+                	$this->mSignedUp = 0;
                         $_SESSION["LOGGED_IN"] = 0;
                         $this->mBadPassword = 1;
                         $this->mBadUsername = 0;
@@ -162,6 +144,7 @@ public function process()
         }
         else
         {
+                $this->mSignedUp = 0;
                 $_SESSION["LOGGED_IN"] = 0;
                 $this->mBadUsername = 1;
                 $this->mBadPassword = 0;

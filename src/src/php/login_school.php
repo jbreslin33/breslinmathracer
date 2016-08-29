@@ -13,18 +13,18 @@ function __construct($application)
         {
                 error_log('LoginSchool::LoginSchool');
         }
-	$this->mDatabaseConnection = new DatabaseConnection();
 	
 	//login helpers
         $this->mApplication = $application;
-        $this->mUsername = 0;
-        $this->mPassword = 0;
+        $this->mUsername = '';
+        $this->mPassword = '';
         $this->mSchoolExists = false;
         $this->mLoggedIn = 0;
-        $this->mRole = 1;
+        $this->mRole = 3;
         $this->mFirstName = 0;
-        $this->mLastName = 0;
+        $this->mLastName = '';
         $this->mUserID = 0;
+        $this->mSchoolID = 0;
 
 	$this->process();
 }
@@ -32,11 +32,11 @@ function __construct($application)
 public function sendLoginSchool()
 {
 	$returnString = "114,";
-	$returnString .= $_SESSION["LOGGED_IN"];
+	$returnString .= $this->mLoggedIn;
 	$returnString .= ",";
-	$returnString .= $_SESSION["username"];
+	$returnString .= $this->mUsername;
 	$returnString .= ",";
-	$returnString .= $_SESSION["role"];
+	$returnString .= $this->mRole;
 	echo $returnString;
 }
 
@@ -54,6 +54,8 @@ public function sendBadPassword()
 
 public function process()
 {
+	$this->mDatabaseConnection = new DatabaseConnection();
+
 	//school	
 	$this->checkForSchool();
 	
@@ -74,15 +76,6 @@ public function process()
 
 public function checkForSchool()
 {
-       	if (!isset($_SESSION["LOGGED_IN"]))
-	{
-        	$_SESSION["LOGGED_IN"] = 0;
-	}
-       	if ($_SESSION["LOGGED_IN"] == 1)
-	{
-		return;
-	}
-
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
@@ -91,6 +84,7 @@ public function checkForSchool()
         $query .= "';";
         
 	//get db result
+	error_log($query);
         $result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('Could not connect: ' . pg_last_error());
 
         //get numer of rows
@@ -103,7 +97,7 @@ public function checkForSchool()
 		$query2 = "select id from schools where username = '";
         	$query2 .= $this->mUsername;
         	$query2 .= "' AND password = '";
-        	$query2 .= $_SESSION["password"];
+        	$query2 .= $this->mPassword;
         	$query2 .= "';";
 	
 		//get db result
@@ -114,22 +108,20 @@ public function checkForSchool()
         
 		if ($num2 > 0)
 		{
-        		$_SESSION["LOGGED_IN"] = 1;
+			error_log('logged in num');
+        		$this->mLoggedIn = 1;
 
 			//get the id from user table
                 	$school_id = pg_Result($result2, 0, 'id');
 
 			//set sessions
-        		$_SESSION["role"] = 3; //school
-        		$_SESSION["raw_data"] = NULL; 
-                	$_SESSION["school_id"] = $school_id;
-
-			$this->sendLoginSchool();
+        		$this->mRole = 3; //school
+                	$this->mSchoolID = $school_id;
 		}
 		else
 		{
-        		$_SESSION["LOGGED_IN"] = 0;
-        		$_SESSION["school_id"] = 0;
+        		$this->mLoggedIn = 0;
+        		$this->mSchoolID = 0;
 		}
         }
         else
