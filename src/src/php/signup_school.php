@@ -56,25 +56,27 @@ public function sendBadPassword()
 
 public function process()
 {
+        error_log('SignupSchool->process');
+
 	//let's set a var that will be false if there was a problem..
 	$problem = "";
 
         $query = "insert into schools (username,password,name,city,state,zip,email,student_code) values ('";
-        $query .= $_SESSION["username"];
+        $query .= $this->mUsername;
 	$query .= "','";
-	$query .= $_SESSION["password"];
+        $query .= $this->mPassword;
 	$query .= "','";
-        $query .= $_SESSION["name"];
+        $query .= $this->mName;
 	$query .= "','";
-        $query .= $_SESSION["city"];
+        $query .= $this->mCity;
 	$query .= "','";
-        $query .= $_SESSION["state"];
+        $query .= $this->mState;
 	$query .= "','";
-        $query .= $_SESSION["zip"];
+        $query .= $this->mZip;
 	$query .= "','";
-        $query .= $_SESSION["email"];
+        $query .= $this->mEmail;
 	$query .= "','";
-        $query .= $_SESSION["student_code"];
+        $query .= $this->mStudentCode;
         $query .= "');";
         
 	//get db result

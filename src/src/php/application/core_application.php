@@ -49,14 +49,16 @@ if ($APPLICATION->mCode == 217)
 
 if ($APPLICATION->mCode == 218)
 {
-        $APPLICATION->mLoginStudent->mUsername = $_GET["username"];
-        $APPLICATION->mLoginStudent->mPassword = $_GET["password"];
-        $APPLICATION->mLoginStudent->mName = $_GET["name"];
-        $APPLICATION->mLoginStudent->mCity = $_GET["city"];
-        $APPLICATION->mLoginStudent->mState = $_GET["state"];
-        $APPLICATION->mLoginStudent->mZip = $_GET["zip"];
-        $APPLICATION->mLoginStudent->mEmail = $_GET["email"];
-        $APPLICATION->mLoginStudent->mStudentCode = $_GET["student_code"];
+	error_log("code 218");
+	
+        $APPLICATION->mLoginSchool->mUsername = $_GET["username"];
+        $APPLICATION->mLoginSchool->mPassword = $_GET["password"];
+        $APPLICATION->mLoginSchool->mName = $_GET["name"];
+        $APPLICATION->mLoginSchool->mCity = $_GET["city"];
+        $APPLICATION->mLoginSchool->mState = $_GET["state"];
+        $APPLICATION->mLoginSchool->mZip = $_GET["zip"];
+        $APPLICATION->mLoginSchool->mEmail = $_GET["email"];
+        $APPLICATION->mLoginSchool->mStudentCode = $_GET["student_code"];
 
         //error_log($APPLICATION->mLoginStudent->mFirstName);
        	//error_log($APPLICATION->mLoginStudent->mLastName);
@@ -125,6 +127,7 @@ function __construct()
         $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
         $this->mSIGNUP_STUDENT_APPLICATION = new SIGNUP_STUDENT_APPLICATION      ($this);
+        $this->mSIGNUP_SCHOOL_APPLICATION = new SIGNUP_SCHOOL_APPLICATION      ($this);
         $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);

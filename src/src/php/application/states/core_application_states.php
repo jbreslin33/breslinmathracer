@@ -27,7 +27,10 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mSIGNUP_STUDENT_APPLICATION);
 	}
-
+        if ($bapplication->mCode == 218 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mSIGNUP_SCHOOL_APPLICATION)
+        {
+                $bapplication->mCoreStateMachine->changeState($bapplication->mSIGNUP_SCHOOL_APPLICATION);
+        }
 	if ($bapplication->mCode == 1 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
@@ -275,6 +278,47 @@ public function bexit($bapplication)
 	$bapplication->mCode = 0;
 }
 
+}//end class
+
+class SIGNUP_SCHOOL_APPLICATION extends State
+{
+function __construct()
+{
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('SIGNUP_SCHOOL_APPLICATION Enter');
+        }
+	$bapplication->mSignupSchool->process();	
+	$bapplication->update();
+}
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('SIGNUP_SCHOOL_APPLICATION Execute');
+        }
+
+	if ($bapplication->mSignupSchool->mSignedUp == 1)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
+	}	
+	else
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('SIGNUP_SCHOOL_APPLICATION Exit');
+        }
+	$bapplication->mCode = 0;
+}
 }//end class
 
 class SIGNUP_STUDENT_APPLICATION extends State

@@ -1523,6 +1523,7 @@ highestAchieved: function()
         
 	signupSchool: function(username,password,name,city,state,zip,email,student_code)
         {
+		APPLICATION.log('signupSchool');
 		APPLICATION.mSent = true;
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -1550,8 +1551,7 @@ highestAchieved: function()
                                 }
                         }
                 }
-                //xmlhttp.open("POST","../../src/php/application/core_application.php?code=218&username=" + username + "&password=" + password,true);
-                xmlhttp.open("POST","../../src/php/signup_school.php?code=218&username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=218&username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },
 
