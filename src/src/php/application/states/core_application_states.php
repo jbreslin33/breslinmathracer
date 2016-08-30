@@ -19,6 +19,10 @@ public function enter($bapplication)
 }
 public function execute($bapplication)
 {
+        if ($bapplication->mCode == 114 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mLOGIN_SCHOOL_APPLICATION)
+        {
+                $bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
+        }
 	if ($bapplication->mCode == 117 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mLOGIN_STUDENT_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);

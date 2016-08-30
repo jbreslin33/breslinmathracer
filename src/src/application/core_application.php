@@ -1592,6 +1592,7 @@ highestAchieved: function()
 
         loginSchool: function(username,password)
         {
+		APPLICATION.log('loginSchool:' + username); 
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
@@ -1619,7 +1620,7 @@ highestAchieved: function()
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/login_school.php?username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../src/php/login_school.php?code=114&username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 
