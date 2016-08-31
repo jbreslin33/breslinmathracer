@@ -272,12 +272,14 @@ execute: function(application)
 	
 	if (application.mDataToRead == true) //we have some data to read
 	{
+		APPLICATION.log('read!!!');
 		//lets sniff packet
                 APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
 		APPLICATION.mDataToRead = false;
 		
 		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
 		{
+			APPLICATION.log('read next login!!!');
         		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
                 	APPLICATION.mHud.setOrange('Game:' + APPLICATION.mRef_id);
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];

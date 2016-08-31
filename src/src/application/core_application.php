@@ -1349,6 +1349,7 @@ highestAchieved: function()
 			//LOGIN
                         if (codeNumber == APPLICATION.LOGIN_STUDENT)
                         {
+				APPLICATION.log('got data:' + codeNumber);
 				APPLICATION.mDataToRead = true;
                         }
 			

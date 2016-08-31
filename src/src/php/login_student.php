@@ -32,9 +32,11 @@ public function process()
         $this->mStudentExists = false;
 	//student
 	$this->checkForStudent();
+	error_log("mLoggedIn:");
+	error_log($this->mLoggedIn);
 	if ($this->mLoggedIn == 1)
 	{
- 		$_SESSION["role"] = 1;
+		$this->mRole = 1;
 		return;
 	}
 	if ($this->mStudentExists)
