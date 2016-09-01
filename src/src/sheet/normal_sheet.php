@@ -9,8 +9,6 @@ initialize: function(game)
 
 pickItem: function()
 {
-	//APPLICATION.log('pickItem');
-	//would love to loop till we got no dup
 	var s = APPLICATION.mItemAttemptsTypeArrayOne.length; 
 
 	if (parseInt(APPLICATION.mGame.mScore) == 0 && s < 10)
@@ -40,10 +38,12 @@ pickItem: function()
 		}
 		else
 		{
+			//dups allowed if u is high
 			if (APPLICATION.mGame.mUnmastered > 5)
 			{
 	
 			}
+			//if u is low loop till we got no dup
 			else
 			{	
 				while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
