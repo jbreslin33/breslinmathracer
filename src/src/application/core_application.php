@@ -331,7 +331,6 @@ highestAchieved: function()
 
 	APPLICATION.mHud.setYellow('' + highest);
 	this.mHighest = highest;
-	//APPLICATION.log('' + APPLICATION.mHud.getYellow());
 },
 	
 	calcScore: function()
@@ -1344,28 +1343,17 @@ highestAchieved: function()
                 this.mResponseArray = response.split(",");
                 var code = this.mResponseArray[0];
 		code.trim();
-		var codeLength = code.length; 
-               	APPLICATION.log('code length:' + codeLength); 
-               	APPLICATION.log('code:' + code); 
-/*
-		if (codeLength > 8)
-		{
-			return;
-		}
-*/
 		var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
 			//LOGIN
                         if (codeNumber == APPLICATION.LOGIN_STUDENT)
                         {
-				APPLICATION.log('got data:' + codeNumber);
 				APPLICATION.mDataToRead = true;
                         }
 			
 			if (codeNumber == APPLICATION.LOGIN_SCHOOL)
                         {
-				APPLICATION.log('reading school');
 				APPLICATION.mDataToRead = true;
                         }
 
@@ -1386,7 +1374,6 @@ highestAchieved: function()
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
-				APPLICATION.log('BAD USERNAME 103');
 				this.mBadUsername = true;
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
@@ -1536,7 +1523,6 @@ highestAchieved: function()
         
 	signupSchool: function(username,password,name,city,state,zip,email,student_code)
         {
-		APPLICATION.log('signupSchool');
 		APPLICATION.mSent = true;
                 var xmlhttp;
                 if (window.XMLHttpRequest)
@@ -1564,7 +1550,6 @@ highestAchieved: function()
                                 }
                         }
                 }
-		APPLICATION.log('username:' + username);
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=218&username=" + username + "&password=" + password + "&name=" + name + "&city=" + city + "&state=" + state + "&zip=" + zip + "&email=" + email + "&student_code=" + student_code,true);
                 xmlhttp.send();
         },
@@ -1604,7 +1589,6 @@ highestAchieved: function()
 
         loginSchool: function(username,password)
         {
-		APPLICATION.log('loginSchool:' + username); 
                 var xmlhttp;
                 if (window.XMLHttpRequest)
                 {
