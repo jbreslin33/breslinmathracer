@@ -5,10 +5,9 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 <?php
 class LoginStudent
 {
-    private $mDatabaseConnection;
 function __construct($application)
 {
-        $this->logs = false;
+        $this->logs = true;
         if ($this->logs)
         {
                 error_log('LoginStudent::LoginStudent');

@@ -2,28 +2,30 @@
 
 class DatabaseConnection
 {
-    private $connection;
 
 function __construct()
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
                 error_log('DatabaseConnection::DatabaseConnection');
         }
 
 	$connectionString = "host=localhost dbname=jamesanthonybreslin user=postgres password=mibesfat";
-        $this->connection = pg_connect($connectionString);
+        $this->mConnection = pg_connect($connectionString);
 }
 
 function __destruct()
 {
-
+}
+public function close()
+{
+	//pg_close($this->connection);
 }
 
 public function getConn()
 {
-        return $this->connection;
+        return $this->mConnection;
 }
 
 public function selectUserID($username,$password)
@@ -35,7 +37,7 @@ public function selectUserID($username,$password)
         $query .= "';";
 
         //get db result
-        $result = pg_query($this->connection,$query) or die('Could not connect: ' . pg_last_error());
+        $result = pg_query($this->mConnection,$query) or die('Could not connect: ' . pg_last_error());
 
         //get numer of rows
         $num = pg_num_rows($result);

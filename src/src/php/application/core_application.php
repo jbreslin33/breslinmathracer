@@ -103,6 +103,8 @@ class CoreApplication
 
 function __construct()
 {
+	//db connection for session
+
 	//big vars
 	$this->mRef_id = 'login';
 
@@ -161,9 +163,9 @@ function __construct()
         $this->mCoreStateMachine->changeState($this->mINIT_CORE_APPLICATION);
 
 	$this->mNormal = new Normal($this);	
-	$this->mLoginStudent = new LoginStudent($this);	
+	$this->mLoginStudent  = new LoginStudent($this);	
+	$this->mLoginSchool   = new LoginSchool($this);	
 	$this->mSignupStudent = new SignupStudent($this);	
-	$this->mLoginSchool = new LoginSchool($this);	
 	$this->mSignupSchool  = new SignupSchool($this);	
 	
 	$this->mEvaluationsAttemptsArray = array();
