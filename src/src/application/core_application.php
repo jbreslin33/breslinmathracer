@@ -196,6 +196,7 @@ Extends: Application,
 		this.mProgression = 0;
 		this.mHighest = 0;
 		this.mStandard = '';
+		this.mFreePassStandard = '';
 		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';

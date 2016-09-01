@@ -283,7 +283,10 @@ execute: function(application)
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                	APPLICATION.mRole = APPLICATION.mResponseArray[6];
+                	APPLICATION.mFreePassStandard = APPLICATION.mResponseArray[6];
+			APPLICATION.log('mFreePassStandard:' + APPLICATION.mFreePassStandard);
+                	APPLICATION.mRole = 1;
+		
                 
 			var itemTypes = APPLICATION.mResponseArray[7];
 			APPLICATION.mItemTypesArray = itemTypes.split(":");
