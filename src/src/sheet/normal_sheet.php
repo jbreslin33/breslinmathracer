@@ -31,6 +31,8 @@ pickItem: function()
 	{
 		//lets get first and if its not a dup dont even go in
                 APPLICATION.getFirst();
+                APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                APPLICATION.getFreePassElement(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
 		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		if (APPLICATION.mFirstName == 'Luke' && APPLICATION.mLastName == 'Breslin')
 		{

@@ -1174,9 +1174,45 @@ highestAchieved: function()
 		this.mFirst = first;
 	},
 
+        getFreePassElement: function(typesArray,attemptArray,transactionCodeArray)
+        {
+		//get first standard wrong...
+		var s = this.mFirst.split("_");
+		var standard = s[0];  
+
+		this.mFreePassStandard = '6.ee.a.1';
+		standard = this.mFreePassStandard;
+
+                var tempTypeArray = new Array();
+		tempTypeArray = [];
+                
+		for (i=0; i < typesArray.length; i++)
+		{
+			if (typesArray[i].includes("" + standard))
+			{
+				tempTypeArray.push(typesArray[i]);
+			}
+		}
+
+		var id = '';
+
+		while(id == '')
+		{
+			var r = Math.floor(Math.random()*tempTypeArray.length);
+                        for (i=0; i < attemptArray.length; i++)
+			{
+				if (attemptArray[i].includes("" + tempTypeArray[r]))
+				{
+					id = tempTypeArray[r];
+				}
+			}
+		}
+                this.mSameStandard = id;
+		APPLICATION.log('this.mSameStandard:' + this.mSameStandard);
+        },
+
         getSameStandard: function(typesArray,attemptArray,transactionCodeArray)
         {
-
 		//get first standard wrong...
 		var s = this.mFirst.split("_");
 		var standard = s[0];  
@@ -1206,6 +1242,7 @@ highestAchieved: function()
 			}
 		}
                 this.mSameStandard = id;
+		APPLICATION.log('this.mSameStandard:' + this.mSameStandard);
         },
 	
 	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)
