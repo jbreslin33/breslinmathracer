@@ -72,7 +72,7 @@ public function process()
 	}
 
 	//fall thru to bad username	
-	$this->sendBadUsername();
+	//$this->sendBadUsername();
 }
 
 public function checkForSchool()

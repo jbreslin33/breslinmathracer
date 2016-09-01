@@ -1343,7 +1343,17 @@ highestAchieved: function()
 	{
                 this.mResponseArray = response.split(",");
                 var code = this.mResponseArray[0];
-                var codeNumber = parseInt(code);
+		code.trim();
+		var codeLength = code.length; 
+               	APPLICATION.log('code length:' + codeLength); 
+               	APPLICATION.log('code:' + code); 
+/*
+		if (codeLength > 8)
+		{
+			return;
+		}
+*/
+		var codeNumber = parseInt(code);
 		if (codeNumber > 100 && codeNumber < 200)
 		{
 			//LOGIN
@@ -1376,6 +1386,7 @@ highestAchieved: function()
 			}
 			if (codeNumber == APPLICATION.BAD_USERNAME)
                         {
+				APPLICATION.log('BAD USERNAME 103');
 				this.mBadUsername = true;
 			}
 			if (codeNumber == APPLICATION.BAD_PASSWORD)
