@@ -1884,9 +1884,6 @@ public function execute($bapplication)
 
         	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimebasicskillskindergarten');
 
-		$bapplication->mEvaluationsAttempt->mScore++;
-		error_log('score update:');
-		error_log($bapplication->mEvaluationsAttempt->mScore);
 
 		$bapplication->mCode = 0;
 	}
@@ -1897,6 +1894,20 @@ public function execute($bapplication)
 			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+/*
+        $APPLICATION->mDataArray[] = "101";
+        $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
+        $APPLICATION->mDataArray[] = $_GET["transactioncode"];
+        $APPLICATION->mDataArray[] = $_GET["answer"];
+        $APPLICATION->mDataArray[] = $_GET["highest"];
+*/
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+					error_log('score update:');
+					error_log($bapplication->mEvaluationsAttempt->mScore);
+				}
 			}
 		}
 		$bapplication->mCode = 0;
