@@ -271,6 +271,8 @@ CREATE TABLE finer_types (
 CREATE TABLE evaluations (
 	id SERIAL,
 	description text NOT NULL UNIQUE,	
+	questions integer NOT NULL default 10,
+	score_needed integer NOT NULL default 10,
         PRIMARY KEY (id)
 );
 
