@@ -1882,7 +1882,12 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimebasicskillskindergarten');
+        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimebasicskillskindergarten');
+
+		$bapplication->mEvaluationsAttempt->mScore++;
+		error_log('score update:');
+		error_log($bapplication->mEvaluationsAttempt->mScore);
+
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update

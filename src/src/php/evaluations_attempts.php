@@ -20,6 +20,7 @@ function __construct($application,$evaluationsID,$datenow)
 	//score		
 	$this->mQuestions = 0;
 	$this->mScore_needed = 0;
+	$this->mScore = 0;
 
 	$this->setScoreNeeded();
 
@@ -29,6 +30,8 @@ function __construct($application,$evaluationsID,$datenow)
 	error_log($this->mQuestions);
 	error_log('score_needed');
 	error_log($this->mScore_needed);
+
+	
 
 	$this->insert();
 }
