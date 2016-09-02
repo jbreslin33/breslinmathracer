@@ -274,6 +274,7 @@ CREATE TABLE evaluations (
 	questions integer NOT NULL default 10,
 	score_needed integer NOT NULL default 10,
 	standard_jump_id text NOT NULL default 'k.cc.a.1',
+ 	progression NUMERIC(12,10) NOT NULL default 0,
         PRIMARY KEY (id)
 );
 
