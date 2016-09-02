@@ -27,6 +27,9 @@ function __construct($application)
 	$this->mLastName = 0;
 	$this->mUserID = 0;
 	$this->mCoreStandardsID = 0;
+
+	//sessions	
+	$_SESSION["role"] = 1;
 }
 
 public function process()

@@ -26,6 +26,9 @@ function __construct($application)
         $this->mUserID = 0;
         $this->mSchoolID = 0;
 
+	//sessions
+	$_SESSION["role"] = 3;
+
 	$this->process();
 }
 
