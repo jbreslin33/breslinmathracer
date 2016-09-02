@@ -273,6 +273,7 @@ CREATE TABLE evaluations (
 	description text NOT NULL UNIQUE,	
 	questions integer NOT NULL default 10,
 	score_needed integer NOT NULL default 10,
+	standard_jump_id text NOT NULL default 'k.cc.a.1',
         PRIMARY KEY (id)
 );
 
