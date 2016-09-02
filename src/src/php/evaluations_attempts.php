@@ -17,9 +17,43 @@ function __construct($application,$evaluationsID,$datenow)
 	$this->mID = 0;
 	$this->mDateNow = $datenow;
 
+	//score		
+	$this->mQuestions = 0;
+	$this->mScore_needed = 0;
+
+	$this->setScoreNeeded();
+
 	$this->mItemAttemptsArray = array();
 
+	error_log('questions');
+	error_log($this->mQuestions);
+	error_log('score_needed');
+	error_log($this->mScore_needed);
+
 	$this->insert();
+}
+
+public function setScoreNeeded()
+{
+	$query = "select questions, score_needed from evaluations where id = ";
+        $query .= $this->mEvaluationsID;
+        $query .= ";";
+
+	$db = new DatabaseConnection();
+        $result = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+        $num = pg_num_rows($result);
+
+        if ($num > 0)
+        {
+                //get the attempt_id
+                $questions = pg_Result($result, 0, 'questions');
+                $score_needed = pg_Result($result, 0, 'score_needed');
+
+		$this->mQuestions = $questions;
+		$this->mScore_needed = $score_needed;
+        }
+
 }
 
 public function insert()

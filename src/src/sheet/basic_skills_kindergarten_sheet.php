@@ -32,7 +32,7 @@ pickItem: function()
                 APPLICATION.mQuestionTypeCurrent = this.mIDArray[this.mCurrentElement];
                 this.mCurrentElement++;
         }
-        else
+        else //its over....check here????
         {
                 APPLICATION.mEvaluationsID = 1;
         }
