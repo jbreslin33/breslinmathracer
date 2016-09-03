@@ -1148,6 +1148,7 @@ highestAchieved: function()
 				APPLICATION.log('i:' + i);
 				milestonesElement = i;
 			}
+			i++;
 		}
 		
 	},
