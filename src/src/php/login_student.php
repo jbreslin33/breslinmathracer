@@ -85,7 +85,8 @@ public function checkForStudent()
         	if ($num > 0)
         	{
 			$this->mStudentExists = true;
-			$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id, score from users where username = '";
+			//$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id, score from users where username = '";
+			$query2 = "select * from users where username = '";
         		$query2 .= $this->mUsername;
         		$query2 .= "' AND password = '";
         		$query2 .= $this->mPassword;
@@ -124,6 +125,8 @@ public function checkForStudent()
 				//session vars	
 				$_SESSION["user_id"] = $this->mUserID;
 				$_SESSION["school_id"] = $this->mSchoolID;
+
+
 		
 				//send to login data to client
 			}
