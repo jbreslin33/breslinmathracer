@@ -30,10 +30,9 @@ pickItem: function()
 	else 
 	{
 		//lets get first and if its not a dup dont even go in
-                APPLICATION.getFirst();
 		APPLICATION.getMilestonesStandardElement();
-                //APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                //APPLICATION.getFreePassElement(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                APPLICATION.getFirst();
+
 		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		if (APPLICATION.mFirstName == 'Luke' && APPLICATION.mLastName == 'Breslin')
 		{
@@ -53,16 +52,10 @@ pickItem: function()
         			{
         				var r = Math.floor(Math.random()*100);
 
-					//like to add a chance to goto standard of earliest wrong answer and not just wrong answer...
-					//you have a piece of information. Something a student got wrong. 
-					//first use it to clench onto that qeustiontype 
-					//then use it to dig into rest of standard 
-					//then use it to dig into prerequisite standards..and down the rabbit hole we go...
                 			if (r < 50)
                 			{
                         			APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                         			APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
-						//maybe track total wrong percent or total wrong per session and then have this flip to a pre-req standard?? 
                 			}
 					if (r >= 50 && r < 55)
                 			{
