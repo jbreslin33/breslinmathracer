@@ -283,7 +283,7 @@ execute: function(application)
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                	APPLICATION.mMilesonesStandard = APPLICATION.mResponseArray[6];
+                	APPLICATION.mMilestonesStandard = APPLICATION.mResponseArray[6];
 			APPLICATION.log('mMilestonesStandard:' + APPLICATION.mMilestonesStandard);
                 	APPLICATION.mRole = 1;
 		
