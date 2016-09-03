@@ -196,7 +196,7 @@ Extends: Application,
 		this.mProgression = 0;
 		this.mHighest = 0;
 		this.mStandard = '';
-		this.mFreePassStandard = '';
+		this.mMilestonesStandard = '';
 		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';
@@ -1180,8 +1180,8 @@ highestAchieved: function()
 		var s = this.mFirst.split("_");
 		var standard = s[0];  
 
-		this.mFreePassStandard = '6.ee.a.1';
-		standard = this.mFreePassStandard;
+		this.mMilestonesStandard = '6.ee.a.1';
+		standard = this.mMilestonesStandard;
 
                 var tempTypeArray = new Array();
 		tempTypeArray = [];

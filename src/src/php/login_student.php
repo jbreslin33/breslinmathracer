@@ -27,6 +27,7 @@ function __construct($application)
 	$this->mLastName = 0;
 	$this->mUserID = 0;
 	$this->mCoreStandardsID = 0;
+	$this->mMilestonesStandard = 'k.cc.a.1';
 
 	//sessions	
 	$_SESSION["role"] = 1;
@@ -109,6 +110,13 @@ public function checkForStudent()
                 		$room_id = pg_Result($result2, 0, 'room_id');
                 		$team_id = pg_Result($result2, 0, 'team_id');
 
+				$alltimebasicskillskindergarten = pg_Result($result2, 0, 'alltimebasicskillskindergarten'); 
+
+				if ($alltimebasicskillskindergarten == 1)
+				{
+					$this->mMilestonesStandard = '1.oa.a.1';
+				}
+
 				//log in
         			$this->mLoggedIn = 1;
 
@@ -122,11 +130,12 @@ public function checkForStudent()
 				$this->mRoomID = $room_id;
 				$this->mTeamID = $team_id;
 				
+				
 				//session vars	
 				$_SESSION["user_id"] = $this->mUserID;
 				$_SESSION["school_id"] = $this->mSchoolID;
 
-
+				$this->setMilestonesStandard();
 		
 				//send to login data to client
 			}
@@ -143,7 +152,10 @@ public function checkForStudent()
         	}
 	}
 }
+public function setMilestonesStandard()
+{
 
+}
 public function sendLoginStudent()
 {
 	$itemTypesRawDataA = ""; 
@@ -1016,7 +1028,10 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $this->mLastName;
 	$returnString .= ",";
-	$returnString .= $this->mRole;
+	//$returnString .= $this->mRole;
+	$returnString .= $this->mMilestonesStandard;
+//	$this->mMilestonesStandard = 'k.cc.a.1';
+	
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataA;
 	$returnString .= ",";
