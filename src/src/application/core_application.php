@@ -1139,6 +1139,7 @@ highestAchieved: function()
 
 	getMilestonesStandardElement: function()
 	{
+		APPLICATION.log('mMilestonesStandard:' + this.mMilestonesStandard);
 		var i = 0;
 		var milestonesElement = 0;
 		while (i < this.mItemTypesArray.length && milestonesElement == 0)
@@ -1163,6 +1164,8 @@ highestAchieved: function()
 			var tempArray = new Array();
 			var tempArray = [];
 			var j = 0;
+			
+			//fill up 0,1 or 2 elements in tempArray 
 			while (j < this.mItemAttemptsTypeArrayOne.length && tempArray.length < 3)
 			{
 				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
@@ -1171,62 +1174,71 @@ highestAchieved: function()
 				}					
 				j++;
 			}
-			if (tempArray.length < 2)
+			if (i < this.mMilestonesStandardElement)
 			{
-				first = this.mItemTypesArray[i];  
+				APPLICATION.log('a');
+				if (tempArray.length == 0)
+				{
+					APPLICATION.log('b');
+					//do nothing free pass
+				}
+				if (tempArray.length == 1)
+				{
+					APPLICATION.log('c');
+					if (parseInt(tempArray[0]) == 1)
+					{
+						APPLICATION.log('d');
+						//do nothing free pass asked 1 and got it right	
+					}
+					else
+					{
+						APPLICATION.log('e');
+						first = this.mItemTypesArray[i]; //asked once and got it wrong  
+					}
+				}
+				if (tempArray.length > 1)
+				{
+					APPLICATION.log('f');
+					if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
+					{
+						APPLICATION.log('g');
+						//do nothing
+					}		
+					else
+					{
+						APPLICATION.log('h');
+						first = this.mItemTypesArray[i];  
+					}
+				} 
 			}
-			else 
+			else //greater or equal
 			{
-				if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
+				APPLICATION.log('else i greater than element');
+				APPLICATION.log('i');
+				if (tempArray.length < 2)
 				{
-					//do nothing
-				}	
-				else
-				{
+					APPLICATION.log('j');
 					first = this.mItemTypesArray[i];  
 				}
-			} 
+				else //this should not change you got asked twice its right so dont ask wrong ask 
+				{
+					APPLICATION.log('k');
+					if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
+					{
+						APPLICATION.log('l');
+						//do nothing
+					}		
+					else
+					{
+						APPLICATION.log('m');
+						first = this.mItemTypesArray[i];  
+					}
+				} 
+			}
 			i++;
 		}
 		this.mFirst = first;
 	},
-
-        getFreePassElement: function(typesArray,attemptArray,transactionCodeArray)
-        {
-		//get first standard wrong...
-		var s = this.mFirst.split("_");
-		var standard = s[0];  
-
-		this.mMilestonesStandard = '6.ee.a.1';
-		standard = this.mMilestonesStandard;
-
-                var tempTypeArray = new Array();
-		tempTypeArray = [];
-                
-		for (i=0; i < typesArray.length; i++)
-		{
-			if (typesArray[i].includes("" + standard))
-			{
-				tempTypeArray.push(typesArray[i]);
-			}
-		}
-
-		var id = '';
-
-		while(id == '')
-		{
-			var r = Math.floor(Math.random()*tempTypeArray.length);
-                        for (i=0; i < attemptArray.length; i++)
-			{
-				if (attemptArray[i].includes("" + tempTypeArray[r]))
-				{
-					id = tempTypeArray[r];
-				}
-			}
-		}
-                this.mSameStandard = id;
-		APPLICATION.log('this.mSameStandard:' + this.mSameStandard);
-        },
 
         getSameStandard: function(typesArray,attemptArray,transactionCodeArray)
         {

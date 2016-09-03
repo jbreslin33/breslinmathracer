@@ -116,6 +116,8 @@ public function checkForStudent()
 				{
 					$this->mMilestonesStandard = '1.oa.a.1';
 				}
+				//hard_code	
+				$this->mMilestonesStandard = '4.oa.a.1';
 
 				//log in
         			$this->mLoggedIn = 1;
