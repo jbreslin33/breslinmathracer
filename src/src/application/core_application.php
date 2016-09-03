@@ -197,6 +197,7 @@ Extends: Application,
 		this.mHighest = 0;
 		this.mStandard = '';
 		this.mMilestonesStandard = '';
+		this.mMilestonesStandardElement = '';
 		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';
@@ -1134,6 +1135,21 @@ highestAchieved: function()
 		//add_game_C
 
 		this.mGame.setScore(score); 
+	},
+
+	getMilestonesStandardElement: function()
+	{
+		var i = 0;
+		var milestonesElement = 0;
+		while (i < this.mItemTypesArray.length && milestonesElement == 0)
+		{
+			if (this.mItemTypesArray[i].includes("" + this.mMilestonesStandard))
+			{
+				APPLICATION.log('i:' + i);
+				milestonesElement = i;
+			}
+		}
+		
 	},
 
 	getFirst: function()
