@@ -1145,12 +1145,12 @@ highestAchieved: function()
 		{
 			if (this.mItemTypesArray[i].includes("" + this.mMilestonesStandard))
 			{
-				APPLICATION.log('i:' + i);
 				milestonesElement = i;
+				this.mMilestonesStandardElement = milestonesElement;
 			}
 			i++;
 		}
-		
+		APPLICATION.log('el:' + this.mMilestonesStandardElement);
 	},
 
 	getFirst: function()
