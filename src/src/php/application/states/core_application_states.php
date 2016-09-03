@@ -1882,7 +1882,6 @@ public function execute($bapplication)
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	//$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimebasicskillskindergarten');
 
 
 		$bapplication->mCode = 0;
@@ -1895,22 +1894,23 @@ public function execute($bapplication)
 			{  
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
 				//score	
-/*
-        $APPLICATION->mDataArray[] = "101";
-        $APPLICATION->mDataArray[] = $_GET["itemattemptid"];
-        $APPLICATION->mDataArray[] = $_GET["transactioncode"];
-        $APPLICATION->mDataArray[] = $_GET["answer"];
-        $APPLICATION->mDataArray[] = $_GET["highest"];
-*/
 				if ($bapplication->mDataArray[2] == 1)
 				{
 					$bapplication->mEvaluationsAttempt->mScore++;
-					error_log('score update:');
-					error_log($bapplication->mEvaluationsAttempt->mScore);
 				}
 			}
 		}
 		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	error_log('score:');
+	error_log($bapplication->mEvaluationsAttempt->mScore);
+	error_log('score_needed:');
+	error_log($bapplication->mEvaluationsAttempt->mScore_needed);
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'alltimebasicskillskindergarten');
 	}
 }
 public function bexit($bapplication)
