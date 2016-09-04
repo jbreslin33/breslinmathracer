@@ -223,19 +223,50 @@ CREATE TABLE users (
 
 	--k
 	k_cc integer NOT NULL default 0,
-	k_oa_a_4 maketen integer NOT NULL default 0,
+	k_oa_a_4 integer NOT NULL default 0,
         k_oa_a_5 integer NOT NULL default 0,
 
-        alltime integer NOT NULL default 0,
-        alltimeizzy integer NOT NULL default 0,
+	--1
+	--alltimebasicskillsfirst integer NOT NULL default 0,
+        --alltimeproperties integer NOT NULL default 0,
+        --alltimeaddsubtractwithinten integer NOT NULL default 0,
+        g1_oa_b_3 integer NOT NULL default 0,
+        g1_oa_c_6 integer NOT NULL default 0,
+	g1_nbt integer NOT NULL default 0,
+	
+	--2	
+	--alltimebasicskillssecond integer NOT NULL default 0,
+        --alltimeaddsubtractwithintwenty integer NOT NULL default 0,
+        g2_oa_b_2 integer NOT NULL default 0,
+	g2_nbt integer NOT NULL default 0,
+
+	--3
+        --alltimeizzy integer NOT NULL default 0,
+	--alltimebasicskillsthird integer NOT NULL default 0,
+        g3_oa_c_7 integer NOT NULL default 0,
+        g3_nbt integer NOT NULL default 0,
+
+	--4
+	--alltimebasicskillsfourth integer NOT NULL default 0,
+	--alltimebasicskillsfourthbosslevel integer NOT NULL default 0,
+	g4_oa_b_4 integer NOT NULL default 0,
+	g4_nbt_b_4 integer NOT NULL default 0,
+	g4_nbt_b_5 integer NOT NULL default 0,
+	g4_nbt_b_6 integer NOT NULL default 0,
+	g4_nf_b_3_c integer NOT NULL default 0,
+
+	--5
+	--alltimebasicskillsfifth integer NOT NULL default 0,
+	--alltimebasicskillsfifthbosslevel integer NOT NULL default 0,
+	g5_oa_a_1 integer NOT NULL default 0,
+	g5_nbt_b_5 integer NOT NULL default 0,
+	g5_nbt_b_6 integer NOT NULL default 0,
+	g5_nbt_b_7 integer NOT NULL default 0,
+	g5_nf_a_1 integer NOT NULL default 0,
+
+
+	--tables supplemental maybe dont need in user
         alltimesuperizzy integer NOT NULL default 0,
-	alltimebasicskillsfourth integer NOT NULL default 0,
-	alltimebasicskillsfourthbosslevel integer NOT NULL default 0,
-	alltimebasicskillsfifth integer NOT NULL default 0,
-	alltimebasicskillsfifthbosslevel integer NOT NULL default 0,
-	alltimebasicskillsthird integer NOT NULL default 0,
-	alltimebasicskillssecond integer NOT NULL default 0,
-	alltimebasicskillsfirst integer NOT NULL default 0,
         alltimetwo integer NOT NULL default 0,
         alltimethree integer NOT NULL default 0,
         alltimefour integer NOT NULL default 0,
@@ -245,9 +276,11 @@ CREATE TABLE users (
         alltimeeight integer NOT NULL default 0,
         alltimenine integer NOT NULL default 0,
         alltimeten integer NOT NULL default 0,
-        alltimeaddsubtractwithinten integer NOT NULL default 0,
-        alltimeaddsubtractwithintwenty integer NOT NULL default 0,
-        alltimeproperties integer NOT NULL default 0,
+
+ 
+	--not used       
+	alltime integer NOT NULL default 0,
+
         banned_id integer NOT NULL default 0,
         work_it_id text,
 	PRIMARY KEY (id),	
