@@ -211,6 +211,7 @@ CREATE TABLE users (
     	last_name text,
     	core_grades_id integer,
     	core_standards_id text,
+    	core_standards_overide_id text,
     	school_id integer DEFAULT 1, 
     	teacher_id integer DEFAULT 1,
         room_id integer DEFAULT 1,
