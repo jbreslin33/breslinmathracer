@@ -110,39 +110,48 @@ public function checkForStudent()
                 		$room_id = pg_Result($result2, 0, 'room_id');
                 		$team_id = pg_Result($result2, 0, 'team_id');
 
+				$core_standards_overide_id = pg_Result($result2, 0, 'core_standards_overide_id'); 
+
 				$k_cc     = pg_Result($result2, 0, 'k_cc'); 
 				$k_oa_a_4 = pg_Result($result2, 0, 'k_oa_a_4'); 
 				$k_oa_a_5 = pg_Result($result2, 0, 'k_oa_a_5'); 
 
-				$failed_to_pass = false;	
-
-				if ($k_cc == 1 && $failed_to_pass == false)
+				if ($core_standards_overide_id == 0)
 				{
-					$this->mMilestonesStandard = 'k.oa.a.3';
+					$failed_to_pass = false;	
+
+					if ($k_cc == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'k.oa.a.3';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+
+					if ($k_oa_a_4 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'k.oa.a.5';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+
+					if ($k_oa_a_5 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = '1.oa.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					error_log($this->mMilestonesStandard);
 				}
 				else
 				{
-					$failed_to_pass = true;
+					$this->mMilestonesStandard = $core_standards_overide_id;
 				}
-
-				if ($k_oa_a_4 == 1 && $failed_to_pass == false)
-				{
-					$this->mMilestonesStandard = 'k.oa.a.5';
-				}
-				else
-				{
-					$failed_to_pass = true;
-				}
-
-				if ($k_oa_a_5 == 1 && $failed_to_pass == false)
-				{
-					$this->mMilestonesStandard = '1.oa.a.1';
-				}
-				else
-				{
-					$failed_to_pass = true;
-				}
-				error_log($this->mMilestonesStandard);
 
 				//hard_code	
 				//$this->mMilestonesStandard = '4.oa.a.1';
