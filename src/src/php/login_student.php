@@ -110,42 +110,36 @@ public function checkForStudent()
                 		$room_id = pg_Result($result2, 0, 'room_id');
                 		$team_id = pg_Result($result2, 0, 'team_id');
 
-				$alltimebasicskillskindergarten = pg_Result($result2, 0, 'alltimebasicskillskindergarten'); 
-				$alltimebasicskillsmaketen      = pg_Result($result2, 0, 'alltimemaketen'); 
-				$alltimekoaa5                   = pg_Result($result2, 0, 'alltimekoaa5'); 
+				$k_cc     = pg_Result($result2, 0, 'k_cc'); 
+				$k_oa_a_4 = pg_Result($result2, 0, 'k_oa_a_4'); 
+				$k_oa_a_5 = pg_Result($result2, 0, 'k_oa_a_5'); 
 
 				$failed_to_pass = false;	
 
-				if ($alltimebasicskillskindergarten == 1 && $failed_to_pass == false)
+				if ($k_cc == 1 && $failed_to_pass == false)
 				{
-					error_log('A');
 					$this->mMilestonesStandard = 'k.oa.a.3';
 				}
 				else
 				{
-					error_log('B');
 					$failed_to_pass = true;
 				}
 
-				if ($alltimemaketen == 1 && $failed_to_pass == false)
+				if ($k_oa_a_4 == 1 && $failed_to_pass == false)
 				{
-					error_log('C');
 					$this->mMilestonesStandard = 'k.oa.a.5';
 				}
 				else
 				{
-					error_log('D');
 					$failed_to_pass = true;
 				}
 
-				if ($alltimekoaa5 == 1 && $failed_to_pass == false)
+				if ($k_oa_a_5 == 1 && $failed_to_pass == false)
 				{
-					error_log('E');
 					$this->mMilestonesStandard = '1.oa.a.1';
 				}
 				else
 				{
-					error_log('F');
 					$failed_to_pass = true;
 				}
 				error_log($this->mMilestonesStandard);

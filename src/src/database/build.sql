@@ -220,6 +220,12 @@ CREATE TABLE users (
         score integer NOT NULL default 0,
         unmastered integer NOT NULL default 0,
         lesson integer NOT NULL default 1,
+
+	--k
+	k_cc integer NOT NULL default 0,
+	k_oa_a_4 maketen integer NOT NULL default 0,
+        k_oa_a_5 integer NOT NULL default 0,
+
         alltime integer NOT NULL default 0,
         alltimeizzy integer NOT NULL default 0,
         alltimesuperizzy integer NOT NULL default 0,
@@ -230,9 +236,6 @@ CREATE TABLE users (
 	alltimebasicskillsthird integer NOT NULL default 0,
 	alltimebasicskillssecond integer NOT NULL default 0,
 	alltimebasicskillsfirst integer NOT NULL default 0,
-	alltimebasicskillskindergarten integer NOT NULL default 0,
-	alltimemaketen integer NOT NULL default 0,
-        alltimekoaa5 integer NOT NULL default 0,
         alltimetwo integer NOT NULL default 0,
         alltimethree integer NOT NULL default 0,
         alltimefour integer NOT NULL default 0,

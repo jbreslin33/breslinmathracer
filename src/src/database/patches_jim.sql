@@ -26,3 +26,9 @@ update evaluations set progression = 0.6 where id = 13;
 
 
 update evaluations set progression = 10.0 where progression = 0;
+
+
+--renames
+ALTER TABLE users RENAME COLUMN alltimebasicskillskindergarten to k_cc;
+ALTER TABLE users RENAME COLUMN alltimemaketen to k_oa_a_4;
+ALTER TABLE users RENAME COLUMN alltimekoaa5 to k_oa_a_5;
