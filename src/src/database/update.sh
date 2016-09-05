@@ -125,7 +125,7 @@ cat src/sheet/basic_skills_fifth_boss_level_sheet.php >> min.js
 cat src/sheet/basic_skills_third_sheet.php >> min.js
 cat src/sheet/basic_skills_second_sheet.php >> min.js
 cat src/sheet/basic_skills_first_sheet.php >> min.js
-cat src/sheet/basic_skills_kindergarten_sheet.php >> min.js
+cat src/sheet/k_cc_sheet.php >> min.js
 cat src/sheet/make_ten_sheet.php >> min.js
 cat src/sheet/add_subtract_within_ten_sheet.php >> min.js
 cat src/sheet/add_subtract_within_twenty_sheet.php >> min.js

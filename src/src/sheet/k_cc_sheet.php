@@ -1,4 +1,4 @@
-var BasicSkillsKindergartenSheet = new Class(
+var k_cc_Sheet = new Class(
 {
 Extends: Sheet,
 

@@ -2297,7 +2297,7 @@ enter: function(application)
         	application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGame = new BasicSkillsKindergartenGame(APPLICATION);
+        application.mGame = new k_cc_Game(APPLICATION);
 },
 
 execute: function(application)

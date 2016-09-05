@@ -107,7 +107,7 @@
 <script type="text/javascript" src="/src/sheet/basic_skills_third_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_second_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_first_sheet.php"></script>
-<script type="text/javascript" src="/src/sheet/basic_skills_kindergarten_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/k_cc_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/make_ten_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/add_subtract_within_ten_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/add_subtract_within_twenty_sheet.php"></script>
@@ -149,7 +149,7 @@
 <script type="text/javascript" src="/src/core/math/basic_skills_third_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_second_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_first_game.php"></script>
-<script type="text/javascript" src="/src/core/math/basic_skills_kindergarten_game.php"></script>
+<script type="text/javascript" src="/src/core/math/k_cc_game.php"></script>
 <script type="text/javascript" src="/src/core/math/make_ten_game.php"></script>
 <script type="text/javascript" src="/src/core/math/add_subtract_within_ten_game.php"></script>
 <script type="text/javascript" src="/src/core/math/add_subtract_within_twenty_game.php"></script>
