@@ -129,6 +129,16 @@ function __construct()
         $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
+        
+	//K
+        $this->mK_CC_APPLICATION     = new K_CC_APPLICATION    ($this);
+        $this->mK_OA_A_4_APPLICATION = new K_OA_A_4_APPLICATION($this);
+	$this->mK_OA_A_5_APPLICATION = new K_OA_A_5_APPLICATION($this);
+
+
+	//1
+
+
         $this->mTIMES_TABLES_TWO_APPLICATION = new TIMES_TABLES_TWO_APPLICATION        ($this);
         $this->mTIMES_TABLES_THREE_APPLICATION = new TIMES_TABLES_THREE_APPLICATION        ($this);
         $this->mTIMES_TABLES_FOUR_APPLICATION = new TIMES_TABLES_FOUR_APPLICATION        ($this);
@@ -138,7 +148,6 @@ function __construct()
         $this->mTIMES_TABLES_EIGHT_APPLICATION = new TIMES_TABLES_EIGHT_APPLICATION        ($this);
         $this->mTIMES_TABLES_NINE_APPLICATION = new TIMES_TABLES_NINE_APPLICATION        ($this);
         $this->mTIMES_TABLES_THE_IZZY_APPLICATION = new TIMES_TABLES_THE_IZZY_APPLICATION        ($this);
-        $this->mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION        ($this);
         $this->mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION        ($this);
         $this->mTEST_APPLICATION = new TEST_APPLICATION        ($this);
         $this->mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION        ($this);
@@ -152,8 +161,6 @@ function __construct()
         $this->mBASIC_SKILLS_THIRD_APPLICATION = new BASIC_SKILLS_THIRD_APPLICATION        ($this);
         $this->mBASIC_SKILLS_SECOND_APPLICATION = new BASIC_SKILLS_SECOND_APPLICATION        ($this);
         $this->mBASIC_SKILLS_FIRST_APPLICATION = new BASIC_SKILLS_FIRST_APPLICATION        ($this);
-        $this->mK_CC_APPLICATION = new K_CC_APPLICATION        ($this);
-        $this->mK_OA_A_4_APPLICATION = new K_OA_A_4_APPLICATION        ($this);
         $this->mADD_SUBTRACT_WITHIN_TEN_APPLICATION = new ADD_SUBTRACT_WITHIN_TEN_APPLICATION        ($this);
         $this->mADD_SUBTRACT_WITHIN_TWENTY_APPLICATION = new ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION        ($this);
         $this->mPROPERTIES_APPLICATION = new PROPERTIES_APPLICATION        ($this);

@@ -125,8 +125,11 @@ cat src/sheet/basic_skills_fifth_boss_level_sheet.php >> min.js
 cat src/sheet/basic_skills_third_sheet.php >> min.js
 cat src/sheet/basic_skills_second_sheet.php >> min.js
 cat src/sheet/basic_skills_first_sheet.php >> min.js
+
 cat src/sheet/k_cc_sheet.php >> min.js
 cat src/sheet/k_oa_a_4_sheet.php >> min.js
+cat src/sheet/k_oa_a_5_sheet.php >> min.js
+
 cat src/sheet/add_subtract_within_ten_sheet.php >> min.js
 cat src/sheet/add_subtract_within_twenty_sheet.php >> min.js
 cat src/sheet/properties_sheet.php >> min.js
@@ -135,7 +138,6 @@ cat src/sheet/terra_nova_test_sheet.php >> min.js
 cat src/sheet/terra_nova_homework_sheet.php >> min.js
 cat src/sheet/homework_sheet.php >> min.js
 cat src/sheet/test_sheet.php >> min.js
-cat src/sheet/times_tables_addsubtractwithinfive_sheet.php >> min.js
 cat src/sheet/states/states.php >> min.js
 
 cat src/hud/hud.php >> min.js

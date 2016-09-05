@@ -240,6 +240,8 @@ var Item = new Class(
 		//mTimesInfo
                 this.mTimesTablesInfo = new Shape(200,50,125,100,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mTimesTablesInfo);
+
+		//K
 		
 		var optionO = document.createElement("option");
                 optionO.value = 25;
@@ -263,6 +265,18 @@ var Item = new Class(
 		else
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionP);
+		}
+		
+		var optionC = document.createElement("option");
+                optionC.value = 13;
+                optionC.text = 'k_oa_a_5';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionC);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionC);
 		}
 
 		//just fill it here...
@@ -293,17 +307,6 @@ var Item = new Class(
 		}
 	
      
-		var optionC = document.createElement("option");
-                optionC.value = 13;
-                optionC.text = 'Add Subtract within 5';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-                	this.mTimesTablesInfo.mMesh.add(optionC);
-		}
-		else
-		{
-                	this.mTimesTablesInfo.mMesh.appendChild(optionC);
-		}
 		
 		var optionD = document.createElement("option");
                 optionD.value = 14;

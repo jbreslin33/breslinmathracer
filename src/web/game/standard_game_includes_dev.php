@@ -83,6 +83,11 @@
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/normal_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/practice_sheet.php"></script>
+
+<script type="text/javascript" src="/src/sheet/k_cc_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/k_oa_a_4_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/k_oa_a_5_sheet.php"></script>
+
 <script type="text/javascript" src="/src/sheet/times_tables_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_two_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_three_sheet.php"></script>
@@ -98,7 +103,6 @@
 <script type="text/javascript" src="/src/sheet/terra_nova_homework_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/homework_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/test_sheet.php"></script>
-<script type="text/javascript" src="/src/sheet/times_tables_addsubtractwithinfive_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_thesuperizzy_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_fourth_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_fourth_boss_level_sheet.php"></script>
@@ -107,8 +111,8 @@
 <script type="text/javascript" src="/src/sheet/basic_skills_third_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_second_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/basic_skills_first_sheet.php"></script>
-<script type="text/javascript" src="/src/sheet/k_cc_sheet.php"></script>
-<script type="text/javascript" src="/src/sheet/k_oa_a_4_sheet.php"></script>
+
+
 <script type="text/javascript" src="/src/sheet/add_subtract_within_ten_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/add_subtract_within_twenty_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/properties_sheet.php"></script>
@@ -126,6 +130,11 @@
 <script type="text/javascript" src="/src/core/core_game.php"></script>
 <script type="text/javascript" src="/src/core/normal_game.php"></script>
 <script type="text/javascript" src="/src/core/math/practice_game.php"></script>
+
+<script type="text/javascript" src="/src/core/math/k_cc_game.php"></script>
+<script type="text/javascript" src="/src/core/math/k_oa_a_4_game.php"></script>
+<script type="text/javascript" src="/src/core/math/k_oa_a_5_game.php"></script>
+
 <script type="text/javascript" src="/src/core/math/times_tables_two_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_three_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_four_game.php"></script>
@@ -140,7 +149,6 @@
 <script type="text/javascript" src="/src/core/math/terra_nova_homework_game.php"></script>
 <script type="text/javascript" src="/src/core/math/homework_game.php"></script>
 <script type="text/javascript" src="/src/core/math/test_game.php"></script>
-<script type="text/javascript" src="/src/core/math/times_tables_addsubtractwithinfive_game.php"></script>
 <script type="text/javascript" src="/src/core/math/times_tables_thesuperizzy_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_fourth_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_fourth_boss_level_game.php"></script>
@@ -149,8 +157,8 @@
 <script type="text/javascript" src="/src/core/math/basic_skills_third_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_second_game.php"></script>
 <script type="text/javascript" src="/src/core/math/basic_skills_first_game.php"></script>
-<script type="text/javascript" src="/src/core/math/k_cc_game.php"></script>
-<script type="text/javascript" src="/src/core/math/k_oa_a_4_game.php"></script>
+
+
 <script type="text/javascript" src="/src/core/math/add_subtract_within_ten_game.php"></script>
 <script type="text/javascript" src="/src/core/math/add_subtract_within_twenty_game.php"></script>
 <script type="text/javascript" src="/src/core/math/properties_game.php"></script>

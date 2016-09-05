@@ -24,6 +24,27 @@ execute: function(application)
 	{
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);
 	}
+	
+	//K	
+	if (application.mEvaluationsID == 25 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_CC_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mK_CC_APPLICATION);
+	}
+
+	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_4_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mK_OA_A_4_APPLICATION);
+	}
+
+	if (application.mEvaluationsID == 13 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_5_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mK_OA_A_5_APPLICATION);
+	}
+
+
+
+	//1
+
 	if (application.mEvaluationsID == 3 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_TWO_APPLICATION)
 	{
 		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
@@ -59,10 +80,6 @@ execute: function(application)
 	if (application.mEvaluationsID == 12 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THE_IZZY_APPLICATION)
 	{
 		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 13 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION);
 	}
 	if (application.mEvaluationsID == 14 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_APPLICATION)
 	{
@@ -108,15 +125,7 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIRST_APPLICATION);
 	}
-	if (application.mEvaluationsID == 25 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_CC_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mK_CC_APPLICATION);
-	}
-	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_4_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mK_OA_A_4_APPLICATION);
-	}
-	if (application.mEvaluationsID == 27 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mADD_SUBTRACT_WITHIN_TEN_APPLICATION)
+	if (application.mEvaluationsID == 27 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_5_APPLICATION)
 	{
 		application.mCoreStateMachine.changeState(application.mADD_SUBTRACT_WITHIN_TEN_APPLICATION);
 	}
@@ -1819,7 +1828,7 @@ exit: function(application)
 
 });
 
-var TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION = new Class(
+var K_OA_A_5_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -1831,7 +1840,7 @@ enter: function(application)
 {
         if (application.mStateLogs)
         {
-                application.log('APPLICATION::TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION');
+                application.log('APPLICATION::K_OA_A_5_APPLICATION');
         }
 
 	//if already have a game destroy it.
@@ -1840,14 +1849,14 @@ enter: function(application)
         	application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGame = new TimesTablesAddSubtractWithinFiveGame(APPLICATION);
+        application.mGame = new k_oa_a_5_Game(APPLICATION);
 },
 
 execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::TIMES_TABLES_ADD_SUBTRACT_WITHIN_FIVE_APPLICATION execute');
+		application.log('APPLICATION::K_OA_A_5_APPLICATION execute');
 	}
 },
 

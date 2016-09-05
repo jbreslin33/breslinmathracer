@@ -127,7 +127,6 @@ insert into evaluations (description) values ('timestables_9');
 insert into evaluations (description) values ('timestables'); 
 insert into evaluations (description) values ('The Izzy'); 
 insert into evaluations (description) values ('The Super Izzy'); 
-insert into evaluations (description) values ('Add Subtract within 5'); 
 insert into evaluations (description) values ('assessment'); --if you get sometihng wrong in assessment should it be asked next day????? 
 insert into evaluations (description) values ('Basic Skills Fourth'); 
 insert into evaluations (description) values ('Basic Skills Fourth Boss Level'); 
@@ -136,8 +135,12 @@ insert into evaluations (description) values ('Basic Skills Fifth Boss Level');
 insert into evaluations (description) values ('Basic Skills Third'); 
 insert into evaluations (description) values ('Basic Skills Second'); 
 insert into evaluations (description) values ('Basic Skills First'); 
+
+--k
 insert into evaluations (description) values ('k_cc'); 
 insert into evaluations (description) values ('k_oa_a_4'); 
+insert into evaluations (description) values ('k_oa_a_5'); 
+
 insert into evaluations (description) values ('Add Subtract within 10'); 
 insert into evaluations (description) values ('Add Subtract within 20'); 
 insert into evaluations (description) values ('Properites'); 

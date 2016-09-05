@@ -65,3 +65,4 @@ alter table users add g5_nf_a_1 text;
 --rename description in evaluations
 update evaluations set description = 'k_cc' where id = 25;
 update evaluations set description = 'k_oa_a_4' where id = 26;
+update evaluations set description = 'k_oa_a_5' where id = 13;
