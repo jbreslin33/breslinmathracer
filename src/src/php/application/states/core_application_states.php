@@ -127,13 +127,13 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mBASIC_SKILLS_FIRST_APPLICATION);
 	}
-	if ($bapplication->mCode == 25 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mBASIC_SKILLS_KINDERGARTEN_APPLICATION)
+	if ($bapplication->mCode == 25 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mK_CC_APPLICATION)
 	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mBASIC_SKILLS_KINDERGARTEN_APPLICATION);
+		$bapplication->mCoreStateMachine->changeState($bapplication->mK_CC_APPLICATION);
 	}
-	if ($bapplication->mCode == 26 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mMAKE_TEN_APPLICATION)
+	if ($bapplication->mCode == 26 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mK_OA_A_4_APPLICATION)
 	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mMAKE_TEN_APPLICATION);
+		$bapplication->mCoreStateMachine->changeState($bapplication->mK_OA_A_4_APPLICATION);
 	}
 	if ($bapplication->mCode == 27 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mADD_SUBTRACT_WITHIN_TEN_APPLICATION)
 	{
@@ -1847,7 +1847,7 @@ public function bexit($bapplication)
 
 }//end class
 
-class BASIC_SKILLS_KINDERGARTEN_APPLICATION extends State
+class K_CC_APPLICATION extends State
 {
 
 function __construct()
@@ -1859,7 +1859,7 @@ public function enter($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('BASIC_SKILLS_KINDERGARTEN_APPLICATION Enter');
+                error_log('K_CC_APPLICATION Enter');
         }
 
         $evaluationsAttempt = new EvaluationsAttempts($bapplication,25,$bapplication->mDataArray[4]);
@@ -1875,15 +1875,12 @@ public function execute($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('BASIC_SKILLS_KINDERGARTEN_APPLICATION Execute');
+                error_log('K_CC_APPLICATION Execute');
         }
 	if ($bapplication->mCode == 25)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-
-
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -1904,26 +1901,22 @@ public function execute($bapplication)
 	}
 
 	//did you pass milestone?
-	error_log('score:');
-	error_log($bapplication->mEvaluationsAttempt->mScore);
-	error_log('score_needed:');
-	error_log($bapplication->mEvaluationsAttempt->mScore_needed);
 	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
 	{
-        	$bapplication->mNormal->updateScores(1,'alltimebasicskillskindergarten');
+        	$bapplication->mNormal->updateScores(1,'k_cc');
 	}
 }
 public function bexit($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('BASIC_SKILLS_KINDERGARTEN_APPLICATION Exit');
+                error_log('K_CC_APPLICATION Exit');
         }
 }
 
 }//end class
 
-class MAKE_TEN_APPLICATION extends State
+class K_OA_A_4_APPLICATION extends State
 {
 
 function __construct()
@@ -1935,7 +1928,7 @@ public function enter($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('MAKE_TEN_APPLICATION Enter');
+                error_log('K_OA_A_4_APPLICATION Enter');
         }
 
         $evaluationsAttempt = new EvaluationsAttempts($bapplication,26,$bapplication->mDataArray[4]);
@@ -1951,14 +1944,12 @@ public function execute($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('MAKE_TEN_APPLICATION Execute');
+                error_log('K_OA_A_4_APPLICATION Execute');
         }
 	if ($bapplication->mCode == 26)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimemaketen');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -1968,16 +1959,27 @@ public function execute($bapplication)
 			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
 			{  
 				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+				}
 			}
 		}
 		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'k_oa_a_4');
 	}
 }
 public function bexit($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('MAKE_TEN_APPLICATION Exit');
+                error_log('K_OA_A_4_APPLICATION Exit');
         }
 }
 

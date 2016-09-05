@@ -1,4 +1,4 @@
-var MakeTenSheet = new Class(
+var k_oa_a_4_Sheet = new Class(
 {
 Extends: Sheet,
 

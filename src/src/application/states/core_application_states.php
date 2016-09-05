@@ -112,9 +112,9 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mK_CC_APPLICATION);
 	}
-	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mMAKE_TEN_APPLICATION)
+	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_4_APPLICATION)
 	{
-		application.mCoreStateMachine.changeState(application.mMAKE_TEN_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mK_OA_A_4_APPLICATION);
 	}
 	if (application.mEvaluationsID == 27 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mADD_SUBTRACT_WITHIN_TEN_APPLICATION)
 	{
@@ -2314,7 +2314,7 @@ exit: function(application)
 
 });
 
-var MAKE_TEN_APPLICATION = new Class(
+var K_OA_A_4_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -2326,7 +2326,7 @@ enter: function(application)
 {
         if (application.mStateLogs)
         {
-                application.log('APPLICATION::MAKE_TEN_APPLICATION');
+                application.log('APPLICATION::K_OA_A_4_APPLICATION');
         }
 
 	//if already have a game destroy it.
@@ -2335,14 +2335,14 @@ enter: function(application)
         	application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGame = new MakeTenGame(APPLICATION);
+        application.mGame = new k_oa_a_4_Game(APPLICATION);
 },
 
 execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::MAKE_TEN_APPLICATION execute');
+		application.log('APPLICATION::K_OA_A_4_APPLICATION execute');
 	}
 },
 
