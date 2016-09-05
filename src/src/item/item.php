@@ -240,6 +240,18 @@ var Item = new Class(
 		//mTimesInfo
                 this.mTimesTablesInfo = new Shape(200,50,125,100,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mTimesTablesInfo);
+		
+		var optionO = document.createElement("option");
+                optionO.value = 25;
+                optionO.text = 'k_cc';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionO);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionO);
+		}
 
 		//just fill it here...
 		for (i=2; i < 10; i++)
@@ -413,17 +425,6 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
 		}
 		
-		var optionO = document.createElement("option");
-                optionO.value = 25;
-                optionO.text = 'Basic Skills Kindergarten';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionO);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionO);
-		}
 		
 		var optionP = document.createElement("option");
                 optionP.value = 26;

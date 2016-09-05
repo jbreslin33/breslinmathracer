@@ -62,4 +62,5 @@ alter table users add g5_nbt_b_6 text;
 alter table users add g5_nbt_b_7 text;
 alter table users add g5_nf_a_1 text;
 
-
+--rename description in evaluations
+update evaluations set description = 'k_cc' where id = 25;

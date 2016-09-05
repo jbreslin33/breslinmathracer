@@ -108,9 +108,9 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIRST_APPLICATION);
 	}
-	if (application.mEvaluationsID == 25 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_KINDERGARTEN_APPLICATION)
+	if (application.mEvaluationsID == 25 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_CC_APPLICATION)
 	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_KINDERGARTEN_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mK_CC_APPLICATION);
 	}
 	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mMAKE_TEN_APPLICATION)
 	{
@@ -2276,7 +2276,7 @@ exit: function(application)
 
 });
 
-var BASIC_SKILLS_KINDERGARTEN_APPLICATION = new Class(
+var K_CC_APPLICATION = new Class(
 {
 Extends: State,
 
@@ -2288,7 +2288,7 @@ enter: function(application)
 {
         if (application.mStateLogs)
         {
-                application.log('APPLICATION::BASIC_SKILLS_KINDERGARTEN_APPLICATION');
+                application.log('APPLICATION::K_CC_APPLICATION');
         }
 
 	//if already have a game destroy it.
@@ -2304,7 +2304,7 @@ execute: function(application)
 {
 	if (application.mStateLogsExecute)
 	{
-		application.log('APPLICATION::BASIC_SKILLS_KINDERGARTEN_APPLICATION execute');
+		application.log('APPLICATION::K_CC_APPLICATION execute');
 	}
 },
 

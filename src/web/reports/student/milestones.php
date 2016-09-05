@@ -45,7 +45,7 @@ echo "<br>";
 echo '<table border=\"1\">';
         echo '<tr>';
 
-        echo '<td> Basic Skills Kindergarten';
+        echo '<td> k_cc';
         echo '</td>';
         echo '<td> Make Ten';
         echo '</td>';

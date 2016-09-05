@@ -136,7 +136,7 @@ insert into evaluations (description) values ('Basic Skills Fifth Boss Level');
 insert into evaluations (description) values ('Basic Skills Third'); 
 insert into evaluations (description) values ('Basic Skills Second'); 
 insert into evaluations (description) values ('Basic Skills First'); 
-insert into evaluations (description) values ('Basic Skills Kindergarten'); 
+insert into evaluations (description) values ('k_cc'); 
 insert into evaluations (description) values ('Make Ten'); 
 insert into evaluations (description) values ('Add Subtract within 10'); 
 insert into evaluations (description) values ('Add Subtract within 20'); 
