@@ -252,6 +252,18 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionO);
 		}
+		
+		var optionP = document.createElement("option");
+                optionP.value = 26;
+                optionP.text = 'k_oa_a_4';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionP);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionP);
+		}
 
 		//just fill it here...
 		for (i=2; i < 10; i++)
@@ -426,17 +438,6 @@ var Item = new Class(
 		}
 		
 		
-		var optionP = document.createElement("option");
-                optionP.value = 26;
-                optionP.text = 'Make Ten';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionP);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionP);
-		}
 		
 		var optionQ = document.createElement("option");
                 optionQ.value = 27;
