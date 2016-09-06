@@ -114,51 +114,51 @@ insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades
 insert into core_domains_subjects_grades(id,core_domains_id,core_subjects_grades_id) values (43,10,17); -- 8.sp
 
 --ITEM_MODE: 
-insert into evaluations (description) values ('normal'); 
-insert into evaluations (description) values ('practice'); 
+insert into evaluations (id,description) values (1,'normal'); 
+insert into evaluations (id,description) values (2,'practice'); 
 
 --tables
-insert into evaluations (description) values ('timestables_2'); 
-insert into evaluations (description) values ('timestables_3'); 
-insert into evaluations (description) values ('timestables_4'); 
-insert into evaluations (description) values ('timestables_5'); 
-insert into evaluations (description) values ('timestables_6'); 
-insert into evaluations (description) values ('timestables_7'); 
-insert into evaluations (description) values ('timestables_8'); 
-insert into evaluations (description) values ('timestables_9'); 
-insert into evaluations (description) values ('timestables'); 
-insert into evaluations (description) values ('The Super Izzy'); 
+insert into evaluations (id,description) values (3,'timestables_2'); 
+insert into evaluations (id,description) values (4,'timestables_3'); 
+insert into evaluations (id,description) values (5,'timestables_4'); 
+insert into evaluations (id,description) values (6,'timestables_5'); 
+insert into evaluations (id,description) values (7,'timestables_6'); 
+insert into evaluations (id,description) values (8,'timestables_7'); 
+insert into evaluations (id,description) values (9,'timestables_8'); 
+insert into evaluations (id,description) values (10,'timestables_9'); 
+--insert into evaluations (id,description) values (12,'timestables'); 
+insert into evaluations (id,description) values (19,'The Super Izzy'); 
 
 
 --k
-insert into evaluations (description) values ('k_cc'); 
-insert into evaluations (description) values ('k_oa_a_4'); 
-insert into evaluations (description) values ('k_oa_a_5'); 
+insert into evaluations (id,description) values (25,'k_cc'); 
+insert into evaluations (id,description) values (26,'k_oa_a_4'); 
+insert into evaluations (id,description) values (13,'k_oa_a_5'); 
 
 --1
-insert into evaluations (description) values ('1_oa_b_3'); 
-insert into evaluations (description) values ('1_oa_c_6'); 
-insert into evaluations (description) values ('1_nbt'); 
+insert into evaluations (id,description) values (29,'1_oa_b_3'); 
+insert into evaluations (id,description) values (27,'1_oa_c_6'); 
+insert into evaluations (id,description) values (24,'1_nbt'); 
 
 --2
-insert into evaluations (description) values ('2_oa_b_2'); 
-insert into evaluations (description) values ('2_nbt'); 
+insert into evaluations (id,description) values (28,'2_oa_b_2'); 
+insert into evaluations (id,description) values (23,'2_nbt'); 
 
 --3
-insert into evaluations (description) values ('3_oa_c_7'); 
-insert into evaluations (description) values ('3_nbt'); 
+insert into evaluations (id,description) values (12,'3_oa_c_7'); 
+insert into evaluations (id,description) values (22,'3_nbt'); 
 
 --4
-insert into evaluations (description) values ('Basic Skills Fourth'); 
-insert into evaluations (description) values ('Basic Skills Fourth Boss Level'); 
+insert into evaluations (id,description) values (20,'Basic Skills Fourth'); 
+insert into evaluations (id,description) values (30,'Basic Skills Fourth Boss Level'); 
 
 --5
-insert into evaluations (description) values ('Basic Skills Fifth'); 
-insert into evaluations (description) values ('Basic Skills Fifth Boss Level'); 
+insert into evaluations (id,description) values (21,'Basic Skills Fifth'); 
+insert into evaluations (id,description) values (31,'Basic Skills Fifth Boss Level'); 
 
 --tests
 
-insert into evaluations (description) values ('assessment'); --if you get sometihng wrong in assessment should it be asked next day????? 
+--insert into evaluations (id,description) values ('assessment'); --if you get sometihng wrong in assessment should it be asked next day????? 
 --insert into evaluations (description) values ('homework');  could be tables could be last 10 etc  30 probs 
 --insert into evaluations (description) values ('quiz'); -- 10 questions mtwr 40 mondays 
 --insert into evaluations (description) values ('test'); -- 30 questions friday weekend     
