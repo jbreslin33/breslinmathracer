@@ -107,6 +107,7 @@ cat src/item/states/states.php >> min.js
 cat src/sheet/sheet.php >> min.js
 cat src/sheet/normal_sheet.php >> min.js
 cat src/sheet/practice_sheet.php >> min.js
+
 cat src/sheet/times_tables_sheet.php >> min.js
 cat src/sheet/times_tables_two_sheet.php >> min.js
 cat src/sheet/times_tables_three_sheet.php >> min.js
@@ -116,28 +117,34 @@ cat src/sheet/times_tables_six_sheet.php >> min.js
 cat src/sheet/times_tables_seven_sheet.php >> min.js
 cat src/sheet/times_tables_eight_sheet.php >> min.js
 cat src/sheet/times_tables_nine_sheet.php >> min.js
-cat src/sheet/times_tables_theizzy_sheet.php >> min.js
 cat src/sheet/times_tables_thesuperizzy_sheet.php >> min.js
-cat src/sheet/basic_skills_fourth_sheet.php >> min.js
-cat src/sheet/basic_skills_fourth_boss_level_sheet.php >> min.js
-cat src/sheet/basic_skills_fifth_sheet.php >> min.js
-cat src/sheet/basic_skills_fifth_boss_level_sheet.php >> min.js
-cat src/sheet/basic_skills_third_sheet.php >> min.js
-cat src/sheet/basic_skills_second_sheet.php >> min.js
-cat src/sheet/basic_skills_first_sheet.php >> min.js
 
 cat src/sheet/k_cc_sheet.php >> min.js
 cat src/sheet/k_oa_a_4_sheet.php >> min.js
 cat src/sheet/k_oa_a_5_sheet.php >> min.js
 
-cat src/sheet/add_subtract_within_ten_sheet.php >> min.js
-cat src/sheet/add_subtract_within_twenty_sheet.php >> min.js
-cat src/sheet/properties_sheet.php >> min.js
+cat src/sheet/g1_oa_b_3_sheet.php >> min.js
+cat src/sheet/g1_oa_c_6_sheet.php >> min.js
+cat src/sheet/g1_nbt_sheet.php >> min.js
+
+cat src/sheet/g2_oa_b_2_sheet.php >> min.js
+cat src/sheet/g2_nbt_sheet.php >> min.js
+
+cat src/sheet/g3_oa_c_7_sheet.php >> min.js
+cat src/sheet/g3_nbt_sheet.php >> min.js
+
+cat src/sheet/basic_skills_fourth_sheet.php >> min.js
+cat src/sheet/basic_skills_fourth_boss_level_sheet.php >> min.js
+
+cat src/sheet/basic_skills_fifth_sheet.php >> min.js
+cat src/sheet/basic_skills_fifth_boss_level_sheet.php >> min.js
+
 cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/terra_nova_test_sheet.php >> min.js
 cat src/sheet/terra_nova_homework_sheet.php >> min.js
 cat src/sheet/homework_sheet.php >> min.js
 cat src/sheet/test_sheet.php >> min.js
+
 cat src/sheet/states/states.php >> min.js
 
 cat src/hud/hud.php >> min.js

@@ -227,16 +227,16 @@ CREATE TABLE users (
         k_oa_a_5 integer NOT NULL default 0,
 
 	--1
-	--alltimebasicskillsfirst integer NOT NULL default 0,
         --alltimeproperties integer NOT NULL default 0,
         --alltimeaddsubtractwithinten integer NOT NULL default 0,
+	--alltimebasicskillsfirst integer NOT NULL default 0,
         g1_oa_b_3 integer NOT NULL default 0,
         g1_oa_c_6 integer NOT NULL default 0,
 	g1_nbt integer NOT NULL default 0,
 	
 	--2	
-	--alltimebasicskillssecond integer NOT NULL default 0,
         --alltimeaddsubtractwithintwenty integer NOT NULL default 0,
+	--alltimebasicskillssecond integer NOT NULL default 0,
         g2_oa_b_2 integer NOT NULL default 0,
 	g2_nbt integer NOT NULL default 0,
 

@@ -1,4 +1,4 @@
-var BasicSkillsFirstSheet = new Class(
+var g1_nbt_Sheet = new Class(
 {
 Extends: Sheet,
 

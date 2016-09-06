@@ -1,4 +1,4 @@
-var BasicSkillsThirdSheet = new Class(
+var g2_nbt_Sheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,6 +6,23 @@ initialize: function(game)
 {
 	this.parent(game);
 	
+	this.mIDArray.push('2.nbt.b.5_1');
+	this.mIDArray.push('2.nbt.b.5_2');
+	this.mIDArray.push('2.nbt.b.5_3');
+	this.mIDArray.push('2.nbt.b.5_4');
+	this.mIDArray.push('2.nbt.b.5_5');
+
+	this.mIDArray.push('2.nbt.b.6_1');
+	this.mIDArray.push('2.nbt.b.6_2');
+	
+	//addition subtraction within 1000
+	this.mIDArray.push('2.nbt.b.7_16');
+	this.mIDArray.push('2.nbt.b.7_17');
+	this.mIDArray.push('2.nbt.b.7_18');
+	this.mIDArray.push('2.nbt.b.7_19');
+	this.mIDArray.push('2.nbt.b.7_20');
+	this.mIDArray.push('2.nbt.b.7_21');
+
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
@@ -55,7 +72,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(22);
+                itemAttempt.setEvaluationsID(23);
         }
         else
         {

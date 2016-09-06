@@ -44,7 +44,72 @@ execute: function(application)
 
 
 	//1
+	if (application.mEvaluationsID == 29 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG1_OA_B_3_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG1_OA_B_3_APPLICATION);
+	}
 
+	if (application.mEvaluationsID == 27 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG1_OA_C_6_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG1_OA_C_6_APPLICATION);
+	}
+
+	if (application.mEvaluationsID == 24 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG1_NBT_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG1_NBT_APPLICATION);
+	}
+
+
+	//2
+	if (application.mEvaluationsID == 28 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG2_OA_B_2_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG2_OA_B_2_APPLICATION);
+	}
+
+	if (application.mEvaluationsID == 23 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG2_NBT_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG2_NBT_APPLICATION);
+	}
+
+
+	//3
+	if (application.mEvaluationsID == 12 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG3_OA_C_7_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG3_OA_C_7_APPLICATION);
+	}
+
+	if (application.mEvaluationsID == 22 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG3_NBT_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG3_NBT_APPLICATION);
+	}
+	
+	
+	//4
+	if (application.mEvaluationsID == 20 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FOURTH_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FOURTH_APPLICATION);
+	}
+	
+	if (application.mEvaluationsID == 30 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION);
+	}
+
+
+	//5
+	if (application.mEvaluationsID == 21 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIFTH_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIFTH_APPLICATION);
+	}
+
+	if (application.mEvaluationsID == 31 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION);
+	}
+
+
+
+	//TABLES
 	if (application.mEvaluationsID == 3 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_TWO_APPLICATION)
 	{
 		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_TWO_APPLICATION);
@@ -77,10 +142,12 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_NINE_APPLICATION);
 	}
-	if (application.mEvaluationsID == 12 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THE_IZZY_APPLICATION)
+	if (application.mEvaluationsID == 19 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION)
 	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_IZZY_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION);
 	}
+
+	//TESTS
 	if (application.mEvaluationsID == 14 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_APPLICATION)
 	{
 		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_APPLICATION);
@@ -101,51 +168,7 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_HOMEWORK_APPLICATION);
 	}
-	if (application.mEvaluationsID == 19 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 20 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FOURTH_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FOURTH_APPLICATION);
-	}
-	if (application.mEvaluationsID == 21 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIFTH_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIFTH_APPLICATION);
-	}
-	if (application.mEvaluationsID == 22 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_THIRD_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_THIRD_APPLICATION);
-	}
-	if (application.mEvaluationsID == 23 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_SECOND_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_SECOND_APPLICATION);
-	}
-	if (application.mEvaluationsID == 24 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIRST_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIRST_APPLICATION);
-	}
-	if (application.mEvaluationsID == 27 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_5_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mADD_SUBTRACT_WITHIN_TEN_APPLICATION);
-	}
-	if (application.mEvaluationsID == 28 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mADD_SUBTRACT_WITHIN_TWENTY_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mADD_SUBTRACT_WITHIN_TWENTY_APPLICATION);
-	}
-	if (application.mEvaluationsID == 29 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mPROPERTIES_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mPROPERTIES_APPLICATION);
-	}
-	if (application.mEvaluationsID == 30 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION);
-	}
-	if (application.mEvaluationsID == 31 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION);
-	}
-	//add_game_D
+
 },
 
 exit: function(application)
@@ -1486,6 +1509,402 @@ exit: function(application)
 
 });
 
+//K
+
+var K_CC_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::K_CC_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new k_cc_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::K_CC_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var K_OA_A_4_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::K_OA_A_4_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new k_oa_a_4_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::K_OA_A_4_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var K_OA_A_5_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::K_OA_A_5_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new k_oa_a_5_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::K_OA_A_5_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+//1
+
+var G1_OA_B_3_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G1_OA_B_3_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g1_oa_b_3_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G1_OA_B_3_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G1_OA_C_6_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G1_OA_C_6_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g1_oa_c_6_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G1_OA_C_6_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G1_NBT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G1_NBT_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g1_nbt_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G1_NBT_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+//2
+
+var G2_OA_B_2_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G2_OA_B_2_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g2_oa_b_2_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G2_OA_B_2_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G2_NBT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G2_NBT_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g2_nbt_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G2_NBT_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+
+//3
+
+var G3_OA_C_7_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G3_OA_C_7_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g3_oa_c_7_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G3_OA_C_7_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G3_NBT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G3_NBT_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g3_nbt_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G3_NBT_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+
+//TABLES
+
 var TIMES_TABLES_TWO_APPLICATION = new Class(
 {
 Extends: State,
@@ -1790,81 +2209,6 @@ exit: function(application)
 
 });
 
-var TIMES_TABLES_THE_IZZY_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::TIMES_TABLES_THE_IZZY_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new TimesTablesTheIzzyGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::TIMES_TABLES_THE_IZZY_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var K_OA_A_5_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::K_OA_A_5_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new k_oa_a_5_Game(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::K_OA_A_5_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
 
 var TERRA_NOVA_APPLICATION = new Class(
 {
@@ -2171,309 +2515,7 @@ exit: function(application)
 
 });
 
-var BASIC_SKILLS_THIRD_APPLICATION = new Class(
-{
-Extends: State,
 
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_THIRD_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsThirdGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::BASIC_SKILLS_THIRD_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var BASIC_SKILLS_SECOND_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_SECOND_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsSecondGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::BASIC_SKILLS_SECOND_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var BASIC_SKILLS_FIRST_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FIRST_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsFirstGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::BASIC_SKILLS_FIRST_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var K_CC_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::K_CC_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new k_cc_Game(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::K_CC_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var K_OA_A_4_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::K_OA_A_4_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new k_oa_a_4_Game(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::K_OA_A_4_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var ADD_SUBTRACT_WITHIN_TEN_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::ADD_SUBTRACT_WITHIN_TEN_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new AddSubtractWithinTenGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::ADD_SUBTRACT_WITHIN_TEN_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new AddSubtractWithinTwentyGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var PROPERTIES_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::PROPERTIES_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new PropertiesGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::PROPERTIES_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
 
 var BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION = new Class(
 {

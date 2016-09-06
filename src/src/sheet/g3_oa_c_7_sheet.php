@@ -1,4 +1,4 @@
-var TimesTablesTheIzzySheet = new Class(
+var g3_oa_c_7_Sheet = new Class(
 {
 Extends: Sheet,
 

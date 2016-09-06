@@ -63,6 +63,21 @@ alter table users add g5_nbt_b_7 text;
 alter table users add g5_nf_a_1 text;
 
 --rename description in evaluations
+--k
 update evaluations set description = 'k_cc' where id = 25;
 update evaluations set description = 'k_oa_a_4' where id = 26;
 update evaluations set description = 'k_oa_a_5' where id = 13;
+
+--1
+update evaluations set description = '1_oa_b_3' where id = 29;
+update evaluations set description = '1_oa_c_6' where id = 27;
+update evaluations set description = '1_nbt' where id = 24;
+
+--2
+update evaluations set description = '2_oa_b_2' where id = 28;
+update evaluations set description = '2_nbt' where id = 23;
+
+--3
+update evaluations set description = '3_oa_c_7' where id = 12;
+update evaluations set description = '3_nbt' where id = 22;
+

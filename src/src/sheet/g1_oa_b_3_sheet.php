@@ -1,4 +1,4 @@
-var AddSubtractWithinTwentySheet = new Class(
+var g1_oa_b_3_Sheet = new Class(
 {
 Extends: Sheet,
 
@@ -10,7 +10,7 @@ initialize: function(game)
 
 	for (i = 1; i < 37; i++)
 	{
-        	this.mIDArray.push('2.oa.b.2_' + i); 
+        	this.mIDArray.push('1.oa.b.3_' + i); 
 	}
 	
 	this.mCurrentElement = 0;
@@ -62,7 +62,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(28);
+                itemAttempt.setEvaluationsID(29);
         }
         else
         {

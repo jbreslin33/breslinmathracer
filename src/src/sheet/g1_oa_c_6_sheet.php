@@ -1,4 +1,4 @@
-var AddSubtractWithinTenSheet = new Class(
+var g1_oa_c_6_Sheet = new Class(
 {
 Extends: Sheet,
 

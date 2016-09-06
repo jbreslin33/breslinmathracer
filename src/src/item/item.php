@@ -279,6 +279,152 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionC);
 		}
 
+		//1
+		
+		var optionS = document.createElement("option");
+                optionS.value = 29;
+                optionS.text = '1_oa_b_3';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionS);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionS);
+		}
+		
+		var optionQ = document.createElement("option");
+                optionQ.value = 27;
+                optionQ.text = '1_oa_c_6';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionQ);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionQ);
+		}
+		
+		var optionN = document.createElement("option");
+                optionN.value = 24;
+                optionN.text = '1_nbt';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionN);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
+		}
+
+		//2
+
+
+		var optionR = document.createElement("option");
+                optionR.value = 28;
+                optionR.text = '2_oa_b_2';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionR);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionR);
+		}
+		
+		var optionM = document.createElement("option");
+                optionM.value = 23;
+                optionM.text = '2_nbt';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionM);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionM);
+		}
+
+
+		//3
+
+		var optionB = document.createElement("option");
+                optionB.value = 12;
+                optionB.text = '3_oa_c_7';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionB);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
+		}
+		
+		var optionL = document.createElement("option");
+                optionL.value = 22;
+                optionL.text = '3_nbt';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionL);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionL);
+		}
+
+
+
+		//4
+
+		var optionJ = document.createElement("option");
+                optionJ.value = 20;
+                optionJ.text = 'Basic Skills Fourth';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionJ);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionJ);
+		}
+                
+		var optionT = document.createElement("option");
+                optionT.value = 30;
+                optionT.text = 'Basic Skills Fourth Boss Level';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionT);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionT);
+                }
+
+		//5
+
+                var optionU = document.createElement("option");
+                optionU.value = 31;
+                optionU.text = 'Basic Skills Fifth Boss Level';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionU);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionU);
+                }
+		
+		var optionK = document.createElement("option");
+                optionK.value = 21;
+                optionK.text = 'Basic Skills Fifth';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionK);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionK);
+		}
+
 		//just fill it here...
 		for (i=2; i < 10; i++)
 		{
@@ -294,17 +440,7 @@ var Item = new Class(
                 		this.mTimesTablesInfo.mMesh.appendChild(option);
 			}
 		}
-		var optionB = document.createElement("option");
-                optionB.value = 12;
-                optionB.text = 'The Izzy';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionB);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
-		}
+
 	
      
 		
@@ -380,129 +516,7 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionI);
 		}
 		
-		var optionJ = document.createElement("option");
-                optionJ.value = 20;
-                optionJ.text = 'Basic Skills Fourth';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionJ);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionJ);
-		}
 		
-		var optionK = document.createElement("option");
-                optionK.value = 21;
-                optionK.text = 'Basic Skills Fifth';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionK);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionK);
-		}
-		
-		var optionL = document.createElement("option");
-                optionL.value = 22;
-                optionL.text = 'Basic Skills Third';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionL);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionL);
-		}
-		
-		var optionM = document.createElement("option");
-                optionM.value = 23;
-                optionM.text = 'Basic Skills Second';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionM);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionM);
-		}
-		
-		var optionN = document.createElement("option");
-                optionN.value = 24;
-                optionN.text = 'Basic Skills First';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionN);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
-		}
-		
-		
-		
-		var optionQ = document.createElement("option");
-                optionQ.value = 27;
-                optionQ.text = 'Add Subtract Within 10';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionQ);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionQ);
-		}
-
-		var optionR = document.createElement("option");
-                optionR.value = 28;
-                optionR.text = 'Add Subtract Within 20';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionR);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionR);
-		}
-		
-		var optionS = document.createElement("option");
-                optionS.value = 29;
-                optionS.text = 'Properties';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionS);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionS);
-		}
-
-                var optionT = document.createElement("option");
-                optionT.value = 30;
-                optionT.text = 'Basic Skills Fourth Boss Level';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTimesTablesInfo.mMesh.add(optionT);
-                }
-                else
-                {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionT);
-                }
-
-                var optionU = document.createElement("option");
-                optionU.value = 31;
-                optionU.text = 'Basic Skills Fifth Boss Level';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTimesTablesInfo.mMesh.add(optionU);
-                }
-                else
-                {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionU);
-                }
-
-
 
 		//add_game_J	
 

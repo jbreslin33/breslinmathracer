@@ -247,6 +247,27 @@ Extends: Application,
 		this.mK_CC_APPLICATION = new K_CC_APPLICATION      (this);
                 this.mK_OA_A_4_APPLICATION = new K_OA_A_4_APPLICATION      (this);
                 this.mK_OA_A_5_APPLICATION = new K_OA_A_5_APPLICATION      (this);
+
+		//1
+                this.mG1_OA_B_3_APPLICATION = new G1_OA_B_3_APPLICATION      (this);
+                this.mG1_OA_C_6_APPLICATION = new G1_OA_C_6_APPLICATION      (this);
+                this.mG1_NBT_APPLICATION = new G1_NBT_APPLICATION      (this);
+
+		//2
+                this.mG2_OA_B_2_APPLICATION = new G2_OA_B_2_APPLICATION      (this);
+                this.mG2_NBT_APPLICATION = new G2_NBT_APPLICATION      (this);
+
+		//3
+                this.mG3_OA_C_7_APPLICATION = new G3_OA_C_7_APPLICATION      (this);
+                this.mG3_NBT_APPLICATION = new G3_NBT_APPLICATION      (this);
+
+		//4
+                this.mBASIC_SKILLS_FOURTH_APPLICATION = new BASIC_SKILLS_FOURTH_APPLICATION      (this);
+                this.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION      (this);
+
+		//5
+                this.mBASIC_SKILLS_FIFTH_APPLICATION = new BASIC_SKILLS_FIFTH_APPLICATION      (this);
+                this.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION      (this);
 	
 		//tables
                 this.mTIMES_TABLES_TWO_APPLICATION      = new TIMES_TABLES_TWO_APPLICATION      (this);
@@ -257,26 +278,15 @@ Extends: Application,
                 this.mTIMES_TABLES_SEVEN_APPLICATION    = new TIMES_TABLES_SEVEN_APPLICATION      (this);
                 this.mTIMES_TABLES_EIGHT_APPLICATION    = new TIMES_TABLES_EIGHT_APPLICATION      (this);
                 this.mTIMES_TABLES_NINE_APPLICATION     = new TIMES_TABLES_NINE_APPLICATION      (this);
-                this.mTIMES_TABLES_THE_IZZY_APPLICATION = new TIMES_TABLES_THE_IZZY_APPLICATION      (this);
-                this.mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION      (this);
+                this.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new TIMES_TABLES_THE_SUPER_IZZY_APPLICATION      (this);
+
+               	//tests 
+		this.mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION      (this);
                 this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
                 this.mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION      (this);
                 this.mHOMEWORK_APPLICATION = new HOMEWORK_APPLICATION      (this);
                 this.mTERRA_NOVA_HOMEWORK_APPLICATION = new TERRA_NOVA_HOMEWORK_APPLICATION      (this);
-                this.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new TIMES_TABLES_THE_SUPER_IZZY_APPLICATION      (this);
-                this.mBASIC_SKILLS_FOURTH_APPLICATION = new BASIC_SKILLS_FOURTH_APPLICATION      (this);
-                this.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION      (this);
-                this.mBASIC_SKILLS_FIFTH_APPLICATION = new BASIC_SKILLS_FIFTH_APPLICATION      (this);
-                this.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION      (this);
-                this.mBASIC_SKILLS_THIRD_APPLICATION = new BASIC_SKILLS_THIRD_APPLICATION      (this);
-                this.mBASIC_SKILLS_SECOND_APPLICATION = new BASIC_SKILLS_SECOND_APPLICATION      (this);
-                this.mBASIC_SKILLS_FIRST_APPLICATION = new BASIC_SKILLS_FIRST_APPLICATION      (this);
-                this.mADD_SUBTRACT_WITHIN_TEN_APPLICATION = new ADD_SUBTRACT_WITHIN_TEN_APPLICATION      (this);
-                this.mADD_SUBTRACT_WITHIN_TWENTY_APPLICATION = new ADD_SUBTRACT_WITHIN_TWENTY_APPLICATION      (this);
-                this.mPROPERTIES_APPLICATION = new PROPERTIES_APPLICATION      (this);
 
-		//add_game_B
-	
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
 
