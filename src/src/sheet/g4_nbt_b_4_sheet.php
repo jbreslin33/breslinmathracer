@@ -1,4 +1,4 @@
-var BasicSkillsFourthBossLevelSheet = new Class(
+var g4_nbt_b_4_Sheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,55 +6,13 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//ADVANCED
+        //fluent fast add within 20 but answers greater than 10 no 2 digit + 2 digit 
 
-  	//subtract mixed numbers with borrowing
-        this.mIDArray.push('4.nf.b.3.c_13');
-
+	for (i = 1; i < 37; i++)
+	{
+        	this.mIDArray.push('2.oa.b.2_' + i); 
+	}
 	
-	//divide 4x1 with remainder no zero	 
-	this.mIDArray.push('4.nbt.b.6_7');
-	
-	//divide 4x1 with remainder zero in 1st digit	 
-	this.mIDArray.push('4.nbt.b.6_8');
-
-	//divide 4x1 with remainder zero in 2nd digit	 
-	this.mIDArray.push('4.nbt.b.6_9');
-
-	//divide 4x1 with remainder zero in third digit	 
-	this.mIDArray.push('4.nbt.b.6_10');
-
-	//divide 4x1 with remainder zero in fourth digit	 
-	this.mIDArray.push('4.nbt.b.6_11');
-
-
-	//---------------------1st zero	
-	//divide 4x1 with remainder zero in 1st and 3rd	 
-	this.mIDArray.push('4.nbt.b.6_12');
-	
-	//divide 4x1 with remainder zero in 1st and 4th	 
-	this.mIDArray.push('4.nbt.b.6_13');
-	
-	//divide 4x1 with remainder zero in 1st and 3rd and 4th	 
-	this.mIDArray.push('4.nbt.b.6_14');
-
-
-	//--------------------2nd zero 
-	//divide 4x1 with remainder zero in 2nd and 3rd	 
-	this.mIDArray.push('4.nbt.b.6_15');
-	
-	//divide 4x1 with remainder zero in 2nd and 4th	 
-	this.mIDArray.push('4.nbt.b.6_16');
-	
-	//divide 4x1 with remainder zero in 2nd and 3rd and 4th	 
-	this.mIDArray.push('4.nbt.b.6_17');
-
-	//--------------------3rd zero
-	//divide 4x1 with remainder zero in 3rd and 4th 	 
-	this.mIDArray.push('4.nbt.b.6_18');
-
-	//4th zero are all dups	
-
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
@@ -104,7 +62,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(30);
+                itemAttempt.setEvaluationsID(14);
         }
         else
         {

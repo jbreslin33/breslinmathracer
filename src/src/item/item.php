@@ -375,55 +375,133 @@ var Item = new Class(
 
 		//4
 
-		var optionJ = document.createElement("option");
-                optionJ.value = 20;
-                optionJ.text = 'Basic Skills Fourth';
+		var optionJA = document.createElement("option");
+                optionJA.value = 11;
+                optionJA.text = '4_oa_b_4';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionJ);
+       	        	this.mTimesTablesInfo.mMesh.add(optionJA);
 		}
 		else
 		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionJ);
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionJA);
 		}
-                
-		var optionT = document.createElement("option");
-                optionT.value = 30;
-                optionT.text = 'Basic Skills Fourth Boss Level';
+
+                var optionJB = document.createElement("option");
+                optionJB.value = 14;
+                optionJB.text = '4_nbt_b_4';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mTimesTablesInfo.mMesh.add(optionT);
+                        this.mTimesTablesInfo.mMesh.add(optionJB);
                 }
                 else
                 {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionT);
+                        this.mTimesTablesInfo.mMesh.appendChild(optionJB);
                 }
+               
+              	var optionJC = document.createElement("option");
+                optionJC.value = 20;
+                optionJC.text = '4_nbt_b_5';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionJC);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionJC);
+                }
+
+                var optionJD = document.createElement("option");
+                optionJD.value = 21;
+                optionJD.text = '4_nbt_b_6';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionJD);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionJD);
+                }
+
+                var optionJE = document.createElement("option");
+                optionJE.value = 30;
+                optionJE.text = '4_nf_b_3_c';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionJE);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionJE);
+                }
+ 
 
 		//5
 
-                var optionU = document.createElement("option");
-                optionU.value = 31;
-                optionU.text = 'Basic Skills Fifth Boss Level';
+                var optionUA = document.createElement("option");
+                optionUA.value = 31;
+                optionUA.text = '5_oa_a_1';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mTimesTablesInfo.mMesh.add(optionU);
+                        this.mTimesTablesInfo.mMesh.add(optionUA);
                 }
                 else
                 {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionU);
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUA);
+                }
+
+                var optionUB = document.createElement("option");
+                optionUB.value = 32;
+                optionUB.text = '5_nbt_b_5';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUB);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUB);
                 }
 		
-		var optionK = document.createElement("option");
-                optionK.value = 21;
-                optionK.text = 'Basic Skills Fifth';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionK);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionK);
-		}
+
+               	var optionUD = document.createElement("option");
+                optionUD.value = 33;
+                optionUD.text = '5_nbt_b_6';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUD);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUD);
+                }
+
+                var optionUE = document.createElement("option");
+                optionUE.value = 34;
+                optionUE.text = '5_nbt_b_7';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUE);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUE);
+                }
+
+                var optionUF = document.createElement("option");
+                optionUF.value = 35;
+                optionUF.text = '5_nf_a_1';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUF);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUF);
+                }
+
+
+
+
 
 		//just fill it here...
 		for (i=2; i < 10; i++)

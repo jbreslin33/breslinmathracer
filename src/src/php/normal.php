@@ -60,6 +60,9 @@ function __construct($application)
 
 	$this->mItemAttemptsTypeArrayTen    = array();
 	$this->mItemAttemptsTransactionCodeArrayTen    = array();
+	
+	$this->mItemAttemptsTypeArrayEleven    = array();
+	$this->mItemAttemptsTransactionCodeArrayEleven    = array();
 
 	$this->mItemAttemptsTypeArrayTwelve    = array();
 	$this->mItemAttemptsTransactionCodeArrayTwelve    = array();
@@ -121,6 +124,18 @@ function __construct($application)
 	$this->mItemAttemptsTypeArrayThirtyOne    = array();
 	$this->mItemAttemptsTransactionCodeArrayThirtyOne    = array();
 	
+	$this->mItemAttemptsTypeArrayThirtyTwo    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtyTwo    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtyThree    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtyThree    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtyFour    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtyFour    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtyFive    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtyFive    = array();
+
 	//add_game_P
 }
 
@@ -191,7 +206,7 @@ public function fillItemAttemptsArray()
                 {
 			//add_game_Q
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23 || $evalID == 24 || $evalID == 25 || $evalID == 26 || $evalID == 27 || $evalID == 28 || $evalID == 29 || $evalID == 30 || $evalID == 31 )
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23 || $evalID == 24 || $evalID == 25 || $evalID == 26 || $evalID == 27 || $evalID == 28 || $evalID == 29 || $evalID == 30 || $evalID == 31 || $evalID == 32 || $evalID == 33 || $evalID == 34 || $evalID == 35   )
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -235,6 +250,11 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayTen[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayTen[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 11)
+			{
+                        	$this->mItemAttemptsTypeArrayEleven[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayEleven[]  = pg_Result($result,$i,'transaction_code');
 			}
 			if ($evalID == 12)
 			{
@@ -335,6 +355,26 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayThirtyOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayThirtyOne[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 32)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtyTwo[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtyTwo[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 33)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtyThree[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtyThree[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 34)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtyFour[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtyFour[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 35)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtyFive[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtyFive[]  = pg_Result($result,$i,'transaction_code');
 			}
                 }
         }

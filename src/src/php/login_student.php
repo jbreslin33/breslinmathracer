@@ -216,6 +216,10 @@ public function sendLoginStudent()
 	$itemTypesRawDataQ = ""; 
 	$itemTypesRawDataR = ""; 
 	$itemTypesRawDataS = ""; 
+
+	$itemTypesRawDataQQA = ""; 
+	$itemTypesRawDataQQB = ""; 
+
 	$itemTypesRawDataT = ""; 
 	$itemTypesRawDataU = ""; 
 	$itemTypesRawDataV = ""; 
@@ -256,6 +260,21 @@ public function sendLoginStudent()
 	$itemTypesRawDataAAD = ""; 
 	$itemTypesRawDataAAE = ""; 
 	$itemTypesRawDataAAF = ""; 
+
+	$itemTypesRawDataAAG = ""; 
+	$itemTypesRawDataAAH = ""; 
+
+	$itemTypesRawDataAAI = ""; 
+	$itemTypesRawDataAAJ = ""; 
+
+	$itemTypesRawDataAAK = ""; 
+	$itemTypesRawDataAAL = ""; 
+	
+	$itemTypesRawDataAAM = ""; 
+	$itemTypesRawDataAAN = ""; 
+
+//32 33 34 35
+
 	//add_game_O
 	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
@@ -513,6 +532,34 @@ public function sendLoginStudent()
                         $itemTypesRawDataS .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayTen[$i];
                 }
         }
+
+        //Eleven
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayEleven); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataQQA .= $this->mApplication->mNormal->mItemAttemptsTypeArrayEleven[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataQQA .= ":";
+                        $itemTypesRawDataQQA .= $this->mApplication->mNormal->mItemAttemptsTypeArrayEleven[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEleven); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataQQB .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEleven[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataQQB .= ":";
+                        $itemTypesRawDataQQB .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayEleven[$i];
+                }
+        }
+
 	
 	//Twelve	
 	for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayTwelve); $i++)
@@ -1054,6 +1101,115 @@ public function sendLoginStudent()
                 }
         }
 
+        //ThirtyTwo
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyTwo); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAG .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyTwo[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAG .= ":";
+                        $itemTypesRawDataAAG .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyTwo[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyTwo); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAH .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyTwo[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAH .= ":";
+                        $itemTypesRawDataAAH .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyTwo[$i];
+                }
+        }
+
+        //ThirtyThree
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyThree); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAI .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyThree[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAI .= ":";
+                        $itemTypesRawDataAAI .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyThree[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyThree); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAJ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyThree[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAJ .= ":";
+                        $itemTypesRawDataAAJ .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyThree[$i];
+                }
+        }
+
+        //ThirtyFour
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyFour); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAK .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyFour[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAK .= ":";
+                        $itemTypesRawDataAAK .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyFour[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyFour); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAL .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyFour[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAL .= ":";
+                        $itemTypesRawDataAAL .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyFour[$i];
+                }
+        }
+
+        //ThirtyFive
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyFive); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAM .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyFive[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAM .= ":";
+                        $itemTypesRawDataAAM .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyFive[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyFive); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAN .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyFive[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAN .= ":";
+                        $itemTypesRawDataAAN .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyFive[$i];
+                }
+        }
+
+
 
 	//fill php vars
 	$returnString = "117,";
@@ -1110,6 +1266,14 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataS;
 	$returnString .= ",";
+
+	$returnString .= $itemTypesRawDataQQA;
+	$returnString .= ",";
+	
+	$returnString .= $itemTypesRawDataQQB;
+	$returnString .= ",";
+
+
 	$returnString .= $itemTypesRawDataT;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataU;
@@ -1186,10 +1350,32 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAAD;
 	$returnString .= ",";
+
 	$returnString .= $itemTypesRawDataAAE;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAAF;
 	$returnString .= ",";
+	
+	$returnString .= $itemTypesRawDataAAG;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAH;
+	$returnString .= ",";
+
+	$returnString .= $itemTypesRawDataAAI;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAJ;
+	$returnString .= ",";
+	
+	$returnString .= $itemTypesRawDataAAK;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAL;
+	$returnString .= ",";
+
+	$returnString .= $itemTypesRawDataAAM;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAN;
+	$returnString .= ",";
+
 	$returnString .= $this->mApplication->mEvaluationsID;
 	echo $returnString;
 }

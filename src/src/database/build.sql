@@ -249,20 +249,20 @@ CREATE TABLE users (
 	--4
 	--alltimebasicskillsfourth integer NOT NULL default 0,
 	--alltimebasicskillsfourthbosslevel integer NOT NULL default 0,
-	g4_oa_b_4 integer NOT NULL default 0,
-	g4_nbt_b_4 integer NOT NULL default 0,
-	g4_nbt_b_5 integer NOT NULL default 0,
-	g4_nbt_b_6 integer NOT NULL default 0,
-	g4_nf_b_3_c integer NOT NULL default 0,
+	g4_oa_b_4 integer NOT NULL default 0, --11 
+	g4_nbt_b_4 integer NOT NULL default 0, --14
+	g4_nbt_b_5 integer NOT NULL default 0, --20
+	g4_nbt_b_6 integer NOT NULL default 0, --21
+	g4_nf_b_3_c integer NOT NULL default 0, --30
 
 	--5
 	--alltimebasicskillsfifth integer NOT NULL default 0,
 	--alltimebasicskillsfifthbosslevel integer NOT NULL default 0,
-	g5_oa_a_1 integer NOT NULL default 0,
-	g5_nbt_b_5 integer NOT NULL default 0,
-	g5_nbt_b_6 integer NOT NULL default 0,
-	g5_nbt_b_7 integer NOT NULL default 0,
-	g5_nf_a_1 integer NOT NULL default 0,
+	g5_oa_a_1 integer NOT NULL default 0, --31
+	g5_nbt_b_5 integer NOT NULL default 0, --32
+	g5_nbt_b_6 integer NOT NULL default 0, --33
+	g5_nbt_b_7 integer NOT NULL default 0, --34
+	g5_nf_a_1 integer NOT NULL default 0, --35
 
 
 	--tables supplemental maybe dont need in user

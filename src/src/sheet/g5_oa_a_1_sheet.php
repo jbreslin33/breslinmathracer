@@ -1,4 +1,4 @@
-var BasicSkillsFourthSheet = new Class(
+var g5_oa_a_1_Sheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,35 +6,13 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//add 
-	this.mIDArray.push('4.nbt.b.4_7');
+        //fluent fast add within 20 but answers greater than 10 no 2 digit + 2 digit 
 
-	//subtract 
-	this.mIDArray.push('4.nbt.b.4_14');
-
-	//multiply 4x1 
-	this.mIDArray.push('4.nbt.b.5_3');
-
-	//multiply 2x2
-	this.mIDArray.push('4.nbt.b.5_5');
-
-	//add mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_3'); //needs to not have borrow
+	for (i = 1; i < 37; i++)
+	{
+        	this.mIDArray.push('2.oa.b.2_' + i); 
+	}
 	
-	//subtract mixed numbers	
-	this.mIDArray.push('4.nf.b.3.c_8');
-
-	//add mixed numbers.........
-
-	//add with same numerators	
-	this.mIDArray.push('4.nf.b.3.c_11');
-	
-	//add with numerator bigger than 2nd numerator	
-	this.mIDArray.push('4.nf.b.3.c_12');
-
-  	//subtract mixed numbers with borrowing
-        //this.mIDArray.push('4.nf.b.3.c_13');
-
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
@@ -84,7 +62,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(20);
+                itemAttempt.setEvaluationsID(31);
         }
         else
         {

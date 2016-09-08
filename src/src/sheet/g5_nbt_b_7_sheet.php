@@ -1,4 +1,4 @@
-var BasicSkillsFifthBossLevelSheet = new Class(
+var g5_nbt_b_7_Sheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,18 +6,13 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//ADVANCED...........
+        //fluent fast add within 20 but answers greater than 10 no 2 digit + 2 digit 
 
-	//division 2x4
-	this.mIDArray.push('5.nbt.b.6_4');
+	for (i = 1; i < 37; i++)
+	{
+        	this.mIDArray.push('2.oa.b.2_' + i); 
+	}
 	
-	//divide decimals	
-	r = Math.floor(Math.random()*5+15); //15-19
-	this.mIDArray.push('5.nbt.b.7_' + r);
-	
-	//subtraction fraction unlike denominators with borrow
-	this.mIDArray.push('5.nf.a.1_9');
-
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
@@ -67,7 +62,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(31);
+                itemAttempt.setEvaluationsID(34);
         }
         else
         {

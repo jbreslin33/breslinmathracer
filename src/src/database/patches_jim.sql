@@ -62,6 +62,23 @@ alter table users add g5_nbt_b_6 text;
 alter table users add g5_nbt_b_7 text;
 alter table users add g5_nf_a_1 text;
 
+
+--create inserts of evaluations
+--4
+insert into evaluations (id,description) values (11,'4_oa_b_4');
+insert into evaluations (id,description) values (14,'4_nbt_b_4');
+insert into evaluations (id,description) values (20,'4_nbt_b_5');
+insert into evaluations (id,description) values (21,'4_nbt_b_6');
+insert into evaluations (id,description) values (30,'4_nf_b_3_c');
+
+--5
+insert into evaluations (id,description) values (31,'5_oa_a_1');
+insert into evaluations (id,description) values (32,'5_nbt_b_5');
+insert into evaluations (id,description) values (33,'5_nbt_b_6');
+insert into evaluations (id,description) values (34,'5_nbt_b_7');
+insert into evaluations (id,description) values (35,'5_nf_a_1');
+
+
 --rename description in evaluations
 --k
 update evaluations set description = 'k_cc' where id = 25;
@@ -80,4 +97,18 @@ update evaluations set description = '2_nbt' where id = 23;
 --3
 update evaluations set description = '3_oa_c_7' where id = 12;
 update evaluations set description = '3_nbt' where id = 22;
+
+--4
+update evaluations set description = '4_oa_b_4' where id = 11;
+update evaluations set description = '4_nbt_b_4' where id = 14;
+update evaluations set description = '4_nbt_b_5' where id = 20;
+update evaluations set description = '4_nbt_b_6' where id = 21;
+update evaluations set description = '4_nf_b_3_c' where id = 30;
+
+--5
+update evaluations set description = '5_oa_a_1' where id = 31;
+update evaluations set description = '5_nbt_b_5' where id = 32;
+update evaluations set description = '5_nbt_b_6' where id = 33;
+update evaluations set description = '5_nbt_b_7' where id = 34;
+update evaluations set description = '5_nf_a_1' where id = 35;
 

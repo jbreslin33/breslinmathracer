@@ -63,6 +63,7 @@ execute: function(application)
 	//2
 	if (application.mEvaluationsID == 28 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG2_OA_B_2_APPLICATION)
 	{
+		APPLICATION.log('states: 28'); 
 		application.mCoreStateMachine.changeState(application.mG2_OA_B_2_APPLICATION);
 	}
 
@@ -82,33 +83,53 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mG3_NBT_APPLICATION);
 	}
-	
+
 	
 	//4
-	if (application.mEvaluationsID == 20 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FOURTH_APPLICATION)
+	if (application.mEvaluationsID == 11 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_OA_B_4_APPLICATION)
 	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FOURTH_APPLICATION);
+		APPLICATION.log('states: 11'); 
+		application.mCoreStateMachine.changeState(application.mG4_OA_B_4_APPLICATION);
+	}
+	if (application.mEvaluationsID == 14 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_NBT_B_4_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG4_NBT_B_4_APPLICATION);
+	}
+	if (application.mEvaluationsID == 20 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_NBT_B_5_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG4_NBT_B_5_APPLICATION);
+	}
+	if (application.mEvaluationsID == 21 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_NBT_B_6_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG4_NBT_B_6_APPLICATION);
+	}
+	if (application.mEvaluationsID == 30 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_NF_B_3_C_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG4_NF_B_3_C_APPLICATION);
+	}
+
+	//5	
+	if (application.mEvaluationsID == 31 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG5_OA_A_1_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG5_OA_A_1_APPLICATION);
+	}
+	if (application.mEvaluationsID == 32 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG5_NBT_B_5_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG5_NBT_B_5_APPLICATION);
+	}
+	if (application.mEvaluationsID == 33 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG5_NBT_B_6_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG5_NBT_B_6_APPLICATION);
+	}
+	if (application.mEvaluationsID == 34 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG5_NBT_B_7_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG5_NBT_B_7_APPLICATION);
+	}
+	if (application.mEvaluationsID == 35 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG5_NF_A_1_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG5_NF_A_1_APPLICATION);
 	}
 	
-	if (application.mEvaluationsID == 30 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION);
-	}
-
-
-	//5
-	if (application.mEvaluationsID == 21 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIFTH_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIFTH_APPLICATION);
-	}
-
-	if (application.mEvaluationsID == 31 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION);
-	}
-
-
-
 	//TABLES
 	if (application.mEvaluationsID == 3 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_TWO_APPLICATION)
 	{
@@ -387,154 +408,191 @@ execute: function(application)
 	
 			var itemAttemptsTransactionCodesTen = APPLICATION.mResponseArray[25];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTen = itemAttemptsTransactionCodesTen.split(":");
+			
+			//Eleven	
+			var itemAttemptsTypesEleven = APPLICATION.mResponseArray[26];
+			APPLICATION.mItemAttemptsTypeArrayEleven = itemAttemptsTypesEleven.split(":");
+	
+			var itemAttemptsTransactionCodesEleven = APPLICATION.mResponseArray[27];
+			APPLICATION.mItemAttemptsTransactionCodeArrayEleven = itemAttemptsTransactionCodesEleven.split(":");
+
+
 
 			//Twelve	 
-			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[26];
+			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[28];
 			APPLICATION.mItemAttemptsTypeArrayTwelve = itemAttemptsTypesTwelve.split(":");
 	
-			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[27];
+			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[29];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve = itemAttemptsTransactionCodesTwelve.split(":");
 
 			//Thirteen	
-			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[28];
+			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[30];
 			APPLICATION.mItemAttemptsTypeArrayThirteen = itemAttemptsTypesThirteen.split(":");
 	
-			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[29];
+			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[31];
 			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen = itemAttemptsTransactionCodesThirteen.split(":");
 			
 			//Fourteen	
-			var itemAttemptsTypesFourteen = APPLICATION.mResponseArray[30];
+			var itemAttemptsTypesFourteen = APPLICATION.mResponseArray[32];
 			APPLICATION.mItemAttemptsTypeArrayFourteen = itemAttemptsTypesFourteen.split(":");
 	
-			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
+			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[33];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
 			
 			//Fifteen	
-			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[32];
+			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[34];
 			APPLICATION.mItemAttemptsTypeArrayFifteen = itemAttemptsTypesFifteen.split(":");
 	
-			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[33];
+			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[35];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen = itemAttemptsTransactionCodesFifteen.split(":");
 			
 			//Sixteen	
-			var itemAttemptsTypesSixteen = APPLICATION.mResponseArray[34];
+			var itemAttemptsTypesSixteen = APPLICATION.mResponseArray[36];
 			APPLICATION.mItemAttemptsTypeArraySixteen = itemAttemptsTypesSixteen.split(":");
 	
-			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[35];
+			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[37];
 			APPLICATION.mItemAttemptsTransactionCodeArraySixteen = itemAttemptsTransactionCodesSixteen.split(":");
 			
 			//Seventeen	
-			var itemAttemptsTypesSeventeen = APPLICATION.mResponseArray[36];
+			var itemAttemptsTypesSeventeen = APPLICATION.mResponseArray[38];
 			APPLICATION.mItemAttemptsTypeArraySeventeen = itemAttemptsTypesSeventeen.split(":");
 	
-			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[37];
+			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[39];
 			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen = itemAttemptsTransactionCodesSeventeen.split(":");
 			
 			//Eighteen	
-			var itemAttemptsTypesEighteen = APPLICATION.mResponseArray[38];
+			var itemAttemptsTypesEighteen = APPLICATION.mResponseArray[40];
 			APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
 	
-			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
+			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[41];
 			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
 			
 			//Nineteen	 
-			var itemAttemptsTypesNineteen = APPLICATION.mResponseArray[40];
+			var itemAttemptsTypesNineteen = APPLICATION.mResponseArray[42];
 			APPLICATION.mItemAttemptsTypeArrayNineteen = itemAttemptsTypesNineteen.split(":");
 	
-			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[41];
+			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[43];
 			APPLICATION.mItemAttemptsTransactionCodeArrayNineteen = itemAttemptsTransactionCodesNineteen.split(":");
 			
 			//Twenty	 
-			var itemAttemptsTypesTwenty = APPLICATION.mResponseArray[42];
+			var itemAttemptsTypesTwenty = APPLICATION.mResponseArray[44];
 			APPLICATION.mItemAttemptsTypeArrayTwenty = itemAttemptsTypesTwenty.split(":");
 	
-			var itemAttemptsTransactionCodesTwenty = APPLICATION.mResponseArray[43];
+			var itemAttemptsTransactionCodesTwenty = APPLICATION.mResponseArray[45];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwenty = itemAttemptsTransactionCodesTwenty.split(":");
 			
 			//TwentyOne	 
-			var itemAttemptsTypesTwentyOne = APPLICATION.mResponseArray[44];
+			var itemAttemptsTypesTwentyOne = APPLICATION.mResponseArray[46];
 			APPLICATION.mItemAttemptsTypeArrayTwentyOne = itemAttemptsTypesTwentyOne.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyOne = APPLICATION.mResponseArray[45];
+			var itemAttemptsTransactionCodesTwentyOne = APPLICATION.mResponseArray[47];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyOne = itemAttemptsTransactionCodesTwentyOne.split(":");
 			
 			//TwentyTwo	 
-			var itemAttemptsTypesTwentyTwo = APPLICATION.mResponseArray[46];
+			var itemAttemptsTypesTwentyTwo = APPLICATION.mResponseArray[48];
 			APPLICATION.mItemAttemptsTypeArrayTwentyTwo = itemAttemptsTypesTwentyTwo.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyTwo = APPLICATION.mResponseArray[47];
+			var itemAttemptsTransactionCodesTwentyTwo = APPLICATION.mResponseArray[49];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyTwo = itemAttemptsTransactionCodesTwentyTwo.split(":");
 			
 			//TwentyThree	 
-			var itemAttemptsTypesTwentyThree = APPLICATION.mResponseArray[48];
+			var itemAttemptsTypesTwentyThree = APPLICATION.mResponseArray[50];
 			APPLICATION.mItemAttemptsTypeArrayTwentyThree = itemAttemptsTypesTwentyThree.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyThree = APPLICATION.mResponseArray[49];
+			var itemAttemptsTransactionCodesTwentyThree = APPLICATION.mResponseArray[51];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyThree = itemAttemptsTransactionCodesTwentyThree.split(":");
 			
 			//TwentyFour	 
-			var itemAttemptsTypesTwentyFour = APPLICATION.mResponseArray[50];
+			var itemAttemptsTypesTwentyFour = APPLICATION.mResponseArray[52];
 			APPLICATION.mItemAttemptsTypeArrayTwentyFour = itemAttemptsTypesTwentyFour.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyFour = APPLICATION.mResponseArray[51];
+			var itemAttemptsTransactionCodesTwentyFour = APPLICATION.mResponseArray[53];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFour = itemAttemptsTransactionCodesTwentyFour.split(":");
 			
 
 
 			//TwentyFive	 
-			var itemAttemptsTypesTwentyFive = APPLICATION.mResponseArray[52];
+			var itemAttemptsTypesTwentyFive = APPLICATION.mResponseArray[54];
 			APPLICATION.mItemAttemptsTypeArrayTwentyFive = itemAttemptsTypesTwentyFive.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[53];
+			var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[55];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFive = itemAttemptsTransactionCodesTwentyFive.split(":");
 			
 
 
 			//TwentySix	 
-			var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[54];
+			var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[56];
 			APPLICATION.mItemAttemptsTypeArrayTwentySix = itemAttemptsTypesTwentySix.split(":");
 	
-			var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[55];
+			var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[57];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentySix = itemAttemptsTransactionCodesTwentySix.split(":");
 
 
 			//TwentySeven	 
-			var itemAttemptsTypesTwentySeven = APPLICATION.mResponseArray[56];
+			var itemAttemptsTypesTwentySeven = APPLICATION.mResponseArray[58];
 			APPLICATION.mItemAttemptsTypeArrayTwentySeven = itemAttemptsTypesTwentySeven.split(":");
 	
-			var itemAttemptsTransactionCodesTwentySeven = APPLICATION.mResponseArray[57];
+			var itemAttemptsTransactionCodesTwentySeven = APPLICATION.mResponseArray[59];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentySeven = itemAttemptsTransactionCodesTwentySeven.split(":");
 			
 			//TwentyEight	 
-			var itemAttemptsTypesTwentyEight = APPLICATION.mResponseArray[58];
+			var itemAttemptsTypesTwentyEight = APPLICATION.mResponseArray[60];
 			APPLICATION.mItemAttemptsTypeArrayTwentyEight = itemAttemptsTypesTwentyEight.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyEight = APPLICATION.mResponseArray[59];
+			var itemAttemptsTransactionCodesTwentyEight = APPLICATION.mResponseArray[61];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyEight = itemAttemptsTransactionCodesTwentyEight.split(":");
 			
 			//TwentyNine	 
-			var itemAttemptsTypesTwentyNine = APPLICATION.mResponseArray[60];
+			var itemAttemptsTypesTwentyNine = APPLICATION.mResponseArray[62];
 			APPLICATION.mItemAttemptsTypeArrayTwentyNine = itemAttemptsTypesTwentyNine.split(":");
 	
-			var itemAttemptsTransactionCodesTwentyNine = APPLICATION.mResponseArray[61];
+			var itemAttemptsTransactionCodesTwentyNine = APPLICATION.mResponseArray[63];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwentyNine = itemAttemptsTransactionCodesTwentyNine.split(":");
 
                       	//Thirty
-                        var itemAttemptsTypesThirty = APPLICATION.mResponseArray[62];
+                        var itemAttemptsTypesThirty = APPLICATION.mResponseArray[64];
                         APPLICATION.mItemAttemptsTypeArrayThirty = itemAttemptsTypesThirty.split(":");
 
-                        var itemAttemptsTransactionCodesThirty = APPLICATION.mResponseArray[63];
+                        var itemAttemptsTransactionCodesThirty = APPLICATION.mResponseArray[65];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirty = itemAttemptsTransactionCodesThirty.split(":");
 
                         //ThirtyOne
-                        var itemAttemptsTypesThirtyOne = APPLICATION.mResponseArray[64];
+                        var itemAttemptsTypesThirtyOne = APPLICATION.mResponseArray[66];
                         APPLICATION.mItemAttemptsTypeArrayThirtyOne = itemAttemptsTypesThirtyOne.split(":");
 
-                        var itemAttemptsTransactionCodesThirtyOne = APPLICATION.mResponseArray[65];
+                        var itemAttemptsTransactionCodesThirtyOne = APPLICATION.mResponseArray[67];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirtyOne = itemAttemptsTransactionCodesThirtyOne.split(":");
 
+                        //ThirtyTwo
+                        var itemAttemptsTypesThirtyTwo = APPLICATION.mResponseArray[68];
+                        APPLICATION.mItemAttemptsTypeArrayThirtyTwo = itemAttemptsTypesThirtyTwo.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[66];
+                        var itemAttemptsTransactionCodesThirtyTwo = APPLICATION.mResponseArray[69];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyTwo = itemAttemptsTransactionCodesThirtyTwo.split(":");
+
+                        //ThirtyThree
+                        var itemAttemptsTypesThirtyThree = APPLICATION.mResponseArray[70];
+                        APPLICATION.mItemAttemptsTypeArrayThirtyThree = itemAttemptsTypesThirtyThree.split(":");
+
+                        var itemAttemptsTransactionCodesThirtyThree = APPLICATION.mResponseArray[71];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyThree = itemAttemptsTransactionCodesThirtyThree.split(":");
+
+                        //ThirtyFour
+                        var itemAttemptsTypesThirtyFour = APPLICATION.mResponseArray[72];
+                        APPLICATION.mItemAttemptsTypeArrayThirtyFour = itemAttemptsTypesThirtyFour.split(":");
+
+                        var itemAttemptsTransactionCodesThirtyFour = APPLICATION.mResponseArray[73];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFour = itemAttemptsTransactionCodesThirtyFour.split(":");
+
+                        //ThirtyFive
+                        var itemAttemptsTypesThirtyFive = APPLICATION.mResponseArray[74];
+                        APPLICATION.mItemAttemptsTypeArrayThirtyFive = itemAttemptsTypesThirtyFive.split(":");
+
+                        var itemAttemptsTransactionCodesThirtyFive = APPLICATION.mResponseArray[75];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFive = itemAttemptsTransactionCodesThirtyFive.split(":");
+
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[76];
 
 
 			//add_game_E	
@@ -951,148 +1009,156 @@ execute: function(application)
 			var itemAttemptsTransactionCodesTen = APPLICATION.mResponseArray[25];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTen = itemAttemptsTransactionCodesTen.split(":");
 
+                        //Eleven
+                        var itemAttemptsTypesEleven = APPLICATION.mResponseArray[26];
+                        APPLICATION.mItemAttemptsTypeArrayEleven = itemAttemptsTypesEleven.split(":");
+
+                        var itemAttemptsTransactionCodesEleven = APPLICATION.mResponseArray[27];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayEleven = itemAttemptsTransactionCodesEleven.split(":");
+
+
 			//Twelve	
-			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[26];
+			var itemAttemptsTypesTwelve = APPLICATION.mResponseArray[28];
 			APPLICATION.mItemAttemptsTypeArrayTwelve = itemAttemptsTypesTwelve.split(":");
 	
-			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[27];
+			var itemAttemptsTransactionCodesTwelve = APPLICATION.mResponseArray[29];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve = itemAttemptsTransactionCodesTwelve.split(":");
 
 			//Thirteen	
-			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[28];
+			var itemAttemptsTypesThirteen = APPLICATION.mResponseArray[30];
 			APPLICATION.mItemAttemptsTypeArrayThirteen = itemAttemptsTypesThirteen.split(":");
 	
-			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[29];
+			var itemAttemptsTransactionCodesThirteen = APPLICATION.mResponseArray[31];
 			APPLICATION.mItemAttemptsTransactionCodeArrayThirteen = itemAttemptsTransactionCodesThirteen.split(":");
 			
 			//Fourteen	
-			var itemAttemptsTypesFourteen = APPLICATION.mResponseArray[30];
+			var itemAttemptsTypesFourteen = APPLICATION.mResponseArray[32];
 			APPLICATION.mItemAttemptsTypeArrayFourteen = itemAttemptsTypesFourteen.split(":");
 	
-			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[31];
+			var itemAttemptsTransactionCodesFourteen = APPLICATION.mResponseArray[33];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFourteen = itemAttemptsTransactionCodesFourteen.split(":");
 			
 			//Fifteen	
-			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[32];
+			var itemAttemptsTypesFifteen = APPLICATION.mResponseArray[34];
 			APPLICATION.mItemAttemptsTypeArrayFifteen = itemAttemptsTypesFifteen.split(":");
 	
-			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[33];
+			var itemAttemptsTransactionCodesFifteen = APPLICATION.mResponseArray[35];
 			APPLICATION.mItemAttemptsTransactionCodeArrayFifteen = itemAttemptsTransactionCodesFifteen.split(":");
 			
 			//Sixteen	
-			var itemAttemptsTypesSixteen = APPLICATION.mResponseArray[34];
+			var itemAttemptsTypesSixteen = APPLICATION.mResponseArray[36];
 			APPLICATION.mItemAttemptsTypeArraySixteen = itemAttemptsTypesSixteen.split(":");
 	
-			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[35];
+			var itemAttemptsTransactionCodesSixteen = APPLICATION.mResponseArray[37];
 			APPLICATION.mItemAttemptsTransactionCodeArraySixteen = itemAttemptsTransactionCodesSixteen.split(":");
 			
 			//Seventeen	
-			var itemAttemptsTypesSeventeen = APPLICATION.mResponseArray[36];
+			var itemAttemptsTypesSeventeen = APPLICATION.mResponseArray[38];
 			APPLICATION.mItemAttemptsTypeArraySeventeen = itemAttemptsTypesSeventeen.split(":");
 	
-			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[37];
+			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[39];
 			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen = itemAttemptsTransactionCodesSeventeen.split(":");
 			
 			//Eightteen	
-			if (APPLICATION.mResponseArray[38])
+			if (APPLICATION.mResponseArray[40])
 			{
-				var itemAttemptsTypeEighteen = APPLICATION.mResponseArray[38];
+				var itemAttemptsTypeEighteen = APPLICATION.mResponseArray[40];
 				APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");
 			}
-			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[39];
+			var itemAttemptsTransactionCodesEighteen = APPLICATION.mResponseArray[41];
 			APPLICATION.mItemAttemptsTransactionCodeArrayEighteen = itemAttemptsTransactionCodesEighteen.split(":");
 			
 			//Nineteen	
-			if (APPLICATION.mResponseArray[40])
+			if (APPLICATION.mResponseArray[42])
 			{
-				var itemAttemptsTypesNineteen = APPLICATION.mResponseArray[40];
+				var itemAttemptsTypesNineteen = APPLICATION.mResponseArray[42];
 				APPLICATION.mItemAttemptsTypeArrayNineteen = itemAttemptsTypesNineteen.split(":");
 			}
 	
-			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[41];
+			var itemAttemptsTransactionCodesNineteen = APPLICATION.mResponseArray[43];
 			APPLICATION.mItemAttemptsTransactionCodeArrayNineteen = itemAttemptsTransactionCodesNineteen.split(":");
 			
 			//Twenty	
-			if (APPLICATION.mResponseArray[42])
+			if (APPLICATION.mResponseArray[44])
 			{
-				var itemAttemptsTypesTwenty = APPLICATION.mResponseArray[42];
+				var itemAttemptsTypesTwenty = APPLICATION.mResponseArray[44];
 				APPLICATION.mItemAttemptsTypeArrayTwenty = itemAttemptsTypesTwenty.split(":");
 			}
 	
-			var itemAttemptsTransactionCodesTwenty = APPLICATION.mResponseArray[43];
+			var itemAttemptsTransactionCodesTwenty = APPLICATION.mResponseArray[45];
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwenty = itemAttemptsTransactionCodesTwenty.split(":");
 
                        //TwentyOne
-                        if (APPLICATION.mResponseArray[44])
+                        if (APPLICATION.mResponseArray[46])
                         {
-                                var itemAttemptsTypesTwentyOne = APPLICATION.mResponseArray[44];
+                                var itemAttemptsTypesTwentyOne = APPLICATION.mResponseArray[46];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyOne = itemAttemptsTypesTwentyOne.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyOne = APPLICATION.mResponseArray[45];
+                        var itemAttemptsTransactionCodesTwentyOne = APPLICATION.mResponseArray[47];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyOne = itemAttemptsTransactionCodesTwentyOne.split(":");
 
 			//TwentyTwo
-                        if (APPLICATION.mResponseArray[46])
+                        if (APPLICATION.mResponseArray[48])
                         {
-                                var itemAttemptsTypesTwentyTwo = APPLICATION.mResponseArray[46];
+                                var itemAttemptsTypesTwentyTwo = APPLICATION.mResponseArray[48];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyTwo = itemAttemptsTypesTwentyTwo.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyTwo = APPLICATION.mResponseArray[47];
+                        var itemAttemptsTransactionCodesTwentyTwo = APPLICATION.mResponseArray[49];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyTwo = itemAttemptsTransactionCodesTwentyTwo.split(":");
 			
 			//TwentyThree
-                        if (APPLICATION.mResponseArray[48])
+                        if (APPLICATION.mResponseArray[50])
                         {
-                                var itemAttemptsTypesTwentyThree = APPLICATION.mResponseArray[48];
+                                var itemAttemptsTypesTwentyThree = APPLICATION.mResponseArray[50];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyThree = itemAttemptsTypesTwentyThree.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyThree = APPLICATION.mResponseArray[49];
+                        var itemAttemptsTransactionCodesTwentyThree = APPLICATION.mResponseArray[51];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyThree = itemAttemptsTransactionCodesTwentyThree.split(":");
 
 
 
 			//TwentyFour
-                        if (APPLICATION.mResponseArray[50])
+                        if (APPLICATION.mResponseArray[52])
                         {
-                                var itemAttemptsTypesTwentyFour = APPLICATION.mResponseArray[50];
+                                var itemAttemptsTypesTwentyFour = APPLICATION.mResponseArray[52];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyFour = itemAttemptsTypesTwentyFour.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyFour = APPLICATION.mResponseArray[51];
+                        var itemAttemptsTransactionCodesTwentyFour = APPLICATION.mResponseArray[53];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFour = itemAttemptsTransactionCodesTwentyFour.split(":");
 			
 			//TwentyFive
-                        if (APPLICATION.mResponseArray[52])
+                        if (APPLICATION.mResponseArray[54])
                         {
-                                var itemAttemptsTypesTwentyFive = APPLICATION.mResponseArray[52];
+                                var itemAttemptsTypesTwentyFive = APPLICATION.mResponseArray[54];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyFive = itemAttemptsTypesTwentyFive.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[53];
+                        var itemAttemptsTransactionCodesTwentyFive = APPLICATION.mResponseArray[55];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyFive = itemAttemptsTransactionCodesTwentyFive.split(":");
 			
 			//TwentySix
-                        if (APPLICATION.mResponseArray[54])
+                        if (APPLICATION.mResponseArray[56])
                         {
-                                var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[54];
+                                var itemAttemptsTypesTwentySix = APPLICATION.mResponseArray[56];
                                 APPLICATION.mItemAttemptsTypeArrayTwentySix = itemAttemptsTypesTwentySix.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[55];
+                        var itemAttemptsTransactionCodesTwentySix = APPLICATION.mResponseArray[57];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentySix = itemAttemptsTransactionCodesTwentySix.split(":");
 
 
 			//TwentySeven
-                        if (APPLICATION.mResponseArray[56])
+                        if (APPLICATION.mResponseArray[58])
                         {
-                                var itemAttemptsTypesTwentySeven = APPLICATION.mResponseArray[56];
+                                var itemAttemptsTypesTwentySeven = APPLICATION.mResponseArray[58];
                                 APPLICATION.mItemAttemptsTypeArrayTwentySeven = itemAttemptsTypesTwentySeven.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentySeven = APPLICATION.mResponseArray[57];
+                        var itemAttemptsTransactionCodesTwentySeven = APPLICATION.mResponseArray[59];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentySeven = itemAttemptsTransactionCodesTwentySeven.split(":");
 
 		
@@ -1100,50 +1166,99 @@ execute: function(application)
 
 	
 			//TwentyEight
-                        if (APPLICATION.mResponseArray[58])
+                        if (APPLICATION.mResponseArray[60])
                         {
-                                var itemAttemptsTypesTwentyEight = APPLICATION.mResponseArray[58];
+                                var itemAttemptsTypesTwentyEight = APPLICATION.mResponseArray[60];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyEight = itemAttemptsTypesTwentyEight.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyEight = APPLICATION.mResponseArray[59];
+                        var itemAttemptsTransactionCodesTwentyEight = APPLICATION.mResponseArray[61];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyEight = itemAttemptsTransactionCodesTwentyEight.split(":");
 
 
 			//TwentyNine
-                        if (APPLICATION.mResponseArray[60])
+                        if (APPLICATION.mResponseArray[62])
                         {
-                                var itemAttemptsTypesTwentyNine = APPLICATION.mResponseArray[60];
+                                var itemAttemptsTypesTwentyNine = APPLICATION.mResponseArray[62];
                                 APPLICATION.mItemAttemptsTypeArrayTwentyNine = itemAttemptsTypesTwentyNine.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesTwentyNine = APPLICATION.mResponseArray[61];
+                        var itemAttemptsTransactionCodesTwentyNine = APPLICATION.mResponseArray[63];
                         APPLICATION.mItemAttemptsTransactionCodeArrayTwentyNine = itemAttemptsTransactionCodesTwentyNine.split(":");
 
 
                         //Thirty
-                        if (APPLICATION.mResponseArray[62])
+                        if (APPLICATION.mResponseArray[64])
                         {
-                                var itemAttemptsTypesThirty = APPLICATION.mResponseArray[62];
+                                var itemAttemptsTypesThirty = APPLICATION.mResponseArray[64];
                                 APPLICATION.mItemAttemptsTypeArrayThirty = itemAttemptsTypesThirty.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesThirty = APPLICATION.mResponseArray[63];
+                        var itemAttemptsTransactionCodesThirty = APPLICATION.mResponseArray[65];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirty = itemAttemptsTransactionCodesThirty.split(":");
 
 
           		//ThirtyOne
-                        if (APPLICATION.mResponseArray[64])
+                        if (APPLICATION.mResponseArray[66])
                         {
-                                var itemAttemptsTypesThirtyOne = APPLICATION.mResponseArray[64];
+                                var itemAttemptsTypesThirtyOne = APPLICATION.mResponseArray[66];
                                 APPLICATION.mItemAttemptsTypeArrayThirtyOne = itemAttemptsTypesThirtyOne.split(":");
                         }
 
-                        var itemAttemptsTransactionCodesThirtyOne = APPLICATION.mResponseArray[65];
+                        var itemAttemptsTransactionCodesThirtyOne = APPLICATION.mResponseArray[67];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirtyOne = itemAttemptsTransactionCodesThirtyOne.split(":");
 
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[66];
+                        //ThirtyTwo
+                        if (APPLICATION.mResponseArray[68])
+                        {
+                                var itemAttemptsTypesThirtyTwo = APPLICATION.mResponseArray[68];
+                                APPLICATION.mItemAttemptsTypeArrayThirtyTwo = itemAttemptsTypesThirtyTwo.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtyTwo = APPLICATION.mResponseArray[69];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyTwo = itemAttemptsTransactionCodesThirtyTwo.split(":");
+
+
+
+
+
+
+
+
+
+                        //ThirtyThree
+                        if (APPLICATION.mResponseArray[70])
+                        {
+                                var itemAttemptsTypesThirtyThree = APPLICATION.mResponseArray[70];
+                                APPLICATION.mItemAttemptsTypeArrayThirtyThree = itemAttemptsTypesThirtyThree.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtyThree = APPLICATION.mResponseArray[71];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyThree = itemAttemptsTransactionCodesThirtyThree.split(":");
+
+                        //ThirtyFour
+                        if (APPLICATION.mResponseArray[72])
+                        {
+                                var itemAttemptsTypesThirtyFour = APPLICATION.mResponseArray[72];
+                                APPLICATION.mItemAttemptsTypeArrayThirtyFour = itemAttemptsTypesThirtyFour.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtyFour = APPLICATION.mResponseArray[73];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFour = itemAttemptsTransactionCodesThirtyFour.split(":");
+
+                        //ThirtyFive
+                        if (APPLICATION.mResponseArray[74])
+                        {
+                                var itemAttemptsTypesThirtyFive = APPLICATION.mResponseArray[74];
+                                APPLICATION.mItemAttemptsTypeArrayThirtyFive = itemAttemptsTypesThirtyFive.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtyFive = APPLICATION.mResponseArray[75];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFive = itemAttemptsTransactionCodesThirtyFive.split(":");
+
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[76];
 
 
 			//add_game_F
@@ -1901,6 +2016,395 @@ exit: function(application)
 
 });
 
+//4
+
+
+var G4_OA_B_4_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G4_OA_B_4_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g4_oa_b_4_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G4_OA_B_4_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+var G4_NBT_B_4_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G4_NBT_B_4_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g4_nbt_b_4_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G4_NBT_B_4_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G4_NBT_B_5_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G4_NBT_B_5_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g4_nbt_b_5_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G4_NBT_B_5_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+var G4_NBT_B_6_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G4_NBT_B_6_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g4_nbt_b_6_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G4_NBT_B_6_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+var G4_NF_B_3_C_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G4_NF_B_3_C_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g4_nf_b_3_c_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G4_NF_B_3_C_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+
+//5
+
+var G5_OA_A_1_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G5_OA_A_1_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g5_oa_a_1_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G5_OA_A_1_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G5_NBT_B_5_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G5_NBT_B_5_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g5_nbt_b_5_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G5_NBT_B_5_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G5_NBT_B_6_APPLICATION = new Class(
+{
+Extends: State,
+ 
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G5_NBT_B_6_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g5_nbt_b_6_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G5_NBT_B_6_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G5_NBT_B_7_APPLICATION = new Class(
+{
+Extends: State,
+ 
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G5_NBT_B_7_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g5_nbt_b_7_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G5_NBT_B_7_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
+var G5_NF_A_1_APPLICATION = new Class(
+{
+Extends: State,
+ 
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G5_NF_A_1_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g5_nf_a_1_Game(APPLICATION);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G5_NF_A_1_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
 
 
 //TABLES
@@ -2209,6 +2713,48 @@ exit: function(application)
 
 });
 
+var TIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TIMES_TABLES_THE_SUPER_IZZY_APPLICATION');
+        }
+
+	//if already have a game destroy it.
+        if (application.mGame)
+        {
+        	application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TimesTablesTheSuperIzzyGame(APPLICATION);
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::TIMES_TABLES_THE_SUPER_IZZY_APPLICATION execute');
+	}
+},
+
+exit: function(application)
+{
+}
+
+});
+
+
+
+//TESTS
+
 
 var TERRA_NOVA_APPLICATION = new Class(
 {
@@ -2401,197 +2947,7 @@ exit: function(application)
 
 });
 
-var TIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new Class(
-{
-Extends: State,
 
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::TIMES_TABLES_THE_SUPER_IZZY_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new TimesTablesTheSuperIzzyGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::TIMES_TABLES_THE_SUPER_IZZY_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var BASIC_SKILLS_FOURTH_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FOURTH_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsFourthGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::BASIC_SKILLS_FOURTH_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var BASIC_SKILLS_FIFTH_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FIFTH_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsFifthGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::BASIC_SKILLS_FIFTH_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
-
-
-var BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION');
-        }
-
-        //if already have a game destroy it.
-        if (application.mGame)
-        {
-                application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsFourthBossLevelGame(APPLICATION);
-},
-
-execute: function(application)
-{
-        if (application.mStateLogsExecute)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION execute');
-        }
-},
-
-exit: function(application)
-{
-}
-
-});
-
-var BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION');
-        }
-
-        //if already have a game destroy it.
-        if (application.mGame)
-        {
-                application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new BasicSkillsFifthBossLevelGame(APPLICATION);
-},
-
-execute: function(application)
-{
-        if (application.mStateLogsExecute)
-        {
-                application.log('APPLICATION::BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION execute');
-        }
-},
-
-exit: function(application)
-{
-}
-
-});
 
 
 

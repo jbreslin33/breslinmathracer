@@ -26,5 +26,6 @@ buttonHit: function()
 {
         var v = APPLICATION.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.options[APPLICATION.mGame.mSheet.getItem().mTimesTablesInfo.mMesh.selectedIndex].value;
         APPLICATION.mEvaluationsID = parseInt(v);
+	APPLICATION.log('mEvalID:' + APPLICATION.mEvaluationsID);
 }
 });

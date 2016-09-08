@@ -63,7 +63,7 @@ if ($APPLICATION->mCode == 218)
 }
 
 //add_game_K
-if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29 || $APPLICATION->mCode == 30 || $APPLICATION->mCode == 31  )
+if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 11 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29 || $APPLICATION->mCode == 30 || $APPLICATION->mCode == 31  || $APPLICATION->mCode == 32 || $APPLICATION->mCode == 33 || $APPLICATION->mCode == 34 || $APPLICATION->mCode == 35  )
 {
         $APPLICATION->mDataArray[] = $APPLICATION->mCode;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
@@ -150,12 +150,19 @@ function __construct()
 	$this->mG3_NBT_APPLICATION = new G3_NBT_APPLICATION($this);
         
 	//4	
-	$this->mBASIC_SKILLS_FOURTH_APPLICATION = new BASIC_SKILLS_FOURTH_APPLICATION        ($this);
-        $this->mBASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FOURTH_BOSS_LEVEL_APPLICATION        ($this);
+	$this->mG4_OA_B_4_APPLICATION   = new G4_OA_B_4_APPLICATION($this);
+	$this->mG4_NBT_B_4_APPLICATION  = new G4_NBT_B_4_APPLICATION($this);
+	$this->mG4_NBT_B_5_APPLICATION  = new G4_NBT_B_5_APPLICATION($this);
+	$this->mG4_NBT_B_6_APPLICATION  = new G4_NBT_B_6_APPLICATION($this);
+	$this->mG4_NF_B_3_C_APPLICATION = new G4_NF_B_3_C_APPLICATION($this);
 
-	//5
-        $this->mBASIC_SKILLS_FIFTH_APPLICATION = new BASIC_SKILLS_FIFTH_APPLICATION        ($this);
-        $this->mBASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION = new BASIC_SKILLS_FIFTH_BOSS_LEVEL_APPLICATION        ($this);
+	//5	
+	$this->mG5_OA_A_1_APPLICATION  = new G5_OA_A_1_APPLICATION($this);
+	$this->mG5_NBT_B_5_APPLICATION = new G5_NBT_B_5_APPLICATION($this);
+	$this->mG5_NBT_B_6_APPLICATION = new G5_NBT_B_6_APPLICATION($this);
+	$this->mG5_NBT_B_7_APPLICATION = new G5_NBT_B_7_APPLICATION($this);
+	$this->mG5_NF_A_1_APPLICATION  = new G5_NF_A_1_APPLICATION($this);
+
 
 	//TABLES
         $this->mTIMES_TABLES_TWO_APPLICATION = new TIMES_TABLES_TWO_APPLICATION        ($this);

@@ -1,4 +1,4 @@
-var BasicSkillsFifthSheet = new Class(
+var g5_nbt_b_6_Sheet = new Class(
 {
 Extends: Sheet,
 
@@ -6,48 +6,13 @@ initialize: function(game)
 {
 	this.parent(game);
 
-	//multiplication 3x2
-	this.mIDArray.push('5.nbt.b.5_4');
+        //fluent fast add within 20 but answers greater than 10 no 2 digit + 2 digit 
 
-	//add decimals 	
-	var r = Math.floor(Math.random()*3+1); //1-3
-	this.mIDArray.push('5.nbt.b.7_' + r);
+	for (i = 1; i < 37; i++)
+	{
+        	this.mIDArray.push('2.oa.b.2_' + i); 
+	}
 	
-	//subtract decimals  	
-	r = Math.floor(Math.random()*3+6); //6-8
-	this.mIDArray.push('5.nbt.b.7_' + r);
-
-	//multiply decimals	
-	r = Math.floor(Math.random()*5+10); //10-14
-	this.mIDArray.push('5.nbt.b.7_' + r);
-
-	//addition fraction unlike denominators
-	r = Math.floor(Math.random()*4+1); //1-4
-	this.mIDArray.push('5.nf.a.1_' + r);
-	
-	//subtraction fraction unlike denominators
-	r = Math.floor(Math.random()*4+5); //5-8
-	this.mIDArray.push('5.nf.a.1_' + r);
-	
-	//multiply fractions 
-	r = Math.floor(Math.random()*2+1); //1-2
-	this.mIDArray.push('5.nf.b.4_' + r);
-	
-	//divide fraction with unit numerator by whole number
-	this.mIDArray.push('5.nf.b.7.a_5');
-
-	//ADVANCED...........
-
-	//division 2x4
-	//this.mIDArray.push('5.nbt.b.6_4');
-	
-	//divide decimals	
-	//r = Math.floor(Math.random()*5+15); //15-19
-	//this.mIDArray.push('5.nbt.b.7_' + r);
-	
-	//subtraction fraction unlike denominators with borrow
-	//this.mIDArray.push('5.nf.a.1_9');
-
 	this.mCurrentElement = 0;
 	this.shuffle(500);
 },
@@ -97,7 +62,7 @@ createItem: function()
                 APPLICATION.mItemAttemptsArray.push(itemAttempt);
                 pick.setItemAttempt(itemAttempt);
                 itemAttempt.mType = pick.mType;
-                itemAttempt.setEvaluationsID(21);
+                itemAttempt.setEvaluationsID(33);
         }
         else
         {

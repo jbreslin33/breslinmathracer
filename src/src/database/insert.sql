@@ -149,12 +149,19 @@ insert into evaluations (id,description) values (12,'3_oa_c_7');
 insert into evaluations (id,description) values (22,'3_nbt'); 
 
 --4
-insert into evaluations (id,description) values (20,'Basic Skills Fourth'); 
-insert into evaluations (id,description) values (30,'Basic Skills Fourth Boss Level'); 
+insert into evaluations (id,description) values (11,'4_oa_b_4'); 
+insert into evaluations (id,description) values (14,'4_nbt_b_4'); 
+insert into evaluations (id,description) values (20,'4_nbt_b_5'); 
+insert into evaluations (id,description) values (21,'4_nbt_b_6'); 
+insert into evaluations (id,description) values (30,'4_nf_b_3_c'); 
 
 --5
-insert into evaluations (id,description) values (21,'Basic Skills Fifth'); 
-insert into evaluations (id,description) values (31,'Basic Skills Fifth Boss Level'); 
+insert into evaluations (id,description) values (31,'5_oa_a_1'); 
+insert into evaluations (id,description) values (32,'5_nbt_b_5'); 
+insert into evaluations (id,description) values (33,'5_nbt_b_6'); 
+insert into evaluations (id,description) values (34,'5_nbt_b_7'); 
+insert into evaluations (id,description) values (35,'5_nf_a_1'); 
+
 
 --tests
 

@@ -78,6 +78,10 @@ var ItemAttempt = new Class(
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayTen[0] = code;
 		}
+		if (parseInt(this.mEvaluationsID) == 11)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayEleven[0] = code;
+		}
 		if (parseInt(this.mEvaluationsID) == 12)
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayTwelve[0] = code;
@@ -246,6 +250,11 @@ var ItemAttempt = new Class(
 			{
 				APPLICATION.mItemAttemptsTypeArrayTen.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayTen.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 11)
+			{
+				APPLICATION.mItemAttemptsTypeArrayEleven.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayEleven.unshift(0);
 			}
 			if (parseInt(this.mEvaluationsID) == 12)
 			{

@@ -133,11 +133,17 @@ cat src/sheet/g2_nbt_sheet.php >> min.js
 cat src/sheet/g3_oa_c_7_sheet.php >> min.js
 cat src/sheet/g3_nbt_sheet.php >> min.js
 
-cat src/sheet/basic_skills_fourth_sheet.php >> min.js
-cat src/sheet/basic_skills_fourth_boss_level_sheet.php >> min.js
+cat src/sheet/g4_oa_b_4_sheet.php >> min.js
+cat src/sheet/g4_nbt_b_4_sheet.php >> min.js
+cat src/sheet/g4_nbt_b_5_sheet.php >> min.js
+cat src/sheet/g4_nbt_b_6_sheet.php >> min.js
+cat src/sheet/g4_nf_b_3_c_sheet.php >> min.js
 
-cat src/sheet/basic_skills_fifth_sheet.php >> min.js
-cat src/sheet/basic_skills_fifth_boss_level_sheet.php >> min.js
+cat src/sheet/g5_oa_a_1_sheet.php >> min.js
+cat src/sheet/g5_nbt_b_5_sheet.php >> min.js
+cat src/sheet/g5_nbt_b_6_sheet.php >> min.js
+cat src/sheet/g5_nbt_b_7_sheet.php >> min.js
+cat src/sheet/g5_nf_a_1_sheet.php >> min.js
 
 cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/terra_nova_test_sheet.php >> min.js
