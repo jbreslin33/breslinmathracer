@@ -123,6 +123,8 @@ var Hud = new Class(
 		{
 			window.location.href = "/web/php/logout.php";
 		}
+
+		APPLICATION.mHud.mHome.mMesh.value = 'Mathcore';
 	},
 
 	tanSelected: function()
@@ -133,6 +135,7 @@ var Hud = new Class(
 	fillHomeSelect: function()
         {
                 var homeSelectArray = new Array(); 
+		homeSelectArray.push('Mathcore');
 		homeSelectArray.push('Play');
 		homeSelectArray.push('XTables');
 		homeSelectArray.push('Practice');
