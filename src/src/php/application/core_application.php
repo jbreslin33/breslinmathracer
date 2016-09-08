@@ -115,7 +115,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = true;
+	$this->mLogs = false;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin

@@ -364,7 +364,6 @@ public function execute($bapplication)
 
 	if ($bapplication->mLoginStudent->mLoggedIn == 1)
 	{
-		error_log("why is this not called first time");	
 		$bapplication->mNormal->fillTypesArray(); //fill types
 		$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
 		$bapplication->mLoginStudent->sendLoginStudent();

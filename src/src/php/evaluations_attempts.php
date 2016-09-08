@@ -6,7 +6,7 @@ class EvaluationsAttempts
 
 function __construct($application,$evaluationsID,$datenow)
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
 		error_log("EvaluationsAttempts::EvaluationsAttempts");
@@ -25,13 +25,6 @@ function __construct($application,$evaluationsID,$datenow)
 	$this->setScoreNeeded();
 
 	$this->mItemAttemptsArray = array();
-
-	error_log('questions');
-	error_log($this->mQuestions);
-	error_log('score_needed');
-	error_log($this->mScore_needed);
-
-	
 
 	$this->insert();
 }
@@ -56,7 +49,6 @@ public function setScoreNeeded()
 		$this->mQuestions = $questions;
 		$this->mScore_needed = $score_needed;
         }
-
 }
 
 public function insert()

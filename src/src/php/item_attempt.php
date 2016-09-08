@@ -7,7 +7,7 @@ class ItemAttempt
 
 function __construct($application,$itemtypeid,$question,$answers,$datenow)
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
                 error_log('ItemAttempt::ItemAttempt');

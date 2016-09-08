@@ -7,7 +7,7 @@ class LoginStudent
 {
 function __construct($application)
 {
-        $this->logs = true;
+        $this->logs = false;
         if ($this->logs)
         {
                 error_log('LoginStudent::LoginStudent');
@@ -68,7 +68,6 @@ public function checkForStudent()
         $this->mStudentExists = false;
        	if ($this->mLoggedIn == 1)
 	{
-		error_log("is he logged in alaread yes");
 		return;
 	}
 	else
@@ -146,7 +145,6 @@ public function checkForStudent()
 					{
 						$failed_to_pass = true;
 					}
-					error_log($this->mMilestonesStandard);
 				}
 				else
 				{
