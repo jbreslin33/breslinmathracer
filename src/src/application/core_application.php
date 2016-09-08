@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -1308,7 +1308,6 @@ highestAchieved: function()
 
 	getMilestonesStandardElement: function()
 	{
-		APPLICATION.log('mMilestonesStandard:' + this.mMilestonesStandard);
 		var i = 0;
 		var milestonesElement = 0;
 		while (i < this.mItemTypesArray.length && milestonesElement == 0)
@@ -1320,7 +1319,6 @@ highestAchieved: function()
 			}
 			i++;
 		}
-		APPLICATION.log('el:' + this.mMilestonesStandardElement);
 	},
 
 	getFirst: function()
@@ -1362,7 +1360,6 @@ highestAchieved: function()
 				}
 				if (tempArray.length > 1)
 				{
-					APPLICATION.log('f');
 					if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
 					{
 						//do nothing
@@ -1427,7 +1424,6 @@ highestAchieved: function()
 			}
 		}
                 this.mSameStandard = id;
-		APPLICATION.log('this.mSameStandard:' + this.mSameStandard);
         },
 	
 	getLeastAsked: function(typesArray,attemptArray,transactionCodeArray)

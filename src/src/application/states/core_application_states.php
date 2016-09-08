@@ -337,7 +337,6 @@ execute: function(application)
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
                 	APPLICATION.mMilestonesStandard = APPLICATION.mResponseArray[6];
-			APPLICATION.log('mMilestonesStandard:' + APPLICATION.mMilestonesStandard);
                 	APPLICATION.mRole = 1;
 		
                 
