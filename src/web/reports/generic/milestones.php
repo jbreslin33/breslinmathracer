@@ -52,7 +52,7 @@ echo "<br>";
 	<p><b> MILESTONES: </p></b>
 
 <p><b> Select Room: </p></b>
-<form method="post" action="/web/reports/school/milestones.php">
+<form method="post" action="/web/reports/generic/milestones.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -83,7 +83,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
         var x = document.getElementById("room_id").value;
-        document.location.href = '/web/reports/school/milestones.php?room_id=' + x;
+        document.location.href = '/web/reports/generic/milestones.php?room_id=' + x;
 }
 </script>
 
