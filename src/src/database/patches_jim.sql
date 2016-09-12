@@ -19,20 +19,17 @@ update evaluations set score_needed = 20 where id = 13;
 update evaluations set progression = 0.6 where id = 13;
 
 
+--just drop all milestones 
+alter table users drop k_cc;
+alter table users drop k_oa_a_4;
+alter table users drop k_oa_a_5;
 
---all none 1 set 0 
-update users set k_cc = 0 where k_cc > 1;
-update users set k_oa_a_4 = 0 where k_oa_a_4 > 1;
-update users set k_oa_a_5 = 0 where k_oa_a_5 > 1;
+alter table users drop g1_oa_b_3;
+alter table users drop g1_oa_c_6;
+alter table users drop g1_nbt;
 
-update users set g1_oa_b_3 = 0 where g1_oa_b_3 > 1;
-update users set g1_oa_c_6 = 0 where g1_oa_c_6 > 1;
-update users set g1_nbt = 0 where g1_nbt > 1;
-
-update users set g2_oa_b_2 = 0 where g2_oa_b_2 > 1;
-update users set g2_nbt = 0 where g2_nbt > 1;
-
-
+alter table users drop g2_oa_b_2;
+alter table users drop g2_nbt;
 
 alter table users drop g3_oa_c_7;
 alter table users drop g3_nbt;
@@ -50,6 +47,18 @@ alter table users drop g5_nbt_b_7;
 alter table users drop g5_nf_a_1;
 
 
+--re add all milestones
+alter table users add k_cc integer;
+alter table users add k_oa_a_4 integer;
+alter table users add k_oa_a_5 integer;
+
+alter table users add g1_oa_b_3 integer;
+alter table users add g1_oa_c_6 integer;
+alter table users add g1_nbt integer;
+
+alter table users add g2_oa_b_2 integer;
+alter table users add g2_nbt integer;
+
 alter table users add g3_oa_c_7 integer;
 alter table users add g3_nbt integer;
 
@@ -66,16 +75,3 @@ alter table users add g5_nbt_b_7 integer;
 alter table users add g5_nf_a_1 integer;
 
 
---update users set k_cc = 0 where k_cc > 1;
---update users set k_oa_a_4 = 0 where k_oa_a_4 > 1;
---update users set k_oa_a_5 = 0 where k_oa_a_5 > 1;
-
---update users set g1_oa_b_3 = 0 where g1_oa_b_3 > 1;
---update users set g1_oa_c_6 = 0 where g1_oa_c_6 > 1;
---update users set g1_nbt = 0 where g1_nbt > 1;
-
---update users set g2_oa_b_2 = 0 where g2_oa_b_2 > 1;
---update users set g2_nbt = 0 where g2_nbt > 1;
-
---update users set g3_oa_c_7 = 0 where g3_oa_c_7 > 1;
---update users set g3_nbt = 0 where g3_nbt > 1;
