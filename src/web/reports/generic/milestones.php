@@ -51,9 +51,9 @@ else
 echo "<br>";
 ?>
 
-<p><b> Leader Boards </p></b>
+<p><b> Milestones </p></b>
 
-<p><b> Select Room and Category: </p></b>
+<p><b> Select Room: </p></b>
 
 <form method="post" action="/web/reports/generic/milestones.php">
 
