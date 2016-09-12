@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>LEADER BOARDS</title>
+        <title>MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -48,13 +48,12 @@ else
 {
 
 }
-
 echo "<br>";
 ?>
 
 <p><b> Leader Boards </p></b>
 
-<p><b> Select Room: </p></b>
+<p><b> Select Room and Category: </p></b>
 
 <form method="post" action="/web/reports/generic/milestones.php">
 
@@ -81,12 +80,13 @@ for($i = 0; $i < $numrows; $i++)
 	}
 }
 ?>
+</select>
 
 <script>
 function loadAgain()
 {
     	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/generic/leaderboards.php?room_id=' + y; 
+	document.location.href = '/web/reports/generic/milestones.php?room_id=' + y; 
 }
 </script>
 
