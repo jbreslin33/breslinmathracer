@@ -1,22 +1,8 @@
---alter table users add core_standards_pass_id integer;
 
---alltimebasicskillskindergarten
-update evaluations set standard_jump_id = 'k.oa.a.3' where id = 25;
-update evaluations set questions = 13 where id = 25;
-update evaluations set score_needed = 13 where id = 25;
-update evaluations set progression = 0.1 where id = 25;
-
---alltimemaketen
-update evaluations set standard_jump_id = 'k.oa.a.5' where id = 26;
-update evaluations set questions = 18 where id = 26;
-update evaluations set score_needed = 18 where id = 26;
-update evaluations set progression = 0.3 where id = 26;
-
---alltimekoaa5
-update evaluations set standard_jump_id = '1.oa.a.1' where id = 13;
-update evaluations set questions = 20 where id = 13;
-update evaluations set score_needed = 20 where id = 13;
-update evaluations set progression = 0.6 where id = 13;
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (13,13,'k.oa.a.4',1) where description = 'k_cc';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (18,18,'k.oa.a.5',2) where description = 'k_oa_a_4';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (20,20,'1.oa.a.1',3) where description = 'k_oa_a_5';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (39,39,'1.oa.c.6',4) where description = '1_oa_b_3';
 
 
 --just drop all milestones 
@@ -73,5 +59,4 @@ alter table users add g5_nbt_b_5 integer;
 alter table users add g5_nbt_b_6 integer;
 alter table users add g5_nbt_b_7 integer;
 alter table users add g5_nf_a_1 integer;
-
 
