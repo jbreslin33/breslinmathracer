@@ -101,15 +101,17 @@ else
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Rank';
+        echo '<td>Rank';
         echo '</td>';
-        echo '<td> First Name';
+        echo '<td>First Name';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td>Last Name';
         echo '</td>';
-        echo '<td> Score';
+        echo '<td>Score';
         echo '</td>';
-        echo '<td> Standard';
+        echo '<td>Standard';
+        echo '</td>';
+        echo '<td>k_cc';
         echo '</td>';
         echo '</tr>';
 
@@ -118,7 +120,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score from users where banned_id = 0 and school_id = ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
@@ -137,6 +139,7 @@ echo '<table border=\"1\">';
                 $lastName = $row[2];
                 $core_standards_id = $row[3];
                 $score = $row[4];
+                $k_cc = $row[5];
 
                 echo '<tr>';
                 echo '<td>';
@@ -153,6 +156,9 @@ echo '<table border=\"1\">';
                 echo '</td>';
                 echo '<td>';
                 echo $core_standards_id;
+                echo '</td>';
+                echo '<td>';
+                echo $k_cc;
                 echo '</td>';
                 echo '</tr>';
         }
