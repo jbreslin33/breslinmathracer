@@ -157,7 +157,15 @@ echo '<table border=\"1\">';
                 echo '<td>';
                 echo $core_standards_id;
                 echo '</td>';
-                echo '<td>';
+
+		if ($k_cc == 1)
+		{
+ 			echo '<td bgcolor="green">';
+		}	
+		else
+		{
+ 			echo '<td bgcolor="red">';
+		}
                 echo $k_cc;
                 echo '</td>';
                 echo '</tr>';
