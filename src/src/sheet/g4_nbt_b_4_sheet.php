@@ -6,12 +6,20 @@ initialize: function(game)
 {
 	this.parent(game);
 
-        //fluent fast add within 20 but answers greater than 10 no 2 digit + 2 digit 
-
-	for (i = 1; i < 37; i++)
-	{
-        	this.mIDArray.push('2.oa.b.2_' + i); 
-	}
+        this.mIDArray.push('4.nbt.b.4_1'); 
+        this.mIDArray.push('4.nbt.b.4_2'); 
+        this.mIDArray.push('4.nbt.b.4_3'); 
+        this.mIDArray.push('4.nbt.b.4_4'); 
+        this.mIDArray.push('4.nbt.b.4_5'); 
+        this.mIDArray.push('4.nbt.b.4_6'); 
+        this.mIDArray.push('4.nbt.b.4_7'); 
+        this.mIDArray.push('4.nbt.b.4_8'); 
+        this.mIDArray.push('4.nbt.b.4_9'); 
+        this.mIDArray.push('4.nbt.b.4_10'); 
+        this.mIDArray.push('4.nbt.b.4_11'); 
+        this.mIDArray.push('4.nbt.b.4_12'); 
+        this.mIDArray.push('4.nbt.b.4_13); 
+        this.mIDArray.push('4.nbt.b.4_14); 
 	
 	this.mCurrentElement = 0;
 	this.shuffle(500);
