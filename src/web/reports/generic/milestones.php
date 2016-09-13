@@ -166,7 +166,7 @@ echo '<table border=\"1\">';
 		{
  			echo '<td bgcolor="red">';
 		}
-                echo $k_cc;
+                echo '';
                 echo '</td>';
                 echo '</tr>';
         }
