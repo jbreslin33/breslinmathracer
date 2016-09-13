@@ -113,6 +113,10 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>k_cc';
         echo '</td>';
+        echo '<td>k_oa_a_4';
+        echo '</td>';
+        echo '<td>k_oa_a_5';
+        echo '</td>';
         echo '</tr>';
 
         $lastAnswerTime = '';
@@ -120,7 +124,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc from users where banned_id = 0 and school_id = ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5 from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
@@ -140,6 +144,8 @@ echo '<table border=\"1\">';
                 $core_standards_id = $row[3];
                 $score = $row[4];
                 $k_cc = $row[5];
+                $k_oa_a_4 = $row[6];
+                $k_oa_a_5 = $row[7];
 
                 echo '<tr>';
                 echo '<td>';
@@ -168,6 +174,31 @@ echo '<table border=\"1\">';
 		}
                 echo '';
                 echo '</td>';
+
+                if ($k_oa_a_4 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }      
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
+                if ($k_oa_a_5 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }      
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
                 echo '</tr>';
         }
 
