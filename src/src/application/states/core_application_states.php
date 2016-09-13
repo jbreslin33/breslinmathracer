@@ -63,7 +63,6 @@ execute: function(application)
 	//2
 	if (application.mEvaluationsID == 28 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG2_OA_B_2_APPLICATION)
 	{
-		APPLICATION.log('states: 28'); 
 		application.mCoreStateMachine.changeState(application.mG2_OA_B_2_APPLICATION);
 	}
 
@@ -88,7 +87,6 @@ execute: function(application)
 	//4
 	if (application.mEvaluationsID == 11 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_OA_B_4_APPLICATION)
 	{
-		APPLICATION.log('states: 11'); 
 		application.mCoreStateMachine.changeState(application.mG4_OA_B_4_APPLICATION);
 	}
 	if (application.mEvaluationsID == 14 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG4_NBT_B_4_APPLICATION)

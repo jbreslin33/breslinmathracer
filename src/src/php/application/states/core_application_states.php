@@ -82,7 +82,6 @@ public function execute($bapplication)
 	//2	
 	if ($bapplication->mCode == 28 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG2_OA_B_2_APPLICATION)
 	{
-		error_log('YO twenty eight');
 		$bapplication->mCoreStateMachine->changeState($bapplication->mG2_OA_B_2_APPLICATION);
 	}
 	
@@ -106,7 +105,6 @@ public function execute($bapplication)
 	//4
 	if ($bapplication->mCode == 11 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG4_OA_B_4_APPLICATION)
 	{
-		error_log('YO eleven');
 		$bapplication->mCoreStateMachine->changeState($bapplication->mG4_OA_B_4_APPLICATION);
 	}
 	if ($bapplication->mCode == 14 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG4_NBT_B_4_APPLICATION)

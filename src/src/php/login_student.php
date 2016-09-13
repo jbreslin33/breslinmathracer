@@ -85,7 +85,6 @@ public function checkForStudent()
         	if ($num > 0)
         	{
 			$this->mStudentExists = true;
-			//$query2 = "select id, password, first_name, last_name, core_standards_id, school_id, room_id, team_id, teacher_id, score from users where username = '";
 			$query2 = "select * from users where username = '";
         		$query2 .= $this->mUsername;
         		$query2 .= "' AND password = '";
@@ -114,6 +113,28 @@ public function checkForStudent()
 				$k_cc     = pg_Result($result2, 0, 'k_cc'); 
 				$k_oa_a_4 = pg_Result($result2, 0, 'k_oa_a_4'); 
 				$k_oa_a_5 = pg_Result($result2, 0, 'k_oa_a_5'); 
+				
+				$g1_oa_b_3 = pg_Result($result2, 0, 'g1_oa_b_3'); 
+				$g1_oa_c_6 = pg_Result($result2, 0, 'g1_oa_c_6'); 
+				$g1_nbt = pg_Result($result2, 0, 'g1_nbt'); 
+				
+				$g2_oa_b_2 = pg_Result($result2, 0, 'g2_oa_b_2'); 
+				$g2_nbt = pg_Result($result2, 0, 'g2_nbt'); 
+
+				$g3_oa_c_7 = pg_Result($result2, 0, 'g3_oa_c_7'); 
+				$g3_nbt = pg_Result($result2, 0, 'g3_nbt'); 
+				
+				$g4_oa_b_4 = pg_Result($result2, 0, 'g4_oa_b_4'); 
+				$g4_nbt_b_4 = pg_Result($result2, 0, 'g4_nbt_b_4'); 
+				$g4_nbt_b_5 = pg_Result($result2, 0, 'g4_nbt_b_5'); 
+				$g4_nbt_b_6 = pg_Result($result2, 0, 'g4_nbt_b_6'); 
+				$g4_nf_b_3_c = pg_Result($result2, 0, 'g4_nf_b_3_c'); 
+				
+				$g5_oa_a_1 = pg_Result($result2, 0, 'g5_oa_a_1'); 
+				$g5_nbt_b_5 = pg_Result($result2, 0, 'g5_nbt_b_5'); 
+				$g5_nbt_b_6 = pg_Result($result2, 0, 'g5_nbt_b_6'); 
+				$g5_nbt_b_7 = pg_Result($result2, 0, 'g5_nbt_b_7'); 
+				$g5_nf_a_1 = pg_Result($result2, 0, 'g5_nf_a_1'); 
 
 				if ($core_standards_overide_id == 0)
 				{
@@ -140,6 +161,143 @@ public function checkForStudent()
 					if ($k_oa_a_5 == 1 && $failed_to_pass == false)
 					{
 						$this->mMilestonesStandard = '1.oa.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+
+					if ($g1_oa_b_3 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g1.oa.c.6';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g1_oa_c_6 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g1.nbt.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g1_nbt == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g2.oa.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g2_oa_b_2 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g2.nbt.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g2_nbt == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g3.oa.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g3_oa_c_7 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g3.nbt.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g3_nbt == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g4.oa.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g4_oa_b_4 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g4.nbt.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g4_nbt_b_4 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g4.nbt.b.5';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g4_nbt_b_5 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g4.nbt.b.6';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g4_nbt_b_6 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g4.nf.b.3.c';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g4_nf_b_3_c == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g5.oa.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g5_oa_a_1 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g5.nbt.b.5';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g5_nbt_b_5 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g5.nbt.b.6';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g5_nbt_b_6 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g5.nbt.b.7';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g5_nbt_b_7 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g5.nf.a.1';
+					}
+					else
+					{
+						$failed_to_pass = true;
+					}
+					if ($g5_nf_a_1 == 1 && $failed_to_pass == false)
+					{
+						$this->mMilestonesStandard = 'g6.rp.a.1';
 					}
 					else
 					{
@@ -1221,10 +1379,7 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $this->mLastName;
 	$returnString .= ",";
-	//$returnString .= $this->mRole;
 	$returnString .= $this->mMilestonesStandard;
-//	$this->mMilestonesStandard = 'k.cc.a.1';
-	
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataA;
 	$returnString .= ",";
