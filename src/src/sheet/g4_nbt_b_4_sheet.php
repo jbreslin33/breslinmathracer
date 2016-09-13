@@ -6,20 +6,8 @@ initialize: function(game)
 {
 	this.parent(game);
 
-        this.mIDArray.push('4.nbt.b.4_1'); 
-        this.mIDArray.push('4.nbt.b.4_2'); 
-        this.mIDArray.push('4.nbt.b.4_3'); 
-        this.mIDArray.push('4.nbt.b.4_4'); 
-        this.mIDArray.push('4.nbt.b.4_5'); 
-        this.mIDArray.push('4.nbt.b.4_6'); 
-        this.mIDArray.push('4.nbt.b.4_7'); 
-        this.mIDArray.push('4.nbt.b.4_8'); 
-        this.mIDArray.push('4.nbt.b.4_9'); 
-        this.mIDArray.push('4.nbt.b.4_10'); 
-        this.mIDArray.push('4.nbt.b.4_11'); 
-        this.mIDArray.push('4.nbt.b.4_12'); 
-        this.mIDArray.push('4.nbt.b.4_13); 
-        this.mIDArray.push('4.nbt.b.4_14); 
+        this.mIDArray.push('3.oa.c.7_15'); 
+        this.mIDArray.push('3.oa.c.7_16'); 
 	
 	this.mCurrentElement = 0;
 	this.shuffle(500);
