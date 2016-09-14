@@ -6,12 +6,28 @@ initialize: function(game)
 {
 	this.parent(game);
 
-        //fluent fast add within 20 but answers greater than 10 no 2 digit + 2 digit 
-
-	for (i = 1; i < 37; i++)
-	{
-        	this.mIDArray.push('2.oa.b.2_' + i); 
-	}
+        this.mIDArray.push('5.oa.a.1_1'); 
+        this.mIDArray.push('5.oa.a.1_2'); 
+        this.mIDArray.push('5.oa.a.1_3'); 
+        this.mIDArray.push('5.oa.a.1_4'); 
+        this.mIDArray.push('5.oa.a.1_5'); 
+        this.mIDArray.push('5.oa.a.1_6'); 
+        this.mIDArray.push('5.oa.a.1_7'); 
+        this.mIDArray.push('5.oa.a.1_8'); 
+        this.mIDArray.push('5.oa.a.1_9'); 
+        this.mIDArray.push('5.oa.a.1_10'); 
+        this.mIDArray.push('5.oa.a.1_11'); 
+        this.mIDArray.push('5.oa.a.1_12'); 
+        this.mIDArray.push('5.oa.a.1_13'); 
+        this.mIDArray.push('5.oa.a.1_14'); 
+        this.mIDArray.push('5.oa.a.1_15'); 
+        this.mIDArray.push('5.oa.a.1_16'); 
+        this.mIDArray.push('5.oa.a.1_17'); 
+        this.mIDArray.push('5.oa.a.1_18'); 
+        this.mIDArray.push('5.oa.a.1_19'); 
+        this.mIDArray.push('5.oa.a.1_20'); 
+        this.mIDArray.push('5.oa.a.1_21'); 
+        this.mIDArray.push('5.oa.a.1_22'); 
 	
 	this.mCurrentElement = 0;
 	this.shuffle(500);
