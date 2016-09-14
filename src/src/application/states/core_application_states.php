@@ -167,10 +167,6 @@ execute: function(application)
 	}
 
 	//TESTS
-	if (application.mEvaluationsID == 14 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_APPLICATION);
-	}
 	if (application.mEvaluationsID == 15 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTEST_APPLICATION)
 	{
 		application.mCoreStateMachine.changeState(application.mTEST_APPLICATION);
@@ -2751,46 +2747,6 @@ exit: function(application)
 
 
 //TESTS
-
-
-var TERRA_NOVA_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::TERRA_NOVA_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new TerraNovaGame(APPLICATION);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::TERRA_NOVA_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
 var TEST_APPLICATION = new Class(
 {
 Extends: State,

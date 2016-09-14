@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -102,7 +102,7 @@ Extends: Application,
 		this.mItemAttemptsTypeArrayThirteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayThirteen = new Array(); //from db
 		
-		//Fourteen terra nova 
+		//4.nbt.b.4 
 		this.mItemAttemptsTypeArrayFourteen = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayFourteen = new Array(); //from db
 		
@@ -311,7 +311,6 @@ Extends: Application,
                 this.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new TIMES_TABLES_THE_SUPER_IZZY_APPLICATION      (this);
 
                	//tests 
-		this.mTERRA_NOVA_APPLICATION = new TERRA_NOVA_APPLICATION      (this);
                 this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
                 this.mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION      (this);
                 this.mHOMEWORK_APPLICATION = new HOMEWORK_APPLICATION      (this);
@@ -760,38 +759,32 @@ highestAchieved: function()
 
                	if (parseInt(this.mEvaluationsID) == 14)
                 {
-                        //all time
-                        for (var i = 0; i < this.mItemAttemptsTypeArrayFourteen.length; i++)
-                        {
-                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 1)
-                                {
-                                        hiStreak++;
-                                        if (parseInt(hiStreak) >= parseInt(score))
-                                        {
-                                                score = hiStreak;
-                                        }
-                                }
-                                else
-                                {
-                                        hiStreak = 0;
-                                }
-                        }
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
 
-                        //latest streak
-                        var i = 0;
-                        while (i < this.mItemAttemptsTypeArrayFourteen.length && foundWrong == false)
+                        while (i < this.mGame.mSheet.mCurrentElement)
                         {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 1)
                                 {
-                                        currentStreak++;
-                                        i++;
+                                       	correct++;
                                 }
-                                else
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFourteen[i]) == 2)
                                 {
-                                        foundWrong = true;
+                                       	incorrect++;
                                 }
-                        }
-                }
+                                i++;
+			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                
+		}
                	
 		if (parseInt(this.mEvaluationsID) == 15)
                 {
