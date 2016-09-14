@@ -12,15 +12,9 @@
 
 <?php
 session_start();
-if ($_SESSION["role"] == 1)
-{
-        echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
-        echo "<li><a href=\"/web/navigation/student/edit.php\">Edit</a></li>";
-}
-else
-{
-        echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
-}
+echo "<li><a href=\"/web/navigation/student/main_menu.php\">Main Menu</a></li>";
+echo "<li><a href=\"/web/navigation/student/edit.php\">Edit</a></li>";
+
 ?>
 <li><a href="/web/php/logout.php">Logout</a></li>
 </ul>

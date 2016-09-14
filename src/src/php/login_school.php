@@ -26,14 +26,13 @@ function __construct($application)
         $this->mUserID = 0;
         $this->mSchoolID = 0;
 
-	//sessions
-	$_SESSION["role"] = 3;
-
 	$this->process();
 }
 
 public function sendLoginSchool()
 {
+	$_SESSION["role"] = 3;
+
 	$returnString = "114,";
 	$returnString .= $this->mLoggedIn;
 	$returnString .= ",";
