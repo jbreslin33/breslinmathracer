@@ -22,6 +22,8 @@ $update .= " where id = '";
 $update .= $_SESSION["user_id"];
 $update .= "';";
 
+$_SESSION["school_id"] = $_POST["school_id"];
+
 $updateResult = pg_query($conn,$update);
 	
 $response = "Success";
