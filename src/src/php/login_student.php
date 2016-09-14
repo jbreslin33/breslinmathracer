@@ -29,8 +29,6 @@ function __construct($application)
 	$this->mCoreStandardsID = 0;
 	$this->mMilestonesStandard = 'k.cc.a.1';
 
-	//sessions	
-	$_SESSION["role"] = 1;
 }
 
 public function process()
@@ -353,6 +351,9 @@ public function setMilestonesStandard()
 }
 public function sendLoginStudent()
 {
+	//sessions	
+	$_SESSION["role"] = 1;
+
 	$itemTypesRawDataA = ""; 
 	$itemTypesRawDataB = ""; 
 	$itemTypesRawDataC = ""; 

@@ -28,3 +28,13 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (17,17,'5.nf.a.1',19) where description = '5_nbt_b_7';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (17,17,'6.rp.a.1',20) where description = '5_nf_a_1';
 
+-- add rooms
+insert into rooms (name,school_id) values ('5',2);
+insert into rooms (name,school_id) values ('23',2);
+insert into rooms (name,school_id) values ('24',2);
+insert into rooms (name,school_id) values ('25',2);
+insert into rooms (name,school_id) values ('26',2);
+insert into rooms (name,school_id) values ('27',2);
+insert into rooms (name,school_id) values ('28',2);
+
+insert into rooms (name,school_id) values ('38',2);
