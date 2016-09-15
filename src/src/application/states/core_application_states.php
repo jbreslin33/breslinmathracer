@@ -1644,6 +1644,7 @@ enter: function(application)
         }
         application.mGame = new k_cc_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: k_cc');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1683,6 +1684,7 @@ enter: function(application)
         }
         application.mGame = new k_oa_a_4_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: k_oa_a_4');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1722,6 +1724,7 @@ enter: function(application)
         }
         application.mGame = new k_oa_a_5_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: k_oa_a_5');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1764,6 +1767,7 @@ enter: function(application)
         }
         application.mGame = new g1_oa_b_3_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 1_oa_b_3');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1803,6 +1807,7 @@ enter: function(application)
         }
         application.mGame = new g1_oa_c_6_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 1_oa_c_6');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1842,6 +1847,7 @@ enter: function(application)
         }
         application.mGame = new g1_nbt_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 1_nbt');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1884,6 +1890,7 @@ enter: function(application)
         }
         application.mGame = new g2_oa_b_2_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 2_oa_b_2');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1923,6 +1930,7 @@ enter: function(application)
         }
         application.mGame = new g2_nbt_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 2_nbt');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -1966,6 +1974,7 @@ enter: function(application)
         }
         application.mGame = new g3_oa_c_7_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 3_oa_c_7');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2005,6 +2014,7 @@ enter: function(application)
         }
         application.mGame = new g3_nbt_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 3_nbt');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2047,6 +2057,7 @@ enter: function(application)
         }
         application.mGame = new g4_oa_b_4_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 4_oa_b_4');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2087,6 +2098,7 @@ enter: function(application)
         }
         application.mGame = new g4_nbt_b_4_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 4_nbt_b_4');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2126,6 +2138,7 @@ enter: function(application)
         }
         application.mGame = new g4_nbt_b_5_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 4_nbt_b_5');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2166,6 +2179,7 @@ enter: function(application)
         }
         application.mGame = new g4_nbt_b_6_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 4_nbt_b_6');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2206,6 +2220,7 @@ enter: function(application)
         }
         application.mGame = new g4_nf_b_3_c_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 4_nf_b_3_c');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2249,6 +2264,7 @@ enter: function(application)
         }
         application.mGame = new g5_oa_a_1_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 5_oa_a_1');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2288,6 +2304,7 @@ enter: function(application)
         }
         application.mGame = new g5_nbt_b_5_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 5_nbt_b_5');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2327,6 +2344,7 @@ enter: function(application)
         }
         application.mGame = new g5_nbt_b_6_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 5_nbt_b_6');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2366,6 +2384,7 @@ enter: function(application)
         }
         application.mGame = new g5_nbt_b_7_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 5_nbt_b_7');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2405,6 +2424,7 @@ enter: function(application)
         }
         application.mGame = new g5_nf_a_1_Game(APPLICATION);
         APPLICATION.mHud.setOrange('G: 5_nf_a_1');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2447,6 +2467,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesTwoGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 2');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2486,6 +2507,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesThreeGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 3');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2525,6 +2547,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesFourGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 4');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2564,6 +2587,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesFiveGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 5');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2603,6 +2627,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesSixGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 6');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2642,6 +2667,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesSevenGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 7');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2681,6 +2707,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesEightGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 8');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2720,6 +2747,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesNineGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: table 9');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2759,6 +2787,7 @@ enter: function(application)
         }
         application.mGame = new TimesTablesTheSuperIzzyGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: SuperIzzy');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2801,6 +2830,7 @@ enter: function(application)
         }
         application.mGame = new TestGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: Test');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2810,6 +2840,7 @@ execute: function(application)
 		application.log('APPLICATION::TEST_APPLICATION execute');
 	}
 	application.mHud.setOrange('TestID:' + APPLICATION.mEvaluationsAttemptsID);
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 exit: function(application)
@@ -2841,6 +2872,7 @@ enter: function(application)
         }
         application.mGame = new TerraNovaTestGame(APPLICATION);
         APPLICATION.mHud.setOrange('G:TerraNovaTest');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2880,6 +2912,7 @@ enter: function(application)
         }
         application.mGame = new HomeworkGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: Homework');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -2919,6 +2952,7 @@ enter: function(application)
         }
         application.mGame = new TerraNovaHomeworkGame(APPLICATION);
         APPLICATION.mHud.setOrange('G:TerraNova Homework');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
