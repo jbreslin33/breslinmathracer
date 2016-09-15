@@ -726,6 +726,7 @@ enter: function(application)
         APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
         var v = 'PLEASE WAIT LOGGING IN';
         APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+        APPLICATION.mHud.setOrange('G: LoginSchol');
 },
 
 execute: function(application)
@@ -747,7 +748,6 @@ execute: function(application)
 	else if (application.mLoggedIn == true)
 	{
         	APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
-                APPLICATION.mHud.setOrange('Game: ' + APPLICATION.mRef_id);
                 //APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
                 APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
@@ -911,6 +911,7 @@ enter: function(application)
 
         var v = 'PLEASE WAIT LOGGING IN';
         APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+        APPLICATION.mHud.setOrange('Signup Student');
 },
 
 execute: function(application)
@@ -930,7 +931,6 @@ execute: function(application)
 		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
 		{
         		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
-                	APPLICATION.mHud.setOrange('Game:' + APPLICATION.mRef_id);
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
@@ -1523,6 +1523,7 @@ enter: function(application)
         }
         application.mGame = new NormalGame(APPLICATION);
 	application.calcScore();
+        APPLICATION.mHud.setOrange('G: Mathcore');
 },
 
 execute: function(application)
@@ -1600,6 +1601,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new PracticeGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: Practice');
 
 },
 
@@ -1641,6 +1643,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new k_cc_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: k_cc');
 },
 
 execute: function(application)
@@ -1679,6 +1682,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new k_oa_a_4_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: k_oa_a_4');
 },
 
 execute: function(application)
@@ -1717,6 +1721,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new k_oa_a_5_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: k_oa_a_5');
 },
 
 execute: function(application)
@@ -1758,6 +1763,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g1_oa_b_3_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 1_oa_b_3');
 },
 
 execute: function(application)
@@ -1796,6 +1802,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g1_oa_c_6_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 1_oa_c_6');
 },
 
 execute: function(application)
@@ -1834,6 +1841,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g1_nbt_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 1_nbt');
 },
 
 execute: function(application)
@@ -1875,6 +1883,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g2_oa_b_2_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 2_oa_b_2');
 },
 
 execute: function(application)
@@ -1913,6 +1922,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g2_nbt_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 2_nbt');
 },
 
 execute: function(application)
@@ -1955,6 +1965,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g3_oa_c_7_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 3_oa_c_7');
 },
 
 execute: function(application)
@@ -1993,6 +2004,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g3_nbt_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 3_nbt');
 },
 
 execute: function(application)
@@ -2034,6 +2046,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g4_oa_b_4_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 4_oa_b_4');
 },
 
 execute: function(application)
@@ -2073,6 +2086,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g4_nbt_b_4_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 4_nbt_b_4');
 },
 
 execute: function(application)
@@ -2111,6 +2125,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g4_nbt_b_5_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 4_nbt_b_5');
 },
 
 execute: function(application)
@@ -2150,6 +2165,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g4_nbt_b_6_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 4_nbt_b_6');
 },
 
 execute: function(application)
@@ -2189,6 +2205,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g4_nf_b_3_c_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 4_nf_b_3_c');
 },
 
 execute: function(application)
@@ -2231,6 +2248,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g5_oa_a_1_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 5_oa_a_1');
 },
 
 execute: function(application)
@@ -2269,6 +2287,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g5_nbt_b_5_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 5_nbt_b_5');
 },
 
 execute: function(application)
@@ -2307,6 +2326,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g5_nbt_b_6_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 5_nbt_b_6');
 },
 
 execute: function(application)
@@ -2345,6 +2365,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g5_nbt_b_7_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 5_nbt_b_7');
 },
 
 execute: function(application)
@@ -2383,6 +2404,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new g5_nf_a_1_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 5_nf_a_1');
 },
 
 execute: function(application)
@@ -2424,6 +2446,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesTwoGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 2');
 },
 
 execute: function(application)
@@ -2462,6 +2485,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesThreeGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 3');
 },
 
 execute: function(application)
@@ -2500,6 +2524,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesFourGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 4');
 },
 
 execute: function(application)
@@ -2538,6 +2563,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesFiveGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 5');
 },
 
 execute: function(application)
@@ -2576,6 +2602,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesSixGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 6');
 },
 
 execute: function(application)
@@ -2614,6 +2641,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesSevenGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 7');
 },
 
 execute: function(application)
@@ -2652,6 +2680,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesEightGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 8');
 },
 
 execute: function(application)
@@ -2690,6 +2719,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesNineGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: table 9');
 },
 
 execute: function(application)
@@ -2728,6 +2758,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TimesTablesTheSuperIzzyGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: SuperIzzy');
 },
 
 execute: function(application)
@@ -2769,6 +2800,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TestGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: Test');
 },
 
 execute: function(application)
@@ -2808,6 +2840,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TerraNovaTestGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G:TerraNovaTest');
 },
 
 execute: function(application)
@@ -2846,6 +2879,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new HomeworkGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: Homework');
 },
 
 execute: function(application)
@@ -2884,6 +2918,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TerraNovaHomeworkGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G:TerraNova Homework');
 },
 
 execute: function(application)
@@ -2899,9 +2934,6 @@ exit: function(application)
 }
 
 });
-
-
-
 
 
 //add_game_G
