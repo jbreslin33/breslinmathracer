@@ -127,6 +127,22 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>2_nbt';
         echo '</td>';
+        echo '<td>5';
+        echo '</td>';
+        echo '<td>2';
+        echo '</td>';
+        echo '<td>4';
+        echo '</td>';
+        echo '<td>8';
+        echo '</td>';
+        echo '<td>3';
+        echo '</td>';
+        echo '<td>6';
+        echo '</td>';
+        echo '<td>9';
+        echo '</td>';
+        echo '<td>7';
+        echo '</td>';
         echo '<td>3_oa_c_7';
         echo '</td>';
         echo '<td>3_nbt';
@@ -160,7 +176,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1 from users where banned_id = 0 and school_id = ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1 from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
@@ -190,20 +206,28 @@ echo '<table border=\"1\">';
 		$g2_oa_b_2 = $row[11];
 		$g2_nbt = $row[12];
 		
-		$g3_oa_c_7 = $row[13];
-		$g3_nbt = $row[14];
+		$g5 = $row[13];
+		$g2 = $row[14];
+		$g4 = $row[15];
+		$g8 = $row[16];
+		$g3 = $row[17];
+		$g6 = $row[18];
+		$g9 = $row[19];
+		$g7 = $row[20];
+		$g3_oa_c_7 = $row[21];
+		$g3_nbt = $row[22];
 		
-		$g4_oa_b_4 = $row[15];
-		$g4_nbt_b_4 = $row[16];
-		$g4_nbt_b_5 = $row[17];
-		$g4_nbt_b_6 = $row[18];
-		$g4_nf_b_3_c = $row[19];
+		$g4_oa_b_4 = $row[23];
+		$g4_nbt_b_4 = $row[24];
+		$g4_nbt_b_5 = $row[25];
+		$g4_nbt_b_6 = $row[26];
+		$g4_nf_b_3_c = $row[27];
 		
-		$g5_oa_a_1 = $row[20];
-		$g5_nbt_b_5 = $row[21];
-		$g5_nbt_b_6 = $row[22];
-		$g5_nbt_b_7 = $row[23];
-		$g5_nf_a_1 = $row[24];
+		$g5_oa_a_1 = $row[28];
+		$g5_nbt_b_5 = $row[29];
+		$g5_nbt_b_6 = $row[30];
+		$g5_nbt_b_7 = $row[31];
+		$g5_nf_a_1 = $row[32];
                 
 
                 echo '<tr>';
@@ -318,6 +342,93 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
+                if ($g5 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g2 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g4 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g8 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g3 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g6 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g9 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+                if ($g7 == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
 
                 if ($g3_oa_c_7 == 1)
                 {
@@ -329,6 +440,8 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
+
+
 
                 if ($g3_nbt == 1)
                 {
