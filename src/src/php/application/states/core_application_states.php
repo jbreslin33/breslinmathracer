@@ -2221,6 +2221,8 @@ public function bexit($bapplication)
 
 }//end class
 
+
+
 class TIMES_TABLES_FIVE_APPLICATION extends State
 {
 
@@ -2236,13 +2238,13 @@ public function enter($bapplication)
                 error_log('TIMES_TABLES_FIVE_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,6,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,6,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
 
-	$bapplication->update();		
+        $bapplication->update();
 }
 
 public function execute($bapplication)
@@ -2251,25 +2253,35 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_FIVE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 6)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefive');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
+        if ($bapplication->mCode == 6)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimefive');
+        }
 }
 public function bexit($bapplication)
 {

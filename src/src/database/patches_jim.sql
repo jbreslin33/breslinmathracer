@@ -27,6 +27,10 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'5.nf.a.1',19) where description = '5_nbt_b_7';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.rp.a.1',20) where description = '5_nf_a_1';
 
+
+--tables
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.1) where description = 'timestables_5';
+
 -- add rooms
 insert into rooms (name,school_id) values ('5',2);
 insert into rooms (name,school_id) values ('23',2);
@@ -37,3 +41,6 @@ insert into rooms (name,school_id) values ('27',2);
 insert into rooms (name,school_id) values ('28',2);
 
 insert into rooms (name,school_id) values ('38',2);
+
+
+update users set alltimefive = 0;
