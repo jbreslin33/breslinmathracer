@@ -49,12 +49,3 @@ insert into rooms (name,school_id) values ('28',2);
 
 insert into rooms (name,school_id) values ('38',2);
 
-
-update users set alltimefive = 0;
-update users set alltimetwo = 0;
-update users set alltimefour = 0;
-update users set alltimeeight = 0;
-update users set alltimethree = 0;
-update users set alltimesix = 0;
-update users set alltimenine = 0;
-update users set alltimeseven = 0;
