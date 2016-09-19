@@ -30,6 +30,13 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 
 --tables
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.1) where description = 'timestables_5';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.2) where description = 'timestables_2';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.3) where description = 'timestables_4';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.4) where description = 'timestables_8';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.5) where description = 'timestables_3';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.6) where description = 'timestables_6';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.7) where description = 'timestables_9';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.8) where description = 'timestables_7';
 
 -- add rooms
 insert into rooms (name,school_id) values ('5',2);
@@ -44,3 +51,10 @@ insert into rooms (name,school_id) values ('38',2);
 
 
 update users set alltimefive = 0;
+update users set alltimetwo = 0;
+update users set alltimefour = 0;
+update users set alltimeeight = 0;
+update users set alltimethree = 0;
+update users set alltimesix = 0;
+update users set alltimenine = 0;
+update users set alltimeseven = 0;

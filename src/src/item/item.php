@@ -347,6 +347,104 @@ var Item = new Class(
 
 		//3
 
+               	var optionB5 = document.createElement("option");
+                optionB5.value = 6;
+                optionB5.text = 'OLD SCHOOL 5';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB5);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB5);
+                }
+
+                var optionB2 = document.createElement("option");
+                optionB2.value = 3;
+                optionB2.text = 'OLD SCHOOL 2';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB2);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB2);
+                }
+
+                var optionB4 = document.createElement("option");
+                optionB4.value = 5;
+                optionB4.text = 'OLD SCHOOL 4';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB4);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB4);
+                }
+
+
+                var optionB8 = document.createElement("option");
+                optionB8.value = 9;
+                optionB8.text = 'OLD SCHOOL 8';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB8);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB8);
+                }
+
+                var optionB3 = document.createElement("option");
+                optionB3.value = 4;
+                optionB3.text = 'OLD SCHOOL 3';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB3);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB3);
+                }
+
+                var optionB6 = document.createElement("option");
+                optionB6.value = 7;
+                optionB6.text = 'OLD SCHOOL 6';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB6);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB6);
+                }
+
+                var optionB9 = document.createElement("option");
+                optionB9.value = 10;
+                optionB9.text = 'OLD SCHOOL 9';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB9);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB9);
+                }
+
+                var optionB7 = document.createElement("option");
+                optionB7.value = 8;
+                optionB7.text = 'OLD SCHOOL 7';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionB7);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionB7);
+                }
+
+
 		var optionB = document.createElement("option");
                 optionB.value = 12;
                 optionB.text = '3_oa_c_7';
@@ -504,6 +602,7 @@ var Item = new Class(
 
 
 		//just fill it here...
+/*
 		for (i=2; i < 10; i++)
 		{
   			var option = document.createElement("option");
@@ -519,7 +618,7 @@ var Item = new Class(
 			}
 		}
 
-	
+*/	
      
 		
 		var optionD = document.createElement("option");

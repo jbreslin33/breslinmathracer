@@ -2039,189 +2039,6 @@ public function bexit($bapplication)
 
 //TABLES
 
-class TIMES_TABLES_TWO_APPLICATION extends State
-{
-
-function __construct()
-{
-
-}
-
-public function enter($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_TWO_APPLICATION Enter');
-        }
-
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,3,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
-
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
-
-	$bapplication->update();		
-}
-
-public function execute($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_TWO_APPLICATION Execute');
-        }
-	if ($bapplication->mCode == 3)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimetwo');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
-}
-public function bexit($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_TWO_APPLICATION Exit');
-        }
-}
-
-}//end class
-
-
-class TIMES_TABLES_THREE_APPLICATION extends State
-{
-
-function __construct()
-{
-
-}
-
-public function enter($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_THREE_APPLICATION Enter');
-        }
-
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,4,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
-
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
-
-	$bapplication->update();		
-}
-
-public function execute($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_THREE_APPLICATION Execute');
-        }
-	if ($bapplication->mCode == 4)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimethree');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
-}
-public function bexit($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_THREE_APPLICATION Exit');
-        }
-}
-
-}//end class
-
-
-class TIMES_TABLES_FOUR_APPLICATION extends State
-{
-
-function __construct()
-{
-
-}
-
-public function enter($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_FOUR_APPLICATION Enter');
-        }
-
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,5,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
-
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
-
-	$bapplication->update();		
-}
-
-public function execute($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_FOUR_APPLICATION Execute');
-        }
-	if ($bapplication->mCode == 5)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimefour');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
-}
-public function bexit($bapplication)
-{
-        if ($bapplication->mLogs == true)
-        {
-                error_log('TIMES_TABLES_FOUR_APPLICATION Exit');
-        }
-}
-
-}//end class
-
-
 
 class TIMES_TABLES_FIVE_APPLICATION extends State
 {
@@ -2293,7 +2110,7 @@ public function bexit($bapplication)
 
 }//end class
 
-class TIMES_TABLES_SIX_APPLICATION extends State
+class TIMES_TABLES_TWO_APPLICATION extends State
 {
 
 function __construct()
@@ -2305,55 +2122,65 @@ public function enter($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('TIMES_TABLES_SIX_APPLICATION Enter');
+                error_log('TIMES_TABLES_TWO_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,7,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,3,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
 
-	$bapplication->update();		
+        $bapplication->update();
 }
 
 public function execute($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('TIMES_TABLES_SIX_APPLICATION Execute');
+                error_log('TIMES_TABLES_TWO_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 7)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimesix');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
+        if ($bapplication->mCode == 3)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimetwo');
+        }
 }
 public function bexit($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('TIMES_TABLES_SIX_APPLICATION Exit');
+                error_log('TIMES_TABLES_TWO_APPLICATION Exit');
         }
 }
 
 }//end class
 
-class TIMES_TABLES_SEVEN_APPLICATION extends State
+class TIMES_TABLES_FOUR_APPLICATION extends State
 {
 
 function __construct()
@@ -2365,49 +2192,59 @@ public function enter($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('TIMES_TABLES_SEVEN_APPLICATION Enter');
+                error_log('TIMES_TABLES_FOUR_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,8,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,5,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
 
-	$bapplication->update();		
+        $bapplication->update();
 }
 
 public function execute($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('TIMES_TABLES_SEVEN_APPLICATION Execute');
+                error_log('TIMES_TABLES_FOUR_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 8)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeseven');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
+        if ($bapplication->mCode == 5)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimefour');
+        }
 }
 public function bexit($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
-                error_log('TIMES_TABLES_SEVEN_APPLICATION Exit');
+                error_log('TIMES_TABLES_FOUR_APPLICATION Exit');
         }
 }
 
@@ -2428,13 +2265,13 @@ public function enter($bapplication)
                 error_log('TIMES_TABLES_EIGHT_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,9,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,9,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
 
-	$bapplication->update();		
+        $bapplication->update();
 }
 
 public function execute($bapplication)
@@ -2443,31 +2280,181 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_EIGHT_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 9)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeeight');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
+        if ($bapplication->mCode == 9)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimeeight');
+        }
 }
 public function bexit($bapplication)
 {
         if ($bapplication->mLogs == true)
         {
                 error_log('TIMES_TABLES_EIGHT_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+class TIMES_TABLES_THREE_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_THREE_APPLICATION Enter');
+        }
+
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,4,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+        $bapplication->update();
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_THREE_APPLICATION Execute');
+        }
+
+        if ($bapplication->mCode == 4)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimethree');
+        }
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_THREE_APPLICATION Exit');
+        }
+}
+
+}//end class
+
+class TIMES_TABLES_SIX_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_SIX_APPLICATION Enter');
+        }
+
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,7,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+        $bapplication->update();
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_SIX_APPLICATION Execute');
+        }
+
+        if ($bapplication->mCode == 7)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimesix');
+        }
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_SIX_APPLICATION Exit');
         }
 }
 
@@ -2488,13 +2475,13 @@ public function enter($bapplication)
                 error_log('TIMES_TABLES_NINE_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,10,$bapplication->mDataArray[4]);
-	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,10,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
-	//pointer to current evaluationsAttempt
-	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
 
-	$bapplication->update();		
+        $bapplication->update();
 }
 
 public function execute($bapplication)
@@ -2503,25 +2490,35 @@ public function execute($bapplication)
         {
                 error_log('TIMES_TABLES_NINE_APPLICATION Execute');
         }
-	if ($bapplication->mCode == 10)
-	{
-		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
-		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
 
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimenine');
-		$bapplication->mCode = 0;
-	}
-	if ($bapplication->mCode == 101) //universal update
-	{
-		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-		{ 
-			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-			{  
-				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-			}
-		}
-		$bapplication->mCode = 0;
-	}
+        if ($bapplication->mCode == 10)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimenine');
+        }
 }
 public function bexit($bapplication)
 {
@@ -2532,6 +2529,77 @@ public function bexit($bapplication)
 }
 
 }//end class
+
+class TIMES_TABLES_SEVEN_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_SEVEN_APPLICATION Enter');
+        }
+
+       	$evaluationsAttempt = new EvaluationsAttempts($bapplication,8,$bapplication->mDataArray[4]);
+        $bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+        //pointer to current evaluationsAttempt
+        $bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+        $bapplication->update();
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_SEVEN_APPLICATION Execute');
+        }
+
+        if ($bapplication->mCode == 8)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+        if ($bapplication->mCode == 101) //universal update
+        {
+                for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                {
+                        if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        {
+                                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                //score
+                                if ($bapplication->mDataArray[2] == 1)
+                                {
+                                        $bapplication->mEvaluationsAttempt->mScore++;
+                                }
+                        }
+                }
+                $bapplication->mCode = 0;
+        }
+
+        //did you pass milestone?
+        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+        {
+                $bapplication->mNormal->updateScores(1,'alltimeseven');
+        }
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('TIMES_TABLES_SEVEN_APPLICATION Exit');
+        }
+}
+
+}//end class
+
 
 
 class TERRA_NOVA_APPLICATION extends State
