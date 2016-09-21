@@ -117,17 +117,20 @@ public function checkForSchool()
 			//set sessions
         		$this->mRole = 3; //school
                 	$this->mSchoolID = $school_id;
+			$_SESSION["school_id"] = $this->mSchoolID;
 		}
 		else
 		{
         		$this->mLoggedIn = 0;
         		$this->mSchoolID = 0;
+			$_SESSION["school_id"] = 0;
 		}
         }
         else
         {
         	$_SESSION["LOGGED_IN"] = 0;
         	$_SESSION["school_id"] = 0;
+		$_SESSION["school_id"] = 0;
         }
 }
 }

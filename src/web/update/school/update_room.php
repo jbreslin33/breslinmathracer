@@ -12,6 +12,7 @@
 
 <?php
 session_start();
+
 if ($_SESSION["role"] == 1)
 {
         echo "<li><a href=\"/web/navigation/school/main_menu.php\">Main Menu</a></li>";
