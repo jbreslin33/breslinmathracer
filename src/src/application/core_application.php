@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -1552,6 +1552,7 @@ highestAchieved: function()
 	
 	parseResponse: function(response)
 	{
+		
                 this.mResponseArray = response.split(",");
                 var code = this.mResponseArray[0];
 		code.trim();
@@ -1828,7 +1829,7 @@ highestAchieved: function()
                                 }
                         }
                 }
-                xmlhttp.open("POST","../../src/php/login_school.php?code=114&username=" + username + "&password=" + password,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=114&username=" + username + "&password=" + password,true);
                 xmlhttp.send();
         },
 

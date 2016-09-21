@@ -40,7 +40,6 @@ public function sendLoginSchool()
 	$returnString .= ",";
 	$returnString .= $this->mRole;
 	echo $returnString;
-
 }
 
 public function sendBadUsername()
@@ -66,13 +65,13 @@ public function process()
 	{
 		return;
 	}
-	
+/*	
 	if ($this->mSchoolExists)
 	{
 		$this->sendBadPassword();
 		return;
 	}
-
+*/
 	//fall thru to bad username	
 	//$this->sendBadUsername();
 }
