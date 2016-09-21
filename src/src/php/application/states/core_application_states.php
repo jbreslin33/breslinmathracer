@@ -191,10 +191,12 @@ public function execute($bapplication)
 
 
 	//TESTS
+/*
 	if ($bapplication->mCode == 14 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTERRA_NOVA_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mTERRA_NOVA_APPLICATION);
 	}
+*/
 	if ($bapplication->mCode == 15 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mTEST_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mTEST_APPLICATION);
