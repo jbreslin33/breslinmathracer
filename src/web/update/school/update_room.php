@@ -40,7 +40,7 @@ echo "<br>";
 <select name="user_id">
 
 <?php
-$query = "select id, username, first_name, last_name, score from users where school_id = ";
+$query = "select username, first_name, last_name, score, last_activity from users where school_id = ";
 $query .= $_SESSION["school_id"];
 $query .= " order by username;";
 
