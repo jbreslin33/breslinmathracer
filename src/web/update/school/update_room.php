@@ -42,7 +42,7 @@ echo "<br>";
 <?php
 $query = "select id, username, first_name, last_name, score from users where school_id = ";
 $query .= $_SESSION["school_id"];
-$query .= " order by last_name;";
+$query .= " order by username;";
 
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
