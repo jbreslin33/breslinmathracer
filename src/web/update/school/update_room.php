@@ -51,7 +51,7 @@ else
 
 <p><b> Select ORIGINAL Room: </p></b>
 
-<form method="post" action="/web/update/schoool/update_room.php">
+<form method="post" action="/web/update/school/update_room.php">
 
 <select id="original_room_id" name="original_room_id" onchange="loadAgain()">
 <?php
@@ -77,6 +77,7 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
+</form>
 <script>
 function loadAgain()
 {
@@ -94,13 +95,24 @@ function loadAgain()
 <select name="user_id">
 
 <?php
-$query = "select username, first_name, last_name, score, last_activity from users where school_id = ";
-$query .= $_SESSION["school_id"];
-$query .= " order by username;";
+$query = 0;
+if ($original_room_id == 9999)
+{
+	$query = "select username, first_name, last_name, score, last_activity, id from users where school_id = ";
+	$query .= $_SESSION["school_id"];
+	$query .= " order by username;";
+}
+else
+{
+	$query = "select username, first_name, last_name, score, last_activity, id from users where school_id = ";
+	$query .= $_SESSION["school_id"];
+	$query .= " AND room_id = ";
+	$query .= $original_room_id;
+	$query .= " order by username;";
+}	
 
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
-
 
 for($i = 0; $i < $numrows; $i++) 
 {
@@ -114,21 +126,12 @@ for($i = 0; $i < $numrows; $i++)
 	$string .= $row[3];
 	$string .= " ";
 	$string .= $row[4];
-      	echo "<option value=\"$row[0]\">$string</option>";
+      	echo "<option value=\"$row[5]\">$string</option>";
 }
 ?>
 </select>
-
-
-
-
-
-
 	<p><b> Select NEW Room: </p></b>
-	
-
 <select name="room_id">
-
 <?php
 $query = "select id, name from rooms where school_id = ";
 $query .= $_SESSION["school_id"];
@@ -143,13 +146,9 @@ for($i = 0; $i < $numrows; $i++)
       	echo "<option value=\"$row[0]\">$row[1]</option>";
 }
 ?>
-
 </select>
-
 	<p><input type="submit" value="UPDATE" /></p>
-
-	</form>
-	
+</form>
 
 </body>
 </html>

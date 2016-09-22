@@ -22,6 +22,9 @@ $update .= " where id = '";
 $update .= $_POST["user_id"];
 $update .= "';";
 
+error_log($update);
+
+
 $updateResult = pg_query($conn,$update);
 	
 $response = "Success";
