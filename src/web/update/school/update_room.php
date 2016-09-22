@@ -31,8 +31,62 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-echo "<br>";
+$original_room_id = 0;
+
+if (isset($_POST["original_room_id"]))
+{
+        $original_room_id = $_POST["original_room_id"];
+}
+
+else if (isset($_GET['original_room_id']))
+{
+        $original_room_id = $_GET['original_room_id'];
+}
+else
+{
+
+}
 ?>
+
+
+<p><b> Select ORIGINAL Room: </p></b>
+
+<form method="post" action="/web/update/schoool/update_room.php">
+
+<select id="original_room_id" name="original_room_id" onchange="loadAgain()">
+<?php
+$query = "select id, name from rooms where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $original_room_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }      
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+<script>
+function loadAgain()
+{
+        var y = document.getElementById("original_room_id").value;
+        document.location.href = '/web/update/school/update_room.php?original_room_id=' + y;
+}
+</script>
+
+
+
 	<p><b> Select Student: </p></b>
 	
 	<form method="post" action="/web/update/school/updateroom.php">
@@ -67,7 +121,10 @@ for($i = 0; $i < $numrows; $i++)
 
 
 
-	<p><b> Select Room: </p></b>
+
+
+
+	<p><b> Select NEW Room: </p></b>
 	
 
 <select name="room_id">

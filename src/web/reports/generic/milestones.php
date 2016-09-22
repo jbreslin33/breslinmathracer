@@ -81,7 +81,6 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
-
 <script>
 function loadAgain()
 {
@@ -91,7 +90,6 @@ function loadAgain()
 </script>
 
 <?php
-
 if ($room_id == 99999)
 {
 
