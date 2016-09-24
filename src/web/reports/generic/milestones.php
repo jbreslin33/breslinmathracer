@@ -157,8 +157,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>5_oa_a_1';
         echo '</td>';
-        echo '<td>5_oa_a_1';
-        echo '</td>';
         echo '<td>5_nbt_b_5';
         echo '</td>';
         echo '<td>5_nbt_b_6';
