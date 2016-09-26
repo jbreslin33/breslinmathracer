@@ -1314,11 +1314,12 @@ highestAchieved: function()
 		}
 	},
 
+//why is this asking pham k questions that are not in his u?
 	getFirst: function()
 	{
 		var first = '';
 		var i = 0;
-
+			
 		while (i < this.mItemTypesArray.length && first == '')
 		{
 			var tempArray = new Array();

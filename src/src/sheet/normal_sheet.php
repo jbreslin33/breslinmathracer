@@ -34,52 +34,45 @@ pickItem: function()
                 APPLICATION.getFirst();
 
 		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-		if (APPLICATION.mFirstName == 'Luke' && APPLICATION.mLastName == 'Breslin')
+		//dups allowed if u is high
+		if (APPLICATION.mGame.mUnmastered > 5)
 		{
 
 		}
+		//if u is low loop till we got no dup
 		else
-		{
-			//dups allowed if u is high
-			if (APPLICATION.mGame.mUnmastered > 5)
-			{
-	
-			}
-			//if u is low loop till we got no dup
-			else
-			{	
-				while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
-        			{
-        				var r = Math.floor(Math.random()*100);
+		{	
+			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+       			{
+       				var r = Math.floor(Math.random()*100);
 
-                			if (r < 50)
-                			{
-                        			APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
-                			}
-					if (r >= 50 && r < 55)
-                			{
-                        			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-                			}
-                			if (r >= 55 && r < 60)
-                			{
-                        			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-                			}
-                			if (r >= 60 && r < 80)
-                			{
-                        			APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-                			}
-                			if (r >= 80)
-                			{
-                        			APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-                			}
-				} //while
-			} //else unmastered less than 5
-		} //else not Luke
+               			if (r < 50)
+               			{
+                       			APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
+               			}
+				if (r >= 50 && r < 55)
+               			{
+                       			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                      			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+               			}
+               			if (r >= 55 && r < 60)
+               			{
+                       			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+               			}
+               			if (r >= 60 && r < 80)
+               			{
+                       			APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+               			}
+               			if (r >= 80)
+               			{
+                       			APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
+               			}
+			} //while
+		} //else unmastered less than 5
 	} //else escape from kinder
 },
 

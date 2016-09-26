@@ -167,7 +167,7 @@ public function checkForStudent()
 
 					if ($g1_oa_b_3 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g1.oa.c.6';
+						$this->mMilestonesStandard = '1.oa.c.6';
 					}
 					else
 					{
@@ -175,7 +175,7 @@ public function checkForStudent()
 					}
 					if ($g1_oa_c_6 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g1.nbt.a.1';
+						$this->mMilestonesStandard = '1.nbt.a.1';
 					}
 					else
 					{
@@ -183,7 +183,7 @@ public function checkForStudent()
 					}
 					if ($g1_nbt == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g2.oa.a.1';
+						$this->mMilestonesStandard = '2.oa.a.1';
 					}
 					else
 					{
@@ -191,7 +191,7 @@ public function checkForStudent()
 					}
 					if ($g2_oa_b_2 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g2.nbt.a.1';
+						$this->mMilestonesStandard = '2.nbt.a.1';
 					}
 					else
 					{
@@ -199,7 +199,7 @@ public function checkForStudent()
 					}
 					if ($g2_nbt == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g3.oa.a.1';
+						$this->mMilestonesStandard = '3.oa.a.1';
 					}
 					else
 					{
@@ -207,7 +207,7 @@ public function checkForStudent()
 					}
 					if ($g3_oa_c_7 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g3.nbt.a.1';
+						$this->mMilestonesStandard = '3.nbt.a.1';
 					}
 					else
 					{
@@ -215,7 +215,7 @@ public function checkForStudent()
 					}
 					if ($g3_nbt == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g4.oa.a.1';
+						$this->mMilestonesStandard = '4.oa.a.1';
 					}
 					else
 					{
@@ -223,7 +223,7 @@ public function checkForStudent()
 					}
 					if ($g4_oa_b_4 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g4.nbt.a.1';
+						$this->mMilestonesStandard = '4.nbt.a.1';
 					}
 					else
 					{
@@ -231,7 +231,7 @@ public function checkForStudent()
 					}
 					if ($g4_nbt_b_4 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g4.nbt.b.5';
+						$this->mMilestonesStandard = '4.nbt.b.5';
 					}
 					else
 					{
@@ -239,7 +239,7 @@ public function checkForStudent()
 					}
 					if ($g4_nbt_b_5 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g4.nbt.b.6';
+						$this->mMilestonesStandard = '4.nbt.b.6';
 					}
 					else
 					{
@@ -247,15 +247,15 @@ public function checkForStudent()
 					}
 					if ($g4_nbt_b_6 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g4.nf.b.3.c';
-					}
+						$this->mMilestonesStandard = '4.nf.b.3.c';
+					}	
 					else
 					{
 						$failed_to_pass = true;
 					}
 					if ($g4_nf_b_3_c == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g5.oa.a.1';
+						$this->mMilestonesStandard = '5.oa.a.1';
 					}
 					else
 					{
@@ -263,7 +263,7 @@ public function checkForStudent()
 					}
 					if ($g5_oa_a_1 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g5.nbt.b.5';
+						$this->mMilestonesStandard = '5.nbt.b.5';
 					}
 					else
 					{
@@ -271,7 +271,7 @@ public function checkForStudent()
 					}
 					if ($g5_nbt_b_5 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g5.nbt.b.6';
+						$this->mMilestonesStandard = '5.nbt.b.6';
 					}
 					else
 					{
@@ -279,7 +279,7 @@ public function checkForStudent()
 					}
 					if ($g5_nbt_b_6 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g5.nbt.b.7';
+						$this->mMilestonesStandard = '5.nbt.b.7';
 					}
 					else
 					{
@@ -287,7 +287,7 @@ public function checkForStudent()
 					}
 					if ($g5_nbt_b_7 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g5.nf.a.1';
+						$this->mMilestonesStandard = '5.nf.a.1';
 					}
 					else
 					{
@@ -295,7 +295,7 @@ public function checkForStudent()
 					}
 					if ($g5_nf_a_1 == 1 && $failed_to_pass == false)
 					{
-						$this->mMilestonesStandard = 'g6.rp.a.1';
+						$this->mMilestonesStandard = '6.rp.a.1';
 					}
 					else
 					{
@@ -306,9 +306,6 @@ public function checkForStudent()
 				{
 					$this->mMilestonesStandard = $core_standards_overide_id;
 				}
-
-				//hard_code	
-				//$this->mMilestonesStandard = '4.oa.a.1';
 
 				//log in
         			$this->mLoggedIn = 1;
