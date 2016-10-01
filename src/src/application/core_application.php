@@ -380,13 +380,15 @@ highestAchieved: function()
 //this.mMilestonesStandardElement = milestonesElement;
 	calcScore: function()
 	{
-		var score = 0;
+		APPLICATION.log('e:' + this.mMilestonesStandardElement);
+		var score = this.mMilestonesStandardElement;
 		var unmastered = 0;
 		
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
 			//alltime
-			for (var i = 0; i < this.mItemTypesArray.length; i++)
+			
+			for (var i = this.mMilestonesStandardElement; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
 				var j = 0;
