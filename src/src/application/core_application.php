@@ -375,13 +375,12 @@ highestAchieved: function()
 	APPLICATION.mHud.setYellow('' + highest);
 	this.mHighest = highest;
 },
-	
+
+//core_standards_overide_id	
+//this.mMilestonesStandardElement = milestonesElement;
 	calcScore: function()
 	{
 		var score = 0;
-		var currentStreak = 0;
-		var hiStreak = 0;
-		var foundWrong = false;
 		var unmastered = 0;
 		
 		if (parseInt(this.mEvaluationsID) == 1)
@@ -432,20 +431,6 @@ highestAchieved: function()
 				i++;
 			}
 			
-			//latest streak
-			var i = 0;	
-			while (i < this.mItemAttemptsTypeArrayOne.length && foundWrong == false)
-			{
-				if (parseInt(this.mItemAttemptsTransactionCodeArrayOne[i]) == 1)
-				{
-					currentStreak++;	
-					i++;
-				}
-				else
-				{
-					foundWrong = true;
-				}
-			}
 			this.mGame.setUnmastered(unmastered);
 		}
 

@@ -134,6 +134,7 @@ public function checkForStudent()
 				$g5_nbt_b_7 = pg_Result($result2, 0, 'g5_nbt_b_7'); 
 				$g5_nf_a_1 = pg_Result($result2, 0, 'g5_nf_a_1'); 
 
+				//eventually will this be automated to fill core_standards_overide_id as students finish criticals.
 				if ($core_standards_overide_id == 0)
 				{
 					$failed_to_pass = false;	
