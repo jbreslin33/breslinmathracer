@@ -325,17 +325,40 @@ Extends: Application,
 		this.bapplication();	
         },
 
+	highestAchieved: function()
+	{
+		var foundHighestAchieved = false;
+                var i = this.mMilestonesStandardElement;
+                while (i < this.mItemTypesArray.length && foundHighestAchieved == false)
+                {
+                	var foundOne = false;
+                        var j = 0;
+                        while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
+                        {
+                        	if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+                                {
+                                        foundOne = true;
+                                }
+                                j++;
+                        }
+			i++;
+			if (foundOne == false)
+			{
+				foundHighestAchieved = true;
+			}
+		}
+		highest = this.mItemTypesArray[i];
+		APPLICATION.mHud.setYellow('' + highest);
+		this.mHighest = highest;
+	},
+
+/*
 highestAchieved: function()
 {	
 	var highest = 0; 
-	var askedArray = new Array();
-	for (var a = 0; a < this.mItemTypesArray.length; a++)
-	{
-		askedArray.push(1);
-	}
 
-	var i = 0;
-	while (i < this.mItemTypesArray.length)
+	var i = this.mMilestonesStandardElement;
+	while (i < this.mItemAttempts)
 	{
 		var foundOne = false;
 		var j = 0;
@@ -344,50 +367,28 @@ highestAchieved: function()
 			if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
 			{
 				foundOne = true;
-				askedArray[i] = 2;
 			}					
 			j++;
 		}
+		
+		if (foundOne == false)
+		{
+			i = 9999; 
+		}
 		i++;
 	}
-
-	var streak = 0;
-	var b = 0;
-	while (b < askedArray.length && streak < 10)
-	{
-		if (askedArray[b] == 1)	
-		{
-			streak++
-		}
-		else
-		{
-			streak = 0;
-		}
-		if (b == parseInt(askedArray.length - 3))
-		{
-			streak = 20;
-		}
-		b++;
-	}
-
-	highest = this.mItemTypesArray[b];
-
+	highest = this.mItemTypesArray[i];
 	APPLICATION.mHud.setYellow('' + highest);
 	this.mHighest = highest;
 },
-
-//core_standards_overide_id	
-//this.mMilestonesStandardElement = milestonesElement;
+*/
 	calcScore: function()
 	{
-		APPLICATION.log('e:' + this.mMilestonesStandardElement);
 		var score = this.mMilestonesStandardElement;
 		var unmastered = 0;
 		
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
-			//alltime
-			
 			for (var i = this.mMilestonesStandardElement; i < this.mItemTypesArray.length; i++)
 			{
 				var foundOne = false;
