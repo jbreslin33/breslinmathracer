@@ -597,8 +597,65 @@ var Item = new Class(
                         this.mTimesTablesInfo.mMesh.appendChild(optionUF);
                 }
 
+                var optionUG = document.createElement("option");
+                optionUG.value = 36;
+                optionUG.text = '6_rp';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUG);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUG);
+                }
 
+                var optionUH = document.createElement("option");
+                optionUH.value = 37;
+                optionUH.text = '6_ns';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUH);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUH);
+                }
 
+                var optionUI = document.createElement("option");
+                optionUI.value = 38;
+                optionUI.text = '6_ee';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUI);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUI);
+                }
+
+                var optionUJ = document.createElement("option");
+                optionUJ.value = 39;
+                optionUJ.text = '6_g';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUJ);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUJ);
+                }
+
+                var optionUK = document.createElement("option");
+                optionUK.value = 40;
+                optionUK.text = '6_sp';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUK);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUK);
+                }
 
 
 		//just fill it here...
