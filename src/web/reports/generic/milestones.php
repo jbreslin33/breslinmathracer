@@ -165,6 +165,16 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>5_nf_a_1';
         echo '</td>';
+        echo '<td>6_rp';
+        echo '</td>';
+        echo '<td>6_ns';
+        echo '</td>';
+        echo '<td>6_ee';
+        echo '</td>';
+        echo '<td>6_g';
+        echo '</td>';
+        echo '<td>6_sp';
+        echo '</td>';
         echo '</tr>';
 
         $lastAnswerTime = '';
@@ -172,7 +182,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1 from users where banned_id = 0 and school_id = ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
@@ -224,6 +234,12 @@ echo '<table border=\"1\">';
 		$g5_nbt_b_6 = $row[30];
 		$g5_nbt_b_7 = $row[31];
 		$g5_nf_a_1 = $row[32];
+		
+		$g6_rp = $row[33];
+		$g6_ns = $row[34];
+		$g6_ee = $row[35];
+		$g6_g = $row[36];
+		$g6_sp = $row[37];
                 
 
                 echo '<tr>';
@@ -551,7 +567,9 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-                if ($g5_nf_a_1 == 1)
+               
+
+		if ($g5_nf_a_1 == 1)
                 {
                         echo '<td bgcolor="green">';
                 }
@@ -562,7 +580,70 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-                echo '</tr>';
+                
+
+
+                if ($g6_rp == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
+                if ($g6_ns == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
+                if ($g6_ee == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
+                if ($g6_g == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
+                if ($g6_sp == 1)
+                {
+                        echo '<td bgcolor="green">';
+                }
+                else
+                {
+                        echo '<td bgcolor="red">';
+                }
+                echo '';
+                echo '</td>';
+
+
+		echo '</tr>';
         }
 
         pg_free_result($result);
