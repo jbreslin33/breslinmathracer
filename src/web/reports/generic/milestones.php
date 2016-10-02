@@ -141,7 +141,7 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>7';
         echo '</td>';
-        echo '<td>3 oa c 7';
+        echo '<td>The Izzy 3 oa c 7';
         echo '</td>';
         echo '<td>3 nbt';
         echo '</td>';

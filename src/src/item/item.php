@@ -245,7 +245,7 @@ var Item = new Class(
 		
 		var optionO = document.createElement("option");
                 optionO.value = 25;
-                optionO.text = 'k_cc';
+                optionO.text = 'k.cc';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionO);
@@ -257,7 +257,7 @@ var Item = new Class(
 		
 		var optionP = document.createElement("option");
                 optionP.value = 26;
-                optionP.text = 'k_oa_a_4';
+                optionP.text = 'k.oa.a.4';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionP);
@@ -269,7 +269,7 @@ var Item = new Class(
 		
 		var optionC = document.createElement("option");
                 optionC.value = 13;
-                optionC.text = 'k_oa_a_5';
+                optionC.text = 'k.oa.a.5';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
                 	this.mTimesTablesInfo.mMesh.add(optionC);
@@ -283,7 +283,7 @@ var Item = new Class(
 		
 		var optionS = document.createElement("option");
                 optionS.value = 29;
-                optionS.text = '1_oa_b_3';
+                optionS.text = '1.oa.b.3';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionS);
@@ -295,7 +295,7 @@ var Item = new Class(
 		
 		var optionQ = document.createElement("option");
                 optionQ.value = 27;
-                optionQ.text = '1_oa_c_6';
+                optionQ.text = '1.oa.c.6';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionQ);
@@ -307,7 +307,7 @@ var Item = new Class(
 		
 		var optionN = document.createElement("option");
                 optionN.value = 24;
-                optionN.text = '1_nbt';
+                optionN.text = '1.nbt';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionN);
@@ -322,7 +322,7 @@ var Item = new Class(
 
 		var optionR = document.createElement("option");
                 optionR.value = 28;
-                optionR.text = '2_oa_b_2';
+                optionR.text = '2.oa.b.2';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionR);
@@ -334,7 +334,7 @@ var Item = new Class(
 		
 		var optionM = document.createElement("option");
                 optionM.value = 23;
-                optionM.text = '2_nbt';
+                optionM.text = '2.nbt';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionM);
@@ -447,7 +447,7 @@ var Item = new Class(
 
 		var optionB = document.createElement("option");
                 optionB.value = 12;
-                optionB.text = '3_oa_c_7';
+                optionB.text = 'The Izzy 3.oa.c.7';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionB);
@@ -459,7 +459,7 @@ var Item = new Class(
 		
 		var optionL = document.createElement("option");
                 optionL.value = 22;
-                optionL.text = '3_nbt';
+                optionL.text = '3.nbt';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionL);
@@ -475,7 +475,7 @@ var Item = new Class(
 
 		var optionJA = document.createElement("option");
                 optionJA.value = 11;
-                optionJA.text = '4_oa_b_4';
+                optionJA.text = '4.oa.b.4';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
        	        	this.mTimesTablesInfo.mMesh.add(optionJA);
@@ -487,7 +487,7 @@ var Item = new Class(
 
                 var optionJB = document.createElement("option");
                 optionJB.value = 14;
-                optionJB.text = '4_nbt_b_4';
+                optionJB.text = '4.nbt.b.4';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionJB);
@@ -499,7 +499,7 @@ var Item = new Class(
                
               	var optionJC = document.createElement("option");
                 optionJC.value = 20;
-                optionJC.text = '4_nbt_b_5';
+                optionJC.text = '4.nbt.b.5';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionJC);
@@ -511,7 +511,7 @@ var Item = new Class(
 
                 var optionJD = document.createElement("option");
                 optionJD.value = 21;
-                optionJD.text = '4_nbt_b_6';
+                optionJD.text = '4.nbt.b.6';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionJD);
@@ -523,7 +523,7 @@ var Item = new Class(
 
                 var optionJE = document.createElement("option");
                 optionJE.value = 30;
-                optionJE.text = '4_nf_b_3_c';
+                optionJE.text = '4.nf.b.3.c';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionJE);
@@ -538,7 +538,7 @@ var Item = new Class(
 
                 var optionUA = document.createElement("option");
                 optionUA.value = 31;
-                optionUA.text = '5_oa_a_1';
+                optionUA.text = '5.oa.a.1';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUA);
@@ -550,7 +550,7 @@ var Item = new Class(
 
                 var optionUB = document.createElement("option");
                 optionUB.value = 32;
-                optionUB.text = '5_nbt_b_5';
+                optionUB.text = '5.nbt.b.5';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUB);
@@ -563,7 +563,7 @@ var Item = new Class(
 
                	var optionUD = document.createElement("option");
                 optionUD.value = 33;
-                optionUD.text = '5_nbt_b_6';
+                optionUD.text = '5.nbt.b.6';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUD);
@@ -575,7 +575,7 @@ var Item = new Class(
 
                 var optionUE = document.createElement("option");
                 optionUE.value = 34;
-                optionUE.text = '5_nbt_b_7';
+                optionUE.text = '5.nbt.b.7';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUE);
@@ -587,7 +587,7 @@ var Item = new Class(
 
                 var optionUF = document.createElement("option");
                 optionUF.value = 35;
-                optionUF.text = '5_nf_a_1';
+                optionUF.text = '5.nf.a.1';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUF);
@@ -599,7 +599,7 @@ var Item = new Class(
 
                 var optionUG = document.createElement("option");
                 optionUG.value = 36;
-                optionUG.text = '6_rp';
+                optionUG.text = '6.rp';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUG);
@@ -611,7 +611,7 @@ var Item = new Class(
 
                 var optionUH = document.createElement("option");
                 optionUH.value = 37;
-                optionUH.text = '6_ns';
+                optionUH.text = '6.ns';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUH);
@@ -623,7 +623,7 @@ var Item = new Class(
 
                 var optionUI = document.createElement("option");
                 optionUI.value = 38;
-                optionUI.text = '6_ee';
+                optionUI.text = '6.ee';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUI);
@@ -635,7 +635,7 @@ var Item = new Class(
 
                 var optionUJ = document.createElement("option");
                 optionUJ.value = 39;
-                optionUJ.text = '6_g';
+                optionUJ.text = '6.g';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUJ);
@@ -647,7 +647,7 @@ var Item = new Class(
 
                 var optionUK = document.createElement("option");
                 optionUK.value = 40;
-                optionUK.text = '6_sp';
+                optionUK.text = '6.sp';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
                         this.mTimesTablesInfo.mMesh.add(optionUK);
