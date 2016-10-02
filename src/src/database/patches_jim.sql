@@ -27,6 +27,12 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'5.nf.a.1',19) where description = '5_nbt_b_7';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.rp.a.1',20) where description = '5_nf_a_1';
 
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.ns.a.1',21) where description = '6_rp';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.ee.a.1',21) where description = '6_ns';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.g.a.1',21) where description = '6_ee';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.sp.a.1',21) where description = '6_g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'7.rp.a.1',21) where description = '6_sp';
+
 
 --tables
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.1) where description = 'timestables_5';
@@ -38,14 +44,12 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.7) where description = 'timestables_9';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'',8.8) where description = 'timestables_7';
 
--- add rooms
-insert into rooms (name,school_id) values ('5',2);
-insert into rooms (name,school_id) values ('23',2);
-insert into rooms (name,school_id) values ('24',2);
-insert into rooms (name,school_id) values ('25',2);
-insert into rooms (name,school_id) values ('26',2);
-insert into rooms (name,school_id) values ('27',2);
-insert into rooms (name,school_id) values ('28',2);
 
-insert into rooms (name,school_id) values ('38',2);
+--run once
+--6
+insert into evaluations (id,description) values (36,'6_rp_a_1');
+insert into evaluations (id,description) values (37,'6_ns_a_1');
+insert into evaluations (id,description) values (38,'6_ee_a_1');
+insert into evaluations (id,description) values (39,'6_g_a_1');
+insert into evaluations (id,description) values (40,'6_sp_a_1');
 

@@ -227,28 +227,19 @@ CREATE TABLE users (
         k_oa_a_5 integer NOT NULL default 0,
 
 	--1
-        --alltimeproperties integer NOT NULL default 0,
-        --alltimeaddsubtractwithinten integer NOT NULL default 0,
-	--alltimebasicskillsfirst integer NOT NULL default 0,
         g1_oa_b_3 integer NOT NULL default 0,
         g1_oa_c_6 integer NOT NULL default 0,
 	g1_nbt integer NOT NULL default 0,
 	
 	--2	
-        --alltimeaddsubtractwithintwenty integer NOT NULL default 0,
-	--alltimebasicskillssecond integer NOT NULL default 0,
         g2_oa_b_2 integer NOT NULL default 0,
 	g2_nbt integer NOT NULL default 0,
 
 	--3
-        --alltimeizzy integer NOT NULL default 0,
-	--alltimebasicskillsthird integer NOT NULL default 0,
         g3_oa_c_7 integer NOT NULL default 0,
         g3_nbt integer NOT NULL default 0,
 
 	--4
-	--alltimebasicskillsfourth integer NOT NULL default 0,
-	--alltimebasicskillsfourthbosslevel integer NOT NULL default 0,
 	g4_oa_b_4 integer NOT NULL default 0, --11 
 	g4_nbt_b_4 integer NOT NULL default 0, --14
 	g4_nbt_b_5 integer NOT NULL default 0, --20
@@ -256,14 +247,19 @@ CREATE TABLE users (
 	g4_nf_b_3_c integer NOT NULL default 0, --30
 
 	--5
-	--alltimebasicskillsfifth integer NOT NULL default 0,
-	--alltimebasicskillsfifthbosslevel integer NOT NULL default 0,
 	g5_oa_a_1 integer NOT NULL default 0, --31
 	g5_nbt_b_5 integer NOT NULL default 0, --32
 	g5_nbt_b_6 integer NOT NULL default 0, --33
 	g5_nbt_b_7 integer NOT NULL default 0, --34
 	g5_nf_a_1 integer NOT NULL default 0, --35
-
+	
+	--6
+	g6_rp integer NOT NULL default 0, --36
+	g6_ns integer NOT NULL default 0, --37
+	g6_ee integer NOT NULL default 0, --38
+	g6_g integer NOT NULL default 0, --39
+	g6_sp integer NOT NULL default 0, --40
+	
 
 	--tables supplemental maybe dont need in user
         alltimesuperizzy integer NOT NULL default 0,

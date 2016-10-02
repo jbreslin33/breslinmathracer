@@ -162,6 +162,13 @@ insert into evaluations (id,description) values (33,'5_nbt_b_6');
 insert into evaluations (id,description) values (34,'5_nbt_b_7'); 
 insert into evaluations (id,description) values (35,'5_nf_a_1'); 
 
+--6
+insert into evaluations (id,description) values (36,'6_rp_a_1'); 
+insert into evaluations (id,description) values (37,'6_ns_a_1'); 
+insert into evaluations (id,description) values (38,'6_ee_a_1'); 
+insert into evaluations (id,description) values (39,'6_g_a_1'); 
+insert into evaluations (id,description) values (40,'6_sp_a_1'); 
+
 
 --tests
 
