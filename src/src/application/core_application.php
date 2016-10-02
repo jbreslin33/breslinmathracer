@@ -189,11 +189,27 @@ Extends: Application,
 		//ThirtyFive  
 		this.mItemAttemptsTypeArrayThirtyFive = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayThirtyFive = new Array(); //from db
-
-
-
-
 		
+		//ThirtySix  
+		this.mItemAttemptsTypeArrayThirtySix = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayThirtySix = new Array(); //from db
+		
+		//ThirtySeven  
+		this.mItemAttemptsTypeArrayThirtySeven = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayThirtySeven = new Array(); //from db
+		
+		//ThirtyEight  
+		this.mItemAttemptsTypeArrayThirtyEight = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayThirtyEight = new Array(); //from db
+		
+		//ThirtyNine  
+		this.mItemAttemptsTypeArrayThirtyNine = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayThirtyNine = new Array(); //from db
+		
+		//Forty  
+		this.mItemAttemptsTypeArrayForty = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArrayForty = new Array(); //from db
+
 		//add_game_A
 
 		//algorithms
@@ -298,6 +314,13 @@ Extends: Application,
                 this.mG5_NBT_B_6_APPLICATION = new G5_NBT_B_6_APPLICATION      (this);
                 this.mG5_NBT_B_7_APPLICATION = new G5_NBT_B_7_APPLICATION      (this);
                 this.mG5_NF_A_1_APPLICATION = new G5_NF_A_1_APPLICATION      (this);
+               
+		//6 
+		this.mG6_RP_APPLICATION = new G6_RP_APPLICATION      (this);
+		this.mG6_NS_APPLICATION = new G6_NS_APPLICATION      (this);
+		this.mG6_EE_APPLICATION = new G6_EE_APPLICATION      (this);
+		this.mG6_G_APPLICATION = new G6_G_APPLICATION      (this);
+		this.mG6_SP_APPLICATION = new G6_SP_APPLICATION      (this);
 	
 		//tables
                 this.mTIMES_TABLES_TWO_APPLICATION      = new TIMES_TABLES_TWO_APPLICATION      (this);
@@ -352,36 +375,6 @@ Extends: Application,
 		this.mHighest = highest;
 	},
 
-/*
-highestAchieved: function()
-{	
-	var highest = 0; 
-
-	var i = this.mMilestonesStandardElement;
-	while (i < this.mItemAttempts)
-	{
-		var foundOne = false;
-		var j = 0;
-		while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
-		{
-			if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-			{
-				foundOne = true;
-			}					
-			j++;
-		}
-		
-		if (foundOne == false)
-		{
-			i = 9999; 
-		}
-		i++;
-	}
-	highest = this.mItemTypesArray[i];
-	APPLICATION.mHud.setYellow('' + highest);
-	this.mHighest = highest;
-},
-*/
 	calcScore: function()
 	{
 		var score = this.mMilestonesStandardElement;
@@ -1278,6 +1271,125 @@ highestAchieved: function()
                         APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
                 }
 
+                if (parseInt(this.mEvaluationsID) == 36)
+                {
+                        var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThirtySix[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+                                i++;
+                        }
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+
+                if (parseInt(this.mEvaluationsID) == 37)
+                {
+                        var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThirtySeven[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+                                i++;
+                        }
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+
+                if (parseInt(this.mEvaluationsID) == 38)
+                {
+                        var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThirtyEight[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+                                i++;
+                        }
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+
+                if (parseInt(this.mEvaluationsID) == 39)
+                {
+                        var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThirtyNine[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+                                i++;
+                        }
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
+
+                if (parseInt(this.mEvaluationsID) == 40)
+                {
+                        var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
+
+                        while (i < this.mGame.mSheet.mCurrentElement)
+                        {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayThirtyFour[i]) == 1)
+                                {
+                                        correct++;
+                                }
+                                else
+                                {
+                                        incorrect++;
+                                }
+                                i++;
+                        }
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                }
 
 
 

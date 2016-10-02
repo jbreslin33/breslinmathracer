@@ -145,6 +145,33 @@ public function execute($bapplication)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mG5_NF_A_1_APPLICATION);
 	}
+	
+
+	//6	
+	if ($bapplication->mCode == 36 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG6_RP_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mG6_RP_APPLICATION);
+	}
+
+	if ($bapplication->mCode == 37 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG6_NS_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mG6_NS_APPLICATION);
+	}
+
+	if ($bapplication->mCode == 38 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG6_EE_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mG6_EE_APPLICATION);
+	}
+
+	if ($bapplication->mCode == 39 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG6_G_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mG6_G_APPLICATION);
+	}
+
+	if ($bapplication->mCode == 40 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mG6_SP_APPLICATION)
+	{
+		$bapplication->mCoreStateMachine->changeState($bapplication->mG6_SP_APPLICATION);
+	}
 
 
 
@@ -2036,12 +2063,354 @@ public function bexit($bapplication)
                 error_log('G5_NF_A_1_APPLICATION Exit');
         }
 }
-
 }//end class
 
+//6
+class G6_RP_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_RP_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,36,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_RP_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 36)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+				}
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'g6_rp');
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_RP_APPLICATION Exit');
+        }
+}
+}//end class
+
+
+class G6_NS_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_NS_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,37,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_NS_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 37)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+				}
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'g6_ns');
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_RP_APPLICATION Exit');
+        }
+}
+}//end class
+
+
+class G6_EE_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_EE_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,38,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_EE_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 38)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+				}
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'g6_ee');
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_EE_APPLICATION Exit');
+        }
+}
+}//end class
+
+
+class G6_G_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_G_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,39,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_G_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 39)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+				}
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'g6_g');
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_G_APPLICATION Exit');
+        }
+}
+}//end class
+
+class G6_SP_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_SP_APPLICATION Enter');
+        }
+
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,40,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_SP_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 40)
+	{
+		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+		for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+		{ 
+			if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+			{  
+				$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+				//score	
+				if ($bapplication->mDataArray[2] == 1)
+				{
+					$bapplication->mEvaluationsAttempt->mScore++;
+				}
+			}
+		}
+		$bapplication->mCode = 0;
+	}
+
+	//did you pass milestone?
+	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
+	{
+        	$bapplication->mNormal->updateScores(1,'g6_sp');
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('G6_SP_APPLICATION Exit');
+        }
+}
+}//end class
+
+
 //TABLES
-
-
 class TIMES_TABLES_FIVE_APPLICATION extends State
 {
 

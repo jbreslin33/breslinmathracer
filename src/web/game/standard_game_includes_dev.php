@@ -110,6 +110,11 @@
 <script type="text/javascript" src="/src/sheet/g5_nbt_b_7_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/g5_nf_a_1_sheet.php"></script>
 
+<script type="text/javascript" src="/src/sheet/g6_rp_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/g6_ns_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/g6_ee_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/g6_g_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/g6_sp_sheet.php"></script>
 
 <script type="text/javascript" src="/src/sheet/times_tables_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/times_tables_two_sheet.php"></script>
@@ -168,6 +173,12 @@
 <script type="text/javascript" src="/src/core/math/g5_nbt_b_6_game.php"></script>
 <script type="text/javascript" src="/src/core/math/g5_nbt_b_7_game.php"></script>
 <script type="text/javascript" src="/src/core/math/g5_nf_a_1_game.php"></script>
+
+<script type="text/javascript" src="/src/core/math/g6_rp_game.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ns_game.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_ee_game.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_g_game.php"></script>
+<script type="text/javascript" src="/src/core/math/g6_sp_game.php"></script>
 
 
 <script type="text/javascript" src="/src/core/math/times_tables_two_game.php"></script>

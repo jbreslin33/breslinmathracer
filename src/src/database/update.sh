@@ -145,6 +145,12 @@ cat src/sheet/g5_nbt_b_6_sheet.php >> min.js
 cat src/sheet/g5_nbt_b_7_sheet.php >> min.js
 cat src/sheet/g5_nf_a_1_sheet.php >> min.js
 
+cat src/sheet/g6_rp_sheet.php >> min.js
+cat src/sheet/g6_ns_sheet.php >> min.js
+cat src/sheet/g6_ee_sheet.php >> min.js
+cat src/sheet/g6_g_sheet.php >> min.js
+cat src/sheet/g6_sp_sheet.php >> min.js
+
 cat src/sheet/terra_nova_sheet.php >> min.js
 cat src/sheet/terra_nova_test_sheet.php >> min.js
 cat src/sheet/terra_nova_homework_sheet.php >> min.js

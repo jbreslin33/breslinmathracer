@@ -133,6 +133,12 @@ public function checkForStudent()
 				$g5_nbt_b_6 = pg_Result($result2, 0, 'g5_nbt_b_6'); 
 				$g5_nbt_b_7 = pg_Result($result2, 0, 'g5_nbt_b_7'); 
 				$g5_nf_a_1 = pg_Result($result2, 0, 'g5_nf_a_1'); 
+			
+				$g6_rp = pg_Result($result2, 0, 'g6_rp'); 
+				$g6_ns = pg_Result($result2, 0, 'g6_ns'); 
+				$g6_ee = pg_Result($result2, 0, 'g6_ee'); 
+				$g6_g = pg_Result($result2, 0, 'g6_g'); 
+				$g6_sp = pg_Result($result2, 0, 'g6_sp'); 
 
 				//eventually will this be automated to fill core_standards_overide_id as students finish criticals.
 				if ($core_standards_overide_id == 0)
@@ -302,6 +308,52 @@ public function checkForStudent()
 					{
 						$failed_to_pass = true;
 					}
+
+                                        if ($g6_rp == 1 && $failed_to_pass == false)
+                                        {
+                                                $this->mMilestonesStandard = '6.ns.a.1';
+                                        }
+                                        else
+                                        {
+                                                $failed_to_pass = true;
+                                        }
+                                        
+					if ($g6_ns == 1 && $failed_to_pass == false)
+                                        {
+                                                $this->mMilestonesStandard = '6.ee.a.1';
+                                        }
+                                        else
+                                        {
+                                                $failed_to_pass = true;
+                                        }
+					
+					if ($g6_ee == 1 && $failed_to_pass == false)
+                                        {
+                                                $this->mMilestonesStandard = '6.g.a.1';
+                                        }
+                                        else
+                                        {
+                                                $failed_to_pass = true;
+                                        }
+					
+					if ($g6_g == 1 && $failed_to_pass == false)
+                                        {
+                                                $this->mMilestonesStandard = '6.sp.a.1';
+                                        }
+                                        else
+                                        {
+                                                $failed_to_pass = true;
+                                        }
+					
+					if ($g6_sp == 1 && $failed_to_pass == false)
+                                        {
+                                                $this->mMilestonesStandard = '7.sp.a.1';
+                                        }
+                                        else
+                                        {
+                                                $failed_to_pass = true;
+                                        }
+
 				}
 				else
 				{
@@ -428,7 +480,23 @@ public function sendLoginStudent()
 	$itemTypesRawDataAAM = ""; 
 	$itemTypesRawDataAAN = ""; 
 
-//32 33 34 35
+
+	//36 37 38 39 40
+	$itemTypesRawDataAAO = ""; 
+	$itemTypesRawDataAAP = ""; 
+	
+	$itemTypesRawDataAAQ = ""; 
+	$itemTypesRawDataAAR = ""; 
+	
+	$itemTypesRawDataAAS = ""; 
+	$itemTypesRawDataAAT = ""; 
+	
+	$itemTypesRawDataAAU = ""; 
+	$itemTypesRawDataAAV = ""; 
+	
+	$itemTypesRawDataAAW = ""; 
+	$itemTypesRawDataAAX = ""; 
+
 
 	//add_game_O
 	
@@ -1364,6 +1432,140 @@ public function sendLoginStudent()
                 }
         }
 
+        //ThirtySix
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtySix); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAO .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtySix[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAO .= ":";
+                        $itemTypesRawDataAAO .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtySix[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtySix); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAP .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtySix[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAP .= ":";
+                        $itemTypesRawDataAAP .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtySix[$i];
+                }
+        }
+
+        //ThirtySeven
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtySeven); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAQ .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtySeven[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAQ .= ":";
+                        $itemTypesRawDataAAQ .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtySeven[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtySeven); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAR .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtySeven[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAR .= ":";
+                        $itemTypesRawDataAAR .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtySeven[$i];
+                }
+        }
+
+        //ThirtyEight
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyEight); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAS .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyEight[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAS .= ":";
+                        $itemTypesRawDataAAS .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyEight[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyEight); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAT .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyEight[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAT .= ":";
+                        $itemTypesRawDataAAT .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyEight[$i];
+                }
+        }
+
+        //ThirtyNine
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyNine); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAU .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyNine[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAU .= ":";
+                        $itemTypesRawDataAAU .= $this->mApplication->mNormal->mItemAttemptsTypeArrayThirtyNine[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyNine); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAV .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyNine[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAV .= ":";
+                        $itemTypesRawDataAAV .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayThirtyNine[$i];
+                }
+        }
+
+        //Forty
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTypeArrayForty); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAW .= $this->mApplication->mNormal->mItemAttemptsTypeArrayForty[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAW .= ":";
+                        $itemTypesRawDataAAW .= $this->mApplication->mNormal->mItemAttemptsTypeArrayForty[$i];
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayForty); $i++)
+        {
+                if ($i == 0)
+                {
+                        $itemTypesRawDataAAX .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayForty[$i];
+                }
+                else
+                {
+                        $itemTypesRawDataAAX .= ":";
+                        $itemTypesRawDataAAX .= $this->mApplication->mNormal->mItemAttemptsTransactionCodeArrayForty[$i];
+                }
+        }
 
 
 	//fill php vars
@@ -1527,8 +1729,37 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataAAN;
 	$returnString .= ",";
+	
+
+
+	$returnString .= $itemTypesRawDataAAO;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAP;
+	$returnString .= ",";
+
+	$returnString .= $itemTypesRawDataAAQ;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAR;
+	$returnString .= ",";
+	
+	$returnString .= $itemTypesRawDataAAS;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAT;
+	$returnString .= ",";
+	
+	$returnString .= $itemTypesRawDataAAU;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAV;
+	$returnString .= ",";
+
+	$returnString .= $itemTypesRawDataAAW;
+	$returnString .= ",";
+	$returnString .= $itemTypesRawDataAAX;
+	$returnString .= ",";
+
 
 	$returnString .= $this->mApplication->mEvaluationsID;
+	//error_log($returnString);
 	echo $returnString;
 }
 

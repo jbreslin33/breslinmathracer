@@ -135,6 +135,21 @@ function __construct($application)
 	
 	$this->mItemAttemptsTypeArrayThirtyFive    = array();
 	$this->mItemAttemptsTransactionCodeArrayThirtyFive    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtySix    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtySix    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtySeven    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtySeven    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtyEight    = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtyEight    = array();
+	
+	$this->mItemAttemptsTypeArrayThirtyNine   = array();
+	$this->mItemAttemptsTransactionCodeArrayThirtyNine    = array();
+	
+	$this->mItemAttemptsTypeArrayForty   = array();
+	$this->mItemAttemptsTransactionCodeArrayForty    = array();
 
 	//add_game_P
 }
@@ -206,7 +221,7 @@ public function fillItemAttemptsArray()
                 {
 			//add_game_Q
                         $evalID = pg_Result($result,$i,'evaluations_id');
-			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23 || $evalID == 24 || $evalID == 25 || $evalID == 26 || $evalID == 27 || $evalID == 28 || $evalID == 29 || $evalID == 30 || $evalID == 31 || $evalID == 32 || $evalID == 33 || $evalID == 34 || $evalID == 35   )
+			if ($evalID == 1 || $evalID == 3 || $evalID == 4 || $evalID == 5 || $evalID == 6 || $evalID == 7 || $evalID == 8 || $evalID == 9 || $evalID == 10 || $evalID == 11 || $evalID == 12 || $evalID == 13 || $evalID == 14 || $evalID == 15 || $evalID == 16 || $evalID == 17 || $evalID == 18 || $evalID == 19 || $evalID == 20 || $evalID == 21 || $evalID == 22 || $evalID == 23 || $evalID == 24 || $evalID == 25 || $evalID == 26 || $evalID == 27 || $evalID == 28 || $evalID == 29 || $evalID == 30 || $evalID == 31 || $evalID == 32 || $evalID == 33 || $evalID == 34 || $evalID == 35 || $evalID == 36 || $evalID == 37 || $evalID == 38 || $evalID == 39 || $evalID == 40)
 			{
                         	$this->mItemAttemptsTypeArrayOne[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayOne[]  = pg_Result($result,$i,'transaction_code');
@@ -375,6 +390,31 @@ public function fillItemAttemptsArray()
 			{
                         	$this->mItemAttemptsTypeArrayThirtyFive[] = pg_Result($result,$i,'item_types_id');
                         	$this->mItemAttemptsTransactionCodeArrayThirtyFive[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 36)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtySix[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtySix[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 37)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtySeven[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtySeven[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 38)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtyEight[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtyEight[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 39)
+			{
+                        	$this->mItemAttemptsTypeArrayThirtyNine[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayThirtyNine[]  = pg_Result($result,$i,'transaction_code');
+			}
+			if ($evalID == 40)
+			{
+                        	$this->mItemAttemptsTypeArrayForty[] = pg_Result($result,$i,'item_types_id');
+                        	$this->mItemAttemptsTransactionCodeArrayForty[]  = pg_Result($result,$i,'transaction_code');
 			}
                 }
         }

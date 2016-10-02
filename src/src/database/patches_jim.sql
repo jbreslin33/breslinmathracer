@@ -27,11 +27,11 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'5.nf.a.1',19) where description = '5_nbt_b_7';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.rp.a.1',20) where description = '5_nf_a_1';
 
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.ns.a.1',21) where description = '6_rp';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.ee.a.1',21) where description = '6_ns';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.g.a.1',21) where description = '6_ee';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'6.sp.a.1',21) where description = '6_g';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'7.rp.a.1',21) where description = '6_sp';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'6.ns.a.1',21) where description = '6_rp';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'6.ee.a.1',22) where description = '6_ns';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'6.g.a.1',23) where description = '6_ee';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'6.sp.a.1',24) where description = '6_g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'7.rp.a.1',25) where description = '6_sp';
 
 
 --tables
@@ -52,4 +52,12 @@ insert into evaluations (id,description) values (37,'6_ns_a_1');
 insert into evaluations (id,description) values (38,'6_ee_a_1');
 insert into evaluations (id,description) values (39,'6_g_a_1');
 insert into evaluations (id,description) values (40,'6_sp_a_1');
+
+--g6_rp integer NOT NULL default 0, --36
+
+ALTER TABLE users ADD COLUMN g6_rp integer default 0;
+ALTER TABLE users ADD COLUMN g6_ns integer default 0;
+ALTER TABLE users ADD COLUMN g6_ee integer default 0;
+ALTER TABLE users ADD COLUMN g6_g integer default 0;
+ALTER TABLE users ADD COLUMN g6_sp integer default 0;
 

@@ -128,6 +128,29 @@ execute: function(application)
 		application.mCoreStateMachine.changeState(application.mG5_NF_A_1_APPLICATION);
 	}
 	
+	//6
+	if (application.mEvaluationsID == 36 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG6_RP_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG6_RP_APPLICATION);
+	}
+	if (application.mEvaluationsID == 37 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG6_NS_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG6_NS_APPLICATION);
+	}
+	if (application.mEvaluationsID == 38 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG6_EE_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG6_EE_APPLICATION);
+	}
+	if (application.mEvaluationsID == 39 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG6_G_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG6_G_APPLICATION);
+	}
+	if (application.mEvaluationsID == 40 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mG6_SP_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mG6_SP_APPLICATION);
+	}
+
+	
 	//TABLES
 	if (application.mEvaluationsID == 3 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTIMES_TABLES_TWO_APPLICATION)
 	{
@@ -332,8 +355,7 @@ execute: function(application)
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
                 	APPLICATION.mMilestonesStandard = APPLICATION.mResponseArray[6];
                 	APPLICATION.mRole = 1;
-		
-                
+			
 			var itemTypes = APPLICATION.mResponseArray[7];
 			APPLICATION.mItemTypesArray = itemTypes.split(":");
                 
@@ -584,8 +606,43 @@ execute: function(application)
                         var itemAttemptsTransactionCodesThirtyFive = APPLICATION.mResponseArray[75];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFive = itemAttemptsTransactionCodesThirtyFive.split(":");
 
+                        //ThirtySix
+                        var itemAttemptsTypesThirtySix = APPLICATION.mResponseArray[76];
+                        APPLICATION.mItemAttemptsTypeArrayThirtySix = itemAttemptsTypesThirtySix.split(":");
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[76];
+                        var itemAttemptsTransactionCodesThirtySix = APPLICATION.mResponseArray[77];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtySix = itemAttemptsTransactionCodesThirtySix.split(":");
+                        
+			//ThirtySeven
+                        var itemAttemptsTypesThirtySeven = APPLICATION.mResponseArray[78];
+                        APPLICATION.mItemAttemptsTypeArrayThirtySeven = itemAttemptsTypesThirtySeven.split(":");
+
+                        var itemAttemptsTransactionCodesThirtySeven = APPLICATION.mResponseArray[79];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtySeven = itemAttemptsTransactionCodesThirtySeven.split(":");
+
+			//ThirtyEight
+                        var itemAttemptsTypesThirtyEight = APPLICATION.mResponseArray[80];
+                        APPLICATION.mItemAttemptsTypeArrayThirtyEight = itemAttemptsTypesThirtyEight.split(":");
+
+                        var itemAttemptsTransactionCodesThirtyEight = APPLICATION.mResponseArray[81];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyEight = itemAttemptsTransactionCodesThirtyEight.split(":");
+
+			//ThirtyNine
+                        var itemAttemptsTypesThirtyNine = APPLICATION.mResponseArray[82];
+                        APPLICATION.mItemAttemptsTypeArrayThirtyNine = itemAttemptsTypesThirtyNine.split(":");
+
+                        var itemAttemptsTransactionCodesThirtyNine = APPLICATION.mResponseArray[83];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyNine = itemAttemptsTransactionCodesThirtyNine.split(":");
+
+			//Forty
+                        var itemAttemptsTypesForty = APPLICATION.mResponseArray[84];
+                        APPLICATION.mItemAttemptsTypeArrayForty = itemAttemptsTypesForty.split(":");
+
+                        var itemAttemptsTransactionCodesForty = APPLICATION.mResponseArray[85];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayForty = itemAttemptsTransactionCodesForty.split(":");
+
+			
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[86];
 
 
 			//add_game_E	
@@ -616,7 +673,6 @@ execute: function(application)
                 var v = 'BAD PASSWORD';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
 	}
-        
 	else if (APPLICATION.mGame.mTimeSinceEpoch > parseInt(application.mStateEnterTime + application.mStateThresholdTime))
 	{
                 var v = 'LOGIN TIMED OUT';
@@ -1240,6 +1296,9 @@ execute: function(application)
                         var itemAttemptsTransactionCodesThirtyFour = APPLICATION.mResponseArray[73];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFour = itemAttemptsTransactionCodesThirtyFour.split(":");
 
+
+
+
                         //ThirtyFive
                         if (APPLICATION.mResponseArray[74])
                         {
@@ -1250,8 +1309,62 @@ execute: function(application)
                         var itemAttemptsTransactionCodesThirtyFive = APPLICATION.mResponseArray[75];
                         APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFive = itemAttemptsTransactionCodesThirtyFive.split(":");
 
+                       	//ThirtySix
+                        if (APPLICATION.mResponseArray[76])
+                        {
+                                var itemAttemptsTypesThirtySix = APPLICATION.mResponseArray[76];
+                                APPLICATION.mItemAttemptsTypeArrayThirtySix = itemAttemptsTypesThirtySix.split(":");
+                        }
 
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[76];
+                        var itemAttemptsTransactionCodesThirtySix = APPLICATION.mResponseArray[77];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtySix = itemAttemptsTransactionCodesThirtySix.split(":");
+
+
+                        //ThirtySeven
+                        if (APPLICATION.mResponseArray[78])
+                        {
+                                var itemAttemptsTypesThirtySeven = APPLICATION.mResponseArray[78];
+                                APPLICATION.mItemAttemptsTypeArrayThirtySeven = itemAttemptsTypesThirtySeven.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtySeven = APPLICATION.mResponseArray[79];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtySeven = itemAttemptsTransactionCodesThirtySeven.split(":");
+
+
+                        //ThirtyEight
+                        if (APPLICATION.mResponseArray[80])
+                        {
+                                var itemAttemptsTypesThirtyEight = APPLICATION.mResponseArray[80];
+                                APPLICATION.mItemAttemptsTypeArrayThirtyEight = itemAttemptsTypesThirtyEight.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtyEight = APPLICATION.mResponseArray[81];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyEight = itemAttemptsTransactionCodesThirtyEight.split(":");
+
+                       	//ThirtyNine
+                        if (APPLICATION.mResponseArray[82])
+                        {
+                                var itemAttemptsTypesThirtyNine = APPLICATION.mResponseArray[82];
+                                APPLICATION.mItemAttemptsTypeArrayThirtyNine = itemAttemptsTypesThirtyNine.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesThirtyNine = APPLICATION.mResponseArray[83];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayThirtyNine = itemAttemptsTransactionCodesThirtyNine.split(":");
+
+                      
+			//Forty
+                        if (APPLICATION.mResponseArray[84])
+                        {
+                                var itemAttemptsTypesForty = APPLICATION.mResponseArray[84];
+                                APPLICATION.mItemAttemptsTypeArrayForty = itemAttemptsTypesForty.split(":");
+                        }
+
+                        var itemAttemptsTransactionCodesForty = APPLICATION.mResponseArray[85];
+                        APPLICATION.mItemAttemptsTransactionCodeArrayForty = itemAttemptsTransactionCodesForty.split(":");
+
+
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[86];
+			APPLICATION.log('id:' + APPLICATION.mEvaluationsID); 
 
 
 			//add_game_F
@@ -2440,6 +2553,183 @@ exit: function(application)
 }
 
 });
+
+
+var G6_RP_APPLICATION = new Class(
+{
+Extends: State,
+initialize: function()
+{
+},
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G6_RP_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g6_rp_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 6_rp');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+},
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G6_RP_APPLICATION execute');
+        }
+},
+exit: function(application)
+{
+}
+});
+
+var G6_NS_APPLICATION = new Class(
+{
+Extends: State,
+initialize: function()
+{
+},
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G6_NS_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g6_ns_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 6_ns');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+},
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G6_NS_APPLICATION execute');
+        }
+},
+exit: function(application)
+{
+}
+});
+
+var G6_EE_APPLICATION = new Class(
+{
+Extends: State,
+initialize: function()
+{
+},
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G6_EE_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g6_ee_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 6_ee');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+},
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G6_EE_APPLICATION execute');
+        }
+},
+exit: function(application)
+{
+}
+});
+
+var G6_G_APPLICATION = new Class(
+{
+Extends: State,
+initialize: function()
+{
+},
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G6_G_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g6_g_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 6_g');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+},
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G6_G_APPLICATION execute');
+        }
+},
+exit: function(application)
+{
+}
+});
+
+var G6_SP_APPLICATION = new Class(
+{
+Extends: State,
+initialize: function()
+{
+},
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::G6_SP_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new g6_sp_Game(APPLICATION);
+        APPLICATION.mHud.setOrange('G: 6_sp');
+        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+},
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::G6_SP_APPLICATION execute');
+        }
+},
+exit: function(application)
+{
+}
+});
+
 
 
 //TABLES

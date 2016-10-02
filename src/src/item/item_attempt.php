@@ -162,6 +162,42 @@ var ItemAttempt = new Class(
 		{
 			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyOne[0] = code;
 		}
+		if (parseInt(this.mEvaluationsID) == 32)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyTwo[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 33)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyThree[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 34)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFour[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 35)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFive[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 36)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtySix[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 37)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtySeven[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 38)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyEight[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 39)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayThirtyNine[0] = code;
+		}
+		if (parseInt(this.mEvaluationsID) == 40)
+		{
+			APPLICATION.mItemAttemptsTransactionCodeArrayForty[0] = code;
+		}
 		//add_game_R
 	},
 	setEvaluationsID: function(evaluationsID)
@@ -355,6 +391,51 @@ var ItemAttempt = new Class(
 			{
 				APPLICATION.mItemAttemptsTypeArrayThirtyOne.unshift(APPLICATION.mGame.mSheet.mItem.mType);
 				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyOne.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 32)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyTwo.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyTwo.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 33)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyThree.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyThree.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 34)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyFour.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFour.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 35)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyFive.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyFive.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 36)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtySix.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtySix.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 37)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtySeven.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtySeven.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 38)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyEight.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyEight.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 39)
+			{
+				APPLICATION.mItemAttemptsTypeArrayThirtyNine.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayThirtyNine.unshift(0);
+			}
+			if (parseInt(this.mEvaluationsID) == 40)
+			{
+				APPLICATION.mItemAttemptsTypeArrayForty.unshift(APPLICATION.mGame.mSheet.mItem.mType);
+				APPLICATION.mItemAttemptsTransactionCodeArrayForty.unshift(0);
 			}
 			//add_game_S
 		}
