@@ -63,3 +63,56 @@ ALTER TABLE users ADD COLUMN g6_ee integer default 0;
 ALTER TABLE users ADD COLUMN g6_g integer default 0;
 ALTER TABLE users ADD COLUMN g6_sp integer default 0;
 
+--update student core_standard_
+
+--r21 g7
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 22;
+update users set core_grades_id = 8 where room_id = 22;
+
+
+--r22 g7
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 19;
+update users set core_grades_id = 8 where room_id = 19;
+
+--r23 g6 
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 24;
+update users set core_grades_id = 7 where room_id = 24;
+
+--r24 g8
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 25;
+update users set core_grades_id = 9 where room_id = 25;
+
+--r25 g6
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 26;
+update users set core_grades_id = 7 where room_id = 26;
+
+--r28 g8
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 18;
+update users set core_grades_id = 9 where room_id = 18;
+
+--r31 g3
+update users set core_standards_overide_id = '3.oa.a.1' where room_id = 5;
+update users set core_grades_id = 4 where room_id = 5;
+
+--r32 g4
+update users set core_standards_overide_id = '4.oa.a.1' where room_id = 15;
+update users set core_grades_id = 5 where room_id = 15;
+
+--r33 g5
+update users set core_standards_overide_id = '5.oa.a.1' where room_id = 1;
+update users set core_grades_id = 6 where room_id = 1;
+
+--r34 g5
+update users set core_standards_overide_id = '5.oa.a.1' where room_id = 2;
+update users set core_grades_id = 6 where room_id = 2;
+
+--r35 g4
+update users set core_standards_overide_id = '4.oa.a.1' where room_id = 16;
+update users set core_grades_id = 5 where room_id = 16;
+
+--r36 g3
+update users set core_standards_overide_id = '3.oa.a.1' where room_id = 17;
+update users set core_grades_id = 4 where room_id = 17;
+
+
+
