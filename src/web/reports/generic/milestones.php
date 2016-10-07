@@ -277,24 +277,26 @@ echo '<table border=\"1\">';
 					$raw_grade += $bonus; 
 				}			 
 			}
-
-
-
-/*
-			$bonus = 2;
-			for ($i = 5; $i < 27; $i++)
-			{ 
-               			if ($row[$i] == 1)
-				{
-					$raw_grade += $bonus; 
-				}			 
-			}	
-	*/
 			echo $raw_grade;
 		}
 		else if ($core_grades_id == 8)
 		{
-                	echo '7th grade';
+                        $bonus = 1.6;
+                        for ($j = 5; $j < 13; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade += $bonus;
+                                }
+                        }
+                        for ($k = 21; $k < 38; $k++)
+                        {
+                                if ($row[$k] == 1)
+                                {
+                                        $raw_grade += $bonus;
+                                }
+                        }
+                        echo $raw_grade;
 		}
 		else 
 		{
