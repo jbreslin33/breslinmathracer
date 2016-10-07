@@ -5,28 +5,67 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
+ 
+	var a = Math.floor(Math.random()*3);
+	if (a == 0)
+        	this.mIDArray.push('5.oa.a.1_1'); 
+	if (a == 1)
+        	this.mIDArray.push('5.oa.a.1_2'); 
+	if (a == 2)
+        	this.mIDArray.push('5.oa.a.1_3'); 
+	
+	var b = Math.floor(Math.random()*3);
+	if (b == 0)
+        	this.mIDArray.push('5.oa.a.1_4'); 
+	if (b == 1)
+        	this.mIDArray.push('5.oa.a.1_5'); 
+	if (b == 2)
+        	this.mIDArray.push('5.oa.a.1_6'); 
+	
+	var c = Math.floor(Math.random()*3);
+	if (c == 0)
+        	this.mIDArray.push('5.oa.a.1_7'); 
+	if (c == 1)
+        	this.mIDArray.push('5.oa.a.1_8'); 
+	if (c == 2)
+        	this.mIDArray.push('5.oa.a.1_9'); 
 
-        this.mIDArray.push('5.oa.a.1_1'); 
-        this.mIDArray.push('5.oa.a.1_2'); 
-        this.mIDArray.push('5.oa.a.1_3'); 
-        this.mIDArray.push('5.oa.a.1_4'); 
-        this.mIDArray.push('5.oa.a.1_5'); 
-        this.mIDArray.push('5.oa.a.1_6'); 
-        this.mIDArray.push('5.oa.a.1_7'); 
-        this.mIDArray.push('5.oa.a.1_8'); 
-        this.mIDArray.push('5.oa.a.1_9'); 
-        this.mIDArray.push('5.oa.a.1_10'); 
-        this.mIDArray.push('5.oa.a.1_11'); 
-        this.mIDArray.push('5.oa.a.1_12'); 
-        this.mIDArray.push('5.oa.a.1_13'); 
-        this.mIDArray.push('5.oa.a.1_14'); 
-        this.mIDArray.push('5.oa.a.1_15'); 
-        this.mIDArray.push('5.oa.a.1_16'); 
-        this.mIDArray.push('5.oa.a.1_17'); 
-        this.mIDArray.push('5.oa.a.1_18'); 
-        this.mIDArray.push('5.oa.a.1_19'); 
-        this.mIDArray.push('5.oa.a.1_20'); 
-        this.mIDArray.push('5.oa.a.1_21'); 
+	var d = Math.floor(Math.random()*2);
+	if (d == 0)
+        	this.mIDArray.push('5.oa.a.1_10'); 
+	if (d == 1) 
+        	this.mIDArray.push('5.oa.a.1_11'); 
+
+	var e = Math.floor(Math.random()*2);
+	if (e == 0) 
+        	this.mIDArray.push('5.oa.a.1_12'); 
+	if (e == 1) 
+        	this.mIDArray.push('5.oa.a.1_13'); 
+
+	var f = Math.floor(Math.random()*2);
+	if (f == 0) 
+        	this.mIDArray.push('5.oa.a.1_14'); 
+	if (f == 1) 
+        	this.mIDArray.push('5.oa.a.1_15'); 
+
+	var g = Math.floor(Math.random()*2);
+	if (g == 0) 
+        	this.mIDArray.push('5.oa.a.1_16'); 
+	if (g == 1) 
+        	this.mIDArray.push('5.oa.a.1_17'); 
+
+	var h = Math.floor(Math.random()*2);
+	if (h == 0) 
+        	this.mIDArray.push('5.oa.a.1_18'); 
+	if (h == 1) 
+        	this.mIDArray.push('5.oa.a.1_19'); 
+
+	var i = Math.floor(Math.random()*2);
+	if (i == 0) 
+        	this.mIDArray.push('5.oa.a.1_20'); 
+	if (i == 1) 
+        	this.mIDArray.push('5.oa.a.1_21'); 
+
         this.mIDArray.push('5.oa.a.1_22'); 
 	
 	this.mCurrentElement = 0;
