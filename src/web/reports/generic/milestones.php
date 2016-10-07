@@ -105,6 +105,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>Last Name';
         echo '</td>';
+        echo '<td>Grade';
+        echo '</td>';
         echo '<td>Score';
         echo '</td>';
         echo '<td>Standard';
@@ -182,7 +184,7 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp from users where banned_id = 0 and school_id = ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
@@ -199,6 +201,7 @@ echo '<table border=\"1\">';
                 $lastAnswerTime = $row[0];
                 $firstName = $row[1];
                 $lastName = $row[2];
+                $core_grades_id = $row[38];
                 $core_standards_id = $row[3];
                 $score = $row[4];
                 $k_cc = $row[5];
@@ -252,12 +255,18 @@ echo '<table border=\"1\">';
                 echo '<td>';
                 echo $lastName;
                 echo '</td>';
+
+ 		echo '<td bgcolor="red">';
+                echo '87';
+
                 echo '<td>';
                 echo $score;
                 echo '</td>';
                 echo '<td>';
                 echo $core_standards_id;
                 echo '</td>';
+
+		
 
 		if ($k_cc == 1)
 		{
