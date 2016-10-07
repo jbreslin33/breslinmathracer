@@ -256,10 +256,41 @@ echo '<table border=\"1\">';
                 echo $lastName;
                 echo '</td>';
 
- 		echo '<td bgcolor="red">';
+ 		echo '<td>';
+
+		$raw_grade = 60;
+
 		if ($core_grades_id == 7)
 		{
-                	echo '6th grade';
+			$bonus = 2;
+			for ($j = 5; $j < 13; $j++)
+			{
+               			if ($row[$j] == 1)
+				{
+					$raw_grade += $bonus; 
+				}			 
+			}
+			for ($k = 21; $k < 33; $k++)
+			{
+               			if ($row[$k] == 1)
+				{
+					$raw_grade += $bonus; 
+				}			 
+			}
+
+
+
+/*
+			$bonus = 2;
+			for ($i = 5; $i < 27; $i++)
+			{ 
+               			if ($row[$i] == 1)
+				{
+					$raw_grade += $bonus; 
+				}			 
+			}	
+	*/
+			echo $raw_grade;
 		}
 		else if ($core_grades_id == 8)
 		{
@@ -269,6 +300,7 @@ echo '<table border=\"1\">';
 		{
                 	echo 'grade unknown';
 		}
+                echo '</td>';
 
                 echo '<td>';
                 echo $score;
