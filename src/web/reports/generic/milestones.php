@@ -257,7 +257,18 @@ echo '<table border=\"1\">';
                 echo '</td>';
 
  		echo '<td bgcolor="red">';
-                echo '87';
+		if ($core_grades_id == 7)
+		{
+                	echo '6th grade';
+		}
+		else if ($core_grades_id == 8)
+		{
+                	echo '7th grade';
+		}
+		else 
+		{
+                	echo 'grade unknown';
+		}
 
                 echo '<td>';
                 echo $score;
