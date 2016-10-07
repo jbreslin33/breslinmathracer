@@ -260,6 +260,27 @@ echo '<table border=\"1\">';
 
 		$raw_grade = 60;
 
+                if ($core_grades_id == 6)
+                {
+                        $bonus = 2.7;
+                        for ($j = 5; $j < 13; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade += $bonus;
+                                }
+                        }
+                        for ($k = 21; $k < 33; $k++)
+                        {
+                                if ($row[$k] == 1)
+                                {
+                                        $raw_grade += $bonus;
+                                }
+                        }
+                        echo $raw_grade;
+                }
+
+
 		if ($core_grades_id == 7)
 		{
 			$bonus = 2;
@@ -279,6 +300,7 @@ echo '<table border=\"1\">';
 			}
 			echo $raw_grade;
 		}
+
 		else if ($core_grades_id == 8)
 		{
                         $bonus = 1.6;
@@ -298,6 +320,29 @@ echo '<table border=\"1\">';
                         }
                         echo $raw_grade;
 		}
+
+                else if ($core_grades_id == 9)
+                {
+                        $bonus = 1.6;
+                        for ($j = 5; $j < 13; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade += $bonus;
+                                }
+                        }
+                        for ($k = 21; $k < 38; $k++)
+                        {
+                                if ($row[$k] == 1)
+                                {
+                                        $raw_grade += $bonus;
+                                }
+                        }
+                        echo $raw_grade;
+                }
+
+
+
 		else 
 		{
                 	echo 'grade unknown';
