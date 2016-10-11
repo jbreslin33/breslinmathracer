@@ -195,6 +195,11 @@ echo '<table border=\"1\">';
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
+	
+	$total_raw_grade = 0;
+
+	$i = 0;
+
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
@@ -407,6 +412,8 @@ echo '<table border=\"1\">';
                 	echo 'grade unknown';
 		}
                 echo '</td>';
+
+		$total_raw_grade += $raw_grade;
 
                 echo '<td>';
                 echo $score;
@@ -806,6 +813,12 @@ echo '<table border=\"1\">';
 
         pg_free_result($result);
         echo '</table>';
+
+
+	$avg = $total_raw_grade / $i;
+	echo 'hello';
+	echo $avg;
+
 }
 ?>
 
