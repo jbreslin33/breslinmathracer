@@ -270,7 +270,7 @@ echo '<table border=\"1\">';
                                         $raw_grade += $bonus;
                                 }
                         }
-                        for ($k = 21; $k < 33; $k++)
+                        for ($k = 21; $k < 28; $k++)
                         {
                                 if ($row[$k] == 1)
                                 {
@@ -281,7 +281,7 @@ echo '<table border=\"1\">';
                 }
 
 
-		if ($core_grades_id == 7)
+		else if ($core_grades_id == 7)
 		{
 			$bonus = 2;
 			for ($j = 5; $j < 13; $j++)
@@ -340,8 +340,6 @@ echo '<table border=\"1\">';
                         }
                         echo $raw_grade;
                 }
-
-
 
 		else 
 		{
