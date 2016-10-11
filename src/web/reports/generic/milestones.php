@@ -260,10 +260,11 @@ echo '<table border=\"1\">';
 
 		$raw_grade = 60;
 
-                if ($core_grades_id == 1)
+		//1st  thru k 
+                if ($core_grades_id == 2)
                 {
                         $bonus = 13.4;
-                        for ($j = 5; $j < 11; $j++)
+                        for ($j = 5; $j < 8; $j++)
                         {
                                 if ($row[$j] == 1)
                                 {
@@ -273,23 +274,10 @@ echo '<table border=\"1\">';
                         echo $raw_grade;
                 }
 
-
-                else if ($core_grades_id == 2)
-                {
-                        $bonus = 6.6;
-                        for ($j = 5; $j < 9; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-
+		//2nd  thru 1st
                 else if ($core_grades_id == 3)
                 {
-                        $bonus = 6.6;
+                        $bonus = 6.7;
                         for ($j = 5; $j < 11; $j++)
                         {
                                 if ($row[$j] == 1)
@@ -299,7 +287,7 @@ echo '<table border=\"1\">';
                         }
                         echo $raw_grade;
                 }
-
+//3rd thru 2nd
 		else if ($core_grades_id == 4)
                 {
                         $bonus = 5;
