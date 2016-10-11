@@ -63,7 +63,7 @@ ALTER TABLE users ADD COLUMN g6_ee integer default 0;
 ALTER TABLE users ADD COLUMN g6_g integer default 0;
 ALTER TABLE users ADD COLUMN g6_sp integer default 0;
 
---update student core_standard_
+--update student core_standards_overide_id and core_grades_id
 
 --r21 g7
 update users set core_standards_overide_id = '6.rp.a.1' where room_id = 22;
@@ -113,6 +113,52 @@ update users set core_grades_id = 5 where room_id = 16;
 --r36 g3
 update users set core_standards_overide_id = '3.oa.a.1' where room_id = 17;
 update users set core_grades_id = 4 where room_id = 17;
+
+update users set core_grades_id = 9 where first_name = 'Jason' and last_name = 'Voros';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Jason' and last_name = 'Voros'; 
+
+update users set core_grades_id = 9 where first_name = 'Yassel' and last_name = 'baez';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Yassel' and last_name = 'baez'; 
+
+update users set core_grades_id = 9 where first_name = 'Marina' and last_name = 'Burgos';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Marina' and last_name = 'Burgos'; 
+
+update users set core_grades_id = 9 where first_name = 'chaneli' and last_name = 'nolasco';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'chaneli' and last_name = 'nolasco'; 
+
+update users set core_grades_id = 8 where first_name = 'Markus' and last_name = 'richards';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Markus' and last_name = 'richards'; 
+
+update users set core_grades_id = 8 where first_name = 'halle' and last_name = 'jimenez';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'halle' and last_name = 'jimenez'; 
+
+update users set core_grades_id = 7 where first_name = 'MICHAEL' and last_name = 'ZELAYA';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'MICHAEL' and last_name = 'ZELAYA'; 
+
+update users set core_grades_id = 7 where first_name = 'cameron' and last_name = 'giscombe';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'cameron' and last_name = 'giscombe'; 
+
+update users set core_grades_id = 7 where first_name = 'carlos' and last_name = 'jovel';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'carlos' and last_name = 'jovel'; 
+
+update users set core_grades_id = 7 where first_name = 'Johnathan' and last_name = 'Valedon';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Johnathan' and last_name = 'Valedon'; 
+
+update users set core_grades_id = 6 where first_name = 'Brian' and last_name = 'Hernandez';
+update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Brian' and last_name = 'Hernandez'; 
+
+update users set core_grades_id = 6 where first_name = 'Alex' and last_name = 'Acevedo';
+update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Alex' and last_name = 'Acevedo'; 
+
+update users set core_grades_id = 6 where first_name = 'iamir' and last_name = 'moore';
+update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'iamir' and last_name = 'moore'; 
+
+update users set core_grades_id = 5 where first_name = 'Brayner' and last_name = 'Estevez';
+update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Brayner' and last_name = 'Estevez'; 
+
+update users set core_grades_id = 5 where first_name = 'Kirian' and last_name = 'Vargas';
+update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Kirian' and last_name = 'Vargas'; 
+
 
 
 
