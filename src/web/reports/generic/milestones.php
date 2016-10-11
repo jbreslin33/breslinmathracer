@@ -813,12 +813,18 @@ echo '<table border=\"1\">';
 
         pg_free_result($result);
         echo '</table>';
+	
+	$avg = round($total_raw_grade / $i);
+	$tmp = $avg - 60;
+	$pct = $tmp / 40;
 
-
-	$avg = $total_raw_grade / $i;
-	echo 'hello';
-	echo $avg;
-
+	$avg_txt = 'PERCENT COMPLETE: %';
+	$pct = $pct * 100;
+	$avg_txt .= $pct; 
+	$avg_txt .= '   ';
+	$avg_txt .= 'CLASS AVERAGE GRADE: %';
+	$avg_txt .= $avg;
+	echo $avg_txt;
 }
 ?>
 
