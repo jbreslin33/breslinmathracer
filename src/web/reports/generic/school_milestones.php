@@ -42,9 +42,9 @@ $query = "select id, name from rooms where school_id = ";
 $query .= $_SESSION["school_id"];
 $query .= " order by name asc;";
 $result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
+$num_rooms = pg_numrows($result);
 
-for($i = 0; $i < $numrows; $i++)
+for($i = 0; $i < $num_rooms; $i++)
 {
         $row = pg_fetch_array($result, $i);
 
