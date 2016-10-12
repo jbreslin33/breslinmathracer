@@ -59,7 +59,7 @@ for($i = 0; $i < $num_rooms; $i++)
 		$query .= " AND room_id = ";
         	$query .= $row[0];
 	}
-        $query .= " order by score desc;";
+        $query .= ";";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
