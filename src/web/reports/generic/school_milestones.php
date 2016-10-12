@@ -44,6 +44,10 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $num_rooms = pg_numrows($result);
 
+
+//arrays
+$raw_grade_array = array();
+
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
 {
@@ -250,14 +254,12 @@ for($i = 0; $i < $num_rooms; $i++)
                                 }
                         }
                 }
-
 		else 
 		{
 		}
-
-		$total_raw_grade += $raw_grade;
-
-        }
+		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
+        } //loop students
+	$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
 
         pg_free_result($result);
 	
@@ -272,7 +274,8 @@ for($i = 0; $i < $num_rooms; $i++)
 	$avg_txt .= 'CLASS AVERAGE GRADE: %';
 	$avg_txt .= $avg;
 	echo $avg_txt;
-}
+} //loop rooms
+
 //bubble sort
 
 //show results
