@@ -47,104 +47,31 @@ $numrows = pg_numrows($result);
 for($i = 0; $i < $numrows; $i++)
 {
         $row = pg_fetch_array($result, $i);
-}
-?>
 
-<?php
-
-echo '<table border=\"1\">';
+	echo '<table border=\"1\">';
         echo '<tr>';
         echo '<td>Rank';
         echo '</td>';
-        echo '<td>First Name';
-        echo '</td>';
-        echo '<td>Last Name';
+        echo '<td>Room';
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
-        echo '<td>Score';
+        echo '<td>Average Grade';
         echo '</td>';
-        echo '<td>Standard';
+        echo '<td>Percent Complete';
         echo '</td>';
-        echo '<td>k cc';
-        echo '</td>';
-        echo '<td>k oa a 4';
-        echo '</td>';
-        echo '<td>k oa a 5';
-        echo '</td>';
-        echo '<td>1 oa b 3';
-        echo '</td>';
-        echo '<td>1 oa c 6';
-        echo '</td>';
-        echo '<td>1 nbt';
-        echo '</td>';
-        echo '<td>2 oa b 2';
-        echo '</td>';
-        echo '<td>2 nbt';
-        echo '</td>';
-        echo '<td>5';
-        echo '</td>';
-        echo '<td>2';
-        echo '</td>';
-        echo '<td>4';
-        echo '</td>';
-        echo '<td>8';
-        echo '</td>';
-        echo '<td>3';
-        echo '</td>';
-        echo '<td>6';
-        echo '</td>';
-        echo '<td>9';
-        echo '</td>';
-        echo '<td>7';
-        echo '</td>';
-        echo '<td>The Izzy 3 oa c 7';
-        echo '</td>';
-        echo '<td>3 nbt';
-        echo '</td>';
-        echo '<td>4 oa b 4';
-        echo '</td>';
-        echo '<td>4 nbt b 4';
-        echo '</td>';
-        echo '<td>4 nbt b 5';
-        echo '</td>';
-        echo '<td>4 nbt b 6';
-        echo '</td>';
-        echo '<td>4 nf b 3 c';
-        echo '</td>';
-        echo '<td>5 oa a 1';
-        echo '</td>';
-        echo '<td>5 nbt b 5';
-        echo '</td>';
-        echo '<td>5 nbt b 6';
-        echo '</td>';
-        echo '<td>5 nbt b 7';
-        echo '</td>';
-        echo '<td>5 nf a 1';
-        echo '</td>';
-        echo '<td>6 rp';
-        echo '</td>';
-        echo '<td>6 ns';
-        echo '</td>';
-        echo '<td>6 ee';
-        echo '</td>';
-        echo '<td>6 g';
-        echo '</td>';
-        echo '<td>6 sp';
-        echo '</td>';
-        echo '</tr>';
 
-        $lastAnswerTime = '';
+        $last_activity = '';
         $firstName = '';
         $lastName = '';
         $score = '';
 
         $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
-	if ($room_id != 0)
+	if ($row[0] != 0)
 	{
 		$query .= " AND room_id = ";
-        	$query .= $room_id;
+        	$query .= $row[0];
 	}
         $query .= " order by score desc;";
         $result = pg_query($conn,$query);
@@ -158,7 +85,7 @@ echo '<table border=\"1\">';
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $lastAnswerTime = $row[0];
+                $last_activity = $row[0];
                 $firstName = $row[1];
                 $lastName = $row[2];
                 $core_grades_id = $row[38];
@@ -377,392 +304,6 @@ echo '<table border=\"1\">';
                 echo $core_standards_id;
                 echo '</td>';
 
-		
-
-		if ($k_cc == 1)
-		{
- 			echo '<td bgcolor="green">';
-		}	
-		else
-		{
- 			echo '<td bgcolor="red">';
-		}
-                echo '';
-                echo '</td>';
-
-                if ($k_oa_a_4 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }      
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($k_oa_a_5 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }      
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($g1_oa_b_3 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }     
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g1_oa_c_6 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-
-                if ($g1_nbt == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-
-                if ($g2_oa_b_2 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($g2_nbt == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g5 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g2 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g4 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g8 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g3 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g6 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g9 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g7 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g3_oa_c_7 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-
-                if ($g3_nbt == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g4_oa_b_4 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g4_nbt_b_4 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-
-                if ($g4_nbt_b_5 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g4_nbt_b_6 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g4_nf_b_3_c == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-             	if ($g5_oa_a_1 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g5_nbt_b_5 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g5_nbt_b_6 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                if ($g5_nbt_b_7 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-               
-
-		if ($g5_nf_a_1 == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-                
-
-
-                if ($g6_rp == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($g6_ns == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($g6_ee == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($g6_g == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
-                if ($g6_sp == 1)
-                {
-                        echo '<td bgcolor="green">';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                }
-                echo '';
-                echo '</td>';
-
-
 		echo '</tr>';
         }
 
@@ -780,6 +321,7 @@ echo '<table border=\"1\">';
 	$avg_txt .= 'CLASS AVERAGE GRADE: %';
 	$avg_txt .= $avg;
 	echo $avg_txt;
+}
 ?>
 
 </body>
