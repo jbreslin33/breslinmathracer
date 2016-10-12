@@ -44,7 +44,7 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $num_rooms = pg_numrows($result);
 
-//calc results
+//calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
 {
         $row = pg_fetch_array($result, $i);
@@ -68,6 +68,7 @@ for($i = 0; $i < $num_rooms; $i++)
 
 	$i = 0;
 
+	//calc results by looping students in rooms
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
