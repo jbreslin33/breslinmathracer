@@ -260,22 +260,8 @@ for($i = 0; $i < $num_rooms; $i++)
 		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
         } //loop students
 	$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
-//	$raw_grade_array[] = $x; //stick class raw grade in array
 
         pg_free_result($result);
-/*
-	$avg = round($total_raw_grade / $i);
-	$tmp = $avg - 60;
-	$pct = $tmp / 40;
-
-	$avg_txt = 'PERCENT COMPLETE: %';
-	$pct = $pct * 100;
-	$avg_txt .= $pct; 
-	$avg_txt .= '   ';
-	$avg_txt .= 'CLASS AVERAGE GRADE: %';
-	$avg_txt .= $avg;
-	echo $avg_txt;
-*/
 } //loop rooms
 
 //bubble sort
@@ -318,6 +304,21 @@ for($i = 0; $i < $num_rooms; $i++)
 
 }
         echo '</table>';
+
+
+/*
+	$avg = round($total_raw_grade / $i);
+	$tmp = $avg - 60;
+	$pct = $tmp / 40;
+
+	$avg_txt = 'PERCENT COMPLETE: %';
+	$pct = $pct * 100;
+	$avg_txt .= $pct; 
+	$avg_txt .= '   ';
+	$avg_txt .= 'CLASS AVERAGE GRADE: %';
+	$avg_txt .= $avg;
+	echo $avg_txt;
+*/
 ?>
 
 </body>
