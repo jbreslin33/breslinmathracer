@@ -44,22 +44,11 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $num_rooms = pg_numrows($result);
 
+//calc results
 for($i = 0; $i < $num_rooms; $i++)
 {
         $row = pg_fetch_array($result, $i);
 
-	echo '<table border=\"1\">';
-        echo '<tr>';
-        echo '<td>Rank';
-        echo '</td>';
-        echo '<td>Room';
-        echo '</td>';
-        echo '<td>Grade';
-        echo '</td>';
-        echo '<td>Average Grade';
-        echo '</td>';
-        echo '<td>Percent Complete';
-        echo '</td>';
 
         $last_activity = '';
         $firstName = '';
@@ -131,20 +120,6 @@ for($i = 0; $i < $num_rooms; $i++)
 		$g6_g = $row[36];
 		$g6_sp = $row[37];
                 
-
-                echo '<tr>';
-                echo '<td>';
-                echo $i + 1;
-                echo '</td>';
-                echo '<td>';
-                echo $firstName;
-                echo '</td>';
-                echo '<td>';
-                echo $lastName;
-                echo '</td>';
-
- 		echo '<td>';
-
 		$raw_grade = 60;
 
 		//1st  thru k 
@@ -158,7 +133,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
                 }
 
 		//2nd  thru 1st
@@ -172,7 +146,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
                 }
 //3rd thru 2nd
 		else if ($core_grades_id == 4)
@@ -185,7 +158,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
                 }
                 
 		else if ($core_grades_id == 5)
@@ -205,7 +177,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
                 }
 
                 else if ($core_grades_id == 6)
@@ -225,7 +196,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
                 }
 
 
@@ -246,7 +216,6 @@ for($i = 0; $i < $num_rooms; $i++)
 					$raw_grade += $bonus; 
 				}			 
 			}
-			echo $raw_grade;
 		}
 
 		else if ($core_grades_id == 8)
@@ -266,7 +235,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
 		}
 
                 else if ($core_grades_id == 9)
@@ -286,29 +254,17 @@ for($i = 0; $i < $num_rooms; $i++)
                                         $raw_grade += $bonus;
                                 }
                         }
-                        echo $raw_grade;
                 }
 
 		else 
 		{
-                	echo 'grade unknown';
 		}
-                echo '</td>';
 
 		$total_raw_grade += $raw_grade;
 
-                echo '<td>';
-                echo $score;
-                echo '</td>';
-                echo '<td>';
-                echo $core_standards_id;
-                echo '</td>';
-
-		echo '</tr>';
         }
 
         pg_free_result($result);
-        echo '</table>';
 	
 	$avg = round($total_raw_grade / $i);
 	$tmp = $avg - 60;
@@ -322,6 +278,46 @@ for($i = 0; $i < $num_rooms; $i++)
 	$avg_txt .= $avg;
 	echo $avg_txt;
 }
+//bubble sort
+
+//show results
+	echo '<table border=\"1\">';
+        echo '<tr>';
+        echo '<td>Rank';
+        echo '</td>';
+        echo '<td>Room';
+        echo '</td>';
+        echo '<td>Grade';
+        echo '</td>';
+        echo '<td>Average Grade';
+        echo '</td>';
+        echo '<td>Percent Complete';
+        echo '</td>';
+for($i = 0; $i < $num_rooms; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+		echo '<tr>';
+                
+		echo '<td>';
+                echo 'rank';
+                echo '</td>';
+                echo '<td>';
+                echo 'room';
+                echo '</td>';
+                echo '<td>';
+                echo 'grade';
+                echo '</td>';
+                echo '<td>';
+                echo 'avg_grade';
+                echo '</td>';
+                echo '<td>';
+                echo 'per_com';
+                echo '</td>';
+
+		echo '</tr>';
+
+}
+        echo '</table>';
 ?>
 
 </body>
