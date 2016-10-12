@@ -41,8 +41,8 @@ echo "<br>";
 $query = "select id, name from rooms where school_id = ";
 $query .= $_SESSION["school_id"];
 $query .= " order by name asc;";
-$result = pg_query($conn,$query);
-$num_rooms = pg_numrows($result);
+$room_result = pg_query($conn,$query);
+$num_rooms = pg_numrows($room_result);
 
 
 //arrays
@@ -51,7 +51,7 @@ $raw_grade_array = array();
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
 {
-        $row = pg_fetch_array($result, $i);
+        $row = pg_fetch_array($room_result, $i);
 
 
         $last_activity = '';
@@ -70,12 +70,12 @@ for($i = 0; $i < $num_rooms; $i++)
 	
 	$total_raw_grade = 0;
 
-	$i = 0;
+	$x = 0;
 
 	//calc results by looping students in rooms
-        for($i = 0; $i < $numrows; $i++)
+        for($x = 0; $x < $numrows; $x++)
         {
-                $row = pg_fetch_array($result, $i);
+                $row = pg_fetch_array($result, $x);
                 $last_activity = $row[0];
                 $core_grades_id = $row[38];
                 $core_standards_id = $row[3];
@@ -260,9 +260,10 @@ for($i = 0; $i < $num_rooms; $i++)
 		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
         } //loop students
 	$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
+//	$raw_grade_array[] = $x; //stick class raw grade in array
 
         pg_free_result($result);
-	
+/*
 	$avg = round($total_raw_grade / $i);
 	$tmp = $avg - 60;
 	$pct = $tmp / 40;
@@ -274,6 +275,7 @@ for($i = 0; $i < $num_rooms; $i++)
 	$avg_txt .= 'CLASS AVERAGE GRADE: %';
 	$avg_txt .= $avg;
 	echo $avg_txt;
+*/
 } //loop rooms
 
 //bubble sort
@@ -293,17 +295,17 @@ for($i = 0; $i < $num_rooms; $i++)
         echo '</td>';
 for($i = 0; $i < $num_rooms; $i++)
 {
-        $row = pg_fetch_array($result, $i);
+        $row = pg_fetch_array($room_result, $i);
 		echo '<tr>';
                 
 		echo '<td>';
                 echo 'rank';
                 echo '</td>';
                 echo '<td>';
-                echo 'room';
+                echo $row[1];
                 echo '</td>';
                 echo '<td>';
-                echo 'grade';
+                echo $raw_grade_array[$i];
                 echo '</td>';
                 echo '<td>';
                 echo 'avg_grade';
