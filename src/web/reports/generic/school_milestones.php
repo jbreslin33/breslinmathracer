@@ -46,26 +46,33 @@ $num_rooms = pg_numrows($room_result);
 
 
 //arrays
+$rank_array = array();
+$room_array = array();
+$grade_array = array();
+$average_grade_array = array();
+$percent_complete_array = array();
 $raw_grade_array = array();
+$number_of_students_array = array();
 
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
 {
-        $row = pg_fetch_array($room_result, $i);
+        $rooms_row = pg_fetch_array($room_result, $i);
 
 
         $last_activity = '';
+        $tmp_grade = '';
 
         $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
-	if ($row[0] != 0)
+	if ($rooms_row[0] != 0)
 	{
 		$query .= " AND room_id = ";
-        	$query .= $row[0];
+        	$query .= $rooms_row[0];
 	}
         $query .= ";";
         $result = pg_query($conn,$query);
-        $numrows = pg_numrows($result);
+        $num_students = pg_numrows($result);
 
 	
 	$total_raw_grade = 0;
@@ -73,7 +80,7 @@ for($i = 0; $i < $num_rooms; $i++)
 	$x = 0;
 
 	//calc results by looping students in rooms
-        for($x = 0; $x < $numrows; $x++)
+        for($x = 0; $x < $num_students; $x++)
         {
                 $row = pg_fetch_array($result, $x);
                 $last_activity = $row[0];
@@ -257,9 +264,27 @@ for($i = 0; $i < $num_rooms; $i++)
 		else 
 		{
 		}
+		
+		$tmp_grade = $core_grades_id;
 		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
         } //loop students
-	$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
+	if ($num_students > 5 && $num_students < 34)
+	{
+			if ($rooms_row[1] == 2)
+			{
+			}
+			else
+			{
+			$number_of_students_array[] = $num_students;
+			$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
+			$rank_array[] = $i;
+			$room_array[] = $rooms_row[1];
+			$grade_array[] = $tmp_grade -1;
+			$average_grade_array[] = round($total_raw_grade / $num_students);
+			$tmppct = ($total_raw_grade / $num_students) - 60;
+			$percent_complete_array[] = round($tmppct / 40 * 100);
+			}
+	}
 
         pg_free_result($result);
 } //loop rooms
@@ -282,26 +307,33 @@ for($i = 0; $i < $num_rooms; $i++)
 for($i = 0; $i < $num_rooms; $i++)
 {
         $row = pg_fetch_array($room_result, $i);
+	
+	if ($number_of_students_array[$i] > 5 && $number_of_students_array[$i] < 34)
+	{
+		if ($rooms_row[$i] == 2)
+		{
+		}
+		else
+		{
 		echo '<tr>';
-                
 		echo '<td>';
-                echo 'rank';
+        	echo $rank_array[$i];
+        	echo '</td>';
+        	echo '<td>';
+        	echo $room_array[$i];
+        	echo '</td>';
+        	echo '<td>';
+        	echo $grade_array[$i];
+        	echo '</td>';
+                echo '<td>';
+                echo $average_grade_array[$i];
                 echo '</td>';
                 echo '<td>';
-                echo $row[1];
+                echo $percent_complete_array[$i];
                 echo '</td>';
-                echo '<td>';
-                echo $raw_grade_array[$i];
-                echo '</td>';
-                echo '<td>';
-                echo 'avg_grade';
-                echo '</td>';
-                echo '<td>';
-                echo 'per_com';
-                echo '</td>';
-
 		echo '</tr>';
-
+		}
+	}
 }
         echo '</table>';
 
