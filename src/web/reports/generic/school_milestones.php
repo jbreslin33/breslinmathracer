@@ -47,12 +47,36 @@ $num_rooms = pg_numrows($room_result);
 
 //arrays
 $rank_array = array();
+$nick_name_array = array();
 $room_array = array();
 $grade_array = array();
 $average_grade_array = array();
 $percent_complete_array = array();
 $raw_grade_array = array();
 $number_of_students_array = array();
+
+$nick_name_array[] = "a";
+$nick_name_array[] = "b";
+$nick_name_array[] = "c";
+$nick_name_array[] = "d";
+$nick_name_array[] = "e";
+$nick_name_array[] = "f";
+$nick_name_array[] = "g";
+$nick_name_array[] = "h";
+$nick_name_array[] = "i";
+$nick_name_array[] = "j";
+$nick_name_array[] = "k";
+$nick_name_array[] = "l";
+$nick_name_array[] = "m";
+$nick_name_array[] = "n";
+$nick_name_array[] = "o";
+$nick_name_array[] = "p";
+$nick_name_array[] = "q";
+$nick_name_array[] = "r";
+$nick_name_array[] = "s";
+$nick_name_array[] = "t";
+$nick_name_array[] = "u";
+ 
 
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
@@ -343,10 +367,10 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '</td>';
         echo '<td>Room';
         echo '</td>';
+        echo '<td>Handle';
+        echo '</td>';
         echo '<td>Grade';
         echo '</td>';
-        //echo '<td>Average Grade';
-        //echo '</td>';
         echo '<td>Percent Complete';
         echo '</td>';
 for($i = 0; $i < sizeof($rank_array); $i++)
@@ -368,6 +392,9 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         	echo $room_array[$i];
         	echo '</td>';
         	echo '<td>';
+        	echo $nick_name_array[$i];
+        	echo '</td>';
+        	echo '<td>';
 		if ($room_array[$i] == 27)
 		{
         		echo 'RR';
@@ -377,9 +404,6 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         		echo $grade_array[$i];
 		}
         	echo '</td>';
-                //echo '<td>';
-                //echo $average_grade_array[$i];
-                //echo '</td>';
                 echo '<td>';
                 echo $percent_complete_array[$i];
                 echo '</td>';
