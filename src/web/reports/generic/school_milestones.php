@@ -291,19 +291,22 @@ for($i = 0; $i < $num_rooms; $i++)
 
 //bubble sort
 //start by looping g to find 1st place then 2nd etc
-for ($g = 0; $g < sizeof($rank_array); $g++)
+//error_log(sizeof($rank_array));
+for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 {
 	$highest_element = '';
 	$highest_number = 0;
 	$h = 0;
-	for ($h = 0; $h < sizeof($rank_array); $h++)
+	for ($h = $g; $h < intval(sizeof($rank_array)); $h++)
 	{
-		if ($percent_complete_array[$h] > $highest_number)
+		if (intval($percent_complete_array[$h]) > intval($highest_number))
 		{
 			$highest_number = $percent_complete_array[$h];
 			$highest_element = $h;
 		}
 	}
+	//error_log($highest_number);
+	//error_log($highest_element);
 
 	//copy current place your working on to tmp cause its getting overwritten 
  	$number_of_students_tmp = $number_of_students_array[$g];
@@ -315,24 +318,22 @@ for ($g = 0; $g < sizeof($rank_array); $g++)
         $percent_complete_tmp = $percent_complete_array[$g];
 	
 	//overwrite place we are working on
-/*
-	$number_of_students[$g] = $number_of_students_array[$h];	
-	$raw_grade_array[$g] = $raw_grade_array[$h];
-	$rank_array[$g] = $rank_array[$h];
-	$room_array[$g] = $room_array[$h];
-	$grade_array[$g] = $grade_array[$h];
-	$average_grade_array[$g] = $average_grade_array[$h];
-	$percent_complete_array[$g] = $percent_complete_array[$h];
+	$number_of_students[$g] = $number_of_students_array[$highest_element];	
+	$raw_grade_array[$g] = $raw_grade_array[$highest_element];
+	$rank_array[$g] = $rank_array[$highest_element];
+	$room_array[$g] = $room_array[$highest_element];
+	$grade_array[$g] = $grade_array[$highest_element];
+	$average_grade_array[$g] = $average_grade_array[$highest_element];
+	$percent_complete_array[$g] = $percent_complete_array[$highest_element];
        
 	//overwrite were we got place from  with tmp
-	$number_of_students[$h] = $number_of_students_tmp;
-        $raw_grade_array[$h] = $raw_grade_tmp;
-        $rank_array[$h] = $rank_tmp;
-        $room_array[$h] = $room_tmp;
-        $grade_array[$h] = $grade_tmp;
-        $average_grade_array[$h] = $average_grade_tmp;
-        $percent_complete_array[$h] = $percent_complete_tmp;
-*/
+	$number_of_students[$highest_element] = $number_of_students_tmp;
+        $raw_grade_array[$highest_element] = $raw_grade_tmp;
+        $rank_array[$highest_element] = $rank_tmp;
+        $room_array[$highest_element] = $room_tmp;
+        $grade_array[$highest_element] = $grade_tmp;
+        $average_grade_array[$highest_element] = $average_grade_tmp;
+        $percent_complete_array[$highest_element] = $percent_complete_tmp;
 }
 
 //show results
@@ -344,8 +345,8 @@ for ($g = 0; $g < sizeof($rank_array); $g++)
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
-        echo '<td>Average Grade';
-        echo '</td>';
+        //echo '<td>Average Grade';
+        //echo '</td>';
         echo '<td>Percent Complete';
         echo '</td>';
 for($i = 0; $i < sizeof($rank_array); $i++)
@@ -361,17 +362,24 @@ for($i = 0; $i < sizeof($rank_array); $i++)
 		{
 		echo '<tr>';
 		echo '<td>';
-        	echo $rank_array[$i];
+        	echo $i + 1;
         	echo '</td>';
         	echo '<td>';
         	echo $room_array[$i];
         	echo '</td>';
         	echo '<td>';
-        	echo $grade_array[$i];
+		if ($room_array[$i] == 27)
+		{
+        		echo 'RR';
+		}	
+		else
+		{
+        		echo $grade_array[$i];
+		}
         	echo '</td>';
-                echo '<td>';
-                echo $average_grade_array[$i];
-                echo '</td>';
+                //echo '<td>';
+                //echo $average_grade_array[$i];
+                //echo '</td>';
                 echo '<td>';
                 echo $percent_complete_array[$i];
                 echo '</td>';
