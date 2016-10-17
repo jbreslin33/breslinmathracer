@@ -54,20 +54,21 @@ $average_grade_array = array();
 $percent_complete_array = array();
 $raw_grade_array = array();
 $number_of_students_array = array();
+$percent_passed_grade_level_array = array();
 
 $nick_name_array[] = "Savages";
 $nick_name_array[] = "Destroyers";
 $nick_name_array[] = "Beast Modes";
+$nick_name_array[] = "Big Kids";
+$nick_name_array[] = "Carson Wentzes";
 $nick_name_array[] = "Masterminds";
 $nick_name_array[] = "Chicken Wings";
-$nick_name_array[] = "Unicorns";
-$nick_name_array[] = "Whackadoodles";
-$nick_name_array[] = "Chickens";
-$nick_name_array[] = "Least Modes";
 $nick_name_array[] = "Angry Babies";
 $nick_name_array[] = "Little Kids";
-$nick_name_array[] = "Donald Trump's Haircuts";
+$nick_name_array[] = "Least Modes";
 $nick_name_array[] = "Noobies";
+$nick_name_array[] = "Donald Trump's Haircuts";
+$nick_name_array[] = "Hillary Clinton's Emails";
 $nick_name_array[] = "n";
 $nick_name_array[] = "o";
 $nick_name_array[] = "p";
@@ -100,12 +101,15 @@ for($i = 0; $i < $num_rooms; $i++)
 
 	
 	$total_raw_grade = 0;
+	$total_passed_grade_level = 0;
 
 	$x = 0;
 
 	//calc results by looping students in rooms
         for($x = 0; $x < $num_students; $x++)
         {
+		$passed_grade_level = true;
+
                 $row = pg_fetch_array($result, $x);
                 $last_activity = $row[0];
                 $core_grades_id = $row[38];
@@ -162,6 +166,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                 }
 
@@ -175,6 +183,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                 }
 //3rd thru 2nd
@@ -187,6 +199,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                 }
                 
@@ -199,6 +215,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                         for ($k = 21; $k < 23; $k++)
                         {
@@ -206,6 +226,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                 }
 
@@ -218,6 +242,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                         for ($k = 21; $k < 28; $k++)
                         {
@@ -225,6 +253,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                 }
 
@@ -238,6 +270,10 @@ for($i = 0; $i < $num_rooms; $i++)
 				{
 					$raw_grade += $bonus; 
 				}			 
+				else
+				{
+					$passed_grade_level = false;	
+				}
 			}
 			for ($k = 21; $k < 33; $k++)
 			{
@@ -245,6 +281,10 @@ for($i = 0; $i < $num_rooms; $i++)
 				{
 					$raw_grade += $bonus; 
 				}			 
+				else
+				{
+					$passed_grade_level = false;	
+				}
 			}
 		}
 
@@ -257,6 +297,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                         for ($k = 21; $k < 38; $k++)
                         {
@@ -264,6 +308,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
 		}
 
@@ -276,6 +324,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                         for ($k = 21; $k < 38; $k++)
                         {
@@ -283,6 +335,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade += $bonus;
                                 }
+				else
+				{
+					$passed_grade_level = false;	
+				}
                         }
                 }
 		else 
@@ -291,14 +347,18 @@ for($i = 0; $i < $num_rooms; $i++)
 		
 		$tmp_grade = $core_grades_id;
 		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
+
+		if ($passed_grade_level == true)
+		{
+			$total_passed_grade_level++;	
+		}
+
         } //loop students
+
 	if ($num_students > 5 && $num_students < 34)
 	{
-			if ($rooms_row[1] == 2)
-			{
-			}
-			else
-			{
+		if ($rooms_row[1] != 2)
+		{
 			$number_of_students_array[] = $num_students;
 			$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
 			$rank_array[] = $i;
@@ -307,7 +367,10 @@ for($i = 0; $i < $num_rooms; $i++)
 			$average_grade_array[] = round($total_raw_grade / $num_students);
 			$tmppct = ($total_raw_grade / $num_students) - 60;
 			$percent_complete_array[] = round($tmppct / 40 * 100);
-			}
+
+			$pct = ($total_passed_grade_level / $num_students) * 100;
+			$percent_passed_grade_level_array[] = round($pct); 
+		}
 	}
 
         pg_free_result($result);
@@ -340,6 +403,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $grade_tmp = $grade_array[$g];
         $average_grade_tmp = $average_grade_array[$g];
         $percent_complete_tmp = $percent_complete_array[$g];
+        $percent_passed_grade_level_tmp = $percent_passed_grade_level_array[$g];
 	
 	//overwrite place we are working on
 	$number_of_students[$g] = $number_of_students_array[$highest_element];	
@@ -349,6 +413,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$grade_array[$g] = $grade_array[$highest_element];
 	$average_grade_array[$g] = $average_grade_array[$highest_element];
 	$percent_complete_array[$g] = $percent_complete_array[$highest_element];
+	$percent_passed_grade_level_array[$g] = $percent_passed_grade_level_array[$highest_element];
        
 	//overwrite were we got place from  with tmp
 	$number_of_students[$highest_element] = $number_of_students_tmp;
@@ -358,6 +423,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $grade_array[$highest_element] = $grade_tmp;
         $average_grade_array[$highest_element] = $average_grade_tmp;
         $percent_complete_array[$highest_element] = $percent_complete_tmp;
+        $percent_passed_grade_level_array[$highest_element] = $percent_passed_grade_level_tmp;
 }
 
 //show results
@@ -371,7 +437,9 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
-        echo '<td>Percent Complete';
+        echo '<td>% Complete';
+        echo '</td>';
+        echo '<td>% @ grade Level';
         echo '</td>';
 for($i = 0; $i < sizeof($rank_array); $i++)
 {
@@ -406,6 +474,9 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         	echo '</td>';
                 echo '<td>';
                 echo $percent_complete_array[$i];
+                echo '</td>';
+                echo '<td>';
+                echo $percent_passed_grade_level_array[$i];
                 echo '</td>';
 		echo '</tr>';
 		}
