@@ -65,9 +65,14 @@ ALTER TABLE users ADD COLUMN g6_sp integer default 0;
 
 --update student core_standards_overide_id and core_grades_id
 
+
 --r4 g1
 update users set core_standards_overide_id = '1.oa.a.1' where room_id = 8;
 update users set core_grades_id = 2 where room_id = 8;
+
+--r5 g1
+update users set core_standards_overide_id = '1.oa.a.1' where room_id = 23;
+update users set core_grades_id = 2 where room_id = 23;
 
 --r21 g7
 update users set core_standards_overide_id = '6.rp.a.1' where room_id = 22;
@@ -116,6 +121,14 @@ update users set core_grades_id = 5 where room_id = 16;
 --r36 g3
 update users set core_standards_overide_id = '3.oa.a.1' where room_id = 17;
 update users set core_grades_id = 4 where room_id = 17;
+
+--r37 g2
+update users set core_standards_overide_id = '2.oa.a.1' where room_id = 14;
+update users set core_grades_id = 3 where room_id = 14;
+
+--r39 g2
+update users set core_standards_overide_id = '2.oa.a.1' where room_id = 13;
+update users set core_grades_id = 3 where room_id = 13;
 
 update users set core_grades_id = 9 where first_name = 'Jason' and last_name = 'Voros';
 update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Jason' and last_name = 'Voros'; 
