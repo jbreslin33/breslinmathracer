@@ -129,6 +129,9 @@ update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'chan
 update users set core_grades_id = 8 where first_name = 'Markus' and last_name = 'richards';
 update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Markus' and last_name = 'richards'; 
 
+update users set core_grades_id = 8 where first_name = 'Alejandro' and last_name = 'amigon';
+update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Alejandro' and last_name = 'amigon'; 
+
 update users set core_grades_id = 8 where first_name = 'halle' and last_name = 'jimenez';
 update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'halle' and last_name = 'jimenez'; 
 
