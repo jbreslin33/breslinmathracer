@@ -65,18 +65,23 @@ $nick_name_array[] = "Masterminds";
 $nick_name_array[] = "Chicken Wings";
 $nick_name_array[] = "Angry Babies";
 $nick_name_array[] = "Little Kids";
-$nick_name_array[] = "Least Modes";
 $nick_name_array[] = "Noobies";
+$nick_name_array[] = "The Tenderfoots";
+$nick_name_array[] = "Fledglings";
+$nick_name_array[] = "Neophytes";
+$nick_name_array[] = "Trainees";
+$nick_name_array[] = "Novices";
+$nick_name_array[] = "Recruits";
+$nick_name_array[] = "Lovable Losers";
+$nick_name_array[] = "Freshman";
+$nick_name_array[] = "Babes";
+$nick_name_array[] = "Tyros";
+$nick_name_array[] = "Rookies";
+$nick_name_array[] = "Least Modes";
+$nick_name_array[] = "Greenhorns";
 $nick_name_array[] = "Donald Trump's Haircuts";
 $nick_name_array[] = "Hillary Clinton's Emails";
-$nick_name_array[] = "n";
-$nick_name_array[] = "o";
-$nick_name_array[] = "p";
-$nick_name_array[] = "q";
-$nick_name_array[] = "r";
-$nick_name_array[] = "s";
-$nick_name_array[] = "t";
-$nick_name_array[] = "u";
+$nick_name_array[] = "Abecedarians";
  
 
 //calc results by looping rooms
