@@ -25,7 +25,7 @@ Extends: ThreeButtonItem,
                         c = parseInt(a+c);
                 }
 
-                this.setQuestion('When couning by tens what comes after ' + x + '?');
+                this.setQuestion('When counting by tens what comes after ' + x + '?');
                 this.setAnswer('' + parseInt(a),0);
 
                 this.mButtonA.setAnswer('' + a);
