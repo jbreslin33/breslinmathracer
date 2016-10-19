@@ -111,6 +111,10 @@ enter: function(item)
 
 	item.showContinueSpeed();	
 	item.showSpeed();
+
+	//set focus to CONTINUE Button
+	item.mContinueSpeedButton.mMesh.focus();
+
 },
 
 execute: function(item)
