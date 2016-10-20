@@ -457,6 +457,18 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
 		}
 		
+		var optionI = document.createElement("option");
+                optionI.value = 19;
+                optionI.text = 'The Super Izzy';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+       	        	this.mTimesTablesInfo.mMesh.add(optionI);
+		}
+		else
+		{
+       	        	this.mTimesTablesInfo.mMesh.appendChild(optionI);
+		}
+		
 		var optionL = document.createElement("option");
                 optionL.value = 22;
                 optionL.text = '3.nbt';
@@ -657,39 +669,6 @@ var Item = new Class(
                         this.mTimesTablesInfo.mMesh.appendChild(optionUK);
                 }
 
-
-		//just fill it here...
-/*
-		for (i=2; i < 10; i++)
-		{
-  			var option = document.createElement("option");
-                	option.value = parseInt(i + 1);
-                	option.text = 'Old School ' + i;
-         		if (navigator.appName == "Microsoft Internet Explorer")
-			{
-                		this.mTimesTablesInfo.mMesh.add(option);
-			}
-			else
-			{
-                		this.mTimesTablesInfo.mMesh.appendChild(option);
-			}
-		}
-
-*/	
-     
-		
-		var optionD = document.createElement("option");
-                optionD.value = 14;
-                optionD.text = 'Terra Nova';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-                	this.mTimesTablesInfo.mMesh.add(optionD);
-		}
-		else
-		{
-                	this.mTimesTablesInfo.mMesh.appendChild(optionD);
-		}
-
                	var optionE = document.createElement("option");
                 optionE.value = 15;
                 optionE.text = 'Test';
@@ -704,7 +683,7 @@ var Item = new Class(
 		
 		var optionF = document.createElement("option");
                 optionF.value = 16;
-                optionF.text = 'Terra Nova Test';
+                optionF.text = 'Terra Nova';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
                 	this.mTimesTablesInfo.mMesh.add(optionF);
@@ -726,29 +705,6 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionG);
 		}
 		
-		var optionH = document.createElement("option");
-                optionH.value = 18;
-                optionH.text = 'Terra Nova Homework';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-                	this.mTimesTablesInfo.mMesh.add(optionH);
-		}
-		else
-		{
-                	this.mTimesTablesInfo.mMesh.appendChild(optionH);
-		}
-		
-		var optionI = document.createElement("option");
-                optionI.value = 19;
-                optionI.text = 'The Super Izzy';
-         	if (navigator.appName == "Microsoft Internet Explorer")
-		{
-       	        	this.mTimesTablesInfo.mMesh.add(optionI);
-		}
-		else
-		{
-       	        	this.mTimesTablesInfo.mMesh.appendChild(optionI);
-		}
 		
 		
 
