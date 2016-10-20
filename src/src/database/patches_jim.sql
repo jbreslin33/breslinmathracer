@@ -200,6 +200,16 @@ update users set g6_ee = 0;
 update users set g6_g = 0;
 update users set g6_sp = 0;
 
+
 --temp
---update users set room_id = 27 where room_id = 7;
+--insert sister rooms
+insert into rooms (name,school_id) values ('RR4',2);
+insert into rooms (name,school_id) values ('RR5',2);
+insert into rooms (name,school_id) values ('RR6',2);
+insert into rooms (name,school_id) values ('RR7',2);
+insert into rooms (name,school_id) values ('RR8',2);
+
+
+
+
 
