@@ -482,7 +482,7 @@ for($i = 0; $i < $num_rooms; $i++)
 
         } //loop students
 
-	if ($num_students > 5 && $num_students < 34)
+	if ($num_students > 0 && $num_students < 34)
 	{
 		if ($rooms_row[1] != 2)
 		{
@@ -589,7 +589,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
 {
         $row = pg_fetch_array($room_result, $i);
 	
-	if ($number_of_students_array[$i] > 5 && $number_of_students_array[$i] < 34)
+	if ($number_of_students_array[$i] > 0 && $number_of_students_array[$i] < 34)
 	{
 		if ($rooms_row[1] == 2)
 		{
@@ -607,14 +607,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         	echo $nick_name_array[$i];
         	echo '</td>';
         	echo '<td>';
-		if ($room_array[$i] == 27)
-		{
-        		echo 'RR';
-		}	
-		else
-		{
-        		echo $grade_array[$i];
-		}
+        	echo $grade_array[$i];
         	echo '</td>';
                 echo '<td>';
                 echo $percent_complete_array[$i];
