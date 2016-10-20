@@ -202,14 +202,3 @@ update users set g6_sp = 0;
 
 
 --temp
---insert sister rooms
-insert into rooms (name,school_id) values ('RR4',2);
-insert into rooms (name,school_id) values ('RR5',2);
-insert into rooms (name,school_id) values ('RR6',2);
-insert into rooms (name,school_id) values ('RR7',2);
-insert into rooms (name,school_id) values ('RR8',2);
-
-
-
-
-
