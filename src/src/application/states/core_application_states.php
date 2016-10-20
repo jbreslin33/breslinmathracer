@@ -3119,7 +3119,8 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TestGame(APPLICATION);
-        APPLICATION.mHud.setOrange('G: Test');
+        //APPLICATION.mHud.setOrange('G: Test');
+	application.mHud.setOrange('Test:' + APPLICATION.mEvaluationsAttemptsID);
         APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
@@ -3129,8 +3130,8 @@ execute: function(application)
 	{
 		application.log('APPLICATION::TEST_APPLICATION execute');
 	}
-	application.mHud.setOrange('TestID:' + APPLICATION.mEvaluationsAttemptsID);
-        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+	//application.mHud.setOrange('Test:' + APPLICATION.mEvaluationsAttemptsID);
+        //APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
 },
 
 exit: function(application)

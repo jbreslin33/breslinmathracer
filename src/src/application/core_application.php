@@ -764,32 +764,35 @@ Extends: Application,
                         grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
                         APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
-                
 		}
                	
 		if (parseInt(this.mEvaluationsID) == 15)
                 {
-                        var i = 0;
-			var correct = 0;
-			var incorrect = 0;
-			var grade = 0; 
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
 
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 1)
                                 {
-                                        correct++;
+                                       	correct++;
                                 }
-                                else
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayFifteen[i]) == 2)
                                 {
-                                        incorrect++;
+                                       	incorrect++;
                                 }
-				i++;
-                        }
-			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
-			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
-                }
+                                i++;
+			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+		}
 		
 		if (parseInt(this.mEvaluationsID) == 16)
                 {
