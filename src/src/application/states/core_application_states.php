@@ -202,11 +202,6 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mHOMEWORK_APPLICATION);
 	}
-	if (application.mEvaluationsID == 18 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTERRA_NOVA_HOMEWORK_APPLICATION)
-	{
-		application.mCoreStateMachine.changeState(application.mTERRA_NOVA_HOMEWORK_APPLICATION);
-	}
-
 },
 
 exit: function(application)
@@ -3219,46 +3214,5 @@ exit: function(application)
 }
 
 });
-
-var TERRA_NOVA_HOMEWORK_APPLICATION = new Class(
-{
-Extends: State,
-
-initialize: function()
-{
-},
-
-enter: function(application)
-{
-        if (application.mStateLogs)
-        {
-                application.log('APPLICATION::TERRA_NOVA_HOMEWORK_APPLICATION');
-        }
-
-	//if already have a game destroy it.
-        if (application.mGame)
-        {
-        	application.mGame.destructor();
-                application.mGame = 0;
-        }
-        application.mGame = new TerraNovaHomeworkGame(APPLICATION);
-        APPLICATION.mHud.setOrange('G:TerraNova Homework');
-        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
-},
-
-execute: function(application)
-{
-	if (application.mStateLogsExecute)
-	{
-		application.log('APPLICATION::TERRA_NOVA_HOMEWORK_APPLICATION execute');
-	}
-},
-
-exit: function(application)
-{
-}
-
-});
-
 
 //add_game_G

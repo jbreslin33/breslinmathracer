@@ -337,7 +337,7 @@ Extends: Application,
                 this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
                 this.mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION      (this);
                 this.mHOMEWORK_APPLICATION = new HOMEWORK_APPLICATION      (this);
-                this.mTERRA_NOVA_HOMEWORK_APPLICATION = new TERRA_NOVA_HOMEWORK_APPLICATION      (this);
+                //this.mTERRA_NOVA_HOMEWORK_APPLICATION = new TERRA_NOVA_HOMEWORK_APPLICATION      (this);
 
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
@@ -854,51 +854,61 @@ Extends: Application,
 		
 		if (parseInt(this.mEvaluationsID) == 18)
                 {
-                        var i = 0;
-			var correct = 0;
-			var incorrect = 0;
-			var grade = 0; 
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
 
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 1)
                                 {
-                                        correct++;
+                                       	correct++;
                                 }
-                                else
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayEighteen[i]) == 2)
                                 {
-                                        incorrect++;
+                                       	incorrect++;
                                 }
-				i++;
-                        }
-			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
-			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
-                }
+                                i++;
+			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                
+		}
 		
 		if (parseInt(this.mEvaluationsID) == 19)
                 {
-                        var i = 0;
-			var correct = 0;
-			var incorrect = 0;
-			var grade = 0; 
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
 
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayNineteen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
                                 if (parseInt(this.mItemAttemptsTransactionCodeArrayNineteen[i]) == 1)
                                 {
-                                        correct++;
+                                       	correct++;
                                 }
-                                else
+                                if (parseInt(this.mItemAttemptsTransactionCodeArrayNineteen[i]) == 2)
                                 {
-                                        incorrect++;
+                                       	incorrect++;
                                 }
-				i++;
-                        }
-			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
-			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
-                }
+                                i++;
+			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                
+		}
 		
 		if (parseInt(this.mEvaluationsID) == 20)
                 {
