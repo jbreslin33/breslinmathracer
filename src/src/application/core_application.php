@@ -796,51 +796,61 @@ Extends: Application,
 		
 		if (parseInt(this.mEvaluationsID) == 16)
                 {
-                        var i = 0;
-			var correct = 0;
-			var incorrect = 0;
-			var grade = 0; 
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
 
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 1)
                                 {
-                                        correct++;
+                                       	correct++;
                                 }
-                                else
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySixteen[i]) == 2)
                                 {
-                                        incorrect++;
+                                       	incorrect++;
                                 }
-				i++;
-                        }
-			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
-			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
-                }
+                                i++;
+			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                
+		}
 		
 		if (parseInt(this.mEvaluationsID) == 17)
                 {
-                        var i = 0;
-			var correct = 0;
-			var incorrect = 0;
-			var grade = 0; 
+                	var i = 0;
+                        var correct = 0;
+                        var incorrect = 0;
+                        var grade = 0;
 
                         while (i < this.mGame.mSheet.mCurrentElement)
                         {
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 0)
+                                {
+                                       	incorrect++;
+                                }
                                 if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 1)
                                 {
-                                        correct++;
+                                       	correct++;
                                 }
-                                else
+                                if (parseInt(this.mItemAttemptsTransactionCodeArraySeventeen[i]) == 2)
                                 {
-                                        incorrect++;
+                                       	incorrect++;
                                 }
-				i++;
-                        }
-			grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
-			APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-			APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
-                }
+                                i++;
+			}
+                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                
+		}
 		
 		if (parseInt(this.mEvaluationsID) == 18)
                 {
