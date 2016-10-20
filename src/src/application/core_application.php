@@ -379,6 +379,8 @@ Extends: Application,
 	{
 		var score = this.mMilestonesStandardElement;
 		var unmastered = 0;
+
+		var questionNumber = this.mGame.mSheet.mCurrentElement + 1;
 		
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
@@ -791,7 +793,7 @@ Extends: Application,
 			}
                         grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                        APPLICATION.mHud.setViolet('' + questionNumber + ':' + this.mGame.mSheet.mIDArray.length);
 		}
 		
 		if (parseInt(this.mEvaluationsID) == 16)
@@ -819,7 +821,7 @@ Extends: Application,
 			}
                         grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                        APPLICATION.mHud.setViolet('' + questionNumber + ':' + this.mGame.mSheet.mIDArray.length);
                 
 		}
 		
@@ -848,7 +850,7 @@ Extends: Application,
 			}
                         grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-                        APPLICATION.mHud.setViolet('' + this.mGame.mSheet.mCurrentElement + ':' + this.mGame.mSheet.mIDArray.length);
+                        APPLICATION.mHud.setViolet('' + questionNumber + ':' + this.mGame.mSheet.mIDArray.length);
                 
 		}
 		

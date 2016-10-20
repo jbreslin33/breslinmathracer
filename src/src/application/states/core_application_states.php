@@ -3116,7 +3116,7 @@ enter: function(application)
         application.mGame = new TestGame(APPLICATION);
         //APPLICATION.mHud.setOrange('G: Test');
 	application.mHud.setOrange('Test:' + APPLICATION.mEvaluationsAttemptsID);
-        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+        APPLICATION.mHud.setViolet('1:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -3157,8 +3157,8 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new TerraNovaTestGame(APPLICATION);
-        APPLICATION.mHud.setOrange('G:TerraNovaTest');
-        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+        APPLICATION.mHud.setOrange('G:TerraNova');
+        APPLICATION.mHud.setViolet('1:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
@@ -3198,7 +3198,7 @@ enter: function(application)
         }
         application.mGame = new HomeworkGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: Homework');
-        APPLICATION.mHud.setViolet('0:' + application.mGame.mSheet.mIDArray.length);
+        APPLICATION.mHud.setViolet('1:' + application.mGame.mSheet.mIDArray.length);
 },
 
 execute: function(application)
