@@ -130,7 +130,9 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
-	<p><b> Select NEW Room: </p></b>
+	<p><b> Select Milestone: </p></b>
+
+
 <select name="room_id">
 <?php
 $query = "select id, name from rooms where school_id = ";
@@ -147,6 +149,16 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
+
+<select name="milestone_id">
+<?php
+echo "<option value=\"k_cc\">k_cc</option>";
+echo "<option value=\"k_oa_a_4\">k_oa_a_4</option>";
+echo "<option value=\"k_oa_a_5\">k_oa_a_5</option>";
+?>
+</select>
+
+
 	<p><input type="submit" value="UPDATE" /></p>
 </form>
 
