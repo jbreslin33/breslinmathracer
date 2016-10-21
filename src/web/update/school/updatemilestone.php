@@ -16,8 +16,10 @@ $conn = dbConnect();
 
 $response = "";
 
-$update = "update users SET room_id = ";
-$update .= $_POST["room_id"];
+$update = "update users SET ";
+$update .= $_POST["milestone_id"];
+$update .= " = ";
+$update .= $_POST["milestone_value"];
 $update .= " where id = '";
 $update .= $_POST["user_id"];
 $update .= "';";

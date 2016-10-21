@@ -133,20 +133,10 @@ for($i = 0; $i < $numrows; $i++)
 	<p><b> Select Milestone: </p></b>
 
 
-<select name="room_id">
+<select name="milestone_value">
 <?php
-$query = "select id, name from rooms where school_id = ";
-$query .= $_SESSION["school_id"];
-$query .= " order by name;";
-
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-for($i = 0; $i < $numrows; $i++) 
-{
-      	$row = pg_fetch_array($result, $i);
-      	echo "<option value=\"$row[0]\">$row[1]</option>";
-}
+echo "<option value=\"0\">0</option>";
+echo "<option value=\"1\">1</option>";
 ?>
 </select>
 
