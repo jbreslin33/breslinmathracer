@@ -145,6 +145,28 @@ echo "<option value=\"1\">1</option>";
 echo "<option value=\"k_cc\">k_cc</option>";
 echo "<option value=\"k_oa_a_4\">k_oa_a_4</option>";
 echo "<option value=\"k_oa_a_5\">k_oa_a_5</option>";
+echo "<option value=\"g1_oa_b_3\">g1_oa_b_3</option>";
+echo "<option value=\"g1_oa_c_6\">g1_oa_c_6</option>";
+echo "<option value=\"g1_nbt\">g1_nbt</option>";
+echo "<option value=\"g2_oa_b_2\">g2_oa_b_2</option>";
+echo "<option value=\"g2_nbt\">g2_nbt</option>";
+echo "<option value=\"g3_oa_c_7\">g3_oa_c_7</option>";
+echo "<option value=\"g3_nbt\">g3_nbt</option>";
+echo "<option value=\"g4_oa_b_4\">g4_oa_b_4</option>";
+echo "<option value=\"g4_nbt_b_4\">g4_nbt_b_4</option>";
+echo "<option value=\"g4_nbt_b_5\">g4_nbt_b_5</option>";
+echo "<option value=\"g4_nbt_b_6\">g4_nbt_b_6</option>";
+echo "<option value=\"g4_nf_b_3_c\">g4_nf_b_3_c</option>";
+echo "<option value=\"g5_oa_a_1\">g5_oa_a_1</option>";
+echo "<option value=\"g5_nbt_b_5\">g5_nbt_b_5</option>";
+echo "<option value=\"g5_nbt_b_6\">g5_nbt_b_6</option>";
+echo "<option value=\"g5_nbt_b_7\">g5_nbt_b_7</option>";
+echo "<option value=\"g5_nf_a_1\">g5_nf_a_1</option>";
+echo "<option value=\"g6_rp\">g6_rp</option>";
+echo "<option value=\"g6_ns\">g6_ns</option>";
+echo "<option value=\"g6_ee\">g6_ee</option>";
+echo "<option value=\"g6_g\">g6_g</option>";
+echo "<option value=\"g6_sp\">g6_sp</option>";
 ?>
 </select>
 
