@@ -202,6 +202,10 @@ execute: function(application)
 	{
 		application.mCoreStateMachine.changeState(application.mHOMEWORK_APPLICATION);
 	}
+	if (application.mEvaluationsID == 18 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mTEST_PREP_APPLICATION)
+	{
+		application.mCoreStateMachine.changeState(application.mTEST_PREP_APPLICATION);
+	}
 },
 
 exit: function(application)
@@ -3214,5 +3218,47 @@ exit: function(application)
 }
 
 });
+
+var TEST_PREP_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::TEST_PREP_APPLICATION');
+        }
+
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new TestPrepGame(APPLICATION);
+        //APPLICATION.mHud.setOrange('G: TestPrep');
+	application.mHud.setOrange('TestPrep:' + APPLICATION.mEvaluationsAttemptsID);
+        APPLICATION.mHud.setViolet('1:' + application.mGame.mSheet.mIDArray.length);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::TEST_PREP_APPLICATION execute');
+        }
+},
+
+exit: function(application)
+{
+}
+
+});
+
 
 //add_game_G

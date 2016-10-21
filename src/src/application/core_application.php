@@ -337,7 +337,7 @@ Extends: Application,
                 this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
                 this.mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION      (this);
                 this.mHOMEWORK_APPLICATION = new HOMEWORK_APPLICATION      (this);
-                //this.mTERRA_NOVA_HOMEWORK_APPLICATION = new TERRA_NOVA_HOMEWORK_APPLICATION      (this);
+                this.mTEST_PREP_APPLICATION = new TEST_PREP_APPLICATION      (this);
 
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);

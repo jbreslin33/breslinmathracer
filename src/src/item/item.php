@@ -683,7 +683,7 @@ var Item = new Class(
 		
 		var optionF = document.createElement("option");
                 optionF.value = 16;
-                optionF.text = 'Terra Nova';
+                optionF.text = 'Terra Nova 5';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
                 	this.mTimesTablesInfo.mMesh.add(optionF);
@@ -705,8 +705,17 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionG);
 		}
 		
-		
-		
+		var optionUM = document.createElement("option");
+                optionUM.value = 18;
+                optionUM.text = 'Test Prep';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionUM);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionUM);
+		}
 
 		//add_game_J	
 
