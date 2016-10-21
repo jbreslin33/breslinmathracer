@@ -49,9 +49,9 @@ else
 ?>
 
 
-<p><b> Select ORIGINAL Room: </p></b>
+<p><b> Select Room: </p></b>
 
-<form method="post" action="/web/update/school/update_room.php">
+<form method="post" action="/web/update/school/update_milestone.php">
 
 <select id="original_room_id" name="original_room_id" onchange="loadAgain()">
 <?php
@@ -82,7 +82,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
         var y = document.getElementById("original_room_id").value;
-        document.location.href = '/web/update/school/update_room.php?original_room_id=' + y;
+        document.location.href = '/web/update/school/update_milestone.php?original_room_id=' + y;
 }
 </script>
 
@@ -90,7 +90,7 @@ function loadAgain()
 
 	<p><b> Select Student: </p></b>
 	
-	<form method="post" action="/web/update/school/updateroom.php">
+	<form method="post" action="/web/update/school/updatemilestone.php">
 
 <select name="user_id">
 
