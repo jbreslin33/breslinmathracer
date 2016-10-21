@@ -5,6 +5,41 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
+       
+	var a = Math.floor(Math.random()*3);
+        if (a == 0)
+                this.mIDArray.push('6.rp.a.1_1');
+        if (a == 1)
+                this.mIDArray.push('6.rp.a.1_2');
+        if (a == 2)
+                this.mIDArray.push('6.rp.a.1_3');
+        if (a == 3)
+                this.mIDArray.push('6.rp.a.1_6');
+        if (a == 4)
+                this.mIDArray.push('6.rp.a.1_7');
+        if (a == 5)
+                this.mIDArray.push('6.rp.a.1_8');
+        if (a == 6)
+                this.mIDArray.push('6.rp.a.1_9');
+        if (a == 7)
+                this.mIDArray.push('6.rp.a.1_10');
+        if (a == 8)
+                this.mIDArray.push('6.rp.a.1_11');
+        if (a == 9)
+                this.mIDArray.push('6.rp.a.1_12');
+        if (a == 10)
+                this.mIDArray.push('6.rp.a.1_13');
+        if (a == 11)
+                this.mIDArray.push('6.rp.a.1_14');
+        if (a == 12)
+                this.mIDArray.push('6.rp.a.1_15');
+        if (a == 13)
+                this.mIDArray.push('6.rp.a.1_16');
+        if (a == 14)
+                this.mIDArray.push('6.rp.a.1_17');
+
+
+
         this.mIDArray.push('3.nbt.a.1_1');
         this.mIDArray.push('3.nbt.a.2_1');
         this.mIDArray.push('3.nbt.a.2_2');
