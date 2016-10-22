@@ -6,7 +6,7 @@ initialize: function(game)
 {
 	this.parent(game);
        
-	var a = Math.floor(Math.random()*3);
+	var a = Math.floor(Math.random()*8);
         if (a == 0)
                 this.mIDArray.push('6.rp.a.1_1');
         if (a == 1)
@@ -23,26 +23,37 @@ initialize: function(game)
                 this.mIDArray.push('6.rp.a.1_9');
         if (a == 7)
                 this.mIDArray.push('6.rp.a.1_10');
-        if (a == 8)
+
+	var b = Math.floor(Math.random()*7);
+        if (b == 0)
                 this.mIDArray.push('6.rp.a.1_11');
-        if (a == 9)
+        if (b == 1)
                 this.mIDArray.push('6.rp.a.1_12');
-        if (a == 10)
+        if (b == 2)
                 this.mIDArray.push('6.rp.a.1_13');
-        if (a == 11)
+        if (b == 3)
                 this.mIDArray.push('6.rp.a.1_14');
-        if (a == 12)
+        if (b == 4)
                 this.mIDArray.push('6.rp.a.1_15');
-        if (a == 13)
+        if (b == 5)
                 this.mIDArray.push('6.rp.a.1_16');
-        if (a == 14)
+        if (b == 6)
                 this.mIDArray.push('6.rp.a.1_17');
 
+	var c = Math.floor(Math.random()*3);
+        if (c == 0)
+                this.mIDArray.push('6.rp.a.2_1');
+        if (c == 1)
+                this.mIDArray.push('6.rp.a.2_2');
+        if (c == 2)
+                this.mIDArray.push('6.rp.a.2_3');
 
+	var d = Math.floor(Math.random()*2);
+        if (d == 0)
+                this.mIDArray.push('6.rp.a.2_4');
+        if (d == 1)
+                this.mIDArray.push('6.rp.a.2_6');
 
-        this.mIDArray.push('3.nbt.a.1_1');
-        this.mIDArray.push('3.nbt.a.2_1');
-        this.mIDArray.push('3.nbt.a.2_2');
 
         this.mCurrentElement = 0;
         this.shuffle(500);
