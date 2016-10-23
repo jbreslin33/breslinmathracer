@@ -53,7 +53,52 @@ initialize: function(game)
                 this.mIDArray.push('6.rp.a.2_4');
         if (d == 1)
                 this.mIDArray.push('6.rp.a.2_6');
+	
+	var e = Math.floor(Math.random()*2);
+        if (e == 0)
+                this.mIDArray.push('6.rp.a.3.a_1');
+        if (e == 1)
+                this.mIDArray.push('6.rp.a.3.a_2');
+	
+	var f = Math.floor(Math.random()*2);
+        if (f == 0)
+                this.mIDArray.push('6.rp.a.3.a_2');
+        if (f == 1)
+                this.mIDArray.push('6.rp.a.3.a_3');
 
+	var g = Math.floor(Math.random()*3);
+        if (g == 0)
+                this.mIDArray.push('6.rp.a.3.b_1');
+        if (g == 1)
+                this.mIDArray.push('6.rp.a.3.b_2');
+        if (g == 2)
+                this.mIDArray.push('6.rp.a.3.b_3');
+
+	var h = Math.floor(Math.random()*3);
+        if (h == 0)
+                this.mIDArray.push('6.rp.a.3.b_4');
+        if (h == 1)
+                this.mIDArray.push('6.rp.a.3.b_5');
+        if (h == 2)
+                this.mIDArray.push('6.rp.a.3.b_6');
+
+	var i = Math.floor(Math.random()*2);
+        if (i == 0)
+                this.mIDArray.push('6.rp.a.3.c_1');
+        if (i == 1)
+                this.mIDArray.push('6.rp.a.3.c_2');
+	
+	var j = Math.floor(Math.random()*2);
+        if (j == 0)
+                this.mIDArray.push('6.rp.a.3.c_3');
+        if (j == 1)
+                this.mIDArray.push('6.rp.a.3.c_4');
+
+	var k = Math.floor(Math.random()*2);
+        if (k == 0)
+        	this.mIDArray.push('6.rp.a.3.d_1');
+        if (k == 1)
+        	this.mIDArray.push('6.rp.a.3.d_2');
 
         this.mCurrentElement = 0;
         this.shuffle(500);
