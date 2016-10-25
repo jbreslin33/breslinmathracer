@@ -516,7 +516,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
-        echo '<td>% Complete';
+        echo '<td>% Complete Pre-Grade level';
         echo '</td>';
         echo '<td>% @ grade Level';
         echo '</td>';
