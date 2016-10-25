@@ -378,7 +378,7 @@ for($i = 0; $i < $num_rooms; $i++)
 
                 else if ($core_grades_id == 9)
                 {
-                        $bonus = 0.94;
+                        $bonus = 1.06;
                         for ($j = 5; $j < 38; $j++)
                         {
                                 if ($row[$j] == 1)
