@@ -279,8 +279,8 @@ for($i = 0; $i < $num_rooms; $i++)
                 
 		else if ($core_grades_id == 5)
                 {
-                        $bonus = 4;
-                        for ($j = 5; $j < 13; $j++)
+                        $bonus = 2.2;
+                        for ($j = 5; $j < 23; $j++)
                         {
                                 if ($row[$j] == 1)
                                 {
@@ -293,18 +293,9 @@ for($i = 0; $i < $num_rooms; $i++)
 					{
 						$passed_add_sub = false;	
 					}
-				}
-                        }
-                        for ($k = 21; $k < 23; $k++)
-                        {
-                                if ($row[$k] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-				else
-				{
+					
 					$passed_grade_level = false;	
-					if ($k == 21)
+					if ($j == 21)
 					{
 						$passed_tables = false;	
 					}
@@ -314,8 +305,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
                 else if ($core_grades_id == 6)
                 {
-                        $bonus = 2.7;
-                        for ($j = 5; $j < 13; $j++)
+                        $bonus = 1.74;
+                        for ($j = 5; $j < 28; $j++)
                         {
                                 if ($row[$j] == 1)
                                 {
@@ -328,22 +319,7 @@ for($i = 0; $i < $num_rooms; $i++)
 					{
 						$passed_add_sub = false;	
 					}
-				}
-                        }
-                        for ($k = 21; $k < 28; $k++)
-                        {
-                                if ($row[$k] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-				else
-				{
-					$passed_grade_level = false;	
-					if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
-					{
-						$passed_add_sub = false;	
-					}
-					if ($k == 21)
+					if ($j == 21)
 					{
 						$passed_tables = false;	
 					}
@@ -354,8 +330,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
 		else if ($core_grades_id == 7)
 		{
-			$bonus = 2;
-			for ($j = 5; $j < 13; $j++)
+			$bonus = 1.43;
+			for ($j = 5; $j < 33; $j++)
 			{
                			if ($row[$j] == 1)
 				{
@@ -368,22 +344,7 @@ for($i = 0; $i < $num_rooms; $i++)
 					{
 						$passed_add_sub = false;	
 					}
-				}
-			}
-			for ($k = 21; $k < 33; $k++)
-			{
-               			if ($row[$k] == 1)
-				{
-					$raw_grade += $bonus; 
-				}			 
-				else
-				{
-					$passed_grade_level = false;	
-					if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
-					{
-						$passed_add_sub = false;	
-					}
-					if ($k == 21)
+					if ($j == 21)
 					{
 						$passed_tables = false;	
 					}
@@ -393,8 +354,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
 		else if ($core_grades_id == 8)
 		{
-                        $bonus = 1.6;
-                        for ($j = 5; $j < 13; $j++)
+                        $bonus = 1.22;
+                        for ($j = 5; $j < 38; $j++)
                         {
                                 if ($row[$j] == 1)
                                 {
@@ -407,18 +368,7 @@ for($i = 0; $i < $num_rooms; $i++)
 					{
 						$passed_add_sub = false;	
 					}
-				}
-                        }
-                        for ($k = 21; $k < 38; $k++)
-                        {
-                                if ($row[$k] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-				else
-				{
-					$passed_grade_level = false;	
-					if ($k == 21)
+					if ($j == 21)
 					{
 						$passed_tables = false;	
 					}
@@ -428,8 +378,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
                 else if ($core_grades_id == 9)
                 {
-                        $bonus = 1.6;
-                        for ($j = 5; $j < 13; $j++)
+                        $bonus = 0.94;
+                        for ($j = 5; $j < 38; $j++)
                         {
                                 if ($row[$j] == 1)
                                 {
@@ -442,18 +392,7 @@ for($i = 0; $i < $num_rooms; $i++)
 					{
 						$passed_add_sub = false;	
 					}
-				}
-                        }
-                        for ($k = 21; $k < 38; $k++)
-                        {
-                                if ($row[$k] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-				else
-				{
-					$passed_grade_level = false;	
-					if ($k == 21)
+					if ($j == 21)
 					{
 						$passed_tables = false;	
 					}

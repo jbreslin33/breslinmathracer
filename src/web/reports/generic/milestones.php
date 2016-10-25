@@ -308,20 +308,13 @@ echo '<table border=\"1\">';
                         }
                         echo $raw_grade;
                 }
-                
+               //4th grade thru 3rd 
 		else if ($core_grades_id == 5)
                 {
-                        $bonus = 4;
-                        for ($j = 5; $j < 13; $j++)
+                        $bonus = 2.2;
+                        for ($j = 5; $j < 23; $j++)
                         {
                                 if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        for ($k = 21; $k < 23; $k++)
-                        {
-                                if ($row[$k] == 1)
                                 {
                                         $raw_grade += $bonus;
                                 }
@@ -329,6 +322,7 @@ echo '<table border=\"1\">';
                         echo $raw_grade;
                 }
 
+	//5th grade thru 4th
                 else if ($core_grades_id == 6)
                 {
                         $bonus = 2.7;
@@ -349,7 +343,7 @@ echo '<table border=\"1\">';
                         echo $raw_grade;
                 }
 
-
+		//6th grade thru 5th
 		else if ($core_grades_id == 7)
 		{
 			$bonus = 2;
@@ -370,6 +364,7 @@ echo '<table border=\"1\">';
 			echo $raw_grade;
 		}
 
+		//7th grade thru 6th
 		else if ($core_grades_id == 8)
 		{
                         $bonus = 1.6;
@@ -390,6 +385,7 @@ echo '<table border=\"1\">';
                         echo $raw_grade;
 		}
 
+		//8th grade thru 7th
                 else if ($core_grades_id == 9)
                 {
                         $bonus = 1.6;
