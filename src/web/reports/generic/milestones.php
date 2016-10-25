@@ -311,7 +311,7 @@ echo '<table border=\"1\">';
                //4th grade thru 3rd 
 		else if ($core_grades_id == 5)
                 {
-                        $bonus = 2.2;
+                        $bonus = 2.3;
                         for ($j = 5; $j < 23; $j++)
                         {
                                 if ($row[$j] == 1)
