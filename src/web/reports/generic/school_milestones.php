@@ -52,7 +52,9 @@ $room_array = array();
 $grade_array = array();
 $average_grade_array = array();
 $percent_complete_array = array();
+$percent_complete_new_array = array();
 $raw_grade_array = array();
+$raw_grade_new_array = array();
 $number_of_students_array = array();
 $percent_passed_grade_level_array = array();
 $percent_passed_add_sub_array = array(); //0,1,2
@@ -108,7 +110,9 @@ for($i = 0; $i < $num_rooms; $i++)
 
 	
 	$total_raw_grade = 0;
+	$total_raw_grade_new = 0;
 	$total_passed_grade_level = 0;
+	$total_passed_grade_level_new = 0;
 	$total_add_sub = 0;
 	$total_tables = 0;
 
@@ -166,6 +170,7 @@ for($i = 0; $i < $num_rooms; $i++)
 		$g6_sp = $row[37];
                 
 		$raw_grade = 60;
+		$raw_grade_new = 60;
 
 		//1st  thru k 
                 if ($core_grades_id == 2)
@@ -197,6 +202,28 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         //$passed_grade_level = false;
                                         if ($k == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
+                
+			//grade level
+                        $bonus_new = 6.7;
+                        for ($j = 5; $j < 11; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
                                         {
                                                 $passed_tables = false;
                                         }
@@ -239,6 +266,29 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
+
+                        //grade level
+                        $bonus_new = 5;
+                        for ($j = 5; $j < 13; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
+
                 }
 //3rd thru 2nd
 		else if ($core_grades_id == 4)
@@ -275,6 +325,29 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
+
+                        //grade level
+                        $bonus_new = 2.3;
+                        for ($j = 5; $j < 23; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
+
                 }
                 
 		else if ($core_grades_id == 5)
@@ -301,6 +374,28 @@ for($i = 0; $i < $num_rooms; $i++)
 					}
 				}
                         }
+
+                      	//grade level
+                        $bonus_new = 1.74;
+                        for ($j = 5; $j < 28; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
                 }
 
                 else if ($core_grades_id == 6)
@@ -325,6 +420,30 @@ for($i = 0; $i < $num_rooms; $i++)
 					}
 				}
                         }
+
+                        //grade level
+                        $bonus_new = 1.43;
+                        for ($j = 5; $j < 33; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
+
+
                 }
 
 
@@ -350,6 +469,28 @@ for($i = 0; $i < $num_rooms; $i++)
 					}
 				}
 			}
+
+                       	//grade level
+                        $bonus_new = 1.22;
+                        for ($j = 5; $j < 38; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else 
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
 		}
 
 		else if ($core_grades_id == 8)
@@ -374,6 +515,29 @@ for($i = 0; $i < $num_rooms; $i++)
 					}
 				}
                         }
+
+                        //grade level
+                        $bonus_new = 1.06;
+                        for ($j = 5; $j < 38; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else 
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
+
 		}
 
                 else if ($core_grades_id == 9)
@@ -398,6 +562,29 @@ for($i = 0; $i < $num_rooms; $i++)
 					}
 				}
                         }
+
+                        //grade level
+                        $bonus_new = 0.96;
+                        for ($j = 5; $j < 38; $j++)
+                        {
+                                if ($row[$j] == 1)
+                                {
+                                        $raw_grade_new += $bonus_new;
+                                }
+                                else
+                                {
+                                        $passed_grade_level_new = false;
+                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
+                                        {
+                                                $passed_add_sub = false;
+                                        }
+                                        if ($j == 21)
+                                        {
+                                                $passed_tables = false;
+                                        }
+                                }
+                        }
+
                 }
 		else 
 		{
@@ -405,10 +592,15 @@ for($i = 0; $i < $num_rooms; $i++)
 		
 		$tmp_grade = $core_grades_id;
 		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
+		$total_raw_grade_new += $raw_grade_new; //add student raw grade to class raw grade
 
 		if ($passed_grade_level == true)
 		{
 			$total_passed_grade_level++;	
+		}
+		if ($passed_grade_level_new == true)
+		{
+			$total_passed_grade_level_new++;	
 		}
 		if ($passed_add_sub == true)
 		{
@@ -427,6 +619,7 @@ for($i = 0; $i < $num_rooms; $i++)
 		{
 			$number_of_students_array[] = $num_students;
 			$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
+			$raw_grade_new_array[] = $total_raw_grade_new; //stick class raw grade in array
 			$rank_array[] = $i;
 			$room_array[] = $rooms_row[1];
 			$grade_array[] = $tmp_grade -1;
@@ -434,10 +627,16 @@ for($i = 0; $i < $num_rooms; $i++)
 
 			$tmppct = ($total_raw_grade / $num_students) - 60;
 			$percent_complete_array[] = round($tmppct / 40 * 100);
+			
+			$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
+			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
 
 			$pct = ($total_passed_grade_level / $num_students) * 100;
 			$percent_passed_grade_level_array[] = round($pct); 
 			
+			$pctnew = ($total_passed_grade_level_new / $num_students) * 100;
+			$percent_passed_grade_level_new_array[] = round($pctnew); 
+
 			$pct_add = ($total_add_sub / $num_students) * 100;
 			$percent_passed_add_sub_array[] = round($pct_add); 
 			
@@ -476,7 +675,9 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $grade_tmp = $grade_array[$g];
         $average_grade_tmp = $average_grade_array[$g];
         $percent_complete_tmp = $percent_complete_array[$g];
+        $percent_complete_new_tmp = $percent_complete_new_array[$g];
         $percent_passed_grade_level_tmp = $percent_passed_grade_level_array[$g];
+        $percent_passed_grade_level_new_tmp = $percent_passed_grade_level_new_array[$g];
         $percent_passed_add_sub_tmp = $percent_passed_add_sub_array[$g];
         $percent_passed_tables_tmp = $percent_passed_tables_array[$g];
 	
@@ -488,7 +689,9 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$grade_array[$g] = $grade_array[$highest_element];
 	$average_grade_array[$g] = $average_grade_array[$highest_element];
 	$percent_complete_array[$g] = $percent_complete_array[$highest_element];
+	$percent_complete_new_array[$g] = $percent_complete_new_array[$highest_element];
 	$percent_passed_grade_level_array[$g] = $percent_passed_grade_level_array[$highest_element];
+	$percent_passed_grade_level_new_array[$g] = $percent_passed_grade_level_new_array[$highest_element];
 	$percent_passed_add_sub_array[$g] = $percent_passed_add_sub_array[$highest_element];
 	$percent_passed_tables_array[$g] = $percent_passed_tables_array[$highest_element];
        
@@ -500,13 +703,33 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $grade_array[$highest_element] = $grade_tmp;
         $average_grade_array[$highest_element] = $average_grade_tmp;
         $percent_complete_array[$highest_element] = $percent_complete_tmp;
+        $percent_complete_new_array[$highest_element] = $percent_complete_new_tmp;
         $percent_passed_grade_level_array[$highest_element] = $percent_passed_grade_level_tmp;
+        $percent_passed_grade_level_new_array[$highest_element] = $percent_passed_grade_level_new_tmp;
         $percent_passed_add_sub_array[$highest_element] = $percent_passed_add_sub_tmp;
         $percent_passed_tables_array[$highest_element] = $percent_passed_tables_tmp;
 }
 
 //show results
 	echo '<table border=\"1\">';
+        echo '<tr>';
+
+	echo '<th colspan="4" >STATS';
+        echo '</th>';
+	
+	echo '<th colspan="2" >PRE GRADE STATS';
+        echo '</th>';
+	
+	echo '<td>GRADE LEVEL STATS';
+        echo '</td>';
+	
+	echo '<td>THEMES';
+        echo '</td>';
+        
+	echo '</tr>';
+
+
+
         echo '<tr>';
         echo '<td>Rank';
         echo '</td>';
@@ -516,14 +739,26 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
+        
+
         echo '<td>% Complete Pre-Grade level';
+        echo '</td>';
+        echo '<td>% @ pre-grade Level';
+        echo '</td>';
+
+
+        echo '<td>% Complete Grade level';
         echo '</td>';
         echo '<td>% @ grade Level';
         echo '</td>';
+
         echo '<td>% fluent single digit add/sub';
         echo '</td>';
         echo '<td>% fluent times tables';
         echo '</td>';
+
+        echo '</tr>';
+
 for($i = 0; $i < sizeof($rank_array); $i++)
 {
         $row = pg_fetch_array($room_result, $i);
@@ -553,6 +788,12 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 echo '</td>';
                 echo '<td>';
                 echo $percent_passed_grade_level_array[$i];
+                echo '</td>';
+                echo '<td>';
+                echo $percent_complete_new_array[$i];
+                echo '</td>';
+                echo '<td>';
+                echo $percent_passed_grade_level_new_array[$i];
                 echo '</td>';
                 echo '<td>';
                 echo $percent_passed_add_sub_array[$i];
