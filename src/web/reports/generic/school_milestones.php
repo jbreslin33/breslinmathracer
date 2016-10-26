@@ -614,11 +614,11 @@ for($i = 0; $i < $num_rooms; $i++)
 			$room_array[] = $rooms_row[1];
 			$grade_array[] = $tmp_grade -1;
 			$average_grade_array[] = round($total_raw_grade / $num_students);
-
+			
+			//OLD
 			$tmppct = ($total_raw_grade / $num_students) - 60;
 			$percent_complete_array[] = round($tmppct / 40 * 100);
 
-			//OLD
 		
 			//get total days since start
 			$now = time(); // or your date as well
@@ -658,12 +658,21 @@ for($i = 0; $i < $num_rooms; $i++)
 			
 			$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
 			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
-			
+
+ 			//get total days since start
+                        $now = time(); // or your date as well
+                        $start_date = strtotime("2016-09-12");
+                        $datediff_seconds = $now - $start_date;
+                        $diff_days = floor($datediff_seconds / (60 * 60 * 24));
+
 			//get percent complete thus far
 			$p = round($tmppctnew / 40 * 100);
 			
 			//get a ratio to use to multiply by total days since start
 			$ratio = floatval(100 / $p);
+			
+			//get est days to complete from start date 
+			$est_days_from_start = round($ratio * $diff_days);
 			
 			$addto = $est_days_from_start - $diff_days;
 			
@@ -724,6 +733,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $average_grade_tmp = $average_grade_array[$g];
         $percent_complete_tmp = $percent_complete_array[$g];
         $est_percent_complete_tmp = $est_percent_complete_array[$g];
+        $est_percent_complete_new_tmp = $est_percent_complete_new_array[$g];
         $percent_complete_new_tmp = $percent_complete_new_array[$g];
         $percent_passed_grade_level_tmp = $percent_passed_grade_level_array[$g];
         $percent_passed_grade_level_new_tmp = $percent_passed_grade_level_new_array[$g];
@@ -739,6 +749,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$average_grade_array[$g] = $average_grade_array[$highest_element];
 	$percent_complete_array[$g] = $percent_complete_array[$highest_element];
 	$est_percent_complete_array[$g] = $est_percent_complete_array[$highest_element];
+	$est_percent_complete_new_array[$g] = $est_percent_complete_new_array[$highest_element];
 	$percent_complete_new_array[$g] = $percent_complete_new_array[$highest_element];
 	$percent_passed_grade_level_array[$g] = $percent_passed_grade_level_array[$highest_element];
 	$percent_passed_grade_level_new_array[$g] = $percent_passed_grade_level_new_array[$highest_element];
@@ -754,6 +765,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $average_grade_array[$highest_element] = $average_grade_tmp;
         $percent_complete_array[$highest_element] = $percent_complete_tmp;
         $est_percent_complete_array[$highest_element] = $est_percent_complete_tmp;
+        $est_percent_complete_new_array[$highest_element] = $est_percent_complete_new_tmp;
         $percent_complete_new_array[$highest_element] = $percent_complete_new_tmp;
         $percent_passed_grade_level_array[$highest_element] = $percent_passed_grade_level_tmp;
         $percent_passed_grade_level_new_array[$highest_element] = $percent_passed_grade_level_new_tmp;
