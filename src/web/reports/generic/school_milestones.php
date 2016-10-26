@@ -625,6 +625,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
 			$tmppct = ($total_raw_grade / $num_students) - 60;
 			$percent_complete_array[] = round($tmppct / 40 * 100);
+
+			//OLD
 		
 			//get total days since start
 			$now = time(); // or your date as well
@@ -666,7 +668,7 @@ for($i = 0; $i < $num_rooms; $i++)
 			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
 			
 			//get percent complete thus far
-			$p = round($tmppct / 40 * 100);
+			$p = round($tmppctnew / 40 * 100);
 			
 			//get a ratio to use to multiply by total days since start
 			$ratio = floatval(100 / $p);
