@@ -51,9 +51,12 @@ $nick_name_array = array();
 $room_array = array();
 $grade_array = array();
 $average_grade_array = array();
+
 $percent_complete_array = array();
 $percent_complete_new_array = array();
 $est_percent_complete_array = array();
+$est_percent_complete_new_array = array();
+
 $raw_grade_array = array();
 $raw_grade_new_array = array();
 $number_of_students_array = array();
@@ -652,23 +655,42 @@ for($i = 0; $i < $num_rooms; $i++)
 			$txt .= $est_days_from_start; 
 			$txt .= ':'; 
 			$txt .= $estdate; 
-	
-
-
 			$est_percent_complete_array[] = $txt;
 			
-			//$esttmppct = ($total_raw_grade / $num_students) - 60;
-			//$est_percent_complete_array[] = round($esttmppct / 40 * 100);
+			$pct = ($total_passed_grade_level / $num_students) * 100;
+			$percent_passed_grade_level_array[] = round($pct); 
+
+			//new
 			
 			$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
 			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
-
-			$pct = ($total_passed_grade_level / $num_students) * 100;
-			$percent_passed_grade_level_array[] = round($pct); 
 			
+			//get percent complete thus far
+			$p = round($tmppct / 40 * 100);
+			
+			//get a ratio to use to multiply by total days since start
+			$ratio = floatval(100 / $p);
+			
+			$addto = $est_days_from_start - $diff_days;
+			
+			$add_days = "+";
+			$add_days .= $addto;
+			$add_days .= " day";
+			
+			$date = strtotime($add_days);
+			$estdate = date('M d, Y', $date);
+			
+			$txt = $diff_days; 
+			$txt .= ':'; 
+			$txt .= $est_days_from_start; 
+			$txt .= ':'; 
+			$txt .= $estdate; 
+			$est_percent_complete_new_array[] = $txt;
+
 			$pctnew = ($total_passed_grade_level_new / $num_students) * 100;
 			$percent_passed_grade_level_new_array[] = round($pctnew); 
 
+			//themes
 			$pct_add = ($total_add_sub / $num_students) * 100;
 			$percent_passed_add_sub_array[] = round($pct_add); 
 			
@@ -755,7 +777,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	echo '<th colspan="3" >PRE GRADE LEVEL STATS';
         echo '</th>';
 	
-	echo '<th colspan="2" >GRADE LEVEL STATS';
+	echo '<th colspan="3" >GRADE LEVEL STATS';
         echo '</th>';
 	
 	echo '<th colspan="2" >THEMES';
@@ -787,6 +809,8 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '<td>% Complete Grade level';
         echo '</td>';
         echo '<td>% @ grade Level';
+        echo '</td>';
+        echo '<td>% est complete grade Level';
         echo '</td>';
 
         echo '<td>% fluent single digit add/sub';
@@ -838,6 +862,9 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 echo '</td>';
                 echo '<td>';
                 echo $percent_passed_grade_level_new_array[$i];
+                echo '</td>';
+                echo '<td>';
+                echo $est_percent_complete_new_array[$i];
                 echo '</td>';
                 echo '<td>';
 
