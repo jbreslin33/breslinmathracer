@@ -478,18 +478,10 @@ for($i = 0; $i < $num_rooms; $i++)
                                 {
                                         $raw_grade_new += $bonus_new;
                                 }
-                                else 
-                                {
-                                        $passed_grade_level_new = false;
-                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
-                                        {
-                                                $passed_add_sub = false;
-                                        }
-                                        if ($j == 21)
-                                        {
-                                                $passed_tables = false;
-                                        }
-                                }
+				else	
+				{
+					$passed_grade_level_new = false;	
+				}
                         }
 		}
 
