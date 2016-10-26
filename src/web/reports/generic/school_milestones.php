@@ -53,6 +53,7 @@ $grade_array = array();
 $average_grade_array = array();
 $percent_complete_array = array();
 $percent_complete_new_array = array();
+$est_percent_complete_array = array();
 $raw_grade_array = array();
 $raw_grade_new_array = array();
 $number_of_students_array = array();
@@ -628,6 +629,9 @@ for($i = 0; $i < $num_rooms; $i++)
 			$tmppct = ($total_raw_grade / $num_students) - 60;
 			$percent_complete_array[] = round($tmppct / 40 * 100);
 			
+			$esttmppct = ($total_raw_grade / $num_students) - 60;
+			$est_percent_complete_array[] = round($esttmppct / 40 * 100);
+			
 			$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
 			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
 
@@ -675,6 +679,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $grade_tmp = $grade_array[$g];
         $average_grade_tmp = $average_grade_array[$g];
         $percent_complete_tmp = $percent_complete_array[$g];
+        $est_percent_complete_tmp = $est_percent_complete_array[$g];
         $percent_complete_new_tmp = $percent_complete_new_array[$g];
         $percent_passed_grade_level_tmp = $percent_passed_grade_level_array[$g];
         $percent_passed_grade_level_new_tmp = $percent_passed_grade_level_new_array[$g];
@@ -689,6 +694,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$grade_array[$g] = $grade_array[$highest_element];
 	$average_grade_array[$g] = $average_grade_array[$highest_element];
 	$percent_complete_array[$g] = $percent_complete_array[$highest_element];
+	$est_percent_complete_array[$g] = $est_percent_complete_array[$highest_element];
 	$percent_complete_new_array[$g] = $percent_complete_new_array[$highest_element];
 	$percent_passed_grade_level_array[$g] = $percent_passed_grade_level_array[$highest_element];
 	$percent_passed_grade_level_new_array[$g] = $percent_passed_grade_level_new_array[$highest_element];
@@ -703,6 +709,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $grade_array[$highest_element] = $grade_tmp;
         $average_grade_array[$highest_element] = $average_grade_tmp;
         $percent_complete_array[$highest_element] = $percent_complete_tmp;
+        $est_percent_complete_array[$highest_element] = $est_percent_complete_tmp;
         $percent_complete_new_array[$highest_element] = $percent_complete_new_tmp;
         $percent_passed_grade_level_array[$highest_element] = $percent_passed_grade_level_tmp;
         $percent_passed_grade_level_new_array[$highest_element] = $percent_passed_grade_level_new_tmp;
@@ -717,7 +724,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	echo '<th colspan="4" >INFO';
         echo '</th>';
 	
-	echo '<th colspan="2" >PRE GRADE LEVEL STATS';
+	echo '<th colspan="3" >PRE GRADE LEVEL STATS';
         echo '</th>';
 	
 	echo '<th colspan="2" >GRADE LEVEL STATS';
@@ -744,6 +751,8 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '<td>% Complete Pre-Grade level';
         echo '</td>';
         echo '<td>% @ pre-grade Level';
+        echo '</td>';
+        echo '<td>% est complete pre-grade Level';
         echo '</td>';
 
 
@@ -783,6 +792,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         	echo '<td>';
         	echo $grade_array[$i];
         	echo '</td>';
+
                 echo '<td>';
                 echo $percent_complete_array[$i];
                 echo '</td>';
@@ -790,12 +800,19 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 echo $percent_passed_grade_level_array[$i];
                 echo '</td>';
                 echo '<td>';
+                echo $est_percent_complete_array[$i];
+                echo '</td>';
+
+
+
+                echo '<td>';
                 echo $percent_complete_new_array[$i];
                 echo '</td>';
                 echo '<td>';
                 echo $percent_passed_grade_level_new_array[$i];
                 echo '</td>';
                 echo '<td>';
+
                 echo $percent_passed_add_sub_array[$i];
                 echo '</td>';
                 echo '<td>';
