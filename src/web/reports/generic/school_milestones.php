@@ -683,11 +683,11 @@ for($i = 0; $i < $num_rooms; $i++)
 			$date = strtotime($add_days);
 			$estdate = date('M d, Y', $date);
 			
-			$txt = $diff_days; 
-			$txt .= ':'; 
-			$txt .= $est_days_from_start; 
-			$txt .= ':'; 
-			$txt .= $estdate; 
+			//$txt = $diff_days; 
+			//$txt .= ':'; 
+			//$txt .= $est_days_from_start; 
+			//$txt .= ':'; 
+			$txt = $estdate; 
 			$est_percent_complete_new_array[] = $txt;
 
 			$pctnew = ($total_passed_grade_level_new / $num_students) * 100;
@@ -875,9 +875,6 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 	echo $est_percent_complete_array[$i];
                 	echo '</td>';
 		}
-		//$datediff_seconds = $now - $start_date;
-                 //       $diff_days = floor($datediff_seconds / (60 * 60 * 24));
-
 
 
                 echo '<td>';
@@ -886,11 +883,24 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 echo '<td>';
                 echo $percent_passed_grade_level_new_array[$i];
                 echo '</td>';
-                echo '<td>';
-                echo $est_percent_complete_new_array[$i];
-                echo '</td>';
-                echo '<td>';
 
+                $cut_date = strtotime("2017-06-01");
+                $class_date = strtotime($est_percent_complete_new_array[$i]);
+                if ($cut_date > $class_date)
+                {
+                        echo '<td bgcolor="#99ffcc">';
+                        echo $est_percent_complete_new_array[$i];
+                        echo '</td>';
+                }
+                else
+                {
+                        echo '<td>';
+                        echo $est_percent_complete_new_array[$i];
+                        echo '</td>';
+                }
+
+
+                echo '<td>';
                 echo $percent_passed_add_sub_array[$i];
                 echo '</td>';
                 echo '<td>';
