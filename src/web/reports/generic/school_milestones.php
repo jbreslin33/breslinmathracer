@@ -644,11 +644,11 @@ for($i = 0; $i < $num_rooms; $i++)
 			$date = strtotime($add_days);
 			$estdate = date('M d, Y', $date);
 
-			$txt = $diff_days; 
-			$txt .= ':'; 
-			$txt .= $est_days_from_start; 
-			$txt .= ':'; 
-			$txt .= $estdate; 
+			//$txt = $diff_days; 
+			//$txt .= ':'; 
+			//$txt .= $est_days_from_start; 
+			//$txt .= ':'; 
+			$txt = $estdate; 
 			$est_percent_complete_array[] = $txt;
 			
 			$pct = ($total_passed_grade_level / $num_students) * 100;
@@ -857,9 +857,26 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 echo '<td>';
                 echo $percent_passed_grade_level_array[$i];
                 echo '</td>';
-                echo '<td>';
-                echo $est_percent_complete_array[$i];
-                echo '</td>';
+
+                //get total days since start
+                //$now = time(); // or your date as well
+
+                $cut_date = strtotime("2016-12-22");
+                $class_date = strtotime($est_percent_complete_array[$i]);
+               	if ($cut_date > $class_date)
+		{
+                	echo '<td bgcolor="#99ffcc">';
+                	echo $est_percent_complete_array[$i];
+                	echo '</td>';
+		} 
+		else
+		{
+                	echo '<td>';
+                	echo $est_percent_complete_array[$i];
+                	echo '</td>';
+		}
+		//$datediff_seconds = $now - $start_date;
+                 //       $diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
 
 
