@@ -714,17 +714,17 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	echo '<table border=\"1\">';
         echo '<tr>';
 
-	echo '<th colspan="4" >STATS';
+	echo '<th colspan="4" >INFO';
         echo '</th>';
 	
-	echo '<th colspan="2" >PRE GRADE STATS';
+	echo '<th colspan="2" >PRE GRADE LEVEL STATS';
         echo '</th>';
 	
-	echo '<td>GRADE LEVEL STATS';
-        echo '</td>';
+	echo '<th colspan="2" >GRADE LEVEL STATS';
+        echo '</th>';
 	
-	echo '<td>THEMES';
-        echo '</td>';
+	echo '<th colspan="2" >THEMES';
+        echo '</th>';
         
 	echo '</tr>';
 
