@@ -123,6 +123,7 @@ for($i = 0; $i < $num_rooms; $i++)
         for($x = 0; $x < $num_students; $x++)
         {
 		$passed_grade_level = true;
+		$passed_grade_level_new = true;
 		$passed_add_sub = true;
 		$passed_tables = true;
 
@@ -289,7 +290,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
-
                 }
 //3rd thru 2nd
 		else if ($core_grades_id == 4)
@@ -348,7 +348,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
-
                 }
                 
 		else if ($core_grades_id == 5)
@@ -443,10 +442,7 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
-
-
                 }
-
 
 		else if ($core_grades_id == 7)
 		{
@@ -538,7 +534,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
-
 		}
 
                 else if ($core_grades_id == 9)
@@ -585,7 +580,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
-
                 }
 		else 
 		{
@@ -628,9 +622,43 @@ for($i = 0; $i < $num_rooms; $i++)
 
 			$tmppct = ($total_raw_grade / $num_students) - 60;
 			$percent_complete_array[] = round($tmppct / 40 * 100);
+		
+			//get total days since start
+			$now = time(); // or your date as well
+			$start_date = strtotime("2016-09-12");
+			$datediff_seconds = $now - $start_date;
+			$diff_days = floor($datediff_seconds / (60 * 60 * 24));
+
+			//get percent complete thus far
+			$p = round($tmppct / 40 * 100);
+
+			//get a ratio to use to multiply by total days since start
+			$ratio = floatval(100 / $p);
+
+			//get est days to complete from start date 
+			$est_days_from_start = round($ratio * $diff_days);
+
+			$addto = $est_days_from_start - $diff_days;
 			
-			$esttmppct = ($total_raw_grade / $num_students) - 60;
-			$est_percent_complete_array[] = round($esttmppct / 40 * 100);
+			$add_days = "+";
+			$add_days .= $addto;
+			$add_days .= " day";
+
+			$date = strtotime($add_days);
+			$estdate = date('M d, Y', $date);
+
+			$txt = $diff_days; 
+			$txt .= ':'; 
+			$txt .= $est_days_from_start; 
+			$txt .= ':'; 
+			$txt .= $estdate; 
+	
+
+
+			$est_percent_complete_array[] = $txt;
+			
+			//$esttmppct = ($total_raw_grade / $num_students) - 60;
+			//$est_percent_complete_array[] = round($esttmppct / 40 * 100);
 			
 			$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
 			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
