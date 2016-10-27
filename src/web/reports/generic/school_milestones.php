@@ -808,7 +808,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '</td>';
         echo '<td>% @ pre-grade Level';
         echo '</td>';
-        echo '<td>% est complete pre-grade Level';
+        echo '<td>est complete pre-grade Level';
         echo '</td>';
 
 
@@ -816,7 +816,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '</td>';
         echo '<td>% @ grade Level';
         echo '</td>';
-        echo '<td>% est complete grade Level';
+        echo '<td>est complete grade Level';
         echo '</td>';
 
         echo '<td>% fluent single digit add/sub';
