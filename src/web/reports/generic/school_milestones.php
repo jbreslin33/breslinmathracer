@@ -145,6 +145,18 @@ function check_passed_grade_level($core_grades_id,&$row)
         return $passed_grade_level;
 }
 
+function check_passed_tables($core_grades_id,&$row)
+{
+        if ($core_grades_id == 2)
+        {
+                if ($row[21] == 0) 
+                {
+                        $passed_tables = false;
+                }
+        }
+        return $passed_tables;
+}
+
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
 {
@@ -237,40 +249,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
 			$raw_grade = calc_raw_grade($core_grades_id,$row);
 			$passed_grade_level = check_passed_grade_level($core_grades_id,$row);
-
-                        //$bonus = 13.4;
-/*
-                        for ($j = 5; $j < 8; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-				else
-				{
-					$passed_grade_level = false;	
-				}
-                        }
-*/
-			//$passed_grade_level = false;	
-
-                        for ($k = 21; $k < 23; $k++)
-                        {
-
-                                if ($row[$k] == 1)
-                                {
-                                        //$raw_grade += $bonus;
-                                }
-                                else
-                                {
-                                        //$passed_grade_level = false;
-                                        if ($k == 21)
-                                        {
-                                                $passed_tables = false;
-                                        }
-                                }
-                        }
-                
+			$passed_tables = check_passed_tables($core_grades_id,$row);
+			
 			//grade level
                         $bonus_new = 6.7;
                         for ($j = 5; $j < 11; $j++)
@@ -282,14 +262,6 @@ for($i = 0; $i < $num_rooms; $i++)
                                 else
                                 {
                                         $passed_grade_level_new = false;
-                                        if ($j == 6 || $j == 7 || $j == 8 || $j == 9 || $j == 11)
-                                        {
-                                                $passed_add_sub = false;
-                                        }
-                                        if ($j == 21)
-                                        {
-                                                $passed_tables = false;
-                                        }
                                 }
                         }
                 }
