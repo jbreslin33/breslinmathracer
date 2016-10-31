@@ -221,7 +221,8 @@ for($i = 0; $i < $num_rooms; $i++)
 
 			$raw_grade = calc_raw_grade($core_grades_id,$row);
 
-                        $bonus = 13.4;
+                        //$bonus = 13.4;
+/*
                         for ($j = 5; $j < 8; $j++)
                         {
                                 if ($row[$j] == 1)
@@ -233,7 +234,8 @@ for($i = 0; $i < $num_rooms; $i++)
 					$passed_grade_level = false;	
 				}
                         }
-
+*/
+			$passed_grade_level = false;	
 
                         for ($k = 21; $k < 23; $k++)
                         {
