@@ -91,6 +91,10 @@ $nick_name_array[] = "Donald Trump's Haircuts";
 $nick_name_array[] = "Hillary Clinton's Emails";
 $nick_name_array[] = "Abecedarians";
 
+$bonus_array[] = 0;
+$bonus_array[] = 0;
+$bonus_array[] = 13.4;
+
 function check_add_sub($core_grades_id,&$row)
 {
 	if ($core_grades_id == 2)
@@ -106,21 +110,22 @@ function check_add_sub($core_grades_id,&$row)
 	}
 }
 
-$bonus_array = array();
 
 function calc_raw_grade($core_grades_id,&$row)
 {
+	global $bonus_array;
+	$rg = 60;
 	if ($core_grades_id == 2)
 	{
-		$bonus = 13.4;
         	for ($j = 5; $j < 8; $j++)
         	{
         		if ($row[$j] == 1)
                 	{
-                		$raw_grade += $bonus;
+                		$rg += $bonus_array[$core_grades_id];
                 	}
                 }
 	}
+	return $rg;
 }
  
 
@@ -214,6 +219,8 @@ for($i = 0; $i < $num_rooms; $i++)
                 {
 			$passed_add_sub = check_add_sub($core_grades_id,$row);
 
+			$raw_grade = calc_raw_grade($core_grades_id,$row);
+
                         $bonus = 13.4;
                         for ($j = 5; $j < 8; $j++)
                         {
@@ -226,6 +233,7 @@ for($i = 0; $i < $num_rooms; $i++)
 					$passed_grade_level = false;	
 				}
                         }
+
 
                         for ($k = 21; $k < 23; $k++)
                         {
