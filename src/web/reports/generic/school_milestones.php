@@ -91,21 +91,49 @@ $nick_name_array[] = "Donald Trump's Haircuts";
 $nick_name_array[] = "Hillary Clinton's Emails";
 $nick_name_array[] = "Abecedarians";
 
-$bonus_array[] = 0;
-$bonus_array[] = 0;
-$bonus_array[] = 13.4;
+$bonus_array[] = 0; //
+$bonus_array[] = 0; //k
+$bonus_array[] = 13.4; //1
+$bonus_array[] = 6.7; //2
+$bonus_array[] = 5; //3
+$bonus_array[] = 2.3; //4
+$bonus_array[] = 1.74; //5
+$bonus_array[] = 1.43; //6
+$bonus_array[] = 1.22; //7
+$bonus_array[] = 1.22; //8
 
 $bonus_new_array[] = 0;
 $bonus_new_array[] = 0;
 $bonus_new_array[] = 6.7;
+$bonus_new_array[] = 5;
+$bonus_new_array[] = 2.3;
+$bonus_new_array[] = 1.74;
+$bonus_new_array[] = 1.43;
+$bonus_new_array[] = 1.22; 
+$bonus_new_array[] = 1.22;
+$bonus_new_array[] = 1.22;
 
 $pre_end[] = 0;
 $pre_end[] = 0;
 $pre_end[] = 8;
+$pre_end[] = 11;
+$pre_end[] = 13;
+$pre_end[] = 23;
+$pre_end[] = 28;
+$pre_end[] = 33;
+$pre_end[] = 38;
+$pre_end[] = 38;
 
 $new_end[] = 0;
 $new_end[] = 0;
 $new_end[] = 11;
+$new_end[] = 13;
+$new_end[] = 23;
+$pre_end[] = 28;
+$pre_end[] = 33;
+$pre_end[] = 38;
+$pre_end[] = 38;
+$pre_end[] = 38;
 
 function check_add_sub($core_grades_id,&$row)
 {
@@ -290,27 +318,20 @@ for($i = 0; $i < $num_rooms; $i++)
 			
 			$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
 			$passed_grade_level_new = check_passed_grade_level_new($core_grades_id,$row);
-			
-			//grade level
-/*
-                        $bonus_new = 6.7;
-                        for ($j = 5; $j < 11; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade_new += $bonus_new;
-                                }
-                                else
-                                {
-                                        $passed_grade_level_new = false;
-				}
-                        }
-		*/
                 }
 
 		//2nd  thru 1st
                 else if ($core_grades_id == 3)
                 {
+			$passed_add_sub = check_add_sub($core_grades_id,$row);
+
+			$raw_grade = calc_raw_grade($core_grades_id,$row);
+			$passed_grade_level = check_passed_grade_level($core_grades_id,$row);
+			$passed_tables = check_passed_tables($core_grades_id,$row);
+			
+			$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
+			$passed_grade_level_new = check_passed_grade_level_new($core_grades_id,$row);
+/*
                         $bonus = 6.7;
                         for ($j = 5; $j < 11; $j++)
                         {
@@ -365,6 +386,7 @@ for($i = 0; $i < $num_rooms; $i++)
                                         }
                                 }
                         }
+*/
                 }
 //3rd thru 2nd
 		else if ($core_grades_id == 4)
