@@ -95,6 +95,10 @@ $bonus_array[] = 0;
 $bonus_array[] = 0;
 $bonus_array[] = 13.4;
 
+$bonus_new_array[] = 0;
+$bonus_new_array[] = 0;
+$bonus_new_array[] = 6.7;
+
 $pre_end[] = 0;
 $pre_end[] = 0;
 $pre_end[] = 8;
@@ -158,6 +162,37 @@ function check_passed_tables($core_grades_id,&$row)
         }
         return $passed_tables;
 }
+
+function check_passed_grade_level_new($core_grades_id,&$row)
+{
+	global $new_end;
+              
+	for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
+        {
+        	if ($row[$j] == 0)
+		{
+                	$passed_grade_level_new = false;
+                }
+	}
+        return $passed_grade_level_new;
+}
+
+function calc_raw_grade_new($core_grades_id,&$row)
+{
+        global $bonus_new_array;
+        global $new_end;
+        $rg = 60;
+
+        for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
+        {
+                if ($row[$j] == 1)
+                {
+                        $rg += $bonus_new_array[$core_grades_id];
+                }
+        }
+        return $rg;
+}
+
 
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
@@ -253,7 +288,11 @@ for($i = 0; $i < $num_rooms; $i++)
 			$passed_grade_level = check_passed_grade_level($core_grades_id,$row);
 			$passed_tables = check_passed_tables($core_grades_id,$row);
 			
+			$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
+			$passed_grade_level_new = check_passed_grade_level_new($core_grades_id,$row);
+			
 			//grade level
+/*
                         $bonus_new = 6.7;
                         for ($j = 5; $j < 11; $j++)
                         {
@@ -264,8 +303,9 @@ for($i = 0; $i < $num_rooms; $i++)
                                 else
                                 {
                                         $passed_grade_level_new = false;
-                                }
+				}
                         }
+		*/
                 }
 
 		//2nd  thru 1st
