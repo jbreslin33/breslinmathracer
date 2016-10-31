@@ -127,7 +127,23 @@ function calc_raw_grade($core_grades_id,&$row)
 	}
 	return $rg;
 }
- 
+
+function check_passed_grade_level($core_grades_id,&$row)
+{
+        global $bonus_array;
+        $rg = 60;
+        if ($core_grades_id == 2)
+        {
+                for ($j = 5; $j < 8; $j++)
+                {
+                        if ($row[$j] == 0)
+			{
+				$passed_grade_level = false;	
+			}
+                }
+        }
+        return $passed_grade_level;
+}
 
 //calc results by looping rooms
 for($i = 0; $i < $num_rooms; $i++)
@@ -220,6 +236,7 @@ for($i = 0; $i < $num_rooms; $i++)
 			$passed_add_sub = check_add_sub($core_grades_id,$row);
 
 			$raw_grade = calc_raw_grade($core_grades_id,$row);
+			$passed_grade_level = check_passed_grade_level($core_grades_id,$row);
 
                         //$bonus = 13.4;
 /*
@@ -235,7 +252,7 @@ for($i = 0; $i < $num_rooms; $i++)
 				}
                         }
 */
-			$passed_grade_level = false;	
+			//$passed_grade_level = false;	
 
                         for ($k = 21; $k < 23; $k++)
                         {
