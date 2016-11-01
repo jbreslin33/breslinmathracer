@@ -145,7 +145,7 @@ function check_add_sub($core_grades_id,&$row)
 	
  	for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
 	{
-		if ($row[6] == 1 && $row[7] == 1)
+		if ($row[6] == 1 && $row[7] == 1 && $row[8] == 1 && $row[9] == 1 && $row[11])
 		{
 			return true;
 		}
