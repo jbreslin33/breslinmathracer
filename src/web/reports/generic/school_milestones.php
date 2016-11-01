@@ -137,7 +137,12 @@ $new_end[] = 38;
 
 function check_add_sub($core_grades_id,&$row)
 {
+	if ($core_grades_id == NULL)
+	{
+		return false;
+	}
 	global $pre_end;
+	
  	for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
 	{
 		if ($row[6] == 1 && $row[7] == 1)
@@ -154,6 +159,10 @@ function check_add_sub($core_grades_id,&$row)
 
 function calc_raw_grade($core_grades_id,&$row)
 {
+	if ($core_grades_id == NULL)
+	{
+		return false;
+	}
 	global $bonus_array;
 	global $pre_end;
 	$rg = 60;
@@ -170,7 +179,12 @@ function calc_raw_grade($core_grades_id,&$row)
 
 function check_passed_grade_level($core_grades_id,&$row)
 {
+	if ($core_grades_id == NULL)
+	{
+		return false;
+	}
 	global $pre_end;
+	$passed_grade_level = true;	
 	for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
         {
                 if ($row[$j] == 0)
@@ -183,6 +197,11 @@ function check_passed_grade_level($core_grades_id,&$row)
 
 function check_passed_tables($core_grades_id,&$row)
 {
+	if ($core_grades_id == NULL)
+	{
+		return false;
+	}
+        $passed_tables = true;
 	//easy just check izzy
         if ($row[21] == 0) 
         {
@@ -193,7 +212,12 @@ function check_passed_tables($core_grades_id,&$row)
 
 function check_passed_grade_level_new($core_grades_id,&$row)
 {
+	if ($core_grades_id == NULL)
+	{
+		return false;
+	}
 	global $new_end;
+        $passed_grade_level_new = true;
               
 	for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
         {
@@ -207,6 +231,10 @@ function check_passed_grade_level_new($core_grades_id,&$row)
 
 function calc_raw_grade_new($core_grades_id,&$row)
 {
+	if ($core_grades_id == NULL)
+	{
+		return false;
+	}
         global $bonus_new_array;
         global $new_end;
         $rg = 60;
