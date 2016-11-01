@@ -189,7 +189,10 @@ function check_passed_grade_level($core_grades_id,&$row)
         {
                 if ($row[$j] == 0)
 		{	
-			$passed_grade_level = false;	
+			if ($j != 23)
+			{
+				$passed_grade_level = false;	
+			}
                 }
         }
         return $passed_grade_level;
