@@ -448,10 +448,6 @@ for($i = 0; $i < $num_rooms; $i++)
 			$date = strtotime($add_days);
 			$estdate = date('M d, Y', $date);
 			
-			//$txt = $diff_days; 
-			//$txt .= ':'; 
-			//$txt .= $est_days_from_start; 
-			//$txt .= ':'; 
 			$txt = $estdate; 
 			$est_percent_complete_new_array[] = $txt;
 
@@ -486,8 +482,6 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 			$highest_element = $h;
 		}
 	}
-	//error_log($highest_number);
-	//error_log($highest_element);
 
 	//copy current place your working on to tmp cause its getting overwritten 
  	$number_of_students_tmp = $number_of_students_array[$g];

@@ -426,14 +426,25 @@ echo '<table border=\"1\">';
                         $date = strtotime($add_days);
                         $estdate = date('M d, Y', $date);
 
-                        //$txt = $estdate;
-                        //$est_percent_complete = $txt;
+                $cut_date = strtotime("2016-12-22");
+                $class_date = strtotime($estdate);
+                if ($cut_date > $class_date)
+                {
+                        echo '<td bgcolor="#99ffcc">';
+                        echo $estdate;
+                        echo '</td>';
+                }
+                else
+                {
+                        echo '<td>';
+                        echo $estdate;
+                        echo '</td>';
+                }
 
 
-
-         	echo '<td>';
-                echo $estdate;
-                echo '</td>';
+ //        	echo '<td>';
+  //              echo $estdate;
+   //             echo '</td>';
 
 //END DATE
 
