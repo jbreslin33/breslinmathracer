@@ -107,6 +107,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
+        echo '<td>Est Date pre-grade';
+        echo '</td>';
         echo '<td>Score';
         echo '</td>';
         echo '<td>Standard';
@@ -383,6 +385,12 @@ echo '<table border=\"1\">';
                 	echo 'grade unknown';
 		}
                 echo '</td>';
+
+         	echo '<td>';
+                echo 'date here';
+                echo '</td>';
+
+
 
 		$total_raw_grade += $raw_grade;
 
