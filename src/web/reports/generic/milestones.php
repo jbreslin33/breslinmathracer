@@ -114,6 +114,25 @@ function calc_raw_grade($core_grades_id,&$row)
         }
         return $rg;
 }
+function calc_raw_grade_new($core_grades_id,&$row)
+{
+        if ($core_grades_id == NULL)
+        {
+                return false;
+        }
+        global $bonus_new_array;
+        global $new_end;
+        $rg = 60;
+
+        for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
+        {
+                if ($row[$j] == 1)
+                {
+                        $rg += $bonus_new_array[$core_grades_id];
+                }
+        }
+        return $rg;
+}
 
 
 ?>
@@ -174,9 +193,9 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>Grade';
         echo '</td>';
-        echo '<td>Est complete pre-grade';
+        echo '<td>Est complete pre-grade date';
         echo '</td>';
-        echo '<td>Est complete grade';
+        echo '<td>Est complete grade date';
         echo '</td>';
         echo '<td>Score';
         echo '</td>';
@@ -348,8 +367,6 @@ echo '<table border=\"1\">';
 //BEGIN PRE DATE 
 		$r = $raw_grade - 60;
 
-		$t = 'r:';
-		$t .= $r;
 
                 //get total days since start
                	$now = time(); // or your date as well
@@ -396,11 +413,14 @@ echo '<table border=\"1\">';
                 }
 //END PRED DATE
 
-//BEGIN GRADE DATE
-                $r = $raw_grade - 60;
+//BEGIN CALC RAW GRADE NEW
+		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
 
-                $t = 'r:';
-                $t .= $r;
+//END CALC RAW GRADE NEW
+
+
+//BEGIN GRADE DATE
+                $r = $raw_grade_new - 60;
 
                 //get total days since start
                 $now = time(); // or your date as well
