@@ -95,6 +95,27 @@ $new_end[] = 38;
 $new_end[] = 38;
 
 
+function calc_raw_grade($core_grades_id,&$row)
+{
+        if ($core_grades_id == NULL)
+        {
+                return false;
+        }
+        global $bonus_array;
+        global $pre_end;
+        $rg = 60;
+
+        for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
+        {
+                if ($row[$j] == 1)
+                {
+                        $rg += $bonus_array[$core_grades_id];
+                }
+        }
+        return $rg;
+}
+
+
 ?>
 
 <p><b> Milestones </p></b>
@@ -319,119 +340,8 @@ echo '<table border=\"1\">';
 		$raw_grade = 60;
 
 		//1st  thru k 
-                if ($core_grades_id == 2)
-                {
-                        $bonus = 13.4;
-                        for ($j = 5; $j < 8; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-
-		//2nd  thru 1st
-                else if ($core_grades_id == 3)
-                {
-                        $bonus = 6.7;
-                        for ($j = 5; $j < 11; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-//3rd thru 2nd
-		else if ($core_grades_id == 4)
-                {
-                        $bonus = 5;
-                        for ($j = 5; $j < 13; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-               //4th grade thru 3rd 
-		else if ($core_grades_id == 5)
-                {
-                        $bonus = 2.3;
-                        for ($j = 5; $j < 23; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-
-	//5th grade thru 4th
-                else if ($core_grades_id == 6)
-                {
-                        $bonus = 1.74;
-                        for ($j = 5; $j < 28; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-
-		//6th grade thru 5th
-		else if ($core_grades_id == 7)
-		{
-			$bonus = 1.43;
-			for ($j = 5; $j < 33; $j++)
-			{
-               			if ($row[$j] == 1)
-				{
-					$raw_grade += $bonus; 
-				}			 
-			}
-			echo $raw_grade;
-		}
-
-		//7th grade thru 6th
-		else if ($core_grades_id == 8)
-		{
-                        $bonus = 1.22;
-                        for ($j = 5; $j < 38; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-		}
-
-		//8th grade thru 7th
-                else if ($core_grades_id == 9)
-                {
-                        $bonus = 1.1;
-                        for ($j = 5; $j < 38; $j++)
-                        {
-                                if ($row[$j] == 1)
-                                {
-                                        $raw_grade += $bonus;
-                                }
-                        }
-                        echo $raw_grade;
-                }
-
-		else 
-		{
-                	echo 'grade unknown';
-		}
+		$raw_grade = calc_raw_grade($core_grades_id,$row);
+                echo $raw_grade;
                 echo '</td>';
 
 
