@@ -5,9 +5,13 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-        this.mIDArray.push('3.nbt.a.1_1');
-        this.mIDArray.push('3.nbt.a.2_1');
-        this.mIDArray.push('3.nbt.a.2_2');
+        var a = Math.floor(Math.random()*6);
+        if (a == 0)
+                this.mIDArray.push('6.ee.a.1_1');
+
+
+
+
 
         this.mCurrentElement = 0;
         this.shuffle(500);

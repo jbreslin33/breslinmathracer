@@ -627,7 +627,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
 		} 
 		else
 		{
-                	echo '<td>';
+                        echo '<td bgcolor="#ffb3d1">';
                 	echo $est_percent_complete_array[$i];
                 	echo '</td>';
 		}
@@ -650,7 +650,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
                 }
                 else
                 {
-                        echo '<td>';
+                        echo '<td bgcolor="#ffb3d1">';
                         echo $est_percent_complete_new_array[$i];
                         echo '</td>';
                 }

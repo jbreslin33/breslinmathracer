@@ -405,9 +405,9 @@ echo '<table border=\"1\">';
                         echo $estdate;
                         echo '</td>';
                 }
-                else
+                else //#ffe6e6
                 {
-                        echo '<td>';
+                        echo '<td bgcolor="#ffb3d1">';
                         echo $estdate;
                         echo '</td>';
                 }
@@ -461,7 +461,7 @@ echo '<table border=\"1\">';
                 }
                 else
                 {
-                        echo '<td>';
+                        echo '<td bgcolor="#ffb3d1">';
                         echo $estdate;
                         echo '</td>';
                 }
