@@ -5,9 +5,19 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-        this.mIDArray.push('3.nbt.a.1_1');
-        this.mIDArray.push('3.nbt.a.2_1');
-        this.mIDArray.push('3.nbt.a.2_2');
+        
+	this.mIDArray.push('6.g.a.1_1');
+        this.mIDArray.push('6.g.a.1_2');
+        
+	this.mIDArray.push('6.g.a.2_1');
+	this.mIDArray.push('6.g.a.2_2');
+	this.mIDArray.push('6.g.a.2_3');
+	this.mIDArray.push('6.g.a.2_4');
+	this.mIDArray.push('6.g.a.2_5');
+	this.mIDArray.push('6.g.a.2_6');
+	this.mIDArray.push('6.g.a.2_7');
+	this.mIDArray.push('6.g.a.2_8');
+	this.mIDArray.push('6.g.a.2_9');
 
         this.mCurrentElement = 0;
         this.shuffle(500);

@@ -39,7 +39,7 @@ insert into evaluations (id,description) values (40,'6_sp');
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (11,11,'6.ns.a.1',21) where description = '6_rp';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (11,11,'6.ee.a.1',22) where description = '6_ns';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'6.g.a.1',23) where description = '6_ee';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'6.sp.a.1',24) where description = '6_g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (11,11,'6.sp.a.1',24) where description = '6_g';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'7.rp.a.1',25) where description = '6_sp';
 
 
@@ -197,7 +197,7 @@ update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Kiri
 --update users set g6_rp = 0;
 --update users set g6_ns = 0;
 --update users set g6_ee = 0;
-update users set g6_g = 0;
+--update users set g6_g = 0;
 update users set g6_sp = 0;
 
 
