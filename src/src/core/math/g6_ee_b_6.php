@@ -18,7 +18,7 @@ initialize: function(sheet)
               
         this.setAnswer('' + a + '+n=' + c,0);
         this.setAnswer('' + c + '=' + a + '+n',1);
-        this.setAnswer('' + c + '= n+' + a,2);
+        this.setAnswer('' + c + '=n+' + a,2);
         this.setAnswer('' + 'n+' + a + '=' + c,3);
 
 this.mCorrectAnswerLabel.setPosition(530,300);
