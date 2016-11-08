@@ -150,7 +150,18 @@ echo "<option value=\"g1_oa_c_6\">g1_oa_c_6</option>";
 echo "<option value=\"g1_nbt\">g1_nbt</option>";
 echo "<option value=\"g2_oa_b_2\">g2_oa_b_2</option>";
 echo "<option value=\"g2_nbt\">g2_nbt</option>";
+
+echo "<option value=\"alltimetwo\">2</option>";
+echo "<option value=\"alltimethree\">3</option>";
+echo "<option value=\"alltimefour\">4</option>";
+echo "<option value=\"alltimefive\">5</option>";
+echo "<option value=\"alltimesix\">6</option>";
+echo "<option value=\"alltimeseven\">7</option>";
+echo "<option value=\"alltimeeight\">8</option>";
+echo "<option value=\"alltimenine\">9</option>";
+
 echo "<option value=\"g3_oa_c_7\">g3_oa_c_7</option>";
+
 echo "<option value=\"g3_nbt\">g3_nbt</option>";
 echo "<option value=\"g4_oa_b_4\">g4_oa_b_4</option>";
 echo "<option value=\"g4_nbt_b_4\">g4_nbt_b_4</option>";
