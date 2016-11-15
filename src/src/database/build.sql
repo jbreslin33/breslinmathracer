@@ -358,6 +358,13 @@ CREATE TABLE finer_types_item_types (
         PRIMARY KEY (id)
 );
 
+CREATE TABLE milestones (
+        id SERIAL,
+        milestones_id text NOT NULL,
+        description text,
+        PRIMARY KEY (id)
+);
+
 
 ---------- WE TALKIN BOUT PRACTICE
 --select item_type_buddy_id from practice_buddy where item_type_id = 'k_cc_a_1_4'; 

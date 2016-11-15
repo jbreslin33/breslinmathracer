@@ -205,3 +205,12 @@ update evaluations set description = 'Test Prep' where id = 18;
 
 
 --temp
+
+CREATE TABLE milestones (
+        id SERIAL,
+        milestones_id text NOT NULL,
+        description text,
+        PRIMARY KEY (id)
+);
+
+insert into milestones (milestones_id,description) values ('k_cc','k_cc');
