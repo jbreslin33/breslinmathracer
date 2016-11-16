@@ -214,3 +214,11 @@ CREATE TABLE milestones (
 );
 
 insert into milestones (milestones_id,description) values ('k_cc','k_cc');
+
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.1) where description = 'normal';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.2) where description = 'practice';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.3) where description = 'Test';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.4) where description = 'TerraNovaTest';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.5) where description = 'Homework';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.6) where description = 'The Super Izzy';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.7) where description = 'Test Prep';

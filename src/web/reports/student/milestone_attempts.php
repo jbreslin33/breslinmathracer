@@ -71,8 +71,6 @@ echo '<table border=\"1\">';
                 {
                         echo '<tr bgcolor="red">';
                 }
-                //echo '';
-
  		
 		echo '<td>';
                 echo mb_strimwidth($row[0], 0, 19, "");
