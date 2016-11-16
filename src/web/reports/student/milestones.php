@@ -36,7 +36,7 @@ echo "<br>";
 echo '<table border=\"1\">';
 	//get a result set of evaluations to loop 
 	$query_evaluations = "select * from evaluations where progression > 0.9 order by progression;"; 
-       	$result_evalutions = pg_query($conn,$query_evaluations);
+       	$result_evaluations = pg_query($conn,$query_evaluations);
         $numrows_evaluations = pg_numrows($result_evaluations);
 
         echo '<td>start_time';
@@ -58,8 +58,16 @@ echo '<table border=\"1\">';
         for($i = 0; $i < $numrows_evaluations; $i++)
         {
                 $row_evaluations = pg_fetch_array($result_evaluations, $i);
-
+        	
+		echo '<tr>';
+                
+		echo '<td>';
+                echo $row_evaluations[0];
+                echo '</td>';
 		
+		echo '</tr>';
+
+	/*	
         	for($i = 0; $i < $numrows; $i++)
 		{
 		
@@ -95,6 +103,7 @@ echo '<table border=\"1\">';
                 echo '</td>';
 
                 echo '</tr>';
+*/
         }
 
         pg_free_result($result);
