@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>MILESTONES</title>
+        <title>SCHOOL MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
