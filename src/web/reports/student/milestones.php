@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>MATCHES</title>
+	<title>MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -36,29 +36,35 @@ echo "<br>";
 echo '<table border=\"1\">';
         echo '<tr>';
 
-        echo '<td> match_id';
-        echo '</td>';
-        echo '<td> team_name';
-        echo '</td>';
-        echo '<td> start_time';
-        echo '</td>';
-        echo '<td> end_time';
-        echo '</td>';
-        echo '<td> score';
-        echo '</td>';
 
+        echo '<tr>';
+        echo '<td>start time';
+        echo '</td>';
+        echo '<td>description';
+        echo '</td>';
+        echo '<td>first_name';
+        echo '</td>';
+        echo '<td>last_name';
+        echo '</td>';
+        echo '<td>score_needed';
+        echo '</td>';
+        echo '<td>score';
+        echo '</td>';
+        echo '<td>passed?';
+        echo '</td>';
         echo '</tr>';
 
-$q = "select matches.id, teams.name, matches.start_time, matches.end_time, teams_matches.score from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id where matches.school_id = ";
-$q .= $_SESSION["school_id"];
-$q .= " order by matches.id desc;";
+	$query = "select evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
-$r = pg_query($conn,$q);
-$n = pg_numrows($r);
+        $query .= $_SESSION["user_id"];
+        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc limit 10;";
 
-        for($i = 0; $i < $n; $i++)
+       	$result = pg_query($conn,$query);
+        $numrows = pg_numrows($result);
+
+        for($i = 0; $i < $numrows; $i++)
         {
-                $row = pg_fetch_array($r, $i);
+                $row = pg_fetch_array($result, $i);
                 $match_id = $row[0];
                 $team_name = $row[1];
                 $start_time = $row[2];
@@ -66,26 +72,39 @@ $n = pg_numrows($r);
                 $score = $row[4];
 
                 echo '<tr>';
-                echo '<td>';
-                echo $match_id;
+ 		
+		echo '<td>';
+                echo $row[0];
                 echo '</td>';
+
                 echo '<td>';
-                echo $team_name;
+                echo $row[1];
                 echo '</td>';
+
                 echo '<td>';
-                echo $start_time;
+                echo $row[2];
                 echo '</td>';
+
                 echo '<td>';
-                echo $end_time;
+                echo $row[3];
+               	echo '</td>';
+
+                echo '<td>';
+                echo $row[4];
                 echo '</td>';
+
                 echo '<td>';
-                echo $score;
+                echo $row[5];
+                echo '</td>';
+
+                echo '<td>';
+                echo $row[6];
                 echo '</td>';
 
                 echo '</tr>';
         }
 
-        pg_free_result($r);
+        pg_free_result($result);
         echo '</table>';
 ?>
 </body>
