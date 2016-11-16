@@ -42,10 +42,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>description';
         echo '</td>';
-        echo '<td>first_name';
-        echo '</td>';
-        echo '<td>last_name';
-        echo '</td>';
         echo '<td>score_needed';
         echo '</td>';
         echo '<td>score';
@@ -54,10 +50,10 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-	$query = "select evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
+	$query = "select evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
         $query .= $_SESSION["user_id"];
-        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc limit 10;";
+        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
@@ -91,14 +87,6 @@ echo '<table border=\"1\">';
 
                 echo '<td>';
                 echo $row[4];
-                echo '</td>';
-
-                echo '<td>';
-                echo $row[5];
-                echo '</td>';
-
-                echo '<td>';
-                echo $row[6];
                 echo '</td>';
 
                 echo '</tr>';
