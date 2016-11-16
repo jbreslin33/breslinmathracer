@@ -34,33 +34,37 @@ echo "<br>";
 	<p><b> MILESTONES: </p></b>
 <?php
 echo '<table border=\"1\">';
-        echo '<tr>';
+	//get a result set of evaluations to loop 
+	$query_evaluations = "select * from evaluations where progression > 0.9 order by progression;"; 
+       	$result_evalutions = pg_query($conn,$query_evaluations);
+        $numrows_evaluations = pg_numrows($result_evaluations);
 
-
-        echo '<tr>';
-        echo '<td>start time';
+        echo '<td>start_time';
         echo '</td>';
         echo '<td>description';
         echo '</td>';
-        echo '<td>score_needed';
-        echo '</td>';
-        echo '<td>score';
-        echo '</td>';
-        echo '<td>passed?';
+        echo '<td>passed';
         echo '</td>';
         echo '</tr>';
 
-	$query = "select evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
+	$query = "select evaluations_attempts.start_time, evaluations.description case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
         $query .= $_SESSION["user_id"];
-        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc;";
+        $query .= " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description order by evaluations_attempts.start_time desc;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
-        for($i = 0; $i < $numrows; $i++)
+        for($i = 0; $i < $numrows_evaluations; $i++)
         {
-                $row = pg_fetch_array($result, $i);
+                $row_evaluations = pg_fetch_array($result_evaluations, $i);
+
+		
+        	for($i = 0; $i < $numrows; $i++)
+		{
+		
+		}
+
                 $match_id = $row[0];
                 $team_name = $row[1];
                 $start_time = $row[2];
