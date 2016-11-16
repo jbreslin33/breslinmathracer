@@ -70,7 +70,8 @@ echo '<table border=\"1\">';
                 echo '<tr>';
  		
 		echo '<td>';
-                echo $row[0];
+ 		echo mb_strimwidth($row[0], 0, 19, "");
+                //echo $row[0];
                 echo '</td>';
 
                 echo '<td>';
