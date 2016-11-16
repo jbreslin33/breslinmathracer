@@ -66,7 +66,7 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
+echo "<option selected=\"selected\" value=\"0\"></option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
@@ -121,61 +121,63 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-        $query = "select evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND school_id = ";
-
-        $query .= $_SESSION["school_id"];
-
 	if ($room_id != 0)
 	{
-		$query .= " AND room_id = ";
-        	$query .= $room_id;
-	}
+	
+        	$query = "select evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND school_id = ";
 
-	$query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc;";
-        $query .= " order by score desc;";
+        	$query .= $_SESSION["school_id"];
 
-	error_log($query);
+		if ($room_id != 0)
+		{
+			$query .= " AND room_id = ";
+        		$query .= $room_id;
+		}
 
-        $result = pg_query($conn,$query);
-        $numrows = pg_numrows($result);
+		$query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc limit 10;";
+
+        	$result = pg_query($conn,$query);
+        	$numrows = pg_numrows($result);
 
 	
-        for($i = 0; $i < $numrows; $i++)
-        {
-                $row = pg_fetch_array($result, $i);
+        	for($i = 0; $i < $numrows; $i++)
+        	{
+                	$row = pg_fetch_array($result, $i);
                 
-                echo '<tr>';
+                	echo '<tr>';
 
-                echo '<td>';
-                echo $row[0];
-                echo '</td>';
+                	echo '<td>';
+                	echo $row[0];
+                	echo '</td>';
 
-                echo '<td>';
-                echo $row[1];
-                echo '</td>';
+                	echo '<td>';
+                	echo $row[1];
+                	echo '</td>';
 
-                echo '<td>';
-                echo $row[2];
-                echo '</td>';
+                	echo '<td>';
+                	echo $row[2];
+                	echo '</td>';
                 
-		echo '<td>';
-                echo $row[3];
-                echo '</td>';
+			echo '<td>';
+                	echo $row[3];
+                	echo '</td>';
 
-                echo '<td>';
-                echo $row[4];
-                echo '</td>';
+                	echo '<td>';
+                	echo $row[4];
+                	echo '</td>';
 
-                echo '<td>';
-                echo $row[5];
-                echo '</td>';
+                	echo '<td>';
+                	echo $row[5];
+                	echo '</td>';
 
-                echo '<td>';
-                echo $row[6];
-                echo '</td>';
+                	echo '<td>';
+                	echo $row[6];
+                	echo '</td>';
 
-		echo '</tr>';
-        }
+			echo '</tr>';
+        	}
+
+	}
 
         pg_free_result($result);
         echo '</table>';
