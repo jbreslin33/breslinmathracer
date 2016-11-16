@@ -26,6 +26,7 @@ session_start();
 <li><a href="/web/reports/generic/tests.php">Evaluation Answers and Questions</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
 <li><a href="/web/reports/student/milestones.php">Milestones</a></li>
+<li><a href="/web/reports/student/milestone_attempts.php">Milestone Attempts</a></li>
 <li><a href="/web/reports/generic/school_milestones.php">School Milestones</a></li>
 
 
