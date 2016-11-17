@@ -47,7 +47,7 @@ echo '<table border=\"1\">';
 	$query_eval .= " AND room_id = ";
 	$query_eval .= $_SESSION["room_id"];
 
-	$query_eval .= " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, user_id order by evaluations_attempts.start_time desc;";
+	$query_eval .= " group by user_id, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
 
         $result_eval = pg_query($conn,$query_eval);
         $numrows_eval = pg_numrows($result_eval);
