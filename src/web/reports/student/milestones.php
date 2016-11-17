@@ -34,24 +34,12 @@ echo "<br>";
 	<p><b> MY CLASS MILESTONES: </p></b>
 <?php
 echo '<table border=\"1\">';
+	
 	//get a result set of evaluations to loop 
 	$query_evaluations = "select description from evaluations where progression > 0.9 order by progression;"; 
        	$result_evaluations = pg_query($conn,$query_evaluations);
         $numrows_evaluations = pg_numrows($result_evaluations);
         
-        echo '<tr>';
-        echo '<td>first_name';
-       	echo '</td>';
-        echo '<td>last_name';
-       	echo '</td>';
-	for($x = 0; $x < $numrows_evaluations; $x++)
-        {
-                $row_evaluations = pg_fetch_array($result_evaluations, $x);
-        	echo '<td>';
-		echo $row_evaluations[0];
-        	echo '</td>';
-	}
-        echo '</tr>';
 
 	//get eval data
         $query_eval = "select user_id, evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND school_id = "; 
@@ -64,18 +52,30 @@ echo '<table border=\"1\">';
         $result_eval = pg_query($conn,$query_eval);
         $numrows_eval = pg_numrows($result_eval);
 
-
-	//now loop each student...
+	//get students and loop...
 	$query_students = "select id, first_name, last_name from users where school_id = "; 
 	$query_students .= $_SESSION["school_id"];
 	$query_students .= " AND room_id = ";
 	$query_students .= $_SESSION["room_id"];
 
-	error_log($query_students);	
+	//error_log($query_students);	
        
-	
 	$result_students = pg_query($conn,$query_students);
         $numrows_students = pg_numrows($result_students);
+        
+	echo '<tr>';
+        echo '<td>first_name';
+       	echo '</td>';
+        echo '<td>last_name';
+       	echo '</td>';
+	for($x = 0; $x < $numrows_evaluations; $x++)
+        {
+                $row_evaluations = pg_fetch_array($result_evaluations, $x);
+        	echo '<td>';
+		echo $row_evaluations[0];
+        	echo '</td>';
+	}
+        echo '</tr>';
 	
 	for($s = 0; $s < $numrows_students; $s++)
 	{
@@ -111,7 +111,7 @@ echo '<table border=\"1\">';
 				$txt .= $row_students[0]; 
 				$txt .= ":";
 				$txt .= $row_eval[0]; 
-				error_log($txt);
+				//error_log($txt);
 
                         	if ($description == $row_eval[2] && $row_students[0] == $row_eval[0])
                         	{
