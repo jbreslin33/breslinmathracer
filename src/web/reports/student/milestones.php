@@ -52,14 +52,12 @@ echo '<table border=\"1\">';
         $result_eval = pg_query($conn,$query_eval);
         $numrows_eval = pg_numrows($result_eval);
 
-	//get students and loop...
+	//get students
 	$query_students = "select id, first_name, last_name from users where school_id = "; 
 	$query_students .= $_SESSION["school_id"];
 	$query_students .= " AND room_id = ";
 	$query_students .= $_SESSION["room_id"];
 
-	//error_log($query_students);	
-       
 	$result_students = pg_query($conn,$query_students);
         $numrows_students = pg_numrows($result_students);
         
