@@ -35,7 +35,7 @@ echo "<br>";
 <?php
 echo '<table border=\"1\">';
 	//get a result set of evaluations to loop 
-	$query_evaluations = "select * from evaluations where progression > 0.9 order by progression;"; 
+	$query_evaluations = "select description from evaluations where progression > 0.9 order by progression;"; 
        	$result_evaluations = pg_query($conn,$query_evaluations);
         $numrows_evaluations = pg_numrows($result_evaluations);
 
