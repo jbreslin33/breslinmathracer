@@ -38,13 +38,15 @@ echo '<table border=\"1\">';
 	$query_evaluations = "select description from evaluations where progression > 0.9 order by progression;"; 
        	$result_evaluations = pg_query($conn,$query_evaluations);
         $numrows_evaluations = pg_numrows($result_evaluations);
-
-        echo '<td>description';
-        echo '</td>';
-        echo '<td>start_time';
-        echo '</td>';
-        echo '<td>passed';
-        echo '</td>';
+        
+        echo '<tr>';
+	for($x = 0; $x < $numrows_evaluations; $x++)
+        {
+                $row_evaluations = pg_fetch_array($result_evaluations, $x);
+        	echo '<td>';
+		echo $row_evaluations[0];
+        	echo '</td>';
+	}
         echo '</tr>';
 
 	$query = "select evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
