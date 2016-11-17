@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>MILESTONES</title>
+	<title>MY MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -31,7 +31,7 @@ $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> MILESTONES: </p></b>
+	<p><b> MY MILESTONES: </p></b>
 <?php
 echo '<table border=\"1\">';
 	//get a result set of evaluations to loop 
