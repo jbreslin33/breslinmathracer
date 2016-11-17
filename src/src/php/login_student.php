@@ -377,6 +377,7 @@ public function checkForStudent()
 				//session vars	
 				$_SESSION["user_id"] = $this->mUserID;
 				$_SESSION["school_id"] = $this->mSchoolID;
+				$_SESSION["room_id"] = $this->mRoomID;
 
 				$this->setMilestonesStandard();
 		

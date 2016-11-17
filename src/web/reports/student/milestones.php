@@ -40,6 +40,10 @@ echo '<table border=\"1\">';
         $numrows_evaluations = pg_numrows($result_evaluations);
         
         echo '<tr>';
+        echo '<td>first_name';
+       	echo '</td>';
+        echo '<td>last_name';
+       	echo '</td>';
 	for($x = 0; $x < $numrows_evaluations; $x++)
         {
                 $row_evaluations = pg_fetch_array($result_evaluations, $x);
@@ -49,6 +53,39 @@ echo '<table border=\"1\">';
 	}
         echo '</tr>';
 
+	//now loop each student...
+	$query_students = "select id, first_name, last_name from users where school_id = "; 
+	$query_students .= $_SESSION["school_id"];
+	$query_students .= " AND room_id = ";
+	$query_students .= $_SESSION["room_id"];
+
+	error_log($query_students);	
+       
+	
+	$result_students = pg_query($conn,$query_students);
+        $numrows_students = pg_numrows($result_students);
+	
+	for($s = 0; $s < $numrows_students; $s++)
+	{
+        	echo '<tr>';
+
+                $row_students = pg_fetch_array($result_students, $s);
+        	echo '<td>';
+		echo $row_students[1];
+        	echo '</td>';
+        	
+		echo '<td>';
+		echo $row_students[2];
+        	echo '</td>';
+
+
+        	echo '</tr>';
+	
+	}
+
+
+	
+	//evals.....
 	$query = "select evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
         $query .= $_SESSION["user_id"];
