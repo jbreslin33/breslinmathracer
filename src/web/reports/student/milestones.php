@@ -39,9 +39,9 @@ echo '<table border=\"1\">';
        	$result_evaluations = pg_query($conn,$query_evaluations);
         $numrows_evaluations = pg_numrows($result_evaluations);
 
-        echo '<td>start_time';
-        echo '</td>';
         echo '<td>description';
+        echo '</td>';
+        echo '<td>start_time';
         echo '</td>';
         echo '<td>passed';
         echo '</td>';
@@ -58,11 +58,33 @@ echo '<table border=\"1\">';
         for($i = 0; $i < $numrows_evaluations; $i++)
         {
                 $row_evaluations = pg_fetch_array($result_evaluations, $i);
+
+		$description = $row_evaluations[0];
+		$start_time = "s";
+		$passed = "p";
         	
 		echo '<tr>';
-                
+
+               
+        	
+		//now lets loop for data	
+
+		for($y = 0; $y < $numrows; $y++)
+		{
+		
+		}
+		
+		//first data in row is milestone name 
 		echo '<td>';
-                echo $row_evaluations[0];
+                echo $description;
+                echo '</td>';
+		
+		echo '<td>';
+                echo $start_time;
+                echo '</td>';
+		
+		echo '<td>';
+                echo $passed;
                 echo '</td>';
 		
 		echo '</tr>';
