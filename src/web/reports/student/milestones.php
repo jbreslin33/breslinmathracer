@@ -47,10 +47,10 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-	$query = "select evaluations_attempts.start_time, evaluations.description case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
+	$query = "select evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
         $query .= $_SESSION["user_id"];
-        $query .= " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description order by evaluations_attempts.start_time desc;";
+        $query .= " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
@@ -61,17 +61,26 @@ echo '<table border=\"1\">';
 
 		$description = $row_evaluations[0];
 		$start_time = "s";
-		$passed = "p";
+		$passed = 0;
         	
 		echo '<tr>';
-
-               
         	
 		//now lets loop for data	
-
-		for($y = 0; $y < $numrows; $y++)
+		$y = 0;
+		while ($y < $numrows && $passed == 0)
 		{
-		
+                	$row = pg_fetch_array($result, $y);
+			if ($description == $row[1])
+			{
+				$passed = $row[2]; 
+			}
+
+			$y++;
+		}
+
+		if ($passed == 1)
+		{
+			$start_time = $row[0];
 		}
 		
 		//first data in row is milestone name 
