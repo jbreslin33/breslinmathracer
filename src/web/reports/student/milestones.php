@@ -53,6 +53,18 @@ echo '<table border=\"1\">';
 	}
         echo '</tr>';
 
+	//get eval data
+        $query_eval = "select user_id, evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND school_id = "; 
+	$query_eval .= $_SESSION["school_id"];
+	$query_eval .= " AND room_id = ";
+	$query_eval .= $_SESSION["room_id"];
+
+	$query_eval = " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
+
+        $result_eval = pg_query($conn,$query_eval);
+        $numrows_eval = pg_numrows($result_eval);
+
+
 	//now loop each student...
 	$query_students = "select id, first_name, last_name from users where school_id = "; 
 	$query_students .= $_SESSION["school_id"];
@@ -86,6 +98,7 @@ echo '<table border=\"1\">';
 
 	
 	//evals.....
+/*
 	$query = "select evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
         $query .= $_SESSION["user_id"];
@@ -142,6 +155,7 @@ echo '<table border=\"1\">';
 		
 		echo '</tr>';
         }
+*/
 
         pg_free_result($result);
         echo '</table>';
