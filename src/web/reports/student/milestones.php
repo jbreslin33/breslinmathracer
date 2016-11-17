@@ -63,7 +63,6 @@ echo '<table border=\"1\">';
 		$start_time = "s";
 		$passed = 0;
         	
-		echo '<tr>';
         	
 		//now lets loop for data	
 		$y = 0;
@@ -81,15 +80,21 @@ echo '<table border=\"1\">';
 		if ($passed == 1)
 		{
 			$start_time = $row[0];
+			echo '<tr bgcolor="green">';
 		}
-		
+		else
+		{
+			echo '<tr bgcolor="red">';
+		}
+	
 		//first data in row is milestone name 
 		echo '<td>';
                 echo $description;
                 echo '</td>';
 		
 		echo '<td>';
-                echo $start_time;
+ 		echo mb_strimwidth($start_time, 0, 19, "");
+                //echo $start_time;
                 echo '</td>';
 		
 		echo '<td>';
@@ -97,44 +102,6 @@ echo '<table border=\"1\">';
                 echo '</td>';
 		
 		echo '</tr>';
-
-	/*	
-        	for($i = 0; $i < $numrows; $i++)
-		{
-		
-		}
-
-                $match_id = $row[0];
-                $team_name = $row[1];
-                $start_time = $row[2];
-                $end_time = $row[3];
-                $score = $row[4];
-
-                echo '<tr>';
- 		
-		echo '<td>';
- 		echo mb_strimwidth($row[0], 0, 19, "");
-                //echo $row[0];
-                echo '</td>';
-
-                echo '<td>';
-                echo $row[1];
-                echo '</td>';
-
-                echo '<td>';
-                echo $row[2];
-                echo '</td>';
-
-                echo '<td>';
-                echo $row[3];
-               	echo '</td>';
-
-                echo '<td>';
-                echo $row[4];
-                echo '</td>';
-
-                echo '</tr>';
-*/
         }
 
         pg_free_result($result);
