@@ -87,8 +87,28 @@ $nick_name_array[] = "Tyros";
 $nick_name_array[] = "Rookies";
 $nick_name_array[] = "Least Modes";
 $nick_name_array[] = "Greenhorns";
-$nick_name_array[] = "Donald Trump's Haircuts";
-$nick_name_array[] = "Hillary Clinton's Emails";
+$nick_name_array[] = "Donald Trumps Haircuts";
+$nick_name_array[] = "Hillary Clintons Emails";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
+$nick_name_array[] = "Abecedarians";
 $nick_name_array[] = "Abecedarians";
 
 $bonus_array[] = 0; //
@@ -376,6 +396,11 @@ for($i = 0; $i < $num_rooms; $i++)
 	{
 		if ($rooms_row[1] != 2)
 		{
+			$roomtxt = "room:";
+			$roomtxt .= $rooms_row[1];
+
+			error_log ($roomtxt);
+
 			$number_of_students_array[] = $num_students;
 			$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
 			$raw_grade_new_array[] = $total_raw_grade_new; //stick class raw grade in array
@@ -398,8 +423,12 @@ for($i = 0; $i < $num_rooms; $i++)
 			//get percent complete thus far
 			$p = round($tmppct / 40 * 100);
 
+			$ratio = 0;
 			//get a ratio to use to multiply by total days since start
-			$ratio = floatval(100 / $p);
+			if ($p != 0)	
+			{
+				$ratio = floatval(100 / $p);
+			}
 
 			//get est days to complete from start date 
 			$est_days_from_start = round($ratio * $diff_days);
@@ -434,7 +463,12 @@ for($i = 0; $i < $num_rooms; $i++)
 			$p = round($tmppctnew / 40 * 100);
 			
 			//get a ratio to use to multiply by total days since start
-			$ratio = floatval(100 / $p);
+			$ratio = 0;
+			//get a ratio to use to multiply by total days since start
+			if ($p != 0)	
+			{
+				$ratio = floatval(100 / $p);
+			}
 			
 			//get est days to complete from start date 
 			$est_days_from_start = round($ratio * $diff_days);

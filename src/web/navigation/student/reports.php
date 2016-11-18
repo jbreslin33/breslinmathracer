@@ -25,7 +25,6 @@ session_start();
 <li><a href="/web/reports/generic/incorrect_attempts_realtime.php">Live Incorrect</a></li>
 <li><a href="/web/reports/generic/tests.php">Evaluation Answers and Questions</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
-<li><a href="/web/reports/generic/milestones_old.php">OLD Milestones</a></li>
 <li><a href="/web/reports/student/my_milestones.php">My Milestones</a></li>
 <li><a href="/web/reports/student/milestones.php">My Class Milestones</a></li>
 <li><a href="/web/reports/generic/milestones.php">Milestones</a></li>
