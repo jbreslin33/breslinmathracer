@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>MY MILESTONES</title>
+	<title>CLASS MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -26,12 +26,17 @@ else
 </ul>
 
 <?php
+$date = new DateTime();
+//$A = $date->getTimestamp();
+$A = round(microtime(true) * 1000);
+$txt = 'A:0';
+
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> MY MILESTONES: </p></b>
+	<p><b> CLASS MILESTONES: </p></b>
 <?php
 echo '<table border=\"1\">';
 	//get a result set of evaluations to loop 
@@ -47,14 +52,30 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
+
 	$query = "select evaluations_attempts.start_time, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = ";
 
-        $query .= $_SESSION["user_id"];
+        //$query .= $_SESSION["user_id"];
+        $query .= "75";
         $query .= " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
+
+	$date = new DateTime();
+	//$B = $date->getTimestamp();
+	$B = round(microtime(true) * 1000);
+	$diffBA = $B - $A;
+	$txt .= ' B:';
+	$txt .= $diffBA;
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
-
+	
+	$date = new DateTime();
+	//$C = $date->getTimestamp();
+	$C = round(microtime(true) * 1000);
+	$diffCB = $C - $B;
+	$txt .= ' C:';
+	$txt .= $diffCB;
+	
         for($i = 0; $i < $numrows_evaluations; $i++)
         {
                 $row_evaluations = pg_fetch_array($result_evaluations, $i);
@@ -103,6 +124,14 @@ echo '<table border=\"1\">';
 		
 		echo '</tr>';
         }
+	$date = new DateTime();
+	//$D = $date->getTimestamp();
+	$D = round(microtime(true) * 1000);
+	$diffDC = $D - $C;
+	$txt .= ' D:';
+	$txt .= $diffDC;
+
+	error_log($txt);
 
         pg_free_result($result);
         echo '</table>';
