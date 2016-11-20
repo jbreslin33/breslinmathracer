@@ -27,7 +27,6 @@ else
 
 <?php
 $date = new DateTime();
-//$A = $date->getTimestamp();
 $A = round(microtime(true) * 1000);
 $txt = 'A:0';
 
@@ -60,7 +59,6 @@ echo '<table border=\"1\">';
         $query .= " group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
 
 	$date = new DateTime();
-	//$B = $date->getTimestamp();
 	$B = round(microtime(true) * 1000);
 	$diffBA = $B - $A;
 	$txt .= ' B:';
@@ -70,7 +68,6 @@ echo '<table border=\"1\">';
         $numrows = pg_numrows($result);
 	
 	$date = new DateTime();
-	//$C = $date->getTimestamp();
 	$C = round(microtime(true) * 1000);
 	$diffCB = $C - $B;
 	$txt .= ' C:';
@@ -125,7 +122,6 @@ echo '<table border=\"1\">';
 		echo '</tr>';
         }
 	$date = new DateTime();
-	//$D = $date->getTimestamp();
 	$D = round(microtime(true) * 1000);
 	$diffDC = $D - $C;
 	$txt .= ' D:';
