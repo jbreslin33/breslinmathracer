@@ -276,6 +276,9 @@ echo '<table border=\"1\">';
         $firstName = '';
         $lastName = '';
         $score = '';
+/*
+select sub.first_name, sub.last_name, sub.description, sub.case FROM ( select users.first_name, users.last_name, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND users.room_id = 2 AND item_attempts.transaction_code = 1 group by evaluations_attempts, evaluations.description, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.case = 1;
+*/
 
         $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
