@@ -41,11 +41,28 @@ echo "<br>";
 $query = "select id, name from rooms where ";
 $query .= "name = '4'"; 
 $query .= " OR name = '5'"; 
+$query .= " OR name = '21'"; 
+$query .= " OR name = '22'"; 
+$query .= " OR name = '23'"; 
+$query .= " OR name = '24'"; 
+$query .= " OR name = '25'"; 
+$query .= " OR name = '28'"; 
+$query .= " OR name = '31'"; 
+$query .= " OR name = '32'"; 
+$query .= " OR name = '33'"; 
+$query .= " OR name = '34'"; 
+$query .= " OR name = '35'"; 
+$query .= " OR name = '36'"; 
+$query .= " OR name = '37'"; 
+$query .= " OR name = '39'"; 
+$query .= " OR name = 'RR4'"; 
+$query .= " OR name = 'RR5'"; 
+$query .= " OR name = 'RR6'"; 
+$query .= " OR name = 'RR7'"; 
+$query .= " OR name = 'RR8'"; 
 $query .= " order by name asc;";
 $room_result = pg_query($conn,$query);
 $num_rooms = pg_numrows($room_result);
-error_log($query);
-
 
 //arrays
 $rank_array = array();
@@ -393,8 +410,6 @@ for($i = 0; $i < $num_rooms; $i++)
 	$roomtxt = "room:";
 	$roomtxt .= $rooms_row[1];
 
-	error_log ($roomtxt);
-
 	$number_of_students_array[] = $num_students;
 	$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
 	$raw_grade_new_array[] = $total_raw_grade_new; //stick class raw grade in array
@@ -542,7 +557,6 @@ for($i = 0; $i < $num_rooms; $i++)
 
 //bubble sort
 //start by looping g to find 1st place then 2nd etc
-//error_log(sizeof($rank_array));
 for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 {
 	$highest_element = '';
@@ -580,7 +594,6 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$txt .= $highest_element;
 	$txt .= " sizeOfRankArray:";
 	$txt .= intval(sizeof($rank_array));
-	error_log($txt);
 
 	$number_of_students[$g] = $number_of_students_array[$highest_element];	
 	$raw_grade_array[$g] = $raw_grade_array[$highest_element];
