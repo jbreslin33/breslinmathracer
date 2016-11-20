@@ -38,7 +38,10 @@ echo "<br>";
 <p><b> School Milestones </p></b>
 
 <?php
-$query = "select id, name from rooms where name = '33' OR name = '34' order by name asc;";
+$query = "select id, name from rooms where ";
+$query .= "name = '4'"; 
+$query .= " OR name = '5'"; 
+$query .= " order by name asc;";
 $room_result = pg_query($conn,$query);
 $num_rooms = pg_numrows($room_result);
 error_log($query);
