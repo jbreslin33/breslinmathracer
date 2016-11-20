@@ -38,11 +38,10 @@ echo "<br>";
 <p><b> School Milestones </p></b>
 
 <?php
-$query = "select id, name from rooms where school_id = ";
-$query .= $_SESSION["school_id"];
-$query .= " order by name asc;";
+$query = "select id, name from rooms where name = '33' OR name = '34' order by name asc;";
 $room_result = pg_query($conn,$query);
 $num_rooms = pg_numrows($room_result);
+error_log($query);
 
 
 //arrays
@@ -278,7 +277,6 @@ for($i = 0; $i < $num_rooms; $i++)
 {
         $rooms_row = pg_fetch_array($room_result, $i);
 
-
         $last_activity = '';
         $tmp_grade = '';
 
@@ -292,7 +290,6 @@ for($i = 0; $i < $num_rooms; $i++)
         $query .= ";";
         $result = pg_query($conn,$query);
         $num_students = pg_numrows($result);
-
 	
 	$total_raw_grade = 0;
 	$total_raw_grade_new = 0;
@@ -358,7 +355,6 @@ for($i = 0; $i < $num_rooms; $i++)
 		$raw_grade = 60;
 		$raw_grade_new = 60;
 
-
 		$passed_add_sub = check_add_sub($core_grades_id,$row);
 
 		$raw_grade = calc_raw_grade($core_grades_id,$row);
@@ -367,7 +363,6 @@ for($i = 0; $i < $num_rooms; $i++)
 		
 		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
 		$passed_grade_level_new = check_passed_grade_level_new($core_grades_id,$row);
-
 
 		$tmp_grade = $core_grades_id;
 		$total_raw_grade += $raw_grade; //add student raw grade to class raw grade
@@ -392,110 +387,152 @@ for($i = 0; $i < $num_rooms; $i++)
 
         } //loop students
 
-	if ($num_students > 0 && $num_students < 34)
+	$roomtxt = "room:";
+	$roomtxt .= $rooms_row[1];
+
+	error_log ($roomtxt);
+
+	$number_of_students_array[] = $num_students;
+	$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
+	$raw_grade_new_array[] = $total_raw_grade_new; //stick class raw grade in array
+	$rank_array[] = $i;
+	$room_array[] = $rooms_row[1];
+	$grade_array[] = $tmp_grade -1;
+	if ($num_students != 0)
 	{
-		if ($rooms_row[1] != 2)
-		{
-			$roomtxt = "room:";
-			$roomtxt .= $rooms_row[1];
-
-			error_log ($roomtxt);
-
-			$number_of_students_array[] = $num_students;
-			$raw_grade_array[] = $total_raw_grade; //stick class raw grade in array
-			$raw_grade_new_array[] = $total_raw_grade_new; //stick class raw grade in array
-			$rank_array[] = $i;
-			$room_array[] = $rooms_row[1];
-			$grade_array[] = $tmp_grade -1;
-			$average_grade_array[] = round($total_raw_grade / $num_students);
-			
-			//OLD
-			$tmppct = ($total_raw_grade / $num_students) - 60;
-			$percent_complete_array[] = round($tmppct / 40 * 100);
-
-		
-			//get total days since start
-			$now = time(); // or your date as well
-			$start_date = strtotime("2016-09-12");
-			$datediff_seconds = $now - $start_date;
-			$diff_days = floor($datediff_seconds / (60 * 60 * 24));
-
-			//get percent complete thus far
-			$p = round($tmppct / 40 * 100);
-
-			$ratio = 0;
-			//get a ratio to use to multiply by total days since start
-			if ($p != 0)	
-			{
-				$ratio = floatval(100 / $p);
-			}
-
-			//get est days to complete from start date 
-			$est_days_from_start = round($ratio * $diff_days);
-
-			$addto = $est_days_from_start - $diff_days;
-			
-			$add_days = "+";
-			$add_days .= $addto;
-			$add_days .= " day";
-
-			$date = strtotime($add_days);
-			$estdate = date('M d, Y', $date);
-
-			$txt = $estdate; 
-			$est_percent_complete_array[] = $txt;
-			
-			$pct = ($total_passed_grade_level / $num_students) * 100;
-			$percent_passed_grade_level_array[] = round($pct); 
-
-			//new
-			
-			$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
-			$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
-
- 			//get total days since start
-                        $now = time(); // or your date as well
-                        $start_date = strtotime("2016-09-12");
-                        $datediff_seconds = $now - $start_date;
-                        $diff_days = floor($datediff_seconds / (60 * 60 * 24));
-
-			//get percent complete thus far
-			$p = round($tmppctnew / 40 * 100);
-			
-			//get a ratio to use to multiply by total days since start
-			$ratio = 0;
-			//get a ratio to use to multiply by total days since start
-			if ($p != 0)	
-			{
-				$ratio = floatval(100 / $p);
-			}
-			
-			//get est days to complete from start date 
-			$est_days_from_start = round($ratio * $diff_days);
-			
-			$addto = $est_days_from_start - $diff_days;
-			
-			$add_days = "+";
-			$add_days .= $addto;
-			$add_days .= " day";
-			
-			$date = strtotime($add_days);
-			$estdate = date('M d, Y', $date);
-			
-			$txt = $estdate; 
-			$est_percent_complete_new_array[] = $txt;
-
-			$pctnew = ($total_passed_grade_level_new / $num_students) * 100;
-			$percent_passed_grade_level_new_array[] = round($pctnew); 
-
-			//themes
-			$pct_add = ($total_add_sub / $num_students) * 100;
-			$percent_passed_add_sub_array[] = round($pct_add); 
-			
-			$pct_tab = ($total_tables / $num_students) * 100;
-			$percent_passed_tables_array[] = round($pct_tab); 
-		}
+		$average_grade_array[] = round($total_raw_grade / $num_students);
 	}
+	else
+	{
+		$average_grade_array[] = 0;
+	}
+		
+	//OLD
+	if ($num_students != 0)
+	{
+		$tmppct = ($total_raw_grade / $num_students) - 60;
+	}
+	else
+	{
+		$tmppct = 0;
+	}
+	$percent_complete_array[] = round($tmppct / 40 * 100);
+		
+	//get total days since start
+	$now = time(); // or your date as well
+	$start_date = strtotime("2016-09-12");
+	$datediff_seconds = $now - $start_date;
+	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
+
+	//get percent complete thus far
+	$p = round($tmppct / 40 * 100);
+
+	$ratio = 0;
+	//get a ratio to use to multiply by total days since start
+	if ($p != 0)	
+	{
+		$ratio = floatval(100 / $p);
+	}
+
+	//get est days to complete from start date 
+	$est_days_from_start = round($ratio * $diff_days);
+
+	$addto = $est_days_from_start - $diff_days;
+			
+	$add_days = "+";
+	$add_days .= $addto;
+	$add_days .= " day";
+
+	$date = strtotime($add_days);
+	$estdate = date('M d, Y', $date);
+
+	$txt = $estdate; 
+	$est_percent_complete_array[] = $txt;
+			
+	if ($num_students != 0)
+	{
+		$pct = ($total_passed_grade_level / $num_students) * 100;
+	}
+	else
+	{
+		$pct = 0;
+	}
+	$percent_passed_grade_level_array[] = round($pct); 
+
+	//new
+			
+	if ($num_students != 0)
+	{
+		$tmppctnew = ($total_raw_grade_new / $num_students) - 60;
+	}
+	else
+	{
+		$tmppctnew = 0;	
+	}
+	$percent_complete_new_array[] = round($tmppctnew / 40 * 100);
+
+ 	//get total days since start
+        $now = time(); // or your date as well
+        $start_date = strtotime("2016-09-12");
+        $datediff_seconds = $now - $start_date;
+        $diff_days = floor($datediff_seconds / (60 * 60 * 24));
+
+	//get percent complete thus far
+	$p = round($tmppctnew / 40 * 100);
+			
+	//get a ratio to use to multiply by total days since start
+	$ratio = 0;
+	//get a ratio to use to multiply by total days since start
+	if ($p != 0)	
+	{
+		$ratio = floatval(100 / $p);
+	}
+			
+	//get est days to complete from start date 
+	$est_days_from_start = round($ratio * $diff_days);
+	
+	$addto = $est_days_from_start - $diff_days;
+		
+	$add_days = "+";
+	$add_days .= $addto;
+	$add_days .= " day";
+			
+	$date = strtotime($add_days);
+	$estdate = date('M d, Y', $date);
+			
+	$txt = $estdate; 
+	$est_percent_complete_new_array[] = $txt;
+
+	if ($num_students != 0)
+	{
+		$pctnew = ($total_passed_grade_level_new / $num_students) * 100;
+	}
+	else
+	{
+		$pctnew = 0;
+	}
+	$percent_passed_grade_level_new_array[] = round($pctnew); 
+
+	//themes
+	if ($num_students != 0)
+	{
+		$pct_add = ($total_add_sub / $num_students) * 100;
+	}
+	else
+	{
+		$pct_add = 0;
+	}
+	$percent_passed_add_sub_array[] = round($pct_add); 
+			
+	if ($num_students != 0)
+	{
+		$pct_tab = ($total_tables / $num_students) * 100;
+	}
+	else
+	{
+		$pct_tab = 0;
+	}
+	$percent_passed_tables_array[] = round($pct_tab); 
 
         pg_free_result($result);
 } //loop rooms
@@ -534,6 +571,14 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $percent_passed_tables_tmp = $percent_passed_tables_array[$g];
 	
 	//overwrite place we are working on
+	$txt = "g:";
+	$txt .= $g;
+	$txt .= " highest_element:";
+	$txt .= $highest_element;
+	$txt .= " sizeOfRankArray:";
+	$txt .= intval(sizeof($rank_array));
+	error_log($txt);
+
 	$number_of_students[$g] = $number_of_students_array[$highest_element];	
 	$raw_grade_array[$g] = $raw_grade_array[$highest_element];
 	$rank_array[$g] = $rank_array[$highest_element];
@@ -623,82 +668,71 @@ for($i = 0; $i < sizeof($rank_array); $i++)
 {
         $row = pg_fetch_array($room_result, $i);
 	
-	if ($number_of_students_array[$i] > 0 && $number_of_students_array[$i] < 34)
+	echo '<tr>';
+	echo '<td>';
+        echo $i + 1;
+        echo '</td>';
+        echo '<td>';
+        echo $room_array[$i];
+        echo '</td>';
+        echo '<td>';
+        echo $nick_name_array[$i];
+        echo '</td>';
+        echo '<td>';
+        echo $grade_array[$i];
+        echo '</td>';
+
+        echo '<td>';
+        echo $percent_complete_array[$i];
+        echo '</td>';
+        echo '<td>';
+        echo $percent_passed_grade_level_array[$i];
+        echo '</td>';
+
+        $cut_date = strtotime("2016-12-22");
+        $class_date = strtotime($est_percent_complete_array[$i]);
+        if ($cut_date > $class_date)
+	{	
+               	echo '<td bgcolor="#99ffcc">';
+               	echo $est_percent_complete_array[$i];
+               	echo '</td>';
+	} 
+	else
 	{
-		if ($rooms_row[1] == 2)
-		{
-		}
-		else
-		{
-		echo '<tr>';
-		echo '<td>';
-        	echo $i + 1;
-        	echo '</td>';
-        	echo '<td>';
-        	echo $room_array[$i];
-        	echo '</td>';
-        	echo '<td>';
-        	echo $nick_name_array[$i];
-        	echo '</td>';
-        	echo '<td>';
-        	echo $grade_array[$i];
-        	echo '</td>';
-
-                echo '<td>';
-                echo $percent_complete_array[$i];
-                echo '</td>';
-                echo '<td>';
-                echo $percent_passed_grade_level_array[$i];
-                echo '</td>';
-
-                $cut_date = strtotime("2016-12-22");
-                $class_date = strtotime($est_percent_complete_array[$i]);
-               	if ($cut_date > $class_date)
-		{
-                	echo '<td bgcolor="#99ffcc">';
-                	echo $est_percent_complete_array[$i];
-                	echo '</td>';
-		} 
-		else
-		{
-                        echo '<td bgcolor="#ffb3d1">';
-                	echo $est_percent_complete_array[$i];
-                	echo '</td>';
-		}
-
-
-                echo '<td>';
-                echo $percent_complete_new_array[$i];
-                echo '</td>';
-                echo '<td>';
-                echo $percent_passed_grade_level_new_array[$i];
-                echo '</td>';
-
-                $cut_date = strtotime("2017-06-01");
-                $class_date = strtotime($est_percent_complete_new_array[$i]);
-                if ($cut_date > $class_date)
-                {
-                        echo '<td bgcolor="#99ffcc">';
-                        echo $est_percent_complete_new_array[$i];
-                        echo '</td>';
-                }
-                else
-                {
-                        echo '<td bgcolor="#ffb3d1">';
-                        echo $est_percent_complete_new_array[$i];
-                        echo '</td>';
-                }
-
-
-                echo '<td>';
-                echo $percent_passed_add_sub_array[$i];
-                echo '</td>';
-                echo '<td>';
-                echo $percent_passed_tables_array[$i];
-                echo '</td>';
-		echo '</tr>';
-		}
+                echo '<td bgcolor="#ffb3d1">';
+               	echo $est_percent_complete_array[$i];
+              	echo '</td>';
 	}
+
+        echo '<td>';
+        echo $percent_complete_new_array[$i];
+        echo '</td>';
+        echo '<td>';
+        echo $percent_passed_grade_level_new_array[$i];
+        echo '</td>';
+
+        $cut_date = strtotime("2017-06-01");
+        $class_date = strtotime($est_percent_complete_new_array[$i]);
+        if ($cut_date > $class_date)
+        {
+        	echo '<td bgcolor="#99ffcc">';
+                echo $est_percent_complete_new_array[$i];
+                echo '</td>';
+        }
+        else
+        {
+                echo '<td bgcolor="#ffb3d1">';
+               	echo $est_percent_complete_new_array[$i];
+               	echo '</td>';
+        }
+
+        echo '<td>';
+        echo $percent_passed_add_sub_array[$i];
+        echo '</td>';
+        echo '<td>';
+        echo $percent_passed_tables_array[$i];
+        echo '</td>';
+	echo '</tr>';
 }
         echo '</table>';
 ?>
