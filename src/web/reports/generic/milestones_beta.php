@@ -386,6 +386,24 @@ echo '<table border=\"1\">';
 				$k_oa_a_5 = 1;	
 				$row[7] = 1;
 			}
+		//$g1_oa_b_3 = 0;
+		//$g1_oa_c_6 = 0;
+		//$g1_nbt = 0;
+			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3' && $row_m[5] == 1)
+			{
+				$g1_oa_b_3 = 1;	
+				$row[8] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '1_oa_c_6' && $row_m[5] == 1)
+			{
+				$g1_oa_c_6 = 1;	
+				$row[9] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '1_nbt' && $row_m[5] == 1)
+			{
+				$g1_nbt = 1;	
+				$row[10] = 1;
+			}
 		}
 
                 
