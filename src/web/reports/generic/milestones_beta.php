@@ -302,45 +302,47 @@ echo '<table border=\"1\">';
                 $core_grades_id = $row[38];
                 $core_standards_id = $row[3];
                 $score = $row[4];
-                $k_cc = $row[5];
-                $k_oa_a_4 = $row[6];
-                $k_oa_a_5 = $row[7];
+
+
+                $k_cc = 0; 
+                $k_oa_a_4 = 0;
+                $k_oa_a_5 = 0;
                 
-		$g1_oa_b_3 = $row[8];
-		$g1_oa_c_6 = $row[9];
-		$g1_nbt = $row[10];
+		$g1_oa_b_3 = 0;
+		$g1_oa_c_6 = 0;
+		$g1_nbt = 0;
 		
-		$g2_oa_b_2 = $row[11];
-		$g2_nbt = $row[12];
+		$g2_oa_b_2 = 0;
+		$g2_nbt = 0;
 		
-		$g5 = $row[13];
-		$g2 = $row[14];
-		$g4 = $row[15];
-		$g8 = $row[16];
-		$g3 = $row[17];
-		$g6 = $row[18];
-		$g9 = $row[19];
-		$g7 = $row[20];
-		$g3_oa_c_7 = $row[21];
-		$g3_nbt = $row[22];
+		$g5 = 0;
+		$g2 = 0;
+		$g4 = 0;
+		$g8 = 0;
+		$g3 = 0;
+		$g6 = 0;
+		$g9 = 0;
+		$g7 = 0;
+		$g3_oa_c_7 = 0;
+		$g3_nbt = 0;
 		
-		$g4_oa_b_4 = $row[23];
-		$g4_nbt_b_4 = $row[24];
-		$g4_nbt_b_5 = $row[25];
-		$g4_nbt_b_6 = $row[26];
-		$g4_nf_b_3_c = $row[27];
+		$g4_oa_b_4 = 0;
+		$g4_nbt_b_4 = 0;
+		$g4_nbt_b_5 = 0;
+		$g4_nbt_b_6 = 0;
+		$g4_nf_b_3_c = 0;
 		
-		$g5_oa_a_1 = $row[28];
-		$g5_nbt_b_5 = $row[29];
-		$g5_nbt_b_6 = $row[30];
-		$g5_nbt_b_7 = $row[31];
-		$g5_nf_a_1 = $row[32];
+		$g5_oa_a_1 = 0;
+		$g5_nbt_b_5 = 0;
+		$g5_nbt_b_6 = 0;
+		$g5_nbt_b_7 = 0;
+		$g5_nf_a_1 = 0;
 		
-		$g6_rp = $row[33];
-		$g6_ns = $row[34];
-		$g6_ee = $row[35];
-		$g6_g = $row[36];
-		$g6_sp = $row[37];
+		$g6_rp = 0;
+		$g6_ns = 0;
+		$g6_ee = 0;
+		$g6_g = 0;
+		$g6_sp = 0;
                 
 
                 echo '<tr>';
