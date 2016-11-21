@@ -386,9 +386,7 @@ echo '<table border=\"1\">';
 				$k_oa_a_5 = 1;	
 				$row[7] = 1;
 			}
-		//$g1_oa_b_3 = 0;
-		//$g1_oa_c_6 = 0;
-		//$g1_nbt = 0;
+			
 			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3' && $row_m[5] == 1)
 			{
 				$g1_oa_b_3 = 1;	
@@ -403,6 +401,20 @@ echo '<table border=\"1\">';
 			{
 				$g1_nbt = 1;	
 				$row[10] = 1;
+			}
+		
+	
+		//$g2_oa_b_2 = 0;
+		//$g2_nbt = 0;
+			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2' && $row_m[5] == 1)
+			{
+				$g2_oa_b_2 = 1;	
+				$row[11] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '2_nbt' && $row_m[5] == 1)
+			{
+				$g2_nbt = 1;	
+				$row[12] = 1;
 			}
 		}
 
