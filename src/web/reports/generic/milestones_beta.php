@@ -326,13 +326,15 @@ echo '<table border=\"1\">';
 		{
 			$row[] = 0;
 		}
-        /*	
-		for($r = 5; $r < 38; $r++)
+        	
+		for($m = 0; $m < $numrows_m; $m++)
 		{
-			$row[] = 0;
-		}
-	
+                	$row_m = pg_fetch_array($result_m, $m);
 
+
+		}
+
+        /*	
         	for($m = 0; $m < $numrows; $m++)
 		{
                 	$row_m = pg_fetch_array($result_m, $m);
