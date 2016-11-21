@@ -318,9 +318,9 @@ echo '<table border=\"1\">';
                 $id = $row[0];
                 $firstName = $row[1];
                 $lastName = $row[2];
-                $core_grades_id = $row[5];
                 $core_standards_id = $row[3];
                 $score = $row[4];
+                $core_grades_id = $row[5];
 		
 		for($r = 5; $r < 38; $r++)
 		{
@@ -331,7 +331,23 @@ echo '<table border=\"1\">';
 		{
                 	$row_m = pg_fetch_array($result_m, $m);
 
+			$txt = $id;
+			$txt .= ":";
+			$txt .= $row_m[0];
+			$txt .= ":";
+			$txt .= $row_m[3];
+			$txt .= ":";
+			$txt .= $row_m[5];
 
+			//error_log($txt);
+                
+			$k_cc = 0; 
+				
+			if ($id == $row_m[0] && $row_m[3] == 'k_cc' && $row_m[5] == 1)
+			{
+				$k_cc = 1;	
+				$row[5] = 1;
+			}
 		}
 
         /*	
@@ -345,7 +361,6 @@ echo '<table border=\"1\">';
 			}
 	*/	
 
-                $k_cc = 0; 
                 $k_oa_a_4 = 0;
                 $k_oa_a_5 = 0;
                 
