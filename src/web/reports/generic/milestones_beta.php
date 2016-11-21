@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>MILESTONES</title>
+        <title>MILESTONES BETA</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -137,7 +137,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
 
 ?>
 
-<p><b> Milestones </p></b>
+<p><b> Milestones Beta</p></b>
 
 <p><b> Select Room: </p></b>
 
