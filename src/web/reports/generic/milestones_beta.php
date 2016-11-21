@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>MILESTONES BETA</title>
+        <title>MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -276,11 +276,8 @@ echo '<table border=\"1\">';
         $firstName = '';
         $lastName = '';
         $score = '';
-/*
-select sub.first_name, sub.last_name, sub.description, sub.case FROM ( select users.first_name, users.last_name, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND users.room_id = 2 AND item_attempts.transaction_code = 1 group by evaluations_attempts, evaluations.description, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.case = 1;
-*/
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score, core_grades_id, id from users where banned_id = 0 and school_id = ";
+        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($room_id != 0)
 	{
@@ -305,47 +302,47 @@ select sub.first_name, sub.last_name, sub.description, sub.case FROM ( select us
                 $core_grades_id = $row[38];
                 $core_standards_id = $row[3];
                 $score = $row[4];
+                $k_cc = $row[5];
+                $k_oa_a_4 = $row[6];
+                $k_oa_a_5 = $row[7];
+                
+		$g1_oa_b_3 = $row[8];
+		$g1_oa_c_6 = $row[9];
+		$g1_nbt = $row[10];
+		
+		$g2_oa_b_2 = $row[11];
+		$g2_nbt = $row[12];
+		
+		$g5 = $row[13];
+		$g2 = $row[14];
+		$g4 = $row[15];
+		$g8 = $row[16];
+		$g3 = $row[17];
+		$g6 = $row[18];
+		$g9 = $row[19];
+		$g7 = $row[20];
+		$g3_oa_c_7 = $row[21];
+		$g3_nbt = $row[22];
+		
+		$g4_oa_b_4 = $row[23];
+		$g4_nbt_b_4 = $row[24];
+		$g4_nbt_b_5 = $row[25];
+		$g4_nbt_b_6 = $row[26];
+		$g4_nf_b_3_c = $row[27];
+		
+		$g5_oa_a_1 = $row[28];
+		$g5_nbt_b_5 = $row[29];
+		$g5_nbt_b_6 = $row[30];
+		$g5_nbt_b_7 = $row[31];
+		$g5_nf_a_1 = $row[32];
+		
+		$g6_rp = $row[33];
+		$g6_ns = $row[34];
+		$g6_ee = $row[35];
+		$g6_g = $row[36];
+		$g6_sp = $row[37];
+                
 
-                $k_cc = 0;
-                $k_oa_a_4 = 0;
-                $k_oa_a_5 = 0;
-                
-		$g1_oa_b_3 = 0;
-		$g1_oa_c_6 = 0;
-		$g1_nbt = 0;
-		
-		$g2_oa_b_2 = 0;
-		$g2_nbt = 0;
-		
-		$g5 = 0;
-		$g2 = 0;
-		$g4 = 0;
-		$g8 = 0;
-		$g3 = 0;
-		$g6 = 0;
-		$g9 = 0;
-		$g7 = 0;
-		$g3_oa_c_7 = 0;
-		$g3_nbt = 0;
-		
-		$g4_oa_b_4 = 0;
-		$g4_nbt_b_4 = 0;
-		$g4_nbt_b_5 = 0;
-		$g4_nbt_b_6 = 0;
-		$g4_nf_b_3_c = 0;
-		
-		$g5_oa_a_1 = 0;
-		$g5_nbt_b_5 = 0;
-		$g5_nbt_b_6 = 0;
-		$g5_nbt_b_7 = 0;
-		$g5_nf_a_1 = 0;
-		
-		$g6_rp = 0;
-		$g6_ns = 0;
-		$g6_ee = 0;
-		$g6_g = 0;
-		$g6_sp = 0;
-                
                 echo '<tr>';
                 echo '<td>';
                 echo $i + 1;
