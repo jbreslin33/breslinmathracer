@@ -326,6 +326,8 @@ echo '<table border=\"1\">';
 		{
 			$row[] = 0;
 		}
+
+		$k_cc = 0; 
         	
 		for($m = 0; $m < $numrows_m; $m++)
 		{
@@ -341,25 +343,40 @@ echo '<table border=\"1\">';
 
 			//error_log($txt);
                 
-			$k_cc = 0; 
-				
+			/*	
+			if ($id == $row_m[0] && $row_m[3])
+			{
+				$t = "match:";
+				$t .= $id;
+				error_log($t);	
+			}
+			if ($row_m[3] == 'k_cc')
+			{	
+				$t = "match:";
+				$t .= $row_m[3];
+				error_log($t);	
+			}
+			if ($row_m[5] == 1)
+			{	
+				$t = "match:";
+				$t .= $row_m[5];
+				error_log($t);	
+			}
+*/
+
 			if ($id == $row_m[0] && $row_m[3] == 'k_cc' && $row_m[5] == 1)
 			{
+				$t = $row_m[0];
+				$t .= ":";
+				$t .= $row_m[3];
+				$t .= ":";
+				$t .= $row_m[5];
+				error_log($t);	
 				$k_cc = 1;	
 				$row[5] = 1;
 			}
 		}
 
-        /*	
-        	for($m = 0; $m < $numrows; $m++)
-		{
-                	$row_m = pg_fetch_array($result_m, $m);
-			
-			if ($id == $row_m[0] && $row_m[3] == "k_cc" && $row_m[5] == 1)
-			{
-				$k_cc = 1;	
-			}
-	*/	
 
                 $k_oa_a_4 = 0;
                 $k_oa_a_5 = 0;
