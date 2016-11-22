@@ -543,6 +543,38 @@ echo '<table border=\"1\">';
 				$g5_nf_a_1 = 1;	
 				$row[32] = 1;
 			}
+	/*	
+		$g6_rp = 0;
+		$g6_ns = 0;
+		$g6_ee = 0;
+		$g6_g = 0;
+		$g6_sp = 0;
+*/
+			if ($id == $row_m[0] && $row_m[3] == '6_rp' && $row_m[5] == 1)
+			{
+				$g6_rp = 1;	
+				$row[33] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_ns' && $row_m[5] == 1)
+			{
+				$g6_ns = 1;	
+				$row[34] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_ee' && $row_m[5] == 1)
+			{
+				$g6_ee = 1;	
+				$row[35] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_g' && $row_m[5] == 1)
+			{
+				$g6_g = 1;	
+				$row[36] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_sp' && $row_m[5] == 1)
+			{
+				$g6_sp = 1;	
+				$row[37] = 1;
+			}
 		}
 
                 echo '<tr>';
