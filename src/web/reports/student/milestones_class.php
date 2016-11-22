@@ -141,7 +141,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
 
 <p><b> Select Room: </p></b>
 
-<form method="post" action="/web/reports/generic/milestones_class.php">
+<form method="post" action="/web/reports/student/milestones_class.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -171,7 +171,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/generic/milestones_class.php?room_id=' + y; 
+	document.location.href = '/web/reports/student/milestones_class.php?room_id=' + y; 
 }
 </script>
 
