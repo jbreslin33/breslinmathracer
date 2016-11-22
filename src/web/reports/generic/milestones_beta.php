@@ -469,6 +469,16 @@ echo '<table border=\"1\">';
 				$g7 = 1;	
 				$row[20] = 1;
 			}
+			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7' && $row_m[5] == 1)
+			{
+				$g3_oa_c_7 = 1;	
+				$row[21] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '3_nbt' && $row_m[5] == 1)
+			{
+				$g3_nbt = 1;	
+				$row[22] = 1;
+			}
 		}
 
                 
