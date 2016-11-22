@@ -3,7 +3,7 @@
 <html>
 
 <head>
-        <title>MILESTONES</title>
+        <title>MY CLASS MILESTONES</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -137,11 +137,11 @@ function calc_raw_grade_new($core_grades_id,&$row)
 
 ?>
 
-<p><b> Milestones</p></b>
+<p><b> My Class Milestones</p></b>
 
 <p><b> Select Room: </p></b>
 
-<form method="post" action="/web/reports/generic/milestones.php">
+<form method="post" action="/web/reports/generic/milestones_class.php">
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -171,7 +171,7 @@ for($i = 0; $i < $numrows; $i++)
 function loadAgain()
 {
     	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/generic/milestones.php?room_id=' + y; 
+	document.location.href = '/web/reports/generic/milestones_class.php?room_id=' + y; 
 }
 </script>
 
