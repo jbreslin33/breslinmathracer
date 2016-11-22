@@ -349,6 +349,7 @@ echo '<table border=\"1\">';
 		$g3_oa_c_7 = 0;
 		$g3_nbt = 0;
 		
+		
 		$g4_oa_b_4 = 0;
 		$g4_nbt_b_4 = 0;
 		$g4_nbt_b_5 = 0;
@@ -416,6 +417,7 @@ echo '<table border=\"1\">';
 				$g2_nbt = 1;	
 				$row[12] = 1;
 			}
+
 		}
 
                 
