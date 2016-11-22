@@ -417,7 +417,58 @@ echo '<table border=\"1\">';
 				$g2_nbt = 1;	
 				$row[12] = 1;
 			}
-
+/*
+		$g5 = 0;
+		$g2 = 0;
+		$g4 = 0;
+		$g8 = 0;
+		$g3 = 0;
+		$g6 = 0;
+		$g9 = 0;
+		$g7 = 0;
+		$g3_oa_c_7 = 0;
+		$g3_nbt = 0;
+*/
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_5' && $row_m[5] == 1)
+			{
+				$g5 = 1;	
+				$row[13] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_2' && $row_m[5] == 1)
+			{
+				$g2 = 1;	
+				$row[14] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_4' && $row_m[5] == 1)
+			{
+				$g4 = 1;	
+				$row[15] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_8' && $row_m[5] == 1)
+			{
+				$g8 = 1;	
+				$row[16] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_3' && $row_m[5] == 1)
+			{
+				$g3 = 1;	
+				$row[17] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_6' && $row_m[5] == 1)
+			{
+				$g6 = 1;	
+				$row[18] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_9' && $row_m[5] == 1)
+			{
+				$g9 = 1;	
+				$row[19] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_7' && $row_m[5] == 1)
+			{
+				$g7 = 1;	
+				$row[20] = 1;
+			}
 		}
 
                 
