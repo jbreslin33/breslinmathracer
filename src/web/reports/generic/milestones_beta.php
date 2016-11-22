@@ -349,7 +349,6 @@ echo '<table border=\"1\">';
 		$g3_oa_c_7 = 0;
 		$g3_nbt = 0;
 		
-		
 		$g4_oa_b_4 = 0;
 		$g4_nbt_b_4 = 0;
 		$g4_nbt_b_5 = 0;
@@ -403,10 +402,7 @@ echo '<table border=\"1\">';
 				$g1_nbt = 1;	
 				$row[10] = 1;
 			}
-		
-	
-		//$g2_oa_b_2 = 0;
-		//$g2_nbt = 0;
+			
 			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2' && $row_m[5] == 1)
 			{
 				$g2_oa_b_2 = 1;	
@@ -417,18 +413,7 @@ echo '<table border=\"1\">';
 				$g2_nbt = 1;	
 				$row[12] = 1;
 			}
-/*
-		$g5 = 0;
-		$g2 = 0;
-		$g4 = 0;
-		$g8 = 0;
-		$g3 = 0;
-		$g6 = 0;
-		$g9 = 0;
-		$g7 = 0;
-		$g3_oa_c_7 = 0;
-		$g3_nbt = 0;
-*/
+			
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_5' && $row_m[5] == 1)
 			{
 				$g5 = 1;	
@@ -479,13 +464,7 @@ echo '<table border=\"1\">';
 				$g3_nbt = 1;	
 				$row[22] = 1;
 			}
-/*
-		$g4_oa_b_4 = 0;
-		$g4_nbt_b_4 = 0;
-		$g4_nbt_b_5 = 0;
-		$g4_nbt_b_6 = 0;
-		$g4_nf_b_3_c = 0;
-*/
+			
 			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4' && $row_m[5] == 1)
 			{
 				$g4_oa_b_4 = 1;	
@@ -511,13 +490,7 @@ echo '<table border=\"1\">';
 				$g4_nf_b_3_c = 1;	
 				$row[27] = 1;
 			}
-/*
-		$g5_oa_a_1 = 0;
-		$g5_nbt_b_5 = 0;
-		$g5_nbt_b_6 = 0;
-		$g5_nbt_b_7 = 0;
-		$g5_nf_a_1 = 0;
-*/
+			
 			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1' && $row_m[5] == 1)
 			{
 				$g5_oa_a_1 = 1;	
@@ -543,13 +516,7 @@ echo '<table border=\"1\">';
 				$g5_nf_a_1 = 1;	
 				$row[32] = 1;
 			}
-	/*	
-		$g6_rp = 0;
-		$g6_ns = 0;
-		$g6_ee = 0;
-		$g6_g = 0;
-		$g6_sp = 0;
-*/
+			
 			if ($id == $row_m[0] && $row_m[3] == '6_rp' && $row_m[5] == 1)
 			{
 				$g6_rp = 1;	
@@ -596,7 +563,6 @@ echo '<table border=\"1\">';
 		$raw_grade = calc_raw_grade($core_grades_id,$row);
                 echo $raw_grade;
                 echo '</td>';
-
 
 //BEGIN PRE DATE 
 		$r = $raw_grade - 60;
@@ -712,8 +678,6 @@ echo '<table border=\"1\">';
                 echo $core_standards_id;
                 echo '</td>';
 
-		
-
 		if ($k_cc == 1)
 		{
  			echo '<td bgcolor="green">';
@@ -735,7 +699,6 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
-
 
                 if ($k_oa_a_5 == 1)
                 {
@@ -771,8 +734,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-
-
                 if ($g1_nbt == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -784,8 +745,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-
-
                 if ($g2_oa_b_2 == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -796,7 +755,6 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
-
 
                 if ($g2_nbt == 1)
                 {
@@ -908,8 +866,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-
-
                 if ($g3_nbt == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -942,8 +898,6 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
-
-
 
                 if ($g4_nbt_b_5 == 1)
                 {
@@ -1022,8 +976,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-               
-
 		if ($g5_nf_a_1 == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -1034,9 +986,6 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
-
-                
-
 
                 if ($g6_rp == 1)
                 {
@@ -1049,7 +998,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-
                 if ($g6_ns == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -1060,7 +1008,6 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
-
 
                 if ($g6_ee == 1)
                 {
@@ -1073,7 +1020,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-
                 if ($g6_g == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -1085,7 +1031,6 @@ echo '<table border=\"1\">';
                 echo '';
                 echo '</td>';
 
-
                 if ($g6_sp == 1)
                 {
                         echo '<td bgcolor="green">';
@@ -1096,7 +1041,6 @@ echo '<table border=\"1\">';
                 }
                 echo '';
                 echo '</td>';
-
 
 		echo '</tr>';
         }
