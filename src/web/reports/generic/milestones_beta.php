@@ -479,6 +479,38 @@ echo '<table border=\"1\">';
 				$g3_nbt = 1;	
 				$row[22] = 1;
 			}
+/*
+		$g4_oa_b_4 = 0;
+		$g4_nbt_b_4 = 0;
+		$g4_nbt_b_5 = 0;
+		$g4_nbt_b_6 = 0;
+		$g4_nf_b_3_c = 0;
+*/
+			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4' && $row_m[5] == 1)
+			{
+				$g4_oa_b_4 = 1;	
+				$row[23] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			{
+				$g4_nbt_b_4 = 1;	
+				$row[24] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			{
+				$g4_nbt_b_5 = 1;	
+				$row[25] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			{
+				$g4_nbt_b_6 = 1;	
+				$row[26] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c' && $row_m[5] == 1)
+			{
+				$g4_nf_b_3_c = 1;	
+				$row[27] = 1;
+			}
 		}
 
                 
