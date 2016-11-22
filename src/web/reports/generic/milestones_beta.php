@@ -511,9 +511,39 @@ echo '<table border=\"1\">';
 				$g4_nf_b_3_c = 1;	
 				$row[27] = 1;
 			}
+/*
+		$g5_oa_a_1 = 0;
+		$g5_nbt_b_5 = 0;
+		$g5_nbt_b_6 = 0;
+		$g5_nbt_b_7 = 0;
+		$g5_nf_a_1 = 0;
+*/
+			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1' && $row_m[5] == 1)
+			{
+				$g5_oa_a_1 = 1;	
+				$row[28] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5' && $row_m[5] == 1)
+			{
+				$g5_nbt_b_5 = 1;	
+				$row[29] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6' && $row_m[5] == 1)
+			{
+				$g5_nbt_b_6 = 1;	
+				$row[30] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7' && $row_m[5] == 1)
+			{
+				$g5_nbt_b_7 = 1;	
+				$row[31] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1' && $row_m[5] == 1)
+			{
+				$g5_nf_a_1 = 1;	
+				$row[32] = 1;
+			}
 		}
-
-                
 
                 echo '<tr>';
                 echo '<td>';
