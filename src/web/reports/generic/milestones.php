@@ -151,9 +151,6 @@ $query .= " order by name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
 
-//echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
-//$one_row = pg_fetch_array($result, 0);
-//echo "<option selected=\"selected\" value=$one_row[0]>$one_row[1]</option>";
 echo "<option selected=\"selected\" value=0>0</option>";
 
 for($i = 0; $i < $numrows; $i++)
