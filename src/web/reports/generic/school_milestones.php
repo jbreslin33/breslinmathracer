@@ -322,7 +322,7 @@ for($i = 0; $i < $num_rooms; $i++)
         $last_activity = '';
         $tmp_grade = '';
 
-        $query = "select last_activity, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
+        $query = "select id, first_name, last_name, core_standards_id, score, k_cc, k_oa_a_4, k_oa_a_5, g1_oa_b_3, g1_oa_c_6, g1_nbt, g2_oa_b_2, g2_nbt, alltimefive, alltimetwo, alltimefour, alltimeeight, alltimethree, alltimesix, alltimenine, alltimeseven, g3_oa_c_7, g3_nbt, g4_oa_b_4, g4_nbt_b_4, g4_nbt_b_5, g4_nbt_b_6, g4_nf_b_3_c, g5_oa_a_1, g5_nbt_b_5, g5_nbt_b_6, g5_nbt_b_7, g5_nf_a_1, g6_rp, g6_ns, g6_ee, g6_g, g6_sp, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
 	if ($rooms_row[0] != 0)
 	{
@@ -351,49 +351,237 @@ for($i = 0; $i < $num_rooms; $i++)
 		$passed_tables = true;
 
                 $row = pg_fetch_array($result, $x);
-                $last_activity = $row[0];
+
+                $id = $row[0];
                 $core_grades_id = $row[38];
                 $core_standards_id = $row[3];
-                $k_cc = $row[5];
-                $k_oa_a_4 = $row[6];
-                $k_oa_a_5 = $row[7];
-                
-		$g1_oa_b_3 = $row[8];
-		$g1_oa_c_6 = $row[9];
-		$g1_nbt = $row[10];
-		
-		$g2_oa_b_2 = $row[11];
-		$g2_nbt = $row[12];
-		
-		$g5 = $row[13];
-		$g2 = $row[14];
-		$g4 = $row[15];
-		$g8 = $row[16];
-		$g3 = $row[17];
-		$g6 = $row[18];
-		$g9 = $row[19];
-		$g7 = $row[20];
-		$g3_oa_c_7 = $row[21];
-		$g3_nbt = $row[22];
-		
-		$g4_oa_b_4 = $row[23];
-		$g4_nbt_b_4 = $row[24];
-		$g4_nbt_b_5 = $row[25];
-		$g4_nbt_b_6 = $row[26];
-		$g4_nf_b_3_c = $row[27];
-		
-		$g5_oa_a_1 = $row[28];
-		$g5_nbt_b_5 = $row[29];
-		$g5_nbt_b_6 = $row[30];
-		$g5_nbt_b_7 = $row[31];
-		$g5_nf_a_1 = $row[32];
-		
-		$g6_rp = $row[33];
-		$g6_ns = $row[34];
-		$g6_ee = $row[35];
-		$g6_g = $row[36];
-		$g6_sp = $row[37];
-                
+
+                for($r = 5; $r < 38; $r++)
+                {
+                        $row[] = 0;
+                }
+
+                $k_cc = 0;
+                $k_oa_a_4 = 0;
+                $k_oa_a_5 = 0;
+
+                $g1_oa_b_3 = 0;
+                $g1_oa_c_6 = 0;
+                $g1_nbt = 0;
+
+                $g2_oa_b_2 = 0;
+                $g2_nbt = 0;
+
+                $g5 = 0;
+                $g2 = 0;
+                $g4 = 0;
+                $g8 = 0;
+                $g3 = 0;
+                $g6 = 0;
+                $g9 = 0;
+                $g7 = 0;
+                $g3_oa_c_7 = 0;
+                $g3_nbt = 0;
+
+                $g4_oa_b_4 = 0;
+                $g4_nbt_b_4 = 0;
+                $g4_nbt_b_5 = 0;
+                $g4_nbt_b_6 = 0;
+                $g4_nf_b_3_c = 0;
+
+                $g5_oa_a_1 = 0;
+                $g5_nbt_b_5 = 0;
+                $g5_nbt_b_6 = 0;
+                $g5_nbt_b_7 = 0;
+                $g5_nf_a_1 = 0;
+
+                $g6_rp = 0;
+                $g6_ns = 0;
+                $g6_ee = 0;
+                $g6_g = 0;
+                $g6_sp = 0;
+
+//fill in row to be used everywhere
+		for($m = 0; $m < $numrows_m; $m++)
+		{
+                	$row_m = pg_fetch_array($result_m, $m);
+
+			if ($id == $row_m[0] && $row_m[3] == 'k_cc' && $row_m[5] == 1)
+			{
+				$k_cc = 1;	
+				$row[5] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_4' && $row_m[5] == 1)
+			{
+				$k_oa_a_4 = 1;	
+				$row[6] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_5' && $row_m[5] == 1)
+			{
+				$k_oa_a_5 = 1;	
+				$row[7] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3' && $row_m[5] == 1)
+			{
+				$g1_oa_b_3 = 1;	
+				$row[8] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '1_oa_c_6' && $row_m[5] == 1)
+			{
+				$g1_oa_c_6 = 1;	
+				$row[9] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '1_nbt' && $row_m[5] == 1)
+			{
+				$g1_nbt = 1;	
+				$row[10] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2' && $row_m[5] == 1)
+			{
+				$g2_oa_b_2 = 1;	
+				$row[11] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '2_nbt' && $row_m[5] == 1)
+			{
+				$g2_nbt = 1;	
+				$row[12] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_5' && $row_m[5] == 1)
+			{
+				$g5 = 1;	
+				$row[13] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_2' && $row_m[5] == 1)
+			{
+				$g2 = 1;	
+				$row[14] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_4' && $row_m[5] == 1)
+			{
+				$g4 = 1;	
+				$row[15] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_8' && $row_m[5] == 1)
+			{
+				$g8 = 1;	
+				$row[16] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_3' && $row_m[5] == 1)
+			{
+				$g3 = 1;	
+				$row[17] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_6' && $row_m[5] == 1)
+			{
+				$g6 = 1;	
+				$row[18] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_9' && $row_m[5] == 1)
+			{
+				$g9 = 1;	
+				$row[19] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_7' && $row_m[5] == 1)
+			{
+				$g7 = 1;	
+				$row[20] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7' && $row_m[5] == 1)
+			{
+				$g3_oa_c_7 = 1;	
+				$row[21] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '3_nbt' && $row_m[5] == 1)
+			{
+				$g3_nbt = 1;	
+				$row[22] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4' && $row_m[5] == 1)
+			{
+				$g4_oa_b_4 = 1;	
+				$row[23] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			{
+				$g4_nbt_b_4 = 1;	
+				$row[24] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			{
+				$g4_nbt_b_5 = 1;	
+				$row[25] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			{
+				$g4_nbt_b_6 = 1;	
+				$row[26] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c' && $row_m[5] == 1)
+			{
+				$g4_nf_b_3_c = 1;	
+				$row[27] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1' && $row_m[5] == 1)
+			{
+				$g5_oa_a_1 = 1;	
+				$row[28] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5' && $row_m[5] == 1)
+			{
+				$g5_nbt_b_5 = 1;	
+				$row[29] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6' && $row_m[5] == 1)
+			{
+				$g5_nbt_b_6 = 1;	
+				$row[30] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7' && $row_m[5] == 1)
+			{
+				$g5_nbt_b_7 = 1;	
+				$row[31] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1' && $row_m[5] == 1)
+			{
+				$g5_nf_a_1 = 1;	
+				$row[32] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == '6_rp' && $row_m[5] == 1)
+			{
+				$g6_rp = 1;	
+				$row[33] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_ns' && $row_m[5] == 1)
+			{
+				$g6_ns = 1;	
+				$row[34] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_ee' && $row_m[5] == 1)
+			{
+				$g6_ee = 1;	
+				$row[35] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_g' && $row_m[5] == 1)
+			{
+				$g6_g = 1;	
+				$row[36] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '6_sp' && $row_m[5] == 1)
+			{
+				$g6_sp = 1;	
+				$row[37] = 1;
+			}
+		}
+//end fill in row
+
+
+
 		$raw_grade = 60;
 		$raw_grade_new = 60;
 
