@@ -281,7 +281,7 @@ echo '<table border=\"1\">';
         $score = '';
 //ms
 	
-	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case, sub.start_time FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations_attempts.start_time, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
+	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case, sub.start_time FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations_attempts.start_time, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
 
 	if ($room_id != 0)
 	{
