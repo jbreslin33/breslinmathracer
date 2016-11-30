@@ -281,18 +281,18 @@ echo '<table border=\"1\">';
         $score = '';
 //ms
 	
-	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case, sub.start_time FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations_attempts.start_time, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
+	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
 
 	if ($room_id != 0)
 	{
 		$query_m .= " AND users.room_id = ";
         	$query_m .= $room_id;
 	}
-	$query_m .= " AND item_attempts.transaction_code = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.start_time, evaluations.score_needed) sub WHERE sub.case = 1 order by sub.last_name, sub.progression;";
+	$query_m .= " AND item_attempts.transaction_code = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.case = 1 order by sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 
-	error_log($query_m);
+	//error_log($query_m);
 
 //users
         $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and school_id = ";
@@ -305,7 +305,7 @@ echo '<table border=\"1\">';
         $query .= " order by score desc;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
-	error_log($query);
+	//error_log($query);
 
 	
 	$total_raw_grade = 0;
