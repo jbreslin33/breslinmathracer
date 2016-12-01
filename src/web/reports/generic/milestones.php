@@ -475,12 +475,12 @@ echo '<table border=\"1\">';
 				$g4_nbt_b_4 = 1;	
 				$row[24] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5' && $row_m[5] == 1)
 			{
 				$g4_nbt_b_5 = 1;	
 				$row[25] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6' && $row_m[5] == 1)
 			{
 				$g4_nbt_b_6 = 1;	
 				$row[26] = 1;
