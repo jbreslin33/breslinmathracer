@@ -292,7 +292,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
 }
 
 //ms
-        $query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case, sub.start_time, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations_attempts.start_time, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (";
+        $query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (";
 
 	for($r = 0; $r < $num_rooms; $r++)
 	{
@@ -310,7 +310,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
         $query_m .= ") AND item_attempts.transaction_code = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.start_time, evaluations.score_needed) sub WHERE sub.case = 1 order by sub.room_id, sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
-        error_log($query_m);
+        //error_log($query_m);
 //end ms
 
 
