@@ -280,15 +280,26 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 //ms
-	
-	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
+/*
+select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations.score_needed,      COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as "incorrect",
+    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as "correct"   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND users.room_id = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.incorrect = 0 AND sub.correct >= sub.score_needed order by sub.last_name, sub.progression;
+
+*/	
+	//$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.case FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
+
+	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations.score_needed,      COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as incorrect,
+    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
 
 	if ($room_id != 0)
 	{
 		$query_m .= " AND users.room_id = ";
         	$query_m .= $room_id;
 	}
-	$query_m .= " AND item_attempts.transaction_code = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.case = 1 order by sub.last_name, sub.progression;";
+
+	//$query_m .= " AND item_attempts.transaction_code = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.case = 1 order by sub.last_name, sub.progression;";
+
+	$query_m .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.incorrect = 0 AND sub.correct >= sub.score_needed order by sub.last_name, sub.progression;";
+
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 
@@ -371,173 +382,173 @@ echo '<table border=\"1\">';
 		{
                 	$row_m = pg_fetch_array($result_m, $m);
 
-			if ($id == $row_m[0] && $row_m[3] == 'k_cc' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'k_cc')
 			{
 				$k_cc = 1;	
 				$row[5] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_4' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_4')
 			{
 				$k_oa_a_4 = 1;	
 				$row[6] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_5' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_5')
 			{
 				$k_oa_a_5 = 1;	
 				$row[7] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3')
 			{
 				$g1_oa_b_3 = 1;	
 				$row[8] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '1_oa_c_6' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '1_oa_c_6')
 			{
 				$g1_oa_c_6 = 1;	
 				$row[9] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '1_nbt' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '1_nbt')
 			{
 				$g1_nbt = 1;	
 				$row[10] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2')
 			{
 				$g2_oa_b_2 = 1;	
 				$row[11] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '2_nbt' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '2_nbt')
 			{
 				$g2_nbt = 1;	
 				$row[12] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_5' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_5')
 			{
 				$g5 = 1;	
 				$row[13] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_2' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_2')
 			{
 				$g2 = 1;	
 				$row[14] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_4' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_4')
 			{
 				$g4 = 1;	
 				$row[15] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_8' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_8')
 			{
 				$g8 = 1;	
 				$row[16] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_3' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_3')
 			{
 				$g3 = 1;	
 				$row[17] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_6' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_6')
 			{
 				$g6 = 1;	
 				$row[18] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_9' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_9')
 			{
 				$g9 = 1;	
 				$row[19] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_7' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == 'timestables_7')
 			{
 				$g7 = 1;	
 				$row[20] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7')
 			{
 				$g3_oa_c_7 = 1;	
 				$row[21] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '3_nbt' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '3_nbt')
 			{
 				$g3_nbt = 1;	
 				$row[22] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4')
 			{
 				$g4_oa_b_4 = 1;	
 				$row[23] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4')
 			{
 				$g4_nbt_b_4 = 1;	
 				$row[24] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5')
 			{
 				$g4_nbt_b_5 = 1;	
 				$row[25] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6')
 			{
 				$g4_nbt_b_6 = 1;	
 				$row[26] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c')
 			{
 				$g4_nf_b_3_c = 1;	
 				$row[27] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1')
 			{
 				$g5_oa_a_1 = 1;	
 				$row[28] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5')
 			{
 				$g5_nbt_b_5 = 1;	
 				$row[29] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6')
 			{
 				$g5_nbt_b_6 = 1;	
 				$row[30] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7')
 			{
 				$g5_nbt_b_7 = 1;	
 				$row[31] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1')
 			{
 				$g5_nf_a_1 = 1;	
 				$row[32] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == '6_rp' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '6_rp')
 			{
 				$g6_rp = 1;	
 				$row[33] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '6_ns' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '6_ns')
 			{
 				$g6_ns = 1;	
 				$row[34] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '6_ee' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '6_ee')
 			{
 				$g6_ee = 1;	
 				$row[35] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '6_g' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '6_g')
 			{
 				$g6_g = 1;	
 				$row[36] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '6_sp' && $row_m[5] == 1)
+			if ($id == $row_m[0] && $row_m[3] == '6_sp')
 			{
 				$g6_sp = 1;	
 				$row[37] = 1;
