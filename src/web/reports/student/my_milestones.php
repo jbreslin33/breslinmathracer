@@ -46,11 +46,16 @@ echo '<table border=\"1\">';
         echo '<td>passed';
         echo '</td>';
         echo '</tr>';
+/*
+COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as incorrect,
+    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct  
+*/
 
-	$query = "select evaluations_attempts.start_time, evaluations.description, case when count(*) >= evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND evaluations_attempts.start_time > '2016-09-10 09:28:27.777635'AND user_id = ";
+	$query = "select evaluations_attempts.start_time, evaluations.description,      COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as incorrect,
+    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, evaluations.score_needed           from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND evaluations_attempts.start_time > '2016-09-10 09:28:27.777635'AND user_id = ";
 
         $query .= $_SESSION["user_id"];
-        $query .= " AND item_attempts.transaction_code = 1 AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
+        $query .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
@@ -71,7 +76,10 @@ echo '<table border=\"1\">';
                 	$row = pg_fetch_array($result, $y);
 			if ($description == $row[1])
 			{
-				$passed = $row[2]; 
+				if ($row[3] >= $row[4] && $row[2] == 0) 
+				{
+					$passed = 1; 
+				}
 			}
 
 			$y++;

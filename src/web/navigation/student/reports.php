@@ -30,7 +30,6 @@ session_start();
 
 <li><a href="/web/reports/student/milestone_attempts.php">Milestone Attempts</a></li>
 
-<li><a href="/web/reports/student/milestones_class.php">My Class Milestones</a></li>
 <li><a href="/web/reports/student/my_milestones.php">My Milestones</a></li>
 
 <li><a href="/web/reports/generic/school_milestones.php">School Competition</a></li>
