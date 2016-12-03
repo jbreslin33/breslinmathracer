@@ -51,7 +51,7 @@ COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as inc
     COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct  
 */
 
-	$query = "select evaluations_attempts.start_time, evaluations.description,      COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as incorrect,
+	$query = "select evaluations_attempts.start_time, evaluations.description,      COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
     COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, evaluations.score_needed           from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND evaluations_attempts.start_time > '2016-09-10 09:28:27.777635'AND user_id = ";
 
         $query .= $_SESSION["user_id"];
