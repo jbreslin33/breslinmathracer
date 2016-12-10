@@ -3,9 +3,8 @@
 <html>
 
 <head>
-        <title>INCORRECT ITEM ATTEMPTS REAL TIME -- UPDATES AUTOMAGICALLY EVERY 30 SECONDS</title>
+        <title>INCORRECT ITEM ATTEMPTS REAL TIME</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
-<meta http-equiv="refresh" content="30">
 </head>
 
 <body>
@@ -42,6 +41,9 @@ echo '<table border=\"1\">';
         
 	echo '<td> Name';
         echo '</td>';
+	
+	echo '<td> Room';
+        echo '</td>';
 
         echo '<td> Item Type ';
         echo '</td>';
@@ -65,7 +67,7 @@ echo '<table border=\"1\">';
 	$score = '';
 	$unmastered = '';
 
-	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id ";
+	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name, rooms.name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id JOIN rooms ON users.room_id=rooms.id";
 	$query .= " where transaction_code = 2 order by start_time desc LIMIT 30;";
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
@@ -81,6 +83,7 @@ echo '<table border=\"1\">';
 		$user_answer = $row[5];
 		$first_name = $row[6];
 		$last_name = $row[7];
+		$room = $row[8];
        	
 		echo '<tr>';
 
@@ -110,6 +113,12 @@ echo '<table border=\"1\">';
         	echo $first_name;
         	echo " ";
         	echo $last_name;
+        	echo '</td>';
+        	
+		echo '<td bgcolor="';
+		echo $bcolor;
+		echo '">';
+        	echo $room;
         	echo '</td>';
 
         	echo '<td bgcolor="';
