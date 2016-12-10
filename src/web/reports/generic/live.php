@@ -165,8 +165,13 @@ echo '<table border=\"1\">';
 	$unmastered = '';
 
 	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name, rooms.name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id JOIN rooms ON users.room_id=rooms.id";
-	$query .= " where room_id = ";
-	$query .= $room_id;
+
+	//filter
+	if ($room_id != 0)
+	{
+		$query .= " where room_id = ";
+		$query .= $room_id;
+	}
 
 	if ($category == "all")
 	{
