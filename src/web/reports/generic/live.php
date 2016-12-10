@@ -97,19 +97,9 @@ for($i = 0; $i < $numrows; $i++)
 <select id="category" name="category" onchange="loadAgain()">
 <?php
 $category_array = array();
-$category_array[] = "score";
-$category_array[] = "alltime";
-$category_array[] = "alltimeizzy";
-$category_array[] = "alltimetwo";
-$category_array[] = "alltimethree";
-$category_array[] = "alltimefour";
-$category_array[] = "alltimefive";
-$category_array[] = "alltimesix";
-$category_array[] = "alltimeseven";
-$category_array[] = "alltimeeight";
-$category_array[] = "alltimenine";
-$category_array[] = "alltimekoaa5";
-$category_array[] = "unmastered";
+$category_array[] = "all"; // 012
+$category_array[] = "incorrect"; //2
+$category_array[] = "correct"; //1
 
 echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
 for($i = 0; $i < sizeof($category_array); $i++)
