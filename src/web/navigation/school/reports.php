@@ -18,6 +18,7 @@ session_start();
 <li><a href="/web/navigation/school/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
+<li><a href="/web/reports/generic/live.php">Live</a></li>
 <li><a href="/web/reports/generic/item_attempts_realtime.php">Playing</a></li>
 <li><a href="/web/reports/generic/incorrect_attempts_realtime.php">Live Incorrect</a></li>
 <li><a href="/web/reports/generic/tests.php">Evaluation Answers and Questions</a></li>
