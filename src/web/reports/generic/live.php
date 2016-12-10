@@ -65,6 +65,77 @@ else
 echo "<br>";
 ?>
 
+<p><b> Select Room and Category: </p></b>
+
+<form method="post" action="/web/reports/generic/live.php">
+
+<select id="room_id" name="room_id" onchange="loadAgain()">
+<?php
+$query = "select id, name from rooms where school_id = ";
+$query .= $_SESSION["school_id"];
+$query .= " order by name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"Entire School\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $room_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+
+<select id="category" name="category" onchange="loadAgain()">
+<?php
+$category_array = array();
+$category_array[] = "score";
+$category_array[] = "alltime";
+$category_array[] = "alltimeizzy";
+$category_array[] = "alltimetwo";
+$category_array[] = "alltimethree";
+$category_array[] = "alltimefour";
+$category_array[] = "alltimefive";
+$category_array[] = "alltimesix";
+$category_array[] = "alltimeseven";
+$category_array[] = "alltimeeight";
+$category_array[] = "alltimenine";
+$category_array[] = "alltimekoaa5";
+$category_array[] = "unmastered";
+
+echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";
+for($i = 0; $i < sizeof($category_array); $i++)
+{
+        if ($category_array[$i] == $category)
+        {
+                echo "<option selected=\"selected\" value=\"$category_array[$i]\"> $category_array[$i] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$category_array[$i]\"> $category_array[$i] </option>";
+        }
+}
+
+?>
+</select>
+
+<script>
+function loadAgain()
+{
+        var y = document.getElementById("room_id").value;
+        var z = document.getElementById("category").value;
+        document.location.href = '/web/reports/generic/live.php?room_id=' + y + '&category=' + z;
+}
+</script>
+
 
 
 <?php
