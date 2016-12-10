@@ -62,12 +62,11 @@ else
 {
         $category = 'score';
 }
-echo "<br>";
 ?>
 
-<p><b> Select Room and Category: </p></b>
-
 <form method="post" action="/web/reports/generic/live.php">
+<b>Room:</b>
+
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
@@ -93,6 +92,7 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
+<b>Score:</b>
 
 <select id="category" name="category" onchange="loadAgain()">
 <?php
