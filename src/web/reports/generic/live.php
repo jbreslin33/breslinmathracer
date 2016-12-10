@@ -32,8 +32,10 @@ include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
 $room_id = 0;
+$user_id = 0;
 $category = 0;
 $id = 0;
+
 
 if (isset($_POST["room_id"]))
 {
@@ -48,6 +50,21 @@ else
 {
 
 }
+
+if (isset($_POST["user_id"]))
+{
+        $user_id = $_POST["user_id"];
+}
+
+else if (isset($_GET['user_id']))
+{
+        $room_id = $_GET['user_id'];
+}
+else
+{
+
+}
+
 
 if (isset($_POST["category"]))
 {
@@ -65,9 +82,8 @@ else
 ?>
 
 <form method="post" action="/web/reports/generic/live.php">
+
 <b>Room:</b>
-
-
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
 $query = "select id, name from rooms where school_id = ";
@@ -92,7 +108,36 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
-<b>Score:</b>
+
+b>Student:</b>
+<select id="user_id" name="user_id" onchange="loadAgain()">
+<?php
+$query = "select id, first_name, last_name from users where room_id = ";
+$query .= $room_id;
+$query .= " order by last_name asc;";
+$result = pg_query($conn,$query);
+$numrows = pg_numrows($result);
+
+echo "<option selected=\"selected\" value=\"0\"> \"All Students\" </option>";
+
+for($i = 0; $i < $numrows; $i++)
+{
+        $row = pg_fetch_array($result, $i);
+        if ($row[0] == $user_id)
+        {
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$row[0]\"> $row[1] </option>";
+        }
+}
+?>
+</select>
+
+
+
+<b>Answer:</b>
 
 <select id="category" name="category" onchange="loadAgain()">
 <?php
