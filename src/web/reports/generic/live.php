@@ -58,7 +58,7 @@ if (isset($_POST["user_id"]))
 
 else if (isset($_GET['user_id']))
 {
-        $room_id = $_GET['user_id'];
+        $user_id = $_GET['user_id'];
 }
 else
 {
@@ -169,9 +169,10 @@ for($i = 0; $i < sizeof($category_array); $i++)
 <script>
 function loadAgain()
 {
+        var x = document.getElementById("user_id").value;
         var y = document.getElementById("room_id").value;
         var z = document.getElementById("category").value;
-        document.location.href = '/web/reports/generic/live.php?room_id=' + y + '&category=' + z;
+        document.location.href = '/web/reports/generic/live.php?user_id=' + x + '&room_id=' + y + '&category=' + z;
 }
 </script>
 
@@ -215,24 +216,55 @@ echo '<table border=\"1\">';
 
 	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name, rooms.name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id JOIN rooms ON users.room_id=rooms.id";
 
-	//filter
+	//filters
+
+	//room filter
 	if ($room_id != 0)
 	{
 		$query .= " where room_id = ";
 		$query .= $room_id;
 	}
 
+	//user filter	
+	if ($user_id != 0)
+	{
+		if ($room_id == 0)
+		{
+			$query .= " where users.id = ";
+		}
+		else
+		{
+			$query .= " AND users.id = ";
+		}
+		$query .= $user_id;
+	}
+
+	//transaction code filter
 	if ($category == "all")
 	{
 		$query .= " order by start_time desc LIMIT 30;";
 	}
 	else if ($category == "correct")
 	{
-		$query .= " AND transaction_code = 1 order by start_time desc LIMIT 30;";
+		if ($room_id == 0 && $user_id == 0)
+		{
+			$query .= " where transaction_code = 1 order by start_time desc LIMIT 30;";
+		}
+		else
+		{
+			$query .= " AND transaction_code = 1 order by start_time desc LIMIT 30;";
+		}
 	}
 	else if ($category == "incorrect")
 	{
-		$query .= " AND transaction_code = 2 order by start_time desc LIMIT 30;";
+		if ($room_id == 0 && $user_id == 0)
+		{
+			$query .= " where transaction_code = 2 order by start_time desc LIMIT 30;";
+		}
+		else
+		{
+			$query .= " AND transaction_code = 2 order by start_time desc LIMIT 30;";
+		}
 	}
 	else 
 	{
