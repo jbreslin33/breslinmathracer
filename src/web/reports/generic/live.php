@@ -109,11 +109,15 @@ for($i = 0; $i < $numrows; $i++)
 ?>
 </select>
 
-b>Student:</b>
+<b>Student:</b>
 <select id="user_id" name="user_id" onchange="loadAgain()">
 <?php
-$query = "select id, first_name, last_name from users where room_id = ";
-$query .= $room_id;
+$query = "select id, first_name, last_name from users ";
+if ($room_id != 0)
+{
+	$query .= " where room_id = ";
+	$query .= $room_id;
+}
 $query .= " order by last_name asc;";
 $result = pg_query($conn,$query);
 $numrows = pg_numrows($result);
