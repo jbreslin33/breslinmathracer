@@ -42,6 +42,30 @@ var Hud = new Class(
 
 	this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","#F8CDF8","boundary");
 	//this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","green","boundary");
+
+//TABLE BEGIN
+	this.mTable = new Shape(200,50,770,100,this,"TABLE","","");
+
+	//row 0
+        var r0 = this.mTable.mMesh.insertRow(0);
+
+        var r0c0 = r0.insertCell(0);
+        var r0c1 = r0.insertCell(1);
+
+        r0c0.innerHTML = 'r0c0';
+        r0c1.innerHTML = 'r0c1';
+
+        //row1
+        var r1 = this.mTable.mMesh.insertRow(1);
+
+        var r1c0 = r1.insertCell(0);
+        var r1c1 = r1.insertCell(1);
+
+        r1c0.innerHTML = 'r1c0';
+        r1c1.innerHTML = 'r1c1';
+
+
+//TABLE END
 	
 	eastBounds  = new Shape         ( 10, 50,760, 35,"","","#F8CDF8","boundary");
         eastBounds  = new Shape         ( 10, 50,760, 85,"","","#F6C0F6","boundary");
