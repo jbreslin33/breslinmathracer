@@ -218,21 +218,6 @@ function calc_raw_grade($core_grades_id,&$row)
 
 function check_passed_grade_level($core_grades_id,&$row)
 {
-	if ($row[3] == 7)
-	{
-		$name = $row[1];
-		$name .= " ";
-		$name = $row[2];
-		if ($passed_grade_level == true)
-		{
-			$name .= " passed";
-		}
-		else
-		{
-			$name .= " failed";
-		}
-		error_log($name);	
-	}
 
 	if ($core_grades_id == NULL)
 	{
@@ -251,6 +236,19 @@ function check_passed_grade_level($core_grades_id,&$row)
 			}
                 }
         }
+
+	if ($core_grades_id == 7)
+	{
+		if ($passed_grade_level == true)
+		{
+			$name = $row[1];
+			$name .= " ";
+			$name .= $row[2];
+			$name .= " passed";
+			error_log($name);	
+		}
+	}
+
         return $passed_grade_level;
 }
 
