@@ -152,16 +152,16 @@ $bonus_new_array[] = 1.22;
 $bonus_new_array[] = 1.22;
 $bonus_new_array[] = 1.22;
 
-$pre_end[] = 0;
-$pre_end[] = 0;
-$pre_end[] = 8;
-$pre_end[] = 11;
-$pre_end[] = 13;
-$pre_end[] = 23;
-$pre_end[] = 28;
-$pre_end[] = 33; 
-$pre_end[] = 38;
-$pre_end[] = 38;
+$pre_end[] = 0; //0
+$pre_end[] = 0; //1
+$pre_end[] = 8; //2
+$pre_end[] = 11; //3
+$pre_end[] = 13; //4
+$pre_end[] = 23; //5
+$pre_end[] = 28; //6
+$pre_end[] = 33; //7
+$pre_end[] = 38; //8
+$pre_end[] = 38; //9
 
 $new_end[] = 0;
 $new_end[] = 0;
@@ -218,12 +218,16 @@ function calc_raw_grade($core_grades_id,&$row)
 
 function check_passed_grade_level($core_grades_id,&$row)
 {
+	//$txt = 'core_grades_id:';
+	//$txt .= $core_grades_id;
+	//error_log($txt);	
 	if ($core_grades_id == NULL)
 	{
 		return false;
 	}
 	global $pre_end;
 	$passed_grade_level = true;	
+//33
 	for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
         {
                 if ($row[$j] == 0)
@@ -499,7 +503,8 @@ for($i = 0; $i < $num_rooms; $i++)
 				$g3_nbt = 1;	
 				$row[22] = 1;
 			}
-			
+		
+			//skip for grade level checks....	
 			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4')
 			{
 				$g4_oa_b_4 = 1;	
@@ -510,12 +515,12 @@ for($i = 0; $i < $num_rooms; $i++)
 				$g4_nbt_b_4 = 1;	
 				$row[24] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4')
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5')
 			{
 				$g4_nbt_b_5 = 1;	
 				$row[25] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4')
+			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6')
 			{
 				$g4_nbt_b_6 = 1;	
 				$row[26] = 1;
