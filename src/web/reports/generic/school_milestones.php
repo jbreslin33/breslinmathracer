@@ -218,9 +218,22 @@ function calc_raw_grade($core_grades_id,&$row)
 
 function check_passed_grade_level($core_grades_id,&$row)
 {
-	//$txt = 'core_grades_id:';
-	//$txt .= $core_grades_id;
-	//error_log($txt);	
+	if ($row[3] == 7)
+	{
+		$name = $row[1];
+		$name .= " ";
+		$name = $row[2];
+		if ($passed_grade_level == true)
+		{
+			$name .= " passed";
+		}
+		else
+		{
+			$name .= " failed";
+		}
+		error_log($name);	
+	}
+
 	if ($core_grades_id == NULL)
 	{
 		return false;
@@ -593,9 +606,11 @@ for($i = 0; $i < $num_rooms; $i++)
 		$passed_add_sub = check_add_sub($core_grades_id,$row);
 
 		$raw_grade = calc_raw_grade($core_grades_id,$row);
+
 		$passed_grade_level = check_passed_grade_level($core_grades_id,$row);
 		$passed_tables = check_passed_tables($core_grades_id,$row);
-		
+
+
 		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
 		$passed_grade_level_new = check_passed_grade_level_new($core_grades_id,$row);
 
