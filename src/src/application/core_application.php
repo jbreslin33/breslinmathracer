@@ -375,6 +375,12 @@ Extends: Application,
 		this.mHighest = highest;
 	},
 
+	updateAttemptTable: function()
+	{
+
+	
+	},
+
 	calcScore: function()
 	{
 		var score = this.mMilestonesStandardElement;

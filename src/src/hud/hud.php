@@ -46,23 +46,47 @@ var Hud = new Class(
 //TABLE BEGIN
 	this.mTable = new Shape(200,50,770,100,this,"TABLE","","");
 
-	//row 0
-        var r0 = this.mTable.mMesh.insertRow(0);
+	//rows 
+        this.r0 = this.mTable.mMesh.insertRow(0);
+        this.r1 = this.mTable.mMesh.insertRow(1);
+        this.r2 = this.mTable.mMesh.insertRow(2);
+        this.r3 = this.mTable.mMesh.insertRow(3);
+        this.r4 = this.mTable.mMesh.insertRow(4);
+        this.r5 = this.mTable.mMesh.insertRow(5);
+        this.r6 = this.mTable.mMesh.insertRow(6);
+        this.r7 = this.mTable.mMesh.insertRow(7);
+        this.r8 = this.mTable.mMesh.insertRow(8);
+        this.r9 = this.mTable.mMesh.insertRow(9);
 
-        var r0c0 = r0.insertCell(0);
-        var r0c1 = r0.insertCell(1);
+	//question, answer
+        this.r0c0 = this.r0.insertCell(0); 
+        this.r1c0 = this.r1.insertCell(0);
+        this.r2c0 = this.r2.insertCell(0);
+        this.r3c0 = this.r3.insertCell(0);
+        this.r4c0 = this.r4.insertCell(0);
+        this.r5c0 = this.r5.insertCell(0);
+        this.r6c0 = this.r6.insertCell(0);
+        this.r7c0 = this.r7.insertCell(0);
+        this.r8c0 = this.r8.insertCell(0);
+        this.r9c0 = this.r9.insertCell(0);
 
+        this.r0c1 = this.r0.insertCell(1);
+        this.r1c1 = this.r1.insertCell(1);
+        this.r2c1 = this.r2.insertCell(1);
+        this.r3c1 = this.r3.insertCell(1);
+        this.r4c1 = this.r4.insertCell(1);
+        this.r5c1 = this.r5.insertCell(1);
+        this.r6c1 = this.r6.insertCell(1);
+        this.r7c1 = this.r7.insertCell(1);
+        this.r8c1 = this.r8.insertCell(1);
+        this.r9c1 = this.r9.insertCell(1);
+/*
         r0c0.innerHTML = 'r0c0';
         r0c1.innerHTML = 'r0c1';
-
         //row1
-        var r1 = this.mTable.mMesh.insertRow(1);
-
-        var r1c0 = r1.insertCell(0);
-        var r1c1 = r1.insertCell(1);
-
         r1c0.innerHTML = 'r1c0';
         r1c1.innerHTML = 'r1c1';
+*/
 
 
 //TABLE END

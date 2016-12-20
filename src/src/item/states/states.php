@@ -218,6 +218,7 @@ exit: function(item)
 {
        	APPLICATION.calcScore();
 	APPLICATION.highestAchieved();
+	APPLICATION.updateAttemptTable();
 }
 });
 
