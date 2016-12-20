@@ -377,21 +377,19 @@ Extends: Application,
 
 	updateAttemptTable: function()
 	{
-/*
-        r0c0.innerHTML = 'r0c0';
-        r0c1.innerHTML = 'r0c1';
-        //row1
-        r1c0.innerHTML = 'r1c0';
-        r1c1.innerHTML = 'r1c1';
-*/
-//	        this.mItemAttemptsArray = new Array();
-	for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
-	{
-		this.log('hello:' + i);	
-	}
-
-
-	
+		for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
+		{
+			if (APPLICATION.mItemAttemptsArray[i].mTransactionCode == 2)  
+			{
+        			APPLICATION.mHud.mRowArray[i].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
+        			APPLICATION.mHud.mRowArray[i].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
+			}
+			if (APPLICATION.mItemAttemptsArray[i].mTransactionCode == 0)  
+			{
+        			APPLICATION.mHud.mRowArray[i].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
+        			APPLICATION.mHud.mRowArray[i].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
+			}
+		}
 	},
 
 	calcScore: function()
