@@ -44,7 +44,7 @@ var Hud = new Class(
 	this.mUsername = new Shape     (155, ySize,615,  yCoord,"","","green","boundary");
 
 //TABLE BEGIN
-	this.mTable = new Shape(200,50,770,100,this,"TABLE","","");
+	this.mTable = new Shape(400,300,770,100,this,"TABLE","","");
 
 	//rows 
 	this.mRowArray = new Array();

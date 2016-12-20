@@ -377,8 +377,15 @@ Extends: Application,
 
 	updateAttemptTable: function()
 	{
-		for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
+		var l = APPLICATION.mItemAttemptsArray.length; 	
+		var s = l - 1; 	
+		var c = 0;
+		for (i=s; i >= 0; i--)
 		{
+			if (c > 8)
+			{
+				return;
+			} 
 			if (APPLICATION.mItemAttemptsArray[i].mTransactionCode == 2)  
 			{
         			APPLICATION.mHud.mRowArray[i].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
@@ -389,6 +396,7 @@ Extends: Application,
         			APPLICATION.mHud.mRowArray[i].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
         			APPLICATION.mHud.mRowArray[i].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
 			}
+			c++;
 		}
 	},
 
