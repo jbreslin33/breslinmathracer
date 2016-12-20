@@ -50,7 +50,7 @@ Extends: Application,
 
 		//going forward	
 		this.mItemAttemptsArray = new Array();
-
+		
 		//item_attempts
 		this.mItemTypesArray = new Array(); //from db
 
