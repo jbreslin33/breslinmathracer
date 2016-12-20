@@ -377,6 +377,19 @@ Extends: Application,
 
 	updateAttemptTable: function()
 	{
+/*
+        r0c0.innerHTML = 'r0c0';
+        r0c1.innerHTML = 'r0c1';
+        //row1
+        r1c0.innerHTML = 'r1c0';
+        r1c1.innerHTML = 'r1c1';
+*/
+//	        this.mItemAttemptsArray = new Array();
+	for (i=0; i < APPLICATION.mItemAttemptsArray.length; i++)
+	{
+		this.log('hello:' + i);	
+	}
+
 
 	
 	},
