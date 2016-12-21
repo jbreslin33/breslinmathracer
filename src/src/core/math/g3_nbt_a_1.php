@@ -1,5 +1,26 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_13',3.1013,'3.nbt.a.1',''); update item_types SET progression = 3.1013 where id = '3.nbt.a.1_13';
+*/
+
+var i_3_nbt_a_1__13 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,100,50,230,75,100,50,400,80);
+
+                this.mType = '3.nbt.a.1_13';
+
+                //round down from under a hundred to nearest hundred
+                this.a = Math.floor(Math.random()*49)+1;
+                this.setQuestion('' + 'Round ' + this.a + ' to the nearest hundred.');
+                this.setAnswer('' + '0',0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_12',3.1012,'3.nbt.a.1',''); update item_types SET progression = 3.1012 where id = '3.nbt.a.1_12';
 */
 
