@@ -378,25 +378,23 @@ Extends: Application,
 	updateAttemptTable: function()
 	{
 		var l = APPLICATION.mItemAttemptsArray.length; 	
-		var s = l - 1; 	
+		var i = l - 1; 	
 		var c = 0;
-		for (i=s; i >= 0; i--)
+		while (c < 10 && i >= 0)  
 		{
-			if (c > 8)
-			{
-				return;
-			} 
 			if (APPLICATION.mItemAttemptsArray[i].mTransactionCode == 2)  
 			{
-        			APPLICATION.mHud.mRowArray[i].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
-        			APPLICATION.mHud.mRowArray[i].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
-			}
+        			APPLICATION.mHud.mRowArray[c].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
+        			APPLICATION.mHud.mRowArray[c].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
+				c++;
+			}	
 			if (APPLICATION.mItemAttemptsArray[i].mTransactionCode == 0)  
 			{
-        			APPLICATION.mHud.mRowArray[i].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
-        			APPLICATION.mHud.mRowArray[i].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
+        			APPLICATION.mHud.mRowArray[c].cells[0].innerHTML = APPLICATION.mItemAttemptsArray[i].mQuestionTxt;
+        			APPLICATION.mHud.mRowArray[c].cells[1].innerHTML = APPLICATION.mItemAttemptsArray[i].mUserAnswer;
+				c++;
 			}
-			c++;
+			i--;
 		}
 	},
 
