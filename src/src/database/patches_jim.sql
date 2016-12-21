@@ -11,7 +11,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (16,16,'3.oa.a.1',8) where description = '2_nbt';
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (64,64,'3.nbt.a.1',9) where description = '3_oa_c_7';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'4.oa.a.1',10) where description = '3_nbt';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'4.oa.a.1',10) where description = '3_nbt';
 
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (17,17,'4.nbt.b.4',11) where description = '4_oa_b_4';

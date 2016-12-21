@@ -36,7 +36,8 @@ initialize: function(game)
         this.mIDArray.push('2.nbt.b.7_20');
         this.mIDArray.push('2.nbt.b.7_21');
 */
-
+	//times by 1 digit by 10
+        this.mIDArray.push('3.nbt.a.3_1');
 
         this.mCurrentElement = 0;
         this.shuffle(500);
