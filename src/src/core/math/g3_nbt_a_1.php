@@ -1,3 +1,54 @@
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_9',3.1009,'3.nbt.a.1',''); update item_types SET progression = 3.1009 where id = '3.nbt.a.1_9';
+*/
+
+var i_3_nbt_a_1__9 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,100,50,230,75,100,50,400,80);
+
+                this.mType = '3.nbt.a.1_9';
+
+                //round  down the to nearest hundred normal
+                this.a = Math.floor(Math.random()*9)+1;
+                this.a = this.a * 10;
+		this.a = this.a + 5;
+                this.b = this.a + 5;
+
+                this.setQuestion('' + 'Round ' + this.a + ' to the nearest ten.');
+
+                this.setAnswer('' + this.b,0);
+        }
+});
+
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_8',3.1008,'3.nbt.a.1',''); update item_types SET progression = 3.1008 where id = '3.nbt.a.1_8';
+*/
+
+var i_3_nbt_a_1__8 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,100,50,230,75,100,50,400,80);
+
+                this.mType = '3.nbt.a.1_8';
+
+                //round  down the to nearest hundred normal
+                this.a = Math.floor(Math.random()*9)+1;
+		this.a = this.a * 100;
+                this.b = Math.floor(Math.random()*48)+51;
+		this.c = this.a + this.b;
+		this.d = this.a + 100;
+
+                this.setQuestion('' + 'Round ' + this.c + ' to the nearest hundred.');
+
+                this.setAnswer('' + this.d,0);
+        }
+});
 
 /*
 insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_7',3.1007,'3.nbt.a.1',''); update item_types SET progression = 3.1007 where id = '3.nbt.a.1_7';
