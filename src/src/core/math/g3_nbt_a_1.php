@@ -1,5 +1,30 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_7',3.1007,'3.nbt.a.1',''); update item_types SET progression = 3.1007 where id = '3.nbt.a.1_7';
+*/
+
+var i_3_nbt_a_1__7 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,100,50,230,75,100,50,400,80);
+
+                this.mType = '3.nbt.a.1_7';
+
+                //round  down the to nearest hundred normal
+                this.a = Math.floor(Math.random()*9)+1;
+		this.a = this.a * 100;
+                this.b = Math.floor(Math.random()*49)+1;
+		this.c = this.a + this.b;
+
+                this.setQuestion('' + 'Round ' + this.c + ' to the nearest hundred.');
+
+                this.setAnswer('' + this.a,0);
+        }
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_6',3.1006,'3.nbt.a.1',''); update item_types SET progression = 3.1006 where id = '3.nbt.a.1_6';
 */
 
