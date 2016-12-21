@@ -1,5 +1,27 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_6',3.1006,'3.nbt.a.1',''); update item_types SET progression = 3.1006 where id = '3.nbt.a.1_6';
+*/
+
+var i_3_nbt_a_1__6 = new Class(
+{
+Extends: TextItem,
+        initialize: function(sheet)
+        {
+                this.parent(sheet,100,50,230,75,100,50,400,80);
+
+                this.mType = '3.nbt.a.1_6';
+
+                //round 0 down the to nearest ten
+
+                this.setQuestion('' + 'Round 0 to the nearest ten.');
+
+                this.setAnswer('' + '0',0);
+        }
+});
+
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('3.nbt.a.1_5',3.1005,'3.nbt.a.1',''); update item_types SET progression = 3.1005 where id = '3.nbt.a.1_5';
 */
 
