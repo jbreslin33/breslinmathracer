@@ -273,12 +273,6 @@ getItem: function(id)
                 return new i_3_oa_a_3__2(this.mSheet);
         }
 
-        //3.nbt.a.3
-        if (id == '3.nbt.a.3_1')
-        {
-                return new i_3_nbt_a_1__1(this.mSheet);
-        }
-
 	//-----------4th GRADE---------
         //4.oa.a.1
         if (id == '4.oa.a.1_1')

@@ -5,17 +5,37 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
+
+	//rounding to 10 and 100 within 1000
         this.mIDArray.push('3.nbt.a.1_1');
-        this.mIDArray.push('3.nbt.a.2_1');
-        this.mIDArray.push('3.nbt.a.2_2');
+        this.mIDArray.push('3.nbt.a.1_2');
+        this.mIDArray.push('3.nbt.a.1_3');
+        this.mIDArray.push('3.nbt.a.1_4');
+        this.mIDArray.push('3.nbt.a.1_5');
+        this.mIDArray.push('3.nbt.a.1_6');
+        this.mIDArray.push('3.nbt.a.1_7');
+        this.mIDArray.push('3.nbt.a.1_8');
+        this.mIDArray.push('3.nbt.a.1_9');
+        this.mIDArray.push('3.nbt.a.1_10');
+        this.mIDArray.push('3.nbt.a.1_11');
+        this.mIDArray.push('3.nbt.a.1_12');
+        this.mIDArray.push('3.nbt.a.1_13');
+        this.mIDArray.push('3.nbt.a.1_14');
+
+	
+        //this.mIDArray.push('3.nbt.a.2_1');
+        //this.mIDArray.push('3.nbt.a.2_2');
 
         //addition subtraction within 1000
+	//done in 2nd
+/*
         this.mIDArray.push('2.nbt.b.7_16');
         this.mIDArray.push('2.nbt.b.7_17');
         this.mIDArray.push('2.nbt.b.7_18');
         this.mIDArray.push('2.nbt.b.7_19');
         this.mIDArray.push('2.nbt.b.7_20');
         this.mIDArray.push('2.nbt.b.7_21');
+*/
 
 
         this.mCurrentElement = 0;
