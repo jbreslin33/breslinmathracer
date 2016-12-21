@@ -12,19 +12,15 @@ Extends: TextItem,
 
                 this.mType = '3.nbt.a.1_3';
 
-                //round down from above 10 to nearest ten
+                //round on the exact number from above 10 to nearest ten
 
                 //variables
                 this.a = Math.floor(Math.random()*9)+1;
-                this.a = this.a * 10;
-                this.b = Math.floor(Math.random()*4)+5;
-                this.c = parseInt(this.a + this.b);
-	
-		this.d = this.a + 10;
+		this.a = this.a * 10;
 
-                this.setQuestion('' + 'Round ' + this.c + ' to the nearest ten.');
+                this.setQuestion('' + 'Round ' + this.a + ' to the nearest ten.');
 
-                this.setAnswer('' + this.d ,0);
+                this.setAnswer('' + this.a ,0);
         }
 });
 
@@ -41,7 +37,7 @@ Extends: TextItem,
 
                 this.mType = '3.nbt.a.1_2';
 
-                //round down from above 10 to nearest ten
+                //round up from above 10 to nearest ten
 
                 //variables
                 this.a = Math.floor(Math.random()*9)+1;
