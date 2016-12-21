@@ -5,13 +5,20 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-	
+
+	//place value
+	this.mIDArray.push('2.nbt.a.1_1');
+	this.mIDArray.push('2.nbt.a.1_2');
+	this.mIDArray.push('2.nbt.a.1_3');
+
+	//add sub within 100	
 	this.mIDArray.push('2.nbt.b.5_1');
 	this.mIDArray.push('2.nbt.b.5_2');
 	this.mIDArray.push('2.nbt.b.5_3');
 	this.mIDArray.push('2.nbt.b.5_4');
 	this.mIDArray.push('2.nbt.b.5_5');
 
+	//add 4 2 digit numbers
 	this.mIDArray.push('2.nbt.b.6_1');
 	this.mIDArray.push('2.nbt.b.6_2');
 	
