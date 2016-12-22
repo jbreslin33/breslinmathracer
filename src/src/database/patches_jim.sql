@@ -178,13 +178,6 @@ update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Bray
 update users set core_grades_id = 5 where first_name = 'Kirian' and last_name = 'Vargas';
 update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Kirian' and last_name = 'Vargas'; 
 
---update users set g6_rp = 0;
---update users set g6_ns = 0;
---update users set g6_ee = 0;
---update users set g6_g = 0;
-update users set g6_sp = 0;
-
-
 update evaluations set description = 'Test Prep' where id = 18;
 
 
