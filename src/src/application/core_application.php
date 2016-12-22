@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -279,6 +279,9 @@ Extends: Application,
 
 		//normal
                 this.mNORMAL_CORE_APPLICATION          = new NORMAL_CORE_APPLICATION       (this);
+
+		//main_menu
+                this.mMAIN_MENU_APPLICATION          = new MAIN_MENU_APPLICATION       (this);
 
 		//practice
                 this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);

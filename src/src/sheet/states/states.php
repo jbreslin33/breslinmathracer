@@ -35,7 +35,8 @@ enter: function(sheet)
 	{
 		APPLICATION.log('SHEET::INIT_SHEET');
 	}
-	sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
+	//sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
+	sheet.mStateMachine.changeState(sheet.mMAIN_MENU_SHEET);
 },
 
 execute: function(sheet)

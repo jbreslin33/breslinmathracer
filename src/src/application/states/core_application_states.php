@@ -303,6 +303,7 @@ exit: function(application)
 
 });
 
+//maybe wait for login....
 var LOGIN_STUDENT_WAIT_APPLICATION = new Class(
 {
 Extends: State,
@@ -647,6 +648,10 @@ execute: function(application)
 			//add_game_E	
 	
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+			application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
+			
+/*
 			if (application.mEvaluationsID == 1)
 			{
 				application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
@@ -655,6 +660,7 @@ execute: function(application)
 			{
 				application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
 			}
+*/
 		}
 	}
 
@@ -1612,6 +1618,47 @@ exit: function(application)
 
 });
 
+var MAIN_MENU_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::MAIN_MENU_APPLICATION');
+        }
+   
+        //if already have a game destroy it.
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGame = new MainMenuGame(APPLICATION);
+        application.calcScore();
+        APPLICATION.mHud.setOrange('G: MainMenu');
+},
+
+execute: function(application)
+{
+},
+
+exit: function(application)
+{
+        if (application.mStateLogsExit)
+        {
+                application.log('APPLICATION::MAIN_MENU_APPLICATION exit');
+        }
+}
+
+});
+
+
 var NORMAL_CORE_APPLICATION = new Class(
 {
 Extends: State,
@@ -1642,10 +1689,6 @@ execute: function(application)
 {
 },
 
-exit: function(application)
-{
-
-},
 exit: function(application)
 {
 	if (application.mStateLogsExit)

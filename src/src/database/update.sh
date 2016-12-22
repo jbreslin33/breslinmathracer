@@ -106,6 +106,7 @@ cat src/item/states/states.php >> min.js
 
 cat src/sheet/sheet.php >> min.js
 cat src/sheet/normal_sheet.php >> min.js
+cat src/sheet/main_menu_sheet.php >> min.js
 cat src/sheet/practice_sheet.php >> min.js
 
 cat src/sheet/times_tables_sheet.php >> min.js

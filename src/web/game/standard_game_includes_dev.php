@@ -82,6 +82,7 @@
 
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/normal_sheet.php"></script>
+<script type="text/javascript" src="/src/sheet/main_menu_sheet.php"></script>
 <script type="text/javascript" src="/src/sheet/practice_sheet.php"></script>
 
 <script type="text/javascript" src="/src/sheet/k_cc_sheet.php"></script>
@@ -147,6 +148,7 @@
 
 <script type="text/javascript" src="/src/core/core_game.php"></script>
 <script type="text/javascript" src="/src/core/normal_game.php"></script>
+<script type="text/javascript" src="/src/core/main_menu_game.php"></script>
 <script type="text/javascript" src="/src/core/math/practice_game.php"></script>
 
 <script type="text/javascript" src="/src/core/math/k_cc_game.php"></script>
