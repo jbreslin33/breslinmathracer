@@ -101,17 +101,6 @@ for($i = 0; $i < $numrows; $i++)
 <?php
 $category_array = array();
 $category_array[] = "score"; 
-$category_array[] = "alltime"; 
-$category_array[] = "alltimeizzy"; 
-$category_array[] = "alltimetwo"; 
-$category_array[] = "alltimethree"; 
-$category_array[] = "alltimefour"; 
-$category_array[] = "alltimefive"; 
-$category_array[] = "alltimesix"; 
-$category_array[] = "alltimeseven"; 
-$category_array[] = "alltimeeight"; 
-$category_array[] = "alltimenine"; 
-$category_array[] = "alltimekoaa5"; 
 $category_array[] = "unmastered"; 
 
 echo "<option selected=\"selected\" value=\"0\"> \"Select Category\" </option>";

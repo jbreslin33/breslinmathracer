@@ -17,23 +17,17 @@ session_start();
 <ul>
 <li><a href="/web/navigation/student/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
+<li><a href="/web/reports/generic/live.php">Live</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
 <li><a href="/web/reports/generic/any_homework_check.php">Quick Homework Check</a></li>
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
-<li><a href="/web/reports/generic/item_attempts_realtime.php">Playing</a></li>
-<li><a href="/web/reports/generic/incorrect_attempts_realtime.php">Live Incorrect</a></li>
 <li><a href="/web/reports/generic/tests.php">Evaluation Answers and Questions</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
-
 <li><a href="/web/reports/generic/milestones.php">Any Class Milestones</a></li>
-
 <li><a href="/web/reports/student/milestone_attempts.php">Milestone Attempts</a></li>
-
 <li><a href="/web/reports/student/my_milestones.php">My Milestones</a></li>
-
 <li><a href="/web/reports/generic/school_milestones.php">School Competition</a></li>
-
 
 </ul>
 
