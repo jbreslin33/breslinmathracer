@@ -271,7 +271,6 @@ echo '<table border=\"1\">';
 		$query .= " order by start_time desc LIMIT 30;";
 	}
 
-	error_log($query);
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
