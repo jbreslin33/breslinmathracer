@@ -208,3 +208,47 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.5) where description = 'Homework';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.6) where description = 'The Super Izzy';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.7) where description = 'Test Prep';
+
+--temp
+alter table users drop column alltime;
+alter table users drop column alltimebasicskills4th;
+alter table users drop column alltimeeight;
+alter table users drop column alltimefive;
+alter table users drop column alltimefour;
+alter table users drop column alltimehomework;
+alter table users drop column alltimenine;
+alter table users drop column alltimeseven;
+alter table users drop column alltimesix;
+alter table users drop column alltimesuperizzy;
+alter table users drop column alltimeten;
+alter table users drop column alltimeterranovahomework;
+alter table users drop column alltimeterranovatest;
+alter table users drop column alltimetest;
+alter table users drop column alltimethree;
+alter table users drop column alltimetwo;
+alter table users drop column g1_nbt;
+alter table users drop column g1_oa_b_3;
+alter table users drop column g1_oa_c_6;
+alter table users drop column g2_nbt;
+alter table users drop column g2_oa_b_2;
+alter table users drop column g3_nbt;
+alter table users drop column g3_oa_c_7;
+alter table users drop column g4_nbt_b_4;
+alter table users drop column g4_nbt_b_5;
+alter table users drop column g4_nbt_b_6;
+alter table users drop column g4_nf_b_3_c;
+alter table users drop column g4_oa_b_4;
+alter table users drop column g5_nbt_b_5;
+alter table users drop column g5_nbt_b_6;
+alter table users drop column g5_nbt_b_7;
+alter table users drop column g5_nf_a_1;
+alter table users drop column g5_oa_a_1;
+alter table users drop column g6_ee;
+alter table users drop column g6_g;
+alter table users drop column g6_ns;
+alter table users drop column g6_rp;
+alter table users drop column g6_sp;
+alter table users drop column k_cc;
+alter table users drop column k_oa_a_4;
+alter table users drop column k_oa_a_5;
+

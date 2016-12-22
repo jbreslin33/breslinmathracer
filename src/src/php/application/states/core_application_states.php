@@ -722,12 +722,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'k_cc');
-	}
 }
 public function bexit($bapplication)
 {
@@ -791,12 +785,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'k_oa_a_4');
-	}
 }
 public function bexit($bapplication)
 {
@@ -859,12 +847,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'k_oa_a_5');
 	}
 }
 public function bexit($bapplication)
@@ -931,12 +913,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g1_oa_b_3');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1001,12 +977,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g1_oa_c_6');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1070,12 +1040,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g1_nbt');
 	}
 }
 public function bexit($bapplication)
@@ -1142,12 +1106,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g2_oa_b_2');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1211,12 +1169,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g2_nbt');
 	}
 }
 public function bexit($bapplication)
@@ -1283,12 +1235,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g3_oa_c_7');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1351,12 +1297,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g3_nbt');
 	}
 }
 public function bexit($bapplication)
@@ -1425,12 +1365,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g4_oa_b_4');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1493,12 +1427,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g4_nbt_b_4');
 	}
 }
 public function bexit($bapplication)
@@ -1563,12 +1491,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g4_nbt_b_5');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1632,12 +1554,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g4_nbt_b_6');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1700,12 +1616,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g4_nf_b_3_c');
 	}
 }
 public function bexit($bapplication)
@@ -1771,12 +1681,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g5_oa_a_1');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1840,12 +1744,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g5_nbt_b_5');
-	}
 }
 public function bexit($bapplication)
 {
@@ -1908,12 +1806,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g5_nbt_b_6');
 	}
 }
 public function bexit($bapplication)
@@ -1979,12 +1871,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g5_nbt_b_7');
-	}
 }
 public function bexit($bapplication)
 {
@@ -2049,12 +1935,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g5_nf_a_1');
-	}
 }
 public function bexit($bapplication)
 {
@@ -2117,12 +1997,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g6_rp');
 	}
 }
 public function bexit($bapplication)
@@ -2187,12 +2061,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g6_ns');
-	}
 }
 public function bexit($bapplication)
 {
@@ -2255,12 +2123,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g6_ee');
 	}
 }
 public function bexit($bapplication)
@@ -2325,12 +2187,6 @@ public function execute($bapplication)
 		}
 		$bapplication->mCode = 0;
 	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g6_g');
-	}
 }
 public function bexit($bapplication)
 {
@@ -2392,12 +2248,6 @@ public function execute($bapplication)
 			}
 		}
 		$bapplication->mCode = 0;
-	}
-
-	//did you pass milestone?
-	if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-	{
-        	$bapplication->mNormal->updateScores(1,'g6_sp');
 	}
 }
 public function bexit($bapplication)
@@ -2464,12 +2314,6 @@ public function execute($bapplication)
                 }
                 $bapplication->mCode = 0;
         }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimefive');
-        }
 }
 public function bexit($bapplication)
 {
@@ -2533,12 +2377,6 @@ public function execute($bapplication)
                         }
                 }
                 $bapplication->mCode = 0;
-        }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimetwo');
         }
 }
 public function bexit($bapplication)
@@ -2604,12 +2442,6 @@ public function execute($bapplication)
                 }
                 $bapplication->mCode = 0;
         }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimefour');
-        }
 }
 public function bexit($bapplication)
 {
@@ -2673,12 +2505,6 @@ public function execute($bapplication)
                         }
                 }
                 $bapplication->mCode = 0;
-        }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimeeight');
         }
 }
 public function bexit($bapplication)
@@ -2744,12 +2570,6 @@ public function execute($bapplication)
                 }
                 $bapplication->mCode = 0;
         }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimethree');
-        }
 }
 public function bexit($bapplication)
 {
@@ -2813,12 +2633,6 @@ public function execute($bapplication)
                         }
                 }
                 $bapplication->mCode = 0;
-        }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimesix');
         }
 }
 public function bexit($bapplication)
@@ -2884,12 +2698,6 @@ public function execute($bapplication)
                 }
                 $bapplication->mCode = 0;
         }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimenine');
-        }
 }
 public function bexit($bapplication)
 {
@@ -2954,12 +2762,6 @@ public function execute($bapplication)
                 }
                 $bapplication->mCode = 0;
         }
-
-        //did you pass milestone?
-        if ($bapplication->mEvaluationsAttempt->mScore >= $bapplication->mEvaluationsAttempt->mScore_needed)
-        {
-                $bapplication->mNormal->updateScores(1,'alltimeseven');
-        }
 }
 public function bexit($bapplication)
 {
@@ -3007,8 +2809,6 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeterranova');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -3067,8 +2867,6 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimetest');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -3127,8 +2925,6 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeterranovatest');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -3187,8 +2983,6 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimehomework');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -3247,8 +3041,6 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimeterranovahomework');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
@@ -3307,8 +3099,6 @@ public function execute($bapplication)
 	{
 		$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
 		$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
-
-        	$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'alltimesuperizzy');
 		$bapplication->mCode = 0;
 	}
 	if ($bapplication->mCode == 101) //universal update
