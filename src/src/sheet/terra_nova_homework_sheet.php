@@ -65,7 +65,7 @@ pickItem: function()
 	}
 	else
 	{
-		APPLICATION.mEvaluationsID = 1;	
+		APPLICATION.mEvaluationsID = 41;	
 	}
 },
 
@@ -73,7 +73,7 @@ createItem: function()
 {
 	this.pickItem();
 
-	if (APPLICATION.mEvaluationsID == 1)	
+	if (APPLICATION.mEvaluationsID == 41)	
 	{
 		return;
 	}
