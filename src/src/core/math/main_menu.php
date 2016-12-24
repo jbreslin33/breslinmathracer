@@ -1,6 +1,6 @@
 var main_menu = new Class(
 {
-Extends: Item,
+Extends: TextItem,
         initialize: function(sheet)
         {
                 this.parent(sheet,300,50,175,95, 200,50,475,100);

@@ -9,24 +9,10 @@ initialize: function(game)
 
 createItem: function()
 {
-return new main_menu(this.mSheet);
-},
-
-
-createMenu: function()
-{
-
-},
-
-hideMenu: function()
-{
-
-},
-
-showMenu: function()
-{
-
+	var item = new main_menu(this);
+	this.setItem(item);
 }
+
 
 
 });
