@@ -682,3 +682,5 @@
 <script type="text/javascript" src="/src/core/math/g8_sp_a_2.php"></script>
 <script type="text/javascript" src="/src/core/math/g8_sp_a_3.php"></script>
 <script type="text/javascript" src="/src/core/math/g8_sp_a_4.php"></script>
+
+<script type="text/javascript" src="/src/core/math/main_menu.php"></script>
