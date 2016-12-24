@@ -7,7 +7,7 @@ var Sheet = new Class(
         initialize: function(game)
         {
 		//logs
-		this.mStateLogs = false; 
+		this.mStateLogs = true; 
 
 		// questions
  		this.mIDArray = new Array();
@@ -42,6 +42,7 @@ var Sheet = new Class(
                 this.mGLOBAL_SHEET       = new GLOBAL_SHEET      (this);
                 this.mINIT_SHEET         = new INIT_SHEET        (this);
                 this.mNORMAL_SHEET       = new NORMAL_SHEET      (this);
+                this.mMAIN_MENU_SHEET    = new MAIN_MENU_SHEET      (this);
                 this.mFINISHED_SHEET     = new FINISHED_SHEET      (this);
                 this.mPRACTICE_SHEET = new PRACTICE_SHEET(this);
                 this.mEND_SHEET          = new END_SHEET(this);

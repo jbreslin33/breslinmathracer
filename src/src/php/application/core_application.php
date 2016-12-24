@@ -109,7 +109,7 @@ function __construct()
 	$this->mRef_id = 'login';
 
 	$this->mInitialized = 0;
-	$this->mEvaluationsID = 1;
+	$this->mEvaluationsID = 41;
 	$this->mEvaluationsAttempt = 0;
 
 	$this->mDataArray = array();

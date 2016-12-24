@@ -16,10 +16,18 @@ execute: function(application)
         {
                 application.mGame.update();
         }
+
+	if (application.mEvaluationsID == 41 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mMAIN_MENU_APPLICATION)
+	{
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mMAIN_MENU_APPLICATION);
+	}
+
 	if (application.mEvaluationsID == 1 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mNORMAL_CORE_APPLICATION)
 	{
+		APPLICATION.log('calling normal');
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mNORMAL_CORE_APPLICATION);
 	}
+
 	if (application.mEvaluationsID == 2 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mPRACTICE_APPLICATION)
 	{
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mPRACTICE_APPLICATION);

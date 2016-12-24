@@ -49,6 +49,46 @@ exit: function(sheet)
 
 });
 
+var MAIN_MENU_SHEET = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(sheet)
+{
+        if (sheet.mStateLogs)
+        {
+                APPLICATION.log('SHEET::MAIN_MENU_SHEET');
+        }
+},
+
+execute: function(sheet)
+{
+        if (sheet.mItem)
+	{
+		sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
+	}
+/*
+        if (sheet.mItem.mStateMachine.mCurrentState == sheet.mItem.mCORRECT_ITEM)
+        {
+                sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);
+        }
+        if (sheet.mItem.mStateMachine.mCurrentState == sheet.mItem.mINCORRECT_ITEM)
+        {
+                sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);
+        }
+*/
+},
+
+exit: function(sheet)
+{
+}
+});
+
+
 var NORMAL_SHEET = new Class(
 {
 Extends: State,
