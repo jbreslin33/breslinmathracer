@@ -48,6 +48,13 @@ execute: function(item)
                 	item.mStateMachine.changeState(item.mSHOW_TIMES_TABLES);
 		}
         }
+        if (item.mShowMainMenu)
+        {
+                if (item.mStateMachine.mCurrentState != item.mSHOW_MAIN_MENU)
+                {
+                        item.mStateMachine.changeState(item.mSHOW_MAIN_MENU);
+                }
+        }
 },
 
 exit: function(item)
@@ -76,6 +83,11 @@ enter: function(item)
 
 execute: function(item)
 {
+	//main menu?
+	if (item.mSheet.mItem == item && item.mSheet.mStateMachine.currentState() == item.mSheet.mMAIN_MENU_SHEET)
+	{
+		item.mStateMachine.changeState(item.mSHOW_MAIN_MENU);
+	}
 	//if your THE ITEM then go to wait state
 	if (item.mSheet.mItem == item && item.mSheet.mStateMachine.currentState() == item.mSheet.mNORMAL_SHEET && item.mSheet.mItem.mThresholdTime == 0)
 	{
@@ -436,6 +448,58 @@ exit: function(item)
 }
 
 });
+
+
+var SHOW_MAIN_MENU = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(item)
+{
+        if (item.mStateLogs)
+        {
+                APPLICATION.log('ITEM::SHOW_MAIN_MENU');
+        }
+        item.hideQuestion();
+        item.hideAnswerInputs();
+        item.hideUserAnswer();
+        item.hideQuestionShapes();
+        item.showMainMenu();
+        
+	item.mShowMainMenu = true; 
+
+        if(item.raphael != 0)
+	{
+        	item.raphael.setSize(10,10);
+	}
+	
+},
+
+execute: function(item)
+{
+        if (item.mShowMainMenu == false)
+        {
+                item.mStateMachine.changeState(item.mStateMachine.mPreviousState);
+        }
+},
+
+exit: function(item)
+{
+        item.hideTimesTables();
+
+        if(item.raphael != 0)
+          item.raphael.setSize(item.raphaelSizeX,item.raphaelSizeY);
+	
+	item.mShowTimesTables = false;
+}
+
+});
+
+
 
 //here is where you keep sending till you get a new item_attempt....
 var CONTINUE_CORRECT = new Class(

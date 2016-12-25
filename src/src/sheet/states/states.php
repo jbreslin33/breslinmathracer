@@ -63,15 +63,20 @@ enter: function(sheet)
         {
                 APPLICATION.log('SHEET::MAIN_MENU_SHEET');
         }
+	if (sheet.mItem)
+	{
+		sheet.mItem.mShowMainMenu = true;
+	}
+
 },
 
 execute: function(sheet)
 {
+/*
         if (sheet.mItem)
 	{
 		sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
 	}
-/*
         if (sheet.mItem.mStateMachine.mCurrentState == sheet.mItem.mCORRECT_ITEM)
         {
                 sheet.mStateMachine.changeState(sheet.mFINISHED_SHEET);

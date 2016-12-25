@@ -100,6 +100,11 @@ var Item = new Class(
 		this.mTimesTablesInfo = 0;
 		this.mTimesTablesInfoButton = 0;
 		this.mShowTimesTables = 0;
+		
+		//show Main Menu
+		this.mMainMenuInfo = 0;
+		this.mMainMenuInfoButton = 0;
+		this.mShowMainMenu = 0;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
@@ -126,6 +131,7 @@ var Item = new Class(
                 this.mSHOW_PRACTICE = new SHOW_PRACTICE(this);
                 this.mSHOW_CORE = new SHOW_CORE(this);
                 this.mSHOW_TIMES_TABLES = new SHOW_TIMES_TABLES(this);
+                this.mSHOW_MAIN_MENU = new SHOW_MAIN_MENU(this);
 
 		//out of time
                 this.mOUT_OF_TIME_ITEM = new OUT_OF_TIME_ITEM(this);
@@ -240,6 +246,11 @@ var Item = new Class(
 		//mTimesInfo
                 this.mTimesTablesInfo = new Shape(200,50,125,100,this.mSheet.mGame,"SELECT","","");
                 this.addShape(this.mTimesTablesInfo);
+
+                //MAIN MENU
+                //mMainMenuInfo
+                this.mMainMenuInfo = new Shape(200,50,125,100,this.mSheet.mGame,"SELECT","","");
+                this.addShape(this.mMainMenuInfo);
 
 		//K
 		
@@ -719,9 +730,17 @@ var Item = new Class(
 
 		//add_game_J	
 
+		//TIMES TABLES
+
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");
                 this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
                 this.addShape(this.mTimesTablesInfoButton);
+
+		//MAIN MENU
+                this.mMainMenuInfoButton = new SubmitMainMenuInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");
+                this.mMainMenuInfoButton.mMesh.innerHTML = 'MAIN MENU';
+                this.addShape(this.mMainMenuInfoButton);
+
 	},
 
        	//this will clean up all shapes in this item and it will take this items shapes out of game array
@@ -1004,6 +1023,12 @@ var Item = new Class(
                 this.mTimesTablesInfoButton.setVisibility(true);
         },
 
+        showMainMenu: function()
+        {
+                this.mMainMenuInfo.setVisibility(true);
+                this.mMainMenuInfoButton.setVisibility(true);
+        },
+
         hidePractice: function()
         {      
                 this.mPracticeInfo.setVisibility(false);
@@ -1015,6 +1040,12 @@ var Item = new Class(
         {
                 this.mTimesTablesInfo.setVisibility(false);
                 this.mTimesTablesInfoButton.setVisibility(false);
+        },
+
+        hideMainMenu: function()
+        {
+                this.mMainMenuInfo.setVisibility(false);
+                this.mMainMenuInfoButton.setVisibility(false);
         },
 
 	showAnswerInputs: function()

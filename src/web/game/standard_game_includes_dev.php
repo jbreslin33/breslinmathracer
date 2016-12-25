@@ -78,6 +78,7 @@
 <script type="text/javascript" src="/src/item/submit_core_item_button.php"></script>
 <script type="text/javascript" src="/src/item/leave_practice_button.php"></script>
 <script type="text/javascript" src="/src/item/submit_times_tables_info_button.php"></script>
+<script type="text/javascript" src="/src/item/submit_main_menu_info_button.php"></script>
 <script type="text/javascript" src="/src/item/states/states.php"></script>
 
 <script type="text/javascript" src="/src/sheet/sheet.php"></script>
