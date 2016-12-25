@@ -468,7 +468,8 @@ enter: function(item)
         item.hideAnswerInputs();
         item.hideUserAnswer();
         item.hideQuestionShapes();
-        item.showMainMenu();
+        //item.showMainMenu();
+        item.showTimesTables();
         
 	item.mShowMainMenu = true; 
 
@@ -489,6 +490,7 @@ execute: function(item)
 
 exit: function(item)
 {
+        //item.hideTimesTables();
         item.hideTimesTables();
 
         if(item.raphael != 0)

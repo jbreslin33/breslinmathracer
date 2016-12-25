@@ -35,8 +35,16 @@ enter: function(sheet)
 	{
 		APPLICATION.log('SHEET::INIT_SHEET');
 	}
-	//sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
-	sheet.mStateMachine.changeState(sheet.mMAIN_MENU_SHEET);
+	
+	if (APPLICATION.mEvaluationsID == 41)
+	{
+		sheet.mStateMachine.changeState(sheet.mMAIN_MENU_SHEET);
+	}
+	else
+	{
+		sheet.mStateMachine.changeState(sheet.mNORMAL_SHEET);
+	}
+
 },
 
 execute: function(sheet)
