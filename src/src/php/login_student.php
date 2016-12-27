@@ -41,13 +41,11 @@ public function process()
 	{
 		$this->mRole = 1;
 	}
-/*
-	if ($this->mStudentExists)
+	if ($this->mLoggedIn == 0 && $this->mStudentExists)
 	{
 		$this->sendBadPassword();
 		return;
 	}
-*/
 }
 
 public function sendBadUsername()
