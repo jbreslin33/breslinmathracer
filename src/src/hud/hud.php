@@ -111,23 +111,17 @@ var Hud = new Class(
 
 	homeSelected: function()
 	{
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Play")
-		{
-			APPLICATION.mEvaluationsID = 1;
-		}
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Main Menu")
 		{
 			APPLICATION.mEvaluationsID = 41;
 		}
-		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "XTables")
-		{
-                        APPLICATION.mGame.mSheet.getItem().mShowTimesTables = true;
-		}
+/*
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Practice")
 		{
 			APPLICATION.mGame.mSheet.getItem().fillPracticeSelect();
                         APPLICATION.mGame.mSheet.getItem().mShowPractice = true;
 		}
+*/
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Item description")
 		{
                         APPLICATION.mGame.mSheet.getItem().mShowItem = true;
@@ -158,9 +152,9 @@ var Hud = new Class(
                 var homeSelectArray = new Array(); 
 		homeSelectArray.push('Mathcore');
 		homeSelectArray.push('Main Menu');
-		homeSelectArray.push('Play');
-		homeSelectArray.push('XTables');
-		homeSelectArray.push('Practice');
+		//homeSelectArray.push('Play');
+		//homeSelectArray.push('XTables');
+		//homeSelectArray.push('Practice');
 		homeSelectArray.push('Item description');
 		homeSelectArray.push('Standard description');
 		homeSelectArray.push('Reports');
