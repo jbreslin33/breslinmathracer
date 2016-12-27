@@ -24,7 +24,6 @@ execute: function(application)
 
 	if (application.mEvaluationsID == 1 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mNORMAL_CORE_APPLICATION)
 	{
-		APPLICATION.log('calling normal');
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mNORMAL_CORE_APPLICATION);
 	}
 
@@ -658,17 +657,6 @@ execute: function(application)
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
 			application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
-			
-/*
-			if (application.mEvaluationsID == 1)
-			{
-				application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-			}
-			if (application.mEvaluationsID == 2)
-			{
-				application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-			}
-*/
 		}
 	}
 
@@ -678,6 +666,7 @@ execute: function(application)
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
                 var v = 'BAD USERNAME';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		APPLICATION.log('mBadUsername');
 	}
 	else if (application.mBadPassword == true)
 	{
@@ -685,12 +674,14 @@ execute: function(application)
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
                 var v = 'BAD PASSWORD';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		APPLICATION.log('mBadPassword');
 	}
 	else if (APPLICATION.mGame.mTimeSinceEpoch > parseInt(application.mStateEnterTime + application.mStateThresholdTime))
 	{
                 var v = 'LOGIN TIMED OUT';
                 APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
+		APPLICATION.log('LOGIN TIMED OUT');
 	}
 },
 
