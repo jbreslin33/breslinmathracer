@@ -254,17 +254,6 @@ var Item = new Class(
 
 		//K
 
-                var optionPlay = document.createElement("option");
-                optionPlay.value = 1;
-                optionPlay.text = 'Play';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTimesTablesInfo.mMesh.add(optionPlay);
-                }
-                else
-                {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionPlay);
-                }
 		
 		var optionO = document.createElement("option");
                 optionO.value = 25;
@@ -690,6 +679,18 @@ var Item = new Class(
                 else
                 {
                         this.mTimesTablesInfo.mMesh.appendChild(optionUK);
+                }
+
+                var optionPlay = document.createElement("option");
+                optionPlay.value = 1;
+                optionPlay.text = 'Play';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionPlay);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionPlay);
                 }
 
                	var optionE = document.createElement("option");
