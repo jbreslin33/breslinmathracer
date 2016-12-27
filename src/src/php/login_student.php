@@ -46,6 +46,11 @@ public function process()
 		$this->sendBadPassword();
 		return;
 	}
+	if ($this->mLoggedIn == 0 && $this->mStudentExists == false)
+	{
+		$this->sendBadUsername();
+		return;
+	}
 }
 
 public function sendBadUsername()
