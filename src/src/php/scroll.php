@@ -30,7 +30,33 @@ function __construct()
 		}
 	}
 }
+/*
+select question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where user_id = 4 order by item_attempts.start_time desc LIMIT 2;
+*/
 
+public function setScroll($scoreField)
+{
+	$question_array = array();
+	$answer_array = array();
+
+	$query = "select question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where user_id = ";
+	$query .= $_SESSION["user_id"];
+	$query .= " order by item_attempts.start_time desc LIMIT 10";
+	
+	$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+       	$numberOfResults = pg_num_rows($result);
+
+	$itemString = ""; 
+
+	for($i=0; $i < $numberOfResults; $i++)
+        {
+		$itemString .= pg_Result($result, $i, 'question');	
+		$itemString .= pg_Result($result, $i, 'user_answer');	
+	}
+        $_SESSION["scroll"] = $itemString;
+}
+
+/*
 public function setScroll($scoreField)
 {
 	$place_array = array();
@@ -135,6 +161,7 @@ public function setScroll($scoreField)
 
         $_SESSION["scroll"] = $itemString;
 }
+*/
 //end of class
 }
 ?>
