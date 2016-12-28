@@ -81,9 +81,9 @@ var Hud = new Class(
         eastBounds  = new Shape         ( 10, 50,760,335,"","","red","boundary");
         eastBounds  = new Shape         ( 10, 20,760,385,"","","green","boundary");
 
-        //this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boundary");
+        //this.mScroll = new Shape (770, ySize,  0,405,"","","violet","boudary");
         //this.mScroll = new Shape (770, ySize,  0,405,"","","red","boundary");
-        this.mScroll = new Shape (770, 70,  0,405,"","","red","boundary");
+        this.mScroll = new Shape (770, 70,  0,405,"","","red","");
 /*
         westBounds  = new Shape         ( 10, 50,  0, 35,"","","#F8CDF8","boundary");
         westBounds  = new Shape         ( 10, 50,  0, 85,"","","#F6C0F6","boundary");
