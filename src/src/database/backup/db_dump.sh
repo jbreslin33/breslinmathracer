@@ -1,3 +1,4 @@
+sudo -u postgres pg_dump -Fc jamesanthonybreslin > src/database/backup/jamesanthonybreslin.dump
 #OLD sudo -u postgres pg_dump -Fc jamesanthonybreslin > src/database/jamesanthonybreslin.dump
 #pg_dump dbname | split -b 1m - filename
 
@@ -6,9 +7,9 @@
 #sudo rm db.sql
 
 #make backup and split it into files
-sudo -u postgres pg_dump jamesanthonybreslin > full.sql 
+#sudo -u postgres pg_dump jamesanthonybreslin > full.sql 
 
-split -b 40m full.sql mini 
+#split -b 40m full.sql mini 
 
 
 #cat files into 1 big one db.sql
