@@ -57,7 +57,7 @@ public function setScroll($scoreField)
 		$a = trim(pg_Result($result, $i, 'user_answer'));	
 		$itemString .= str_replace(",","",$a);	
 	}
-	error_log($itemString);
+	//error_log($itemString);
         $_SESSION["scroll"] = $itemString;
 }
 
