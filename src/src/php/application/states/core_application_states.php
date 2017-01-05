@@ -35,6 +35,10 @@ public function execute($bapplication)
         {
                 $bapplication->mCoreStateMachine->changeState($bapplication->mSIGNUP_SCHOOL_APPLICATION);
         }
+       	if ($bapplication->mCode == 41 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mMAIN_MENU_APPLICATION)
+        {
+                $bapplication->mCoreStateMachine->changeState($bapplication->mMAIN_MENU_APPLICATION);
+	}
 	if ($bapplication->mCode == 1 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
@@ -533,6 +537,89 @@ public function bexit($bapplication)
 
 }//end class
 
+class MAIN_MENU_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('MAIN_MENU_APPLICATION Enter');
+        }
+
+/*
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,1,$bapplication->mDataArray[4]);
+	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
+
+	//pointer to current evaluationsAttempt
+	$bapplication->mEvaluationsAttempt = $evaluationsAttempt;
+*/
+
+	$bapplication->update();		
+}
+
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('MAIN_MENU_APPLICATION Execute');
+        }
+	if ($bapplication->mCode == 41)
+	{
+/*
+		if ( $bapplication->mEvaluationsAttempt)
+		{	
+			$itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+			$bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+        		$bapplication->mNormal->updateScores($bapplication->mDataArray[5],'score');
+        		$bapplication->mNormal->updateScores($bapplication->mDataArray[6],'unmastered');
+		}
+
+		//so we could insert a match and have players associated etc but..
+		//to get score without too much trouble we could handle here.
+
+*/
+		$bapplication->mCode = 0;
+	}
+	if ($bapplication->mCode == 101) //universal update
+	{
+/*
+		if ($bapplication)
+		{
+			if ($bapplication->mEvaluationsAttempt)
+			{
+				if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray)
+				{
+					for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+					{	 
+						if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+						{  
+							$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+        						$bapplication->mNormal->updateStandard($bapplication->mDataArray[4],'core_standards_id');
+						}
+					}
+				}
+			}
+			$bapplication->mCode = 0;
+		}
+*/
+	}
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('MAIN_MENU_APPLICATION Exit');
+        }
+}
+
+}//end class
+
 
 class NORMAL_CORE_APPLICATION extends State
 {
@@ -610,6 +697,9 @@ public function bexit($bapplication)
 }
 
 }//end class
+
+
+
 
 class PRACTICE_APPLICATION extends State
 {

@@ -115,7 +115,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = false;
+	$this->mLogs = true;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin
@@ -127,6 +127,7 @@ function __construct()
         $this->mSIGNUP_STUDENT_APPLICATION = new SIGNUP_STUDENT_APPLICATION      ($this);
         $this->mSIGNUP_SCHOOL_APPLICATION = new SIGNUP_SCHOOL_APPLICATION      ($this);
         $this->mWAIT_GAME_APPLICATION     = new WAIT_GAME_APPLICATION      ($this);
+        $this->mMAIN_MENU_APPLICATION     = new MAIN_MENU_APPLICATION      ($this);
         $this->mNORMAL_CORE_APPLICATION   = new NORMAL_CORE_APPLICATION        ($this);
         $this->mPRACTICE_APPLICATION      = new PRACTICE_APPLICATION        ($this);
         
