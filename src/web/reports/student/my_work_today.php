@@ -44,6 +44,22 @@ $q .= " AND item_attempts.start_time > CURRENT_DATE order by item_attempts.start
 $r = pg_query($conn,$q);
 $n = pg_numrows($r);
 
+//lets grab some data for the top
+//$row = pg_fetch_array($r, $n - 1 );
+$row_first = pg_fetch_array($r,$n - 1);
+$row_last = pg_fetch_array($r,0);
+$first_question_time = $row_first[0];
+$last_question_time = $row_last[0];
+
+$txt = 'total:';
+$txt .= $n;  
+$txt .= ' first:'; 
+$txt .= $first_question_time; 
+$txt .= ' last:'; 
+$txt .= $last_question_time; 
+
+echo $txt;
+
 echo '<table border=\"1\">';
         echo '<tr>';
 
@@ -62,7 +78,6 @@ echo '<table border=\"1\">';
 
 
 
-//$row = pg_fetch_array($r, $i);
 
 
 
