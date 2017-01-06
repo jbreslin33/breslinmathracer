@@ -36,15 +36,15 @@ echo "<br>";
 echo '<table border=\"1\">';
         echo '<tr>';
 
-        echo '<td> match_id';
-        echo '</td>';
-        echo '<td> team_name';
-        echo '</td>';
         echo '<td> start_time';
         echo '</td>';
-        echo '<td> end_time';
+        echo '<td> item type';
         echo '</td>';
-        echo '<td> score';
+        echo '<td> code';
+        echo '</td>';
+        echo '<td> question';
+        echo '</td>';
+        echo '<td> user_answer';
         echo '</td>';
 
         echo '</tr>';
@@ -60,28 +60,57 @@ $n = pg_numrows($r);
         for($i = 0; $i < $n; $i++)
         {
                 $row = pg_fetch_array($r, $i);
-                $match_id = $row[0];
-                $team_name = $row[1];
-                $start_time = $row[2];
-                $end_time = $row[3];
-                $score = $row[4];
+                $start_time = $row[0];
+                $type_id = $row[1];
+                $transaction_code = $row[2];
+                $question = $row[3];
+                $user_answer = $row[4];
 
+                $bcolor = 'Green';
+                if ($transaction_code == "0")
+                {
+                        $bcolor = 'White';
+                }
+                if ($transaction_code == "1")
+                {
+                        $bcolor = 'Green';
+                }
+                if ($transaction_code == "2")
+                {
+                        $bcolor = 'Red';
+                }
                 echo '<tr>';
-                echo '<td>';
-                echo $match_id;
-                echo '</td>';
-                echo '<td>';
-                echo $team_name;
-                echo '</td>';
-                echo '<td>';
+
+                echo '<td bgcolor="';
+                echo $bcolor;
+                echo '">';
                 echo $start_time;
                 echo '</td>';
-                echo '<td>';
-                echo $end_time;
+
+                echo '<td bgcolor="';
+                echo $bcolor;
+                echo '">';
+                echo $type_id;
                 echo '</td>';
-                echo '<td>';
-                echo $score;
+
+                echo '<td bgcolor="';
+                echo $bcolor;
+                echo '">';
+                echo $transaction_code;
                 echo '</td>';
+
+                echo '<td bgcolor="';
+                echo $bcolor;
+                echo '">';
+                echo $question;
+                echo '</td>';
+
+                echo '<td bgcolor="';
+                echo $bcolor;
+                echo '">';
+                echo $user_answer;
+                echo '</td>';
+                
 
                 echo '</tr>';
         }
