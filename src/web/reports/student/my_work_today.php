@@ -49,9 +49,10 @@ echo '<table border=\"1\">';
 
         echo '</tr>';
 
-$q = "select matches.id, teams.name, matches.start_time, matches.end_time, teams_matches.score from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id where matches.school_id = ";
-$q .= $_SESSION["school_id"];
-$q .= " order by matches.id desc;";
+$q = "select item_attempts.start_time, item_attempts.item_types_id, transaction_code, question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where evaluations_attempts.user_id = ";
+$q .= $_SESSION["user_id"];
+
+$q .= " AND item_attempts.start_time > CURRENT_DATE order by item_attempts.start_time desc;";
 
 $r = pg_query($conn,$q);
 $n = pg_numrows($r);
