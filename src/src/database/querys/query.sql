@@ -1,1 +1,1 @@
-select item_attempts.start_time from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.start_time > CURRENT_DATE;
+select item_attempts.start_time, item_attempts.item_types_id, transaction_code, question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where evaluations_attempts.user_id = 75 AND item_attempts.start_time > CURRENT_DATE order by item_attempts.start_time desc;
