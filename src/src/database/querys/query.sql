@@ -1,0 +1,1 @@
+select item_attempts.start_time from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where item_attempts.start_time > CURRENT_DATE;

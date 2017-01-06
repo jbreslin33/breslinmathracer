@@ -1,1 +1,1 @@
-sudo -u postgres psql -d jamesanthonybreslin -f src/database/query.sql
+sudo -u postgres psql -d jamesanthonybreslin -f src/database/querys/query.sql
