@@ -28,6 +28,7 @@ session_start();
 <li><a href="/web/reports/student/milestone_attempts.php">Milestone Attempts</a></li>
 <li><a href="/web/reports/student/my_milestones.php">My Milestones</a></li>
 <li><a href="/web/reports/generic/school_milestones.php">School Competition</a></li>
+<li><a href="/web/reports/student/my_work_today.php">My Work Today</a></li>
 
 </ul>
 
