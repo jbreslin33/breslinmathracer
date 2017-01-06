@@ -1,1 +1,1 @@
-sudo -u postgres psql -d jamesanthonybreslin -f src/database/drop_db.sql
+sudo -u postgres psql -d jamesanthonybreslin -f src/database/backup/drop_db.sql
