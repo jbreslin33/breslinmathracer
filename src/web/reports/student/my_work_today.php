@@ -33,6 +33,17 @@ echo "<br>";
 ?>
 	<p><b> MY WORK TODAY: </p></b>
 <?php
+
+
+
+$q = "select item_attempts.start_time, item_attempts.item_types_id, transaction_code, question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where evaluations_attempts.user_id = ";
+$q .= $_SESSION["user_id"];
+
+$q .= " AND item_attempts.start_time > CURRENT_DATE order by item_attempts.start_time desc;";
+
+$r = pg_query($conn,$q);
+$n = pg_numrows($r);
+
 echo '<table border=\"1\">';
         echo '<tr>';
 
@@ -49,13 +60,11 @@ echo '<table border=\"1\">';
 
         echo '</tr>';
 
-$q = "select item_attempts.start_time, item_attempts.item_types_id, transaction_code, question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where evaluations_attempts.user_id = ";
-$q .= $_SESSION["user_id"];
 
-$q .= " AND item_attempts.start_time > CURRENT_DATE order by item_attempts.start_time desc;";
 
-$r = pg_query($conn,$q);
-$n = pg_numrows($r);
+//$row = pg_fetch_array($r, $i);
+
+
 
         for($i = 0; $i < $n; $i++)
         {
