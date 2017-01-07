@@ -33,12 +33,27 @@ $conn = dbConnect();
 
 ini_set("date.timezone", "America/New_York");
 
+$work_date = date("Y-m-d");
 $room_id = 0;
 $user_id = 0;
 $category = 0;
-$work_date = date("Y-m-d H:i:s");
 $id = 0;
 
+if (isset($_POST["work_date"]))
+{
+        $work_date = $_POST["work_date"];
+}
+else if (isset($_GET['work_date']))
+{
+        $work_date = $_GET['work_date'];
+}
+else
+{
+	$work_date = date("Y-m-d");
+}
+
+$txt = "work date: ";
+$txt .= $work_date;
 
 if (isset($_POST["room_id"]))
 {
@@ -51,8 +66,10 @@ else if (isset($_GET['room_id']))
 }
 else
 {
-
+	$room_id = 0;
 }
+$txt .= " room_id:";
+$txt .= $room_id;
 
 if (isset($_POST["user_id"]))
 {
@@ -65,38 +82,41 @@ else if (isset($_GET['user_id']))
 }
 else
 {
-
+	$user_id = 0;
 }
 
+$txt .= " user_id:";
+$txt .= $user_id;
 
 if (isset($_POST["category"]))
 {
         $category = $_POST["category"];
+	error_log("if called");
 }
 
 else if (isset($_GET['category']))
 {
         $category = $_GET['category'];
+	error_log("else if called");
 }
 else
 {
-        $category = 'score';
+        $category = 'all';
+	error_log("else called");
 }
 
 
-if (isset($_POST["work_date"]))
-{
-        $from_date_id = $_POST["work_date"];
-}
-else if (isset($_GET['work_date']))
-{
-        $from_date_id = $_GET['work_date'];
-}
+$txt .= " category:";
+$txt .= $category;
 
+error_log($txt);
 
 ?>
 
 <form method="post" action="/web/reports/generic/live.php">
+
+<b>WORK DATE:</b>
+<input id="work_date" type="text" name="work_date" value="<?php echo htmlentities($work_date); ?>"  onchange="loadAgain()">
 
 <b>Room:</b>
 <select id="room_id" name="room_id" onchange="loadAgain()">
@@ -155,8 +175,6 @@ for($i = 0; $i < $numrows; $i++)
 </select>
 
 
-<b>WORK DATE:</b>
-<input id="work_date" type="text" name="work_date" value="<?php echo htmlentities($work_date); ?>"  onchange="loadAgain()">
 
 </form>
 
@@ -193,9 +211,13 @@ function loadAgain()
         var z = document.getElementById("category").value;
     	var t = document.getElementById("work_date").value;
 
-        document.location.href = '/web/reports/generic/live.php?user_id=' + x + '&room_id=' + y + '&category=' + z + '$work_date=' + t;
+        document.location.href = '/web/reports/generic/live.php?user_id=' + x + '&room_id=' + y + '&category=' + z + '&work_date=' + t;
 }
 </script>
+
+
+
+
 
 
 
@@ -238,18 +260,32 @@ echo '<table border=\"1\">';
 	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name, rooms.name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id JOIN rooms ON users.room_id=rooms.id";
 
 	//filters
+	if ($work_date != 0)
+	{
+		$query .= " where item_attempts.start_time > '";
+		$query .= $work_date;
+		$query .= "'";
+	}
 
 	//room filter
 	if ($room_id != 0)
 	{
-		$query .= " where room_id = ";
-		$query .= $room_id;
+		if ($work_date == 0)
+		{
+			$query .= " where room_id = ";
+			$query .= $room_id;
+		}
+		else
+		{
+			$query .= " AND room_id = ";
+			$query .= $room_id;
+		}
 	}
 
 	//user filter	
 	if ($user_id != 0)
 	{
-		if ($room_id == 0)
+		if ($room_id == 0 && $work_date == 0)
 		{
 			$query .= " where users.id = ";
 		}
@@ -267,7 +303,7 @@ echo '<table border=\"1\">';
 	}
 	else if ($category == "correct")
 	{
-		if ($room_id == 0 && $user_id == 0)
+		if ($room_id == 0 && $user_id == 0 && $work_date == 0)
 		{
 			$query .= " where transaction_code = 1 order by start_time desc LIMIT 30;";
 		}
@@ -278,7 +314,7 @@ echo '<table border=\"1\">';
 	}
 	else if ($category == "incorrect")
 	{
-		if ($room_id == 0 && $user_id == 0)
+		if ($room_id == 0 && $user_id == 0 && $work_date == 0)
 		{
 			$query .= " where transaction_code = 2 order by start_time desc LIMIT 30;";
 		}
@@ -292,8 +328,10 @@ echo '<table border=\"1\">';
 		$query .= " order by start_time desc LIMIT 30;";
 	}
 
+	error_log($query);
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
+
 
 	for($i = 0; $i < $numrows; $i++) 
 	{
