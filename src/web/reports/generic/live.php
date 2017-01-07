@@ -262,8 +262,15 @@ echo '<table border=\"1\">';
 	//filters
 	if ($work_date != 0)
 	{
+		$date1 = str_replace('-', '/', $work_date);
+		$tomorrow = date('m-d-Y',strtotime($date1 . "+1 days"));
+
 		$query .= " where item_attempts.start_time > '";
 		$query .= $work_date;
+		$query .= "'";
+		
+		$query .= " AND item_attempts.start_time < '";
+		$query .= $tomorrow;
 		$query .= "'";
 	}
 
