@@ -91,25 +91,25 @@ $txt .= $user_id;
 if (isset($_POST["category"]))
 {
         $category = $_POST["category"];
-	error_log("if called");
+	//error_log("if called");
 }
 
 else if (isset($_GET['category']))
 {
         $category = $_GET['category'];
-	error_log("else if called");
+	//error_log("else if called");
 }
 else
 {
         $category = 'all';
-	error_log("else called");
+	//error_log("else called");
 }
 
 
 $txt .= " category:";
 $txt .= $category;
 
-error_log($txt);
+//error_log($txt);
 
 ?>
 
@@ -299,36 +299,36 @@ echo '<table border=\"1\">';
 	//transaction code filter
 	if ($category == "all")
 	{
-		$query .= " order by start_time desc LIMIT 30;";
+		$query .= " order by start_time desc;";
 	}
 	else if ($category == "correct")
 	{
 		if ($room_id == 0 && $user_id == 0 && $work_date == 0)
 		{
-			$query .= " where transaction_code = 1 order by start_time desc LIMIT 30;";
+			$query .= " where transaction_code = 1 order by start_time desc;";
 		}
 		else
 		{
-			$query .= " AND transaction_code = 1 order by start_time desc LIMIT 30;";
+			$query .= " AND transaction_code = 1 order by start_time desc;";
 		}
 	}
 	else if ($category == "incorrect")
 	{
 		if ($room_id == 0 && $user_id == 0 && $work_date == 0)
 		{
-			$query .= " where transaction_code = 2 order by start_time desc LIMIT 30;";
+			$query .= " where transaction_code = 2 order by start_time desc;";
 		}
 		else
 		{
-			$query .= " AND transaction_code = 2 order by start_time desc LIMIT 30;";
+			$query .= " AND transaction_code = 2 order by start_time desc;";
 		}
 	}
 	else 
 	{
-		$query .= " order by start_time desc LIMIT 30;";
+		$query .= " order by start_time desc;";
 	}
 
-	error_log($query);
+	//error_log($query);
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
