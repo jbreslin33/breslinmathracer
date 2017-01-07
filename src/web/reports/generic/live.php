@@ -31,9 +31,12 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
+ini_set("date.timezone", "America/New_York");
+
 $room_id = 0;
 $user_id = 0;
 $category = 0;
+$work_date = date("Y-m-d H:i:s");
 $id = 0;
 
 
@@ -79,6 +82,18 @@ else
 {
         $category = 'score';
 }
+
+
+if (isset($_POST["work_date"]))
+{
+        $from_date_id = $_POST["work_date"];
+}
+else if (isset($_GET['work_date']))
+{
+        $from_date_id = $_GET['work_date'];
+}
+
+
 ?>
 
 <form method="post" action="/web/reports/generic/live.php">
@@ -140,6 +155,10 @@ for($i = 0; $i < $numrows; $i++)
 </select>
 
 
+<b>WORK DATE:</b>
+<input id="work_date" type="text" name="work_date" value="<?php echo htmlentities($work_date); ?>"  onchange="loadAgain()">
+
+</form>
 
 <b>Answer:</b>
 
@@ -172,7 +191,9 @@ function loadAgain()
         var x = document.getElementById("user_id").value;
         var y = document.getElementById("room_id").value;
         var z = document.getElementById("category").value;
-        document.location.href = '/web/reports/generic/live.php?user_id=' + x + '&room_id=' + y + '&category=' + z;
+    	var t = document.getElementById("work_date").value;
+
+        document.location.href = '/web/reports/generic/live.php?user_id=' + x + '&room_id=' + y + '&category=' + z + '$work_date=' + t;
 }
 </script>
 

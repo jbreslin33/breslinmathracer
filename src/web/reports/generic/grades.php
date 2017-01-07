@@ -216,6 +216,7 @@ function loadFromDateAgain()
     	var t = document.getElementById("to_date_id").value;
 	document.location.href = '/web/reports/generic/grades.php?room_id=' + x + '&user_id=' + y + '&evaluation_id=' + z + '&from_date_id=' + f + '&to_date_id=' + t; 
 }
+
 function loadToDateAgain()
 {
     	var x = document.getElementById("room_id").value;
