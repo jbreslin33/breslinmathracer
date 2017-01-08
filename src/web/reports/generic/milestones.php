@@ -194,6 +194,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>Last Name';
         echo '</td>';
+        echo '<td>Today';
+        echo '</td>';
         echo '<td>Grade';
         echo '</td>';
         echo '<td>pre-grade';
@@ -306,7 +308,25 @@ echo '<table border=\"1\">';
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 	//error_log($query);
+		
+	//BEGIN TOTAL		
+	$query_total = "select evaluations_attempts.user_id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE ";
+	if ($room_id != 0)
+	{
+		$rtxt = "room_id:";
+		$rtxt .= $room_id;
+		//error_log($rtxt);
+		$query_total .= " AND users.room_id = ";
+        	$query_total .= $room_id;
+	}
+	$query_total .= " GROUP BY evaluations_attempts.user_id;";
 
+	//error_log($query_total);
+
+     	$result_total = pg_query($conn,$query_total);
+        $numrows_total = pg_numrows($result_total);
+	//error_log($numrows_total);	
+	//END TOTAL
 	
 	$total_raw_grade = 0;
 
@@ -318,6 +338,19 @@ echo '<table border=\"1\">';
                 $id = $row[0];
                 $firstName = $row[1];
                 $lastName = $row[2];
+
+		//BEGIN TOTAL        	
+		$today = 0;
+        	for($t = 0; $t < $numrows_total; $t++)
+		{
+			$row_total = pg_fetch_array($result_total, $t);
+			if ($id == $row_total[0]) 
+			{
+				$today = $row_total[1];
+			}
+		}
+		//END TOTAL        	
+
                 $core_standards_id = $row[3];
                 $score = $row[4];
                 $core_grades_id = $row[5];
@@ -553,6 +586,9 @@ echo '<table border=\"1\">';
                 echo '</td>';
                 echo '<td>';
                 echo $lastName;
+                echo '</td>';
+                echo '<td>';
+                echo $today;
                 echo '</td>';
 
  		echo '<td>';
