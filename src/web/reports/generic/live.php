@@ -115,8 +115,6 @@ $txt .= $category;
 
 <form method="post" action="/web/reports/generic/live.php">
 
-<b>WORK DATE:</b>
-<input id="work_date" type="text" name="work_date" value="<?php echo htmlentities($work_date); ?>"  onchange="loadAgain()">
 
 <b>Room:</b>
 <select id="room_id" name="room_id" onchange="loadAgain()">
@@ -176,7 +174,6 @@ for($i = 0; $i < $numrows; $i++)
 
 
 
-</form>
 
 <b>Answer:</b>
 
@@ -202,6 +199,11 @@ for($i = 0; $i < sizeof($category_array); $i++)
 
 ?>
 </select>
+
+<b>WORK DATE:</b>
+<input id="work_date" type="text" name="work_date" value="<?php echo htmlentities($work_date); ?>"  onchange="loadAgain()">
+
+</form>
 
 <script>
 function loadAgain()
