@@ -217,48 +217,7 @@ function loadAgain()
 }
 </script>
 
-
-
-
-
-
-
 <?php
-
-echo '<table border=\"1\">';
-        echo '<tr>';
-
-        echo '<td> Start Time';
-        echo '</td>';
-        
-	echo '<td> Name';
-        echo '</td>';
-	
-	echo '<td> Room';
-        echo '</td>';
-
-        echo '<td> Item Type ';
-        echo '</td>';
-
-        echo '<td> Question';
-        echo '</td>';
- 
-	if ($_SESSION["role"] == 3)
-	{
-        	echo '<td> Answers';
-        	echo '</td>';
-	}
-        echo '<td> User Answers';
-        echo '</td>';
-
-        echo '</tr>';
-
-	$lastAnswerTime = '';
-	$firstName = '';
-	$lastName = '';
-	$score = '';
-	$unmastered = '';
-
 	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name, rooms.name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id JOIN rooms ON users.room_id=rooms.id";
 
 	//filters
@@ -341,6 +300,39 @@ echo '<table border=\"1\">';
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
+echo '<table border=\"1\">';
+        echo '<tr>';
+
+        echo '<td> Start Time';
+        echo '</td>';
+        
+	echo '<td> Name';
+        echo '</td>';
+	
+	echo '<td> Room';
+        echo '</td>';
+
+        echo '<td> Item Type ';
+        echo '</td>';
+
+        echo '<td> Question';
+        echo '</td>';
+ 
+	if ($_SESSION["role"] == 3)
+	{
+        	echo '<td> Answers';
+        	echo '</td>';
+	}
+        echo '<td> User Answers';
+        echo '</td>';
+
+        echo '</tr>';
+
+	$lastAnswerTime = '';
+	$firstName = '';
+	$lastName = '';
+	$score = '';
+	$unmastered = '';
 
 	for($i = 0; $i < $numrows; $i++) 
 	{
