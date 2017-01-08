@@ -26,7 +26,7 @@ else
 if (isset($_GET["code"]))
 {
 	$APPLICATION->mCode = $_GET["code"];
-	error_log($APPLICATION->mCode);
+	//error_log($APPLICATION->mCode);
 }
 
 
