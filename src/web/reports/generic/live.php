@@ -300,6 +300,31 @@ function loadAgain()
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 
+//$totals = "Total:"; 
+//$totals .= $numrows;
+//echo $totals;
+
+
+//lets grab some data for the top
+//$row = pg_fetch_array($result, $numrows - 1 );
+if ($numrows > 0)
+{
+	$row_first = pg_fetch_array($result,$numrows - 1);
+	$row_last = pg_fetch_array($result,0);
+	$first_question_time = $row_first[0];
+	$last_question_time = $row_last[0];
+
+	$txt = 'total:';
+	$txt .= $numrows;
+	$txt .= ' first:';
+	$txt .= $first_question_time;
+	$txt .= ' last:';
+	$txt .= $last_question_time;
+	echo $txt;
+}
+
+
+
 echo '<table border=\"1\">';
         echo '<tr>';
 
