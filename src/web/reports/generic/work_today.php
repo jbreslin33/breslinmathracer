@@ -112,10 +112,11 @@ function loadAgain()
 
 //BEGIN REGULAR
 
-	$query = "select id, last_activity, first_name, last_name, core_standards_id, score from users"; 
+	$query = "select id, last_activity, first_name, last_name, core_standards_id, score from users where school_id = "; 
+	$query .= $_SESSION["school_id"]; 
 	if ($room_id != 0)
 	{
-		$query .= " where room_id = ";
+		$query .= " AND room_id = ";
         	$query .= $room_id;
 		$query .= ";";
 	}
