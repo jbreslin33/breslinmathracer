@@ -245,7 +245,7 @@ function check_passed_grade_level($core_grades_id,&$row)
 			$name .= " ";
 			$name .= $row[2];
 			$name .= " passed";
-			error_log($name);	
+			//error_log($name);	
 		}
 	}
 
@@ -327,6 +327,13 @@ function calc_raw_grade_new($core_grades_id,&$row)
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 //end ms
+
+	//BEGIN TODAY
+	$query_total = "select users.room_id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE GROUP BY users.room_id;";
+
+        $result_total = pg_query($conn,$query_total);
+        $numrows_total = pg_numrows($result_total);
+	//END TODAY
 
 
 //calc results by looping rooms
@@ -885,6 +892,10 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         echo '<td>Grade';
         echo '</td>';
         
+	echo '<td>Today';
+        echo '</td>';
+       
+ 
 
         echo '<td>% Complete Pre-Grade level';
         echo '</td>';
@@ -925,6 +936,23 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         echo '<td>';
         echo $grade_array[$i];
         echo '</td>';
+
+	//BEGIN TODAY
+        $today = 0;
+	//error_log($numrows_total);
+        for($t = 0; $t < $numrows_total; $t++)
+        {
+        	$row_total = pg_fetch_array($result_total, $t);
+                if ($row[0] == $row_total[0])
+                {
+                        $today = $row_total[1];
+                }
+        }
+        echo '<td>';
+        echo $today;
+        echo '</td>';
+	//END TODAY
+
 
         echo '<td>';
         echo $percent_complete_array[$i];
