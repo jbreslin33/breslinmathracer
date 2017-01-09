@@ -94,6 +94,40 @@ function loadAgain()
 
 <?php
 
+//BEGIN TODAY
+	$query_today = "select users.id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE"; 
+
+	if ($room_id != 0)
+	{
+		$query_today .= " AND users.room_id = ";
+        	$query_today .= $room_id;
+	}
+
+	$query_today .= " GROUP BY users.id";
+
+        $result_today = pg_query($conn,$query_today);
+        $numrows_today = pg_numrows($result_today);
+//END TODAY
+
+//BEGIN REGULAR
+
+	$query = "select id, last_activity, first_name, last_name, core_standards_id, score from users"; 
+	if ($room_id != 0)
+	{
+		$query .= " where room_id = ";
+        	$query .= $room_id;
+		$query .= ";";
+	}
+	else
+	{
+		$query .= ";";	
+	}
+        $result = pg_query($conn,$query);
+        $numrows = pg_numrows($result);
+	
+
+//END REGULAR
+
 if ($room_id == 99999)
 {
 
@@ -103,11 +137,13 @@ else
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td> Rank';
+        echo '<td> Last Name';
         echo '</td>';
         echo '<td> First Name';
         echo '</td>';
-        echo '<td> Last Name';
+        echo '<td> Last Answer';
+        echo '</td>';
+        echo '<td> Today';
         echo '</td>';
         echo '<td> Score';
         echo '</td>';
@@ -120,38 +156,46 @@ echo '<table border=\"1\">';
         $lastName = '';
         $score = '';
 
-	$query = "select last_activity, first_name, last_name, core_standards_id, score,  count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE"; 
-
-	if ($room_id != 0)
-	{
-		$query .= " AND users.room_id = ";
-        	$query .= $room_id;
-	}
-
-	$query .= " GROUP BY users.id";
-
-        $result = pg_query($conn,$query);
-        $numrows = pg_numrows($result);
 
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $lastAnswerTime = $row[0];
-                $firstName = $row[1];
-                $lastName = $row[2];
-                $core_standards_id = $row[3];
-                $score = $row[4];
+                $id = $row[0];
+                $lastAnswerTime = $row[1];
+                $firstName = $row[2];
+                $lastName = $row[3];
+                $core_standards_id = $row[4];
+                $score = $row[5];
 
                 echo '<tr>';
                 echo '<td>';
-                echo $i + 1;
+                echo $lastName;
                 echo '</td>';
                 echo '<td>';
                 echo $firstName;
                 echo '</td>';
                 echo '<td>';
-                echo $lastName;
+                echo $lastAnswerTime;
                 echo '</td>';
+
+
+       		//BEGIN TODAY
+        	$today = 0;
+        	//error_log($numrows_today);
+        	for($t = 0; $t < $numrows_today; $t++)
+        	{
+                	$row_today = pg_fetch_array($result_today, $t);
+                	if ($row[0] == $row_today[0])
+                	{
+                        	$today = $row_today[1];
+                	}
+        	}
+        	echo '<td>';
+        	echo $today;
+        	echo '</td>';
+        	//END TODAY
+
+
                 echo '<td>';
                 echo $score;
                 echo '</td>';
