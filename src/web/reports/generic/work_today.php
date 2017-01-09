@@ -4,6 +4,7 @@
 
 <head>
         <title>WORK TODAY</title>
+ <meta http-equiv="refresh" content="30">
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -178,7 +179,7 @@ echo '<table border=\"1\">';
 
        		//BEGIN TODAY
         	$today = 0;
-                $lastAnswerTime = "NO WORK YET";
+                $lastAnswerTime = "NO WORK TODAY";
         	//error_log($numrows_today);
         	for($t = 0; $t < $numrows_today; $t++)
         	{
@@ -189,9 +190,35 @@ echo '<table border=\"1\">';
                         	$lastAnswerTime = $row_today[2];
                 	}
         	}
-                echo '<td>';
-                echo $lastAnswerTime;
-                echo '</td>';
+
+		if ($lastAnswerTime == "NO WORK TODAY")
+		{
+                	echo '<td>';
+                	echo $lastAnswerTime;
+                	echo '</td>';
+		}
+		else
+		{
+			$right_now = date('Y-m-d H:i:s');
+
+			$to_time = strtotime($right_now);
+			$from_time = strtotime($lastAnswerTime);
+			$diff = round(abs($to_time - $from_time));
+			//error_log($diff);
+               	
+			if ($diff < 360)
+			{
+                        	echo '<td bgcolor="green">';
+                		echo $lastAnswerTime;
+                		echo '</td>';
+			} 	  
+			else
+			{
+                        	echo '<td bgcolor="red">';
+                		echo $lastAnswerTime;
+                		echo '</td>';
+			}
+		}
 
         	echo '<td>';
         	echo $today;
