@@ -426,7 +426,23 @@ public function fillItemAttemptsArray()
 		}
 	}
 }
+/*
+public function updateLastActivity()
+{
+        if ($this->logs)
+        {
+                error_log('updateLastActivity');
+        }
+        /*********************  for teacher real time data  *************/
+        $update = "update users SET last_activity = CURRENT_TIMESTAMP ";
+        $update .= " WHERE id = ";
+        $update .= $this->mApplication->mLoginStudent->mUserID;
+        $update .= ";";
 
+        $db = new DatabaseConnection();
+        $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+}
+*/
 public function updateScores($score,$field_name)
 {
 	$this->mScore = $score;
@@ -451,7 +467,6 @@ public function updateScores($score,$field_name)
 	{
 		$this->updateMatch($db);
 	}
-
 }
 
 public function updateStandard($score,$field_name)

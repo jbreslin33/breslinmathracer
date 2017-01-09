@@ -95,7 +95,7 @@ function loadAgain()
 <?php
 
 //BEGIN TODAY
-	$query_today = "select users.id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE"; 
+	$query_today = "select users.id, count(*), MAX(item_attempts.start_time) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE"; 
 
 	if ($room_id != 0)
 	{
@@ -174,13 +174,11 @@ echo '<table border=\"1\">';
                 echo '<td>';
                 echo $firstName;
                 echo '</td>';
-                echo '<td>';
-                echo $lastAnswerTime;
-                echo '</td>';
 
 
        		//BEGIN TODAY
         	$today = 0;
+                $lastAnswerTime = "NO WORK YET";
         	//error_log($numrows_today);
         	for($t = 0; $t < $numrows_today; $t++)
         	{
@@ -188,8 +186,13 @@ echo '<table border=\"1\">';
                 	if ($row[0] == $row_today[0])
                 	{
                         	$today = $row_today[1];
+                        	$lastAnswerTime = $row_today[2];
                 	}
         	}
+                echo '<td>';
+                echo $lastAnswerTime;
+                echo '</td>';
+
         	echo '<td>';
         	echo $today;
         	echo '</td>';
