@@ -154,10 +154,16 @@ update users set core_grades_id = 5 where room_id = 103;
 update users set core_standards_overide_id = '3.oa.a.1' where room_id = 108;
 update users set core_grades_id = 4 where room_id = 108;
 
-
-
-
---why not do AM here....
+--begin temp 
 insert into rooms (name,school_id) VALUES ('AM3',2);
 insert into rooms (name,school_id) VALUES ('AM7',2);
---temp 
+--end temp
+
+--AM3
+update users set core_standards_overide_id = '3.oa.a.1' where room_id = 109;
+update users set core_grades_id = 4 where room_id = 109;
+
+--AM7
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 110;
+update users set core_grades_id = 8 where room_id = 110;
+
