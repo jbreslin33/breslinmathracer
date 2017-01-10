@@ -155,5 +155,9 @@ update users set core_standards_overide_id = '3.oa.a.1' where room_id = 108;
 update users set core_grades_id = 4 where room_id = 108;
 
 
---why not do RR here....
+
+
+--why not do AM here....
+insert into rooms (name,school_id) VALUES ('AM3',2);
+insert into rooms (name,school_id) VALUES ('AM7',2);
 --temp 
