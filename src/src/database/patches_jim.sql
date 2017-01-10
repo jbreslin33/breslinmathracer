@@ -129,76 +129,10 @@ update users set core_grades_id = 3 where room_id = 14;
 update users set core_standards_overide_id = '2.oa.a.1' where room_id = 13;
 update users set core_grades_id = 3 where room_id = 13;
 
-update users set core_grades_id = 9 where first_name = 'Jason' and last_name = 'Voros';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Jason' and last_name = 'Voros'; 
-
-update users set core_grades_id = 9 where first_name = 'Yassel' and last_name = 'baez';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Yassel' and last_name = 'baez'; 
-update users set core_standards_id = '6.rp.a.1' where first_name = 'Yassel' and last_name = 'baez'; 
-
-update users set core_grades_id = 9 where first_name = 'Marina' and last_name = 'Burgos';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Marina' and last_name = 'Burgos'; 
-
-update users set core_grades_id = 9 where first_name = 'chaneli' and last_name = 'nolasco';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'chaneli' and last_name = 'nolasco'; 
-
-update users set core_grades_id = 8 where first_name = 'Markus' and last_name = 'richards';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Markus' and last_name = 'richards'; 
-
-update users set core_grades_id = 8 where first_name = 'Alejandro' and last_name = 'amigon';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Alejandro' and last_name = 'amigon'; 
-
-update users set core_grades_id = 8 where first_name = 'halle' and last_name = 'jimenez';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'halle' and last_name = 'jimenez'; 
-
-update users set core_grades_id = 7 where first_name = 'MICHAEL' and last_name = 'ZELAYA';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'MICHAEL' and last_name = 'ZELAYA'; 
-
-update users set core_grades_id = 7 where first_name = 'cameron' and last_name = 'giscombe';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'cameron' and last_name = 'giscombe'; 
-
-update users set core_grades_id = 7 where first_name = 'carlos' and last_name = 'jovel';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'carlos' and last_name = 'jovel'; 
-
-update users set core_grades_id = 7 where first_name = 'Johnathan' and last_name = 'Valedon';
-update users set core_standards_overide_id = '6.rp.a.1' where first_name = 'Johnathan' and last_name = 'Valedon'; 
-
-update users set core_grades_id = 6 where first_name = 'Brian' and last_name = 'Hernandez';
-update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Brian' and last_name = 'Hernandez'; 
-
-update users set core_grades_id = 6 where first_name = 'Alex' and last_name = 'Acevedo';
-update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Alex' and last_name = 'Acevedo'; 
-
-update users set core_grades_id = 6 where first_name = 'iamir' and last_name = 'moore';
-update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'iamir' and last_name = 'moore'; 
-
-update users set core_grades_id = 5 where first_name = 'Brayner' and last_name = 'Estevez';
-update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Brayner' and last_name = 'Estevez'; 
-
-update users set core_grades_id = 5 where first_name = 'Kirian' and last_name = 'Vargas';
-update users set core_standards_overide_id = '5.oa.a.1' where first_name = 'Kirian' and last_name = 'Vargas'; 
-
-update evaluations set description = 'Test Prep' where id = 18;
 
 
---temp
+--why not do RR here....
 
-CREATE TABLE milestones (
-        id SERIAL,
-        milestones_id text NOT NULL,
-        description text,
-        PRIMARY KEY (id)
-);
 
-insert into milestones (milestones_id,description) values ('k_cc','k_cc');
-
-drop table milestones;
-
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.1) where description = 'normal';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.2) where description = 'practice';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.3) where description = 'Test';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.4) where description = 'TerraNovaTest';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.5) where description = 'Homework';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.6) where description = 'The Super Izzy';
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (10,10,'k.cc.a.1',0.7) where description = 'Test Prep';
-
+--temp insert room
+insert into rooms (name,school_id) VALUES ('RR3',2);

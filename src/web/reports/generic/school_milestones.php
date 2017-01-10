@@ -55,6 +55,7 @@ $query .= " OR name = '35'";
 $query .= " OR name = '36'"; 
 $query .= " OR name = '37'"; 
 $query .= " OR name = '39'"; 
+$query .= " OR name = 'RR3'"; 
 $query .= " OR name = 'RR4'"; 
 $query .= " OR name = 'RR5'"; 
 $query .= " OR name = 'RR6'"; 
@@ -68,6 +69,7 @@ $num_rooms = pg_numrows($room_result);
 $rank_array = array();
 $nick_name_array = array();
 $room_array = array();
+$room_id_array = array();
 $grade_array = array();
 $average_grade_array = array();
 
@@ -650,6 +652,7 @@ for($i = 0; $i < $num_rooms; $i++)
 	$raw_grade_new_array[] = $total_raw_grade_new; //stick class raw grade in array
 	$rank_array[] = $i;
 	$room_array[] = $rooms_row[1];
+	$room_id_array[] = $rooms_row[0];
 	$grade_array[] = $tmp_grade -1;
 	if ($num_students != 0)
 	{
@@ -811,6 +814,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $raw_grade_tmp = $raw_grade_array[$g]; 
         $rank_tmp = $rank_array[$g];
         $room_tmp = $room_array[$g];
+        $room_id_tmp = $room_id_array[$g];
         $grade_tmp = $grade_array[$g];
         $average_grade_tmp = $average_grade_array[$g];
         $percent_complete_tmp = $percent_complete_array[$g];
@@ -834,6 +838,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$raw_grade_array[$g] = $raw_grade_array[$highest_element];
 	$rank_array[$g] = $rank_array[$highest_element];
 	$room_array[$g] = $room_array[$highest_element];
+	$room_id_array[$g] = $room_id_array[$highest_element];
 	$grade_array[$g] = $grade_array[$highest_element];
 	$average_grade_array[$g] = $average_grade_array[$highest_element];
 	$percent_complete_array[$g] = $percent_complete_array[$highest_element];
@@ -850,6 +855,7 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
         $raw_grade_array[$highest_element] = $raw_grade_tmp;
         $rank_array[$highest_element] = $rank_tmp;
         $room_array[$highest_element] = $room_tmp;
+        $room_id_array[$highest_element] = $room_id_tmp;
         $grade_array[$highest_element] = $grade_tmp;
         $average_grade_array[$highest_element] = $average_grade_tmp;
         $percent_complete_array[$highest_element] = $percent_complete_tmp;
@@ -943,7 +949,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         for($t = 0; $t < $numrows_total; $t++)
         {
         	$row_total = pg_fetch_array($result_total, $t);
-                if ($row[0] == $row_total[0])
+                if ($room_id_array[$i] == $row_total[0])
                 {
                         $today = $row_total[1];
                 }
