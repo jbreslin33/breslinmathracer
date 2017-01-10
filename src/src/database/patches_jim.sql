@@ -130,9 +130,30 @@ update users set core_standards_overide_id = '2.oa.a.1' where room_id = 13;
 update users set core_grades_id = 3 where room_id = 13;
 
 
+--RR8
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 107;
+update users set core_grades_id = 9 where room_id = 107;
+
+--RR7
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 106;
+update users set core_grades_id = 8 where room_id = 106;
+
+--RR6
+update users set core_standards_overide_id = '6.rp.a.1' where room_id = 105;
+update users set core_grades_id = 7 where room_id = 105;
+
+--RR5
+update users set core_standards_overide_id = '5.oa.a.1' where room_id = 104;
+update users set core_grades_id = 6 where room_id = 104;
+
+--RR4
+update users set core_standards_overide_id = '4.oa.a.1' where room_id = 103;
+update users set core_grades_id = 5 where room_id = 103;
+
+--RR3
+update users set core_standards_overide_id = '3.oa.a.1' where room_id = 108;
+update users set core_grades_id = 4 where room_id = 108;
+
 
 --why not do RR here....
-
-
---temp insert room
-insert into rooms (name,school_id) VALUES ('RR3',2);
+--temp 
