@@ -365,6 +365,9 @@ execute: function(application)
 			
 			var itemTypes = APPLICATION.mResponseArray[7];
 			APPLICATION.mItemTypesArray = itemTypes.split(":");
+	
+			//lets get standards here
+			APPLICATION.fillStandardsArray();
                 
 			//One	
 			var itemAttemptsTypesOne = APPLICATION.mResponseArray[8];
@@ -998,6 +1001,9 @@ execute: function(application)
                 
 			var itemTypes = APPLICATION.mResponseArray[7];
 			APPLICATION.mItemTypesArray = itemTypes.split(":");
+
+			//lets get standards here..
+			APPLICATION.fillStandardsArray();
                 
 			//One	
 			var itemAttemptsTypesOne = APPLICATION.mResponseArray[8];

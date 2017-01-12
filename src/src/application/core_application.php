@@ -54,6 +54,10 @@ Extends: Application,
 		//item_attempts
 		this.mItemTypesArray = new Array(); //from db
 
+
+		//for standards live list
+		this.mStandardsArray = new Array();
+
 		//One normal
 		this.mItemAttemptsTypeArrayOne = new Array(); //from db
 		this.mItemAttemptsTransactionCodeArrayOne = new Array(); //from db
@@ -1468,8 +1472,78 @@ Extends: Application,
 		}
 	},
 
+	fillStandardsArray: function()
+	{
+		//prime pump
+		this.mStandardsArray.push('k.cc.a.1');		
+		
+		i = 0;
+		while (i < this.mItemTypesArray.length && i < 20)
+		{
+			var present = this.mItemTypesArray[i];
+                	var p = present.split("_");
+			if (p[0] == this.mStandardsArray[this.mStandardsArray.length-1])
+			{
+				
+			}
+			else
+			{
+				this.mStandardsArray.push(p[0]);		
+			}
+			i++;
+		}
+		t = 0;	
+		while (t < this.mStandardsArray.length)
+		{
+			APPLICATION.log('standard:' + this.mStandardsArray[t]);
+			t++;
+		}
+		
+	},
+
 	getQuestionType: function()
 	{
+		//this.mItemTypesArray = new Array(); //from db
+		//plit array
+/*
+		while (i < this.mItemTypesArray.length && i < 4)
+		{
+			var 	
+                	var s = this.mFirst.split("_");
+                	var standard = s[0];
+
+                var tempTypeArray = new Array();
+                tempTypeArray = [];
+
+                for (i=0; i < typesArray.length; i++)
+                {
+                        if (typesArray[i].includes("" + standard))
+                        {
+                                tempTypeArray.push(typesArray[i]);
+                        }
+                }
+*/
+
+/*
+		i = 0;
+		while (i < this.mItemTypesArray.length && i < 4)
+		{
+			var tempArray = new Array();
+			var tempArray = [];
+			j = 0;
+			while (j < this.mItemAttemptsTypeArrayOne.length)
+			{
+				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
+				{
+					tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
+				}					
+				j++;
+			}
+			
+			//APPLICATION.log('ItemType:' + this.mItemTypesArray[i]);
+			i++;
+		}
+*/
 		this.mQuestionType = '3.oa.c.7_2';
 	},
 
