@@ -376,6 +376,8 @@ Extends: Application,
 		highest = this.mItemTypesArray[i];
 		APPLICATION.mHud.setYellow('' + highest);
 		this.mHighest = highest;
+		
+		APPLICATION.log('mHighest:' + this.mHighest);
 	},
 
 	updateAttemptTable: function()

@@ -31,6 +31,10 @@ pickItem: function()
 	{
 		//lets get first and if its not a dup dont even go in
 		APPLICATION.getMilestonesStandardElement();
+
+ 		APPLICATION.log('mMilestonesStandard:' + APPLICATION.mMilestonesStandard)
+ 		APPLICATION.log('mMilestonesStandardElement:' + APPLICATION.mMilestonesStandardElement)
+
                 APPLICATION.getFirst();
 
 		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
