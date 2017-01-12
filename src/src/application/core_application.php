@@ -1503,6 +1503,72 @@ Extends: Application,
 
 	getQuestionType: function()
 	{
+		var standard = '' 
+		//while (i < this.mStandardsArray.length && standard == '')
+		i = 0;
+		while (i < this.mStandardsArray.length && i < 4)
+		{
+			APPLICATION.log('checking standard:' + this.mStandardsArray[i]); 
+                	var tempTypeArray = new Array();
+                	tempTypeArray = [];
+			j = 0;
+			while (j < this.mItemTypesArray.length) 
+			{
+                        	if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[i]))
+				{
+					//APPLICATION.log('inc:' + this.mItemTypesArray[j]);
+					tempTypeArray.push(this.mItemTypesArray[j]);
+				}
+				j++;
+			}	
+
+
+                	var transArray = new Array();
+                	transArray = [];
+			g = 0;
+
+			while (g < tempTypeArray.length)
+			{
+				APPLICATION.log('checking type:' + tempTypeArray[g]); 
+				var c = 0;
+				var gotType = ''; 
+				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
+				{
+					if (tempTypeArray[g] == this.mItemAttemptsTypeArrayOne[c])
+					{
+						gotType = this.mItemAttemptsTransactionCodeArrayOne[c];	
+						transArray.push(gotType);	
+						APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
+					}
+					c++;
+				}
+
+				if (gotType == '')
+				{
+					transArray.push('2');	
+					APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
+				}
+
+				for (h = 0; h < transArray.length; h++)
+				{
+					//APPLICATION.log('transArray:' + transArray[h]);	
+				}
+				g++;
+			}
+			
+/*
+			while (g < this.mItemAttemptsTypeArrayOne.length)
+			{
+				if (tempTypeArray[i] == this.mItemAttemptsTypeArrayOne[j])
+				{
+					tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
+				}					
+				j++;
+			}
+*/
+			i++;
+		}
+		
 		//this.mItemTypesArray = new Array(); //from db
 		//plit array
 /*
