@@ -213,6 +213,7 @@ Extends: Application,
 		//add_game_A
 
 		//algorithms
+		this.mQuestionType = '';
 		this.mFirst = '';
 		this.mSameStandard = '';
 		this.mLeastAsked = '';
@@ -1465,6 +1466,11 @@ Extends: Application,
 			}
 			i++;
 		}
+	},
+
+	getQuestionType: function()
+	{
+		this.mQuestionType = '3.oa.c.7_2';
 	},
 
 //why is this asking pham k questions that are not in his u?

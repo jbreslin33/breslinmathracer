@@ -32,11 +32,11 @@ pickItem: function()
 		//lets get first and if its not a dup dont even go in
 		APPLICATION.getMilestonesStandardElement();
 
- 		APPLICATION.log('mMilestonesStandard:' + APPLICATION.mMilestonesStandard)
- 		APPLICATION.log('mMilestonesStandardElement:' + APPLICATION.mMilestonesStandardElement)
+                APPLICATION.getQuestionType();
+		APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
 
+		/*
                 APPLICATION.getFirst();
-
 		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
 		//dups allowed if u is high
 		if (APPLICATION.mGame.mUnmastered > 5)
@@ -77,6 +77,7 @@ pickItem: function()
                			}
 			} //while
 		} //else unmastered less than 5
+		*/
 	} //else escape from kinder
 },
 
