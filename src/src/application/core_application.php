@@ -1478,7 +1478,7 @@ Extends: Application,
 		this.mStandardsArray.push('k.cc.a.1');		
 		
 		i = 0;
-		while (i < this.mItemTypesArray.length && i < 20)
+		while (i < this.mItemTypesArray.length)
 		{
 			var present = this.mItemTypesArray[i];
                 	var p = present.split("_");
