@@ -1495,7 +1495,7 @@ Extends: Application,
 		t = 0;	
 		while (t < this.mStandardsArray.length)
 		{
-			APPLICATION.log('standard:' + this.mStandardsArray[t]);
+			//APPLICATION.log('standard:' + this.mStandardsArray[t]);
 			t++;
 		}
 		
@@ -1507,7 +1507,6 @@ Extends: Application,
 		var questionType = '';
 		i = 0;
 		while (i < this.mStandardsArray.length && standard == '')
-		//while (i < this.mStandardsArray.length && i < 4)
 		{
 			//get an array of the item types to check for the standard we are currently in this loop	
 			APPLICATION.log('checking standard:' + this.mStandardsArray[i]); 
@@ -1535,7 +1534,7 @@ Extends: Application,
 
 			while (g < tempTypeArray.length)
 			{
-				APPLICATION.log('checking type:' + tempTypeArray[g]); 
+				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
 				var c = 0;
 				var gotType = ''; 
 				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
@@ -1544,7 +1543,7 @@ Extends: Application,
 					{
 						gotType = this.mItemAttemptsTransactionCodeArrayOne[c];	
 						transArray.push(gotType);	
-						APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
+						//APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
 
 						//fill incorrect array
 						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 1)
@@ -1562,7 +1561,7 @@ Extends: Application,
 				if (gotType == '')
 				{
 					transArray.push('2');	
-					APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
+					//APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
 				}
 
 				for (h = 0; h < transArray.length; h++)
@@ -1594,12 +1593,12 @@ Extends: Application,
 			r = r * 100;
 			var p = Math.round(r);			
 			APPLICATION.log('standard percent:' + p);
+			APPLICATION.log('SIZE:' + incorrectArray.length); 
 
 			if (p < 70)
 			{
 				standard = this.mStandardsArray[i]; 
 				var r = Math.floor(Math.random()*incorrectArray.length);
- 				//var r = Math.floor(Math.random()*tempTypeArray.length);
 
 				this.mQuestionType = incorrectArray[r];
 				APPLICATION.log('TYPE:' + this.mQuestionType); 

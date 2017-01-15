@@ -46,6 +46,7 @@ pickItem: function()
 		//if u is low loop till we got no dup
 		else
 		{	
+*/
 			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
        			{
        				var r = Math.floor(Math.random()*100);
@@ -76,8 +77,7 @@ pickItem: function()
                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
                			}
 			} //while
-		} //else unmastered less than 5
-		*/
+//		} //else unmastered less than 5
 	} //else escape from kinder
 },
 
