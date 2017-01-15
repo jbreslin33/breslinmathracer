@@ -32,52 +32,42 @@ pickItem: function()
 		//lets get first and if its not a dup dont even go in
 		APPLICATION.getMilestonesStandardElement();
 
-                APPLICATION.getQuestionType();
-		APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
 
-		/*
-                APPLICATION.getFirst();
-		APPLICATION.mQuestionTypeCurrent = APPLICATION.mFirst;
-		//dups allowed if u is high
-		if (APPLICATION.mGame.mUnmastered > 5)
-		{
+		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
+       		{
+       			var r = Math.floor(Math.random()*100);
+               		if (r < 94)
+			{
+                		APPLICATION.getQuestionType();
+				APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
+				APPLICATION.log('Q: A');
+			}
 
-		}
-		//if u is low loop till we got no dup
-		else
-		{	
-*/
-			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
-       			{
-       				var r = Math.floor(Math.random()*100);
-
-               			if (r < 50)
-               			{
-                       			APPLICATION.getSameStandard(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mSameStandard;
-               			}
-				if (r >= 50 && r < 55)
-               			{
-                       			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                      			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-               			}
-               			if (r >= 55 && r < 60)
-               			{
-                       			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-               			}
-               			if (r >= 60 && r < 80)
-               			{
-                       			APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-               			}
-               			if (r >= 80)
-               			{
-                       			APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
-                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-               			}
-			} //while
-//		} //else unmastered less than 5
+               		if (r == 94 || r == 95)
+               		{
+                       		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
+				APPLICATION.log('Q: B');
+               		}
+               		if (r == 96 || r == 97)
+               		{
+                       		APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
+				APPLICATION.log('Q: C');
+               		}
+               		if (r == 98)
+               		{
+                       		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                      		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
+				APPLICATION.log('Q: D');
+               		}
+               		if (r == 99)
+               		{
+                       		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
+				APPLICATION.log('Q: E');
+               		}
+		} //while
 	} //else escape from kinder
 },
 
