@@ -1510,7 +1510,8 @@ Extends: Application,
 		while (score < this.mStandardsArray.length && standard == '')
 		{
 			//get an array of the item types to check for the standard we are currently in this loop	
-			APPLICATION.log('checking standard:' + this.mStandardsArray[score]); 
+			APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
+			APPLICATION.log('score:' + score); 
                 	var tempTypeArray = new Array();
                 	tempTypeArray = [];
 			j = 0;
@@ -1522,7 +1523,6 @@ Extends: Application,
 				}
 				j++;
 			}	
-
 
 			//get a sister array with a transaction code for every item type in the standarard we are in this loop
                 	var transArray = new Array();
@@ -1566,7 +1566,6 @@ Extends: Application,
 					//APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
 				}
 				g++;
-				score++;	
 			}
 			
 			//check percent
@@ -1592,12 +1591,12 @@ Extends: Application,
 			var r = parseFloat(correct / total);				
 			r = r * 100;
 			var p = Math.round(r);			
-			APPLICATION.log('standard percent:' + p);
-			APPLICATION.log('SIZE:' + incorrectArray.length); 
+			APPLICATION.log('percent:' + p);
+			APPLICATION.log('size:' + incorrectArray.length); 
 
 			if (p < 98)
 			{
-				standard = this.mStandardsArray[i]; 
+				standard = this.mStandardsArray[score]; 
 				var r = Math.floor(Math.random()*incorrectArray.length);
 
 				this.mQuestionType = incorrectArray[r];
