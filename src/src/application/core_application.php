@@ -1534,7 +1534,7 @@ Extends: Application,
 
 			while (g < tempTypeArray.length)
 			{
-				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
+				APPLICATION.log('checking type:' + tempTypeArray[g]); 
 				var c = 0;
 				var gotType = ''; 
 				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
@@ -1546,11 +1546,11 @@ Extends: Application,
 						//APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
 
 						//fill incorrect array
-						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 1)
+						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 0)
 						{
-
+							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
 						}	
-						else
+						else if (this.mItemAttemptsTransactionCodeArrayOne[c] == 2)
 						{
 							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
 						}
@@ -1558,19 +1558,14 @@ Extends: Application,
 					c++;
 				}
 
-				if (gotType == '')
+				if (gotType == '') //this means student was never asked
 				{
 					transArray.push('2');	
+					incorrectArray.push(tempTypeArray[g]);	
 					//APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
-				}
-
-				for (h = 0; h < transArray.length; h++)
-				{
-					//APPLICATION.log('transArray:' + transArray[h]);	
 				}
 				g++;
 			}
-
 			
 			//check percent
 			var correct = 0;	
@@ -1578,15 +1573,18 @@ Extends: Application,
 			var total = transArray.length;	
 			for (y = 0; y < transArray.length; y++)
 			{
-				if (transArray[y] == 1)
+				if (transArray[y] == 0)
 				{
-					correct++;
+					incorrect++;
 				}
-				else
+				else if (transArray[y] == 2)
 				{
 					incorrect++;
 				}	
-
+				else if (transArray[y] == 1)
+				{
+					correct++;
+				}
 			} 
 				
 			var r = parseFloat(correct / total);				
@@ -1595,7 +1593,7 @@ Extends: Application,
 			APPLICATION.log('standard percent:' + p);
 			APPLICATION.log('SIZE:' + incorrectArray.length); 
 
-			if (p < 70)
+			if (p < 98)
 			{
 				standard = this.mStandardsArray[i]; 
 				var r = Math.floor(Math.random()*incorrectArray.length);
