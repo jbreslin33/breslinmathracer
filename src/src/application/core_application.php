@@ -1608,6 +1608,10 @@ Extends: Application,
 		{
 			this.mGame.setScore(score); 
 		}
+		else
+		{
+			APPLICATION.mHud.mGreen.setText('<font size="1">Score: ' + score + '</font>');
+		}
 	},
 
 //why is this asking pham k questions that are not in his u?
