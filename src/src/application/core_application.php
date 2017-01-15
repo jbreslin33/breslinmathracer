@@ -1508,6 +1508,7 @@ Extends: Application,
 		i = 0;
 		while (i < this.mStandardsArray.length && i < 4)
 		{
+			//get an array of the item types to check for the standard we are currently in this loop	
 			APPLICATION.log('checking standard:' + this.mStandardsArray[i]); 
                 	var tempTypeArray = new Array();
                 	tempTypeArray = [];
@@ -1516,13 +1517,13 @@ Extends: Application,
 			{
                         	if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[i]))
 				{
-					//APPLICATION.log('inc:' + this.mItemTypesArray[j]);
 					tempTypeArray.push(this.mItemTypesArray[j]);
 				}
 				j++;
 			}	
 
 
+			//get a sister array with a transaction code for every item type in the standarard we are in this loop
                 	var transArray = new Array();
                 	transArray = [];
 			g = 0;
@@ -1555,61 +1556,34 @@ Extends: Application,
 				}
 				g++;
 			}
+
 			
-/*
-			while (g < this.mItemAttemptsTypeArrayOne.length)
+			//check percent
+			var correct = 0;	
+			var incorrect = 0;	
+			var total = transArray.length;	
+			for (y = 0; y < transArray.length; y++)
 			{
-				if (tempTypeArray[i] == this.mItemAttemptsTypeArrayOne[j])
+				if (transArray[y] == 1)
 				{
-					tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
-				}					
-				j++;
-			}
-*/
+					correct++;
+				}
+				else
+				{
+					incorrect++;
+				}	
+
+			} 
+				
+			var r = parseFloat(correct / total);				
+			r = r * 100;
+			var p = Math.round(r);			
+			APPLICATION.log('standard percent:' + p);
+
+
 			i++;
 		}
 		
-		//this.mItemTypesArray = new Array(); //from db
-		//plit array
-/*
-		while (i < this.mItemTypesArray.length && i < 4)
-		{
-			var 	
-                	var s = this.mFirst.split("_");
-                	var standard = s[0];
-
-                var tempTypeArray = new Array();
-                tempTypeArray = [];
-
-                for (i=0; i < typesArray.length; i++)
-                {
-                        if (typesArray[i].includes("" + standard))
-                        {
-                                tempTypeArray.push(typesArray[i]);
-                        }
-                }
-*/
-
-/*
-		i = 0;
-		while (i < this.mItemTypesArray.length && i < 4)
-		{
-			var tempArray = new Array();
-			var tempArray = [];
-			j = 0;
-			while (j < this.mItemAttemptsTypeArrayOne.length)
-			{
-				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-				{
-					tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
-				}					
-				j++;
-			}
-			
-			//APPLICATION.log('ItemType:' + this.mItemTypesArray[i]);
-			i++;
-		}
-*/
 		this.mQuestionType = '3.oa.c.7_2';
 	},
 
