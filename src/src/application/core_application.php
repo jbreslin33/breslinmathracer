@@ -410,11 +410,11 @@ Extends: Application,
 
 	calcScore: function()
 	{
-		var score = this.mMilestonesStandardElement;
-		var unmastered = 0;
+		//var score = this.mMilestonesStandardElement;
+		//var unmastered = 0;
 
 		var questionNumber = this.mGame.mSheet.mCurrentElement + 1;
-		
+/*		
 		if (parseInt(this.mEvaluationsID) == 1)
 		{
 			for (var i = this.mMilestonesStandardElement; i < this.mItemTypesArray.length; i++)
@@ -464,6 +464,7 @@ Extends: Application,
 			
 			this.mGame.setUnmastered(unmastered);
 		}
+*/
 
 		if (parseInt(this.mEvaluationsID) == 3)
 		{
@@ -1454,7 +1455,7 @@ Extends: Application,
 
 		//add_game_C
 
-		this.mGame.setScore(score); 
+		//this.mGame.setScore(score); 
 	},
 
 	getMilestonesStandardElement: function()
@@ -1503,19 +1504,19 @@ Extends: Application,
 
 	getQuestionType: function()
 	{
+		var score = 0;
 		var standard = '' 
 		var questionType = '';
-		i = 0;
-		while (i < this.mStandardsArray.length && standard == '')
+		while (score < this.mStandardsArray.length && standard == '')
 		{
 			//get an array of the item types to check for the standard we are currently in this loop	
-			APPLICATION.log('checking standard:' + this.mStandardsArray[i]); 
+			APPLICATION.log('checking standard:' + this.mStandardsArray[score]); 
                 	var tempTypeArray = new Array();
                 	tempTypeArray = [];
 			j = 0;
 			while (j < this.mItemTypesArray.length) 
 			{
-                        	if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[i]))
+                        	if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[score]))
 				{
 					tempTypeArray.push(this.mItemTypesArray[j]);
 				}
@@ -1565,6 +1566,7 @@ Extends: Application,
 					//APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
 				}
 				g++;
+				score++;	
 			}
 			
 			//check percent
@@ -1601,9 +1603,12 @@ Extends: Application,
 				this.mQuestionType = incorrectArray[r];
 				APPLICATION.log('TYPE:' + this.mQuestionType); 
 			}
-			i++;
+			score++;
 		}
-		//this.mQuestionType = '3.oa.c.7_2';
+		if (this.mGame)
+		{
+			this.mGame.setScore(score); 
+		}
 	},
 
 //why is this asking pham k questions that are not in his u?
