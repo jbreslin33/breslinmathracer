@@ -1504,9 +1504,10 @@ Extends: Application,
 	getQuestionType: function()
 	{
 		var standard = '' 
-		//while (i < this.mStandardsArray.length && standard == '')
+		var questionType = '';
 		i = 0;
-		while (i < this.mStandardsArray.length && i < 4)
+		while (i < this.mStandardsArray.length && standard == '')
+		//while (i < this.mStandardsArray.length && i < 4)
 		{
 			//get an array of the item types to check for the standard we are currently in this loop	
 			APPLICATION.log('checking standard:' + this.mStandardsArray[i]); 
@@ -1528,6 +1529,10 @@ Extends: Application,
                 	transArray = [];
 			g = 0;
 
+			//incorrectArray
+                	var incorrectArray = new Array();
+                	incorrectArray = [];
+
 			while (g < tempTypeArray.length)
 			{
 				APPLICATION.log('checking type:' + tempTypeArray[g]); 
@@ -1540,6 +1545,16 @@ Extends: Application,
 						gotType = this.mItemAttemptsTransactionCodeArrayOne[c];	
 						transArray.push(gotType);	
 						APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
+
+						//fill incorrect array
+						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 1)
+						{
+
+						}	
+						else
+						{
+							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+						}
 					}
 					c++;
 				}
@@ -1580,11 +1595,18 @@ Extends: Application,
 			var p = Math.round(r);			
 			APPLICATION.log('standard percent:' + p);
 
+			if (p < 70)
+			{
+				standard = this.mStandardsArray[i]; 
+				var r = Math.floor(Math.random()*incorrectArray.length);
+ 				//var r = Math.floor(Math.random()*tempTypeArray.length);
 
+				this.mQuestionType = incorrectArray[r];
+				APPLICATION.log('TYPE:' + this.mQuestionType); 
+			}
 			i++;
 		}
-		
-		this.mQuestionType = '3.oa.c.7_2';
+		//this.mQuestionType = '3.oa.c.7_2';
 	},
 
 //why is this asking pham k questions that are not in his u?
