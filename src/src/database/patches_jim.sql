@@ -141,6 +141,6 @@ update users set core_grades_id = 4 where room_id = 108;
 --update rooms
 --update rooms set name = 'AM2' where id = 109;
 
-update users set score = 0;
-update users set core_standards_overide_id = '';
-update users set core_standards_id = 'k.cc.a.1';
+--update users set score = 0;
+--update users set core_standards_overide_id = '';
+--update users set core_standards_id = 'k.cc.a.1';
