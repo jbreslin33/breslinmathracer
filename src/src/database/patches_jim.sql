@@ -50,108 +50,81 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 
 
 --r2 k 
---update users set core_standards_overide_id = 'k.cc.a.1' where room_id = 7;
 update users set core_grades_id = 1 where room_id = 7;
 
 --r4 g1
---update users set core_standards_overide_id = '1.oa.a.1' where room_id = 8;
 update users set core_grades_id = 2 where room_id = 8;
 
 --r5 g1
---update users set core_standards_overide_id = '1.oa.a.1' where room_id = 23;
 update users set core_grades_id = 2 where room_id = 23;
 
 --r6 k 
---update users set core_standards_overide_id = 'k.cc.a.1' where room_id = 9;
 update users set core_grades_id = 1 where room_id = 9;
 
 --r7 pk 
---update users set core_standards_overide_id = 'k.cc.a.1' where room_id = 10;
 update users set core_grades_id = 1 where room_id = 10;
 
 --r8 pk 
---update users set core_standards_overide_id = 'k.cc.a.1' where room_id = 6;
 update users set core_grades_id = 1 where room_id = 6;
 
 --r21 g7
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 22;
 update users set core_grades_id = 8 where room_id = 22;
 
 --r22 g7
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 19;
 update users set core_grades_id = 8 where room_id = 19;
 
 --r23 g6 
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 24;
 update users set core_grades_id = 7 where room_id = 24;
 
 --r24 g8
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 25;
 update users set core_grades_id = 9 where room_id = 25;
 
 --r25 g6
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 26;
 update users set core_grades_id = 7 where room_id = 26;
 
 --r28 g8
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 18;
 update users set core_grades_id = 9 where room_id = 18;
 
 --r31 g3
---update users set core_standards_overide_id = '3.oa.a.1' where room_id = 5;
 update users set core_grades_id = 4 where room_id = 5;
 
 --r32 g4
---update users set core_standards_overide_id = '4.oa.a.1' where room_id = 15;
 update users set core_grades_id = 5 where room_id = 15;
 
 --r33 g5
---update users set core_standards_overide_id = '5.oa.a.1' where room_id = 1;
 update users set core_grades_id = 6 where room_id = 1;
 
 --r34 g5
---update users set core_standards_overide_id = '5.oa.a.1' where room_id = 2;
 update users set core_grades_id = 6 where room_id = 2;
 
 --r35 g4
---update users set core_standards_overide_id = '4.oa.a.1' where room_id = 16;
 update users set core_grades_id = 5 where room_id = 16;
 
 --r36 g3
---update users set core_standards_overide_id = '3.oa.a.1' where room_id = 17;
 update users set core_grades_id = 4 where room_id = 17;
 
 --r37 g2
---update users set core_standards_overide_id = '2.oa.a.1' where room_id = 14;
 update users set core_grades_id = 3 where room_id = 14;
 
 --r39 g2
---update users set core_standards_overide_id = '2.oa.a.1' where room_id = 13;
 update users set core_grades_id = 3 where room_id = 13;
 
-
 --RR8
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 107;
 update users set core_grades_id = 9 where room_id = 107;
 
 --RR7
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 106;
 update users set core_grades_id = 8 where room_id = 106;
 
 --RR6
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 105;
 update users set core_grades_id = 7 where room_id = 105;
 
 --RR5
---update users set core_standards_overide_id = '5.oa.a.1' where room_id = 104;
 update users set core_grades_id = 6 where room_id = 104;
 
 --RR4
---update users set core_standards_overide_id = '4.oa.a.1' where room_id = 103;
 update users set core_grades_id = 5 where room_id = 103;
 
 --RR3
---update users set core_standards_overide_id = '3.oa.a.1' where room_id = 108;
 update users set core_grades_id = 4 where room_id = 108;
 
 --begin temp 
@@ -160,12 +133,14 @@ update users set core_grades_id = 4 where room_id = 108;
 --end temp
 
 --AM3
---update users set core_standards_overide_id = '3.oa.a.1' where room_id = 109;
 --update users set core_grades_id = 4 where room_id = 109;
 
 --AM7
---update users set core_standards_overide_id = '6.rp.a.1' where room_id = 110;
 --update users set core_grades_id = 8 where room_id = 110;
 
 --update rooms
 --update rooms set name = 'AM2' where id = 109;
+
+update users set score = 0;
+update users set core_standards_overide_id = '';
+update users set core_standards_id = 'k.cc.a.1';
