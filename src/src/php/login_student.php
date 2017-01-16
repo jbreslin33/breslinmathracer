@@ -26,7 +26,7 @@ function __construct($application)
 	$this->mFirstName = 0;
 	$this->mLastName = 0;
 	$this->mUserID = 0;
-	$this->mCoreStandardsID = 0;
+	$this->mStandard = 0;
 	$this->mMilestonesStandard = 'k.cc.a.1';
 
 }
@@ -109,10 +109,7 @@ public function checkForStudent()
                 		$room_id = pg_Result($result2, 0, 'room_id');
                 		$team_id = pg_Result($result2, 0, 'team_id');
 
-				$core_standards_overide_id = pg_Result($result2, 0, 'core_standards_overide_id'); 
-
-				//eventually will this be automated to fill core_standards_overide_id as students finish criticals.
-				$this->mMilestonesStandard = $core_standards_overide_id;
+				$this->mStandard = $core_standards_id;
 
 				//log in
         			$this->mLoggedIn = 1;
@@ -121,7 +118,7 @@ public function checkForStudent()
                 		$this->mFirstName = $first_name;
                 		$this->mLastName = $last_name;
                 		$this->mUserID = $user_id;
-				$this->mCoreStandardsID = $core_standards_id;
+				$this->mStandard = $core_standards_id;
 				$this->mSchoolID = $school_id;
 				$this->mTeacherID = $teacher_id;
 				$this->mRoomID = $room_id;
@@ -1335,7 +1332,7 @@ public function sendLoginStudent()
 	$returnString .= ",";
 	$returnString .= $this->mLastName;
 	$returnString .= ",";
-	$returnString .= $this->mMilestonesStandard;
+	$returnString .= $this->mStandard;
 	$returnString .= ",";
 	$returnString .= $itemTypesRawDataA;
 	$returnString .= ",";

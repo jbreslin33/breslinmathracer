@@ -30,7 +30,7 @@ pickItem: function()
 	else 
 	{
 		//lets get first and if its not a dup dont even go in
-		APPLICATION.getMilestonesStandardElement();
+		//APPLICATION.getMilestonesStandardElement();
 
 
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)

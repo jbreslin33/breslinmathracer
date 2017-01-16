@@ -241,8 +241,8 @@ Extends: Application,
 		this.mProgression = 0;
 		//this.mHighest = 0;
 		this.mStandard = '';
-		this.mMilestonesStandard = '';
-		this.mMilestonesStandardElement = '';
+		//this.mMilestonesStandard = '';
+		//this.mMilestonesStandardElement = '';
 		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';
@@ -1457,7 +1457,7 @@ Extends: Application,
 
 		//this.mGame.setScore(score); 
 	},
-
+/*
 	getMilestonesStandardElement: function()
 	{
 		var i = 0;
@@ -1472,6 +1472,7 @@ Extends: Application,
 			i++;
 		}
 	},
+*/
 
 	fillStandardsArray: function()
 	{
@@ -1625,6 +1626,7 @@ Extends: Application,
 	},
 
 //why is this asking pham k questions that are not in his u?
+/*
 	getFirst: function()
 	{
 		var first = '';
@@ -1696,7 +1698,7 @@ Extends: Application,
 		}
 		this.mFirst = first;
 	},
-
+*/
         getSameStandard: function(typesArray,attemptArray,transactionCodeArray)
         {
 		//get first standard wrong...

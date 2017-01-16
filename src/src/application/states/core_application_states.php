@@ -360,7 +360,8 @@ execute: function(application)
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
                 	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                	APPLICATION.mMilestonesStandard = APPLICATION.mResponseArray[6];
+                	APPLICATION.mStandard = APPLICATION.mResponseArray[6];
+                	APPLICATION.mHud.setYellow(APPLICATION.mStandard);
                 	APPLICATION.mRole = 1;
 			
 			var itemTypes = APPLICATION.mResponseArray[7];
