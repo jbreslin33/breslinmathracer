@@ -1618,6 +1618,8 @@ Extends: Application,
 			APPLICATION.mHud.mGreen.setText('<font size="1">Score: ' + score + '</font>');
 		}
 
+		this.mStandard = standard;
+
 		//set hud
 		APPLICATION.mHud.setYellow(standard);
 	},
@@ -2236,7 +2238,7 @@ Extends: Application,
                         }
                 }
                 //xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mHighest,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mStandard,true);
                 xmlhttp.send();
         },
  
