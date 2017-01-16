@@ -414,42 +414,7 @@ Extends: Application,
 		//var unmastered = 0;
 
 		var questionNumber = this.mGame.mSheet.mCurrentElement + 1;
-/*		
-		if (parseInt(this.mEvaluationsID) == 1)
-		{
-			for (var i = this.mMilestonesStandardElement; i < this.mItemTypesArray.length; i++)
-			{
-				var foundOne = false;
-				var j = 0;
-				while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
-				{
-					if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-					{
-						score++;	
-						foundOne = true;
-					}					
-					j++;
-				}
-			}
-
-			//unmastered if blank break
-			var i = 0;
-			var breakOut = false;
-			APPLICATION.mHud.emptyTanSelect();
-			while (i < this.mItemTypesArray.length && breakOut == false)
-			{
-				var attemptArray = new Array();;
-				attemptArray.length = 0;
-				var j = 0;	
-				while (j < this.mItemAttemptsTypeArrayOne.length && attemptArray.length < 2)
-				{
-					if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-					{
-						attemptArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
-					}
-					j++;
-				}
-				
+			/*	
 				if (attemptArray.length > 1) //asked twice or more...
 				{
 					if (attemptArray[0] != 1 || attemptArray[1] != 1)
@@ -458,14 +423,7 @@ Extends: Application,
 						unmastered++;
 					}
 				}	
-
-				i++;
-			}
-			
-			this.mGame.setUnmastered(unmastered);
-		}
-*/
-
+			*/
 		if (parseInt(this.mEvaluationsID) == 3)
 		{
                 	var i = 0;
