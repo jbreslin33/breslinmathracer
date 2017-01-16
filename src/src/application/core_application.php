@@ -239,7 +239,7 @@ Extends: Application,
 		/*********** LEVEL *******************
 		this.mRef_id = 'login';
 		this.mProgression = 0;
-		this.mHighest = 0;
+		//this.mHighest = 0;
 		this.mStandard = '';
 		this.mMilestonesStandard = '';
 		this.mMilestonesStandardElement = '';
@@ -355,7 +355,7 @@ Extends: Application,
 
 		this.bapplication();	
         },
-
+/*
 	highestAchieved: function()
 	{
 		var foundHighestAchieved = false;
@@ -384,7 +384,7 @@ Extends: Application,
 		
 		APPLICATION.log('mHighest:' + this.mHighest);
 	},
-
+*/
 	updateAttemptTable: function()
 	{
 		var l = APPLICATION.mItemAttemptsArray.length; 	
