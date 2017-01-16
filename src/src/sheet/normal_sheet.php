@@ -40,32 +40,32 @@ pickItem: function()
 			{
                 		APPLICATION.getQuestionType();
 				APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
-				APPLICATION.log('Q: A');
+				//APPLICATION.log('Q: A');
 			}
 
                		if (r == 94 || r == 95)
                		{
                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-				APPLICATION.log('Q: B');
+				//APPLICATION.log('Q: B');
                		}
                		if (r == 96 || r == 97)
                		{
                        		APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-				APPLICATION.log('Q: C');
+				//APPLICATION.log('Q: C');
                		}
                		if (r == 98)
                		{
                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                       		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-				APPLICATION.log('Q: D');
+				//APPLICATION.log('Q: D');
                		}
                		if (r == 99)
                		{
                        		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-				APPLICATION.log('Q: E');
+				//APPLICATION.log('Q: E');
                		}
 		} //while
 	} //else escape from kinder

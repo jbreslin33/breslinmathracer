@@ -6,7 +6,7 @@ Extends: Application,
 		this.parent();
 
 		//logging
-		this.mStateLogs = true; 
+		this.mStateLogs = false; 
 		this.mStateLogsExecute = false; 
 		this.mStateLogsExit = false; 
 
@@ -1510,8 +1510,8 @@ Extends: Application,
 		while (score < this.mStandardsArray.length && standard == '')
 		{
 			//get an array of the item types to check for the standard we are currently in this loop	
-			APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
-			APPLICATION.log('score:' + score); 
+			//APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
+			//APPLICATION.log('score:' + score); 
                 	var tempTypeArray = new Array();
                 	tempTypeArray = [];
 			j = 0;
@@ -1535,7 +1535,7 @@ Extends: Application,
 
 			while (g < tempTypeArray.length)
 			{
-				APPLICATION.log('checking type:' + tempTypeArray[g]); 
+				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
 				var c = 0;
 				var gotType = ''; 
 				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
@@ -1591,8 +1591,8 @@ Extends: Application,
 			var r = parseFloat(correct / total);				
 			r = r * 100;
 			var p = Math.round(r);			
-			APPLICATION.log('percent:' + p);
-			APPLICATION.log('size:' + incorrectArray.length); 
+			//APPLICATION.log('percent:' + p);
+			//APPLICATION.log('size:' + incorrectArray.length); 
 
 			if (p < 98)
 			{
@@ -1600,7 +1600,7 @@ Extends: Application,
 				var r = Math.floor(Math.random()*incorrectArray.length);
 
 				this.mQuestionType = incorrectArray[r];
-				APPLICATION.log('TYPE:' + this.mQuestionType); 
+				//APPLICATION.log('TYPE:' + this.mQuestionType); 
 			}
 			score++;
 		}
@@ -1612,6 +1612,9 @@ Extends: Application,
 		{
 			APPLICATION.mHud.mGreen.setText('<font size="1">Score: ' + score + '</font>');
 		}
+
+		//set hud
+		APPLICATION.mHud.setYellow(standard);
 	},
 
 //why is this asking pham k questions that are not in his u?

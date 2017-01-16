@@ -219,12 +219,12 @@ fillTanSelect: function(filler)
 
 	setPink: function(t)
 	{
-        	this.mPink.setText('<font size="1">C: ' + t +  '</font>');
+        	this.mPink.setText('<font size="1">' + t +  '</font>');
 	},
 
 	setYellow: function(t)
 	{
-        	this.mYellow.setText('<font size="1">H: ' + t + '</font>');
+        	this.mYellow.setText('<font size="1">' + t + '</font>');
 	},
 
         getYellow: function()
