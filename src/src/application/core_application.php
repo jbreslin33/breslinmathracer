@@ -1594,6 +1594,11 @@ Extends: Application,
 			//APPLICATION.log('percent:' + p);
 			//APPLICATION.log('size:' + incorrectArray.length); 
 
+			//set hud
+			APPLICATION.mHud.setCyan('' + 'grade:' + p + '%');
+			APPLICATION.mHud.setViolet('' + correct + ':' + total);
+
+
 			if (p < 98)
 			{
 				standard = this.mStandardsArray[score]; 
