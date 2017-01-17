@@ -6,20 +6,20 @@ class Scroll
 
 function __construct()
 {
-        $this->logs = false;
+        $this->logs = true;
         if ($this->logs)
         {
                 error_log('Scroll::Scroll');
         }
 
-	$this->mDatabaseConnection = new DatabaseConnection();
-	$this->setScroll();
+	//$this->setScroll();
 }
 
 public function setScroll()
 {
 	if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
 	{
+		$db = new DatabaseConnection();
 
 		$question_array = array();
 		$answer_array = array();
@@ -28,7 +28,7 @@ public function setScroll()
 		$query .= $_SESSION["user_id"];
 		$query .= " AND item_attempts.transaction_code != 1 order by item_attempts.start_time desc LIMIT 5";
 	
-		$result = pg_query($this->mDatabaseConnection->getConn(),$query) or die('no connection: ' . pg_last_error());
+		$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
        		$numberOfResults = pg_num_rows($result);
 
 		$itemString = ""; 

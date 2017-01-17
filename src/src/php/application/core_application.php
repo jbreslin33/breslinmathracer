@@ -8,6 +8,7 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_student.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_school.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_student.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_school.php");
+include_once(getenv("DOCUMENT_ROOT") . "/src/php/scroll.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/item_attempt.php");
 
 //start new session
@@ -15,11 +16,13 @@ session_start();
 
 if (!isset($_SESSION["APPLICATION"]))
 {
+	error_log("new");
         $APPLICATION = new CoreApplication();
 	$_SESSION["APPLICATION"] = $APPLICATION;
 }
 else
 {
+	error_log("old");
 	$APPLICATION = $_SESSION["APPLICATION"];
 }	
 
@@ -201,6 +204,8 @@ function __construct()
 	$this->mLoginSchool   = new LoginSchool($this);	
 	$this->mSignupStudent = new SignupStudent($this);	
 	$this->mSignupSchool  = new SignupSchool($this);	
+	
+	$this->mScroll = new Scroll();	
 	
 	$this->mEvaluationsAttemptsArray = array();
 
