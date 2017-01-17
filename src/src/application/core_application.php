@@ -1941,8 +1941,9 @@ Extends: Application,
 			if (codeNumber == APPLICATION.MILESTONES_COMPLETE)
 			{
 				//APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
-				for (r=0; r < this.mResponseArray.length; r++)
+				for (r=1; r < this.mResponseArray.length; r++)
 				{
+ 					APPLICATION.mHud.fillTanSelect(this.mResponseArray[r]);
 					APPLICATION.log('r:' + this.mResponseArray[r]);
 				}
 			}
