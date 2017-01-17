@@ -778,6 +778,28 @@ public function bexit($bapplication)
         {
                 error_log('K_CC_APPLICATION Exit');
         }
+/*
+$returnString = "116,";
+$returnString .= $_SESSION["ref_id"];
+$returnString .= ",";
+$returnString .= $_SESSION["LOGGED_IN"];
+$returnString .= ",";
+$returnString .= $_SESSION["username"];
+$returnString .= ",";
+$returnString .= $_SESSION["first_name"];
+$returnString .= ",";
+$returnString .= $_SESSION["last_name"];
+$returnString .= ",";
+$returnString .= $_SESSION["raw_data"];
+$returnString .= ",";
+$returnString .= $_SESSION["role"];
+echo $returnString;
+*/
+
+$returnString = "139,A,B,C,D,E";
+echo $returnString;
+
+
 }
 
 }//end class
@@ -1863,6 +1885,8 @@ public function bexit($bapplication)
         {
                 error_log('G5_NBT_B_6_APPLICATION Exit');
         }
+$returnString = "139,A,B,C,D,E";
+echo $returnString;
 }
 
 }//end class

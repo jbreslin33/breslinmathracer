@@ -40,6 +40,7 @@ Extends: Application,
 
 		//scroll
 		this.SCROLL = 112;
+		this.MILESTONES_COMPLETE = 139;
 
 		//ITEM_ATTEMPTS
 		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
@@ -1936,6 +1937,14 @@ Extends: Application,
 			if (codeNumber == APPLICATION.SCROLL)
 			{
 				APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
+			}
+			if (codeNumber == APPLICATION.MILESTONES_COMPLETE)
+			{
+				//APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
+				for (r=0; r < this.mResponseArray.length; r++)
+				{
+					APPLICATION.log('r:' + this.mResponseArray[r]);
+				}
 			}
 		}
 	},
