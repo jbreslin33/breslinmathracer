@@ -1887,6 +1887,9 @@ public function bexit($bapplication)
         }
 $returnString = "139,A,B,C,D,E";
 echo $returnString;
+
+	//call  
+
 }
 
 }//end class
