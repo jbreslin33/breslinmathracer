@@ -40,6 +40,9 @@ public function setMilestones()
 			$itemString .= str_replace(",","",$a);	
 		}
         	$_SESSION["milestones"] = $itemString;
+	
+		//temp
+        	$_SESSION["milestones"] = "A,B,C,D,Y,Z";
 	}
 }
 //end of class

@@ -2,7 +2,7 @@
 include(getenv("DOCUMENT_ROOT") . "/src/php/milestones.php");
 
 //start new session
-session_start();
+//session_start();
 
 $milestones = new Milestones();
 $milestones->setMilestones();

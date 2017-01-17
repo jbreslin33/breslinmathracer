@@ -1885,11 +1885,10 @@ public function bexit($bapplication)
         {
                 error_log('G5_NBT_B_6_APPLICATION Exit');
         }
-$returnString = "139,A,B,C,D,E";
-echo $returnString;
 
 	//call  
-
+	//error_log('calling milestones');
+	include_once(getenv("DOCUMENT_ROOT") . "/web/php/milestones.php");
 }
 
 }//end class
