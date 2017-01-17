@@ -414,6 +414,7 @@ public function bexit($bapplication)
                 error_log('LOGIN_STUDENT_APPLICATION Exit');
         }
 	$bapplication->mCode = 0;
+
 }
 
 }//end class
@@ -551,6 +552,13 @@ public function enter($bapplication)
         {
                 error_log('MAIN_MENU_APPLICATION Enter');
         }
+
+	//run oncec
+	if ($bapplication->run_once == false)
+	{
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/milestones.php");
+		$bapplication->run_once = true;
+	}
 
 	$bapplication->update();		
 }
@@ -778,28 +786,6 @@ public function bexit($bapplication)
         {
                 error_log('K_CC_APPLICATION Exit');
         }
-/*
-$returnString = "116,";
-$returnString .= $_SESSION["ref_id"];
-$returnString .= ",";
-$returnString .= $_SESSION["LOGGED_IN"];
-$returnString .= ",";
-$returnString .= $_SESSION["username"];
-$returnString .= ",";
-$returnString .= $_SESSION["first_name"];
-$returnString .= ",";
-$returnString .= $_SESSION["last_name"];
-$returnString .= ",";
-$returnString .= $_SESSION["raw_data"];
-$returnString .= ",";
-$returnString .= $_SESSION["role"];
-echo $returnString;
-*/
-
-$returnString = "139,A,B,C,D,E";
-echo $returnString;
-
-
 }
 
 }//end class

@@ -30,7 +30,6 @@ if (isset($_GET["code"]))
 	//error_log($APPLICATION->mCode);
 }
 
-
 unset($APPLICATION->mDataArray);
 $APPLICATION->mDataArray = array();
 
@@ -106,6 +105,9 @@ class CoreApplication
 
 function __construct()
 {
+	//init
+	$this->run_once = false;
+
 	//db connection for session
 
 	//big vars

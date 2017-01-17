@@ -9,5 +9,7 @@ else
 {
 	$_SESSION["milestones"] = "139,k.cc";
 }
+error_log($returnString);
 echo $returnString;
+
 ?>
