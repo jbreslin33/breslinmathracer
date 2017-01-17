@@ -16,13 +16,11 @@ session_start();
 
 if (!isset($_SESSION["APPLICATION"]))
 {
-	error_log("new");
         $APPLICATION = new CoreApplication();
 	$_SESSION["APPLICATION"] = $APPLICATION;
 }
 else
 {
-	error_log("old");
 	$APPLICATION = $_SESSION["APPLICATION"];
 }	
 
