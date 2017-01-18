@@ -91,33 +91,6 @@ public function setMilestones()
 			}
 
 			$_SESSION["milestones"] = $txt;
-/*
-                	if ($passed == 1)
-                	{
-                        	$start_time = $row[0];
-                        	echo '<tr bgcolor="green">';
-                	}
-                	else
-                	{
-                        	echo '<tr bgcolor="red">';
-                	}
-
-                	//first data in row is milestone name
-                	echo '<td>';
-                	echo $description;
-                	echo '</td>';
-
-                	echo '<td>';
-                	echo mb_strimwidth($start_time, 0, 19, "");
-                	//echo $start_time;
-                	echo '</td>';
-
-                	echo '<td>';
-                	echo $passed;
-                	echo '</td>';
-
-                	echo '</tr>';
-*/
 		}
 	}
 }	
