@@ -63,12 +63,31 @@ public function setMilestones()
 
 			if ($i == 0)
 			{  
-				$txt .= $description;	
+                		if ($passed == 1)
+				{
+				}
+				else
+				{
+					$txt .= $description;	
+				}
 			}
 			else
 			{
-				$txt .= ",";	
-				$txt .= $description;	
+                		if ($passed == 1)
+				{
+				}
+				else
+				{
+					if ($txt == "")
+					{
+						$txt .= $description;	
+					}
+					else
+					{
+						$txt .= ",";	
+						$txt .= $description;	
+					}
+				}
 			}
 
 			$_SESSION["milestones"] = $txt;
