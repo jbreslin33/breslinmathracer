@@ -17,34 +17,91 @@ public function setMilestones()
 {
 	if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
 	{
-		$db = new DatabaseConnection();
+		include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
+		$db = dbConnect();
 
-		$question_array = array();
-		$answer_array = array();
 
-		$query = "select question, user_answer from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id where user_id = ";
-		$query .= $_SESSION["user_id"];
-		$query .= " AND item_attempts.transaction_code != 1 order by item_attempts.start_time desc LIMIT 5";
-	
-		$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
-       		$numberOfResults = pg_num_rows($result);
+       		$query_evaluations = "select description from evaluations where progression > 0.9 order by progression;";
+        	$result_evaluations = pg_query($db,$query_evaluations);
+        	$numrows_evaluations = pg_numrows($result_evaluations);
 
-		$itemString = ""; 
 
-		for($i=0; $i < $numberOfResults; $i++)
+        	$query = "select evaluations_attempts.start_time, evaluations.description,      COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
+    		COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, evaluations.score_needed           from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND evaluations_attempts.start_time > '2016-09-10 09:28:27.777635'AND user_id = ";
+
+        	$query .= $_SESSION["user_id"];
+        	$query .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed order by evaluations_attempts.start_time desc;";
+
+        	$result = pg_query($db,$query);
+        	$numrows = pg_numrows($result);
+
+
+		$txt = "";
+        	for($i = 0; $i < $numrows_evaluations; $i++)
         	{
-			$q = trim(pg_Result($result, $i, 'question'));	
-			$itemString .= str_replace(",","",$q);	
-		
-			$a = trim(pg_Result($result, $i, 'user_answer'));	
-			$itemString .= str_replace(",","",$a);	
+                	$row_evaluations = pg_fetch_array($result_evaluations, $i);
+
+                	$description = $row_evaluations[0];
+                	$start_time = "s";
+                	$passed = 0;
+
+                	//now lets loop for data
+                	$y = 0;
+                	while ($y < $numrows && $passed == 0)
+                	{
+                        	$row = pg_fetch_array($result, $y);
+                        	if ($description == $row[1])
+                        	{
+                                	if ($row[3] >= $row[4] && $row[2] == 0)
+                                	{
+                                        	$passed = 1;
+                                	}
+                        	}
+
+                        	$y++;
+                	}
+
+			if ($i == 0)
+			{  
+				$txt .= $description;	
+			}
+			else
+			{
+				$txt .= ",";	
+				$txt .= $description;	
+			}
+
+			$_SESSION["milestones"] = $txt;
+/*
+                	if ($passed == 1)
+                	{
+                        	$start_time = $row[0];
+                        	echo '<tr bgcolor="green">';
+                	}
+                	else
+                	{
+                        	echo '<tr bgcolor="red">';
+                	}
+
+                	//first data in row is milestone name
+                	echo '<td>';
+                	echo $description;
+                	echo '</td>';
+
+                	echo '<td>';
+                	echo mb_strimwidth($start_time, 0, 19, "");
+                	//echo $start_time;
+                	echo '</td>';
+
+                	echo '<td>';
+                	echo $passed;
+                	echo '</td>';
+
+                	echo '</tr>';
+*/
 		}
-        	$_SESSION["milestones"] = $itemString;
-	
-		//temp
-        	$_SESSION["milestones"] = "A,B,C,D,Y,Z";
 	}
-}
+}	
 //end of class
 }
 ?>
