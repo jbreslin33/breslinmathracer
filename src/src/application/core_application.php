@@ -1559,7 +1559,7 @@ Extends: Application,
 			APPLICATION.mHud.setViolet('' + correct + ':' + total);
 
 
-			if (p < 98)
+			if (p < 80)
 			{
 				standard = this.mStandardsArray[score]; 
 				var r = Math.floor(Math.random()*incorrectArray.length);
