@@ -130,7 +130,7 @@ var Game = new Class(
 	reset: function()
         {
                 /************ SCORE *******/
-                this.setScore(0);
+                //this.setScore(0);
 		this.mKilled = false;
 
                 /**************** TIME ************/
