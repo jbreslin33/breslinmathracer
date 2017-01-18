@@ -48,7 +48,7 @@ pickItem: function()
 				APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
 				APPLICATION.log('Q: A2');
 			}
-
+/*
                		if (r >= 80 && r < 85)
                		{
                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
@@ -61,13 +61,14 @@ pickItem: function()
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
 				APPLICATION.log('Q: C');
                		}
-               		if (r >= 90 && r < 95)
+*/
+               		if (r >= 80 && r < 90)
                		{
                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                       		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
 				APPLICATION.log('Q: D');
                		}
-               		if (r >= 95 && r < 101)
+               		if (r >= 90 && r < 101)
                		{
                        		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
