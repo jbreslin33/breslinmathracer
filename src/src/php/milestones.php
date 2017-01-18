@@ -21,7 +21,7 @@ public function setMilestones()
 		$db = dbConnect();
 
 
-       		$query_evaluations = "select description from evaluations where progression > 0.9 order by progression;";
+       		$query_evaluations = "select description from evaluations where progression > 0.9 AND description != '4_oa_b_4' order by progression;";
         	$result_evaluations = pg_query($db,$query_evaluations);
         	$numrows_evaluations = pg_numrows($result_evaluations);
 
