@@ -36,36 +36,42 @@ pickItem: function()
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
        		{
        			var r = Math.floor(Math.random()*100);
-               		if (r < 94)
+               		if (r < 40)
 			{
-                		APPLICATION.getQuestionType();
+                		APPLICATION.getQuestionType(1);
 				APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
-				//APPLICATION.log('Q: A');
+				APPLICATION.log('Q: A1');
+			}
+               		if (r >= 40 && r < 80)
+			{
+                		APPLICATION.getQuestionType(2);
+				APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
+				APPLICATION.log('Q: A2');
 			}
 
-               		if (r == 94 || r == 95)
+               		if (r >= 80 && r < 85)
                		{
                        		APPLICATION.getLeastAskedHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAskedHalf;
-				//APPLICATION.log('Q: B');
+				APPLICATION.log('Q: B');
                		}
-               		if (r == 96 || r == 97)
+               		if (r >= 85 && r < 90)
                		{
                        		APPLICATION.getLeastCorrectHalf(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrectHalf;
-				//APPLICATION.log('Q: C');
+				APPLICATION.log('Q: C');
                		}
-               		if (r == 98)
+               		if (r >= 90 && r < 95)
                		{
                        		APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                       		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-				//APPLICATION.log('Q: D');
+				APPLICATION.log('Q: D');
                		}
-               		if (r == 99)
+               		if (r >= 95 && r < 101)
                		{
                        		APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
                        		APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-				//APPLICATION.log('Q: E');
+				APPLICATION.log('Q: E');
                		}
 		} //while
 	} //else escape from kinder

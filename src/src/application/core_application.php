@@ -1462,7 +1462,7 @@ Extends: Application,
 		
 	},
 
-	getQuestionType: function()
+	getQuestionType: function(old)
 	{
 		var score = 0;
 		var standard = '' 
@@ -1558,13 +1558,21 @@ Extends: Application,
 			APPLICATION.mHud.setCyan('' + 'grade:' + p + '%');
 			APPLICATION.mHud.setViolet('' + correct + ':' + total);
 
+			//while (g < tempTypeArray.length)
 
 			if (p < 80)
 			{
 				standard = this.mStandardsArray[score]; 
-				var r = Math.floor(Math.random()*incorrectArray.length);
-
-				this.mQuestionType = incorrectArray[r];
+				if (old == 1)
+				{
+					var r = Math.floor(Math.random()*incorrectArray.length);
+					this.mQuestionType = incorrectArray[r];
+				}
+				else if (old == 2)
+				{
+					var r = Math.floor(Math.random()*tempTypeArray.length);
+					this.mQuestionType = tempTypeArray[r];
+				}
 				//APPLICATION.log('TYPE:' + this.mQuestionType); 
 			}
 			score++;
