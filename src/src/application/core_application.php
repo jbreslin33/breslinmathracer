@@ -1574,9 +1574,27 @@ Extends: Application,
 		var oldStandard = this.mStandardsArray[r]; 
 		APPLICATION.log('oldStandard:' + oldStandard);
 	
+	
+		var oldTempTypeArray = new Array();
+                oldTempTypeArray = [];
+                u = 0;
+                while (u < this.mItemTypesArray.length)
+                {
+                	if (this.mItemTypesArray[u].includes("" + oldStandard))
+                        {
+                                oldTempTypeArray.push(this.mItemTypesArray[u]);
+                        }
+                        u++;
+                }     
 		
+		var rt = Math.floor(Math.random()*oldTempTypeArray.length);
+		APPLICATION.log('oldType element:' + rt);
+		APPLICATION.log('oldType:' + oldTempTypeArray[rt]);
+		var oldType = oldTempTypeArray[rt]; 
+
+	
 			//temp.......
-		this.mQuestionType = 'k.oa.a.1_1';
+		this.mQuestionType = oldType;
 		
 
 		if (this.mGame)
