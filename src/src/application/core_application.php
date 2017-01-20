@@ -1462,6 +1462,138 @@ Extends: Application,
 		
 	},
 
+	askFromARandomOldStandard: function()
+	{
+		var score = 0;
+		var standard = '' 
+		var questionType = '';
+		var e = 0; 
+		while (score < this.mStandardsArray.length && standard == '')
+		{
+			//get an array of the item types to check for the standard we are currently in this loop	
+			//APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
+			//APPLICATION.log('score:' + score); 
+                	var tempTypeArray = new Array();
+                	tempTypeArray = [];
+			j = 0;
+			while (j < this.mItemTypesArray.length) 
+			{
+                        	if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[score]))
+				{
+					tempTypeArray.push(this.mItemTypesArray[j]);
+				}
+				j++;
+			}	
+
+			//get a sister array with a transaction code for every item type in the standarard we are in this loop
+                	var transArray = new Array();
+                	transArray = [];
+			g = 0;
+
+			//incorrectArray
+                	var incorrectArray = new Array();
+                	incorrectArray = [];
+
+			while (g < tempTypeArray.length)
+			{
+				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
+				var c = 0;
+				var gotType = ''; 
+				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
+				{
+					if (tempTypeArray[g] == this.mItemAttemptsTypeArrayOne[c])
+					{
+						gotType = this.mItemAttemptsTransactionCodeArrayOne[c];	
+						transArray.push(gotType);	
+						//APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
+
+						//fill incorrect array
+						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 0)
+						{
+							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+						}	
+						else if (this.mItemAttemptsTransactionCodeArrayOne[c] == 2)
+						{
+							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+						}
+					}
+					c++;
+				}
+
+				if (gotType == '') //this means student was never asked
+				{
+					transArray.push('2');	
+					incorrectArray.push(tempTypeArray[g]);	
+					//APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
+				}
+				g++;
+			}
+			
+			//check percent
+			var correct = 0;	
+			var incorrect = 0;	
+			var total = transArray.length;	
+			for (y = 0; y < transArray.length; y++)
+			{
+				if (transArray[y] == 0)
+				{
+					incorrect++;
+				}
+				else if (transArray[y] == 2)
+				{
+					incorrect++;
+				}	
+				else if (transArray[y] == 1)
+				{
+					correct++;
+				}
+			} 
+				
+			var r = parseFloat(correct / total);				
+			r = r * 100;
+			var p = Math.round(r);			
+			//APPLICATION.log('percent:' + p);
+			//APPLICATION.log('size:' + incorrectArray.length); 
+
+			//set hud
+			APPLICATION.mHud.setCyan('' + 'grade:' + p + '%');
+			APPLICATION.mHud.setViolet('' + correct + ':' + total);
+
+			//while (g < tempTypeArray.length)
+
+			if (p < 80)
+			{
+				standard = this.mStandardsArray[score]; 
+			}
+			score++;
+		} //end getting standard
+
+
+		APPLICATION.log('score:' + score);
+		var r = Math.floor(Math.random()*score);
+		var oldStandard = this.mStandardsArray[r]; 
+		APPLICATION.log('oldStandard:' + oldStandard);
+	
+		
+			//temp.......
+		this.mQuestionType = 'k.oa.a.1_1';
+		
+
+		if (this.mGame)
+		{
+			this.mGame.setScore(score); 
+		}
+		else
+		{
+			APPLICATION.mHud.mGreen.setText('<font size="1">Score: ' + score + '</font>');
+		}
+
+		this.mStandard = standard;
+
+		//set hud
+		APPLICATION.mHud.setYellow(standard);
+	},
+
 	getQuestionType: function(old)
 	{
 		var score = 0;
@@ -1591,6 +1723,8 @@ Extends: Application,
 		//set hud
 		APPLICATION.mHud.setYellow(standard);
 	},
+
+
 
 //why is this asking pham k questions that are not in his u?
 /*

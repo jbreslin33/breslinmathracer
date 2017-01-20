@@ -36,6 +36,12 @@ pickItem: function()
 		while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
        		{
        			var r = Math.floor(Math.random()*100);
+			r = 150;
+			if (r == 150)
+			{
+                		APPLICATION.askFromARandomOldStandard();
+				APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
+			}
                		if (r < 40)
 			{
                 		APPLICATION.getQuestionType(1);
