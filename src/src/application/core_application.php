@@ -1569,10 +1569,10 @@ Extends: Application,
 		} //end getting standard
 
 
-		APPLICATION.log('score:' + score);
+		//APPLICATION.log('score:' + score);
 		var r = Math.floor(Math.random()*score);
 		var oldStandard = this.mStandardsArray[r]; 
-		APPLICATION.log('oldStandard:' + oldStandard);
+		//APPLICATION.log('oldStandard:' + oldStandard);
 	
 	
 		var oldTempTypeArray = new Array();
@@ -1588,8 +1588,8 @@ Extends: Application,
                 }     
 		
 		var rt = Math.floor(Math.random()*oldTempTypeArray.length);
-		APPLICATION.log('oldType element:' + rt);
-		APPLICATION.log('oldType:' + oldTempTypeArray[rt]);
+		//APPLICATION.log('oldType element:' + rt);
+		//APPLICATION.log('oldType:' + oldTempTypeArray[rt]);
 		var oldType = oldTempTypeArray[rt]; 
 
 	
