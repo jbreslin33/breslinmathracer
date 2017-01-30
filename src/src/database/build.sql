@@ -308,6 +308,9 @@ CREATE TABLE evaluations (
 	score_needed integer NOT NULL default 10,
 	standard_jump_id text NOT NULL default 'k.cc.a.1',
  	progression NUMERIC(12,10) NOT NULL default 0,
+	grade_a integer NOT NULL default 100,
+	grade_b integer NOT NULL default 90,
+	grade_c integer NOT NULL default 80,
         PRIMARY KEY (id)
 );
 

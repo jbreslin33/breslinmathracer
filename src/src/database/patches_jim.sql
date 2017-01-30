@@ -1,5 +1,17 @@
 
+alter table evaluations add grade_a integer default 100;  --green 
+alter table evaluations add grade_b integer default 90;  --yellow 
+alter table evaluations add grade_c integer default 80;  --red 
+
+--tables
+--izzy 
+--green 100
+--yellow 90 
+--red 80 
+
+
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (13,13,'k.oa.a.4',1) where description = 'k_cc';
+
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (18,18,'k.oa.a.5',2) where description = 'k_oa_a_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (20,20,'1.oa.a.1',3) where description = 'k_oa_a_5';
 
