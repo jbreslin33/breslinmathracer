@@ -311,6 +311,8 @@ CREATE TABLE evaluations (
 	grade_a integer NOT NULL default 100,
 	grade_b integer NOT NULL default 90,
 	grade_c integer NOT NULL default 80,
+	grade_d integer NOT NULL default 70,
+	grade_f integer NOT NULL default 59,
         PRIMARY KEY (id)
 );
 
