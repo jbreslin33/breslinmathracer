@@ -366,236 +366,23 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 			$row[] = 0;
 		}
 
-		$k_cc = 0; 
-                $k_oa_a_4 = 0;
-                $k_oa_a_5 = 0;
-                
-		$g1_oa_b_3 = 0;
-		$g1_oa_c_6 = 0;
-		$g1_nbt = 0;
-		
-		$g2_oa_b_2 = 0;
-		$g2_nbt = 0;
-		
-		$g5 = 0;
-		$g2 = 0;
-		$g4 = 0;
-		$g8 = 0;
-		$g3 = 0;
-		$g6 = 0;
-		$g9 = 0;
-		$g7 = 0;
-		$g3_oa_c_7 = 0;
-		$g3_nbt = 0;
-		
-		$g4_oa_b_4 = 0;
-		$g4_nbt_b_4 = 0;
-		$g4_nbt_b_5 = 0;
-		$g4_nbt_b_6 = 0;
-		$g4_nf_b_3_c = 0;
-		
-		$g5_oa_a_1 = 0;
-		$g5_nbt_b_5 = 0;
-		$g5_nbt_b_6 = 0;
-		$g5_nbt_b_7 = 0;
-		$g5_nf_a_1 = 0;
-		
-		$g6_rp = 0;
-		$g6_ns = 0;
-		$g6_ee = 0;
-		$g6_g = 0;
-		$g6_sp = 0;
-        
 		for($m = 0; $m < $numrows_m; $m++)
 		{
                 	$row_m = pg_fetch_array($result_m, $m);
 			$row_m[5] = intval($row_m[5]);
-
-			if ($id == $row_m[0] && $row_m[3] == 'k_cc')
+	
+			for ($p = 0; $p < $numrows_e; $p++)
 			{
-				if ($k_cc < $row_m[5])
+                		$row_e = pg_fetch_array($result_e, $p);
+				if ($id == $row_m[0] && $row_m[3] == $row_e[1]) //do we have a user and ms match?
 				{
-					$k_cc = $row_m[5];	
-					$row[5] = $row_m[5];
+					if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
+					{
+						$row[intval($p + 5)] = $row_m[5];
+					}
 				}
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_4')
-			{
-				if ($k_oa_a_4 < $row_m[5])
-				{
-					$k_oa_a_4 = $row_m[5];	
-					$row[6] = $row_m[5];
-				}
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_5')
-			{
-				if ($k_oa_a_5 < $row_m[5])
-				{
-					$k_oa_a_5 = $row_m[5];	
-					$row[7] = $row_m[5];
-				}
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3')
-			{
-				if ($g1_oa_b_3 < $row_m[5])
-				{
-					$g1_oa_b_3 = $row_m[5];	
-					$row[8] = $row_m[5];
-				}
-			}
-			if ($id == $row_m[0] && $row_m[3] == '1_oa_c_6')
-			{
-				$g1_oa_c_6 = 1;	
-				$row[9] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '1_nbt')
-			{
-				$g1_nbt = 1;	
-				$row[10] = 1;
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2')
-			{
-				$g2_oa_b_2 = 1;	
-				$row[11] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '2_nbt')
-			{
-				$g2_nbt = 1;	
-				$row[12] = 1;
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_5')
-			{
-				$g5 = 1;	
-				$row[13] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_2')
-			{
-				$g2 = 1;	
-				$row[14] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_4')
-			{
-				$g4 = 1;	
-				$row[15] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_8')
-			{
-				$g8 = 1;	
-				$row[16] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_3')
-			{
-				$g3 = 1;	
-				$row[17] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_6')
-			{
-				$g6 = 1;	
-				$row[18] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_9')
-			{
-				$g9 = 1;	
-				$row[19] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == 'timestables_7')
-			{
-				$g7 = 1;	
-				$row[20] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7')
-			{
-				$g3_oa_c_7 = 1;	
-				$row[21] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '3_nbt')
-			{
-				$g3_nbt = 1;	
-				$row[22] = 1;
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4')
-			{
-				$g4_oa_b_4 = 1;	
-				$row[23] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4')
-			{
-				$g4_nbt_b_4 = 1;	
-				$row[24] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5')
-			{
-				$g4_nbt_b_5 = 1;	
-				$row[25] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6')
-			{
-				$g4_nbt_b_6 = 1;	
-				$row[26] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c')
-			{
-				$g4_nf_b_3_c = 1;	
-				$row[27] = 1;
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1')
-			{
-				$g5_oa_a_1 = 1;	
-				$row[28] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5')
-			{
-				$g5_nbt_b_5 = 1;	
-				$row[29] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6')
-			{
-				$g5_nbt_b_6 = 1;	
-				$row[30] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7')
-			{
-				$g5_nbt_b_7 = 1;	
-				$row[31] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1')
-			{
-				$g5_nf_a_1 = 1;	
-				$row[32] = 1;
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '6_rp')
-			{
-				$g6_rp = 1;	
-				$row[33] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_ns')
-			{
-				$g6_ns = 1;	
-				$row[34] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_ee')
-			{
-				$g6_ee = 1;	
-				$row[35] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_g')
-			{
-				$g6_g = 1;	
-				$row[36] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_sp')
-			{
-				$g6_sp = 1;	
-				$row[37] = 1;
-			}
+			}	
 		}
-
                 echo '<tr>';
                 echo '<td>';
                 echo $i + 1;
@@ -736,6 +523,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 		for ($e = 0; $e < $numrows_e; $e++)
 		{
                 	$row_e = pg_fetch_array($result_e, $e);
+			//100 90 80
 			if ($row[intval($e + 5)] >= $row_e[6])    
 			{
  				echo '<td bgcolor="green">';
@@ -751,6 +539,13 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
                 		echo '</td>';
 			}
 			else if ($row[intval($e + 5)] >= $row_e[8])    
+			{
+ 				echo '<td bgcolor="red">';
+				echo $row[intval($e + 5)];
+                		echo '';
+                		echo '</td>';
+			}
+			else
 			{
  				echo '<td bgcolor="red">';
 				echo $row[intval($e + 5)];
