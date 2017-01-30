@@ -101,7 +101,7 @@ $numrows_e = pg_numrows($result_e);
 //------------------END EVALUATIONS------------------------------
 
 
-function calc_raw_grade($core_grades_id,&$row)
+function calc_raw_grade($core_grades_id,&$row,&$result_e)
 {
         if ($core_grades_id == NULL)
         {
@@ -114,14 +114,14 @@ function calc_raw_grade($core_grades_id,&$row)
         for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
         {
 		$row_e = pg_fetch_array($result_e, intval($j - 5));
-                if ($row[$j] > $row_e[6])
+                if ($row[$j] > $row_e[7])
                 {
                         $rg += $bonus_array[$core_grades_id];
                 }
         }
         return $rg;
 }
-function calc_raw_grade_new($core_grades_id,&$row)
+function calc_raw_grade_new($core_grades_id,&$row,&$result_e)
 {
         if ($core_grades_id == NULL)
         {
@@ -134,7 +134,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
         for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
         {
 		$row_e = pg_fetch_array($result_e, intval($j - 5));
-                if ($row[$j] > $row_e[6])
+                if ($row[$j] > $row_e[7])
                 {
                         $rg += $bonus_new_array[$core_grades_id];
                 }
@@ -405,7 +405,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 		$raw_grade = 60;
 
 		//1st  thru k 
-		$raw_grade = calc_raw_grade($core_grades_id,$row);
+		$raw_grade = calc_raw_grade($core_grades_id,$row,$result_e);
                 echo $raw_grade;
                 echo '</td>';
 
@@ -447,20 +447,20 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
                 $class_date = strtotime($estdate);
                 if ($cut_date > $class_date)
                 {
-                        echo '<td bgcolor="#99ffcc">';
+                        echo '<td bgcolor="green">';
                         echo $estdate;
                         echo '</td>';
                 }
                 else //#ffe6e6
                 {
-                        echo '<td bgcolor="#ffb3d1">';
+                        echo '<td bgcolor="red">';
                         echo $estdate;
                         echo '</td>';
                 }
 //END PRED DATE
 
 //BEGIN CALC RAW GRADE NEW
-		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row);
+		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row,$result_e);
 
 //END CALC RAW GRADE NEW
 
@@ -501,13 +501,13 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
                 $class_date = strtotime($estdate);
                 if ($cut_date > $class_date)
                 {
-                        echo '<td bgcolor="#99ffcc">';
+                        echo '<td bgcolor="green">';
                         echo $estdate;
                         echo '</td>';
                 }
                 else
                 {
-                        echo '<td bgcolor="#ffb3d1">';
+                        echo '<td bgcolor="red">';
                         echo $estdate;
                         echo '</td>';
                 }
@@ -537,19 +537,26 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 			}
 			else if ($row[intval($e + 5)] >= $row_e[7])    
 			{
- 				echo '<td bgcolor="yellow">';
+ 				echo '<td bgcolor="lime">';
 				echo $row[intval($e + 5)];
                 		echo '';
                 		echo '</td>';
 			}
 			else if ($row[intval($e + 5)] >= $row_e[8])    
 			{
- 				echo '<td bgcolor="red">';
+ 				echo '<td bgcolor="yellow">';
 				echo $row[intval($e + 5)];
                 		echo '';
                 		echo '</td>';
 			}
-			else
+			else if ($row[intval($e + 5)] >= $row_e[9])    
+			{
+ 				echo '<td bgcolor="orange">';
+				echo $row[intval($e + 5)];
+                		echo '';
+                		echo '</td>';
+			}
+			else if ($row[intval($e + 5)] <= $row_e[10])    
 			{
  				echo '<td bgcolor="red">';
 				echo $row[intval($e + 5)];
