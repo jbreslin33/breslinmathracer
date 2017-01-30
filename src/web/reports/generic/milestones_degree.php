@@ -442,7 +442,8 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
                 $date = strtotime($add_days);
                 $estdate = date('M d, Y', $date);
 
-                $cut_date = strtotime("2016-12-22");
+                //$cut_date = strtotime("2016-12-22");
+                $cut_date = strtotime("now"); 
                 $class_date = strtotime($estdate);
                 if ($cut_date > $class_date)
                 {
