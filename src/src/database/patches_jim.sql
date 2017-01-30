@@ -1,3 +1,5 @@
+--terra nova update
+update evaluations SET (questions,score_needed) = (8,8,) where description = 'TerraNovaTest';
 
 alter table evaluations add grade_a integer default 90;  --cyan 
 alter table evaluations add grade_b integer default 80;  --green 
