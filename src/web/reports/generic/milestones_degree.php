@@ -93,6 +93,12 @@ $new_end[] = 33;
 $new_end[] = 38;
 $new_end[] = 38;
 $new_end[] = 38;
+        
+//------------------EVALUATIONS------------------------------
+$query_e = "select * from evaluations where progression > 0.9 order by progression asc;";
+$result_e = pg_query($conn,$query_e);
+$numrows_e = pg_numrows($result_e);
+//------------------END EVALUATIONS------------------------------
 
 
 function calc_raw_grade($core_grades_id,&$row)
@@ -107,7 +113,8 @@ function calc_raw_grade($core_grades_id,&$row)
 
         for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
         {
-                if ($row[$j] > 79)
+		$row_e = pg_fetch_array($result_e, intval($j - 5));
+                if ($row[$j] > $row_e[6])
                 {
                         $rg += $bonus_array[$core_grades_id];
                 }
@@ -126,7 +133,8 @@ function calc_raw_grade_new($core_grades_id,&$row)
 
         for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
         {
-                if ($row[$j] > 79)
+		$row_e = pg_fetch_array($result_e, intval($j - 5));
+                if ($row[$j] > $row_e[6])
                 {
                         $rg += $bonus_new_array[$core_grades_id];
                 }
@@ -300,11 +308,6 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         //------------------END MILESTONES------------------------------
 
 
-        //------------------EVALUATIONS------------------------------
-        $query_e = "select * from evaluations where progression > 0.9 order by progression asc;";
-        $result_e = pg_query($conn,$query_e);
-        $numrows_e = pg_numrows($result_e);
-        //------------------END EVALUATIONS------------------------------
 
 	//------------------USERS------------------------------
         $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and school_id = ";
