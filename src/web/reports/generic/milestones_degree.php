@@ -114,7 +114,8 @@ function calc_raw_grade($core_grades_id,&$row,&$result_e)
         for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
         {
 		$row_e = pg_fetch_array($result_e, intval($j - 5));
-                if ($row[$j] > $row_e[7])
+		
+                if ($row[$j] >= $row_e[7])
                 {
                         $rg += $bonus_array[$core_grades_id];
                 }
@@ -134,7 +135,8 @@ function calc_raw_grade_new($core_grades_id,&$row,&$result_e)
         for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
         {
 		$row_e = pg_fetch_array($result_e, intval($j - 5));
-                if ($row[$j] > $row_e[7])
+
+                if ($row[$j] >= $row_e[7])
                 {
                         $rg += $bonus_new_array[$core_grades_id];
                 }
