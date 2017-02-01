@@ -32,22 +32,9 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-$room_id = 0;
 $id = 0;
+$room_id = 1; 
 
-if (isset($_POST["room_id"]))
-{
-	$room_id = $_POST["room_id"];
-}
-
-else if (isset($_GET['room_id']))
-{
-	$room_id = $_GET['room_id'];
-}
-else
-{
-
-}
 echo "<br>";
 
 $bonus_array[] = 0; //
@@ -147,54 +134,9 @@ function calc_raw_grade_new($core_grades_id,&$row,&$result_e)
 
 ?>
 
-<p><b> Milestones</p></b>
-
-<p><b> Select Room: </p></b>
-
-<form method="post" action="/web/reports/student/my_milestones_degree.php">
-
-<select id="room_id" name="room_id" onchange="loadAgain()">
-<?php
-$query = "select id, name from rooms where school_id = ";
-$query .= $_SESSION["school_id"];
-$query .= " order by name asc;";
-$result = pg_query($conn,$query);
-$numrows = pg_numrows($result);
-
-echo "<option selected=\"selected\" value=0>0</option>";
-
-for($i = 0; $i < $numrows; $i++)
-{
-        $row = pg_fetch_array($result, $i);
-	if ($row[0] == $room_id)
-	{
-        	echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
-	}	
-	else
-	{
-        	echo "<option value=\"$row[0]\"> $row[1] </option>";
-	}
-}
-?>
-</select>
-<script>
-function loadAgain()
-{
-    	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/student/my_milestones_degree.php?room_id=' + y; 
-}
-</script>
+<p><b> MY Milestones</p></b>
 
 <?php
-
-
-
-if ($room_id == 0)
-{
-
-}
-else
-{
 
 echo '<table border=\"1\">';
         echo '<tr>';
@@ -580,7 +522,6 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 	$avg_txt .= 'CLASS AVERAGE GRADE: %';
 	$avg_txt .= $avg;
 	echo $avg_txt;
-}
 ?>
 
 </body>
