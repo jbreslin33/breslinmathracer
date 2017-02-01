@@ -328,8 +328,6 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 	$query_total = "select evaluations_attempts.user_id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE ";
 	if ($room_id != 0)
 	{
-		$rtxt = "room_id:";
-		$rtxt .= $room_id;
 		$query_total .= " AND users.room_id = ";
         	$query_total .= $room_id;
 	}
