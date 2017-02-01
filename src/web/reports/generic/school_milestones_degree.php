@@ -311,8 +311,11 @@ function calc_raw_grade_new($core_grades_id,&$row)
 }
 
 //m
+/*
         $query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, 
     COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (";
+*/
+	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed, evaluations.grade_b, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered, COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) +	COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (" ;	
 
 	for($r = 0; $r < $num_rooms; $r++)
 	{
@@ -327,7 +330,10 @@ function calc_raw_grade_new($core_grades_id,&$row)
 		}
         	$query_m .= $rooms_row[0];
 	}
+	$query_m .= ") AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed, evaluations.grade_b) sub WHERE sub.total_answered >= sub.score_needed AND sub.inner_grade >= sub.grade_b order by sub.last_name, sub.progression;";
+/*
         $query_m .= ") AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.start_time, evaluations.score_needed) sub WHERE sub.incorrect = 0 AND sub.correct >= sub.score_needed order by sub.room_id, sub.last_name, sub.progression;";
+*/
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 //end ms
