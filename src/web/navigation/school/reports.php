@@ -24,7 +24,7 @@ session_start();
 <li><a href="/web/reports/generic/any_homework_check.php">Quick Homework Check</a></li>
 
 <li><a href="/web/reports/generic/milestones_degree.php">Milestones</a></li>
-<li><a href="/web/reports/generic/school_milestones.php">School Milestones</a></li>
+<li><a href="/web/reports/generic/school_milestones_degree.php">School Milestones</a></li>
 <li><a href="/web/reports/generic/work_today.php">Work Today</a></li>
 
 </ul>
