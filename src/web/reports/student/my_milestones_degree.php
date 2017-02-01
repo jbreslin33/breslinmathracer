@@ -37,127 +37,19 @@ $room_id = 1;
 
 echo "<br>";
 
-$bonus_array[] = 0; //
-$bonus_array[] = 0; //k
-$bonus_array[] = 13.4; //1
-$bonus_array[] = 6.7; //2
-$bonus_array[] = 5; //3
-$bonus_array[] = 2.3; //4
-$bonus_array[] = 1.74; //5
-$bonus_array[] = 1.43; //6
-$bonus_array[] = 1.22; //7
-$bonus_array[] = 1.22; //8
-
-$bonus_new_array[] = 0;
-$bonus_new_array[] = 0;
-$bonus_new_array[] = 6.7;
-$bonus_new_array[] = 5;
-$bonus_new_array[] = 2.3;
-$bonus_new_array[] = 1.74;
-$bonus_new_array[] = 1.43;
-$bonus_new_array[] = 1.22;
-$bonus_new_array[] = 1.22;
-$bonus_new_array[] = 1.22;
-
-$pre_end[] = 0;
-$pre_end[] = 0;
-$pre_end[] = 8;
-$pre_end[] = 11;
-$pre_end[] = 13;
-$pre_end[] = 23;
-$pre_end[] = 28;
-$pre_end[] = 33;
-$pre_end[] = 38;
-$pre_end[] = 38;
-
-$new_end[] = 0;
-$new_end[] = 0;
-$new_end[] = 11;
-$new_end[] = 13;
-$new_end[] = 23;
-$new_end[] = 28;
-$new_end[] = 33;
-$new_end[] = 38;
-$new_end[] = 38;
-$new_end[] = 38;
-        
 //------------------EVALUATIONS------------------------------
 $query_e = "select * from evaluations where progression > 0.9 order by progression asc;";
 $result_e = pg_query($conn,$query_e);
 $numrows_e = pg_numrows($result_e);
 //------------------END EVALUATIONS------------------------------
 
-
-function calc_raw_grade($core_grades_id,&$row,&$result_e)
-{
-        if ($core_grades_id == NULL)
-        {
-                return false;
-        }
-        global $bonus_array;
-        global $pre_end;
-        $rg = 60;
-
-        for ($j = 5; $j < $pre_end[$core_grades_id]; $j++)
-        {
-		$row_e = pg_fetch_array($result_e, intval($j - 5));
-		
-                if ($row[$j] >= $row_e[7])
-                {
-                        $rg += $bonus_array[$core_grades_id];
-                }
-        }
-        return $rg;
-}
-function calc_raw_grade_new($core_grades_id,&$row,&$result_e)
-{
-        if ($core_grades_id == NULL)
-        {
-                return false;
-        }
-        global $bonus_new_array;
-        global $new_end;
-        $rg = 60;
-
-        for ($j = 5; $j < $new_end[$core_grades_id]; $j++)
-        {
-		$row_e = pg_fetch_array($result_e, intval($j - 5));
-
-                if ($row[$j] >= $row_e[7])
-                {
-                        $rg += $bonus_new_array[$core_grades_id];
-                }
-        }
-        return $rg;
-}
-
-
 ?>
-
 <p><b> MY Milestones</p></b>
 
 <?php
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td>Rank';
-        echo '</td>';
-        echo '<td>First Name';
-        echo '</td>';
-        echo '<td>Last Name';
-        echo '</td>';
-        echo '<td>Today';
-        echo '</td>';
-        echo '<td>Grade';
-        echo '</td>';
-        echo '<td>pre-grade';
-        echo '</td>';
-        echo '<td>grade';
-        echo '</td>';
-        echo '<td>Score';
-        echo '</td>';
-        echo '<td>Standard';
-        echo '</td>';
         echo '<td>k<br>c<br>c';
         echo '</td>';
         echo '<td>k<br>o<br>a<br>a<br>4';
@@ -166,7 +58,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>1<br> o<br>a<br> b<br> 3';
         echo '</td>';
-        //echo '<td>H<br>y<br>p<br>e<br>r<br>i<br>o<br>n<br><br> 1 oa c 6';
         echo '<td>1<br> o<br>a<br> c<br> 6';
         
         echo '</td>';
@@ -251,8 +142,6 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         $numrows_m = pg_numrows($result_m);
         //------------------END MILESTONES------------------------------
 
-
-
 	//------------------USERS------------------------------
         $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and school_id = ";
         $query .= $_SESSION["school_id"];
@@ -261,23 +150,11 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 		$query .= " AND room_id = ";
         	$query .= $room_id;
 	}
-        $query .= " order by score desc;";
+        //$query .= " order by score desc;";
+        $query .= " LIMIT 1;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 	//------------------END USERS------------------------------
-	
-	//-------------------------BEGIN TOTAL---------------------------------		
-	$query_total = "select evaluations_attempts.user_id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE ";
-	if ($room_id != 0)
-	{
-		$query_total .= " AND users.room_id = ";
-        	$query_total .= $room_id;
-	}
-	$query_total .= " GROUP BY evaluations_attempts.user_id;";
-
-     	$result_total = pg_query($conn,$query_total);
-        $numrows_total = pg_numrows($result_total);
-	//---------------------------END TOTAL------------------------
 	
 	$total_raw_grade = 0;
 
@@ -287,20 +164,6 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         {
                 $row = pg_fetch_array($result, $i);
                 $id = $row[0];
-                $firstName = $row[1];
-                $lastName = $row[2];
-
-		//BEGIN TOTAL        	
-		$today = 0;
-        	for($t = 0; $t < $numrows_total; $t++)
-		{
-			$row_total = pg_fetch_array($result_total, $t);
-			if ($id == $row_total[0]) 
-			{
-				$today = $row_total[1];
-			}
-		}
-		//END TOTAL        	
 
                 $core_standards_id = $row[3];
                 $score = $row[4];
@@ -329,143 +192,6 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 			}	
 		}
                 echo '<tr>';
-                echo '<td>';
-                echo $i + 1;
-                echo '</td>';
-                echo '<td>';
-                echo $firstName;
-                echo '</td>';
-                echo '<td>';
-                echo $lastName;
-                echo '</td>';
-                echo '<td>';
-                echo $today;
-                echo '</td>';
-
- 		echo '<td>';
-
-		$raw_grade = 60;
-
-		//1st  thru k 
-		$raw_grade = calc_raw_grade($core_grades_id,$row,$result_e);
-                echo $raw_grade;
-                echo '</td>';
-
-//BEGIN PRE DATE 
-		$r = $raw_grade - 60;
-
-
-                //get total days since start
-               	$now = time(); // or your date as well
-                $start_date = strtotime("2016-09-12");
-                $datediff_seconds = $now - $start_date;
-                $diff_days = floor($datediff_seconds / (60 * 60 * 24));
-
-                //get percent complete thus far
-                $p = round($r / 40 * 100);
-
-		$ratio = 99;
-                
-		//get a ratio to use to multiply by total days since start
-		if ($p != 0)
-		{	
-                       	$ratio = floatval(100 / $p);
-		}
-
-                //get est days to complete from start date
-                $est_days_from_start = round($ratio * $diff_days);
-
-                $addto = $est_days_from_start - $diff_days;
-
-                $add_days = "+";
-                $add_days .= $addto;
-                $add_days .= " day";
-
-                $date = strtotime($add_days);
-                $estdate = date('M d, Y', $date);
-
-                //$cut_date = strtotime("2016-12-22");
-                $cut_date = strtotime("now"); 
-                $class_date = strtotime($estdate);
-                if ($cut_date > $class_date)
-                {
-                        echo '<td bgcolor="green">';
-                        echo $estdate;
-                        echo '</td>';
-                }
-                else //#ffe6e6
-                {
-                        echo '<td bgcolor="red">';
-                        echo $estdate;
-                        echo '</td>';
-                }
-//END PRED DATE
-
-//BEGIN CALC RAW GRADE NEW
-		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row,$result_e);
-
-//END CALC RAW GRADE NEW
-
-
-//BEGIN GRADE DATE
-                $r = $raw_grade_new - 60;
-
-                //get total days since start
-                $now = time(); // or your date as well
-                $start_date = strtotime("2016-09-12");
-                $datediff_seconds = $now - $start_date;
-                $diff_days = floor($datediff_seconds / (60 * 60 * 24));
-
-                //get percent complete thus far
-                $p = round($r / 40 * 100);
-
-                $ratio = 99;
-                
-                //get a ratio to use to multiply by total days since start
-                if ($p != 0)
-                {
-                        $ratio = floatval(100 / $p);
-                }
-
-                //get est days to complete from start date
-                $est_days_from_start = round($ratio * $diff_days);
-
-                $addto = $est_days_from_start - $diff_days;
-
-                $add_days = "+";
-                $add_days .= $addto;
-                $add_days .= " day";
-
-                $date = strtotime($add_days);
-                $estdate = date('M d, Y', $date);
-
-                $cut_date = strtotime("2017-06-01");
-                $class_date = strtotime($estdate);
-                if ($cut_date > $class_date)
-                {
-                        echo '<td bgcolor="green">';
-                        echo $estdate;
-                        echo '</td>';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                        echo $estdate;
-                        echo '</td>';
-                }
-
-
-//END GRADE DATE
-
-		$total_raw_grade += $raw_grade;
-
-                echo '<td>';
-                echo $score;
-                echo '</td>';
-                echo '<td>';
-                echo $core_standards_id;
-                echo '</td>';
-		
 		for ($e = 0; $e < $numrows_e; $e++)
 		{
                 	$row_e = pg_fetch_array($result_e, $e);
@@ -507,22 +233,8 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 			}
 		}  
         }
-
         pg_free_result($result);
         echo '</table>';
-	
-	$avg = round($total_raw_grade / $i);
-	$tmp = $avg - 60;
-	$pct = $tmp / 40;
-
-	$avg_txt = 'PERCENT COMPLETE: %';
-	$pct = $pct * 100;
-	$avg_txt .= $pct; 
-	$avg_txt .= '   ';
-	$avg_txt .= 'CLASS AVERAGE GRADE: %';
-	$avg_txt .= $avg;
-	echo $avg_txt;
 ?>
-
 </body>
 </html>
