@@ -310,8 +310,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
         return $rg;
 }
 
-//BEGIN MILESTONES
-/*
+//m
         $query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, 
     COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (";
 
@@ -331,40 +330,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
         $query_m .= ") AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.start_time, evaluations.score_needed) sub WHERE sub.incorrect = 0 AND sub.correct >= sub.score_needed order by sub.room_id, sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
-*/
-//END BEGIN MILESTONES
-
-        //------------------MILESTONES------------------------------
-        $query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.inner_grade FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations.score_needed, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
-    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered,
-
-COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (";
-	for($r = 0; $r < $num_rooms; $r++)
-	{
-        	$rooms_row = pg_fetch_array($room_result, $r);
-		if ($r == 0)
-		{
-			$query_m .= " room_id = ";
-		}
-		else
-		{
-			$query_m .= " OR room_id = ";
-		}
-        	$query_m .= $rooms_row[0];
-	}
-/*
-        if ($room_id != 0)
-        {
-                $query_m .= " AND users.room_id = ";
-                $query_m .= $room_id;
-        }
-*/
-        $query_m .= ") AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
-        $result_m = pg_query($conn,$query_m);
-        $numrows_m = pg_numrows($result_m);
-        //------------------END MILESTONES------------------------------
-
-
+//end ms
 
 	//BEGIN TODAY
 	$query_total = "select users.room_id, count(*) from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id JOIN users ON users.id=evaluations_attempts.user_id AND item_attempts.start_time > CURRENT_DATE GROUP BY users.room_id;";
