@@ -32,7 +32,7 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
-$id = 0;
+$id = $_SESSION["user_id"];
 $room_id = 1; 
 
 echo "<br>";
@@ -120,11 +120,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-        $id = '';
-        $firstName = '';
-        $lastName = '';
-        $score = '';
-
         //------------------MILESTONES------------------------------
 	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.inner_grade FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations.score_needed, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
     COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered,
@@ -133,8 +128,8 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 
 	if ($room_id != 0)
 	{
-		$query_m .= " AND users.room_id = ";
-        	$query_m .= $room_id;
+		$query_m .= " AND users.id = ";
+        	$query_m .= $_SESSION["user_id"];
 	}
 
 	$query_m .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
@@ -143,15 +138,9 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         //------------------END MILESTONES------------------------------
 
 	//------------------USERS------------------------------
-        $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and school_id = ";
-        $query .= $_SESSION["school_id"];
-	if ($room_id != 0)
-	{
-		$query .= " AND room_id = ";
-        	$query .= $room_id;
-	}
-        //$query .= " order by score desc;";
-        $query .= " LIMIT 1;";
+        $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and id = ";
+        $query .= $id;
+	$query .= ";";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 	//------------------END USERS------------------------------
