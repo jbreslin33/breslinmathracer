@@ -356,36 +356,7 @@ Extends: Application,
 
 		this.bapplication();	
         },
-/*
-	highestAchieved: function()
-	{
-		var foundHighestAchieved = false;
-                var i = this.mMilestonesStandardElement;
-                while (i < this.mItemTypesArray.length && foundHighestAchieved == false)
-                {
-                	var foundOne = false;
-                        var j = 0;
-                        while (j < this.mItemAttemptsTypeArrayOne.length && foundOne == false)
-                        {
-                        	if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-                                {
-                                        foundOne = true;
-                                }
-                                j++;
-                        }
-			i++;
-			if (foundOne == false)
-			{
-				foundHighestAchieved = true;
-			}
-		}
-		highest = this.mItemTypesArray[i];
-		APPLICATION.mHud.setYellow('' + highest);
-		this.mHighest = highest;
-		
-		APPLICATION.log('mHighest:' + this.mHighest);
-	},
-*/
+	
 	updateAttemptTable: function()
 	{
 		var l = APPLICATION.mItemAttemptsArray.length; 	
@@ -1741,83 +1712,6 @@ Extends: Application,
 		//set hud
 		APPLICATION.mHud.setYellow(standard);
 	},
-
-
-
-//why is this asking pham k questions that are not in his u?
-/*
-	getFirst: function()
-	{
-		var first = '';
-		var i = 0;
-			
-		while (i < this.mItemTypesArray.length && first == '')
-		{
-			var tempArray = new Array();
-			var tempArray = [];
-			var j = 0;
-			
-			//fill up 0,1 or 2 elements in tempArray 
-			while (j < this.mItemAttemptsTypeArrayOne.length && tempArray.length < 3)
-			{
-				if (this.mItemTypesArray[i] == this.mItemAttemptsTypeArrayOne[j])
-				{
-					tempArray.push(this.mItemAttemptsTransactionCodeArrayOne[j]);	
-				}					
-				j++;
-			}
-			if (i < this.mMilestonesStandardElement)
-			{
-				if (tempArray.length == 0)
-				{
-					//do nothing free pass
-				}
-				if (tempArray.length == 1)
-				{
-					if (parseInt(tempArray[0]) == 1)
-					{
-						//do nothing free pass asked 1 and got it right	
-					}
-					else
-					{
-						first = this.mItemTypesArray[i]; //asked once and got it wrong  
-					}
-				}
-				if (tempArray.length > 1)
-				{
-					if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
-					{
-						//do nothing
-					}		
-					else
-					{
-						first = this.mItemTypesArray[i];  
-					}
-				} 
-			}
-			else //greater or equal
-			{
-				if (tempArray.length < 2)
-				{
-					first = this.mItemTypesArray[i];  
-				}
-				else //this should not change you got asked twice its right so dont ask wrong ask 
-				{
-					if (parseInt(tempArray[0]) == 1 && parseInt(tempArray[1]) == 1)
-					{
-						//do nothing
-					}		
-					else
-					{
-						first = this.mItemTypesArray[i];  
-					}
-				} 
-			}
-			i++;
-		}
-		this.mFirst = first;
-	},
-*/
         getSameStandard: function(typesArray,attemptArray,transactionCodeArray)
         {
 		//get first standard wrong...
