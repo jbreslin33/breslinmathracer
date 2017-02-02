@@ -316,6 +316,7 @@ CREATE TABLE evaluations (
         PRIMARY KEY (id)
 );
 
+
 --for now this will be everytime you switch up... later you could add number of questions score needed etc...
 CREATE TABLE evaluations_attempts (
 	id SERIAL,
@@ -327,6 +328,8 @@ CREATE TABLE evaluations_attempts (
 	FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
 	FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+
 
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
@@ -343,6 +346,16 @@ CREATE TABLE item_types (
         PRIMARY KEY (id),
 	FOREIGN KEY (core_standards_id) REFERENCES core_standards(id)
 );
+
+CREATE TABLE evaluations_items (
+        id SERIAL,
+        item_types_id text NOT NULL,
+	evaluations_id integer NOT NULL,	
+        PRIMARY KEY (id),
+	FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
+	FOREIGN KEY (item_types_id) REFERENCES item_types(id)
+);
+
 
 CREATE TABLE remediate (
         id SERIAL,
