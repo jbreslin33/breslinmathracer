@@ -139,6 +139,7 @@ execute: function(item)
 
 exit: function(item)
 {
+       	APPLICATION.calcScore();
   	item.hideContinueSpeed();
 	item.hideSpeed();
 
@@ -229,7 +230,6 @@ execute: function(item)
 exit: function(item)
 {
        	APPLICATION.calcScore();
-	//APPLICATION.highestAchieved();
 	APPLICATION.updateAttemptTable();
 }
 });
