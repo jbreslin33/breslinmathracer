@@ -820,6 +820,7 @@ Extends: Application,
 		
 		if (parseInt(this.mEvaluationsID) == 18)
                 {
+			APPLICATION.log('parsing:' + parseInt(this.mEvaluationsID));
                 	var i = 0;
                         var correct = 0;
                         var incorrect = 0;

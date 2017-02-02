@@ -12,7 +12,7 @@ initialize: function(sheet)
 
 getDev: function()
 {
-	return '3.nbt.a.3_1';
+	return '6.ns.c.6.c_1';
 },
 
 getItem: function(id)

@@ -14,15 +14,17 @@ initialize: function(sheet)
 	var a = Math.floor(Math.random()*8)+2;
 	var x = this.ns.mLowerLetterOne;
 	var b = Math.floor(Math.random()*8)+2;
-	var t1 = parseInt(a*b);
+	var c = parseInt(a*b); 
 
 	var y = this.ns.mLowerLetterTwo;
-	var c = Math.floor(Math.random()*8)+2;
-	var t2 = parseInt(c);
+	var d = Math.floor(Math.random()*8)+2;
+	var t1 = parseInt(a * d);
+	var t2 = Math.floor(Math.random()*8)+2;
 	
-        this.setQuestion('' + c + '/' + x + '*' + d + '-' + y + ' For ' + x + ' = ' + b + ' and ' + y + ' = ' + e);
-	var x = parseInt(t1 - t2); 
-        this.setAnswer('' + x,0);
+	var answer = parseInt(t1 - t2);	
+	
+        this.setQuestion('' + c + '/' + x + '*' + d + '-' + y + ' For ' + x + ' = ' + b + ' and ' + y + ' = ' + t2);
+        this.setAnswer('' + answer,0);
 }
 });
 

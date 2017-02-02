@@ -1511,6 +1511,7 @@ public function sendLoginStudent()
 
 
 	$returnString .= $this->mApplication->mEvaluationsID;
+	error_log($this->mApplication->mEvaluationsID);
 	//error_log($returnString);
 	echo $returnString;
 }

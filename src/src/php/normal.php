@@ -172,7 +172,7 @@ public function fillTypesArray()
 	if (count($this->mItemTypesArray) < 1)
 	{
 		//normal base types..
-		$query = "select id, progression, type_mastery, core_standards_id from item_types where progression > "; 
+		$query = "select id from item_types where progression > "; 
 		$query .= "-1"; 
 		$query .= " AND active_code = 1"; //skip unactive
 		$query .= " order by progression asc;";
@@ -184,8 +184,6 @@ public function fillTypesArray()
 		for($i=0; $i < $numberOfResults; $i++)
         	{
 			$this->mItemTypesArray[]       = pg_Result($result, $i, 'id');	
-			$this->mCoreStandardsIDArray[] = pg_Result($result, $i, 'core_standards_id');
-			$this->mTypeMasteryArray[]     = pg_Result($result, $i, 'type_mastery');
 		}
 	}
 	else

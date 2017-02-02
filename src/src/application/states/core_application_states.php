@@ -485,7 +485,8 @@ execute: function(application)
 	
 			var itemAttemptsTransactionCodesSeventeen = APPLICATION.mResponseArray[39];
 			APPLICATION.mItemAttemptsTransactionCodeArraySeventeen = itemAttemptsTransactionCodesSeventeen.split(":");
-			
+		
+			//can you just send test prep here????????	
 			//Eighteen	
 			var itemAttemptsTypesEighteen = APPLICATION.mResponseArray[40];
 			APPLICATION.mItemAttemptsTypeArrayEighteen = itemAttemptsTypesEighteen.split(":");

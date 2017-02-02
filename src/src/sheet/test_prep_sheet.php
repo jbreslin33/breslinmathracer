@@ -5,47 +5,9 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-         
-	var t = APPLICATION.mItemTypesArray.length; 
-	var potentialPoints = 0;
-	this.mCurrentElement = 0;
+ 	this.mIDArray.push('6.ee.a.2.c_21');
 
-	var score = 0;
-        for (var i = 0; i < APPLICATION.mItemTypesArray.length; i++)
-        {
-        	var foundOne = false;
-                var j = 0;
-                while (j < APPLICATION.mItemAttemptsTypeArrayOne.length && foundOne == false)
-                {
-                	if (APPLICATION.mItemTypesArray[i] == APPLICATION.mItemAttemptsTypeArrayOne[j])
-                        {
-                        	score++;
-                                foundOne = true;
-                        }
-                   	j++;
-                }
-	}
-	var needed = parseInt(score * 10);	
-
-	var middle = parseInt(score / 2);
- 	middle = parseInt(middle - 2)
-
-	while (potentialPoints < needed)
-	{
-		var type = '';
-		var p = Math.floor(Math.random()*middle)+middle;
-		var i = 0;
-		while (i < APPLICATION.mItemAttemptsTypeArrayOne.length && type == '') //this should break out
-		{
-			if (APPLICATION.mItemAttemptsTypeArrayOne[i] == APPLICATION.mItemTypesArray[p])
-			{
-				type = APPLICATION.mItemTypesArray[p]; 
-				this.mIDArray.push('' + type);
-				potentialPoints = parseInt(p + potentialPoints);	
-			} 		
-			i++;
-		} 
-	}
+        this.mCurrentElement = 0;
 },
 
 pickItem: function()
