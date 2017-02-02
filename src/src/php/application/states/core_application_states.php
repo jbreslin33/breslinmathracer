@@ -39,9 +39,12 @@ public function execute($bapplication)
         {
                 $bapplication->mCoreStateMachine->changeState($bapplication->mMAIN_MENU_APPLICATION);
 	}
-	if ($bapplication->mCode == 1 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
+	if ($bapplication->mCode == 1 || $bapplication->mCode == 25)
 	{
-		$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+		if ($bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
+		{
+			$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+		}
 	}
 	if ($bapplication->mCode == 2 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mPRACTICE_APPLICATION)
 	{
@@ -49,11 +52,12 @@ public function execute($bapplication)
 	}
 
 	//K	
-	
+/*	
 	if ($bapplication->mCode == 25 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mK_CC_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mK_CC_APPLICATION);
 	}
+*/
 	
 	if ($bapplication->mCode == 26 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mK_OA_A_4_APPLICATION)
 	{
@@ -595,7 +599,6 @@ function __construct()
 {
 
 }
-
 public function enter($bapplication)
 {
         if ($bapplication->mLogs == true)
@@ -603,7 +606,7 @@ public function enter($bapplication)
                 error_log('NORMAL_CORE_APPLICATION Enter');
         }
 
-        $evaluationsAttempt = new EvaluationsAttempts($bapplication,1,$bapplication->mDataArray[4]);
+        $evaluationsAttempt = new EvaluationsAttempts($bapplication,$bapplication->mEvaluationsID,$bapplication->mDataArray[4]);
 	$bapplication->mEvaluationsAttemptsArray[] = $evaluationsAttempt;
 
 	//pointer to current evaluationsAttempt
@@ -618,6 +621,10 @@ public function execute($bapplication)
         {
                 error_log('NORMAL_CORE_APPLICATION Execute');
         }
+	$txt = "mCode:";
+	$txt .= $bapplication->mCode;	
+	error_log($txt);
+
 	if ($bapplication->mCode == 1)
 	{
 		if ( $bapplication->mEvaluationsAttempt)
@@ -633,25 +640,62 @@ public function execute($bapplication)
 
 		$bapplication->mCode = 0;
 	}
+
+
+        //if ($bapplication->mCode > 1 && $bapplication->mCode < 44 || $bapplication->mCode > 1000)
+        if ($bapplication->mCode == 25)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        
+	}
+
 	if ($bapplication->mCode == 101) //universal update
 	{
-		if ($bapplication)
+		if ($bapplication->mEvaluationsID == 1)
 		{
-			if ($bapplication->mEvaluationsAttempt)
+			if ($bapplication)
 			{
-				if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray)
+				if ($bapplication->mEvaluationsAttempt)
 				{
-					for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
-					{	 
-						if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
-						{  
-							$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
-        						$bapplication->mNormal->updateStandard($bapplication->mDataArray[4],'core_standards_id');
+					if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray)
+					{
+						for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+						{		 
+							if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+							{ 	 
+								$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+        							$bapplication->mNormal->updateStandard($bapplication->mDataArray[4],'core_standards_id');
+							}
 						}
 					}
 				}
+				$bapplication->mCode = 0;
 			}
-			$bapplication->mCode = 0;
+		}
+        
+		//if ($bapplication->mCode > 1 && $bapplication->mCode < 44 || $bapplication->mCode > 1000)
+		//if ($bapplication->mCode == 25)
+		if ($bapplication->mEvaluationsID == 25)
+		{
+			error_log("AAA");
+			//other
+                	for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                	{
+                        	if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                        	{
+					error_log("BBB");
+                                	$bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                	//score
+                                	if ($bapplication->mDataArray[2] == 1)
+                                	{
+						error_log("CCC");
+                                        	$bapplication->mEvaluationsAttempt->mScore++;
+                                	}
+                        	}
+                	}
+                	$bapplication->mCode = 0;
 		}
 	}
 }

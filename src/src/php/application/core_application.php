@@ -27,7 +27,17 @@ else
 if (isset($_GET["code"]))
 {
 	$APPLICATION->mCode = $_GET["code"];
-	//error_log($APPLICATION->mCode);
+
+	if ($APPLICATION->mCode > 0 && $APPLICATION->mCode < 44)
+	{
+		$APPLICATION->mEvaluationsID = $APPLICATION->mCode;
+	}  
+
+	if ($APPLICATION->mCode > 1000)
+	{
+		$APPLICATION->mEvaluationsID = $APPLICATION->mCode;
+	}
+
 }
 
 unset($APPLICATION->mDataArray);
@@ -65,7 +75,7 @@ if ($APPLICATION->mCode == 218)
 }
 
 //add_game_K
-if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 11 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29 || $APPLICATION->mCode == 30 || $APPLICATION->mCode == 31  || $APPLICATION->mCode == 32 || $APPLICATION->mCode == 33 || $APPLICATION->mCode == 34 || $APPLICATION->mCode == 35  || $APPLICATION->mCode == 36  || $APPLICATION->mCode == 37 || $APPLICATION->mCode == 38 || $APPLICATION->mCode == 39 || $APPLICATION->mCode == 40)
+if ($APPLICATION->mCode == 1 || $APPLICATION->mCode == 3 || $APPLICATION->mCode == 4 || $APPLICATION->mCode == 5 || $APPLICATION->mCode == 6 || $APPLICATION->mCode == 7 || $APPLICATION->mCode == 8 || $APPLICATION->mCode == 9 || $APPLICATION->mCode == 10 || $APPLICATION->mCode == 11 || $APPLICATION->mCode == 12 || $APPLICATION->mCode == 13 || $APPLICATION->mCode == 14 || $APPLICATION->mCode == 15 || $APPLICATION->mCode == 16 || $APPLICATION->mCode == 17 || $APPLICATION->mCode == 18 || $APPLICATION->mCode == 19 || $APPLICATION->mCode == 20 || $APPLICATION->mCode == 21 || $APPLICATION->mCode == 22 || $APPLICATION->mCode == 23 || $APPLICATION->mCode == 24 || $APPLICATION->mCode == 25 || $APPLICATION->mCode == 26 || $APPLICATION->mCode == 27 || $APPLICATION->mCode == 28 || $APPLICATION->mCode == 29 || $APPLICATION->mCode == 30 || $APPLICATION->mCode == 31  || $APPLICATION->mCode == 32 || $APPLICATION->mCode == 33 || $APPLICATION->mCode == 34 || $APPLICATION->mCode == 35  || $APPLICATION->mCode == 36  || $APPLICATION->mCode == 37 || $APPLICATION->mCode == 38 || $APPLICATION->mCode == 39 || $APPLICATION->mCode == 40 || $APPLICATION->mCode > 1000)
 {
         $APPLICATION->mDataArray[] = $APPLICATION->mCode;
         $APPLICATION->mDataArray[] = $_GET["itemtypesid"];
@@ -120,7 +130,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = false;
+	$this->mLogs = true;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin
