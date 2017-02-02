@@ -643,7 +643,8 @@ public function execute($bapplication)
 
 
         //if ($bapplication->mCode > 1 && $bapplication->mCode < 44 || $bapplication->mCode > 1000)
-        if ($bapplication->mCode == 25)
+        //if ($bapplication->mCode == 25)
+	if ( $bapplication->mCode > 1 && $bapplication->mCode < 44)
         {
                 $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
                 $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
@@ -675,9 +676,7 @@ public function execute($bapplication)
 			}
 		}
         
-		//if ($bapplication->mCode > 1 && $bapplication->mCode < 44 || $bapplication->mCode > 1000)
-		//if ($bapplication->mCode == 25)
-		if ($bapplication->mEvaluationsID == 25)
+		if ( $bapplication->mEvaluationsID > 1 && $bapplication->mEvaluationsID < 44)
 		{
 			error_log("AAA");
 			//other
