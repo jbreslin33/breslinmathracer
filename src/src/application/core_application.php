@@ -386,30 +386,24 @@ Extends: Application,
 		
 		if ( parseInt(this.mEvaluationsID) > 1 && parseInt(this.mEvaluationsID) < 41 )
 		{
-                	var i = 0;
-                        var correct = 0;
-                        var incorrect = 0;
-                        var grade = 0;
 
-                        while (i < this.mGame.mSheet.mCurrentElement)
-                        {
-				if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 0)
-				{
-                                       	incorrect++;
-				}
-				if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 1)
-				{
-                                       	correct++;
-				}
-				if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 2)
-				{
-                                       	incorrect++;
-				}
-                                i++;
+			if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 0)
+			{
+                              	APPLICATION.mGame.mSheet.mIncorrect++;
 			}
-                        grade = Math.floor((correct / this.mGame.mSheet.mCurrentElement) * 100);
+			if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 1)
+			{
+                               	APPLICATION.mGame.mSheet.mCorrect++;
+			}
+			if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 2)
+			{
+                              	APPLICATION.mGame.mSheet.mIncorrect++;
+			}
+
+			APPLICATION.log('correct:' + APPLICATION.mGame.mSheet.mCorrect + ' el:' + APPLICATION.mGame.mSheet.mCurrentElement);
+                        var grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / APPLICATION.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-                        APPLICATION.mHud.setViolet('' + questionNumber + ':' + this.mGame.mSheet.mIDArray.length);
+                        APPLICATION.mHud.setViolet('' + questionNumber + ':' + APPLICATION.mGame.mSheet.mIDArray.length);
                 }
 		//this.mGame.setScore(score); 
 	},

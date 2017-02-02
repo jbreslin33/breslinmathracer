@@ -35,6 +35,8 @@ var Sheet = new Class(
 
 		//score
 		this.mScoreNeeded = 0;
+		this.mCorrect = 0;
+		this.mIncorrect = 0;
 
 		//states
                 this.mStateMachine = new StateMachine(this);
