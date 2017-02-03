@@ -558,7 +558,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
                 		echo '';
                 		echo '</td>';
 			}
-			else if ($row[intval($e + 5)] <= $row_e[10])    
+			else     
 			{
  				echo '<td bgcolor="red">';
 				echo $row[intval($e + 5)];
