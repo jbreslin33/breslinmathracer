@@ -400,7 +400,6 @@ Extends: Application,
                               	APPLICATION.mGame.mSheet.mIncorrect++;
 			}
 
-			APPLICATION.log('correct:' + APPLICATION.mGame.mSheet.mCorrect + ' el:' + APPLICATION.mGame.mSheet.mCurrentElement);
                         var grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / APPLICATION.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
                         APPLICATION.mHud.setViolet('' + questionNumber + ':' + APPLICATION.mGame.mSheet.mIDArray.length);
