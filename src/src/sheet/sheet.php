@@ -73,6 +73,21 @@ var Sheet = new Class(
 		}
 	},
 
+	set: function(item)
+	{
+		//set live item
+                this.setItem(item);
+
+		//create item attempt and set eval id	
+                var itemAttempt = new ItemAttempt(item);
+		item.setItemAttempt(itemAttempt);	
+                itemAttempt.setEvaluationsID(APPLICATION.mEvaluationsID);
+
+		//arrays
+                APPLICATION.mItemArray.push(item);
+                APPLICATION.mItemAttemptsArray.push(itemAttempt);
+	},
+
 	destructor: function()
 	{
 		this.destroyItem();

@@ -5,10 +5,51 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
+
+        APPLICATION.mHud.setOrange('G:' + APPLICATION.mEvaluationsID);
+
+	if (APPLICATION.mEvaluationsID == 25)
+	{
+        	this.mIDArray.push('k.cc.a.1_1');
+        	this.mIDArray.push('k.cc.a.1_2');
+
+        	this.mIDArray.push('k.cc.a.2_1');
+        	this.mIDArray.push('k.cc.a.2_2');
+        	this.mIDArray.push('k.cc.a.2_3');
+        	this.mIDArray.push('k.cc.a.2_4');
+        	this.mIDArray.push('k.cc.a.2_5');
+        	this.mIDArray.push('k.cc.a.2_6');
+        	this.mIDArray.push('k.cc.a.2_7');
+        	this.mIDArray.push('k.cc.a.2_8');
+       	 	this.mIDArray.push('k.cc.a.2_9');
+        	this.mIDArray.push('k.cc.a.2_10');
+        	this.mIDArray.push('k.cc.a.2_11');
+        	
+		this.mCurrentElement = 0;
+        	this.shuffle(500);
+        
+		APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
+	}
 },
 
 pickItem: function()
 {
+	if (APPLICATION.mEvaluationsID == 25)
+	{
+        if (this.mCurrentElement < this.mIDArray.length)
+        {
+                APPLICATION.mQuestionTypeCurrent = this.mIDArray[this.mCurrentElement];
+                this.mCurrentElement++;
+        }
+        else //its over....check here????
+        {
+                APPLICATION.mEvaluationsID = 41;
+        }
+	}
+
+
+	if (APPLICATION.mEvaluationsID == 1)
+	{
 	var s = APPLICATION.mItemAttemptsTypeArrayOne.length; 
 
 	if (parseInt(APPLICATION.mGame.mScore) == 0 && s < 10)
@@ -64,6 +105,8 @@ pickItem: function()
                		}
 		} //while
 	} //else escape from kinder
+
+	}
 },
 
 createItem: function()
@@ -99,46 +142,13 @@ var pick = 0;
         //if you got an item then add it to sheet
         if (pick != 0)
         {
-                this.setItem(pick);
-                var itemAttempt = new ItemAttempt();
-                APPLICATION.mItemAttemptsArray.push(itemAttempt);
-                pick.setItemAttempt(itemAttempt);
-              	itemAttempt.mType = pick.mType;
-               	itemAttempt.setEvaluationsID(1);
+		this.set(pick);
         }
         else
         {
                 APPLICATION.log('no item picked by pickers!');
         }
 
-	document.body.style.backgroundColor = "848484";
-	for (var i = 0; i < APPLICATION.mHud.mTan.mMesh.length; i++)
-	{
-		if (APPLICATION.mQuestionTypeCurrent == APPLICATION.mHud.mTan.mMesh.options.item(i).text)
-		{
-			var count = 0;
-			for (var j = 0; j < APPLICATION.mItemAttemptsTypeArrayOne.length; j++)
-			{
-				if (APPLICATION.mItemAttemptsTypeArrayOne[j] == APPLICATION.mQuestionTypeCurrent)
-				{
-					count++;	
-				}
-			}
-			if (count > 2) //green 
-			{
-				document.body.style.backgroundColor = "339966";
-			}
-			else //grey
-			{
-				document.body.style.backgroundColor = "848484";
-			}
-		}
-	}
-
-	if (APPLICATION.mGame.mUnmastered > 10)
-	{
-		document.body.style.backgroundColor = "red";
-	}
 	document.body.style.backgroundColor = "grey";
 
         //set this as last for next run

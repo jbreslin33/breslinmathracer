@@ -50,6 +50,8 @@ Extends: Application,
 		this.EVALUATION_ATTEMPT_INSERT_CONFIRMATION = 141;
 
 		//going forward	
+		this.mSheetArray = new Array();
+		this.mItemArray = new Array();
 		this.mItemAttemptsArray = new Array();
 		
 		//item_attempts

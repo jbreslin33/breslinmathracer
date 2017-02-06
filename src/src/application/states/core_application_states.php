@@ -33,9 +33,9 @@ execute: function(application)
 	}
 	
 	//K	
-	if (application.mEvaluationsID == 25 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_CC_APPLICATION)
+	if (application.mEvaluationsID == 25 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mNORMAL_CORE_APPLICATION)
 	{
-		application.mCoreStateMachine.changeState(application.mK_CC_APPLICATION);
+		application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
 	}
 
 	if (application.mEvaluationsID == 26 && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mK_OA_A_4_APPLICATION)
@@ -1689,7 +1689,15 @@ enter: function(application)
         }
         application.mGame = new NormalGame(APPLICATION);
 	application.calcScore();
-        APPLICATION.mHud.setOrange('G: Mathcore');
+        //APPLICATION.mHud.setOrange('G: Mathcore');
+
+
+        //application.mGame = new k_cc_Game(APPLICATION);
+/*
+        application.mGame = new NormalGame(APPLICATION);
+        APPLICATION.mHud.setOrange('G: k_cc');
+        APPLICATION.mHud.setViolet('1:' + application.mGame.mSheet.mIDArray.length);
+*/
 },
 
 execute: function(application)
@@ -1804,7 +1812,8 @@ enter: function(application)
         	application.mGame.destructor();
                 application.mGame = 0;
         }
-        application.mGame = new k_cc_Game(APPLICATION);
+        //application.mGame = new k_cc_Game(APPLICATION);
+        application.mGame = new NormalGame(APPLICATION);
         APPLICATION.mHud.setOrange('G: k_cc');
         APPLICATION.mHud.setViolet('1:' + application.mGame.mSheet.mIDArray.length);
 },

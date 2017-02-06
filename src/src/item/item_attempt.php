@@ -4,8 +4,10 @@ barebones item class. Should this even have a gui????? I think it should be an a
 
 var ItemAttempt = new Class(
 {
-        initialize: function()
+        initialize: function(item)
         {
+		this.mItem = item;
+
 		this.mStateLogs = false;		
                 this.mStateMachine = new StateMachine(this);
 
@@ -23,9 +25,6 @@ var ItemAttempt = new Class(
 
 		this.mDateNow = 0;
 		this.mID = 0;
-		this.mUserAnswer = '';
-		this.mTransactionCode = 0;
-		this.mType = 0; 
 		this.mUpdateConfirmation = 0;
 		this.mEvaluationsID = 0;
 
@@ -37,6 +36,10 @@ var ItemAttempt = new Class(
 		//timers
 		this.mThresholdTime = 5000;
 		this.mCounterStartTime = 0;
+		
+		this.mUserAnswer = '';
+		this.mTransactionCode = 0;
+		this.mType = 0; 
 	},
 
 	setTransactionCode: function(code)
