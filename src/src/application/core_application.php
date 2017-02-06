@@ -291,65 +291,6 @@ Extends: Application,
 		//main_menu
                 this.mMAIN_MENU_APPLICATION          = new MAIN_MENU_APPLICATION       (this);
 
-		//practice
-                this.mPRACTICE_APPLICATION             = new PRACTICE_APPLICATION          (this);
-               
-		//K 
-		this.mK_CC_APPLICATION = new K_CC_APPLICATION      (this);
-                this.mK_OA_A_4_APPLICATION = new K_OA_A_4_APPLICATION      (this);
-                this.mK_OA_A_5_APPLICATION = new K_OA_A_5_APPLICATION      (this);
-
-		//1
-                this.mG1_OA_B_3_APPLICATION = new G1_OA_B_3_APPLICATION      (this);
-                this.mG1_OA_C_6_APPLICATION = new G1_OA_C_6_APPLICATION      (this);
-                this.mG1_NBT_APPLICATION = new G1_NBT_APPLICATION      (this);
-
-		//2
-                this.mG2_OA_B_2_APPLICATION = new G2_OA_B_2_APPLICATION      (this);
-                this.mG2_NBT_APPLICATION = new G2_NBT_APPLICATION      (this);
-
-		//3
-                this.mG3_OA_C_7_APPLICATION = new G3_OA_C_7_APPLICATION      (this);
-                this.mG3_NBT_APPLICATION = new G3_NBT_APPLICATION      (this);
-
-		//4
-                this.mG4_OA_B_4_APPLICATION = new G4_OA_B_4_APPLICATION      (this);
-                this.mG4_NBT_B_4_APPLICATION = new G4_NBT_B_4_APPLICATION      (this);
-                this.mG4_NBT_B_5_APPLICATION = new G4_NBT_B_5_APPLICATION      (this);
-                this.mG4_NBT_B_6_APPLICATION = new G4_NBT_B_6_APPLICATION      (this);
-                this.mG4_NF_B_3_C_APPLICATION = new G4_NF_B_3_C_APPLICATION      (this);
-                
-		//5
-                this.mG5_OA_A_1_APPLICATION = new G5_OA_A_1_APPLICATION      (this);
-                this.mG5_NBT_B_5_APPLICATION = new G5_NBT_B_5_APPLICATION      (this);
-                this.mG5_NBT_B_6_APPLICATION = new G5_NBT_B_6_APPLICATION      (this);
-                this.mG5_NBT_B_7_APPLICATION = new G5_NBT_B_7_APPLICATION      (this);
-                this.mG5_NF_A_1_APPLICATION = new G5_NF_A_1_APPLICATION      (this);
-               
-		//6 
-		this.mG6_RP_APPLICATION = new G6_RP_APPLICATION      (this);
-		this.mG6_NS_APPLICATION = new G6_NS_APPLICATION      (this);
-		this.mG6_EE_APPLICATION = new G6_EE_APPLICATION      (this);
-		this.mG6_G_APPLICATION = new G6_G_APPLICATION      (this);
-		this.mG6_SP_APPLICATION = new G6_SP_APPLICATION      (this);
-	
-		//tables
-                this.mTIMES_TABLES_TWO_APPLICATION      = new TIMES_TABLES_TWO_APPLICATION      (this);
-                this.mTIMES_TABLES_THREE_APPLICATION    = new TIMES_TABLES_THREE_APPLICATION      (this);
-                this.mTIMES_TABLES_FOUR_APPLICATION     = new TIMES_TABLES_FOUR_APPLICATION      (this);
-                this.mTIMES_TABLES_FIVE_APPLICATION     = new TIMES_TABLES_FIVE_APPLICATION      (this);
-                this.mTIMES_TABLES_SIX_APPLICATION      = new TIMES_TABLES_SIX_APPLICATION      (this);
-                this.mTIMES_TABLES_SEVEN_APPLICATION    = new TIMES_TABLES_SEVEN_APPLICATION      (this);
-                this.mTIMES_TABLES_EIGHT_APPLICATION    = new TIMES_TABLES_EIGHT_APPLICATION      (this);
-                this.mTIMES_TABLES_NINE_APPLICATION     = new TIMES_TABLES_NINE_APPLICATION      (this);
-                this.mTIMES_TABLES_THE_SUPER_IZZY_APPLICATION = new TIMES_TABLES_THE_SUPER_IZZY_APPLICATION      (this);
-
-               	//tests 
-                this.mTEST_APPLICATION = new TEST_APPLICATION      (this);
-                this.mTERRA_NOVA_TEST_APPLICATION = new TERRA_NOVA_TEST_APPLICATION      (this);
-                this.mHOMEWORK_APPLICATION = new HOMEWORK_APPLICATION      (this);
-                this.mTEST_PREP_APPLICATION = new TEST_PREP_APPLICATION      (this);
-
 		//reports
                 this.mREPORT_CORE_APPLICATION          = new REPORT_CORE_APPLICATION       (this);
 
