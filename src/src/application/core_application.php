@@ -61,164 +61,11 @@ Extends: Application,
 		//for standards live list
 		this.mStandardsArray = new Array();
 
-		//One normal
-		this.mItemAttemptsTypeArrayOne = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayOne = new Array(); //from db
+		//item attempts array from db
+		this.mItemAttemptsEvaluationsIDArray   = new Array(); //from db
+		this.mItemAttemptsTypeArray            = new Array(); //from db
+		this.mItemAttemptsTransactionCodeArray = new Array(); //from db
 		
-		//Three 2x
-		this.mItemAttemptsTypeArrayThree = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThree = new Array(); //from db
-		
-		//Four 3x
-		this.mItemAttemptsTypeArrayFour = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayFour = new Array(); //from db
-		
-		//Five 4x
-		this.mItemAttemptsTypeArrayFive = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayFive = new Array(); //from db
-
-		//Six 5x
-		this.mItemAttemptsTypeArraySix = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArraySix = new Array(); //from db
-		
-		//Seven 6x
-		this.mItemAttemptsTypeArraySeven = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArraySeven = new Array(); //from db
-
-		//Eight 7x
-		this.mItemAttemptsTypeArrayEight = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayEight = new Array(); //from db
-
-		//Nine 8x
-		this.mItemAttemptsTypeArrayNine = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayNine = new Array(); //from db
-
-		//Ten 9x
-		this.mItemAttemptsTypeArrayTen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTen = new Array(); //from db
-		
-		//Eleven 
-		this.mItemAttemptsTypeArrayEleven = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayEleven = new Array(); //from db
-
-		//Twelve theizzy
-		this.mItemAttemptsTypeArrayTwelve = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwelve = new Array(); //from db
-
-		//Thirteen addsub
-		this.mItemAttemptsTypeArrayThirteen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirteen = new Array(); //from db
-		
-		//4.nbt.b.4 
-		this.mItemAttemptsTypeArrayFourteen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayFourteen = new Array(); //from db
-		
-		//Fifteen test 
-		this.mItemAttemptsTypeArrayFifteen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayFifteen = new Array(); //from db
-		
-		//Sixteen TerraNovaTest 
-		this.mItemAttemptsTypeArraySixteen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArraySixteen = new Array(); //from db
-		
-		//Seventeen Homework
-		this.mItemAttemptsTypeArraySeventeen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArraySeventeen = new Array(); //from db
-		
-		//Eighteen TerraNovaHomework
-		this.mItemAttemptsTypeArrayEighteen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayEighteen = new Array(); //from db
-		
-		//Nineteen TerraNovaHomework
-		this.mItemAttemptsTypeArrayNineteen = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayNineteen = new Array(); //from db
-		
-		//Twenty BasicSkills4th 
-		this.mItemAttemptsTypeArrayTwenty = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwenty = new Array(); //from db
-		
-		//TwentyOne BasicSkills5th 
-		this.mItemAttemptsTypeArrayTwentyOne = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyOne = new Array(); //from db
-		
-		//TwentyTwo BasicSkills3rd 
-		this.mItemAttemptsTypeArrayTwentyTwo = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyTwo = new Array(); //from db
-		
-		//TwentyThree BasicSkills2nd 
-		this.mItemAttemptsTypeArrayTwentyThree = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyThree = new Array(); //from db
-		
-		//TwentyFour BasicSkills1st 
-		this.mItemAttemptsTypeArrayTwentyFour = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyFour = new Array(); //from db
-		
-		//TwentyFive BasicSkillsK 
-		this.mItemAttemptsTypeArrayTwentyFive = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyFive = new Array(); //from db
-		
-		//TwentySix MakeTen 
-		this.mItemAttemptsTypeArrayTwentySix = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentySix = new Array(); //from db
-		
-		//TwentySeven AddSubtractWithinTen 
-		this.mItemAttemptsTypeArrayTwentySeven = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentySeven = new Array(); //from db
-		
-		//TwentyEight AddSubtractWithinTwenty 
-		this.mItemAttemptsTypeArrayTwentyEight = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyEight = new Array(); //from db
-		
-		//TwentyNine Properties 
-		this.mItemAttemptsTypeArrayTwentyNine = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayTwentyNine = new Array(); //from db
-		
-		//Thirty Properties 
-		this.mItemAttemptsTypeArrayThirty = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirty = new Array(); //from db
-		
-		//ThirtyOne  
-		this.mItemAttemptsTypeArrayThirtyOne = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyOne = new Array(); //from db
-		
-		//ThirtyTwo  
-		this.mItemAttemptsTypeArrayThirtyTwo = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyTwo = new Array(); //from db
-		
-		//ThirtyThree  
-		this.mItemAttemptsTypeArrayThirtyThree = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyThree = new Array(); //from db
-		
-		//ThirtyFour  
-		this.mItemAttemptsTypeArrayThirtyFour = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyFour = new Array(); //from db
-		
-		//ThirtyFive  
-		this.mItemAttemptsTypeArrayThirtyFive = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyFive = new Array(); //from db
-		
-		//ThirtySix  
-		this.mItemAttemptsTypeArrayThirtySix = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtySix = new Array(); //from db
-		
-		//ThirtySeven  
-		this.mItemAttemptsTypeArrayThirtySeven = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtySeven = new Array(); //from db
-		
-		//ThirtyEight  
-		this.mItemAttemptsTypeArrayThirtyEight = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyEight = new Array(); //from db
-		
-		//ThirtyNine  
-		this.mItemAttemptsTypeArrayThirtyNine = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayThirtyNine = new Array(); //from db
-		
-		//Forty  
-		this.mItemAttemptsTypeArrayForty = new Array(); //from db
-		this.mItemAttemptsTransactionCodeArrayForty = new Array(); //from db
-
-		//add_game_A
-
 		//algorithms
 		this.mQuestionType = '';
 		this.mFirst = '';
@@ -415,22 +262,22 @@ Extends: Application,
 				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
 				var c = 0;
 				var gotType = ''; 
-				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
+				while (c < this.mItemAttemptsTypeArray.length && gotType == '' )
 				{
-					if (tempTypeArray[g] == this.mItemAttemptsTypeArrayOne[c])
+					if (tempTypeArray[g] == this.mItemAttemptsTypeArray[c])
 					{
-						gotType = this.mItemAttemptsTransactionCodeArrayOne[c];	
+						gotType = this.mItemAttemptsTransactionCodeArray[c];	
 						transArray.push(gotType);	
 						//APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
 
 						//fill incorrect array
-						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 0)
+						if (this.mItemAttemptsTransactionCodeArray[c] == 0)
 						{
-							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+							incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
 						}	
-						else if (this.mItemAttemptsTransactionCodeArrayOne[c] == 2)
+						else if (this.mItemAttemptsTransactionCodeArray[c] == 2)
 						{
-							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+							incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
 						}
 					}
 					c++;
@@ -564,22 +411,22 @@ Extends: Application,
 				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
 				var c = 0;
 				var gotType = ''; 
-				while (c < this.mItemAttemptsTypeArrayOne.length && gotType == '' )
+				while (c < this.mItemAttemptsTypeArray.length && gotType == '' )
 				{
-					if (tempTypeArray[g] == this.mItemAttemptsTypeArrayOne[c])
+					if (tempTypeArray[g] == this.mItemAttemptsTypeArray[c])
 					{
-						gotType = this.mItemAttemptsTransactionCodeArrayOne[c];	
+						gotType = this.mItemAttemptsTransactionCodeArray[c];	
 						transArray.push(gotType);	
 						//APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
 
 						//fill incorrect array
-						if (this.mItemAttemptsTransactionCodeArrayOne[c] == 0)
+						if (this.mItemAttemptsTransactionCodeArray[c] == 0)
 						{
-							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+							incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
 						}	
-						else if (this.mItemAttemptsTransactionCodeArrayOne[c] == 2)
+						else if (this.mItemAttemptsTransactionCodeArray[c] == 2)
 						{
-							incorrectArray.push(this.mItemAttemptsTypeArrayOne[c]);	
+							incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
 						}
 					}
 					c++;

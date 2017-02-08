@@ -118,13 +118,13 @@ pickItem: function()
 				}
                			if (r >= 80 && r < 90)
                			{
-                       			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArray,APPLICATION.mItemAttemptsTransactionCodeArray);
                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
 					//APPLICATION.log('Q: D');
                			}
                			if (r >= 90 && r < 101)
                			{
-                       			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArrayOne,APPLICATION.mItemAttemptsTransactionCodeArrayOne);
+                       			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArray,APPLICATION.mItemAttemptsTransactionCodeArray);
                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
 					//APPLICATION.log('Q: E');
                			}
