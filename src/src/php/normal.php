@@ -117,6 +117,41 @@ public function fillItemAttemptsArray()
 		}
 	}
 }
+/*
+public function fillEvaluationTypesArray()
+{
+        if ($this->logs)
+        {
+                error_log('fillEvaluationTypesArray');
+        }
+
+        if (count($this->mEvaluationTypesArray) < 1)
+        {
+                //normal base types..
+                $query = "select id from item_types where progression > ";
+                $query .= "-1";
+                $query .= " AND active_code = 1"; //skip unactive
+                $query .= " order by progression asc;";
+
+                $db = new DatabaseConnection();
+                $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+                $numberOfResults = pg_num_rows($result);
+
+                for($i=0; $i < $numberOfResults; $i++)
+                {
+                        $this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
+                }
+        }
+        else
+        {
+                if ($this->logs)
+                {
+                        error_log('skipping fillTypesArray');
+                }
+        }
+}
+*/
+
 
 public function updateScores($score,$field_name)
 {

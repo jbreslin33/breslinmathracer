@@ -7,19 +7,26 @@ CREATE TABLE evaluations_items (
         FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
         FOREIGN KEY (item_types_id) REFERENCES item_types(id)
 );
---add table
-CREATE TABLE evaluations_items (
-        id SERIAL,
-        item_types_id text NOT NULL,
-        evaluations_id integer NOT NULL,
-        PRIMARY KEY (id),
-        FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
-        FOREIGN KEY (item_types_id) REFERENCES item_types(id)
-);
+
+--insert
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.1_1',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.1_2',25);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_1',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_2',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_3',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_4',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_5',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_6',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_7',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_8',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_9',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_10',25);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_11',25);
 
 
 --terra nova update
-update evaluations SET (questions,score_needed) = (8,8,) where description = 'TerraNovaTest';
+update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
 
 alter table evaluations add grade_a integer default 90;  --cyan 
 alter table evaluations add grade_b integer default 80;  --green 
