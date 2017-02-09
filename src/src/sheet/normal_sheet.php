@@ -41,7 +41,7 @@ pickItem: function()
 
 	if (APPLICATION.mEvaluationsID == 1)
 	{
-		var s = APPLICATION.mItemAttemptsTypeArrayOne.length; 
+		var s = APPLICATION.mItemAttemptsTypeArray.length; 
 
 		if (parseInt(APPLICATION.mGame.mScore) == 0 && s < 10)
 		{
