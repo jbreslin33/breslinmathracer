@@ -15,9 +15,12 @@ initialize: function(game)
         		this.mIDArray.push('' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);
 		}
 	}
+
         this.shuffle(500);
-	//APPLICATION.log('ns hd:1');  	
+
+	//prime the hud  	
 	APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
+   	APPLICATION.mHud.setCyan('' + 'grade: 0%');
 },
 
 pickItem: function()

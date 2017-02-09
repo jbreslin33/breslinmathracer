@@ -201,13 +201,13 @@ Extends: Application,
 					}
 				
 					var grade = 0;
-					if (APPLICATION.mGame.mSheet.mCurrentElement != 0)
+					var total = 0;
+					total = parseInt(APPLICATION.mGame.mSheet.mIncorrect) + parseInt(APPLICATION.mGame.mSheet.mCorrect)  
+					if (total != 0)
 					{
-                        			grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / APPLICATION.mGame.mSheet.mCurrentElement) * 100);
+                        			grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / total) * 100);
 					}
-	
                         		APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-					APPLICATION.log('qn:' + questionNumber);
                         		APPLICATION.mHud.setViolet('' + questionNumber + ':' + APPLICATION.mGame.mSheet.mIDArray.length);
 				}
                 	}
