@@ -17,6 +17,7 @@ initialize: function(game)
 	}
 	this.mCurrentElement = 0;
         this.shuffle(500);
+	APPLICATION.log('ns hd:1');  	
 	APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
 },
 

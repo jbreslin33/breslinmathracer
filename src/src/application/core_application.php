@@ -178,6 +178,17 @@ Extends: Application,
 	calcScore: function()
 	{
 		var questionNumber = this.mGame.mSheet.mCurrentElement + 1;
+/*
+		var questionNumber = this.mGame.mSheet.mCurrentElement;
+		if (this.mGame.mSheet.mCurrentElement == 0)
+		{
+			questionNumber++;
+		}
+		else
+		{
+
+		}
+*/
 		
 		if ( parseInt(this.mEvaluationsID) > 1 && parseInt(this.mEvaluationsID) < 41 )
 		{
@@ -197,6 +208,7 @@ Extends: Application,
 
                         var grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / APPLICATION.mGame.mSheet.mCurrentElement) * 100);
                         APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+			//APPLICATION.log('qn:' + questionNumber);
                         APPLICATION.mHud.setViolet('' + questionNumber + ':' + APPLICATION.mGame.mSheet.mIDArray.length);
                 }
 		//this.mGame.setScore(score); 
