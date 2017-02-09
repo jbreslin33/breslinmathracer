@@ -3,10 +3,13 @@ CREATE TABLE evaluations_items (
         id SERIAL,
         item_types_id text NOT NULL,
         evaluations_id integer NOT NULL,
+	progression NUMERIC(12,10) NOT NULL default 0,
         PRIMARY KEY (id),
         FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
         FOREIGN KEY (item_types_id) REFERENCES item_types(id)
 );
+--add prog
+alter table evaluations_items add column progression NUMERIC(12,10) NOT NULL default 0;
 
 --insert
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.1_1',25);

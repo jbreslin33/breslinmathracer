@@ -179,10 +179,12 @@ execute: function(application)
 			
 			var itemTypes = APPLICATION.mResponseArray[7];
 			APPLICATION.mItemTypesArray = itemTypes.split(":");
+			/*
 			for (i=0; i < APPLICATION.mItemTypesArray.length; i++)
 			{
 				APPLICATION.log('APPLICATION.mItemTypesArray[' + i + ']:' + APPLICATION.mItemTypesArray[i]); 
 			}
+			*/
 	
 			//lets get standards here
 			APPLICATION.fillStandardsArray();
@@ -197,7 +199,7 @@ execute: function(application)
 			APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
 		
 			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[11];
-			APPLICATION.log('APPLICATION.mEvaluationsID:' + APPLICATION.mEvaluationsID);
+			//APPLICATION.log('APPLICATION.mEvaluationsID:' + APPLICATION.mEvaluationsID);
 
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 

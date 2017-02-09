@@ -24,9 +24,15 @@ function __construct($application)
 	
 	//evaluationsAttempts	
 	$this->mEvaluationsAttemptsID = 0;
+
+	//evaluations
+	$this->mEvaluationsArray  = array();
+	$this->mEvaluationsItemTypesArray  = array();
+
         
 	//types array	
 	$this->mItemTypesArray  = array();
+
 
 	$this->mUnmasteredCount = 0;
 	$this->mScore = 0;
@@ -117,20 +123,18 @@ public function fillItemAttemptsArray()
 		}
 	}
 }
-/*
-public function fillEvaluationTypesArray()
+
+public function fillEvaluationsArray()
 {
         if ($this->logs)
         {
-                error_log('fillEvaluationTypesArray');
+                error_log('fillEvaluationsArray');
         }
 
-        if (count($this->mEvaluationTypesArray) < 1)
+        if (count($this->mEvaluationsArray) < 1)
         {
                 //normal base types..
-                $query = "select id from item_types where progression > ";
-                $query .= "-1";
-                $query .= " AND active_code = 1"; //skip unactive
+                $query = "select id from evaluations where progression > 0.15 AND progression < 100 ";
                 $query .= " order by progression asc;";
 
                 $db = new DatabaseConnection();
@@ -139,19 +143,46 @@ public function fillEvaluationTypesArray()
 
                 for($i=0; $i < $numberOfResults; $i++)
                 {
-                        $this->mItemTypesArray[]       = pg_Result($result, $i, 'id');
+                        $this->mEvaluationsArray[]       = pg_Result($result, $i, 'id');
                 }
         }
         else
         {
                 if ($this->logs)
                 {
-                        error_log('skipping fillTypesArray');
+                        error_log('skipping fillEvaluationsArray');
                 }
         }
 }
-*/
 
+public function fillEvaluationItemTypesArray()
+{
+        if ($this->logs)
+        {
+                error_log('fillEvaluationItemTypesArray');
+        }
+
+        if (count($this->mEvaluationItemTypesArray) < 1)
+        {
+		$query = "select evaluations_id, item_types_id from evaluations_items  order by evaluations_id asc, item_types_id;";
+
+                $db = new DatabaseConnection();
+                $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+                $numberOfResults = pg_num_rows($result);
+
+                for($i=0; $i < $numberOfResults; $i++)
+                {
+                        $this->mEvaluationsItemTypesArray[] = pg_Result($result, $i, 'id');
+                }
+        }
+        else
+        {
+                if ($this->logs)
+                {
+                        error_log('skipping fillEvaluationsItemTypesArray');
+                }
+        }
+}
 
 public function updateScores($score,$field_name)
 {
