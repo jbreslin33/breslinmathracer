@@ -7,11 +7,7 @@ initialize: function(game)
 	this.parent(game);
 
         APPLICATION.mHud.setOrange('G:' + APPLICATION.mEvaluationsID);
-/*
-          this.mEvaluationsItemTypesArray = new Array();
-                this.mEvaluationsItemTypesEvaluationsIDArray = new Array();
-                this.mEvaluationsItemTypesItemTypesArray = new Array();
-*/
+	
 	for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
 	{
 		if (APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i])
@@ -22,55 +18,6 @@ initialize: function(game)
 	this.mCurrentElement = 0;
         this.shuffle(500);
 	APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
-/*
-	if (APPLICATION.mEvaluationsID == 25)
-	{
-        	this.mIDArray.push('k.cc.a.1_1');
-        	this.mIDArray.push('k.cc.a.1_2');
-
-        	this.mIDArray.push('k.cc.a.2_1');
-        	this.mIDArray.push('k.cc.a.2_2');
-        	this.mIDArray.push('k.cc.a.2_3');
-        	this.mIDArray.push('k.cc.a.2_4');
-        	this.mIDArray.push('k.cc.a.2_5');
-        	this.mIDArray.push('k.cc.a.2_6');
-        	this.mIDArray.push('k.cc.a.2_7');
-        	this.mIDArray.push('k.cc.a.2_8');
-       	 	this.mIDArray.push('k.cc.a.2_9');
-        	this.mIDArray.push('k.cc.a.2_10');
-        	this.mIDArray.push('k.cc.a.2_11');
-        	
-		this.mCurrentElement = 0;
-        	this.shuffle(500);
-		APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
-	}
-*/
-	if (APPLICATION.mEvaluationsID == 26)
-	{
-       		this.mIDArray.push('k.oa.a.4_1');
-        	this.mIDArray.push('k.oa.a.4_2');
-        	this.mIDArray.push('k.oa.a.4_3');
-        	this.mIDArray.push('k.oa.a.4_4');
-        	this.mIDArray.push('k.oa.a.4_5');
-        	this.mIDArray.push('k.oa.a.4_6');
-        	this.mIDArray.push('k.oa.a.4_7');
-        	this.mIDArray.push('k.oa.a.4_8');
-       		this.mIDArray.push('k.oa.a.4_9');
-
-       	 	this.mIDArray.push('k.oa.a.4_21');
-        	this.mIDArray.push('k.oa.a.4_22');
-        	this.mIDArray.push('k.oa.a.4_23');
-        	this.mIDArray.push('k.oa.a.4_24');
-        	this.mIDArray.push('k.oa.a.4_25');
-        	this.mIDArray.push('k.oa.a.4_26');
-        	this.mIDArray.push('k.oa.a.4_27');
-        	this.mIDArray.push('k.oa.a.4_28');
-        	this.mIDArray.push('k.oa.a.4_29');
-
-        	this.mCurrentElement = 0;
-        	this.shuffle(500);
-		APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
-	}
 },
 
 pickItem: function()
