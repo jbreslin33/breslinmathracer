@@ -15,9 +15,8 @@ initialize: function(game)
         		this.mIDArray.push('' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);
 		}
 	}
-	this.mCurrentElement = 0;
         this.shuffle(500);
-	APPLICATION.log('ns hd:1');  	
+	//APPLICATION.log('ns hd:1');  	
 	APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
 },
 
@@ -28,7 +27,8 @@ pickItem: function()
         	if (this.mCurrentElement < this.mIDArray.length)
         	{
                 	APPLICATION.mQuestionTypeCurrent = this.mIDArray[this.mCurrentElement];
-                	this.mCurrentElement++;
+			//APPLICATION.calcScore();
+                	//this.mCurrentElement++;
         	}
         	else //its over....check here????
         	{

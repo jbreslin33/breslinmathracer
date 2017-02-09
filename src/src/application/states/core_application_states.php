@@ -894,7 +894,7 @@ enter: function(application)
                 application.mGame = 0;
         }
         application.mGame = new NormalGame(APPLICATION);
-	application.calcScore();
+	//application.calcScore();
 },
 
 execute: function(application)

@@ -177,41 +177,41 @@ Extends: Application,
 
 	calcScore: function()
 	{
-		var questionNumber = this.mGame.mSheet.mCurrentElement + 1;
-/*
-		var questionNumber = this.mGame.mSheet.mCurrentElement;
-		if (this.mGame.mSheet.mCurrentElement == 0)
+		if (this.mGame)
 		{
-			questionNumber++;
-		}
-		else
-		{
-
-		}
-*/
+			if (this.mGame.mSheet)
+			{
+				var questionNumber = this.mGame.mSheet.mCurrentElement + 2;
+				//var questionNumber = this.mGame.mSheet.mCurrentElement;
 		
-		if ( parseInt(this.mEvaluationsID) > 1 && parseInt(this.mEvaluationsID) < 41 )
-		{
+				if ( parseInt(this.mEvaluationsID) > 1 && parseInt(this.mEvaluationsID) < 41 )
+				{
 
-			if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 0)
-			{
-                              	APPLICATION.mGame.mSheet.mIncorrect++;
-			}
-			if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 1)
-			{
-                               	APPLICATION.mGame.mSheet.mCorrect++;
-			}
-			if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 2)
-			{
-                              	APPLICATION.mGame.mSheet.mIncorrect++;
-			}
-
-                        var grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / APPLICATION.mGame.mSheet.mCurrentElement) * 100);
-                        APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
-			//APPLICATION.log('qn:' + questionNumber);
-                        APPLICATION.mHud.setViolet('' + questionNumber + ':' + APPLICATION.mGame.mSheet.mIDArray.length);
-                }
-		//this.mGame.setScore(score); 
+					if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 0)
+					{
+                              			APPLICATION.mGame.mSheet.mIncorrect++;
+					}
+					if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 1)
+					{
+                               			APPLICATION.mGame.mSheet.mCorrect++;
+					}
+					if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 2)
+					{
+                              			APPLICATION.mGame.mSheet.mIncorrect++;
+					}
+				
+					var grade = 0;
+					if (APPLICATION.mGame.mSheet.mCurrentElement != 0)
+					{
+                        			grade = Math.floor((APPLICATION.mGame.mSheet.mCorrect / APPLICATION.mGame.mSheet.mCurrentElement) * 100);
+					}
+	
+                        		APPLICATION.mHud.setCyan('' + 'grade:' + grade + '%');
+					APPLICATION.log('qn:' + questionNumber);
+                        		APPLICATION.mHud.setViolet('' + questionNumber + ':' + APPLICATION.mGame.mSheet.mIDArray.length);
+				}
+                	}
+		}
 	},
 
 	fillStandardsArray: function()

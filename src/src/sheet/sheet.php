@@ -33,6 +33,9 @@ var Sheet = new Class(
 		//question
 		this.mMarker = 0;
 
+		//element
+		this.mCurrentElement = 0;
+
 		//score
 		this.mScoreNeeded = 0;
 		this.mCorrect = 0;

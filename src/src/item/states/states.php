@@ -139,7 +139,7 @@ execute: function(item)
 
 exit: function(item)
 {
-       	APPLICATION.calcScore();
+       	//APPLICATION.calcScore();
   	item.hideContinueSpeed();
 	item.hideSpeed();
 
@@ -229,8 +229,11 @@ execute: function(item)
 
 exit: function(item)
 {
-       	APPLICATION.calcScore();
+	APPLICATION.calcScore();
 	APPLICATION.updateAttemptTable();
+
+	//goto next item
+      	item.mSheet.mCurrentElement++;
 }
 });
 
