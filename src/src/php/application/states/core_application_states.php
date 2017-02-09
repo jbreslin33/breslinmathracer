@@ -201,6 +201,12 @@ public function execute($bapplication)
 	{
 		$bapplication->mNormal->fillTypesArray(); //fill types
 		$bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
+
+		//also fill eval stuff
+		$bapplication->mNormal->fillEvaluationsArray();
+		$bapplication->mNormal->fillEvaluationsItemTypesArray(); 
+
+
 		$bapplication->mLoginStudent->sendLoginStudent();
 			
 		$bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_GAME_APPLICATION);

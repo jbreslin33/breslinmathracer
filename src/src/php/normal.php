@@ -27,8 +27,10 @@ function __construct($application)
 
 	//evaluations
 	$this->mEvaluationsArray  = array();
-	$this->mEvaluationsItemTypesArray  = array();
 
+	//evaluations item types
+	$this->mEvaluationsItemTypesItemTypesArray     = array();
+	$this->mEvaluationsItemTypesEvaluationsIDArray = array();
         
 	//types array	
 	$this->mItemTypesArray  = array();
@@ -133,9 +135,7 @@ public function fillEvaluationsArray()
 
         if (count($this->mEvaluationsArray) < 1)
         {
-                //normal base types..
-                $query = "select id from evaluations where progression > 0.15 AND progression < 100 ";
-                $query .= " order by progression asc;";
+                $query = "select distinct evaluations_id from evaluations_items";
 
                 $db = new DatabaseConnection();
                 $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -143,7 +143,7 @@ public function fillEvaluationsArray()
 
                 for($i=0; $i < $numberOfResults; $i++)
                 {
-                        $this->mEvaluationsArray[]       = pg_Result($result, $i, 'id');
+                        $this->mEvaluationsArray[]       = pg_Result($result, $i, 'evaluations_id');
                 }
         }
         else
@@ -155,16 +155,16 @@ public function fillEvaluationsArray()
         }
 }
 
-public function fillEvaluationItemTypesArray()
+public function fillEvaluationsItemTypesArray()
 {
         if ($this->logs)
         {
-                error_log('fillEvaluationItemTypesArray');
+                error_log('fillEvaluationsItemTypesArray');
         }
 
-        if (count($this->mEvaluationItemTypesArray) < 1)
+        if (count($this->mEvaluationsItemTypesItemTypesArray) < 1)
         {
-		$query = "select evaluations_id, item_types_id from evaluations_items  order by evaluations_id asc, item_types_id;";
+		$query = "select evaluations_id, item_types_id from evaluations_items  order by evaluations_id asc, progression asc;";
 
                 $db = new DatabaseConnection();
                 $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -172,7 +172,8 @@ public function fillEvaluationItemTypesArray()
 
                 for($i=0; $i < $numberOfResults; $i++)
                 {
-                        $this->mEvaluationsItemTypesArray[] = pg_Result($result, $i, 'id');
+                        $this->mEvaluationsItemTypesEvaluationsIDArray[] = pg_Result($result, $i, 'evaluations_id');
+                        $this->mEvaluationsItemTypesItemTypesArray[] = pg_Result($result, $i, 'item_types_id');
                 }
         }
         else

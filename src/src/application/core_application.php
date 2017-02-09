@@ -57,6 +57,11 @@ Extends: Application,
 		//item_attempts
 		this.mItemTypesArray = new Array(); //from db
 
+		//evals
+		this.mEvaluationsItemTypesArray = new Array();
+		this.mEvaluationsItemTypesEvaluationsIDArray = new Array();
+		this.mEvaluationsItemTypesItemTypesArray = new Array();
+
 
 		//for standards live list
 		this.mStandardsArray = new Array();

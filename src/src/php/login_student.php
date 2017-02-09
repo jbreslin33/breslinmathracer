@@ -161,6 +161,10 @@ public function sendLoginStudent()
 	$rawDataItemAttemptsItemTypes = ""; 
 	$rawDataItemAttemptsTransactionCode = ""; 
 
+        $rawDataEvaluations = "";
+        $rawDataEvaluationsItemTypesItemTypes = "";
+        $rawDataEvaluationsItemTypesEvaluationsID = "";
+
         //itemTypes        
         for ($i=0; $i < count($this->mApplication->mNormal->mItemTypesArray); $i++)
         {
@@ -227,6 +231,60 @@ public function sendLoginStudent()
                 }
         }
 
+/*
+        //evaluations
+        $this->mEvaluationsArray  = array();
+
+        //evaluations item types
+        $this->mEvaluationsItemTypesItemTypesArray     = array();
+        $this->mEvaluationsItemTypesEvaluationsIDArray = array();
+*/
+	//evaluations stuff
+        for ($i=0; $i < count($this->mApplication->mNormal->mEvaluationsArray); $i++)
+        {
+                if ($i == 0)
+                {
+                        $rawDataEvaluations .= $this->mApplication->mNormal->mEvaluationsArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsArray[$i]);
+                }
+                else
+                {
+                        $rawDataEvaluations .= ":";
+                        $rawDataEvaluations .= $this->mApplication->mNormal->mEvaluationsArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsArray[$i]);
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mEvaluationsItemTypesItemTypesArray); $i++)
+        {
+                if ($i == 0)
+                {
+                        $rawDataEvaluationsItemTypesItemTypes .= $this->mApplication->mNormal->mEvaluationsItemTypesItemTypesArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsItemTypesItemTypesArray[$i]);
+                }
+                else
+                {
+                        $rawDataEvaluationsItemTypesItemTypes .= ":";
+                        $rawDataEvaluationsItemTypesItemTypes .= $this->mApplication->mNormal->mEvaluationsItemTypesItemTypesArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsItemTypesItemTypesArray[$i]);
+                }
+        }
+
+        for ($i=0; $i < count($this->mApplication->mNormal->mEvaluationsItemTypesEvaluationsIDArray); $i++)
+        {
+                if ($i == 0)
+                {
+                        $rawDataEvaluationsItemTypesEvaluationsID .= $this->mApplication->mNormal->mEvaluationsItemTypesEvaluationsIDArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsItemTypesEvaluationsIDArray[$i]);
+                }
+                else
+                {
+                        $rawDataEvaluationsItemTypesEvaluationsID .= ":";
+                        $rawDataEvaluationsItemTypesEvaluationsID .= $this->mApplication->mNormal->mEvaluationsItemTypesEvaluationsIDArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsItemTypesEvaluationsIDArray[$i]);
+                }
+        }
+
 	//fill php vars
 	$returnString = "117,";
 	$returnString .= "normal";
@@ -249,10 +307,19 @@ public function sendLoginStudent()
 	$returnString .= ",";
         $returnString .= $rawDataItemAttemptsTransactionCode;
 	$returnString .= ",";
+
+        $returnString .= $rawDataEvaluations;
+	$returnString .= ",";
+        $returnString .= $rawDataEvaluationsItemTypesItemTypes;
+	$returnString .= ",";
+        $returnString .= $rawDataEvaluationsItemTypesEvaluationsID;
+	$returnString .= ",";
+
+
 	$returnString .= $this->mApplication->mEvaluationsID;
 	$t = "mEvalID:";
 	$t = $this->mApplication->mEvaluationsID; 
-	error_log($t);
+	//error_log($t);
 	echo $returnString;
 }
 
