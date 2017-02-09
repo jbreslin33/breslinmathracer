@@ -219,11 +219,12 @@ execute: function(application)
 
 			var evaluationsItemTypesEvaluationsID = APPLICATION.mResponseArray[13];
 			APPLICATION.mEvaluationsItemTypesEvaluationsIDArray = evaluationsItemTypesEvaluationsID.split(":");
+/*
 			for (i=0; i < APPLICATION.mEvaluationsItemTypesEvaluationsIDArray.length; i++)
 			{
 				APPLICATION.log('APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[' + i + ']:' + APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]); 
 			}
-
+*/
 			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[14];
 			//APPLICATION.log('APPLICATION.mEvaluationsID:' + APPLICATION.mEvaluationsID);
 

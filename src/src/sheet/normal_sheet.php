@@ -7,7 +7,22 @@ initialize: function(game)
 	this.parent(game);
 
         APPLICATION.mHud.setOrange('G:' + APPLICATION.mEvaluationsID);
-
+/*
+          this.mEvaluationsItemTypesArray = new Array();
+                this.mEvaluationsItemTypesEvaluationsIDArray = new Array();
+                this.mEvaluationsItemTypesItemTypesArray = new Array();
+*/
+	for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
+	{
+		if (APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i])
+		{
+        		this.mIDArray.push('' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);
+		}
+	}
+	this.mCurrentElement = 0;
+        this.shuffle(500);
+	APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
+/*
 	if (APPLICATION.mEvaluationsID == 25)
 	{
         	this.mIDArray.push('k.cc.a.1_1');
@@ -27,9 +42,9 @@ initialize: function(game)
         	
 		this.mCurrentElement = 0;
         	this.shuffle(500);
-        
 		APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);
 	}
+*/
 	if (APPLICATION.mEvaluationsID == 26)
 	{
        		this.mIDArray.push('k.oa.a.4_1');
