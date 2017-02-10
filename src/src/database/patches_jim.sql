@@ -12,6 +12,7 @@ CREATE TABLE evaluations_items (
 alter table evaluations_items add column progression NUMERIC(12,10) NOT NULL default 0;
 
 --insert
+--k_cc
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.1_1',25);
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.1_2',25);
 
@@ -26,6 +27,54 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_9',25);
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_10',25);
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.2_11',25);
+
+--k.oa.a.4
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_1',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_2',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_3',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_4',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_5',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_6',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_7',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_8',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_9',26);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_21',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_22',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_23',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_24',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_25',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_26',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_27',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_28',26);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.4_29',26);
+
+--k.oa.a.5
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_12',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_13',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_14',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_15',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_16',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_17',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_18',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_19',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_20',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_21',13);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_29',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_30',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_31',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_32',13);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_34',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_35',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_36',13);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_38',13);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_39',13);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_41',13);
+
 
 
 --terra nova update
