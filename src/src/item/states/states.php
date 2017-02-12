@@ -139,7 +139,7 @@ execute: function(item)
 
 exit: function(item)
 {
-       	//APPLICATION.calcScore();
+       	APPLICATION.calcScore();
   	item.hideContinueSpeed();
 	item.hideSpeed();
 
