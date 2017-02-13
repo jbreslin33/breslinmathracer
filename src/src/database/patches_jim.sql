@@ -330,11 +330,6 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_69',12);
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_70',12);
 
-insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
-insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
-insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
-insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
-
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_73',12);
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_74',12);
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_75',12);
