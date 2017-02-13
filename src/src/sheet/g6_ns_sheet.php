@@ -5,7 +5,7 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-       
+	
 	var a = Math.floor(Math.random()*6);
         if (a == 0)
                 this.mIDArray.push('6.ns.a.1_1');
