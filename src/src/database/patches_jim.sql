@@ -514,18 +514,18 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_
 --insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_23',11);
 
 --4.nbt.b.4
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_1',14);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_2',14);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_1',14);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_2',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_3',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_4',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_5',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_6',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_7',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_8',14);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_9',14);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_9',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_10',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_11',14);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_12',14);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_12',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_13',14);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_14',14);
 
@@ -601,7 +601,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nbt.b.4',11,71,68,65,62,59) where description = '4_oa_b_4';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (14,14,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.6',13,80,75,70,65,59) where description = '4_nbt_b_5';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nf.b.3.c',14,79,74,69,64,59) where description = '4_nbt_b_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.oa.a.1',15,80,75,70,65,59) where description = '4_nf_b_3_c';
