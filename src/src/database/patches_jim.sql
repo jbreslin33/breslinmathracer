@@ -568,6 +568,18 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('4.nf.b.3.
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nf.b.3.c_12',30);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nf.b.3.c_13',30);
 
+--5.oa.a.1
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_1',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_3',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_6',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_9',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_12',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_15',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_18',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_20',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_21',31);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_22',31);
+
 
 --terra nova update
 update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
