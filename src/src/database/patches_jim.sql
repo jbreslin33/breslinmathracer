@@ -493,21 +493,25 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_
 --4.oa.b.4
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_2',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_3',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_6',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_7',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_8',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_9',11);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_6',11);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_7',11);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_8',11);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_9',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_10',11);
+
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_14',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_15',11);
+
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_16',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_17',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_18',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_19',11);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_20',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_21',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_22',11);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_23',11);
+
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_21',11);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_22',11);
+
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_23',11);
 
 --4.nbt.b.4
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.4_1',14);
@@ -533,12 +537,13 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5_5',20);
 
 --4.nbt.b.6
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_1',21);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_4',21);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_5',21);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_6',21);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',21);
-insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_8',21);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_1',21);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_4',21);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_5',21);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_6',21);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',21);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_8',21);
+
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_9',21);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_10',21);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_11',21);
@@ -595,10 +600,10 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'4.oa.a.1',10) where description = '3_nbt';
 
 
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (17,17,'4.nbt.b.4',11,71,68,65,62,59) where description = '4_oa_b_4';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nbt.b.4',11,71,68,65,62,59) where description = '4_oa_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (14,14,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.6',13,80,75,70,65,59) where description = '4_nbt_b_5';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (16,16,'4.nf.b.3.c',14,79,74,69,64,59) where description = '4_nbt_b_6';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nf.b.3.c',14,79,74,69,64,59) where description = '4_nbt_b_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.oa.a.1',15,80,75,70,65,59) where description = '4_nf_b_3_c';
 
 
