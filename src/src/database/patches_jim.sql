@@ -263,6 +263,83 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('2.nbt.b.7
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.nbt.b.7_20',23);
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.nbt.b.7_21',23);
 
+--3.oa.c.7
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_1',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_2',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_3',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_4',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_5',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_6',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_7',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_8',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_9',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_10',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_11',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_12',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_13',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_14',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_15',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_18',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_19',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_20',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_21',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_22',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_23',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_24',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_25',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_26',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_27',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_28',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_29',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_30',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_33',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_34',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_35',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_36',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_37',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_38',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_39',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_40',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_41',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_42',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_43',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_46',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_47',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_48',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_49',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_50',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_51',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_52',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_53',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_54',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_57',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_58',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_59',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_60',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_61',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_62',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_63',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_67',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_68',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_69',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_70',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_66',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_73',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_74',12);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_75',12);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_78',12);
 
 --terra nova update
 update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
