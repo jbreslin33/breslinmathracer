@@ -618,6 +618,15 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_8',35);
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_9',35);
 
+--6.rp
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_17',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.2_6',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.a_3',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_6',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.c_4',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.d_2',36);
+
+
 
 --terra nova update
 update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
@@ -665,7 +674,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 
 
 --keep runing if you want for update
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (6,6,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.ee.a.1',22,80,75,70,65,59) where description = '6_ns';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.g.a.1',23,80,75,70,65,59) where description = '6_ee';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.sp.a.1',24,80,75,70,65,59) where description = '6_g';
