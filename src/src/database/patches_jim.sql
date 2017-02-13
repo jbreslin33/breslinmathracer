@@ -628,7 +628,7 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.
 
 --6.ns
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_6',37);
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.2_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.2_1',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_9',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.4_5',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.b_4',37);

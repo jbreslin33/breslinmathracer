@@ -5,13 +5,6 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-
-6.rp.a.1_17
-6.rp.a.2_6
-6.rp.a.3.a_3
-6.rp.a.3.b_6
-6.rp.a.3.c_4
-6.rp.a.3.d_2
        
 	var a = Math.floor(Math.random()*8);
         if (a == 0)
