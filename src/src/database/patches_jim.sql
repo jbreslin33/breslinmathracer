@@ -341,6 +341,23 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_
 
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.c.7_78',12);
 
+--3.nbt
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_1',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_2',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_3',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_4',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_5',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_6',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_7',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_8',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_9',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_10',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_11',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_12',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_13',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.1_14',22);
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.nbt.a.3_1',22);
+
 --terra nova update
 update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
 
