@@ -139,7 +139,8 @@ execute: function(item)
 
 exit: function(item)
 {
-       	APPLICATION.calcScore();
+       	//APPLICATION.calcScore();
+        //APPLICATION.log('ITEM::WAITING_ON_SPEED_ITEM');
   	item.hideContinueSpeed();
 	item.hideSpeed();
 
@@ -147,6 +148,9 @@ exit: function(item)
      item.raphael.remove();
 
         item.mContinueSpeed = false;
+	
+	//goto next item
+      	//item.mSheet.mCurrentElement++;
 }
 
 });
@@ -230,6 +234,7 @@ execute: function(item)
 exit: function(item)
 {
 	APPLICATION.calcScore();
+	//APPLICATION.log('ITEM::WAITING_ON_ANSWER_ITEM');
 	APPLICATION.updateAttemptTable();
 
 	//goto next item
