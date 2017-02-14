@@ -8,6 +8,7 @@ CREATE TABLE evaluations_items (
         FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
         FOREIGN KEY (item_types_id) REFERENCES item_types(id)
 );
+delete from evaluations_items;
 --add prog
 alter table evaluations_items add column progression NUMERIC(12,10) NOT NULL default 0;
 
