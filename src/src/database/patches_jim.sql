@@ -717,7 +717,11 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7
 
 
 --insert eval
+update evaluations set description = 'Terra Nova' where id = 16;
 insert into evaluations (id,description,questions,score_needed,progression) values (1002,'Terra Nova 2',10,10,0.42);
+insert into evaluations (id,description,questions,score_needed,progression) values (1003,'Terra Nova 3',10,10,0.42);
+insert into evaluations (id,description,questions,score_needed,progression) values (1004,'Terra Nova 4',10,10,0.42);
+insert into evaluations (id,description,questions,score_needed,progression) values (1005,'Terra Nova 5',10,10,0.42);
 
 --terrnova 2 
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_21',1002); --1
@@ -730,7 +734,7 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_
 
 
 --terra nova update
-update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
+--update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
 
 alter table evaluations add grade_a integer default 90;  --cyan 
 alter table evaluations add grade_b integer default 80;  --green 

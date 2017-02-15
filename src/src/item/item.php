@@ -707,7 +707,7 @@ var Item = new Class(
 		
 		var optionF = document.createElement("option");
                 optionF.value = 16;
-                optionF.text = 'Terra Nova 5';
+                optionF.text = 'Terra Nova';
          	if (navigator.appName == "Microsoft Internet Explorer")
 		{
                 	this.mTimesTablesInfo.mMesh.add(optionF);
@@ -727,6 +727,42 @@ var Item = new Class(
 		else
 		{
                 	this.mTimesTablesInfo.mMesh.appendChild(optionTNTWO);
+		}
+		
+		var optionTNTHREE = document.createElement("option");
+                optionTNTHREE.value = 1003;
+                optionTNTHREE.text = 'Terra Nova 3';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionTNTHREE);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionTNTHREE);
+		}
+		
+		var optionTNFOUR = document.createElement("option");
+                optionTNFOUR.value = 1004;
+                optionTNFOUR.text = 'Terra Nova 4';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionTNFOUR);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionTNFOUR);
+		}
+		
+		var optionTNFIVE = document.createElement("option");
+                optionTNFIVE.value = 1005;
+                optionTNFIVE.text = 'Terra Nova 5';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionTNFIVE);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionTNFIVE);
 		}
 		
 		var optionG = document.createElement("option");

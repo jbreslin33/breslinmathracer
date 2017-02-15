@@ -32,6 +32,11 @@ if (isset($_GET["code"]))
 	{
 		$APPLICATION->mEvaluationsID = $APPLICATION->mCode;
 	}  
+        if ($APPLICATION->mCode > 1000 && $APPLICATION->mCode < 1500)
+        {
+                $APPLICATION->mEvaluationsID = $APPLICATION->mCode;
+        }
+
 }
 
 unset($APPLICATION->mDataArray);
