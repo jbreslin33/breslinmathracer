@@ -663,7 +663,7 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_7
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_8',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_9',39);
 
---terrnova5
+--terrnova all
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_21',16); --1
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.a.3_6',16); --2
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_20',16); --3
@@ -708,6 +708,8 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_9',16); --39
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_8',16); --40
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_23',16); --41
+
+--terrnova all
 
 
 --terra nova update
