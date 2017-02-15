@@ -39,13 +39,23 @@ public function execute($bapplication)
         {
                 $bapplication->mCoreStateMachine->changeState($bapplication->mMAIN_MENU_APPLICATION);
 	}
-	if ( $bapplication->mCode > 0 && $bapplication->mCode < 40)
+
+	if ( $bapplication->mCode > 0 && $bapplication->mCode < 41)
 	{
 		if ($bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
 		{
 			$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
 		}
 	}
+        if ( $bapplication->mCode > 1000 && $bapplication->mCode < 1500)
+        {
+                if ($bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
+                {
+                        $bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
+                }
+        }
+
+
 	if ($bapplication->mCode == 2 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mPRACTICE_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mPRACTICE_APPLICATION);
@@ -451,6 +461,14 @@ public function execute($bapplication)
                 $bapplication->mCode = 0;
 	}
 
+        if ( $bapplication->mCode > 1000 && $bapplication->mCode < 1500)
+        {
+                $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
+                $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
+                $bapplication->mCode = 0;
+        }
+
+
 	if ($bapplication->mCode == 101) //universal update
 	{
 		if ($bapplication->mEvaluationsID == 1)
@@ -491,6 +509,23 @@ public function execute($bapplication)
                 	}
                 	$bapplication->mCode = 0;
 		}
+                if ( $bapplication->mEvaluationsID > 1000 && $bapplication->mEvaluationsID < 1500)
+                {
+                        for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
+                        {
+                                if ($bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->mID == $bapplication->mDataArray[1])
+                                {
+                                        $bapplication->mEvaluationsAttempt->mItemAttemptsArray[$i]->update($bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3]);
+                                        //score
+                                        if ($bapplication->mDataArray[2] == 1)
+                                        {
+                                                $bapplication->mEvaluationsAttempt->mScore++;
+                                        }
+                                }
+                        }
+                        $bapplication->mCode = 0;
+                }
+
 	}
 }
 public function bexit($bapplication)

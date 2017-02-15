@@ -717,6 +717,18 @@ var Item = new Class(
                 	this.mTimesTablesInfo.mMesh.appendChild(optionF);
 		}
 		
+		var optionTNTWO = document.createElement("option");
+                optionTNTWO.value = 1002;
+                optionTNTWO.text = 'Terra Nova 2';
+         	if (navigator.appName == "Microsoft Internet Explorer")
+		{
+                	this.mTimesTablesInfo.mMesh.add(optionTNTWO);
+		}
+		else
+		{
+                	this.mTimesTablesInfo.mMesh.appendChild(optionTNTWO);
+		}
+		
 		var optionG = document.createElement("option");
                 optionG.value = 17;
                 optionG.text = 'Homework';

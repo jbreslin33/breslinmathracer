@@ -26,6 +26,11 @@ execute: function(application)
 	{
         	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mNORMAL_CORE_APPLICATION);
 	}
+        if ( (application.mEvaluationsID > 1000 && application.mEvaluationsID < 1500) && APPLICATION.mCoreStateMachine.mCurrentState != APPLICATION.mNORMAL_CORE_APPLICATION)
+        {
+                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mNORMAL_CORE_APPLICATION);
+        }
+
 },
 
 exit: function(application)

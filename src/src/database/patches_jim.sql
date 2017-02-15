@@ -663,6 +663,12 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_7
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_8',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_9',39);
 
+
+--5 = 14
+--4 = 10
+--3 = 6 
+--2 = 6
+
 --terrnova all
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_21',16); --1
 insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.a.3_6',16); --2
@@ -709,7 +715,18 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_8',16); --40
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_23',16); --41
 
---terrnova all
+
+--insert eval
+insert into evaluations (id,description,questions,score_needed,progression) values (1002,'Terra Nova 2',10,10,0.42);
+
+--terrnova 2 
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_21',1002); --1
+insert into evaluations_items (item_types_id, evaluations_id) values ('1.oa.a.1_11',1002); --4
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_22',1002); --9
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_23',1002); --11
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_24',1002); --19
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_25',1002); --20
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_26',1002); --22
 
 
 --terra nova update
@@ -726,6 +743,7 @@ alter table evaluations add grade_f integer default 59;  --red fail
 --green 100
 --yellow 90 
 --red 80 
+
 
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (13,13,'k.oa.a.4',1) where description = 'k_cc';
