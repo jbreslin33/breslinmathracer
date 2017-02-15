@@ -663,6 +663,52 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_7
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_8',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_9',39);
 
+--terrnova5
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_21',16); --1
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.a.3_6',16); --2
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_20',16); --3
+insert into evaluations_items (item_types_id, evaluations_id) values ('1.oa.a.1_11',16); --4
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.a.3_13',16); --5
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_23',16); --6
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.a.3_14',16); --7
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_21',16); --8
+
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_22',16); --9
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.a.2_26',16); --10
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_23',16); --11
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_24',16); --12
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.md.b.4_1',16); --13
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.g.a.2_29',16); --14
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.md.b.3_1',16); --15
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.g.a.1_1',16); --16
+
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.b.3_8',16); --17
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nf.a.1_12',16); --18
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_24',16); --19
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_25',16); --20
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.a.1_25',16); --21
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.a.1_26',16); --22
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.a.3_7',16); --24
+insert into evaluations_items (item_types_id, evaluations_id) values ('3.oa.a.3_8',16); --25
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.md.a.2_26',16); --26
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.c.5_16',16); --28
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_23',16); --29
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.md.a.2_27',16); --30
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.oa.b.4_24',16); --31
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.oa.b.3_9',16); --33
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.6_9',16); --34
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.a_4',16); --35
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_6',16); --36
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_22',16); --37
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_16',16); --38
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_9',16); --39
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_8',16); --40
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_23',16); --41
+
 
 --terra nova update
 update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
