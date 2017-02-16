@@ -27,6 +27,7 @@ function __construct($application)
 	$this->mLastName = 0;
 	$this->mUserID = 0;
 	$this->mStandard = 0;
+	$this->mCoreGradesID = 0;
 	$this->mMilestonesStandard = 'k.cc.a.1';
 
 }
@@ -104,6 +105,7 @@ public function checkForStudent()
                 		$last_name = pg_Result($result2, 0, 'last_name');
                 		$user_id = pg_Result($result2, 0, 'id');
                 		$core_standards_id = pg_Result($result2, 0, 'core_standards_id');
+                		$core_grades_id = pg_Result($result2, 0, 'core_grades_id');
                 		$school_id = pg_Result($result2, 0, 'school_id');
                 		$teacher_id = pg_Result($result2, 0, 'teacher_id');
                 		$room_id = pg_Result($result2, 0, 'room_id');
@@ -119,6 +121,8 @@ public function checkForStudent()
                 		$this->mLastName = $last_name;
                 		$this->mUserID = $user_id;
 				$this->mStandard = $core_standards_id;
+				$this->mCoreGradesID = $core_grades_id;
+				error_log($this->mCoreGradesID);
 				$this->mSchoolID = $school_id;
 				$this->mTeacherID = $teacher_id;
 				$this->mRoomID = $room_id;
@@ -314,12 +318,9 @@ public function sendLoginStudent()
 	$returnString .= ",";
         $returnString .= $rawDataEvaluationsItemTypesEvaluationsID;
 	$returnString .= ",";
-
-
 	$returnString .= $this->mApplication->mEvaluationsID;
-	$t = "mEvalID:";
-	$t = $this->mApplication->mEvaluationsID; 
-	//error_log($t);
+	$returnString .= ",";
+	$returnString .= $this->mCoreGradesID;
 	echo $returnString;
 }
 

@@ -94,10 +94,8 @@ Extends: Application,
 		/*********** LEVEL *******************
 		this.mRef_id = 'login';
 		this.mProgression = 0;
-		//this.mHighest = 0;
 		this.mStandard = '';
-		//this.mMilestonesStandard = '';
-		//this.mMilestonesStandardElement = '';
+		this.mCoreGradesID = 0;
 		this.mResponseArray = 0;
 		this.mRawData = 0;
 		this.mType = '';

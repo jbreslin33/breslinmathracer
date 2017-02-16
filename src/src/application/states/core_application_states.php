@@ -206,32 +206,16 @@ execute: function(application)
 			//evals	
 			var evaluationsItemTypes = APPLICATION.mResponseArray[11];
 			APPLICATION.mEvaluationsItemTypesArray = evaluationsItemTypes.split(":");
-		/*	
-			for (i=0; i < APPLICATION.mEvaluationsItemTypesArray.length; i++)
-			{
-				APPLICATION.log('APPLICATION.mEvaluationsItemTypesArray[' + i + ']:' + APPLICATION.mEvaluationsItemTypesArray[i]); 
-			}
-*/
 			
 			var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[12];
 			APPLICATION.mEvaluationsItemTypesItemTypesArray = evaluationsItemTypesItemTypes.split(":");
-/*
-			for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
-			{
-				APPLICATION.log('APPLICATION.mEvaluationsItemTypesItemTypesArray[' + i + ']:' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]); 
-			}
-*/
 
 			var evaluationsItemTypesEvaluationsID = APPLICATION.mResponseArray[13];
 			APPLICATION.mEvaluationsItemTypesEvaluationsIDArray = evaluationsItemTypesEvaluationsID.split(":");
-/*
-			for (i=0; i < APPLICATION.mEvaluationsItemTypesEvaluationsIDArray.length; i++)
-			{
-				APPLICATION.log('APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[' + i + ']:' + APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]); 
-			}
-*/
+
 			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[14];
-			//APPLICATION.log('APPLICATION.mEvaluationsID:' + APPLICATION.mEvaluationsID);
+			APPLICATION.mCoreGradesID = APPLICATION.mResponseArray[15];
+			APPLICATION.log('mCoreGradesID:' + APPLICATION.mCoreGradesID);
 
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 
