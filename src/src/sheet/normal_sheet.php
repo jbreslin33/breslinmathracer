@@ -61,6 +61,7 @@ pickItem: function()
 		}
 		else 
 		{
+                	//APPLICATION.getQuestionTypeFromGrade(1);
 			//lets get first and if its not a dup dont even go in
 			while (APPLICATION.mQuestionTypeLast == APPLICATION.mQuestionTypeCurrent)
        			{
@@ -72,13 +73,13 @@ pickItem: function()
 				}
                			if (r >= 10 && r < 45)
 				{
-                			APPLICATION.getQuestionType(1);
+                			APPLICATION.getQuestionTypeFromGrade(1);
 					APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
 					//APPLICATION.log('Q: A1');
 				}
                			if (r >= 45 && r < 80)
 				{
-                			APPLICATION.getQuestionType(2);
+                			APPLICATION.getQuestionTypeFromGrade(2);
 					APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
 					//APPLICATION.log('Q: A2');
 				}
