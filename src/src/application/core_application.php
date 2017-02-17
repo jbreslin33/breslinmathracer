@@ -258,131 +258,159 @@ Extends: Application,
                         if (grade >= realGrade)
                         {
 
-			//get an array of the item types to check for the standard we are currently in this loop	
-			//APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
-			//APPLICATION.log('score:' + score); 
-                	var tempTypeArray = new Array();
-                	tempTypeArray = [];
-			j = 0;
-			while (j < this.mItemTypesArray.length) 
-			{
-                        	if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[score]))
+				//get an array of the item types to check for the standard we are currently in this loop	
+                		var tempTypeArray = new Array();
+                		tempTypeArray = [];
+				j = 0;
+				while (j < this.mItemTypesArray.length) 
 				{
-					tempTypeArray.push(this.mItemTypesArray[j]);
-				}
-				j++;
-			}	
-
-			//get a sister array with a transaction code for every item type in the standarard we are in this loop
-                	var transArray = new Array();
-                	transArray = [];
-			g = 0;
-
-			//incorrectArray
-                	var incorrectArray = new Array();
-                	incorrectArray = [];
-
-			while (g < tempTypeArray.length)
-			{
-				//APPLICATION.log('checking type:' + tempTypeArray[g]); 
-				var c = 0;
-				var gotType = ''; 
-				while (c < this.mItemAttemptsTypeArray.length && gotType == '' )
-				{
-					if (tempTypeArray[g] == this.mItemAttemptsTypeArray[c])
-					{
-						gotType = this.mItemAttemptsTransactionCodeArray[c];	
-						transArray.push(gotType);	
-						//APPLICATION.log('found type:' + tempTypeArray[g] + ' code:' + gotType); 
-
-						//fill incorrect array
-						if (this.mItemAttemptsTransactionCodeArray[c] == 0)
+                    			var grade = this.mStandardsArray[score].charAt(0);
+                        		var realGrade = parseInt(APPLICATION.mCoreGradesID - 1);
+                        		if (grade == 'k')
+                        		{
+                                		grade = 0;
+                        		}
+                        		if (grade >= realGrade)
+                        		{
+                        			if (this.mItemTypesArray[j].includes("" + this.mStandardsArray[score]))
 						{
-							incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
-						}	
-						else if (this.mItemAttemptsTransactionCodeArray[c] == 2)
-						{
-							incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
+							tempTypeArray.push(this.mItemTypesArray[j]);
 						}
 					}
-					c++;
-				}
-
-				if (gotType == '') //this means student was never asked
-				{
-					transArray.push('2');	
-					incorrectArray.push(tempTypeArray[g]);	
-					//APPLICATION.log('type not found type:' + tempTypeArray[g] + ' code: 2'); 
-				}
-				g++;
-			}
-			
-			//check percent
-			var correct = 0;	
-			var incorrect = 0;	
-			var total = transArray.length;	
-			for (y = 0; y < transArray.length; y++)
-			{
-				if (transArray[y] == 0)
-				{
-					incorrect++;
-				}
-				else if (transArray[y] == 2)
-				{
-					incorrect++;
+					j++;
 				}	
-				else if (transArray[y] == 1)
+
+				//get a sister array with a transaction code for every item type in the standarard we are in this loop
+                		var transArray = new Array();
+                		transArray = [];
+				g = 0;
+
+				//incorrectArray
+                		var incorrectArray = new Array();
+                		incorrectArray = [];
+
+				while (g < tempTypeArray.length)
 				{
-					correct++;
+                    			var grade = this.mStandardsArray[score].charAt(0);
+                        		var realGrade = parseInt(APPLICATION.mCoreGradesID - 1);
+                        		if (grade == 'k')
+                        		{
+                                		grade = 0;
+                        		}
+                        		if (grade >= realGrade)
+                        		{
+						var c = 0;
+						var gotType = ''; 
+						while (c < this.mItemAttemptsTypeArray.length && gotType == '' )
+						{
+                    					var grade = this.mStandardsArray[score].charAt(0);
+                        				var realGrade = parseInt(APPLICATION.mCoreGradesID - 1);
+                        				if (grade == 'k')
+                        				{
+                                				grade = 0;
+                        				}
+                        				if (grade >= realGrade)
+                        				{
+								if (tempTypeArray[g] == this.mItemAttemptsTypeArray[c])
+								{
+									gotType = this.mItemAttemptsTransactionCodeArray[c];	
+									transArray.push(gotType);	
+
+									//fill incorrect array
+									if (this.mItemAttemptsTransactionCodeArray[c] == 0)
+									{
+										incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
+									}		
+									else if (this.mItemAttemptsTransactionCodeArray[c] == 2)
+									{
+										incorrectArray.push(this.mItemAttemptsTypeArray[c]);	
+									}
+								}
+							}
+							c++;
+						}
+
+						if (gotType == '') //this means student was never asked
+						{
+                    					var grade = this.mStandardsArray[score].charAt(0);
+                        				var realGrade = parseInt(APPLICATION.mCoreGradesID - 1);
+                        				if (grade == 'k')
+                        				{
+                                				grade = 0;
+                        				}
+                        				if (grade >= realGrade)
+                        				{
+								transArray.push('2');	
+								incorrectArray.push(tempTypeArray[g]);	
+							}
+						}
+					}
+					g++;
 				}
-			} 
+			
+				//check percent
+				var correct = 0;	
+				var incorrect = 0;	
+				var total = transArray.length;	
+				for (y = 0; y < transArray.length; y++)
+				{
+					if (transArray[y] == 0)
+					{
+						incorrect++;
+					}
+					else if (transArray[y] == 2)
+					{
+						incorrect++;
+					}	
+					else if (transArray[y] == 1)
+					{
+						correct++;
+					}
+				} 
 				
-			var r = parseFloat(correct / total);				
-			r = r * 100;
-			var p = Math.round(r);			
-			//APPLICATION.log('percent:' + p);
-			//APPLICATION.log('size:' + incorrectArray.length); 
+				var r = parseFloat(correct / total);				
+				r = r * 100;
+				var p = Math.round(r);			
 
-			//set hud
-			APPLICATION.mHud.setCyan('' + 'grade:' + p + '%');
-			APPLICATION.mHud.setViolet('' + correct + ':' + total);
+				//set hud
+				APPLICATION.mHud.setCyan('' + 'grade:' + p + '%');
+				APPLICATION.mHud.setViolet('' + correct + ':' + total);
 
-			//while (g < tempTypeArray.length)
-
-			if (p < 80)
-			{
-				standard = this.mStandardsArray[score]; 
-			}
+				if (p < 80)
+				{
+					standard = this.mStandardsArray[score]; 
+				}
 			}
 			score++;
 		} //end getting standard
 
 
-		//APPLICATION.log('score:' + score);
 		var r = Math.floor(Math.random()*score);
 		var oldStandard = this.mStandardsArray[r]; 
-		//APPLICATION.log('oldStandard:' + oldStandard);
-	
 	
 		var oldTempTypeArray = new Array();
                 oldTempTypeArray = [];
                 u = 0;
                 while (u < this.mItemTypesArray.length)
                 {
-                	if (this.mItemTypesArray[u].includes("" + oldStandard))
+                    	var grade = this.mStandardsArray[score].charAt(0);
+                       	var realGrade = parseInt(APPLICATION.mCoreGradesID - 1);
+                       	if (grade == 'k')
+                       	{
+                       		grade = 0;
+                       	}
+                       	if (grade >= realGrade)
                         {
-                                oldTempTypeArray.push(this.mItemTypesArray[u]);
-                        }
+                		if (this.mItemTypesArray[u].includes("" + oldStandard))
+                        	{
+                                	oldTempTypeArray.push(this.mItemTypesArray[u]);
+                        	}
+			}
                         u++;
                 }     
 		
 		var rt = Math.floor(Math.random()*oldTempTypeArray.length);
-		//APPLICATION.log('oldType element:' + rt);
-		//APPLICATION.log('oldType:' + oldTempTypeArray[rt]);
 		var oldType = oldTempTypeArray[rt]; 
-
-	
-			//temp.......
 		this.mQuestionType = oldType;
 		
 
