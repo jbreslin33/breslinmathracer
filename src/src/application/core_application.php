@@ -59,6 +59,7 @@ Extends: Application,
 
 		//evals
 		this.mEvaluationsItemTypesArray = new Array();
+		this.mEvaluationsItemTypesQuestionsArray = new Array();
 		this.mEvaluationsItemTypesEvaluationsIDArray = new Array();
 		this.mEvaluationsItemTypesItemTypesArray = new Array();
 

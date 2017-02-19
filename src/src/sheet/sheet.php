@@ -36,8 +36,10 @@ var Sheet = new Class(
 		//element
 		this.mCurrentElement = 0;
 
+		//total questions
+		this.mQuestions = 0;
+
 		//score
-		this.mScoreNeeded = 0;
 		this.mCorrect = 0;
 		this.mIncorrect = 0;
 

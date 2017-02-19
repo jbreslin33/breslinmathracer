@@ -5,8 +5,17 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
-
+	APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]
         APPLICATION.mHud.setOrange('G:' + APPLICATION.mEvaluationsID);
+
+	//lets find and set number of questions from db	
+	for (y=0; y < APPLICATION.mEvaluationsItemTypesEvaluationsIDArray.length; y++)
+	{
+		APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i];
+		this.mQuestions = APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]; 
+	}
+
+	APPLICATION.log('numberOfQuestions:' + this.mQuestions);
 	
 	for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
 	{
@@ -30,8 +39,6 @@ pickItem: function()
         	if (this.mCurrentElement < this.mIDArray.length)
         	{
                 	APPLICATION.mQuestionTypeCurrent = this.mIDArray[this.mCurrentElement];
-			//APPLICATION.calcScore();
-                	//this.mCurrentElement++;
         	}
         	else //its over....check here????
         	{
