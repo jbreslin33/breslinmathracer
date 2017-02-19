@@ -16,13 +16,27 @@ initialize: function(game)
 	}
 
 
-	for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
-	{
-		if (APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i])
-		{
-        		this.mIDArray.push('' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);
-		}
-	}
+	//fake potentially big array
+        for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
+        {	
+               	if (APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i])
+               	{
+			//APPLICATION.log('sent to temp:' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);  
+                       	this.mTempIDArray.push('' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);
+               	}
+        }
+
+	//shuffle
+        this.shuffle(this.mTempIDArray,500);
+	
+
+	//just load enuf for questions total to real array
+	APPLICATION.log('lenght:' + this.mQuestions);
+        for (i=0; i < this.mQuestions; i++)
+        {	
+		APPLICATION.log('sent to temp:' + this.mTempIDArray[i]);  
+                this.mIDArray.push('' + this.mTempIDArray[i]);
+        }
 
         this.shuffle(this.mIDArray,500);
 

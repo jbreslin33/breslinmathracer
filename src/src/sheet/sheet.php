@@ -10,6 +10,7 @@ var Sheet = new Class(
 		this.mStateLogs = false; 
 
 		// questions
+ 		this.mTempIDArray = new Array();
  		this.mIDArray = new Array();
 
 		//GAME
