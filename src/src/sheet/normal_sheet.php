@@ -15,8 +15,7 @@ initialize: function(game)
 		this.mQuestions = APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]; 
 	}
 
-	APPLICATION.log('numberOfQuestions:' + this.mQuestions);
-	
+
 	for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
 	{
 		if (APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i])
@@ -25,7 +24,7 @@ initialize: function(game)
 		}
 	}
 
-        this.shuffle(500);
+        this.shuffle(this.mIDArray,500);
 
 	//prime the hud  	
 	APPLICATION.mHud.setViolet('1:' + this.mIDArray.length);

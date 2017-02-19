@@ -388,34 +388,20 @@ var Sheet = new Class(
 
                 this.hideVictoryShapes();
         },
-//this.mIDArray.push
-	shuffle: function(degree)
+	
+	shuffle: function(a,degree)
         {
                 for (i=0; i < degree; i++)
                 {
-                        indexFROM = Math.floor(Math.random()*parseInt(this.mIDArray.length));
-                        indexTO = Math.floor(Math.random()*parseInt(this.mIDArray.length));
+                        indexFROM = Math.floor(Math.random()*parseInt(a.length));
+                        indexTO = Math.floor(Math.random()*parseInt(a.length));
 
-                        answerFROM = this.mIDArray[indexFROM];
-                        answerTO = this.mIDArray[indexTO];
-                        this.mIDArray[indexFROM] = answerTO;
-                        this.mIDArray[indexTO] = answerFROM;
+                        answerFROM = a[indexFROM];
+                        answerTO = a[indexTO];
+                        
+			a[indexFROM] = answerTO;
+                        a[indexTO] = answerFROM;
                 }
         }
-/*
-	shuffle: function(degree)
-        {
-                for (i=0; i < degree; i++)
-                {
-                        indexFROM = Math.floor(Math.random()*3);
-                        indexTO = Math.floor(Math.random()*3);
-
-                        answerFROM = this.mButtonArray[indexFROM].getAnswer();
-                        answerTO = this.mButtonArray[indexTO].getAnswer();
-                        this.mButtonArray[indexFROM].setAnswer(answerTO);
-                        this.mButtonArray[indexTO].setAnswer(answerFROM);
-                }
-        }
-*/
 
 });
