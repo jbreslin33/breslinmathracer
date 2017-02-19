@@ -207,15 +207,16 @@ execute: function(application)
 			var evaluationsItemTypes = APPLICATION.mResponseArray[11];
 			APPLICATION.mEvaluationsItemTypesArray = evaluationsItemTypes.split(":");
 			
-			var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[12];
+			var evaluationsItemTypesQuestions = APPLICATION.mResponseArray[12];
+			APPLICATION.mEvaluationsItemTypesQuestionsArray = evaluationsItemTypes.split(":");
+			
+			var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[13];
 			APPLICATION.mEvaluationsItemTypesItemTypesArray = evaluationsItemTypesItemTypes.split(":");
 
-			var evaluationsItemTypesEvaluationsID = APPLICATION.mResponseArray[13];
+			var evaluationsItemTypesEvaluationsID = APPLICATION.mResponseArray[14];
 			APPLICATION.mEvaluationsItemTypesEvaluationsIDArray = evaluationsItemTypesEvaluationsID.split(":");
-
-			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[14];
-			APPLICATION.mCoreGradesID = APPLICATION.mResponseArray[15];
-			APPLICATION.log('mCoreGradesID:' + APPLICATION.mCoreGradesID);
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[15];
+			APPLICATION.mCoreGradesID = APPLICATION.mResponseArray[16];
 
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
 

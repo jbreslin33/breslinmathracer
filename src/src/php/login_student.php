@@ -166,6 +166,7 @@ public function sendLoginStudent()
 	$rawDataItemAttemptsTransactionCode = ""; 
 
         $rawDataEvaluations = "";
+        $rawDataEvaluationsQuestions = "";
         $rawDataEvaluationsItemTypesItemTypes = "";
         $rawDataEvaluationsItemTypesEvaluationsID = "";
 
@@ -235,15 +236,7 @@ public function sendLoginStudent()
                 }
         }
 
-/*
-        //evaluations
-        $this->mEvaluationsArray  = array();
-
-        //evaluations item types
-        $this->mEvaluationsItemTypesItemTypesArray     = array();
-        $this->mEvaluationsItemTypesEvaluationsIDArray = array();
-*/
-	//evaluations stuff
+	//evaluations id 
         for ($i=0; $i < count($this->mApplication->mNormal->mEvaluationsArray); $i++)
         {
                 if ($i == 0)
@@ -256,6 +249,22 @@ public function sendLoginStudent()
                         $rawDataEvaluations .= ":";
                         $rawDataEvaluations .= $this->mApplication->mNormal->mEvaluationsArray[$i];
                         //error_log($this->mApplication->mNormal->mEvaluationsArray[$i]);
+                }
+        }
+
+        //evaluations questions total 
+        for ($i=0; $i < count($this->mApplication->mNormal->mEvaluationsQuestionsArray); $i++)
+        {
+                if ($i == 0)
+                {
+                        $rawDataEvaluationsQuestions .= $this->mApplication->mNormal->mEvaluationsQuestionsArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsQuestionsArray[$i]);
+                }
+                else
+                {
+                        $rawDataEvaluationsQuestions .= ":";
+                        $rawDataEvaluationsQuestions .= $this->mApplication->mNormal->mEvaluationsQuestionsArray[$i];
+                        //error_log($this->mApplication->mNormal->mEvaluationsQuestionsArray[$i]);
                 }
         }
 
@@ -313,6 +322,8 @@ public function sendLoginStudent()
 	$returnString .= ",";
 
         $returnString .= $rawDataEvaluations;
+	$returnString .= ",";
+        $returnString .= $rawDataEvaluationsQuestions;
 	$returnString .= ",";
         $returnString .= $rawDataEvaluationsItemTypesItemTypes;
 	$returnString .= ",";

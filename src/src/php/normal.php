@@ -27,6 +27,7 @@ function __construct($application)
 
 	//evaluations
 	$this->mEvaluationsArray  = array();
+	$this->mEvaluationsQuestionsArray  = array();
 
 	//evaluations item types
 	$this->mEvaluationsItemTypesItemTypesArray     = array();
@@ -135,7 +136,7 @@ public function fillEvaluationsArray()
 
         if (count($this->mEvaluationsArray) < 1)
         {
-                $query = "select distinct evaluations_id from evaluations_items";
+                $query = "select id, questions from evaluations";
 
                 $db = new DatabaseConnection();
                 $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
@@ -143,7 +144,8 @@ public function fillEvaluationsArray()
 
                 for($i=0; $i < $numberOfResults; $i++)
                 {
-                        $this->mEvaluationsArray[]       = pg_Result($result, $i, 'evaluations_id');
+                        $this->mEvaluationsArray[]          = pg_Result($result, $i, 'id');
+                        $this->mEvaluationsQuestionsArray[] = pg_Result($result, $i, 'questions');
                 }
         }
         else
