@@ -620,11 +620,45 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_9',35);
 
 --6.rp
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_1',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_2',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_3',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_6',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_7',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_8',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_9',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_10',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_11',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_12',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_13',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_14',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_15',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_16',36);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.1_17',36);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.2_1',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.2_2',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.2_3',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.2_4',36);
+
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.2_6',36);
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.a_3',36);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.a_1',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.a_2',36);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_1',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_2',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_3',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_4',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_5',36);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.b_6',36);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.c_1',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.c_2',36);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.c_3',36);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.c_4',36);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.d_1',36);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.d_2',36);
 
 --6.ns
