@@ -715,16 +715,101 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_2',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_3',37);
 
---6.ee
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_10',38);
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_8',38);
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_10',38);
 --insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_11',38);
+--6.ee
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_7',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_8',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_9',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_10',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_7',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.a_8',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_7',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_8',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_9',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.b_10',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_7',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_8',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_9',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_10',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_11',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_12',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_13',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_14',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_15',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_16',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_17',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_18',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_19',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_20',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_21',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.3_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.3_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.3_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.3_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.3_5',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.3_6',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_7',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.5_8',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.6_1',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.6_2',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_7',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_8',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_9',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_10',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_11',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_12',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.b.7_13',38);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_1',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_2',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_3',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_4',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_5',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_6',38);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_7',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_8',38);
 
 --6.g
@@ -896,7 +981,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 --keep runing if you want for update
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ee.a.1',22,80,75,70,65,59) where description = '6_ns';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'6.g.a.1',23,80,75,70,65,59) where description = '6_ee';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.g.a.1',23,80,75,70,65,59) where description = '6_ee';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.sp.a.1',24,80,75,70,65,59) where description = '6_g';
 --so it cant be completed set it too high...
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (13,13,'7.rp.a.1',25,80,75,70,65,59) where description = '6_sp';
