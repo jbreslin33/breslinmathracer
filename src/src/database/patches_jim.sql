@@ -662,14 +662,57 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.rp.a.3.d_2',36);
 
 --6.ns
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_3',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_4',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_5',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.a.1_6',37);
+
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.2_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.2_2',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_3',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_4',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_5',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_6',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_7',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_8',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.3_9',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.4_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.4_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.4_3',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.4_4',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.b.4_5',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.5_1',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.b_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.b_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.b_3',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.b_4',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.c_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.c_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.c_3',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.6.c_4',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.a_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.a_2',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.a_4',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.b_1',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.c_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.c_2',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.c_3',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.7.c_4',37);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_1',37);
+insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_2',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_3',37);
 
 --6.ee
@@ -852,7 +895,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 
 --keep runing if you want for update
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'6.ee.a.1',22,80,75,70,65,59) where description = '6_ns';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ee.a.1',22,80,75,70,65,59) where description = '6_ns';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'6.g.a.1',23,80,75,70,65,59) where description = '6_ee';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.sp.a.1',24,80,75,70,65,59) where description = '6_g';
 --so it cant be completed set it too high...
