@@ -136,7 +136,7 @@ public function fillEvaluationsArray()
 
         if (count($this->mEvaluationsArray) < 1)
         {
-                $query = "select id, questions from evaluations";
+                $query = "select id, questions from evaluations order by id asc";
 
                 $db = new DatabaseConnection();
                 $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());

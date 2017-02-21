@@ -851,7 +851,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 
 
 --keep runing if you want for update
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (6,6,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'6.ee.a.1',22,80,75,70,65,59) where description = '6_ns';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'6.g.a.1',23,80,75,70,65,59) where description = '6_ee';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.sp.a.1',24,80,75,70,65,59) where description = '6_g';

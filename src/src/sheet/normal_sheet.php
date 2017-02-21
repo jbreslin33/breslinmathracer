@@ -7,12 +7,23 @@ initialize: function(game)
 	this.parent(game);
 	APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]
         APPLICATION.mHud.setOrange('G:' + APPLICATION.mEvaluationsID);
+/*	
+	for (z=0; z < APPLICATION.mEvaluationsItemTypesQuestionsArray.length; z++)
+	{
+		APPLICATION.log('APPLICATION:' + APPLICATION.mEvaluationsItemTypesQuestionsArray[z]);         
+	}
+*/
 
 	//lets find and set number of questions from db	
-	for (y=0; y < APPLICATION.mEvaluationsItemTypesEvaluationsIDArray.length; y++)
+	for (y=0; y < APPLICATION.mEvaluationsItemTypesArray.length; y++)
 	{
-		APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i];
-		this.mQuestions = APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]; 
+		APPLICATION.log('mEvaluationsID:' + APPLICATION.mEvaluationsID); 
+		APPLICATION.log('ID:' + APPLICATION.mEvaluationsItemTypesArray[y]); 
+		if (parseInt(APPLICATION.mEvaluationsID) == parseInt(APPLICATION.mEvaluationsItemTypesArray[y]))
+		{
+			this.mQuestions = APPLICATION.mEvaluationsItemTypesQuestionsArray[y]; 
+			APPLICATION.log('mQuestions:' + APPLICATION.mEvaluationsItemTypesQuestionsArray[y]); 
+		}
 	}
 
 
@@ -31,7 +42,7 @@ initialize: function(game)
 	
 
 	//just load enuf for questions total to real array
-	APPLICATION.log('lenght:' + this.mQuestions);
+	APPLICATION.log('length:' + this.mQuestions);
         for (i=0; i < this.mQuestions; i++)
         {	
 		APPLICATION.log('sent to temp:' + this.mTempIDArray[i]);  

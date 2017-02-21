@@ -203,12 +203,14 @@ execute: function(application)
 			var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[10];
 			APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
 		
-			//evals	
+			//evals id such as 36 for 6.rp	
 			var evaluationsItemTypes = APPLICATION.mResponseArray[11];
 			APPLICATION.mEvaluationsItemTypesArray = evaluationsItemTypes.split(":");
-			
+		
+			//this should be number of questions such as 10 for 6.rp	
 			var evaluationsItemTypesQuestions = APPLICATION.mResponseArray[12];
-			APPLICATION.mEvaluationsItemTypesQuestionsArray = evaluationsItemTypes.split(":");
+			APPLICATION.log('questionsArrayString:' + evaluationsItemTypesQuestions); 
+			APPLICATION.mEvaluationsItemTypesQuestionsArray = evaluationsItemTypesQuestions.split(":");
 			
 			var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[13];
 			APPLICATION.mEvaluationsItemTypesItemTypesArray = evaluationsItemTypesItemTypes.split(":");
