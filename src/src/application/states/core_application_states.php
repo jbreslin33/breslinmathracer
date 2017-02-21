@@ -209,7 +209,6 @@ execute: function(application)
 		
 			//this should be number of questions such as 10 for 6.rp	
 			var evaluationsItemTypesQuestions = APPLICATION.mResponseArray[12];
-			APPLICATION.log('questionsArrayString:' + evaluationsItemTypesQuestions); 
 			APPLICATION.mEvaluationsItemTypesQuestionsArray = evaluationsItemTypesQuestions.split(":");
 			
 			var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[13];

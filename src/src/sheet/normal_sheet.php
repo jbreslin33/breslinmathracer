@@ -7,32 +7,21 @@ initialize: function(game)
 	this.parent(game);
 	APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i]
         APPLICATION.mHud.setOrange('G:' + APPLICATION.mEvaluationsID);
-/*	
-	for (z=0; z < APPLICATION.mEvaluationsItemTypesQuestionsArray.length; z++)
-	{
-		APPLICATION.log('APPLICATION:' + APPLICATION.mEvaluationsItemTypesQuestionsArray[z]);         
-	}
-*/
 
 	//lets find and set number of questions from db	
 	for (y=0; y < APPLICATION.mEvaluationsItemTypesArray.length; y++)
 	{
-		APPLICATION.log('mEvaluationsID:' + APPLICATION.mEvaluationsID); 
-		APPLICATION.log('ID:' + APPLICATION.mEvaluationsItemTypesArray[y]); 
 		if (parseInt(APPLICATION.mEvaluationsID) == parseInt(APPLICATION.mEvaluationsItemTypesArray[y]))
 		{
 			this.mQuestions = APPLICATION.mEvaluationsItemTypesQuestionsArray[y]; 
-			APPLICATION.log('mQuestions:' + APPLICATION.mEvaluationsItemTypesQuestionsArray[y]); 
 		}
 	}
-
 
 	//fake potentially big array
         for (i=0; i < APPLICATION.mEvaluationsItemTypesItemTypesArray.length; i++)
         {	
                	if (APPLICATION.mEvaluationsID == APPLICATION.mEvaluationsItemTypesEvaluationsIDArray[i])
                	{
-			//APPLICATION.log('sent to temp:' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);  
                        	this.mTempIDArray.push('' + APPLICATION.mEvaluationsItemTypesItemTypesArray[i]);
                	}
         }
@@ -40,12 +29,9 @@ initialize: function(game)
 	//shuffle
         this.shuffle(this.mTempIDArray,500);
 	
-
 	//just load enuf for questions total to real array
-	APPLICATION.log('length:' + this.mQuestions);
         for (i=0; i < this.mQuestions; i++)
         {	
-		APPLICATION.log('sent to temp:' + this.mTempIDArray[i]);  
                 this.mIDArray.push('' + this.mTempIDArray[i]);
         }
 
