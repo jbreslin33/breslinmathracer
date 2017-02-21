@@ -715,7 +715,6 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_2',37);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ns.c.8_3',37);
 
---insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_11',38);
 --6.ee
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_1',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.1_2',38);
@@ -758,7 +757,7 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_8',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_9',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_10',38);
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_11',38);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_11',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_12',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_13',38);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.a.2.c_14',38);
@@ -982,7 +981,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ns.a.1',21,80,75,70,65,59) where description = '6_rp';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ee.a.1',22,80,75,70,65,59) where description = '6_ns';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.g.a.1',23,80,75,70,65,59) where description = '6_ee';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (11,11,'6.sp.a.1',24,80,75,70,65,59) where description = '6_g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.sp.a.1',24,80,75,70,65,59) where description = '6_g';
 --so it cant be completed set it too high...
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (13,13,'7.rp.a.1',25,80,75,70,65,59) where description = '6_sp';
 
