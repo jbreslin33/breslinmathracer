@@ -324,9 +324,11 @@ CREATE TABLE evaluations_attempts (
         end_time timestamp,
 	evaluations_id integer NOT NULL,	
     	user_id integer NOT NULL,
+    	team_id integer NOT NULL,
         PRIMARY KEY (id),
 	FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
-	FOREIGN KEY (user_id) REFERENCES users(id)
+	FOREIGN KEY (user_id) REFERENCES users(id),
+	FOREIGN KEY (team_id) REFERENCES teams(id)
 );
 
 

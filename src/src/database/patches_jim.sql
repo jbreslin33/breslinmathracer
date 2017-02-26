@@ -1,16 +1,10 @@
 --add table
-CREATE TABLE evaluations_items (
-        id SERIAL,
-        item_types_id text NOT NULL,
-        evaluations_id integer NOT NULL,
-	progression NUMERIC(12,10) NOT NULL default 0,
-        PRIMARY KEY (id),
-        FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
-        FOREIGN KEY (item_types_id) REFERENCES item_types(id)
-);
 delete from evaluations_items;
+
 --add prog
-alter table evaluations_items add column progression NUMERIC(12,10) NOT NULL default 0;
+--alter table evaluations_items add column progression NUMERIC(12,10) NOT NULL default 0;
+alter table evaluations_attempts add column team_id integer NOT NULL default 0;
+
 
 --insert
 --k_cc
@@ -937,23 +931,6 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_23',1005); --41
 
 
---terra nova update
---update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
-
-alter table evaluations add grade_a integer default 90;  --cyan 
-alter table evaluations add grade_b integer default 80;  --green 
-alter table evaluations add grade_c integer default 70;  --yellow 
-alter table evaluations add grade_d integer default 60;  --orange 
-alter table evaluations add grade_f integer default 59;  --red fail 
-
---tables
---izzy 
---green 100
---yellow 90 
---red 80 
-
-
-
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (13,13,'k.oa.a.4',1) where description = 'k_cc';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (18,18,'k.oa.a.5',2) where description = 'k_oa_a_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (20,20,'1.oa.a.1',3) where description = 'k_oa_a_5';
@@ -1082,20 +1059,3 @@ update users set core_grades_id = 5 where room_id = 103;
 --RR3
 update users set core_grades_id = 4 where room_id = 108;
 
---begin temp 
---insert into rooms (name,school_id) VALUES ('AM3',2);
---insert into rooms (name,school_id) VALUES ('AM7',2);
---end temp
-
---AM3
---update users set core_grades_id = 4 where room_id = 109;
-
---AM7
---update users set core_grades_id = 8 where room_id = 110;
-
---update rooms
---update rooms set name = 'AM2' where id = 109;
-
---update users set score = 0;
---update users set core_standards_overide_id = '';
---update users set core_standards_id = 'k.cc.a.1';
