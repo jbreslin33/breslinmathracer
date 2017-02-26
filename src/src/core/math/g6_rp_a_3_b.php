@@ -343,8 +343,6 @@ var a = Math.floor(Math.random()*2)+4;
 var b = Math.floor(Math.random()*2)+2;
 var c = a * (Math.floor(Math.random()*2)+3);
 
-var answer;
-
 var r = Math.floor(Math.random()*2);
 
 //yogurt       $5 per pound
@@ -359,8 +357,9 @@ var r = Math.floor(Math.random()*2);
 
 
     this.a = (Math.floor(Math.random()*2)+3)*3;
-    //this.b = Math.floor(Math.random()*4)+2;
+    this.b = Math.floor(Math.random()*4)+2;
     this.b = (Math.random()*4)+4;
+
     this.b = this.b.toFixed(1);
     this.c = this.a * this.b;
 
@@ -369,8 +368,9 @@ var r = Math.floor(Math.random()*2);
 
 answer = this.c.toFixed(2);   
 
+answer = new Decimal(answer);
 
-this.setAnswer('' + answer,0);
+this.setAnswer('' + answer.getMoney(),0);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);
