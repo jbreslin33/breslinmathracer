@@ -278,8 +278,10 @@ this.b = new Fraction('1',this.b,false);
 answer = this.c + this.e;  
 answer = answer.toFixed(2);
 
+answer = new Decimal(answer);
 
-this.setAnswer('' + answer,0);
+
+this.setAnswer('' + answer.getMoney(),0);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);
