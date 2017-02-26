@@ -173,7 +173,8 @@ var r = Math.floor(Math.random()*2);
     this.e = this.a * this.d;
 
     answer = this.c; 
-    this.setAnswer('' + answer,0);
+	answer = new Decimal(answer);
+    this.setAnswer('' + answer.getMoney(),0);
 
 var r = Math.floor(Math.random()*3);
 
