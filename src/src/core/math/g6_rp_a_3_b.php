@@ -451,18 +451,21 @@ var r = Math.floor(Math.random()*2);
 		this.mFruit     = this.mNameMachine.getFruit();
 
 
-    this.a = (Math.floor(Math.random()*2)+3)*3;
-    this.b = Math.floor(Math.random()*4)+2;
-    this.c = this.a / this.b;
+	this.a = (Math.floor(Math.random()*2)+3)*3;
+	this.fa = new Fraction(this.a,1,false);
 
-this.b = new Fraction('1',this.b,false);
+    	this.b = Math.floor(Math.random()*4)+2;
+	this.fb = new Fraction(1,this.b,false);
 
-  this.setQuestion('At the market, ' + this.mFruit + ' cost $' + this.a + ' per pound. ' + this.ns.mNameOne + ' bought ' + this.b.getString() + ' of a pound of ' + this.mFruit + '. How much did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend?'); 
+	this.fc = this.fa.multiply(this.fb);
 
-answer = this.c.toFixed(2);   
+	var f = parseFloat(this.fc.mNumerator / this.fc.mDenominator);
+	var answer = new Decimal(f);
+	
+		
+  this.setQuestion('At the market, ' + this.mFruit + ' cost $' + this.a + ' per pound. ' + this.ns.mNameOne + ' bought ' + this.fb.getString() + ' of a pound of ' + this.mFruit + '. How much did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend?'); 
 
-
-this.setAnswer('' + answer,0);
+this.setAnswer('' + answer.getMoney(),0);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);

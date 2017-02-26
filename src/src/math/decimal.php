@@ -38,6 +38,14 @@ getMoney: function()
 {
 	var d = parseFloat(this.mDecimal); 
 	var fix = d.toFixed(2);
+
+	var numberArray = fix.split("."); 
+	var decimalPart = numberArray[1];	
+	if (decimalPart == 0)	
+	{
+		return numberArray[0];
+	}
+	
 	return fix;
 },
 
@@ -124,8 +132,6 @@ divide: function(decimal)
 {
         var rawQuotient   =  parseInt(this.mNumber / decimal.mNumber);
 	var rawRemainder =  parseInt(this.mNumber % decimal.mNumber); 	
-	APPLICATION.log('rawQuotient:' + rawQuotient);
-	APPLICATION.log('rawRemainder:' + rawRemainder);
 
         //now use powers of 10 to move decimal place
         var decimalPlaces = parseInt(this.mDecimalPlaces - decimal.mDecimalPlaces);
@@ -136,12 +142,10 @@ divide: function(decimal)
                 var power = Math.pow(10,decimalPlaces);
                 var decimalProduct = parseFloat(fullAnswer / power);
                 var decimalAnswerProduct = new Decimal(decimalProduct);
-		APPLICATION.log('decimalAnswerProduct');	
                 return decimalAnswerProduct;
         }
         else
         {
-		APPLICATION.log('rawQuotient');	
                 return rawQuotient;
         }
 }
