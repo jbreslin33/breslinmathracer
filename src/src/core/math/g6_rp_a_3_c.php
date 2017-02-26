@@ -112,8 +112,10 @@ var r = Math.floor(Math.random()*2);
     this.e = (this.c * this.b)/100; // tax amount
 
 answer = this.e + this.b;   
+answer = answer.toFixed(2);
+answer = new Decimal(answer);
 
-this.setAnswer('' + answer.toFixed(2),0);
+this.setAnswer('' + answer.getMoney(),0);
 
   this.setQuestion('The sales tax rate is ' + this.c + '%. If ' + this.mNameOne + ' buys a ' + this.thing + ' priced at $' + this.b + ', what will be the total cost including tax?'); 
 
@@ -185,7 +187,10 @@ var r = Math.floor(Math.random()*2);
 
 answer = this.a * (4 - this.c);   
 
-this.setAnswer('' + this.b,0);
+this.b = new Decimal(this.b);
+
+
+this.setAnswer('' + this.b.getMoney(),0);
 
   this.setQuestion('All items at the store are ' + this.e + '% off. The sale price of a ' + this.thing + ' is $' + answer + '. What was the original price?'); 
 
