@@ -23,10 +23,18 @@ public function execute($bapplication)
         {
                 $bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_SCHOOL_APPLICATION);
         }
+
 	if ($bapplication->mCode == 117 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mLOGIN_STUDENT_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
 	}
+	
+	if ($bapplication->mCode == 119 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mLOGIN_TEAM_APPLICATION)
+	{
+		error_log("loggin in team");
+		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_TEAM_APPLICATION);
+	}
+
 	if ($bapplication->mCode == 217 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mSIGNUP_STUDENT_APPLICATION)
 	{
 		$bapplication->mCoreStateMachine->changeState($bapplication->mSIGNUP_STUDENT_APPLICATION);

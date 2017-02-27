@@ -1159,6 +1159,40 @@ Extends: Application,
                 xmlhttp.send();
         },
 
+        loginTeam: function(username,password)
+        {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                {
+                        xmlhttp=new XMLHttpRequest();
+                }
+                else
+                {
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange=function()
+                {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                        {
+                                if (xmlhttp.responseText)
+                                {
+                                        if (typeof(xmlhttp.responseText)=="unknown")
+                                        {
+                                                return("");
+                                        }
+                                        else
+                                        {
+                                                APPLICATION.parseResponse(xmlhttp.responseText);
+                                                //takes a bit....
+                                        }
+                                }
+                        }
+                }
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=119&username=" + username + "&password=" + password,true);
+                xmlhttp.send();
+        },
+
+
         loginSchool: function(username,password)
         {
                 var xmlhttp;

@@ -170,7 +170,7 @@ Extends: Game,
                 	var username = APPLICATION.mGame.mUsernameTextBox.mMesh.value;
                 	var password = APPLICATION.mGame.mPasswordTextBox.mMesh.value;
 
-                	APPLICATION.loginStudent(username,password);
+                	APPLICATION.loginTeam(username,password);
 		}
 		else
 		{
