@@ -264,6 +264,202 @@ exit: function(application)
 
 });
 
+
+var LOGIN_TEAM_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+        application.mLoggedIn = false;
+        application.mSent = false;
+
+        if (application.mStateLogs)
+        {
+                application.log('APPLICATION::LOGIN_TEAM_APPLICATION');
+        }
+        application.mRef_id = 'login';
+        if (application.mGame)
+        {
+                application.mGame.destructor();
+                application.mGame = 0;
+        }
+        application.mGameName = "login_team";
+        application.mGame = new LoginTeam(APPLICATION);
+        application.mLoggedIn = false;
+        application.mDataToRead = false;
+
+        application.mResponseArray = [];
+
+        //lets hide homeselect
+        APPLICATION.mHud.mHome.setVisibility(false);
+},
+
+execute: function(application)
+{
+        if (application.mStateLogsExecute)
+        {
+                application.log('APPLICATION::LOGIN_TEAM_APPLICATION execute');
+        }
+        if (application.mSent == true)
+        {
+                application.mCoreStateMachine.changeState(application.mLOGIN_TEAM_WAIT_APPLICATION);
+        }
+},
+
+exit: function(application)
+{
+        if (application.mStateLogsExit)
+        {
+                application.log('APPLICATION::LOGIN_TEAM_APPLICATION exit');
+        }
+        //lets show homeselect
+        APPLICATION.mHud.mHome.setVisibility(true);
+}
+
+});
+
+//maybe wait for login....
+var LOGIN_TEAM_WAIT_APPLICATION = new Class(
+{
+Extends: State,
+
+initialize: function()
+{
+},
+
+enter: function(application)
+{
+	if (application.mStateLogs)
+	{
+		application.log('APPLICATION::LOGIN_TEAM_WAIT_APPLICATION');
+	}
+	application.mStateEnterTime = APPLICATION.mGame.mTimeSinceEpoch; 
+	application.mSent = false;
+
+        //gets called right away
+        APPLICATION.mGame.mLoginButton.setVisibility(false);
+        APPLICATION.mGame.mUsernameLabel.setVisibility(false);
+        APPLICATION.mGame.mUsernameTextBox.setVisibility(false);
+        APPLICATION.mGame.mPasswordLabel.setVisibility(false);
+        APPLICATION.mGame.mPasswordTextBox.setVisibility(false);
+        var v = 'PLEASE WAIT LOGGING IN';
+        APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+},
+
+execute: function(application)
+{
+	if (application.mStateLogsExecute)
+	{
+		application.log('APPLICATION::LOGIN_TEAM_WAIT_APPLICATION execute');
+	}
+
+	//4 things can happen when you have sent a login request
+	
+	if (application.mDataToRead == true) //we have some data to read
+	{
+		//lets sniff packet
+                APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+		APPLICATION.mDataToRead = false;
+		
+		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
+		{
+        		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
+                	APPLICATION.mHud.setOrange('Game:' + APPLICATION.mRef_id);
+               	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                	APPLICATION.mStandard = APPLICATION.mResponseArray[6];
+                	APPLICATION.mHud.setYellow(APPLICATION.mStandard);
+                	APPLICATION.mRole = 1;
+			
+			var itemTypes = APPLICATION.mResponseArray[7];
+			APPLICATION.mItemTypesArray = itemTypes.split(":");
+			/*
+			for (i=0; i < APPLICATION.mItemTypesArray.length; i++)
+			{
+				APPLICATION.log('APPLICATION.mItemTypesArray[' + i + ']:' + APPLICATION.mItemTypesArray[i]); 
+			}
+			*/
+	
+			//lets get standards here
+			APPLICATION.fillStandardsArray();
+			
+			var itemAttemptsEvaluationsID = APPLICATION.mResponseArray[8];
+			APPLICATION.mItemAttemptsEvaluationsIDArray = itemAttemptsEvaluationsID.split(":");
+                
+			var itemAttemptsTypes = APPLICATION.mResponseArray[9];
+			APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
+	
+			var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[10];
+			APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
+		
+			//evals id such as 36 for 6.rp	
+			var evaluationsItemTypes = APPLICATION.mResponseArray[11];
+			APPLICATION.mEvaluationsItemTypesArray = evaluationsItemTypes.split(":");
+		
+			//this should be number of questions such as 10 for 6.rp	
+			var evaluationsItemTypesQuestions = APPLICATION.mResponseArray[12];
+			APPLICATION.mEvaluationsItemTypesQuestionsArray = evaluationsItemTypesQuestions.split(":");
+			
+			var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[13];
+			APPLICATION.mEvaluationsItemTypesItemTypesArray = evaluationsItemTypesItemTypes.split(":");
+
+			var evaluationsItemTypesEvaluationsID = APPLICATION.mResponseArray[14];
+			APPLICATION.mEvaluationsItemTypesEvaluationsIDArray = evaluationsItemTypesEvaluationsID.split(":");
+			APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[15];
+			APPLICATION.mCoreGradesID = APPLICATION.mResponseArray[16];
+
+			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+			application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
+		}
+	}
+
+	else if (application.mBadUsername == true)
+	{
+		application.mBadUsername = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_TEAM_APPLICATION);
+                var v = 'BAD USERNAME';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		APPLICATION.log('mBadUsername');
+	}
+	else if (application.mBadPassword == true)
+	{
+		application.mBadPassword = false;
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_TEAM_APPLICATION);
+                var v = 'BAD PASSWORD';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+		APPLICATION.log('mBadPassword');
+	}
+	else if (APPLICATION.mGame.mTimeSinceEpoch > parseInt(application.mStateEnterTime + application.mStateThresholdTime))
+	{
+                var v = 'LOGIN TIMED OUT';
+                APPLICATION.mGame.mServerLabel.setText('<span style="color: #f00;">' + v + '</span>');
+        	APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_TEAM_APPLICATION);
+		APPLICATION.log('LOGIN TIMED OUT');
+	}
+},
+
+exit: function(application)
+{
+	if (application.mStateLogsExit)
+	{
+		application.log('APPLICATION::LOGIN_STUDENT_TEAM_APPLICATION exit');
+	}
+	//lets show homeselect
+       	APPLICATION.mHud.mHome.setVisibility(true);
+	application.mBadPassword = false;
+	application.mBadUsername = false;
+}
+
+});
+
+
 var LOGIN_SCHOOL_APPLICATION = new Class(
 {
 Extends: State,

@@ -15,6 +15,7 @@
 
 <script type="text/javascript" src="/src/game/game.php"></script>
 <script type="text/javascript" src="/src/login/login_student.php"></script>
+<script type="text/javascript" src="/src/login/login_team.php"></script>
 <script type="text/javascript" src="/src/login/login_school.php"></script>
 <script type="text/javascript" src="/src/signup/signup_student.php"></script>
 <script type="text/javascript" src="/src/signup/signup_school.php"></script>

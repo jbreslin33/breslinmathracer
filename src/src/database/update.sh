@@ -39,6 +39,7 @@ cat src/application/states/core_application_states.php >> min.js
 
 cat src/game/game.php >> min.js
 cat src/login/login_student.php >> min.js
+cat src/login/login_team.php >> min.js
 cat src/login/login_school.php >> min.js
 cat src/signup/signup_student.php >> min.js
 cat src/signup/signup_school.php >> min.js
