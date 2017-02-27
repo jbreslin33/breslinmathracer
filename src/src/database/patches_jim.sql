@@ -3,7 +3,8 @@ delete from evaluations_items;
 
 --add prog
 --alter table evaluations_items add column progression NUMERIC(12,10) NOT NULL default 0;
-alter table evaluations_attempts add column team_id integer NOT NULL default 0;
+alter table evaluations_attempts add column team_id integer default 0;
+ALTER TABLE evaluations_attempts ALTER COLUMN user_id DROP NOT NULL;
 
 
 --insert

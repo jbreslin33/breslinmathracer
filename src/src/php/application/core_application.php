@@ -56,8 +56,8 @@ if ($APPLICATION->mCode == 117)
 }
 if ($APPLICATION->mCode == 119)
 {
-	$APPLICATION->mLoginStudent->mUsername = $_GET["username"]; 
-	$APPLICATION->mLoginStudent->mPassword = $_GET["password"]; 
+	$APPLICATION->mLoginTeam->mUsername = $_GET["username"]; 
+	$APPLICATION->mLoginTeam->mPassword = $_GET["password"]; 
 }
 if ($APPLICATION->mCode == 217)
 {
@@ -135,7 +135,7 @@ function __construct()
 	$this->mDataArray = array();
 	$this->mCode = 0;
 	$this->mRawData = 0;
-	$this->mLogs = false;
+	$this->mLogs = true;
 	$this->mCoreStateMachine = new StateMachine($this);
         
 	//admin
@@ -143,7 +143,7 @@ function __construct()
         $this->mINIT_CORE_APPLICATION     = new INIT_CORE_APPLICATION          ($this);
         $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
-        $this->mLOGIN_TEAM_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
+        $this->mLOGIN_TEAM_APPLICATION = new LOGIN_TEAM_APPLICATION      ($this);
         $this->mLOGIN_SCHOOL_APPLICATION = new LOGIN_SCHOOL_APPLICATION      ($this);
         $this->mSIGNUP_STUDENT_APPLICATION = new SIGNUP_STUDENT_APPLICATION      ($this);
         $this->mSIGNUP_SCHOOL_APPLICATION = new SIGNUP_SCHOOL_APPLICATION      ($this);

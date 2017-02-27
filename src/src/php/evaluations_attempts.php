@@ -54,8 +54,20 @@ public function setScoreNeeded()
 public function insert()
 {
 	$db = new DatabaseConnection();
-        $insert = "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
-        $insert .= $this->mApplication->mLoginStudent->mUserID;
+	$insert = "";
+	$role = $_SESSION["role"];
+	if ($role == 1)
+	{
+		error_log("insert role 1");
+        	$insert .= "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
+        	$insert .= $this->mApplication->mLoginStudent->mUserID;
+	}
+	else if ($role == 4)
+	{
+		error_log("insert role 4");
+        	$insert .= "insert into evaluations_attempts (start_time,team_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
+        	$insert .= $this->mApplication->mLoginTeam->mTeamID;
+	}
         $insert .= ",";
         $insert .= $this->mEvaluationsID;
         $insert .= ");";
@@ -63,8 +75,17 @@ public function insert()
         $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
 	//get the id of one u just put in
-        $query = "select id from evaluations_attempts where user_id = ";
-        $query .= $this->mApplication->mLoginStudent->mUserID;
+	$query = "";
+	if ($role == 1)
+	{
+        	$query = "select id from evaluations_attempts where user_id = ";
+        	$query .= $this->mApplication->mLoginStudent->mUserID;
+	}
+	else if ($role == 4)
+	{
+        	$query = "select id from evaluations_attempts where team_id = ";
+        	$query .= $this->mApplication->mLoginTeam->mTeamID;
+	}
         $query .= " order by start_time desc limit 1;";
 
         $result = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());

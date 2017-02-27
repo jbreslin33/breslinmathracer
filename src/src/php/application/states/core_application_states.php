@@ -26,6 +26,7 @@ public function execute($bapplication)
 
 	if ($bapplication->mCode == 117 && $bapplication->mCoreStateMachine->mCurrentState != $bapplication->mLOGIN_STUDENT_APPLICATION)
 	{
+		error_log("loggin in student");
 		$bapplication->mCoreStateMachine->changeState($bapplication->mLOGIN_STUDENT_APPLICATION);
 	}
 	
@@ -246,6 +247,63 @@ public function bexit($bapplication)
 }
 
 }//end class
+
+class LOGIN_TEAM_APPLICATION extends State
+{
+
+function __construct()
+{
+
+}
+
+public function enter($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('LOGIN_TEAM_APPLICATION Enter');
+        }
+        $bapplication->mLoginTeam->process();
+        $bapplication->update();
+}
+public function execute($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('LOGIN_TEAM_APPLICATION Execute');
+        }
+
+        if ($bapplication->mLoginTeam->mLoggedIn == 1)
+        {
+                $bapplication->mNormal->fillTypesArray(); //fill types
+                $bapplication->mNormal->fillItemAttemptsArray(); //fill item Attempts types
+
+                //also fill eval stuff
+                $bapplication->mNormal->fillEvaluationsArray();
+                $bapplication->mNormal->fillEvaluationsItemTypesArray();
+
+
+                $bapplication->mLoginTeam->sendLoginTeam();
+
+                $bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_GAME_APPLICATION);
+        }      
+        else
+        {
+                $bapplication->mCoreStateMachine->changeState($bapplication->mWAIT_CORE_APPLICATION);
+        }
+
+}
+public function bexit($bapplication)
+{
+        if ($bapplication->mLogs == true)
+        {
+                error_log('LOGIN_TEAM_APPLICATION Exit');
+        }
+        $bapplication->mCode = 0;
+
+}
+
+}//end class
+
 
 class SIGNUP_SCHOOL_APPLICATION extends State
 {

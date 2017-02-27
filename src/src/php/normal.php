@@ -93,29 +93,40 @@ public function fillTypesArray()
 
 public function fillItemAttemptsArray()
 {
+
         if ($this->logs)
         {
                 error_log('fillItemAttemptsArray');
         }
+	$role = $_SESSION["role"];
  
 	if (count($this->mItemAttemptsTransactionCodeArray) < 1) //not filled at all get em all....
         {
-                $query = "select evaluations_attempts.evaluations_id, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id != 2 AND evaluations_attempts.user_id = ";
-                $query .= $this->mApplication->mLoginStudent->mUserID;
-                $query .= " AND item_types.active_code = 1";
-                $query .= " order by item_attempts.start_time desc;";
+		$query = "";
+		if ($role == 1)
+		{
+                	$query = "select evaluations_attempts.evaluations_id, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id != 2 AND evaluations_attempts.user_id = ";
+                	$query .= $this->mApplication->mLoginStudent->mUserID;
+		}
+		else if ($role == 4)
+		{
+                	$query = "select evaluations_attempts.evaluations_id, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id != 2 AND evaluations_attempts.team_id = ";
+                	$query .= $this->mApplication->mLoginTeam->mTeamID;
+		}
+               	$query .= " AND item_types.active_code = 1";
+               	$query .= " order by item_attempts.start_time desc;";
 
-                $db = new DatabaseConnection();
-                $result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
+               	$db = new DatabaseConnection();
+               	$result = pg_query($db->getConn(),$query) or die('no connection: ' . pg_last_error());
 
-                $num = pg_num_rows($result);
+               	$num = pg_num_rows($result);
 
-                //fill arrays
-                for ($i = 0; $i < $num; $i++)
-                {
-                        $this->mItemAttemptsEvaluationsIDArray[]   = pg_Result($result,$i,'evaluations_id');
-                        $this->mItemAttemptsItemTypeArray[]        = pg_Result($result,$i,'item_types_id');
-                        $this->mItemAttemptsTransactionCodeArray[] = pg_Result($result,$i,'transaction_code');
+               	//fill arrays
+               	for ($i = 0; $i < $num; $i++)
+               	{
+                       	$this->mItemAttemptsEvaluationsIDArray[]   = pg_Result($result,$i,'evaluations_id');
+                       	$this->mItemAttemptsItemTypeArray[]        = pg_Result($result,$i,'item_types_id');
+                       	$this->mItemAttemptsTransactionCodeArray[] = pg_Result($result,$i,'transaction_code');
                 }
         }
 	else
@@ -189,6 +200,7 @@ public function fillEvaluationsItemTypesArray()
 
 public function updateScores($score,$field_name)
 {
+	$role = $_SESSION["role"];
 	$this->mScore = $score;
 
 	if ($this->logs)	
@@ -196,25 +208,30 @@ public function updateScores($score,$field_name)
 		error_log('updateScores');
 	}
         /*********************  for teacher real time data  *************/
-        $update = "update users SET last_activity = CURRENT_TIMESTAMP, ";
-	$update .= $field_name;
-	$update .= " = ";
-        $update .= $this->mScore;
-        $update .= " WHERE id = ";
- 	$update .= $this->mApplication->mLoginStudent->mUserID;
-        $update .= ";";
 
-        $db = new DatabaseConnection();
-        $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
-
-	if ($field_name == 'score')
+	if ($role == 1)
 	{
-		$this->updateMatch($db);
+        	$update = "update users SET last_activity = CURRENT_TIMESTAMP, ";
+		$update .= $field_name;
+		$update .= " = ";
+        	$update .= $this->mScore;
+        	$update .= " WHERE id = ";
+ 		$update .= $this->mApplication->mLoginStudent->mUserID;
+        	$update .= ";";
+
+        	$db = new DatabaseConnection();
+        	$updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+
+		if ($field_name == 'score')
+		{
+			$this->updateMatch($db);
+		}
 	}
 }
 
 public function updateStandard($score,$field_name)
 {
+	$role = $_SESSION["role"];
         $this->mScore = $score;
 
         if ($this->logs)
@@ -222,27 +239,31 @@ public function updateStandard($score,$field_name)
                 error_log('updateScores');
         }
         /*********************  for teacher real time data  *************/
-        $update = "update users SET last_activity = CURRENT_TIMESTAMP, ";
-        $update .= $field_name;
-        $update .= " = '";
-        $update .= $this->mScore;
-        $update .= "' WHERE id = ";
-        $update .= $this->mApplication->mLoginStudent->mUserID;
-        $update .= ";";
+	if ($role == 1)
+	{
+        	$update = "update users SET last_activity = CURRENT_TIMESTAMP, ";
+        	$update .= $field_name;
+        	$update .= " = '";
+        	$update .= $this->mScore;
+        	$update .= "' WHERE id = ";
+        	$update .= $this->mApplication->mLoginStudent->mUserID;
+        	$update .= ";";
 
-        $db = new DatabaseConnection();
-        $updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
+        	$db = new DatabaseConnection();
+        	$updateResult = pg_query($db->getConn(),$update) or die('Could not connect: ' . pg_last_error());
 
-        if ($field_name == 'score')
-        {
-                $this->updateMatch($db);
-        }
-
+        	if ($field_name == 'score')
+        	{
+                	$this->updateMatch($db);
+        	}
+	}
 }
 
 
 public function updateMatch($db)
 {
+
+
 	if ($this->mLastScore != $this->mScore && $this->mLastScore != 0)
 	{
 		$s = "select users.id, teams_matches.id from matches JOIN teams_matches ON matches.id=teams_matches.matches_id JOIN teams ON teams_matches.team_id=teams.id JOIN users ON teams.id=users.team_id where now() > matches.start_time AND now() < matches.end_time;";	

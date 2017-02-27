@@ -22,7 +22,7 @@ function __construct($application)
 	//information about student
 	$this->mUsername = 0; 
         $this->mPassword = 0;
-	$this->mRole = 1;
+	$this->mRole = 4;
 	$this->mFirstName = 0;
 	$this->mLastName = 0;
 	$this->mUserID = 0;
@@ -40,7 +40,7 @@ public function process()
 
 	if ($this->mLoggedIn == 1)
 	{
-		$this->mRole = 1;
+		$this->mRole = 4;
 	}
 	if ($this->mLoggedIn == 0 && $this->mStudentExists)
 	{
@@ -86,6 +86,7 @@ public function checkForStudent()
         	$num = pg_num_rows($result);
         	if ($num > 0)
         	{
+			error_log("stud exexs");
 			$this->mStudentExists = true;
 			$query2 = "select * from users where username = '";
         		$query2 .= $this->mUsername;
@@ -97,9 +98,11 @@ public function checkForStudent()
         		$result2 = pg_query($this->mDatabaseConnection->getConn(),$query2) or die('Could not connect: ' . pg_last_error());
         		//get numer of rows
         		$num2 = pg_num_rows($result2);
+			error_log($query2);
         
 			if ($num2 > 0)
 			{
+				error_log("num2 exexs");
 				//grab db values
                 		$first_name = pg_Result($result2, 0, 'first_name');
                 		$last_name = pg_Result($result2, 0, 'last_name');
@@ -122,7 +125,6 @@ public function checkForStudent()
                 		$this->mUserID = $user_id;
 				$this->mStandard = $core_standards_id;
 				$this->mCoreGradesID = $core_grades_id;
-				error_log($this->mCoreGradesID);
 				$this->mSchoolID = $school_id;
 				$this->mTeacherID = $teacher_id;
 				$this->mRoomID = $room_id;
@@ -134,6 +136,10 @@ public function checkForStudent()
 				$_SESSION["school_id"] = $this->mSchoolID;
 				$_SESSION["room_id"] = $this->mRoomID;
 				$_SESSION["team_id"] = $this->mTeamID;
+				$_SESSION["role"] = 4;
+				$txt = "teamID:";
+				$txt .= $this->mTeamID;
+				error_log($txt);
 
 				$this->setMilestonesStandard();
 		
@@ -156,10 +162,11 @@ public function setMilestonesStandard()
 {
 
 }
-public function sendLoginStudent()
+public function sendLoginTeam()
 {
 	//sessions	
-	$_SESSION["role"] = 1;
+	error_log("sendLoginteam where we set");
+	$_SESSION["role"] = 4; //team
 
 	$rawDataItemTypes = ""; 
 	$rawDataItemAttemptsEvaluationsID = ""; 
