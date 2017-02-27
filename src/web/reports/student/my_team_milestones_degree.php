@@ -122,19 +122,20 @@ echo '<table border=\"1\">';
         echo '</tr>';
 
         //------------------MILESTONES------------------------------
-	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.inner_grade FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations.score_needed, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
+	$query_m = "select distinct sub.team_id, sub.description, sub.progression, sub.inner_grade FROM ( select users.team_id, evaluations.description, evaluations.progression, evaluations.score_needed, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
     COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered,
 
 COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
 
 	if ($room_id != 0)
 	{
-		$query_m .= " AND users.id = ";
-        	$query_m .= $_SESSION["user_id"];
+		$query_m .= " AND users.team_id = ";
+        	$query_m .= $_SESSION["team_id"];
 	}
 
-	$query_m .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
+	$query_m .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.team_id, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.team_id, sub.progression;";
         $result_m = pg_query($conn,$query_m);
+	error_log($query_m);	
         $numrows_m = pg_numrows($result_m);
         //------------------END MILESTONES------------------------------
 
@@ -150,15 +151,10 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 
 	$i = 0;
 
-        for($i = 0; $i < $numrows; $i++)
+        for($i = 0; $i < 1; $i++)
         {
                 $row = pg_fetch_array($result, $i);
-                $id = $row[0];
 
-                $core_standards_id = $row[3];
-                $score = $row[4];
-                $core_grades_id = $row[5];
-		
 		for($r = 5; $r < 38; $r++)
 		{
 			$row[] = 0;
@@ -167,16 +163,16 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 		for($m = 0; $m < $numrows_m; $m++)
 		{
                 	$row_m = pg_fetch_array($result_m, $m);
-			$row_m[5] = intval($row_m[5]);
+			$row_m[3] = intval($row_m[3]);
 	
 			for ($p = 0; $p < $numrows_e; $p++)
 			{
                 		$row_e = pg_fetch_array($result_e, $p);
-				if ($id == $row_m[0] && $row_m[3] == $row_e[1]) //do we have a user and ms match?
+				if ($team_id == $row_m[0] && $row_m[1] == $row_e[1]) //do we have a user and ms match?
 				{
-					if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
+					if ($row[intval($p + 5)] < $row_m[3]) //less than new comming in
 					{
-						$row[intval($p + 5)] = $row_m[5];
+						$row[intval($p + 5)] = $row_m[3];
 					}
 				}
 			}	
