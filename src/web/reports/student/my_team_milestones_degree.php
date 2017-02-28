@@ -135,7 +135,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 
 	$query_m .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, evaluations_attempts.team_id, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.team_id, sub.progression;";
         $result_m = pg_query($conn,$query_m);
-	error_log($query_m);	
+	//error_log($query_m);	
         $numrows_m = pg_numrows($result_m);
         //------------------END MILESTONES------------------------------
 
