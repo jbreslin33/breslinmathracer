@@ -86,6 +86,9 @@ Extends: Application,
 		this.mFirstName = '';
 		this.mLastName = '';
 
+		//teammate
+		this.mTeammateID = '';
+
 		/*********** LOGIN *******************
 		this.mDataToRead = false;
 		this.mLoggedIn = false;
@@ -1316,8 +1319,8 @@ Extends: Application,
                                 }
                         }
                 }
-                //xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer,true);
-                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mStandard,true);
+                //xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mStandard,true);
+                xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mStandard + "&teammateid=" + APPLICATION.mTeammateID,true);
                 xmlhttp.send();
         },
  

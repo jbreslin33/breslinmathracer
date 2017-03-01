@@ -104,6 +104,20 @@ public function update($itemattemptid,$transactioncode,$answer)
         	$query .= ";";
 		
         	$updateResult = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());
+
+		//update evaluations_attempts for teammate
+       		if ($this->mApplication->mLoginStudent->mTeammateID == '')
+		{
+	
+		}
+		else
+		{
+			$update = "update evaluations_attempts set teammate_id = ";
+       			$update .= $this->mApplication->mLoginStudent->mTeammateID;
+			$update .= " where id = ";
+			$update .= $this->mApplication->mEvaluationsAttempt->mID; 
+			$update .= ";";
+		}			
 	}
 
 	$returnString = "162,";
