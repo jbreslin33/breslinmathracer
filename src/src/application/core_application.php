@@ -41,6 +41,7 @@ Extends: Application,
 		//scroll
 		this.SCROLL = 112;
 		this.MILESTONES_COMPLETE = 139;
+		this.CLASSMATES = 140;
 
 		//ITEM_ATTEMPTS
 		this.ITEM_ATTEMPT_INSERT_CONFIRMATION = 161;
@@ -1017,6 +1018,14 @@ Extends: Application,
 				APPLICATION.mHud.setScroll(this.mResponseArray[1]); 
 			}
 			if (codeNumber == APPLICATION.MILESTONES_COMPLETE)
+			{
+ 				APPLICATION.mHud.emptyTanSelect();
+				for (r=1; r < this.mResponseArray.length; r++)
+				{
+ 					APPLICATION.mHud.fillTanSelect(this.mResponseArray[r]);
+				}
+			}
+			if (codeNumber == APPLICATION.CLASSMATES)
 			{
  				APPLICATION.mHud.emptyTanSelect();
 				for (r=1; r < this.mResponseArray.length; r++)
