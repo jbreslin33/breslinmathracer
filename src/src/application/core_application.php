@@ -89,6 +89,8 @@ Extends: Application,
 
 		//teammate
 		this.mTeammateID = '';
+		this.mTeammateIDArray   = new Array();
+		this.mTeammateNameArray = new Array();
 
 		/*********** LOGIN *******************
 		this.mDataToRead = false;
@@ -1030,9 +1032,17 @@ Extends: Application,
  				APPLICATION.mHud.emptyTanSelect();
 				for (r=1; r < this.mResponseArray.length; r++)
 				{
- 					APPLICATION.mHud.fillTanSelect(this.mResponseArray[r]);
-					//APPLICATION.log('r:' + this.mResponseArray[r]);
+					var p = this.mResponseArray[r].split(":");
+					this.mTeammateIDArray.push(p[0]);
+					this.mTeammateNameArray.push(p[1] + ' ' + p[2] );
+					APPLICATION.log('p1:' + p[1]);
 				}
+                                APPLICATION.mHud.fillTanSelect('');
+                                for (x=0; x < this.mTeammateNameArray.length; x++)
+                                {
+                                        APPLICATION.mHud.fillTanSelect(this.mTeammateNameArray[x]);
+					APPLICATION.log('name:' + this.mTeammateNameArray[x]);
+                                }
 			}
 		}
 	},
