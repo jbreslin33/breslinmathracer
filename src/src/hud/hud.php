@@ -145,7 +145,7 @@ var Hud = new Class(
 
 	tanSelected: function()
 	{
-
+		APPLICATION.mTeammateID = APPLICATION.mHud.mTan.mMesh.options[APPLICATION.mHud.mTan.mMesh.selectedIndex].value;
 	},
  
 	fillHomeSelect: function()
