@@ -379,7 +379,8 @@ public function enter($bapplication)
 	//run oncec
 	if ($bapplication->run_once == false)
 	{
-		include_once(getenv("DOCUMENT_ROOT") . "/web/php/milestones.php");
+		//include_once(getenv("DOCUMENT_ROOT") . "/web/php/milestones.php");
+		include_once(getenv("DOCUMENT_ROOT") . "/web/php/classmates.php");
 		$bapplication->run_once = true;
 	}
 
