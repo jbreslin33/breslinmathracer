@@ -54,38 +54,34 @@ public function setScoreNeeded()
 public function insert()
 {
 	$db = new DatabaseConnection();
+	
+
 	$insert = "";
-	$role = $_SESSION["role"];
-	if ($role == 1)
+       	if ($this->mApplication->mLoginStudent->mTeammateID == '')
 	{
-		error_log("insert role 1");
-        	$insert .= "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
+       		$insert .= "insert into evaluations_attempts (start_time,user_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
         	$insert .= $this->mApplication->mLoginStudent->mUserID;
+
 	}
-	else if ($role == 4)
+	else
 	{
-		error_log("insert role 4");
-        	$insert .= "insert into evaluations_attempts (start_time,team_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
-        	$insert .= $this->mApplication->mLoginTeam->mTeamID;
+       		$insert .= "insert into evaluations_attempts (start_time,user_id,teammate_id,evaluations_id) VALUES (CURRENT_TIMESTAMP,";
+        	$insert .= $this->mApplication->mLoginStudent->mUserID;
+        	$insert .= ",";
+		$insert .= $this->mApplication->mLoginStudent->mTeammateID;
+
 	}
         $insert .= ",";
         $insert .= $this->mEvaluationsID;
-        $insert .= ");";
+       	$insert .= ");";
+
+	error_log($insert);
 	
         $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
 	//get the id of one u just put in
-	$query = "";
-	if ($role == 1)
-	{
-        	$query = "select id from evaluations_attempts where user_id = ";
-        	$query .= $this->mApplication->mLoginStudent->mUserID;
-	}
-	else if ($role == 4)
-	{
-        	$query = "select id from evaluations_attempts where team_id = ";
-        	$query .= $this->mApplication->mLoginTeam->mTeamID;
-	}
+        $query = "select id from evaluations_attempts where user_id = ";
+        $query .= $this->mApplication->mLoginStudent->mUserID;
         $query .= " order by start_time desc limit 1;";
 
         $result = pg_query($db->getConn(),$query) or die('Could not connect: ' . pg_last_error());

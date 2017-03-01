@@ -5,7 +5,6 @@ include_once(getenv("DOCUMENT_ROOT") . "/src/php/application/states/core_applica
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/database_connection.php");
 //temp
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_student.php");
-include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_team.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/login_school.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_student.php");
 include_once(getenv("DOCUMENT_ROOT") . "/src/php/signup_school.php");
@@ -143,7 +142,6 @@ function __construct()
         $this->mINIT_CORE_APPLICATION     = new INIT_CORE_APPLICATION          ($this);
         $this->mWAIT_CORE_APPLICATION     = new WAIT_CORE_APPLICATION          ($this);
         $this->mLOGIN_STUDENT_APPLICATION = new LOGIN_STUDENT_APPLICATION      ($this);
-        $this->mLOGIN_TEAM_APPLICATION = new LOGIN_TEAM_APPLICATION      ($this);
         $this->mLOGIN_SCHOOL_APPLICATION = new LOGIN_SCHOOL_APPLICATION      ($this);
         $this->mSIGNUP_STUDENT_APPLICATION = new SIGNUP_STUDENT_APPLICATION      ($this);
         $this->mSIGNUP_SCHOOL_APPLICATION = new SIGNUP_SCHOOL_APPLICATION      ($this);
@@ -157,7 +155,6 @@ function __construct()
 
 	$this->mNormal = new Normal($this);	
 	$this->mLoginStudent  = new LoginStudent($this);	
-	$this->mLoginTeam     = new LoginTeam($this);	
 	$this->mLoginSchool   = new LoginSchool($this);	
 	$this->mSignupStudent = new SignupStudent($this);	
 	$this->mSignupSchool  = new SignupSchool($this);	

@@ -71,21 +71,6 @@ Extends: Game,
                 this.mShapeArray.push(this.mLoginButton);
                 this.mLoginButton.mMesh.innerHTML = 'SIGN IN';
 
-
-                //TEAM LOGIN BUTTON
-                this.mTeamLoginButton = new Shape(200,50,650,180,this,"BUTTON","","");
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTeamLoginButton.mMesh.attachEvent("onclick",this.hitTeamLoginButton);
-                }
-                else
-                {
-                        this.mTeamLoginButton.mMesh.addEvent('click',this.hitTeamLoginButton);
-                }
-                this.mShapeArray.push(this.mTeamLoginButton);
-                this.mTeamLoginButton.mMesh.innerHTML = 'Team Login';
-
-
                 //STUDENT LOGIN BUTTON
                 this.mStudentLoginButton = new Shape(200,50,650,240,this,"BUTTON","","");
                 if (navigator.appName == "Microsoft Internet Explorer")
@@ -196,12 +181,5 @@ Extends: Game,
 	hitStudentLoginButton: function()
         {
                 APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_STUDENT_APPLICATION);
-        },
-
-        hitTeamLoginButton: function()
-        {
-                APPLICATION.mCoreStateMachine.changeState(APPLICATION.mLOGIN_TEAM_APPLICATION);
-        },
-
-
+        }
 });

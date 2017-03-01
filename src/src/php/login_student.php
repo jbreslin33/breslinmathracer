@@ -26,6 +26,7 @@ function __construct($application)
 	$this->mFirstName = 0;
 	$this->mLastName = 0;
 	$this->mUserID = 0;
+	$this->mTeammateID = '';
 	$this->mStandard = 0;
 	$this->mCoreGradesID = 0;
 	$this->mMilestonesStandard = 'k.cc.a.1';

@@ -128,9 +128,6 @@ Extends: Application,
                 this.mLOGIN_STUDENT_APPLICATION        = new LOGIN_STUDENT_APPLICATION     (this);
                 this.mLOGIN_STUDENT_WAIT_APPLICATION   = new LOGIN_STUDENT_WAIT_APPLICATION(this);
                 
-		this.mLOGIN_TEAM_APPLICATION        = new LOGIN_TEAM_APPLICATION     (this);
-                this.mLOGIN_TEAM_WAIT_APPLICATION   = new LOGIN_TEAM_WAIT_APPLICATION(this);
-
                 this.mLOGIN_SCHOOL_APPLICATION         = new LOGIN_SCHOOL_APPLICATION      (this);
                 this.mLOGIN_SCHOOL_WAIT_APPLICATION    = new LOGIN_SCHOOL_WAIT_APPLICATION (this);
 
