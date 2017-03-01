@@ -9,7 +9,7 @@ else
 {
 	$_SESSION["milestones"] = "140,Tam:Le:74";
 }
-error_log($returnString);
+//error_log($returnString);
 echo $returnString;
 
 ?>
