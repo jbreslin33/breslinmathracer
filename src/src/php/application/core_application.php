@@ -105,6 +105,7 @@ if ($APPLICATION->mCode == 101)
         $APPLICATION->mDataArray[] = $_GET["answer"];
         $APPLICATION->mDataArray[] = $_GET["highest"];
         $APPLICATION->mDataArray[] = $_GET["teammateid"];
+	$APPLICATION->mLoginStudent->mTeammateID = $_GET["teammateid"]; 
 }
 
 //update
