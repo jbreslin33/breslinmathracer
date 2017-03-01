@@ -51,19 +51,8 @@ public function insert()
         $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
         //get item_attempt id
-	$select = "";
-	$role = $_SESSION["role"];
-	if ($role == 1)
-	{
-        	$select = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
-        	$select .= $this->mApplication->mLoginStudent->mUserID;
-	}
-	else if ($role == 4)
-	{
-        	$select = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.team_id = ";
-        	$select .= $this->mApplication->mLoginTeam->mTeamID;
-
-	}
+       	$select = "select item_attempts.id from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id where evaluations_attempts.user_id = ";
+       	$select .= $this->mApplication->mLoginStudent->mUserID;
         $select .= " ORDER BY item_attempts.start_time DESC LIMIT 1;";
  
         //get db result

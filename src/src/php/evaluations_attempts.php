@@ -74,8 +74,6 @@ public function insert()
         $insert .= ",";
         $insert .= $this->mEvaluationsID;
        	$insert .= ");";
-
-	error_log($insert);
 	
         $insertResult = pg_query($db->getConn(),$insert) or die('Could not connect: ' . pg_last_error());
 
