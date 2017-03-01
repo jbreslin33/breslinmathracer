@@ -189,20 +189,20 @@ emptyTanSelect: function()
 	}
 },
 
-fillTanSelect: function(filler)
+fillTanSelect: function(v,t)
 {
 	if (navigator.appName == "Microsoft Internet Explorer")
         {
         	var option = document.createElement("option");
-                option.value = filler;
-                option.text = filler;
+                option.value = v;
+                option.text = t;
                 this.mTan.mMesh.add(option);
         }
         else
         {
         	var option = document.createElement("option");
-                option.value = filler;
-                option.text = filler;
+                option.value = v;
+                option.text = t;
                 this.mTan.mMesh.appendChild(option);
         }
 },

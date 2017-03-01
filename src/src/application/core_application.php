@@ -1035,13 +1035,13 @@ Extends: Application,
 					var p = this.mResponseArray[r].split(":");
 					this.mTeammateIDArray.push(p[0]);
 					this.mTeammateNameArray.push(p[1] + ' ' + p[2] );
-					APPLICATION.log('p1:' + p[1]);
+					//APPLICATION.log('p1:' + p[1]);
 				}
-                                APPLICATION.mHud.fillTanSelect('');
+                                APPLICATION.mHud.fillTanSelect('','');
                                 for (x=0; x < this.mTeammateNameArray.length; x++)
                                 {
-                                        APPLICATION.mHud.fillTanSelect(this.mTeammateNameArray[x]);
-					APPLICATION.log('name:' + this.mTeammateNameArray[x]);
+                                        APPLICATION.mHud.fillTanSelect(this.mTeammateIDArray[x],this.mTeammateNameArray[x]);
+					//APPLICATION.log('name:' + this.mTeammateNameArray[x]);
                                 }
 			}
 		}
