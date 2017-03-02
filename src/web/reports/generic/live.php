@@ -150,6 +150,13 @@ if ($room_id != 0)
 {
 	$query .= " where room_id = ";
 	$query .= $room_id;
+	$query .= " AND school_id = ";
+	$query .= $_SESSION["school_id"];
+}
+else
+{
+	$query .= " where school_id = ";
+	$query .= $_SESSION["school_id"];
 }
 $query .= " order by last_name asc;";
 $result = pg_query($conn,$query);
@@ -159,14 +166,18 @@ echo "<option selected=\"selected\" value=\"0\"> \"All Students\" </option>";
 
 for($i = 0; $i < $numrows; $i++)
 {
+	$name = $row[1];
+	$name .= " ";
+	$name .= $row[2];
+	
         $row = pg_fetch_array($result, $i);
         if ($row[0] == $user_id)
         {
-                echo "<option selected=\"selected\" value=\"$row[0]\"> $row[1] </option>";
+                echo "<option selected=\"selected\" value=\"$row[0]\"> $name </option>";
         }
         else
         {
-                echo "<option value=\"$row[0]\"> $row[1] </option>";
+                echo "<option value=\"$row[0]\"> $name </option>";
         }
 }
 ?>
