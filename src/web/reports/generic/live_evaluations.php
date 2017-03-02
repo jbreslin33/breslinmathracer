@@ -49,14 +49,18 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>score_needed';
         echo '</td>';
-        echo '<td>score';
+        echo '<td>total answered';
         echo '</td>';
-        echo '<td>passed?';
+        echo '<td>unanswered';
+        echo '</td>';
+        echo '<td>correct';
+        echo '</td>';
+        echo '<td>incorrect';
         echo '</td>';
         echo '</tr>';
 
-	$query = "select (select first_name from users where id = evaluations_attempts.user_id) as captain_firstname, (select last_name from users where id = evaluations_attempts.user_id) as captain_lastname, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*) from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id ";
-        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, captain_firstname, captain_lastname order by evaluations_attempts.start_time desc limit 20;";
+	$query = "select (select first_name from users where id = evaluations_attempts.user_id) as captain_firstname, (select last_name from users where id = evaluations_attempts.user_id) as captain_lastname, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), (select count(*) where item_attempts.transaction_code = 0) as unanswered,  (select count(*) where item_attempts.transaction_code = 1) as correct,  (select count(*) where item_attempts.transaction_code = 2) as incorrect from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id ";
+        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, captain_firstname, captain_lastname, item_attempts.transaction_code order by evaluations_attempts.start_time desc limit 400;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
@@ -101,6 +105,14 @@ echo '<table border=\"1\">';
 
                 echo '<td>';
                 echo $row[6];
+                echo '</td>';
+                
+		echo '<td>';
+                echo $row[7];
+                echo '</td>';
+		
+		echo '<td>';
+                echo $row[8];
                 echo '</td>';
 
                 echo '</tr>';
