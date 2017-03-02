@@ -18,6 +18,7 @@ session_start();
 <li><a href="/web/navigation/student/main_menu.php">Main Menu</a></li>
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/reports/generic/live.php">Live</a></li>
+<li><a href="/web/reports/generic/live_evaluations.php">Live Evaluations</a></li>
 <li><a href="/web/reports/student/matches.php">Matches</a></li>
 <li><a href="/web/reports/student/teams.php">Teams</a></li>
 <li><a href="/web/reports/generic/any_homework_check.php">Quick Homework Check</a></li>

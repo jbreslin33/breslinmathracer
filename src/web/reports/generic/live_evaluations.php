@@ -224,12 +224,20 @@ function loadAgain()
         var z = document.getElementById("category").value;
     	var t = document.getElementById("work_date").value;
 
-        document.location.href = '/web/reports/generic/live.php?user_id=' + x + '&room_id=' + y + '&category=' + z + '&work_date=' + t;
+        document.location.href = '/web/reports/generic/live_evaluations.php?user_id=' + x + '&room_id=' + y + '&category=' + z + '&work_date=' + t;
 }
 </script>
 
 <?php
+/*
+select evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 AND user_id = 133 AND item_attempts.transaction_code != 0 AND item_attempts.transaction_code != 2 group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc;
+*/
+
+/*
 	$query = " select item_attempts.start_time, item_types_id, transaction_code, question, answers, user_answer, users.first_name, users.last_name, rooms.name from item_attempts JOIN evaluations_attempts ON evaluations_attempts.id=item_attempts.evaluations_attempts_id  JOIN users ON evaluations_attempts.user_id=users.id JOIN rooms ON users.room_id=rooms.id";
+*/
+
+	$query = "select evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id ";
 
 	//filters
 	if ($work_date != 0)
@@ -275,39 +283,9 @@ function loadAgain()
 		$query .= $user_id;
 	}
 
-	//transaction code filter
-	if ($category == "all")
-	{
-		$query .= " order by start_time desc;";
-	}
-	else if ($category == "correct")
-	{
-		if ($room_id == 0 && $user_id == 0 && $work_date == 0)
-		{
-			$query .= " where transaction_code = 1 order by start_time desc;";
-		}
-		else
-		{
-			$query .= " AND transaction_code = 1 order by start_time desc;";
-		}
-	}
-	else if ($category == "incorrect")
-	{
-		if ($room_id == 0 && $user_id == 0 && $work_date == 0)
-		{
-			$query .= " where transaction_code = 2 order by start_time desc;";
-		}
-		else
-		{
-			$query .= " AND transaction_code = 2 order by start_time desc;";
-		}
-	}
-	else 
-	{
-		$query .= " order by start_time desc;";
-	}
+	$query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc;";
 
-	//error_log($query);
+	error_log($query);
 	$result = pg_query($conn,$query);
 	$numrows = pg_numrows($result);
 

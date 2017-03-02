@@ -59,6 +59,8 @@ echo '<table border=\"1\">';
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
+	error_log($query);
+
         for($i = 0; $i < $numrows; $i++)
         {
                 $row = pg_fetch_array($result, $i);
