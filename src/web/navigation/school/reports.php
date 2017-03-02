@@ -19,6 +19,7 @@ session_start();
 <li><a href="/web/php/logout.php">Logout</a></li>
 <li><a href="/web/reports/generic/leaderboards.php">Leader Boards</a></li>
 <li><a href="/web/reports/generic/live.php">Live</a></li>
+<li><a href="/web/reports/generic/live_evaluations.php">Live Evaluations</a></li>
 <li><a href="/web/reports/generic/tests.php">Evaluation Answers and Questions</a></li>
 <li><a href="/web/reports/generic/grades.php">Grades</a></li>
 <li><a href="/web/reports/generic/any_homework_check.php">Quick Homework Check</a></li>
