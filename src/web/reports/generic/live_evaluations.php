@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>MILESTONE ATTEMPTS</title>
+	<title>LIVE EVALUATIONS</title>
 <link rel="stylesheet" type="text/css" href="<?php getenv("DOCUMENT_ROOT")?>/css/green_block.css" />
 </head>
 
@@ -31,7 +31,7 @@ $conn = dbConnect();
 
 echo "<br>";
 ?>
-	<p><b> MILESTONE ATTEMPTS: </p></b>
+	<p><b> LIVE EVALUATIONS ATTEMPTS: </p></b>
 <?php
 
 echo '<table border=\"1\">';
@@ -51,9 +51,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-	$query = "select evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where ";
-
-        $query .= " item_attempts.transaction_code != 0 AND item_attempts.transaction_code != 2 AND evaluations_attempts.start_time > current_date  group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc;";
+	$query = "select evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 ";
+        $query .= " AND item_attempts.transaction_code != 0 AND item_attempts.transaction_code != 2 group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name order by evaluations_attempts.start_time desc limit 20;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
