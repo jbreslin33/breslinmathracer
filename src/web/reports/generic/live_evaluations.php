@@ -55,13 +55,13 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '</tr>';
 
-	$query = "select (select first_name from users where id = evaluations_attempts.user_id) as captain_firstname, (select last_name from users where id = evaluations_attempts.user_id) as captain_lastname, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*), case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id where evaluations_id != 1 ";
-        $query .= " AND item_attempts.transaction_code != 0 AND item_attempts.transaction_code != 2 group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, captain_firstname, captain_lastname order by evaluations_attempts.start_time desc limit 20;";
+	$query = "select (select first_name from users where id = evaluations_attempts.user_id) as captain_firstname, (select last_name from users where id = evaluations_attempts.user_id) as captain_lastname, evaluations_attempts.start_time, evaluations.description, evaluations.score_needed, count(*) from item_attempts join evaluations_attempts on evaluations_attempts.id=item_attempts.evaluations_attempts_id join evaluations on evaluations.id=evaluations_attempts.evaluations_id join users on evaluations_attempts.user_id=users.id ";
+        $query .= " group by evaluations_attempts, score_needed, evaluations_attempts.start_time, evaluations.description, users.first_name, users.last_name, captain_firstname, captain_lastname order by evaluations_attempts.start_time desc limit 20;";
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
 
-	error_log($query);
+	//error_log($query);
 
         for($i = 0; $i < $numrows; $i++)
         {
