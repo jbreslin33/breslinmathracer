@@ -59,6 +59,7 @@ COUNT(CASE WHEN item_attempts.transaction_code != 1 then 1 ELSE NULL END) as inc
 
        	$result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
+	error_log($result);	
 
         for($i = 0; $i < $numrows_evaluations; $i++)
         {
