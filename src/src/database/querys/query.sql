@@ -1,1 +1,1 @@
-select evaluations_attempts.user_id, evaluations_attempts.teammate_id from evaluations_attempts join users on evaluations_attempts.user_id=users.id order by evaluations_attempts.start_time desc;
+select evaluations_attempts.evaluations_id, (select first_name from users where id = evaluations_attempts.user_id) as captain, evaluations_attempts.teammate_id from evaluations_attempts join users on evaluations_attempts.user_id=users.id order by evaluations_attempts.start_time desc;
