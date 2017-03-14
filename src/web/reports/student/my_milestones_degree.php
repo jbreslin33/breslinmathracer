@@ -122,9 +122,9 @@ echo '<table border=\"1\">';
 
         //------------------MILESTONES------------------------------
 	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.inner_grade FROM ( select users.id, users.first_name, users.last_name, evaluations.description, evaluations.progression, evaluations.score_needed, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect,
-    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered,
+COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered,";
 
-COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
+	$query_m .= " COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 "; 
 
 	if ($room_id != 0)
 	{
@@ -136,7 +136,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 
-	//error_log($query_m);
+	error_log($query_m);
 
         //------------------END MILESTONES------------------------------
 
@@ -157,9 +157,9 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
                		$row_e = pg_fetch_array($result_e, $p);
 			if ($row_m[3] == $row_e[1]) //do we have a user and ms match?
 			{
-				if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
+				if ($row[$p] < $row_m[5]) //less than new comming in
 				{
-					$row[intval($p + 5)] = $row_m[5];
+					$row[$p] = $row_m[5];
 				}
 			}
 		}	
@@ -169,50 +169,51 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 	{
                	$row_e = pg_fetch_array($result_e, $e);
 		//100 90 80
-		if ($row[intval($e + 5)] >= $row_e[6])    
+		if ($row[$e] >= $row_e[6])    
 		{
  			echo '<td bgcolor="green">';
-			echo $row[intval($e + 5)];
+			echo $row[$e];
                		echo '';
                		echo '</td>';
 		}
-		else if ($row[intval($e + 5)] >= $row_e[7])    
+		else if ($row[$e] >= $row_e[7])    
 		{
  			echo '<td bgcolor="lime">';
-			echo $row[intval($e + 5)];
+			echo $row[$e];
                		echo '';
                		echo '</td>';
 		}
-		else if ($row[intval($e + 5)] >= $row_e[8])    
+		else if ($row[$e] >= $row_e[8])    
 		{
  			echo '<td bgcolor="yellow">';
-			echo $row[intval($e + 5)];
+			echo $row[$e];
                		echo '';
                		echo '</td>';
 		}
-		else if ($row[intval($e + 5)] >= $row_e[9])    
+		else if ($row[$e] >= $row_e[9])    
 		{
  			echo '<td bgcolor="orange">';
-			echo $row[intval($e + 5)];
+			echo $row[$e];
                		echo '';
                		echo '</td>';
 		}
-		else if ($row[intval($e + 5)] >= $row_e[10])    
+		else if ($row[$e] >= $row_e[10])    
 		{
  			echo '<td bgcolor="pink">';
-			echo $row[intval($e + 5)];
+			echo $row[$e];
                		echo '';
                		echo '</td>';
 		}
 		else    
 		{
 	 		echo '<td bgcolor="red">';
-			echo $row[intval($e + 5)];
+			echo $row[$e];
                		echo '';
                		echo '</td>';
 		}
         }
-        pg_free_result($result);
+        pg_free_result($result_m);
+        pg_free_result($result_e);
         echo '</table>';
 ?>
 </body>
