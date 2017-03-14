@@ -140,97 +140,77 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
 
         //------------------END MILESTONES------------------------------
 
-	//------------------USERS------------------------------
-        $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and id = ";
-        $query .= $id;
-	$query .= ";";
-        $result = pg_query($conn,$query);
-        $numrows = pg_numrows($result);
-	//------------------END USERS------------------------------
+	$row = array();
+
+	for($r = 5; $r < 38; $r++)
+	{
+		$row[] = 0;
+	}
+
+	for($m = 0; $m < $numrows_m; $m++)
+	{
+               	$row_m = pg_fetch_array($result_m, $m);
+		$row_m[5] = intval($row_m[5]);
 	
-	$total_raw_grade = 0;
-
-	$i = 0;
-
-        for($i = 0; $i < $numrows; $i++)
-        {
-                $row = pg_fetch_array($result, $i);
-                $id = $row[0];
-
-                $core_standards_id = $row[3];
-                $score = $row[4];
-                $core_grades_id = $row[5];
-		
-		for($r = 5; $r < 38; $r++)
+		for ($p = 0; $p < $numrows_e; $p++)
 		{
-			$row[] = 0;
-		}
-
-		for($m = 0; $m < $numrows_m; $m++)
-		{
-                	$row_m = pg_fetch_array($result_m, $m);
-			$row_m[5] = intval($row_m[5]);
-	
-			for ($p = 0; $p < $numrows_e; $p++)
+               		$row_e = pg_fetch_array($result_e, $p);
+			if ($row_m[3] == $row_e[1]) //do we have a user and ms match?
 			{
-                		$row_e = pg_fetch_array($result_e, $p);
-				if ($id == $row_m[0] && $row_m[3] == $row_e[1]) //do we have a user and ms match?
+				if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
 				{
-					if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
-					{
-						$row[intval($p + 5)] = $row_m[5];
-					}
+					$row[intval($p + 5)] = $row_m[5];
 				}
-			}	
-		}
-                echo '<tr>';
-		for ($e = 0; $e < $numrows_e; $e++)
+			}
+		}	
+	}
+        echo '<tr>';
+	for ($e = 0; $e < $numrows_e; $e++)
+	{
+               	$row_e = pg_fetch_array($result_e, $e);
+		//100 90 80
+		if ($row[intval($e + 5)] >= $row_e[6])    
 		{
-                	$row_e = pg_fetch_array($result_e, $e);
-			//100 90 80
-			if ($row[intval($e + 5)] >= $row_e[6])    
-			{
- 				echo '<td bgcolor="green">';
-				echo $row[intval($e + 5)];
-                		echo '';
-                		echo '</td>';
-			}
-			else if ($row[intval($e + 5)] >= $row_e[7])    
-			{
- 				echo '<td bgcolor="lime">';
-				echo $row[intval($e + 5)];
-                		echo '';
-                		echo '</td>';
-			}
-			else if ($row[intval($e + 5)] >= $row_e[8])    
-			{
- 				echo '<td bgcolor="yellow">';
-				echo $row[intval($e + 5)];
-                		echo '';
-                		echo '</td>';
-			}
-			else if ($row[intval($e + 5)] >= $row_e[9])    
-			{
- 				echo '<td bgcolor="orange">';
-				echo $row[intval($e + 5)];
-                		echo '';
-                		echo '</td>';
-			}
-			else if ($row[intval($e + 5)] >= $row_e[10])    
-			{
- 				echo '<td bgcolor="pink">';
-				echo $row[intval($e + 5)];
-                		echo '';
-                		echo '</td>';
-			}
-			else    
-			{
- 				echo '<td bgcolor="red">';
-				echo $row[intval($e + 5)];
-                		echo '';
-                		echo '</td>';
-			}
-		}  
+ 			echo '<td bgcolor="green">';
+			echo $row[intval($e + 5)];
+               		echo '';
+               		echo '</td>';
+		}
+		else if ($row[intval($e + 5)] >= $row_e[7])    
+		{
+ 			echo '<td bgcolor="lime">';
+			echo $row[intval($e + 5)];
+               		echo '';
+               		echo '</td>';
+		}
+		else if ($row[intval($e + 5)] >= $row_e[8])    
+		{
+ 			echo '<td bgcolor="yellow">';
+			echo $row[intval($e + 5)];
+               		echo '';
+               		echo '</td>';
+		}
+		else if ($row[intval($e + 5)] >= $row_e[9])    
+		{
+ 			echo '<td bgcolor="orange">';
+			echo $row[intval($e + 5)];
+               		echo '';
+               		echo '</td>';
+		}
+		else if ($row[intval($e + 5)] >= $row_e[10])    
+		{
+ 			echo '<td bgcolor="pink">';
+			echo $row[intval($e + 5)];
+               		echo '';
+               		echo '</td>';
+		}
+		else    
+		{
+	 		echo '<td bgcolor="red">';
+			echo $row[intval($e + 5)];
+               		echo '';
+               		echo '</td>';
+		}
         }
         pg_free_result($result);
         echo '</table>';
