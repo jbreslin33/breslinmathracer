@@ -54,7 +54,11 @@ Extends: TextItem,
                 }
                 c = parseInt( a / b );
                 this.setQuestion('' + 'Write ' + a + ' ' + this.ns.mThingOne + ' for every ' + b + ' ' + this.ns.mThingTwo + ' as a unit rate.');
-                this.setAnswer('' + c + ' ' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo),0);
+                this.setAnswer('' + c,0);
+                this.setAnswer('' + c + ' ' + this.ns.mThingOne + ' per ' + this.ns.mNameMachine.getSingular(this.ns.mThingTwo),1);
+                this.setAnswer('' + c + ':1',2);
+                this.setAnswer('' + c + '/1',3);
+                this.setAnswer('' + c + 'to1',4);
         }
 });
 
