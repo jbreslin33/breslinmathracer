@@ -136,7 +136,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 
-	error_log($query_m);
+	//error_log($query_m);
 
         //------------------END MILESTONES------------------------------
 

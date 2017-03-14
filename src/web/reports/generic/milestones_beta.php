@@ -292,7 +292,7 @@ echo '<table border=\"1\">';
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 
-	error_log($query_m);
+	//error_log($query_m);
 
 //users
         $query = "select id, first_name, last_name, core_standards_id, score, core_grades_id from users where banned_id = 0 and school_id = ";
@@ -305,7 +305,7 @@ echo '<table border=\"1\">';
         $query .= " order by score desc;";
         $result = pg_query($conn,$query);
         $numrows = pg_numrows($result);
-	error_log($query);
+	//error_log($query);
 
 	
 	$total_raw_grade = 0;
