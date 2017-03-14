@@ -11,7 +11,7 @@ initialize: function(sheet)
         this.mType = '6.g.a.1_2';
 
         this.setQuestion('How many angles are inside the drawing below?');
-        this.setAnswer('' + '7',0);
+        this.setAnswer('' + '3',0);
 },
 
 createQuestionShapes: function()
@@ -87,7 +87,7 @@ initialize: function(sheet)
         this.mType = '6.g.a.1_1';
 
         this.setQuestion('How many angles are inside the drawing below?');
-        this.setAnswer('' + '7',0);
+        this.setAnswer('' + '3',0);
 },
 
 createQuestionShapes: function()
