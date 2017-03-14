@@ -116,6 +116,7 @@ answer = answer.toFixed(2);
 answer = new Decimal(answer);
 
 this.setAnswer('' + answer.getMoney(),0);
+this.setAnswer('$' + answer.getMoney(),1);
 
   this.setQuestion('The sales tax rate is ' + this.c + '%. If ' + this.mNameOne + ' buys a ' + this.thing + ' priced at $' + this.b + ', what will be the total cost including tax?'); 
 
@@ -191,6 +192,7 @@ this.b = new Decimal(this.b);
 
 
 this.setAnswer('' + this.b.getMoney(),0);
+this.setAnswer('$' + this.b.getMoney(),1);
 
   this.setQuestion('All items at the store are ' + this.e + '% off. The sale price of a ' + this.thing + ' is $' + answer + '. What was the original price?'); 
 
@@ -265,6 +267,7 @@ var r = Math.floor(Math.random()*2);
 answer = this.a * (4 - this.c);   
 
 this.setAnswer('' + answer,0);
+this.setAnswer('$' + answer,1);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);

@@ -175,6 +175,7 @@ var r = Math.floor(Math.random()*2);
     answer = this.c; 
 	answer = new Decimal(answer);
     this.setAnswer('' + answer.getMoney(),0);
+    this.setAnswer('$' + answer.getMoney(),1);
 
 var r = Math.floor(Math.random()*3);
 
@@ -283,6 +284,7 @@ answer = new Decimal(answer);
 
 
 this.setAnswer('' + answer.getMoney(),0);
+this.setAnswer('$' + answer.getMoney(),1);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);
@@ -374,6 +376,7 @@ answer = this.c.toFixed(2);
 answer = new Decimal(answer);
 
 this.setAnswer('' + answer.getMoney(),0);
+this.setAnswer('$' + answer.getMoney(),1);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);
@@ -469,6 +472,7 @@ var r = Math.floor(Math.random()*2);
   this.setQuestion('At the market, ' + this.mFruit + ' cost $' + this.a + ' per pound. ' + this.ns.mNameOne + ' bought ' + this.fb.getString() + ' of a pound of ' + this.mFruit + '. How much did ' + this.mNameMachine.getPronoun(this.ns.mNameOne,0,0) + ' spend?'); 
 
 this.setAnswer('' + answer.getMoney(),0);
+this.setAnswer('$' + answer.getMoney(),1);
 
 this.mQuestionLabel.setSize(280,250);
 this.mQuestionLabel.setPosition(180,200);
