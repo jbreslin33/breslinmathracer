@@ -122,7 +122,6 @@ public function fillItemAttemptsArray()
                        	$this->mItemAttemptsTransactionCodeArray[] = pg_Result($result,$i,'transaction_code');
                 }
 
-		error_log($query);
         }
 	else
 	{
