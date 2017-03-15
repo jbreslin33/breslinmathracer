@@ -439,7 +439,7 @@ Extends: Application,
 
 	getQuestionTypeFromGrade: function(old)
 	{
-		APPLICATION.log('getQuestionType:');
+		//APPLICATION.log('getQuestionType:');
 		var score = 0;
 		var standard = '' 
 		var questionType = '';
@@ -456,7 +456,7 @@ Extends: Application,
 
 			
 			//get an array of the item types to check for the standard we are currently in this loop	
-			APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
+			//APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
 			//APPLICATION.log('score:' + score); 
                 	var tempTypeArray = new Array();
                 	tempTypeArray = [];
@@ -581,14 +581,14 @@ Extends: Application,
 
 	getQuestionType: function(old)
 	{
-		APPLICATION.log('getQuestionType:');
+		//APPLICATION.log('getQuestionType:');
 		var score = 0;
 		var standard = '' 
 		var questionType = '';
 		while (score < this.mStandardsArray.length && standard == '')
 		{
 			//get an array of the item types to check for the standard we are currently in this loop	
-			APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
+			//APPLICATION.log('CHECKING STANDARD:' + this.mStandardsArray[score]); 
 			//APPLICATION.log('score:' + score); 
                 	var tempTypeArray = new Array();
                 	tempTypeArray = [];

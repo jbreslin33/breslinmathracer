@@ -89,31 +89,31 @@ pickItem: function()
                 			//APPLICATION.askFromARandomOldStandard();
                 			APPLICATION.getQuestionTypeFromGrade(1);
 					APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
-					APPLICATION.log('Q: 1');
+					//APPLICATION.log('Q: 1');
 				}
                			if (r >= 10 && r < 45)
 				{
                 			APPLICATION.getQuestionTypeFromGrade(1);
 					APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
-					APPLICATION.log('Q: 2');
+					//APPLICATION.log('Q: 2');
 				}
                			if (r >= 45 && r < 80)
 				{
                 			APPLICATION.getQuestionTypeFromGrade(2);
 					APPLICATION.mQuestionTypeCurrent = APPLICATION.mQuestionType;
-					APPLICATION.log('Q: 3');
+					//APPLICATION.log('Q: 3');
 				}
                			if (r >= 80 && r < 90)
                			{
                        			APPLICATION.getLeastAsked(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArray,APPLICATION.mItemAttemptsTransactionCodeArray);
                       			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastAsked;
-					APPLICATION.log('Q: 4');
+					//APPLICATION.log('Q: 4');
                			}
                			if (r >= 90 && r < 101)
                			{
                        			APPLICATION.getLeastCorrect(APPLICATION.mItemTypesArray,APPLICATION.mItemAttemptsTypeArray,APPLICATION.mItemAttemptsTransactionCodeArray);
                        			APPLICATION.mQuestionTypeCurrent = APPLICATION.mLeastCorrect;
-					APPLICATION.log('Q: 5');
+					//APPLICATION.log('Q: 5');
                			}
 			} //while
 		} //else escape from kinder

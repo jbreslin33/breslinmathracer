@@ -123,7 +123,6 @@ public function checkForStudent()
                 		$this->mUserID = $user_id;
 				$this->mStandard = $core_standards_id;
 				$this->mCoreGradesID = $core_grades_id;
-				error_log($this->mCoreGradesID);
 				$this->mSchoolID = $school_id;
 				$this->mTeacherID = $teacher_id;
 				$this->mRoomID = $room_id;
