@@ -102,9 +102,11 @@ public function fillItemAttemptsArray()
  
 	if (count($this->mItemAttemptsTransactionCodeArray) < 1) //not filled at all get em all....
         {
-                $query = "select evaluations_attempts.evaluations_id, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id != 2 AND evaluations_attempts.user_id = ";
+                $query = "select evaluations_attempts.evaluations_id, item_attempts.item_types_id, item_attempts.transaction_code from item_attempts JOIN evaluations_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN item_types ON item_types.id=item_attempts.item_types_id AND evaluations_attempts.evaluations_id != 2 AND (evaluations_attempts.user_id = ";
                 $query .= $this->mApplication->mLoginStudent->mUserID;
-               	$query .= " AND item_types.active_code = 1";
+		$query .= " OR evaluations_attempts.teammate_id = ";
+                $query .= $this->mApplication->mLoginStudent->mUserID;
+               	$query .= ")  AND item_types.active_code = 1";
                	$query .= " order by item_attempts.start_time desc;";
 
                	$db = new DatabaseConnection();
@@ -119,6 +121,8 @@ public function fillItemAttemptsArray()
                        	$this->mItemAttemptsItemTypeArray[]        = pg_Result($result,$i,'item_types_id');
                        	$this->mItemAttemptsTransactionCodeArray[] = pg_Result($result,$i,'transaction_code');
                 }
+
+		error_log($query);
         }
 	else
 	{
