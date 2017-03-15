@@ -330,10 +330,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
 		}
         	$query_m .= $rooms_row[0];
 	}
-	$query_m .= ") AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed, evaluations.grade_b) sub WHERE sub.total_answered >= sub.score_needed AND sub.inner_grade >= sub.grade_b order by sub.last_name, sub.progression;";
-/*
-        $query_m .= ") AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.start_time, evaluations.score_needed) sub WHERE sub.incorrect = 0 AND sub.correct >= sub.score_needed order by sub.room_id, sub.last_name, sub.progression;";
-*/
+	$query_m .= ") AND evaluations.progression > 0.9 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed, evaluations.grade_b) sub WHERE sub.total_answered >= sub.score_needed AND sub.inner_grade >= sub.grade_b order by sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 //end ms
