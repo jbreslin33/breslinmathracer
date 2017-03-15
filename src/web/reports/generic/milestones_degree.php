@@ -304,7 +304,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         	$query_m .= $room_id;
 	}
 
-	$query_m .= " AND evaluations.progression > 0.9 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
+	$query_m .= " AND evaluations.progression > 0.9 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 	//error_log($query_m);
