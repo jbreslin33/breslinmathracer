@@ -220,71 +220,16 @@ CREATE TABLE users (
         score integer NOT NULL default 0,
         unmastered integer NOT NULL default 0,
         lesson integer NOT NULL default 1,
-
-	--k
-	k_cc integer NOT NULL default 0,
-	k_oa_a_4 integer NOT NULL default 0,
-        k_oa_a_5 integer NOT NULL default 0,
-
-	--1
-        g1_oa_b_3 integer NOT NULL default 0,
-        g1_oa_c_6 integer NOT NULL default 0,
-	g1_nbt integer NOT NULL default 0,
-	
-	--2	
-        g2_oa_b_2 integer NOT NULL default 0,
-	g2_nbt integer NOT NULL default 0,
-
-	--3
-        g3_oa_c_7 integer NOT NULL default 0,
-        g3_nbt integer NOT NULL default 0,
-
-	--4
-	g4_oa_b_4 integer NOT NULL default 0, --11 
-	g4_nbt_b_4 integer NOT NULL default 0, --14
-	g4_nbt_b_5 integer NOT NULL default 0, --20
-	g4_nbt_b_6 integer NOT NULL default 0, --21
-	g4_nf_b_3_c integer NOT NULL default 0, --30
-
-	--5
-	g5_oa_a_1 integer NOT NULL default 0, --31
-	g5_nbt_b_5 integer NOT NULL default 0, --32
-	g5_nbt_b_6 integer NOT NULL default 0, --33
-	g5_nbt_b_7 integer NOT NULL default 0, --34
-	g5_nf_a_1 integer NOT NULL default 0, --35
-	
-	--6
-	g6_rp integer NOT NULL default 0, --36
-	g6_ns integer NOT NULL default 0, --37
-	g6_ee integer NOT NULL default 0, --38
-	g6_g integer NOT NULL default 0, --39
-	g6_sp integer NOT NULL default 0, --40
-	
-
-	--tables supplemental maybe dont need in user
-        alltimesuperizzy integer NOT NULL default 0,
-        alltimetwo integer NOT NULL default 0,
-        alltimethree integer NOT NULL default 0,
-        alltimefour integer NOT NULL default 0,
-        alltimefive integer NOT NULL default 0,
-        alltimesix integer NOT NULL default 0,
-        alltimeseven integer NOT NULL default 0,
-        alltimeeight integer NOT NULL default 0,
-        alltimenine integer NOT NULL default 0,
-        alltimeten integer NOT NULL default 0,
-
- 
-	--not used       
-	alltime integer NOT NULL default 0,
-
         banned_id integer NOT NULL default 0,
         work_it_id text,
+        work_it_id integer,
 	PRIMARY KEY (id),	
 	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id),
 	FOREIGN KEY (school_id) REFERENCES schools(id),
 	FOREIGN KEY (teacher_id) REFERENCES teachers(id),
 	FOREIGN KEY (room_id) REFERENCES rooms(id),
-	FOREIGN KEY (team_id) REFERENCES teams(id)
+	FOREIGN KEY (team_id) REFERENCES teams(id),
+	FOREIGN KEY (teammate_id) REFERENCES users(id)
 );
 --add_game_H
 

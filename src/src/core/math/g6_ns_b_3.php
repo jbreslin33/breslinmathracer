@@ -247,6 +247,7 @@ initialize: function(sheet)
         this.setQuestion(this.ns.mNameOne + ' had $' + decimalA.getMoney() + ' in ' +  this.ns.mNameMachine.getPronoun(this.ns.mNameOne,0,1) + ' wallet. He spent $' + decimalB.getMoney() + ' at the carnival. How much money does ' + this.ns.mNameOne + ' have left?');
 
         this.setAnswer('' + answer.getMoney(),0);
+        this.setAnswer('$' + answer.getMoney(),1);
 },
 
 showCorrectAnswer: function()
