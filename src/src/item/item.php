@@ -559,6 +559,18 @@ var Item = new Class(
  
 
 		//5
+                var optionVA = document.createElement("option");
+                optionVA.value = 1006;
+                optionVA.text = '5.oa';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionVA);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionVA);
+                }
+
 
                 var optionUA = document.createElement("option");
                 optionUA.value = 31;

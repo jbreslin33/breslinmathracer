@@ -211,25 +211,19 @@ CREATE TABLE users (
     	last_name text,
     	core_grades_id integer,
     	core_standards_id text,
-    	core_standards_overide_id text,
     	school_id integer DEFAULT 1, 
     	teacher_id integer DEFAULT 1,
         room_id integer DEFAULT 1,
         team_id integer DEFAULT 1,
      	last_activity timestamp,
         score integer NOT NULL default 0,
-        unmastered integer NOT NULL default 0,
-        lesson integer NOT NULL default 1,
         banned_id integer NOT NULL default 0,
-        work_it_id text,
-        work_it_id integer,
 	PRIMARY KEY (id),	
 	FOREIGN KEY (core_grades_id) REFERENCES core_grades(id),
 	FOREIGN KEY (school_id) REFERENCES schools(id),
 	FOREIGN KEY (teacher_id) REFERENCES teachers(id),
 	FOREIGN KEY (room_id) REFERENCES rooms(id),
-	FOREIGN KEY (team_id) REFERENCES teams(id),
-	FOREIGN KEY (teammate_id) REFERENCES users(id)
+	FOREIGN KEY (team_id) REFERENCES teams(id)
 );
 --add_game_H
 
@@ -269,14 +263,12 @@ CREATE TABLE evaluations_attempts (
         end_time timestamp,
 	evaluations_id integer NOT NULL,	
     	user_id integer NOT NULL,
-    	team_id integer NOT NULL,
+    	teammate_id integer,
         PRIMARY KEY (id),
 	FOREIGN KEY (evaluations_id) REFERENCES evaluations(id),
 	FOREIGN KEY (user_id) REFERENCES users(id),
-	FOREIGN KEY (team_id) REFERENCES teams(id)
+	FOREIGN KEY (teammate_id) REFERENCES users(id)
 );
-
-
 
 CREATE TABLE item_types (
         id text NOT NULL UNIQUE,
