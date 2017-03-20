@@ -65,6 +65,7 @@ else if (isset($_GET['end_date']))
 else
 {
         $end_date = date("Y-m-d");
+	$end_date = date('Y-m-d', strtotime($end_date . ' +1 day'));
 }
 
 
