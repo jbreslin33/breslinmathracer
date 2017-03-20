@@ -98,8 +98,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>4<br> n<br>f<br> b<br> 3<br> c';
         echo '</td>';
-        echo '<td>5<br> o<br>a';
-        echo '</td>';
         echo '<td>5<br> o<br>a <br>a<br> 1';
         echo '</td>';
         echo '<td>5<br> n<br>b<br>t <br>b<br> 5';
@@ -136,7 +134,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as corr
 
 	$query_m .= " AND evaluations.progression > 0.9 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.progression;";
 
-	error_log($query_m);
+	//error_log($query_m);
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 
@@ -144,7 +142,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as corr
 
 	$row = array();
 
-	for($r = 5; $r < 39; $r++)
+	for($r = 5; $r < 38; $r++)
 	{
 		$row[] = 0;
 	}

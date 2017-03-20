@@ -32,6 +32,41 @@ else
 include(getenv("DOCUMENT_ROOT") . "/src/database/db_connect.php");
 $conn = dbConnect();
 
+ini_set("date.timezone", "America/New_York");
+
+//start date
+$start_date = date("Y-m-d");
+
+if (isset($_POST["start_date"]))
+{
+        $start_date = $_POST["start_date"];
+}
+else if (isset($_GET['start_date']))
+{
+        $start_date = $_GET['start_date'];
+}
+else
+{
+        $start_date = date("Y-m-d");
+}
+
+//end date
+$end_date = date("Y-m-d");
+
+if (isset($_POST["end_date"]))
+{
+        $end_date = $_POST["end_date"];
+}
+else if (isset($_GET['end_date']))
+{
+        $end_date = $_GET['end_date'];
+}
+else
+{
+        $end_date = date("Y-m-d");
+}
+
+
 $room_id = 0;
 $id = 0;
 
