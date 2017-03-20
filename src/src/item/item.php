@@ -559,18 +559,6 @@ var Item = new Class(
  
 
 		//5
-                var optionVA = document.createElement("option");
-                optionVA.value = 1006;
-                optionVA.text = '5.oa';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTimesTablesInfo.mMesh.add(optionVA);
-                }
-                else
-                {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionVA);
-                }
-
 
                 var optionUA = document.createElement("option");
                 optionUA.value = 31;
@@ -632,6 +620,80 @@ var Item = new Class(
                 {
                         this.mTimesTablesInfo.mMesh.appendChild(optionUF);
                 }
+                
+		var optionPlay = document.createElement("option");
+                optionPlay.value = 1;
+                optionPlay.text = 'Play';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionPlay);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionPlay);
+                }
+
+
+                var optionVA = document.createElement("option");
+                optionVA.value = 1051;
+                optionVA.text = '5.oa';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionVA);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionVA);
+                }
+
+                var optionVB = document.createElement("option");
+                optionVB.value = 1052;
+                optionVB.text = '5.nbt';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionVB);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionVB);
+                }
+
+                var optionVC = document.createElement("option");
+                optionVC.value = 1053;
+                optionVC.text = '5.nf';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionVC);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionVC);
+                }
+
+                var optionVD = document.createElement("option");
+                optionVD.value = 1054;
+                optionVD.text = '5.md';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionVD);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionVD);
+                }
+
+                var optionVE = document.createElement("option");
+                optionVE.value = 1055;
+                optionVE.text = '5.g';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionVE);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionVE);
+                }
+
 
                 var optionUG = document.createElement("option");
                 optionUG.value = 36;
@@ -691,18 +753,6 @@ var Item = new Class(
                 else
                 {
                         this.mTimesTablesInfo.mMesh.appendChild(optionUK);
-                }
-
-                var optionPlay = document.createElement("option");
-                optionPlay.value = 1;
-                optionPlay.text = 'Play';
-                if (navigator.appName == "Microsoft Internet Explorer")
-                {
-                        this.mTimesTablesInfo.mMesh.add(optionPlay);
-                }
-                else
-                {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionPlay);
                 }
 
                	var optionE = document.createElement("option");
