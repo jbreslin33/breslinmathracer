@@ -184,11 +184,8 @@ function calc_raw_grade_new($core_grades_id,&$row,&$result_e)
 
 ?>
 
-<p><b> Milestones</p></b>
-
-<p><b> Select Room: </p></b>
-
 <form method="post" action="/web/reports/generic/milestones_degree.php">
+<b> Select Room:</b>
 
 <select id="room_id" name="room_id" onchange="loadAgain()">
 <?php
