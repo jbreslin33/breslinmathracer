@@ -1,0 +1,10 @@
+add an evalutaion 
+step 1:
+src/item/item.php
+add option
+
+src/database/patches_jim.sql 
+add insert of eval
+add evaluations_items
+add an update
+
