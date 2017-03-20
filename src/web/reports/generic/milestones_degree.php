@@ -212,11 +212,27 @@ for($i = 0; $i < $numrows; $i++)
 }
 ?>
 </select>
+
+<b>START DATE:</b>
+<input id="start_date" type="text" name="start_date" value="<?php echo htmlentities($start_date); ?>"  onchange="loadAgain()">
+
+<b>END DATE:</b>
+<input id="end_date" type="text" name="end_date" value="<?php echo htmlentities($end_date); ?>"  onchange="loadAgain()">
+
+</form>
+
+
 <script>
 function loadAgain()
 {
-    	var y = document.getElementById("room_id").value;
-	document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + y; 
+    	//var y = document.getElementById("room_id").value;
+	//document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + y; 
+
+        var x = document.getElementById("room_id").value;
+        var y = document.getElementById("start_date").value;
+        var z = document.getElementById("end_date").value;
+
+        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + x + '&start_date=' + y + '&end_date=' + z;
 }
 </script>
 
