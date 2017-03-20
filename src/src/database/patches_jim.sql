@@ -1206,6 +1206,49 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_47',1052); 
 
 insert into evaluations (id,description) values (1053,'5.nf');
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_1',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_2',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_3',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_4',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_5',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_6',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_7',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_8',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_9',1053); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_1',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_2',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_3',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_4',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_5',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_6',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_7',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_8',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.2_9',1053); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.3_1',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.3_2',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.3_3',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.3_4',1053); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4_1',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4_2',1053); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.a_1',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.a_2',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.a_3',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.a_4',1053); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.b_1',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.b_2',1053); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.4.b_3',1053); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.5.a_1',1053); 
+
+
+
+
+
 insert into evaluations (id,description) values (1054,'5.md');
 insert into evaluations (id,description) values (1055,'5.g');
 
