@@ -47,7 +47,8 @@ else if (isset($_GET['start_date']))
 }
 else
 {
-        $start_date = date("Y-m-d");
+        //$start_date = date("Y-m-d");
+        $start_date = date("2016-09-10");
 }
 
 //end date
