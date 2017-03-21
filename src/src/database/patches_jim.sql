@@ -1299,6 +1299,64 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.b.7.
 
 
 insert into evaluations (id,description) values (1054,'5.md');
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_1',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_2',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_3',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_4',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_5',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_6',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_7',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_8',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_9',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_11',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_12',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_13',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_14',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_15',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.a.1_1',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_1',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_2',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_3',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_4',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_5',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_6',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.b.2_7',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_1',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_2',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_3',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_4',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_5',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_6',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_7',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_8',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_9',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_10',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.3.a_11',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.4_1',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.4_2',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.a_1',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.a_2',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.a_3',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.a_4',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_1',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_2',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_3',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_4',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_6',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_7',1054); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.b_8',1054); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.c_1',1054); 
+
+
+
+
 insert into evaluations (id,description) values (1055,'5.g');
 
 --update evals
