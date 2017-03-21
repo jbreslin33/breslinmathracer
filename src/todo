@@ -1,3 +1,12 @@
+add 5.g and 5.md
+
+bugs
+5.oa.a.1_25 order of operations makes problem wrong
+6.ns.b.3_5 bug not sure what it is check it out.
+5.nbt.a.4_1 user should not need to write g after answer for grams
+
+----------------------
+
 set score check from = to >=
 also get rid of distinct date
 select sub.first_name, sub.last_name, sub.description, sub.case FROM ( select users.first_name, users.last_name, evaluations.description, case when count(*) = evaluations.score_needed THEN 1 ELSE 0 END from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND users.room_id = 2 AND item_attempts.transaction_code = 1 group by evaluations_attempts, evaluations.description, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.case = 1;
