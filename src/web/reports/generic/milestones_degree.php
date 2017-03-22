@@ -95,19 +95,19 @@ $bonus_array[] = 5; //3
 $bonus_array[] = 2.3; //4
 $bonus_array[] = 1.74; //5
 $bonus_array[] = 1.43; //6
-$bonus_array[] = 1.22; //7
-$bonus_array[] = 1.22; //8
+$bonus_array[] = 1.43; //7
+$bonus_array[] = 1.43; //8
 
 $bonus_new_array[] = 0;
-$bonus_new_array[] = 0;
-$bonus_new_array[] = 6.7;
-$bonus_new_array[] = 5;
-$bonus_new_array[] = 2.3;
-$bonus_new_array[] = 1.74;
-$bonus_new_array[] = 1.43;
-$bonus_new_array[] = 1.22;
-$bonus_new_array[] = 1.22;
-$bonus_new_array[] = 1.22;
+$bonus_new_array[] = 0; //k 
+$bonus_new_array[] = 6.7; //1
+$bonus_new_array[] = 5; //2
+$bonus_new_array[] = 2.3; //3
+$bonus_new_array[] = 1.74; //4
+$bonus_new_array[] = 1.43; //5
+$bonus_new_array[] = 1.43; //6
+$bonus_new_array[] = 1.43; //7
+$bonus_new_array[] = 1.43; //8
 
 $pre_end[] = 0;
 $pre_end[] = 0;
@@ -115,10 +115,10 @@ $pre_end[] = 8;
 $pre_end[] = 11;
 $pre_end[] = 13;
 $pre_end[] = 23;
-$pre_end[] = 28;
+$pre_end[] = 28; //5
 $pre_end[] = 33;
-$pre_end[] = 38;
-$pre_end[] = 38;
+$pre_end[] = 33;
+$pre_end[] = 33;
 
 $new_end[] = 0;
 $new_end[] = 0;
@@ -126,13 +126,13 @@ $new_end[] = 11;
 $new_end[] = 13;
 $new_end[] = 23;
 $new_end[] = 28;
+$new_end[] = 33; //5
 $new_end[] = 33;
-$new_end[] = 38;
-$new_end[] = 38;
-$new_end[] = 38;
+$new_end[] = 33;
+$new_end[] = 33;
         
 //------------------EVALUATIONS------------------------------
-$query_e = "select * from evaluations where progression > 0.9 order by progression asc;";
+$query_e = "select * from evaluations where progression > 0.9 AND progression < 21 order by progression asc;";
 $result_e = pg_query($conn,$query_e);
 $numrows_e = pg_numrows($result_e);
 //------------------END EVALUATIONS------------------------------
@@ -325,16 +325,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>5<br> n<br>f<br> a<br> 1';
         echo '</td>';
-        echo '<td>6<br> r<br>p';
-        echo '</td>';
-        echo '<td>6<br> n<br>s';
-        echo '</td>';
-        echo '<td>6<br> e<br>e';
-        echo '</td>';
-        echo '<td>6<br> g';
-        echo '</td>';
-        echo '<td>6<br> s<br>p';
-        echo '</td>';
         echo '</tr>';
 
         $id = '';
@@ -358,7 +348,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         	$query_m .= $room_id;
 	}
 
-	$query_m .= " AND evaluations.progression > 0.9 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
+	$query_m .= " AND evaluations.progression > 0.9 AND progression < 21 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
 	//error_log($query_m);
