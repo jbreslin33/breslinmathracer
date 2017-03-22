@@ -1358,6 +1358,31 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.md.c.5.
 
 
 insert into evaluations (id,description) values (1055,'5.g');
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_1',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_2',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_3',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_4',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_5',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.1_6',1055); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.2_1',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.2_2',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.2_3',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.2_4',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.a.2_5',1055); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.3_1',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.3_2',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.3_3',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.3_4',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.3_5',1055); 
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.4_1',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.4_2',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.4_3',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.4_4',1055); 
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.g.b.4_5',1055); 
+
 
 --update evals
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (13,13,'k.oa.a.4',1) where description = 'k_cc';
