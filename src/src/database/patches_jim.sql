@@ -1423,8 +1423,8 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 --keep runing if you want for update
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ns.a.1',0.61,80,75,70,65,59) where description = '6_rp';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ee.a.1',0.62,80,75,70,65,59) where description = '6_ns';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.g.a.1',0,63,80,75,70,65,59) where description = '6_ee';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.sp.a.1',0,64,80,75,70,65,59) where description = '6_g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.g.a.1',0.63,80,75,70,65,59) where description = '6_ee';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.sp.a.1',0.64,80,75,70,65,59) where description = '6_g';
 --so it cant be completed set it too high...
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (13,13,'7.rp.a.1',0.65,80,75,70,65,59) where description = '6_sp';
 
