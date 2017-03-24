@@ -86,19 +86,19 @@ else
 
 }
 
-$team_flag = 0;
-if (isset($_POST["team_flag"]))
+$multi_flags[] = 0;
+if (isset($_POST["multi_flags"]))
 {
-        $team_flag = $_POST["team_flag"];
+        $multi_flags[] = $_POST["multi_flags"];
 }
 
-else if (isset($_GET['team_flag']))
+else if (isset($_GET['multi_flags']))
 {
-        $team_flag = $_GET['team_flag'];
+        $multi_flags[] = $_GET['multi_flags'];
 }
 else
 {
-        $team_flag = 0;
+        $multi_flags[] = 0;
 }
 
 
@@ -147,6 +147,31 @@ $new_end[] = 33; //5
 $new_end[] = 33;
 $new_end[] = 33;
 $new_end[] = 33;
+
+function isChecked($chkname,$value)
+{
+	if(!empty($_POST[$chkname]))
+	{
+		foreach($_POST[$chkname] as $chkval)
+		{
+			if($chkval == $value)
+			{
+				return true;
+			}
+		}
+	}
+        if(!empty($_GET[$chkname]))
+        {
+                foreach($_POST[$chkname] as $chkval)
+                {
+                        if($chkval == $value)
+                        {
+                                return true;
+                        }
+                }
+        }
+	return false;
+}
         
 //------------------EVALUATIONS------------------------------
 $query_e = "select * from evaluations where progression > 0.9 AND progression < 21 order by progression asc;";
@@ -236,28 +261,14 @@ for($i = 0; $i < $numrows; $i++)
 <input id="end_date" type="text" name="end_date" value="<?php echo htmlentities($end_date); ?>"  onchange="loadAgain()">
 
 
-<select id="team_flag" name="team_flag" onchange="loadAgain()">
-<?php
-$team_flag_array = array();
-$team_flag_array[] = "team"; // 012
-$team_flag_array[] = "solo"; //2
-
-//echo "<option selected=\"selected\"> \"solo\" </option>";
-for($i = 0; $i < sizeof($team_flag_array); $i++)
-{
-        if ($team_flag_array[$i] == $team_flag)
-        {
-                echo "<option selected=\"selected\" value=\"$team_flag_array[$i]\"> $team_flag_array[$i] </option>";
-        }
-        else
-        {
-                echo "<option value=\"$team_flag_array[$i]\"> $team_flag_array[$i] </option>";
-        }
-}
-
-?>
-</select>
-
+<input type="checkbox" name="multi_flags[]" value="rank"> rank  </>
+<input type="checkbox" name="multi_flags[]" value="today"> today </>
+<input type="checkbox" name="multi_flags[]" value="grade"> grade  </>
+<input type="checkbox" name="multi_flags[]" value="est_pre_grade"> est_pre_grade  </>
+<input type="checkbox" name="multi_flags[]" value="est_grade"> est_grade </>
+<input type="checkbox" name="multi_flags[]" value="score"> score  </>
+<input type="checkbox" name="multi_flags[]" value="standard"> standard </>
+<input type="checkbox" name="multi_flags[]" value="team"> team </>
 
 </form>
 
@@ -268,9 +279,9 @@ function loadAgain()
         var w = document.getElementById("room_id").value;
         var x = document.getElementById("start_date").value;
         var y = document.getElementById("end_date").value;
-        var z = document.getElementById("team_flag").value;
+        var z = document.getElementsByName("multi_flags[]");
 
-        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&team_flag=' + z;
+        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&multi_flags=' + z;
 }
 </script>
 
@@ -466,7 +477,9 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 
 				//lets split and check here
 
-				if ($team_flag == "team")
+				//error_log($multi_flags[0]);
+				//error_log($multi_flags[1]);
+				if (isChecked('multi_flags[]','team'))
 				{
 					if ($row_m[6] != "") //is there a teammate
 					{
