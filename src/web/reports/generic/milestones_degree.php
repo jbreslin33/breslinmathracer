@@ -239,10 +239,10 @@ for($i = 0; $i < $numrows; $i++)
 <select id="team_flag" name="team_flag" onchange="loadAgain()">
 <?php
 $team_flag_array = array();
-$team_flag_array[] = "solo"; //2
 $team_flag_array[] = "team"; // 012
+$team_flag_array[] = "solo"; //2
 
-echo "<option selected=\"selected\" value=\"0\"> \"Select Mode\" </option>";
+//echo "<option selected=\"selected\"> \"solo\" </option>";
 for($i = 0; $i < sizeof($team_flag_array); $i++)
 {
         if ($team_flag_array[$i] == $team_flag)
