@@ -85,6 +85,23 @@ else
 {
 
 }
+
+$team_flag = 0;
+if (isset($_POST["team_flag"]))
+{
+        $team_flag = $_POST["team_flag"];
+}
+
+else if (isset($_GET['team_flag']))
+{
+        $team_flag = $_GET['team_flag'];
+}
+else
+{
+        $team_flag = 0;
+}
+
+
 echo "<br>";
 
 $bonus_array[] = 0; //
@@ -218,20 +235,42 @@ for($i = 0; $i < $numrows; $i++)
 <b>END DATE:</b>
 <input id="end_date" type="text" name="end_date" value="<?php echo htmlentities($end_date); ?>"  onchange="loadAgain()">
 
+
+<select id="team_flag" name="team_flag" onchange="loadAgain()">
+<?php
+$team_flag_array = array();
+$team_flag_array[] = "team"; // 012
+$team_flag_array[] = "solo"; //2
+
+echo "<option selected=\"selected\" value=\"0\"> \"Select Mode\" </option>";
+for($i = 0; $i < sizeof($team_flag_array); $i++)
+{
+        if ($team_flag_array[$i] == $team_flag)
+        {
+                echo "<option selected=\"selected\" value=\"$team_flag_array[$i]\"> $team_flag_array[$i] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$team_flag_array[$i]\"> $team_flag_array[$i] </option>";
+        }
+}
+
+?>
+</select>
+
+
 </form>
 
 
 <script>
 function loadAgain()
 {
-    	//var y = document.getElementById("room_id").value;
-	//document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + y; 
+        var w = document.getElementById("room_id").value;
+        var x = document.getElementById("start_date").value;
+        var y = document.getElementById("end_date").value;
+        var z = document.getElementById("team_flag").value;
 
-        var x = document.getElementById("room_id").value;
-        var y = document.getElementById("start_date").value;
-        var z = document.getElementById("end_date").value;
-
-        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + x + '&start_date=' + y + '&end_date=' + z;
+        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&team_flag=' + z;
 }
 </script>
 
