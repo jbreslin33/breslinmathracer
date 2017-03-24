@@ -387,7 +387,8 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         	$query_m .= $room_id;
 	}
 
-	$query_m .= " AND evaluations.progression > 0.9 AND progression < 21 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.teammate_id,
+	//$query_m .= " AND evaluations.progression > 0.9 AND progression < 21 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.teammate_id,
+	$query_m .= " AND evaluations.progression > 0.9 AND progression < 21 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.teammate_id,
 evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
@@ -462,12 +463,36 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 			for ($p = 0; $p < $numrows_e; $p++)
 			{
                 		$row_e = pg_fetch_array($result_e, $p);
-				if ($id == $row_m[0] && $row_m[3] == $row_e[1]) //do we have a user and ms match?
+
+				//lets split and check here
+
+				if ($team_flag == "team")
 				{
-					if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
+					if ($row_m[6] != "") //is there a teammate
 					{
-						$row[intval($p + 5)] = $row_m[5];
+						if ($row_m[3] == $row_e[1]) //ms match?
+						{
+							if ($id == $row_m[0] || $id == $row_m[6]) //do we have a user or teammate match?
+							{
+								if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
+								{
+									$row[intval($p + 5)] = $row_m[5];
+								}
+							}
+						}
 					}
+					//error_log("team");
+				}
+				else 
+				{
+					if ($id == $row_m[0] && $row_m[3] == $row_e[1] && $row_m[6] == "") //do we have a user and ms match?
+					{
+						if ($row[intval($p + 5)] < $row_m[5]) //less than new comming in
+						{
+							$row[intval($p + 5)] = $row_m[5];
+						}
+					}
+					//error_log("solo");
 				}
 			}	
 		}
