@@ -86,21 +86,20 @@ else
 
 }
 
-$multi_flags[] = 0;
-if (isset($_POST["multi_flags"]))
+$team = 0;
+if (isset($_POST["team"]))
 {
-        $multi_flags[] = $_POST["multi_flags"];
+        $team = $_POST["team"];
 }
 
-else if (isset($_GET['multi_flags']))
+else if (isset($_GET['team']))
 {
-        $multi_flags[] = $_GET['multi_flags'];
+        $team = $_GET['team'];
 }
 else
 {
-        $multi_flags[] = 0;
+        $team = 0;
 }
-
 
 echo "<br>";
 
@@ -150,16 +149,21 @@ $new_end[] = 33;
 
 function isChecked($chkname,$value)
 {
+	error_log($_POST[$chkname]);
 	if(!empty($_POST[$chkname]))
 	{
+		error_log($_POST[$chkname]);
 		foreach($_POST[$chkname] as $chkval)
 		{
+			error_log($chkval);
 			if($chkval == $value)
 			{
+				error_log('trued');
 				return true;
 			}
 		}
 	}
+/*
         if(!empty($_GET[$chkname]))
         {
                 foreach($_POST[$chkname] as $chkval)
@@ -170,6 +174,7 @@ function isChecked($chkname,$value)
                         }
                 }
         }
+*/
 	return false;
 }
         
@@ -261,14 +266,14 @@ for($i = 0; $i < $numrows; $i++)
 <input id="end_date" type="text" name="end_date" value="<?php echo htmlentities($end_date); ?>"  onchange="loadAgain()">
 
 
-<input type="checkbox" name="multi_flags[]" value="rank"> rank  </>
-<input type="checkbox" name="multi_flags[]" value="today"> today </>
-<input type="checkbox" name="multi_flags[]" value="grade"> grade  </>
-<input type="checkbox" name="multi_flags[]" value="est_pre_grade"> est_pre_grade  </>
-<input type="checkbox" name="multi_flags[]" value="est_grade"> est_grade </>
-<input type="checkbox" name="multi_flags[]" value="score"> score  </>
-<input type="checkbox" name="multi_flags[]" value="standard"> standard </>
-<input type="checkbox" name="multi_flags[]" value="team"> team </>
+<input id="rank" type="checkbox" name="rank" value="rank"> rank  </>
+<input id="today" type="checkbox" name="today" value="today"> today </>
+<input id="grade" type="checkbox" name="grade" value="grade"> grade  </>
+<input id="est_pre_grade" type="checkbox" name="est_pre_grade" value="est_pre_grade"> est_pre_grade  </>
+<input id="est_grade" type="checkbox" name="est_grade" value="est_grade"> est_grade </>
+<input id="score" type="checkbox" name="score" value="score"> score  </>
+<input id="standard" type="checkbox" name="standard" value="standard"> standard </>
+<input id="team" type="checkbox" name="team" value="team"> team </>
 
 </form>
 
@@ -279,9 +284,9 @@ function loadAgain()
         var w = document.getElementById("room_id").value;
         var x = document.getElementById("start_date").value;
         var y = document.getElementById("end_date").value;
-        var z = document.getElementsByName("multi_flags[]");
+        var z = document.getElementById("team").value;
 
-        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&multi_flags=' + z;
+        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&team=' + z;
 }
 </script>
 
@@ -477,9 +482,7 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 
 				//lets split and check here
 
-				//error_log($multi_flags[0]);
-				//error_log($multi_flags[1]);
-				if (isChecked('multi_flags[]','team'))
+				if ($team == "team")
 				{
 					if ($row_m[6] != "") //is there a teammate
 					{
