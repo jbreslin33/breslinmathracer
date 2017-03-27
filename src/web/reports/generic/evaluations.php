@@ -104,7 +104,7 @@ else
 echo "<br>";
 
 //------------------EVALUATIONS------------------------------
-$query_e = "select * from evaluations where progression > 0.9 AND progression < 21 order by progression asc;";
+$query_e = "select * from evaluations where progression > 0.1 AND progression < 0.99 order by progression asc;";
 $result_e = pg_query($conn,$query_e);
 $numrows_e = pg_numrows($result_e);
 //------------------END EVALUATIONS------------------------------
@@ -194,62 +194,25 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>Last Name';
         echo '</td>';
-        echo '<td>k<br>c<br>c';
+        echo '<td>5<br>o<br>a';
         echo '</td>';
-        echo '<td>k<br>o<br>a<br>a<br>4';
+        echo '<td>5<br>n<br>b<br>t';
         echo '</td>';
-        echo '<td>k<br>o<br>a<br>a<br>5';
+        echo '<td>5<br>n<br>f';
         echo '</td>';
-        echo '<td>1<br> o<br>a<br> b<br> 3';
+        echo '<td>5<br>m<br>d';
         echo '</td>';
-        echo '<td>1<br> o<br>a<br> c<br> 6';
-        
+        echo '<td>5<br>g';
         echo '</td>';
-        echo '<td>1<br> n<br>b<br>t';
+        echo '<td>6<br>r<br>p';
         echo '</td>';
-        echo '<td>2<br> o<br>a<br> b<br> 2';
+        echo '<td>6<br>n<br>s';
         echo '</td>';
-        echo '<td>2<br> n<br>b<br>t';
+        echo '<td>6<br>e<br>e';
         echo '</td>';
-        echo '<td>5';
+        echo '<td>6<br>g<br>';
         echo '</td>';
-        echo '<td>2';
-        echo '</td>';
-        echo '<td>4';
-        echo '</td>';
-        echo '<td>8';
-        echo '</td>';
-        echo '<td>3';
-        echo '</td>';
-        echo '<td>6';
-        echo '</td>';
-        echo '<td>9';
-        echo '</td>';
-        echo '<td>7';
-        echo '</td>';
-	echo '<td>3<br> o<br>a<br> c<br> 7';
-        echo '</td>';
-        echo '<td>3<br> n<br>b<br>t';
-        echo '</td>';
-        echo '<td>4<br> o<br>a<br> b<br> 4';
-        echo '</td>';
-        echo '<td>4<br> n<br>b<br>t<br> b<br> 4';
-        echo '</td>';
-        echo '<td>4 <br>n<br>b<br>t<br> b <br>5';
-        echo '</td>';
-        echo '<td>4<br> n<br>b<br>t <br>b<br> 6';
-        echo '</td>';
-        echo '<td>4<br> n<br>f<br> b<br> 3<br> c';
-        echo '</td>';
-        echo '<td>5<br> o<br>a <br>a<br> 1';
-        echo '</td>';
-        echo '<td>5<br> n<br>b<br>t <br>b<br> 5';
-        echo '</td>';
-        echo '<td>5<br> n<br>b<br>t<br> b <br>6';
-        echo '</td>';
-        echo '<td>5<br> n<br>b<br>t<br> b<br> 7';
-        echo '</td>';
-        echo '<td>5<br> n<br>f<br> a<br> 1';
+        echo '<td>6<br>s<br>p';
         echo '</td>';
         echo '</tr>';
 
@@ -274,8 +237,7 @@ COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUN
         	$query_m .= $room_id;
 	}
 
-	//$query_m .= " AND evaluations.progression > 0.9 AND progression < 21 AND evaluations_attempts.teammate_id is NULL group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.teammate_id,
-	$query_m .= " AND evaluations.progression > 0.9 AND progression < 21 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.teammate_id,
+	$query_m .= " AND evaluations.progression > 0.1 AND progression < 0.99 group by evaluations_attempts, evaluations.progression, evaluations.description, users.id, users.first_name, users.last_name, evaluations_attempts.teammate_id,
 evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order by sub.last_name, sub.progression;";
         $result_m = pg_query($conn,$query_m);
         $numrows_m = pg_numrows($result_m);
