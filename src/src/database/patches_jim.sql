@@ -1,6 +1,9 @@
 --add table
 delete from evaluations_items;
 
+
+
+
 --insert
 --k_cc
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.cc.a.1_1',25);
@@ -1438,6 +1441,21 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (15,15,'',8.6,100,88,76,64,59) where description = 'timestables_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (15,15,'',8.7,100,88,76,64,59) where description = 'timestables_9';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (15,15,'',8.8,100,88,76,64,59) where description = 'timestables_7';
+
+--update evaluations progression
+update evaluations SET (progression) = (0.01) where description = 'normal';
+update evaluations SET (progression) = (0.02) where description = 'practice';
+update evaluations SET (progression) = (0.03) where description = 'Test';
+update evaluations SET (progression) = (0.04) where description = 'Test';
+update evaluations SET (progression) = (0.05) where description = 'Homework';
+update evaluations SET (progression) = (0.06) where description = 'The Super Izzy';
+update evaluations SET (progression) = (0.07) where description = 'Test Prep';
+
+update evaluations SET (progression) = (0.0051) where description = 'Terra Nova';
+update evaluations SET (progression) = (0.0052) where description = 'Terra Nova 2';
+update evaluations SET (progression) = (0.0053) where description = 'Terra Nova 3';
+update evaluations SET (progression) = (0.0054) where description = 'Terra Nova 4';
+update evaluations SET (progression) = (0.0055) where description = 'Terra Nova 5';
 
 
 
