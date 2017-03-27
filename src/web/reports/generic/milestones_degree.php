@@ -320,24 +320,31 @@ else
 
 echo '<table border=\"1\">';
         echo '<tr>';
-        echo '<td>Rank';
-        echo '</td>';
+
+	if ($extras_flag == "extras")
+	{
+        	echo '<td>Rank';
+        	echo '</td>';
+	}
         echo '<td>First Name';
         echo '</td>';
         echo '<td>Last Name';
         echo '</td>';
-        echo '<td>Today';
-        echo '</td>';
-        echo '<td>Grade';
-        echo '</td>';
-        echo '<td>pre-grade';
-        echo '</td>';
-        echo '<td>grade';
-        echo '</td>';
-        echo '<td>Score';
-        echo '</td>';
-        echo '<td>Standard';
-        echo '</td>';
+	if ($extras_flag == "extras")
+	{
+        	echo '<td>Today';
+        	echo '</td>';
+        	echo '<td>Grade';
+        	echo '</td>';
+        	echo '<td>pre-grade';
+        	echo '</td>';
+        	echo '<td>grade';
+        	echo '</td>';
+        	echo '<td>Score';
+        	echo '</td>';
+        	echo '<td>Standard';
+        	echo '</td>';
+	}
         echo '<td>k<br>c<br>c';
         echo '</td>';
         echo '<td>k<br>o<br>a<br>a<br>4';
@@ -531,143 +538,145 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 		}
 
                 echo '<tr>';
-                echo '<td>';
-                echo $i + 1;
-                echo '</td>';
+		if ($extras_flag == "extras")
+		{
+                	echo '<td>';
+                	echo $i + 1;
+                	echo '</td>';
+		}
                 echo '<td>';
                 echo $firstName;
                 echo '</td>';
                 echo '<td>';
                 echo $lastName;
                 echo '</td>';
-                echo '<td>';
-                echo $today;
-                echo '</td>';
+		if ($extras_flag == "extras")
+		{
+                	echo '<td>';
+                	echo $today;
+                	echo '</td>';
+ 			echo '<td>';
+			$raw_grade = 60;
 
- 		echo '<td>';
-
-		$raw_grade = 60;
-
-		//1st  thru k 
-		$raw_grade = calc_raw_grade($core_grades_id,$row,$result_e);
-                echo $raw_grade;
-                echo '</td>';
+			//1st  thru k 
+			$raw_grade = calc_raw_grade($core_grades_id,$row,$result_e);
+                	echo $raw_grade;
+                	echo '</td>';
 
 //BEGIN PRE DATE 
-		$r = $raw_grade - 60;
+			$r = $raw_grade - 60;
 
 
-                //get total days since start
-               	$now = time(); // or your date as well
-                $start_date = strtotime("2016-09-12");
-                $datediff_seconds = $now - $start_date;
-                $diff_days = floor($datediff_seconds / (60 * 60 * 24));
+       	         	//get total days since start
+               		$now = time(); // or your date as well
+                	$start_date = strtotime("2016-09-12");
+                	$datediff_seconds = $now - $start_date;
+                	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
-                //get percent complete thus far
-                $p = round($r / 40 * 100);
+                	//get percent complete thus far
+                	$p = round($r / 40 * 100);
 
-		$ratio = 99;
+			$ratio = 99;
                 
-		//get a ratio to use to multiply by total days since start
-		if ($p != 0)
-		{	
-                       	$ratio = floatval(100 / $p);
-		}
+			//get a ratio to use to multiply by total days since start
+			if ($p != 0)
+			{	
+               	        	$ratio = floatval(100 / $p);
+			}
 
-                //get est days to complete from start date
-                $est_days_from_start = round($ratio * $diff_days);
+               	 	//get est days to complete from start date
+                	$est_days_from_start = round($ratio * $diff_days);
 
-                $addto = $est_days_from_start - $diff_days;
+                	$addto = $est_days_from_start - $diff_days;
 
-                $add_days = "+";
-                $add_days .= $addto;
-                $add_days .= " day";
+                	$add_days = "+";
+                	$add_days .= $addto;
+                	$add_days .= " day";
 
-                $date = strtotime($add_days);
-                $estdate = date('M d, Y', $date);
+                	$date = strtotime($add_days);
+                	$estdate = date('M d, Y', $date);
 
-                //$cut_date = strtotime("2016-12-22");
-                $cut_date = strtotime("now"); 
-                $class_date = strtotime($estdate);
-                if ($cut_date > $class_date)
-                {
-                        echo '<td bgcolor="green">';
-                        echo $estdate;
-                        echo '</td>';
-                }
-                else //#ffe6e6
-                {
-                        echo '<td bgcolor="red">';
-                        echo $estdate;
-                        echo '</td>';
-                }
+                	$cut_date = strtotime("now"); 
+                	$class_date = strtotime($estdate);
+                	if ($cut_date > $class_date)
+                	{
+                       		echo '<td bgcolor="green">';
+                        	echo $estdate;
+                        	echo '</td>';
+                	}
+                	else //#ffe6e6
+                	{
+                        	echo '<td bgcolor="red">';
+                        	echo $estdate;
+                        	echo '</td>';
+                	}
 //END PRED DATE
 
 //BEGIN CALC RAW GRADE NEW
-		$raw_grade_new = calc_raw_grade_new($core_grades_id,$row,$result_e);
+			$raw_grade_new = calc_raw_grade_new($core_grades_id,$row,$result_e);
 
 //END CALC RAW GRADE NEW
 
 
 //BEGIN GRADE DATE
-                $r = $raw_grade_new - 60;
+                	$r = $raw_grade_new - 60;
 
-                //get total days since start
-                $now = time(); // or your date as well
-                $start_date = strtotime("2016-09-12");
-                $datediff_seconds = $now - $start_date;
-                $diff_days = floor($datediff_seconds / (60 * 60 * 24));
+                	//get total days since start
+                	$now = time(); // or your date as well
+                	$start_date = strtotime("2016-09-12");
+                	$datediff_seconds = $now - $start_date;
+                	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
-                //get percent complete thus far
-                $p = round($r / 40 * 100);
+               		//get percent complete thus far
+                	$p = round($r / 40 * 100);
 
-                $ratio = 99;
+                	$ratio = 99;
                 
-                //get a ratio to use to multiply by total days since start
-                if ($p != 0)
-                {
-                        $ratio = floatval(100 / $p);
-                }
+                	//get a ratio to use to multiply by total days since start
+                	if ($p != 0)
+                	{
+                        	$ratio = floatval(100 / $p);
+                	}
 
-                //get est days to complete from start date
-                $est_days_from_start = round($ratio * $diff_days);
+                	//get est days to complete from start date
+                	$est_days_from_start = round($ratio * $diff_days);
 
-                $addto = $est_days_from_start - $diff_days;
+                	$addto = $est_days_from_start - $diff_days;
 
-                $add_days = "+";
-                $add_days .= $addto;
-                $add_days .= " day";
+     	           	$add_days = "+";
+                	$add_days .= $addto;
+                	$add_days .= " day";
 
-                $date = strtotime($add_days);
-                $estdate = date('M d, Y', $date);
+                	$date = strtotime($add_days);
+                	$estdate = date('M d, Y', $date);
 
-                $cut_date = strtotime("2017-06-01");
-                $class_date = strtotime($estdate);
-                if ($cut_date > $class_date)
-                {
-                        echo '<td bgcolor="green">';
-                        echo $estdate;
-                        echo '</td>';
-                }
-                else
-                {
-                        echo '<td bgcolor="red">';
-                        echo $estdate;
-                        echo '</td>';
-                }
+                	$cut_date = strtotime("2017-06-01");
+                	$class_date = strtotime($estdate);
+                	if ($cut_date > $class_date)
+                	{
+                       		echo '<td bgcolor="green">';
+                        	echo $estdate;
+                        	echo '</td>';
+                	}
+                	else
+                	{
+                        	echo '<td bgcolor="red">';
+                        	echo $estdate;
+                        	echo '</td>';
+                	}
 
 
 //END GRADE DATE
 
-		$total_raw_grade += $raw_grade;
+			$total_raw_grade += $raw_grade;
 
-                echo '<td>';
-                echo $score;
-                echo '</td>';
-                echo '<td>';
-                echo $core_standards_id;
-                echo '</td>';
-		
+                	echo '<td>';
+                	echo $score;
+                	echo '</td>';
+                	echo '<td>';
+                	echo $core_standards_id;
+                	echo '</td>';
+		}	
 		for ($e = 0; $e < $numrows_e; $e++)
 		{
                 	$row_e = pg_fetch_array($result_e, $e);
@@ -719,18 +728,21 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 
         pg_free_result($result);
         echo '</table>';
-	
-	$avg = round($total_raw_grade / $i);
-	$tmp = $avg - 60;
-	$pct = $tmp / 40;
+		
+	if ($extras_flag == "extras")
+	{
+		$avg = round($total_raw_grade / $i);
+		$tmp = $avg - 60;
+		$pct = $tmp / 40;
 
-	$avg_txt = 'PERCENT COMPLETE: %';
-	$pct = $pct * 100;
-	$avg_txt .= $pct; 
-	$avg_txt .= '   ';
-	$avg_txt .= 'CLASS AVERAGE GRADE: %';
-	$avg_txt .= $avg;
-	echo $avg_txt;
+		$avg_txt = 'PERCENT COMPLETE: %';
+		$pct = $pct * 100;
+		$avg_txt .= $pct; 
+		$avg_txt .= '   ';
+		$avg_txt .= 'CLASS AVERAGE GRADE: %';
+		$avg_txt .= $avg;
+		echo $avg_txt;
+	}
 }
 ?>
 
