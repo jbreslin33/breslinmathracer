@@ -101,6 +101,20 @@ else
         $team_flag = 0;
 }
 
+$extras_flag = 0;
+if (isset($_POST["extras_flag"]))
+{
+        $extras_flag = $_POST["extras_flag"];
+}
+
+else if (isset($_GET['extras_flag']))
+{
+        $extras_flag = $_GET['extras_flag'];
+}
+else
+{
+        $extras_flag = 0;
+}
 
 echo "<br>";
 
@@ -242,7 +256,6 @@ $team_flag_array = array();
 $team_flag_array[] = "team"; // 012
 $team_flag_array[] = "solo"; //2
 
-//echo "<option selected=\"selected\"> \"solo\" </option>";
 for($i = 0; $i < sizeof($team_flag_array); $i++)
 {
         if ($team_flag_array[$i] == $team_flag)
@@ -254,7 +267,26 @@ for($i = 0; $i < sizeof($team_flag_array); $i++)
                 echo "<option value=\"$team_flag_array[$i]\"> $team_flag_array[$i] </option>";
         }
 }
+?>
+</select>
 
+<select id="extras_flag" name="extras_flag" onchange="loadAgain()">
+<?php
+$extras_flag_array = array();
+$extras_flag_array[] = "extras"; 
+$extras_flag_array[] = "no extras"; 
+
+for($i = 0; $i < sizeof($extras_flag_array); $i++)
+{
+        if ($extras_flag_array[$i] == $extras_flag)
+        {
+                echo "<option selected=\"selected\" value=\"$extras_flag_array[$i]\"> $extras_flag_array[$i] </option>";
+        }
+        else
+        {
+                echo "<option value=\"$extras_flag_array[$i]\"> $extras_flag_array[$i] </option>";
+        }
+}
 ?>
 </select>
 
@@ -269,14 +301,15 @@ function loadAgain()
         var x = document.getElementById("start_date").value;
         var y = document.getElementById("end_date").value;
         var z = document.getElementById("team_flag").value;
+        var a = document.getElementById("extras_flag").value;
 
-        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&team_flag=' + z;
+        document.location.href = '/web/reports/generic/milestones_degree.php?room_id=' + w + '&start_date=' + x + '&end_date=' + y + '&team_flag=' + z + '&extras_flag=' + a;
 }
 </script>
 
 <?php
 
-
+error_log($extras_flag);
 
 if ($room_id == 0)
 {
