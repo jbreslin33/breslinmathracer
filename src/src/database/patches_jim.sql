@@ -1403,20 +1403,20 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'4.oa.a.1',10) where description = '3_nbt';
 
 
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nbt.b.4',11,71,68,65,62,59) where description = '4_oa_b_4';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.4',11,71,68,65,62,59) where description = '4_oa_b_4';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.6',13,80,75,70,65,59) where description = '4_nbt_b_5';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'4.nf.b.3.c',14,79,74,69,64,59) where description = '4_nbt_b_6';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nf.b.3.c',14,79,74,69,64,59) where description = '4_nbt_b_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.oa.a.1',15,80,75,70,65,59) where description = '4_nf_b_3_c';
 
 --grade 5
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'5.nbt',0.51,80,75,70,65,59) where description = '5.oa';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'5.nf',0.52,80,75,70,65,59) where description = '5.nbt';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'5.md',0.53,80,75,70,65,59) where description = '5.nf';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'5.g',0.54,80,75,70,65,59) where description = '5.md';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.rp',0.55,80,75,70,65,59) where description = '5.g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'5.nbt',0.51,80,75,70,65,59) where description = '5.oa';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'5.nf',0.52,80,75,70,65,59) where description = '5.nbt';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'5.md',0.53,80,75,70,65,59) where description = '5.nf';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'5.g',0.54,80,75,70,65,59) where description = '5.md';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'6.rp',0.55,80,75,70,65,59) where description = '5.g';
 
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'5.nbt.b.5',16,69,67,65,63,59) where description = '5_oa_a_1';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'5.nbt.b.5',16,69,67,65,63,59) where description = '5_oa_a_1';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (2,2,'5.nbt.b.6',17,80,75,70,65,59) where description = '5_nbt_b_5';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (4,4,'5.nbt.b.7',18) where description = '5_nbt_b_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.nf.a.1',19,80,75,70,65,59) where description = '5_nbt_b_7';
@@ -1424,10 +1424,10 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 
 
 --keep runing if you want for update
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ns.a.1',0.61,80,75,70,65,59) where description = '6_rp';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.ee.a.1',0.62,80,75,70,65,59) where description = '6_ns';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.g.a.1',0.63,80,75,70,65,59) where description = '6_ee';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (10,10,'6.sp.a.1',0.64,80,75,70,65,59) where description = '6_g';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'6.ns.a.1',0.61,80,75,70,65,59) where description = '6_rp';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'6.ee.a.1',0.62,80,75,70,65,59) where description = '6_ns';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'6.g.a.1',0.63,80,75,70,65,59) where description = '6_ee';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'6.sp.a.1',0.64,80,75,70,65,59) where description = '6_g';
 --so it cant be completed set it too high...
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (13,13,'7.rp.a.1',0.65,80,75,70,65,59) where description = '6_sp';
 
