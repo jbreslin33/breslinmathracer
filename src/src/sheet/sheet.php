@@ -87,7 +87,7 @@ var Sheet = new Class(
 		//create item attempt and set eval id	
                 var itemAttempt = new ItemAttempt(item);
 		item.setItemAttempt(itemAttempt);	
-                itemAttempt.setEvaluationsID(APPLICATION.mEvaluationsID);
+                //itemAttempt.setEvaluationsID(APPLICATION.mEvaluationsID);
 
 		//arrays
                 APPLICATION.mItemArray.push(item);

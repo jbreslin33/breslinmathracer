@@ -5,6 +5,8 @@ Extends: Sheet,
 initialize: function(game)
 {
 	this.parent(game);
+
+	APPLICATION.log('not getting called right');
 	
 	var a = Math.floor(Math.random()*6);
         if (a == 0)
@@ -124,6 +126,7 @@ pickItem: function()
         }
         else
         {
+		APPLICATION.log('is this getting called to set to 41');
                 APPLICATION.mEvaluationsID = 41;
         }
 },

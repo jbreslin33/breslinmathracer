@@ -114,6 +114,7 @@ var Hud = new Class(
 	{
 		if (APPLICATION.mHud.mHome.mMesh.options[APPLICATION.mHud.mHome.mMesh.selectedIndex].text == "Main Menu")
 		{
+			APPLICATION.log('catch me outside how bout that');
 			APPLICATION.mEvaluationsID = 41;
 		}
 /*

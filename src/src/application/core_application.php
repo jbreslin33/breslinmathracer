@@ -1306,6 +1306,7 @@ Extends: Application,
                                 }
                         }
                 }
+		//APPLICATION.log('evaluations_id:' + evaluations_id);
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=" + evaluations_id + "&itemtypesid=" + itemtypesid + "&question=" + question + "&answers=" + answers + "&datenow=" + datenow + "&score=" + score + "&unmastered=" + unmastered,true);
                 xmlhttp.send();
         },
@@ -1338,7 +1339,6 @@ Extends: Application,
                                 }
                         }
                 }
-                //xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mStandard,true);
                 xmlhttp.open("POST","../../src/php/application/core_application.php?code=101&itemattemptid=" + itemattemptid + "&transactioncode=" + transactioncode + "&answer=" + answer + "&highest=" + APPLICATION.mStandard + "&teammateid=" + APPLICATION.mTeammateID,true);
                 xmlhttp.send();
         },
