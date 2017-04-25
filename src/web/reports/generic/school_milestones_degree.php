@@ -807,9 +807,9 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	$h = 0;
 	for ($h = $g; $h < intval(sizeof($rank_array)); $h++)
 	{
-		if (intval($percent_complete_array[$h]) > intval($highest_number))
+		if (intval($percent_complete_new_array[$h]) > intval($highest_number))
 		{
-			$highest_number = $percent_complete_array[$h];
+			$highest_number = $percent_complete_new_array[$h];
 			$highest_element = $h;
 		}
 	}
