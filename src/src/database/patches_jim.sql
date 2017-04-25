@@ -807,7 +807,8 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('6.ee.c.9_
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.1_1',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.1_2',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_1',39);
-insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_2',39);
+--insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_2',39);
+delete from evaluations_items where evaluations_id = 39 AND item_types_id = '6.g.a.2_2';
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_3',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_4',39);
 insert into evaluations_items (item_types_id, evaluations_id) values ('6.g.a.2_5',39);
