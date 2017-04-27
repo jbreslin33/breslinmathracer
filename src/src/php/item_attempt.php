@@ -36,6 +36,12 @@ public function insert()
 		return;	
 	}
 
+	if ($this->mQuestion == 'Welcome to Mathcore! Menu is in drop down at top left.')
+	{
+		return;
+	}
+
+
 	$db = new DatabaseConnection();
  	$insert = "insert into item_attempts (start_time,evaluations_attempts_id,transaction_code,item_types_id,question,answers) VALUES (CURRENT_TIMESTAMP,";
         $insert .= $this->mApplication->mEvaluationsAttempt->mID;
