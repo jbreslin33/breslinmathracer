@@ -110,10 +110,12 @@ execute: function(itemAttempt)
 	}
 
 	//if its been 5 seconds AND you dont have a confirmation by getting a mID from server then resend....
+/*
         if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime && itemAttempt.mID == 0)
         {
 		itemAttempt.mStateMachine.changeState(itemAttempt.mSEND_INSERT);
 	}
+*/
 },
 
 exit: function(itemAttempt)
@@ -178,10 +180,12 @@ execute: function(itemAttempt)
 	{
 		itemAttempt.mStateMachine.changeState(itemAttempt.mITEM_ATTEMPT_END);
 	}
+/*
         if (APPLICATION.mGame.mTimeSinceEpoch > itemAttempt.mCounterStartTime + itemAttempt.mThresholdTime && parseInt(itemAttempt.mUpdateConfirmation) == 0)
 	{
 		itemAttempt.mStateMachine.changeState(itemAttempt.mUPDATE_ITEM_ATTEMPT);
 	}
+*/
 },
 
 exit: function(itemAttempt)
