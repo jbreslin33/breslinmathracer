@@ -38,7 +38,7 @@ $room_id = 1;
 echo "<br>";
 
 //------------------EVALUATIONS------------------------------
-$query_e = "select * from evaluations where progression > 0.9 order by progression asc;";
+$query_e = "select * from evaluations where progression > 0.9 AND progression < 1000 order by progression asc;";
 $result_e = pg_query($conn,$query_e);
 $numrows_e = pg_numrows($result_e);
 //------------------END EVALUATIONS------------------------------
@@ -106,17 +106,9 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>5<br> n<br>b<br>t<br> b<br> 7';
         echo '</td>';
+        echo '<td>D<br>D';
+        echo '</td>';
         echo '<td>5<br> n<br>f<br> a<br> 1';
-        echo '</td>';
-        echo '<td>6<br> r<br>p';
-        echo '</td>';
-        echo '<td>6<br> n<br>s';
-        echo '</td>';
-        echo '<td>6<br> e<br>e';
-        echo '</td>';
-        echo '<td>6<br> g';
-        echo '</td>';
-        echo '<td>6<br> s<br>p';
         echo '</td>';
         echo '</tr>';
 
