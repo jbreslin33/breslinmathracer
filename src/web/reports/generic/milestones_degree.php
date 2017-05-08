@@ -402,6 +402,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>5<br> n<br>b<br>t<br> b<br> 7';
         echo '</td>';
+        echo '<td>D<br>D';
+        echo '</td>';
         echo '<td>5<br> n<br>f<br> a<br> 1';
         echo '</td>';
         echo '</tr>';

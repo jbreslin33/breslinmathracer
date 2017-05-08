@@ -595,10 +595,19 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_8',34);
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_12',34);
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_14',34);
-insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_17',34);
-insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_27',34);
-insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_37',34);
-insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_47',34);
+
+--lets get rid of decimal division from 5.nbt.b.7
+delete from evaluations_items where evaluations_id = 34 AND item_types_id = '5.nbt.b.7_17';
+delete from evaluations_items where evaluations_id = 34 AND item_types_id = '5.nbt.b.7_27';
+delete from evaluations_items where evaluations_id = 34 AND item_types_id = '5.nbt.b.7_37';
+delete from evaluations_items where evaluations_id = 34 AND item_types_id = '5.nbt.b.7_47';
+
+-- got to make these decimal divisions a seperate evaluation
+insert into evaluations (id,description) values (999,'Decimal Division');
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_17',999);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_27',999);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_37',999);
+insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7_47',999);
 
 --5.nf
 insert into evaluations_items (item_types_id, evaluations_id) values ('5.nf.a.1_1',35);
@@ -1420,7 +1429,8 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'5.nbt.b.5',16,69,67,65,63,59) where description = '5_oa_a_1';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (2,2,'5.nbt.b.6',17,80,75,70,65,59) where description = '5_nbt_b_5';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (4,4,'5.nbt.b.7',18) where description = '5_nbt_b_6';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.nf.a.1',19,80,75,70,65,59) where description = '5_nbt_b_7';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'Decimal Division',19,80,75,70,65,59) where description = '5_nbt_b_7';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (4,4,'5.nf.a.1',19.5,80,75,70,65,59) where description = 'Decimal Division';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'6.rp.a.1',20,80,75,70,65,59) where description = '5_nf_a_1';
 
 
