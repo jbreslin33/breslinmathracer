@@ -609,6 +609,18 @@ var Item = new Class(
                         this.mTimesTablesInfo.mMesh.appendChild(optionUE);
                 }
 
+                var optionUDD = document.createElement("option");
+                optionUDD.value = 999;
+                optionUDD.text = 'DD';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionUDD);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionUDD);
+                }
+
                 var optionUF = document.createElement("option");
                 optionUF.value = 35;
                 optionUF.text = '5.nf.a.1';

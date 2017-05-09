@@ -49,7 +49,7 @@ public function execute($bapplication)
 			$bapplication->mCoreStateMachine->changeState($bapplication->mNORMAL_CORE_APPLICATION);
 		}
 	}
-        if ( $bapplication->mCode > 1000 && $bapplication->mCode < 1500)
+        if ( $bapplication->mCode > 998 && $bapplication->mCode < 1500)
         {
                 if ($bapplication->mCoreStateMachine->mCurrentState != $bapplication->mNORMAL_CORE_APPLICATION)
                 {
@@ -465,7 +465,7 @@ public function execute($bapplication)
                 $bapplication->mCode = 0;
 	}
 
-        if ( $bapplication->mCode > 1000 && $bapplication->mCode < 1500)
+        if ( $bapplication->mCode > 998 && $bapplication->mCode < 1500)
         {
                 $itemAttempt = new ItemAttempt($bapplication,$bapplication->mDataArray[1],$bapplication->mDataArray[2],$bapplication->mDataArray[3],$bapplication->mDataArray[4]);
                 $bapplication->mEvaluationsAttempt->mItemAttemptsArray[] = $itemAttempt;
@@ -513,7 +513,7 @@ public function execute($bapplication)
                 	}
                 	$bapplication->mCode = 0;
 		}
-                if ( $bapplication->mEvaluationsID > 1000 && $bapplication->mEvaluationsID < 1500)
+                if ( $bapplication->mEvaluationsID > 998 && $bapplication->mEvaluationsID < 1500)
                 {
                         for ($i=0; $i < count($bapplication->mEvaluationsAttempt->mItemAttemptsArray); $i++)
                         {

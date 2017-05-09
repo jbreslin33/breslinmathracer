@@ -190,7 +190,7 @@ Extends: Application,
 				var questionNumber = this.mGame.mSheet.mCurrentElement + 2;
 				//var questionNumber = this.mGame.mSheet.mCurrentElement;
 		
-				if ( (parseInt(this.mEvaluationsID) > 1 && parseInt(this.mEvaluationsID) < 41) || (parseInt(this.mEvaluationsID) > 1000 && parseInt(this.mEvaluationsID) < 1500)  )
+				if ( (parseInt(this.mEvaluationsID) > 1 && parseInt(this.mEvaluationsID) < 41) || (parseInt(this.mEvaluationsID) > 998 && parseInt(this.mEvaluationsID) < 1500)  )
 				{
 
 					if (APPLICATION.mGame.mSheet.mItem.mTransactionCode == 0)

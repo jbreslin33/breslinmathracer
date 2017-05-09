@@ -44,7 +44,7 @@ initialize: function(game)
 
 pickItem: function()
 {
-	if ( (APPLICATION.mEvaluationsID > 1 && APPLICATION.mEvaluationsID < 41) || (APPLICATION.mEvaluationsID > 1000 && APPLICATION.mEvaluationsID < 1500) )
+	if ( (APPLICATION.mEvaluationsID > 1 && APPLICATION.mEvaluationsID < 41) || (APPLICATION.mEvaluationsID > 998 && APPLICATION.mEvaluationsID < 1500) )
 	{
         	if (this.mCurrentElement < this.mIDArray.length)
         	{
