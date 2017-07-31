@@ -13,15 +13,17 @@ DROP TABLE finer_types;
 DROP TABLE practice_buddy; --you need these make practice more effiecient without adding too many links as other tables will.
 --natural groupings are already the core_standards keep in mind... 
 DROP TABLE prerequisites;
-DROP TABLE evaluations;
+
+DROP TABLE item_types CASCADE;
 
 DROP TABLE evaluations_attempts;
+DROP TABLE evaluations_items;
+DROP TABLE evaluations CASCADE;
 
-DROP TABLE item_types;
 
-DROP TABLE users;
+DROP TABLE users CASCADE;
 
-DROP TABLE core_standards;
+DROP TABLE core_standards CASCADE;
 DROP TABLE core_clusters;
 
 DROP TABLE core_domains_subjects_grades;
@@ -30,6 +32,15 @@ DROP TABLE core_domains;
 DROP TABLE core_subjects_grades;
 DROP TABLE core_grades;
 DROP TABLE core_subjects;
+
+DROP TABLE schools CASCADE;
+DROP TABLE teachers CASCADE;
+DROP TABLE rooms CASCADE;
+DROP TABLE teams CASCADE;
+DROP TABLE matches CASCADE;
+DROP TABLE teams_matches CASCADE;
+DROP TABLE remediate  CASCADE;
+DROP TABLE milestones CASCADE;
 
 DROP table algorithms;
 
