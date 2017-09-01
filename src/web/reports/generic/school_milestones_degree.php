@@ -60,7 +60,7 @@ $query .= " OR name = 'AM7'";
 $query .= " OR name = 'RR3'"; 
 $query .= " OR name = 'RR4'"; 
 $query .= " OR name = 'RR5'"; 
-$query .= " OR name = 'RR6'"; 
+//$query .= " OR name = 'RR6'"; 
 $query .= " OR name = 'RR7'"; 
 $query .= " OR name = 'RR8'"; 
 $query .= " order by name asc;";
@@ -311,10 +311,6 @@ function calc_raw_grade_new($core_grades_id,&$row)
 }
 
 //m
-/*
-        $query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed,  COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, 
-    COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct   from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (";
-*/
 	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed, evaluations.grade_b, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered, COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) +	COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (" ;	
 
 	for($r = 0; $r < $num_rooms; $r++)
