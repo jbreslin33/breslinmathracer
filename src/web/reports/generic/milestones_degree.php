@@ -48,7 +48,7 @@ else if (isset($_GET['start_date']))
 else
 {
         //$start_date = date("Y-m-d");
-        $start_date = date("2016-09-10");
+        $start_date = date("2017-09-10");
 }
 
 //end date
@@ -571,7 +571,7 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 
        	         	//get total days since start
                		$now = time(); // or your date as well
-                	$start_date = strtotime("2016-09-12");
+                	$start_date = strtotime("2017-09-10");
                 	$datediff_seconds = $now - $start_date;
                 	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
@@ -625,7 +625,7 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 
                 	//get total days since start
                 	$now = time(); // or your date as well
-                	$start_date = strtotime("2016-09-12");
+                	$start_date = strtotime("2017-09-10");
                 	$datediff_seconds = $now - $start_date;
                 	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
@@ -652,7 +652,7 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
                 	$date = strtotime($add_days);
                 	$estdate = date('M d, Y', $date);
 
-                	$cut_date = strtotime("2017-06-01");
+                	$cut_date = strtotime("2018-06-01");
                 	$class_date = strtotime($estdate);
                 	if ($cut_date > $class_date)
                 	{
