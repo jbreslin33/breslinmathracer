@@ -1,5 +1,245 @@
 
 /*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_73',2.0273,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__73 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_73';
+        this.setQuestion('' + '18 - 9 =');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_72',2.0272,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__72 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_72';
+        this.setQuestion('' + '17 - 9 =');
+        this.setAnswer('' + '8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_71',2.0271,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__71 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_71';
+        this.setQuestion('' + '17 - 8 =');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_70',2.0270,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__70 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_70';
+        this.setQuestion('' + '16 - 9 =');
+        this.setAnswer('' + '7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_69',2.0269,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__69 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_69';
+        this.setQuestion('' + '16 - 8 =');
+        this.setAnswer('' + '8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_68',2.0268,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__68 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_68';
+        this.setQuestion('' + '16 - 7 =');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_67',2.0267,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__67 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_67';
+        this.setQuestion('' + '15 - 9 =');
+        this.setAnswer('' + '6',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_66',2.0266,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__66 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_66';
+        this.setQuestion('' + '15 - 8 =');
+        this.setAnswer('' + '7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_65',2.0265,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__65 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_65';
+        this.setQuestion('' + '15 - 7 =');
+        this.setAnswer('' + '8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_64',2.0264,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__64 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_64';
+        this.setQuestion('' + '15 - 6 =');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_63',2.0263,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__63 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_63';
+        this.setQuestion('' + '14 - 9 =');
+        this.setAnswer('' + '5',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_62',2.0262,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__62 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_62';
+        this.setQuestion('' + '14 - 8 =');
+        this.setAnswer('' + '6',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_61',2.0261,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__61 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_61';
+        this.setQuestion('' + '14 - 7 =');
+        this.setAnswer('' + '7',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_60',2.0260,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__60 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_60';
+        this.setQuestion('' + '14 - 6 =');
+        this.setAnswer('' + '8',0);
+}
+});
+
+/*
+insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_59',2.0259,'2.oa.b.2','' );
+*/
+var i_2_oa_b_2__59 = new Class(
+{
+Extends: NumberPadItemBigger,
+
+initialize: function(sheet)
+{
+        this.parent(sheet);
+        this.mType = '2.oa.b.2_59';
+        this.setQuestion('' + '14 - 5 =');
+        this.setAnswer('' + '9',0);
+}
+});
+
+/*
 insert into item_types(id,progression,core_standards_id,description) values ('2.oa.b.2_58',2.0258,'2.oa.b.2','' );
 */
 var i_2_oa_b_2__58 = new Class(
