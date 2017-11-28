@@ -155,25 +155,25 @@ $bonus_new_array[] = 1.43;
 
 $pre_end[] = 0; //0
 $pre_end[] = 0; //k
-$pre_end[] = 8; //1
-$pre_end[] = 11; //2
-$pre_end[] = 13; //3
-$pre_end[] = 23; //4
-$pre_end[] = 28; //5
-$pre_end[] = 33; //6
-$pre_end[] = 33; //7
-$pre_end[] = 33; //8
+$pre_end[] = 7; //1
+$pre_end[] = 10; //2
+$pre_end[] = 12; //3
+$pre_end[] = 22; //4
+$pre_end[] = 27; //5
+$pre_end[] = 31; //6
+$pre_end[] = 31; //7
+$pre_end[] = 31; //8
 
 $new_end[] = 0;
-$new_end[] = 0;
-$new_end[] = 11;
-$new_end[] = 13;
-$new_end[] = 23;
-$new_end[] = 28; //4
-$new_end[] = 33; //5
-$new_end[] = 33; //6
-$new_end[] = 33;
-$new_end[] = 33; //8
+$new_end[] = 7;
+$new_end[] = 10;
+$new_end[] = 12;
+$new_end[] = 22;
+$new_end[] = 27; //4
+$new_end[] = 31; //5
+$new_end[] = 31; //6
+$new_end[] = 31;
+$new_end[] = 31; //8
 
 function check_add_sub($core_grades_id,&$row)
 {
@@ -411,7 +411,7 @@ for($i = 0; $i < $num_rooms; $i++)
                 $g4_nbt_b_6 = 0;
                 $g4_nf_b_3_c = 0;
 
-                $g5_oa_a_1 = 0;
+                //$g5_oa_a_1 = 0;
                 $g5_nbt_b_5 = 0;
                 $g5_nbt_b_6 = 0;
                 $g5_nbt_b_7 = 0;
@@ -549,56 +549,25 @@ for($i = 0; $i < $num_rooms; $i++)
 				$row[27] = 1;
 			}
 			
-			if ($id == $row_m[0] && $row_m[3] == '5_oa_a_1')
-			{
-				$g5_oa_a_1 = 1;	
-				$row[28] = 1;
-			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5')
 			{
 				$g5_nbt_b_5 = 1;	
-				$row[29] = 1;
+				$row[28] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6')
 			{
 				$g5_nbt_b_6 = 1;	
-				$row[30] = 1;
+				$row[29] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7')
 			{
 				$g5_nbt_b_7 = 1;	
-				$row[31] = 1;
+				$row[30] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1')
 			{
 				$g5_nf_a_1 = 1;	
-				$row[32] = 1;
-			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '6_rp')
-			{
-				$g6_rp = 1;	
-				$row[33] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_ns')
-			{
-				$g6_ns = 1;	
-				$row[34] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_ee')
-			{
-				$g6_ee = 1;	
-				$row[35] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_g')
-			{
-				$g6_g = 1;	
-				$row[36] = 1;
-			}
-			if ($id == $row_m[0] && $row_m[3] == '6_sp')
-			{
-				$g6_sp = 1;	
-				$row[37] = 1;
+				$row[31] = 1;
 			}
 		}
 //end fill in row

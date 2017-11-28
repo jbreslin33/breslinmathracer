@@ -1586,3 +1586,5 @@ update users set core_grades_id = 5 where room_id = 103;
 --RR3
 update users set core_grades_id = 4 where room_id = 108;
 
+-- get rid of 5.oa.a.1
+update evaluations set progression = 0.016 where id = 31;
