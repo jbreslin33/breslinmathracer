@@ -394,8 +394,6 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>4<br> n<br>f<br> b<br> 3<br> c';
         echo '</td>';
-        echo '<td>5<br> o<br>a <br>a<br> 1';
-        echo '</td>';
         echo '<td>5<br> n<br>b<br>t <br>b<br> 5';
         echo '</td>';
         echo '<td>5<br> n<br>b<br>t<br> b <br>6';
