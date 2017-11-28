@@ -39,14 +39,11 @@ echo "<br>";
 
 <?php
 $query = "select id, name from rooms where ";
-$query .= "name = '4'"; 
-//$query .= " OR name = '5'"; 
-$query .= " OR name = '21'"; 
+$query .= "name = '21'"; 
 $query .= " OR name = '22'"; 
 $query .= " OR name = '23'"; 
 $query .= " OR name = '24'"; 
 $query .= " OR name = '25'"; 
-//$query .= " OR name = '28'"; 
 $query .= " OR name = '31'"; 
 $query .= " OR name = '32'"; 
 $query .= " OR name = '33'"; 
@@ -311,7 +308,7 @@ function calc_raw_grade_new($core_grades_id,&$row)
 }
 
 //m
-	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed, evaluations.grade_b, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered, COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) +	COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2016-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (" ;	
+	$query_m = "select distinct sub.id, sub.first_name, sub.last_name, sub.description, sub.progression, sub.room_id FROM ( select users.id, users.first_name, users.last_name, users.room_id, evaluations.description, evaluations.progression, evaluations.score_needed, evaluations.grade_b, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) as not_answered, COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as incorrect, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) as correct, COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) +	COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END) as total_answered, COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) / (COUNT(CASE WHEN item_attempts.transaction_code = 0 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 1 then 1 ELSE NULL END) + COUNT(CASE WHEN item_attempts.transaction_code = 2 then 1 ELSE NULL END))::float * 100 as inner_grade from evaluations_attempts join users on evaluations_attempts.user_id=users.id JOIN item_attempts ON item_attempts.evaluations_attempts_id=evaluations_attempts.id JOIN evaluations ON evaluations.id=evaluations_attempts.evaluations_id where evaluations_attempts.start_time > '2017-09-10 09:28:27.777635' AND evaluations_attempts.evaluations_id != 1 AND (" ;	
 
 	for($r = 0; $r < $num_rooms; $r++)
 	{
@@ -677,7 +674,7 @@ for($i = 0; $i < $num_rooms; $i++)
 		
 	//get total days since start
 	$now = time(); // or your date as well
-	$start_date = strtotime("2016-09-12");
+	$start_date = strtotime("2017-09-12");
 	$datediff_seconds = $now - $start_date;
 	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
@@ -730,7 +727,7 @@ for($i = 0; $i < $num_rooms; $i++)
 
  	//get total days since start
         $now = time(); // or your date as well
-        $start_date = strtotime("2016-09-12");
+        $start_date = strtotime("2017-09-12");
         $datediff_seconds = $now - $start_date;
         $diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
@@ -968,7 +965,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         echo $percent_passed_grade_level_array[$i];
         echo '</td>';
 
-        $cut_date = strtotime("2016-12-22");
+        $cut_date = strtotime("2017-12-22");
         $class_date = strtotime($est_percent_complete_array[$i]);
         if ($cut_date > $class_date)
 	{	
@@ -990,7 +987,7 @@ for($i = 0; $i < sizeof($rank_array); $i++)
         echo $percent_passed_grade_level_new_array[$i];
         echo '</td>';
 
-        $cut_date = strtotime("2017-06-01");
+        $cut_date = strtotime("2018-06-01");
         $class_date = strtotime($est_percent_complete_new_array[$i]);
         if ($cut_date > $class_date)
         {
