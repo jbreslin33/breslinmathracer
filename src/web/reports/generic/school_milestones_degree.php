@@ -52,6 +52,7 @@ $query .= " OR name = '35'";
 $query .= " OR name = '36'"; 
 $query .= " OR name = '37'"; 
 $query .= " OR name = '39'"; 
+$query .= " OR name = '4'"; 
 //$query .= " OR name = 'AM2'"; 
 //$query .= " OR name = 'AM7'"; 
 //$query .= " OR name = 'RR3'"; 
