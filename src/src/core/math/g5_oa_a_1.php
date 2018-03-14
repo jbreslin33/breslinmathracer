@@ -14,7 +14,7 @@ initialize: function(sheet)
 
         this.mType = '5.oa.a.1_25';
 
-        var r = Math.floor(Math.random()*4);
+        var r = Math.floor(Math.random()*3);
 	
 	var a = 0;
 	var b = 0;
@@ -55,7 +55,7 @@ initialize: function(sheet)
 		}
         }
 
-
+/*
   	if (r == 2)
         {
                 w = Math.floor(Math.random()*8)+12;
@@ -69,8 +69,8 @@ initialize: function(sheet)
                 a = '' + '- and X';
                 d = '' + 'X and +';
         }
-
-	if (r == 3)
+*/
+	if (r == 2)
 	{
         	w = Math.floor(Math.random()*8)+2;
         	x = Math.floor(Math.random()*8)+2;
