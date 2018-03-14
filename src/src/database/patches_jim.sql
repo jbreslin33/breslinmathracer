@@ -918,8 +918,8 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('5.nbt.b.7
 
 
 --insert eval
---update evaluations set description = 'Terra Nova' where id = 16;
---update evaluations SET (questions,score_needed) = (8,8) where description = 'TerraNovaTest';
+update evaluations set description = 'Terra Nova' where id = 16;
+update evaluations SET (questions,score_needed) = (38,38) where description = 'Terra Nova';
 
 update evaluations SET (questions,score_needed) = (7,7) where description = 'Terra Nova 2';
 update evaluations SET (questions,score_needed) = (6,6) where description = 'Terra Nova 3';
