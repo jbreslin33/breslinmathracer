@@ -377,46 +377,6 @@ for($i = 0; $i < $num_rooms; $i++)
                         $row[] = 0;
                 }
 
-                $k_cc = 0;
-                $k_oa_a_4 = 0;
-                $k_oa_a_5 = 0;
-
-                $g1_oa_b_3 = 0;
-                $g1_oa_c_6 = 0;
-                $g1_nbt = 0;
-
-                $g2_oa_b_2 = 0;
-                $g2_nbt = 0;
-
-                $g5 = 0;
-                $g2 = 0;
-                $g4 = 0;
-                $g8 = 0;
-                $g3 = 0;
-                $g6 = 0;
-                $g9 = 0;
-                $g7 = 0;
-                $g3_oa_c_7 = 0;
-                $g3_nbt = 0;
-
-                $g4_oa_b_4 = 0;
-                $g4_nbt_b_4 = 0;
-                $g4_nbt_b_5 = 0;
-                $g4_nbt_b_6 = 0;
-                $g4_nf_b_3_c = 0;
-
-                //$g5_oa_a_1 = 0;
-                $g5_nbt_b_5 = 0;
-                $g5_nbt_b_6 = 0;
-                $g5_nbt_b_7 = 0;
-                $g5_nf_a_1 = 0;
-
-                $g6_rp = 0;
-                $g6_ns = 0;
-                $g6_ee = 0;
-                $g6_g = 0;
-                $g6_sp = 0;
-
 //fill in row to be used everywhere
 		for($m = 0; $m < $numrows_m; $m++)
 		{
@@ -424,144 +384,121 @@ for($i = 0; $i < $num_rooms; $i++)
 
 			if ($id == $row_m[0] && $row_m[3] == 'k_cc')
 			{
-				$k_cc = 1;	
 				$row[5] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_4')
 			{
-				$k_oa_a_4 = 1;	
 				$row[6] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'k_oa_a_5')
 			{
-				$k_oa_a_5 = 1;	
 				$row[7] = 1;
 			}
 			
 			if ($id == $row_m[0] && $row_m[3] == '1_oa_b_3')
 			{
-				$g1_oa_b_3 = 1;	
 				$row[8] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '1_oa_c_6')
 			{
-				$g1_oa_c_6 = 1;	
 				$row[9] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '1_nbt')
 			{
-				$g1_nbt = 1;	
 				$row[10] = 1;
 			}
 			
 			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2')
 			{
-				$g2_oa_b_2 = 1;	
 				$row[11] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '2_nbt')
 			{
-				$g2_nbt = 1;	
 				$row[12] = 1;
 			}
 			
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_5')
 			{
-				$g5 = 1;	
 				$row[13] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_2')
 			{
-				$g2 = 1;	
 				$row[14] = 1;
 			}	
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_4')
 			{
-				$g4 = 1;	
 				$row[15] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_8')
 			{
-				$g8 = 1;	
 				$row[16] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_3')
 			{
-				$g3 = 1;	
 				$row[17] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_6')
 			{
-				$g6 = 1;	
 				$row[18] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_9')
 			{
-				$g9 = 1;	
 				$row[19] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_7')
 			{
-				$g7 = 1;	
 				$row[20] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7')
 			{
-				$g3_oa_c_7 = 1;	
 				$row[21] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '3_nbt')
 			{
-				$g3_nbt = 1;	
 				$row[22] = 1;
 			}
 		
 			//skip for grade level checks....	
 			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4')
 			{
-				$g4_oa_b_4 = 1;	
 				$row[23] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4')
 			{
-				$g4_nbt_b_4 = 1;	
 				$row[24] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5')
 			{
-				$g4_nbt_b_5 = 1;	
 				$row[25] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6')
 			{
-				$g4_nbt_b_6 = 1;	
 				$row[26] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c')
 			{
-				$g4_nf_b_3_c = 1;	
 				$row[27] = 1;
 			}
 			
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5')
 			{
-				$g5_nbt_b_5 = 1;	
 				$row[28] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6')
 			{
-				$g5_nbt_b_6 = 1;	
 				$row[29] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7')
 			{
-				$g5_nbt_b_7 = 1;	
 				$row[30] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'Decimal Division')
+			{
+				$row[31] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1')
 			{
-				$g5_nf_a_1 = 1;	
-				$row[31] = 1;
+				$row[32] = 1;
 			}
 		}
 //end fill in row
