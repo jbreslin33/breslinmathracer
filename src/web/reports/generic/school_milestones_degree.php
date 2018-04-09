@@ -53,14 +53,7 @@ $query .= " OR name = '36'";
 $query .= " OR name = '37'"; 
 $query .= " OR name = '39'"; 
 $query .= " OR name = '4'"; 
-//$query .= " OR name = 'AM2'"; 
-//$query .= " OR name = 'AM7'"; 
-//$query .= " OR name = 'RR3'"; 
-//$query .= " OR name = 'RR4'"; 
-//$query .= " OR name = 'RR5'"; 
-//$query .= " OR name = 'RR6'"; 
-//$query .= " OR name = 'RR7'"; 
-//$query .= " OR name = 'RR8'"; 
+
 $query .= " order by name asc;";
 $room_result = pg_query($conn,$query);
 $num_rooms = pg_numrows($room_result);
@@ -156,25 +149,25 @@ $bonus_new_array[] = 1.43;
 
 $pre_end[] = 0; //0
 $pre_end[] = 0; //k
-$pre_end[] = 7; //1
-$pre_end[] = 10; //2
-$pre_end[] = 12; //3
-$pre_end[] = 22; //4
-$pre_end[] = 27; //5
-$pre_end[] = 31; //6
-$pre_end[] = 31; //7
-$pre_end[] = 31; //8
+$pre_end[] = 8; //1
+$pre_end[] = 11; //2
+$pre_end[] = 13; //3
+$pre_end[] = 23; //4
+$pre_end[] = 28; //5
+$pre_end[] = 33; //6
+$pre_end[] = 33; //7
+$pre_end[] = 33; //8
 
 $new_end[] = 0;
-$new_end[] = 7;
-$new_end[] = 10;
-$new_end[] = 12;
-$new_end[] = 22;
-$new_end[] = 27; //4
-$new_end[] = 31; //5
-$new_end[] = 31; //6
-$new_end[] = 31;
-$new_end[] = 31; //8
+$new_end[] = 8;
+$new_end[] = 11;
+$new_end[] = 13;
+$new_end[] = 23;
+$new_end[] = 28; //4
+$new_end[] = 33; //5
+$new_end[] = 33; //6
+$new_end[] = 33;
+$new_end[] = 33; //8
 
 function check_add_sub($core_grades_id,&$row)
 {
