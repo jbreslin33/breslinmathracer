@@ -63,6 +63,8 @@ echo '<table border=\"1\">';
         echo '</td>';
         echo '<td>1<br> n<br>b<br>t';
         echo '</td>';
+        echo '<td>b<br>a<br>b<br>y<br>9<br>s';
+        echo '</td>';
         echo '<td>2<br> o<br>a<br> b<br> 2';
         echo '</td>';
         echo '<td>2<br> n<br>b<br>t';
