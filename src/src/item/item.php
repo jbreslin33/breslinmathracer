@@ -330,7 +330,17 @@ var Item = new Class(
 		}
 
 		//2
-
+                var optionBABYNINE = document.createElement("option");
+                optionBABYNINE.value = 1109;
+                optionBABYNINE.text = 'baby9s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionBABYNINE);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionBABYNINE);
+                }
 
 		var optionR = document.createElement("option");
                 optionR.value = 28;
