@@ -202,6 +202,18 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_2',1109);
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_3',1109);
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_4',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_5',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_6',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_7',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_8',1109);
+
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_15',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_21',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_26',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_30',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_33',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_35',1109);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_36',1109);
 
 --2.oa.b.2
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_1',28);
@@ -1451,7 +1463,7 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (70,70,'1.oa.c.6',5) where description = '1_oa_c_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (12,12,'2.oa.a.1',6) where description = '1_nbt';
 
-update evaluations SET (questions,score_needed,standard_jump_id,progression) = (4,4,'baby9s',6.9) where description = 'baby9s';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'baby9s',6.9) where description = 'baby9s';
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (73,73,'2.nbt.a.1',7) where description = '2_oa_b_2';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (16,16,'3.oa.a.1',8) where description = '2_nbt';
