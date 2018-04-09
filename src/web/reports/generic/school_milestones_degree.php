@@ -701,14 +701,20 @@ for ($g = 0; $g < intval(sizeof($rank_array)); $g++)
 	for ($h = $g; $h < intval(sizeof($rank_array)); $h++)
 	{
 		//for new grade
-		//if (intval($percent_complete_new_array[$h]) > intval($highest_number))
+		if (intval($percent_complete_new_array[$h]) > intval($highest_number))
+		{
+			$highest_number = $percent_complete_new_array[$h];
+			$highest_element = $h;
+		}
 		
 		//for pre grade
+		/*
 		if (intval($percent_complete_array[$h]) > intval($highest_number))
 		{
 			$highest_number = $percent_complete_array[$h];
 			$highest_element = $h;
 		}
+		*/
 	}
 
 	//copy current place your working on to tmp cause its getting overwritten 
