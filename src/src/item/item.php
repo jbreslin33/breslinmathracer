@@ -328,8 +328,22 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
 		}
+		
+		//8s
+                var optionBABYEIGHT = document.createElement("option");
+                optionBABYEIGHT.value = 1108;
+                optionBABYEIGHT.text = 'baby8s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionBABYEIGHT);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionBABYEIGHT);
+                }
 
-		//2
+
+		//9s
                 var optionBABYNINE = document.createElement("option");
                 optionBABYNINE.value = 1109;
                 optionBABYNINE.text = 'baby9s';
