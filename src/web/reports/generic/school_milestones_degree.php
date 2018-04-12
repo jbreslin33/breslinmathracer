@@ -150,7 +150,7 @@ $bonus_new_array[] = 1.43;
 $pre_end[] = 0; //0
 $pre_end[] = 0; //k
 $pre_end[] = 8; //1
-$pre_end[] = 12; //2
+$pre_end[] = 11; //2
 $pre_end[] = 14; //3
 $pre_end[] = 24; //4
 $pre_end[] = 29; //5
@@ -160,7 +160,7 @@ $pre_end[] = 34; //8
 
 $new_end[] = 0;
 $new_end[] = 8;
-$new_end[] = 12;
+$new_end[] = 11;
 $new_end[] = 14;
 $new_end[] = 24;
 $new_end[] = 29; //4
