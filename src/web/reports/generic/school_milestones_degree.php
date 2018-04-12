@@ -150,24 +150,24 @@ $bonus_new_array[] = 1.43;
 $pre_end[] = 0; //0
 $pre_end[] = 0; //k
 $pre_end[] = 8; //1
-$pre_end[] = 11; //2
-$pre_end[] = 13; //3
-$pre_end[] = 23; //4
-$pre_end[] = 28; //5
-$pre_end[] = 33; //6
-$pre_end[] = 33; //7
-$pre_end[] = 33; //8
+$pre_end[] = 12; //2
+$pre_end[] = 14; //3
+$pre_end[] = 24; //4
+$pre_end[] = 29; //5
+$pre_end[] = 34; //6
+$pre_end[] = 34; //7
+$pre_end[] = 34; //8
 
 $new_end[] = 0;
 $new_end[] = 8;
-$new_end[] = 11;
-$new_end[] = 13;
-$new_end[] = 23;
-$new_end[] = 28; //4
-$new_end[] = 33; //5
-$new_end[] = 33; //6
-$new_end[] = 33;
-$new_end[] = 33; //8
+$new_end[] = 12;
+$new_end[] = 14;
+$new_end[] = 24;
+$new_end[] = 29; //4
+$new_end[] = 34; //5
+$new_end[] = 34; //6
+$new_end[] = 34;
+$new_end[] = 34; //8
 
 function check_add_sub($core_grades_id,&$row)
 {
