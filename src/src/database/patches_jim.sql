@@ -232,9 +232,31 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_32',1108);
 insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_34',1108);
 
+--baby7s
+insert into evaluations (id,description) values (1107,'baby7s');
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_6',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_13',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_16',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_17',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_18',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_19',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_20',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_21',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_24',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_28',1107);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_31',1107);
 
-
-
+--baby6s
+insert into evaluations (id,description) values (1106,'baby6s');
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_5',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_12',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_18',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_22',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_23',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_24',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_25',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_26',1106);
+insert into evaluations_items (item_types_id, evaluations_id) values ('2.oa.b.2_27',1106);
 
 
 --2.oa.b.2
@@ -1489,6 +1511,8 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (15,15,'baby9s',6.1) where description = 'baby9s';
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (13,13,'baby8s',6.2) where description = 'baby8s';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (11,11,'baby7s',6.3) where description = 'baby7s';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (9,9,'baby6s',6.4) where description = 'baby6s';
 
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (73,73,'2.nbt.a.1',7) where description = '2_oa_b_2';

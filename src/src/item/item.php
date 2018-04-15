@@ -329,6 +329,20 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionN);
 		}
 		
+
+		//9s
+                var optionBABYNINE = document.createElement("option");
+                optionBABYNINE.value = 1109;
+                optionBABYNINE.text = 'baby9s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionBABYNINE);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionBABYNINE);
+                }
+		
 		//8s
                 var optionBABYEIGHT = document.createElement("option");
                 optionBABYEIGHT.value = 1108;
@@ -342,18 +356,30 @@ var Item = new Class(
                         this.mTimesTablesInfo.mMesh.appendChild(optionBABYEIGHT);
                 }
 
-
-		//9s
-                var optionBABYNINE = document.createElement("option");
-                optionBABYNINE.value = 1109;
-                optionBABYNINE.text = 'baby9s';
+		//7s
+                var optionBABYSEVEN = document.createElement("option");
+                optionBABYSEVEN.value = 1107;
+                optionBABYSEVEN.text = 'baby7s';
                 if (navigator.appName == "Microsoft Internet Explorer")
                 {
-                        this.mTimesTablesInfo.mMesh.add(optionBABYNINE);
+                        this.mTimesTablesInfo.mMesh.add(optionBABYSEVEN);
                 }
                 else
                 {
-                        this.mTimesTablesInfo.mMesh.appendChild(optionBABYNINE);
+                        this.mTimesTablesInfo.mMesh.appendChild(optionBABYSEVEN);
+                }
+
+		//6s
+                var optionBABYSIX = document.createElement("option");
+                optionBABYSIX.value = 1106;
+                optionBABYSIX.text = 'baby6s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionBABYSIX);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionBABYSIX);
                 }
 
 		var optionR = document.createElement("option");
