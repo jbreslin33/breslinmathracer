@@ -144,23 +144,23 @@ $pre_end[] = 0;
 $pre_end[] = 0;
 $pre_end[] = 8;
 $pre_end[] = 11;
-$pre_end[] = 13;
-$pre_end[] = 23;
-$pre_end[] = 28; //5
-$pre_end[] = 33;
-$pre_end[] = 33;
-$pre_end[] = 33;
+$pre_end[] = 14;
+$pre_end[] = 24;
+$pre_end[] = 29; //5
+$pre_end[] = 34;
+$pre_end[] = 34;
+$pre_end[] = 34;
 
 $new_end[] = 0;
 $new_end[] = 0;
 $new_end[] = 11;
-$new_end[] = 13;
-$new_end[] = 23;
-$new_end[] = 28;
-$new_end[] = 33; //5
-$new_end[] = 33;
-$new_end[] = 33;
-$new_end[] = 33;
+$new_end[] = 14;
+$new_end[] = 24;
+$new_end[] = 29;
+$new_end[] = 34; //5
+$new_end[] = 34;
+$new_end[] = 34;
+$new_end[] = 34;
         
 //------------------EVALUATIONS------------------------------
 $query_e = "select * from evaluations where progression > 0.9 AND progression < 21 order by progression asc;";
@@ -360,6 +360,8 @@ echo '<table border=\"1\">';
         echo '<td>1<br> n<br>b<br>t';
         echo '</td>';
         echo '<td>b<br>a<br>b<br>y<br>9<br>s';
+        echo '</td>';
+        echo '<td>b<br>a<br>b<br>y<br>8<br>s';
         echo '</td>';
         echo '<td>2<br> o<br>a<br> b<br> 2';
         echo '</td>';
