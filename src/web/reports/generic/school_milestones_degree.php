@@ -151,23 +151,23 @@ $pre_end[] = 0; //0
 $pre_end[] = 0; //k
 $pre_end[] = 8; //1
 $pre_end[] = 11; //2
-$pre_end[] = 14; //3
-$pre_end[] = 24; //4
-$pre_end[] = 29; //5
-$pre_end[] = 34; //6
-$pre_end[] = 34; //7
-$pre_end[] = 34; //8
+$pre_end[] = 16; //3
+$pre_end[] = 26; //4
+$pre_end[] = 31; //5
+$pre_end[] = 36; //6
+$pre_end[] = 36; //7
+$pre_end[] = 36; //8
 
 $new_end[] = 0;
 $new_end[] = 8;
 $new_end[] = 11;
-$new_end[] = 14;
-$new_end[] = 24;
-$new_end[] = 29; //4
-$new_end[] = 34; //5
-$new_end[] = 34; //6
-$new_end[] = 34;
-$new_end[] = 34; //8
+$new_end[] = 16;
+$new_end[] = 26;
+$new_end[] = 31; //4
+$new_end[] = 36; //5
+$new_end[] = 36; //6
+$new_end[] = 36;
+$new_end[] = 36; //8
 
 function check_add_sub($core_grades_id,&$row)
 {
@@ -407,98 +407,114 @@ for($i = 0; $i < $num_rooms; $i++)
 			{
 				$row[10] = 1;
 			}
-			
-			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2')
+			if ($id == $row_m[0] && $row_m[3] == 'baby9s')
 			{
 				$row[11] = 1;
 			}
-			if ($id == $row_m[0] && $row_m[3] == '2_nbt')
+			if ($id == $row_m[0] && $row_m[3] == 'baby8s')
 			{
 				$row[12] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'baby7s')
+			{
+				$row[13] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == 'baby6s')
+			{
+				$row[14] = 1;
+			}
+			
+			if ($id == $row_m[0] && $row_m[3] == '2_oa_b_2')
+			{
+				$row[15] = 1;
+			}
+			if ($id == $row_m[0] && $row_m[3] == '2_nbt')
+			{
+				$row[16] = 1;
 			}
 			
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_5')
 			{
-				$row[13] = 1;
+				$row[17] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_2')
 			{
-				$row[14] = 1;
+				$row[18] = 1;
 			}	
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_4')
 			{
-				$row[15] = 1;
+				$row[19] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_8')
 			{
-				$row[16] = 1;
+				$row[20] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_3')
 			{
-				$row[17] = 1;
+				$row[21] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_6')
 			{
-				$row[18] = 1;
+				$row[22] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_9')
 			{
-				$row[19] = 1;
+				$row[23] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'timestables_7')
 			{
-				$row[20] = 1;
+				$row[24] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '3_oa_c_7')
 			{
-				$row[21] = 1;
+				$row[25] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '3_nbt')
 			{
-				$row[22] = 1;
+				$row[26] = 1;
 			}
 		
 			//skip for grade level checks....	
 			if ($id == $row_m[0] && $row_m[3] == '4_oa_b_4')
 			{
-				$row[23] = 1;
+				$row[27] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_4')
 			{
-				$row[24] = 1;
+				$row[28] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_5')
 			{
-				$row[25] = 1;
+				$row[29] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nbt_b_6')
 			{
-				$row[26] = 1;
+				$row[30] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '4_nf_b_3_c')
 			{
-				$row[27] = 1;
+				$row[31] = 1;
 			}
 			
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_5')
 			{
-				$row[28] = 1;
+				$row[32] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_6')
 			{
-				$row[29] = 1;
+				$row[33] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nbt_b_7')
 			{
-				$row[30] = 1;
+				$row[34] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == 'Decimal Division')
 			{
-				$row[31] = 1;
+				$row[35] = 1;
 			}
 			if ($id == $row_m[0] && $row_m[3] == '5_nf_a_1')
 			{
-				$row[32] = 1;
+				$row[36] = 1;
 			}
 		}
 //end fill in row
