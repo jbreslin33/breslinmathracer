@@ -279,6 +279,47 @@ var Item = new Class(
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionP);
 		}
 		
+		//1s
+                var optionT1 = document.createElement("option");
+                optionT1.value = 1111;
+                optionT1.text = 'tiny1s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionT1);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionT1);
+                }
+		
+		//2s
+                var optionT2 = document.createElement("option");
+                optionT2.value = 1112;
+                optionT2.text = 'tiny2s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionT2);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionT2);
+                }
+		
+		//3s
+                var optionT3 = document.createElement("option");
+                optionT3.value = 1113;
+                optionT3.text = 'tiny3s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionT3);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionT3);
+                }
+		
+		
+		
 		var optionC = document.createElement("option");
                 optionC.value = 13;
                 optionC.text = 'k.oa.a.5';
