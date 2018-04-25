@@ -656,13 +656,39 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5_5',20);
 
 
---nozero4th
+--NO 0 DIVISION
 insert into evaluations (id,description) values (1140,'NO 0 Division');
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
+
+--0 IN 2nd DIV
+insert into evaluations (id,description) values (1142,'0 IN 2nd Division');
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_9',1142);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_9',1142);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_9',1142);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_9',1142);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_9',1142);
+
+--0 IN 3rd DIV
+insert into evaluations (id,description) values (1143,'0 IN 3rd Division');
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_10',1143);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_10',1143);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_10',1143);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_10',1143);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_10',1143);
+
+--0 IN 4th DIV
+insert into evaluations (id,description) values (1144,'0 IN 4th Division');
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_11',1144);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_11',1144);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_11',1144);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_11',1144);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_11',1144);
+
+
 
 
 --4.nbt.b.6
@@ -1568,6 +1594,9 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression,grad
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.6',13,80,75,70,65,59) where description = '4_nbt_b_5';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'NO 0 division',14.1,80,75,70,65,59) where description = 'NO 0 Division';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'0 IN 2nd Division',14.2,80,75,70,65,59) where description = '0 IN 2nd Division';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'0 IN 3rd Division',14.3,80,75,70,65,59) where description = '0 IN 3rd Division';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'0 IN 4th Division',14.4,80,75,70,65,59) where description = '0 IN 4th Division';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nf.b.3.c',14.9,79,74,69,64,59) where description = '4_nbt_b_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.oa.a.1',15,80,75,70,65,59) where description = '4_nf_b_3_c';
 
