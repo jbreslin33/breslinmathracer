@@ -559,7 +559,7 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionB);
 		}
-		
+	/*	
 		var optionI = document.createElement("option");
                 optionI.value = 19;
                 optionI.text = 'The Super Izzy';
@@ -571,7 +571,7 @@ var Item = new Class(
 		{
        	        	this.mTimesTablesInfo.mMesh.appendChild(optionI);
 		}
-		
+	*/	
 		var optionL = document.createElement("option");
                 optionL.value = 22;
                 optionL.text = '3.nbt';
@@ -623,6 +623,18 @@ var Item = new Class(
                 {
                         this.mTimesTablesInfo.mMesh.appendChild(optionJC);
                 }
+                
+		var option1140 = document.createElement("option");
+                option1140.value = 1140;
+                option1140.text = 'NO 0 Division';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(option1140);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(option1140);
+                }
 
                 var optionJD = document.createElement("option");
                 optionJD.value = 21;
@@ -650,7 +662,7 @@ var Item = new Class(
  
 
 		//5
-
+/*
                 var optionUA = document.createElement("option");
                 optionUA.value = 31;
                 optionUA.text = '5.oa.a.1';
@@ -662,7 +674,7 @@ var Item = new Class(
                 {
                         this.mTimesTablesInfo.mMesh.appendChild(optionUA);
                 }
-
+*/
                 var optionUB = document.createElement("option");
                 optionUB.value = 32;
                 optionUB.text = '5.nbt.b.5';

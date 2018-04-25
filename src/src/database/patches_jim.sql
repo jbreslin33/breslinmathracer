@@ -655,6 +655,16 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5_4',20);
 insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.5_5',20);
 
+
+--nozero4th
+insert into evaluations (id,description) values (1140,'NO 0 Division');
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
+insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_7',1140);
+
+
 --4.nbt.b.6
 --insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_1',21);
 --insert into evaluations_items (item_types_id, evaluations_id) values ('4.nbt.b.6_4',21);
@@ -1557,7 +1567,8 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.4',11,71,68,65,62,59) where description = '4_oa_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.5',12,79,74,69,64,59) where description = '4_nbt_b_4';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nbt.b.6',13,80,75,70,65,59) where description = '4_nbt_b_5';
-update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nf.b.3.c',14,79,74,69,64,59) where description = '4_nbt_b_6';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'NO 0 division',14.1,80,75,70,65,59) where description = 'NO 0 Division';
+update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (5,5,'4.nf.b.3.c',14.9,79,74,69,64,59) where description = '4_nbt_b_6';
 update evaluations SET (questions,score_needed,standard_jump_id,progression,grade_a,grade_b,grade_c,grade_d,grade_f) = (9,9,'5.oa.a.1',15,80,75,70,65,59) where description = '4_nf_b_3_c';
 
 --grade 5
