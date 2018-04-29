@@ -67,6 +67,26 @@ insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_20',1113);
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_21',1113);
 
+--miniminus1s
+insert into evaluations (id,description) values (1114,'miniminus1s');
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_29',1114);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_30',1114);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_31',1114);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_32',1114);
+
+--miniminus2s
+insert into evaluations (id,description) values (1115,'miniminus2s');
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_34',1115);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_35',1115);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_36',1115);
+
+--miniminus3s
+insert into evaluations (id,description) values (1116,'miniminus3s');
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_38',1116);
+insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_39',1116);
+
+
+
 --k.oa.a.5
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_12',13);
 insert into evaluations_items (item_types_id, evaluations_id) values ('k.oa.a.5_13',13);
@@ -1568,6 +1588,10 @@ update evaluations SET (questions,score_needed,standard_jump_id,progression) = (
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (7,7,'tiny1s',2.1) where description = 'tiny1s';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (5,5,'tiny2s',2.2) where description = 'tiny2s';
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (4,4,'tiny3s',2.3) where description = 'tiny3s';
+
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (4,4,'miniminus1s',2.4) where description = 'miniminus1s';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (3,3,'miniminus2s',2.5) where description = 'miniminus2s';
+update evaluations SET (questions,score_needed,standard_jump_id,progression) = (2,2,'miniminus3s',2.6) where description = 'miniminus3s';
 
 update evaluations SET (questions,score_needed,standard_jump_id,progression) = (20,20,'1.oa.a.1',3) where description = 'k_oa_a_5';
 

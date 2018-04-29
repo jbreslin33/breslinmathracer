@@ -318,7 +318,44 @@ var Item = new Class(
                         this.mTimesTablesInfo.mMesh.appendChild(optionT3);
                 }
 		
+		//1s
+                var optionMM1 = document.createElement("option");
+                optionMM1.value = 1114;
+                optionMM1.text = 'miniminus1s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionMM1);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionMM1);
+                }
 		
+		//2s
+                var optionMM2 = document.createElement("option");
+                optionMM2.value = 1115;
+                optionMM2.text = 'miniminus2s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionMM2);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionMM2);
+                }
+
+		//3s
+                var optionMM3 = document.createElement("option");
+                optionMM3.value = 1116;
+                optionMM3.text = 'miniminus3s';
+                if (navigator.appName == "Microsoft Internet Explorer")
+                {
+                        this.mTimesTablesInfo.mMesh.add(optionMM3);
+                }
+                else
+                {
+                        this.mTimesTablesInfo.mMesh.appendChild(optionMM3);
+                }
 		
 		var optionC = document.createElement("option");
                 optionC.value = 13;
