@@ -48,7 +48,7 @@ else if (isset($_GET['start_date']))
 else
 {
         //$start_date = date("Y-m-d");
-        $start_date = date("2017-09-10");
+        $start_date = date("2018-09-01");
 }
 
 //end date
@@ -597,7 +597,7 @@ evaluations.score_needed) sub WHERE sub.total_answered >= sub.score_needed order
 
        	         	//get total days since start
                		$now = time(); // or your date as well
-                	$start_date = strtotime("2017-09-10");
+                	$start_date = strtotime("2018-09-01");
                 	$datediff_seconds = $now - $start_date;
                 	$diff_days = floor($datediff_seconds / (60 * 60 * 24));
 
