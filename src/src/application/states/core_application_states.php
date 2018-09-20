@@ -456,9 +456,9 @@ enter: function(application)
 	}
 	else 
 	{
-		APPLICATION.log('2');
         	if (application.mGame)
         	{
+			APPLICATION.log('destroy')
                 	application.mGame.destructor();
                 	application.mGame = 0;
         	}
@@ -551,10 +551,70 @@ execute: function(application)
 	{
 		//lets sniff packet
                 APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
+                APPLICATION.mLoggedIn1 = APPLICATION.mResponseArray[1];
+		APPLICATION.log('mLoggedIn:' + APPLICATION.mLoggedIn);
+		APPLICATION.log('mLoggedIn1:' + APPLICATION.mLoggedIn1);
 		APPLICATION.mDataToRead = false;
-		
+
+
+                if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
+                {
+                        APPLICATION.mRef_id = APPLICATION.mResponseArray[1];
+                        APPLICATION.mHud.setOrange('Game:' + APPLICATION.mRef_id);
+                        APPLICATION.mUsername = APPLICATION.mResponseArray[3];
+                        APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
+                        APPLICATION.mLastName = APPLICATION.mResponseArray[5];
+                        APPLICATION.mStandard = APPLICATION.mResponseArray[6];
+                        APPLICATION.mHud.setYellow(APPLICATION.mStandard);
+                        APPLICATION.mRole = 1;
+
+                        var itemTypes = APPLICATION.mResponseArray[7];
+                        APPLICATION.mItemTypesArray = itemTypes.split(":");
+                        /*
+                        for (i=0; i < APPLICATION.mItemTypesArray.length; i++)
+                        {
+                                APPLICATION.log('APPLICATION.mItemTypesArray[' + i + ']:' + APPLICATION.mItemTypesArray[i]);
+                        }
+                        */
+
+                        //lets get standards here
+                        APPLICATION.fillStandardsArray();
+
+                        var itemAttemptsEvaluationsID = APPLICATION.mResponseArray[8];
+                        APPLICATION.mItemAttemptsEvaluationsIDArray = itemAttemptsEvaluationsID.split(":");
+    
+                        var itemAttemptsTypes = APPLICATION.mResponseArray[9];
+                        APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
+
+                        var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[10];
+                        APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
+
+                        //evals id such as 36 for 6.rp
+                        var evaluationsItemTypes = APPLICATION.mResponseArray[11];
+                        APPLICATION.mEvaluationsItemTypesArray = evaluationsItemTypes.split(":");
+
+                        //this should be number of questions such as 10 for 6.rp
+                        var evaluationsItemTypesQuestions = APPLICATION.mResponseArray[12];
+                        APPLICATION.mEvaluationsItemTypesQuestionsArray = evaluationsItemTypesQuestions.split(":");
+
+                        var evaluationsItemTypesItemTypes = APPLICATION.mResponseArray[13];
+                        APPLICATION.mEvaluationsItemTypesItemTypesArray = evaluationsItemTypesItemTypes.split(":");
+
+                        var evaluationsItemTypesEvaluationsID = APPLICATION.mResponseArray[14];
+                        APPLICATION.mEvaluationsItemTypesEvaluationsIDArray = evaluationsItemTypesEvaluationsID.split(":");
+                        APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[15];
+                        APPLICATION.mCoreGradesID = APPLICATION.mResponseArray[16];
+
+                        APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+
+                        application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
+                }
+
+
+	/*	
 		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
 		{
+			APPLICATION.log('in');
         		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
                	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
                 	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
@@ -577,8 +637,10 @@ execute: function(application)
                         APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
 
                         APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[11];
+			APPLICATION.log('EV:' + APPLICATION.mEvaluationsID);	
 
 			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
+			application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
 			if (application.mEvaluationsID == 1)
 			{
 				application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
@@ -588,6 +650,7 @@ execute: function(application)
 				application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
 			}
 		}
+		*/
 	}
 
 	else if (application.mBadUsername == true)
