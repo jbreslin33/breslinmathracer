@@ -551,11 +551,7 @@ execute: function(application)
 	{
 		//lets sniff packet
                 APPLICATION.mLoggedIn = APPLICATION.mResponseArray[2];
-                APPLICATION.mLoggedIn1 = APPLICATION.mResponseArray[1];
-		APPLICATION.log('mLoggedIn:' + APPLICATION.mLoggedIn);
-		APPLICATION.log('mLoggedIn1:' + APPLICATION.mLoggedIn1);
 		APPLICATION.mDataToRead = false;
-
 
                 if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
                 {
@@ -609,48 +605,6 @@ execute: function(application)
 
                         application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
                 }
-
-
-	/*	
-		if (application.mLoggedIn == true) //i am going to send item_types and item_attempts here. maybe in rawData??
-		{
-			APPLICATION.log('in');
-        		APPLICATION.mRef_id = APPLICATION.mResponseArray[1]; 
-               	 	APPLICATION.mUsername = APPLICATION.mResponseArray[3];
-                	APPLICATION.mFirstName = APPLICATION.mResponseArray[4];
-                	APPLICATION.mLastName = APPLICATION.mResponseArray[5];
-                	APPLICATION.mRole = APPLICATION.mResponseArray[6];
-                
-			var itemTypes = APPLICATION.mResponseArray[7];
-			APPLICATION.mItemTypesArray = itemTypes.split(":");
-
-			//lets get standards here..
-			APPLICATION.fillStandardsArray();
-
-                        var itemAttemptsEvaluationsID = APPLICATION.mResponseArray[8];
-                        APPLICATION.mItemAttemptsEvaluationsIDArray = itemAttemptsEvaluationsID.split(":");
-
-                        var itemAttemptsTypes = APPLICATION.mResponseArray[9];
-                        APPLICATION.mItemAttemptsTypeArray = itemAttemptsTypes.split(":");
-
-                        var itemAttemptsTransactionCodes = APPLICATION.mResponseArray[10];
-                        APPLICATION.mItemAttemptsTransactionCodeArray = itemAttemptsTransactionCodes.split(":");
-
-                        APPLICATION.mEvaluationsID = APPLICATION.mResponseArray[11];
-			APPLICATION.log('EV:' + APPLICATION.mEvaluationsID);	
-
-			APPLICATION.mHud.setUsername(APPLICATION.mFirstName,APPLICATION.mLastName);
-			application.mCoreStateMachine.changeState(application.mMAIN_MENU_APPLICATION);
-			if (application.mEvaluationsID == 1)
-			{
-				application.mCoreStateMachine.changeState(application.mNORMAL_CORE_APPLICATION);
-			}
-			if (application.mEvaluationsID == 2)
-			{
-				application.mCoreStateMachine.changeState(application.mPRACTICE_APPLICATION);
-			}
-		}
-		*/
 	}
 
 	else if (application.mBadUsername == true)
