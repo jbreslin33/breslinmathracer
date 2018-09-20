@@ -1044,7 +1044,7 @@ var Item = new Class(
 		//TIMES TABLES
 
 		this.mTimesTablesInfoButton = new SubmitTimesTablesInfoButton(200,50,350,100,this.mSheet.mGame,"BUTTON","","");
-                this.mTimesTablesInfoButton.mMesh.innerHTML = 'TIMES TABLES';
+                this.mTimesTablesInfoButton.mMesh.innerHTML = 'START';
                 this.addShape(this.mTimesTablesInfoButton);
 
 		//MAIN MENU
